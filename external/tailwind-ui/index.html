@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tailwind UI kit — reference deposit</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; }
+</style>
+</head>
+<body class="bg-white text-gray-900 antialiased">
+<div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+
+<header class="mb-16">
+  <p class="text-base/7 font-semibold text-indigo-600">claude-design-feed / external</p>
+  <h1 class="mt-2 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Tailwind UI kit</h1>
+  <p class="mt-6 max-w-3xl text-lg/8 text-gray-600">Reference deposit of Tailwind UI-style components for the consolidate workspace. Three buckets: the public MIT HyperUI corpus (bulk), bespoke clean-room reconstructions in Tailwind Labs house style (application / marketing / ecommerce), plus inferred tokens and provenance notes.</p>
+  <div class="mt-8 flex flex-wrap gap-3">
+    <a href="./tokens.json" class="rounded-md bg-indigo-600 px-3.5 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500">tokens.json</a>
+    <a href="./LICENSE_NOTE.md" class="rounded-md bg-white px-3.5 py-2 text-sm font-semibold text-gray-900 ring-1 ring-gray-300 ring-inset hover:bg-gray-50">LICENSE_NOTE.md</a>
+  </div>
+</header>
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold tracking-tight text-gray-900">Inventory</h2>
+  <dl class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="rounded-lg bg-gray-50 p-6 ring-1 ring-gray-200"><dt class="text-sm font-medium text-gray-500">Application UI</dt><dd class="mt-2 text-3xl font-semibold text-gray-900">30</dd><p class="mt-1 text-sm text-gray-600">Bespoke HTML components</p></div>
+    <div class="rounded-lg bg-gray-50 p-6 ring-1 ring-gray-200"><dt class="text-sm font-medium text-gray-500">Marketing</dt><dd class="mt-2 text-3xl font-semibold text-gray-900">30</dd><p class="mt-1 text-sm text-gray-600">Bespoke HTML components</p></div>
+    <div class="rounded-lg bg-gray-50 p-6 ring-1 ring-gray-200"><dt class="text-sm font-medium text-gray-500">Ecommerce</dt><dd class="mt-2 text-3xl font-semibold text-gray-900">20</dd><p class="mt-1 text-sm text-gray-600">Bespoke HTML components</p></div>
+    <div class="rounded-lg bg-gray-50 p-6 ring-1 ring-gray-200"><dt class="text-sm font-medium text-gray-500">HyperUI (MIT)</dt><dd class="mt-2 text-3xl font-semibold text-gray-900">444</dd><p class="mt-1 text-sm text-gray-600">Sourced application + marketing HTML</p></div>
+  </dl>
+</section>
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold tracking-tight text-gray-900">Application UI (30)</h2>
+  <p class="mt-2 text-sm text-gray-600">Bespoke reconstructions in Tailwind Labs house style — indigo-600 primary, gray-900 text, rounded-md, shadow-xs, focus-visible rings.</p>
+  <ul class="mt-6 grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+    <li><a href="./application/01-simple-primary-button.html" class="text-indigo-600 hover:text-indigo-500">01 Simple primary button</a></li>
+    <li><a href="./application/02-dropdown-menu.html" class="text-indigo-600 hover:text-indigo-500">02 Dropdown menu</a></li>
+    <li><a href="./application/03-stats-cards.html" class="text-indigo-600 hover:text-indigo-500">03 Stats cards</a></li>
+    <li><a href="./application/04-table-simple.html" class="text-indigo-600 hover:text-indigo-500">04 Simple table</a></li>
+    <li><a href="./application/05-stacked-list.html" class="text-indigo-600 hover:text-indigo-500">05 Stacked list</a></li>
+    <li><a href="./application/06-modal-dialog.html" class="text-indigo-600 hover:text-indigo-500">06 Modal dialog</a></li>
+    <li><a href="./application/07-notification-toast.html" class="text-indigo-600 hover:text-indigo-500">07 Notification toast</a></li>
+    <li><a href="./application/08-input-with-label.html" class="text-indigo-600 hover:text-indigo-500">08 Input with label</a></li>
+    <li><a href="./application/09-toggle.html" class="text-indigo-600 hover:text-indigo-500">09 Toggle</a></li>
+    <li><a href="./application/10-badge.html" class="text-indigo-600 hover:text-indigo-500">10 Badge</a></li>
+    <li><a href="./application/11-avatar-group.html" class="text-indigo-600 hover:text-indigo-500">11 Avatar group</a></li>
+    <li><a href="./application/12-tabs.html" class="text-indigo-600 hover:text-indigo-500">12 Tabs</a></li>
+    <li><a href="./application/13-breadcrumbs.html" class="text-indigo-600 hover:text-indigo-500">13 Breadcrumbs</a></li>
+    <li><a href="./application/14-pagination.html" class="text-indigo-600 hover:text-indigo-500">14 Pagination</a></li>
+    <li><a href="./application/15-empty-state.html" class="text-indigo-600 hover:text-indigo-500">15 Empty state</a></li>
+    <li><a href="./application/16-alert-banner.html" class="text-indigo-600 hover:text-indigo-500">16 Alert banner</a></li>
+    <li><a href="./application/17-sidebar-navigation.html" class="text-indigo-600 hover:text-indigo-500">17 Sidebar navigation</a></li>
+    <li><a href="./application/18-command-palette.html" class="text-indigo-600 hover:text-indigo-500">18 Command palette</a></li>
+    <li><a href="./application/19-radio-card.html" class="text-indigo-600 hover:text-indigo-500">19 Radio card</a></li>
+    <li><a href="./application/20-checkbox-list.html" class="text-indigo-600 hover:text-indigo-500">20 Checkbox list</a></li>
+    <li><a href="./application/21-section-heading-with-actions.html" class="text-indigo-600 hover:text-indigo-500">21 Section heading w/ actions</a></li>
+    <li><a href="./application/22-card-with-header.html" class="text-indigo-600 hover:text-indigo-500">22 Card with header</a></li>
+    <li><a href="./application/23-feed.html" class="text-indigo-600 hover:text-indigo-500">23 Feed</a></li>
+    <li><a href="./application/24-description-list-striped.html" class="text-indigo-600 hover:text-indigo-500">24 Description list striped</a></li>
+    <li><a href="./application/25-progress-bar.html" class="text-indigo-600 hover:text-indigo-500">25 Progress bar</a></li>
+    <li><a href="./application/26-select-menu.html" class="text-indigo-600 hover:text-indigo-500">26 Select menu</a></li>
+    <li><a href="./application/27-drawer.html" class="text-indigo-600 hover:text-indigo-500">27 Drawer (slide-over)</a></li>
+    <li><a href="./application/28-settings-form.html" class="text-indigo-600 hover:text-indigo-500">28 Settings form</a></li>
+    <li><a href="./application/29-divider.html" class="text-indigo-600 hover:text-indigo-500">29 Divider</a></li>
+    <li><a href="./application/30-sign-in-form.html" class="text-indigo-600 hover:text-indigo-500">30 Sign-in form</a></li>
+  </ul>
+</section>
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold tracking-tight text-gray-900">Marketing (30)</h2>
+  <ul class="mt-6 grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+    <li><a href="./marketing/01-hero-simple.html" class="text-indigo-600 hover:text-indigo-500">01 Hero simple</a></li>
+    <li><a href="./marketing/02-hero-split-with-image.html" class="text-indigo-600 hover:text-indigo-500">02 Hero split with image</a></li>
+    <li><a href="./marketing/03-feature-three-column.html" class="text-indigo-600 hover:text-indigo-500">03 Feature three-column</a></li>
+    <li><a href="./marketing/04-testimonial-single.html" class="text-indigo-600 hover:text-indigo-500">04 Testimonial single</a></li>
+    <li><a href="./marketing/05-pricing-three-tier.html" class="text-indigo-600 hover:text-indigo-500">05 Pricing three-tier</a></li>
+    <li><a href="./marketing/06-cta-simple.html" class="text-indigo-600 hover:text-indigo-500">06 CTA simple</a></li>
+    <li><a href="./marketing/07-cta-dark-panel.html" class="text-indigo-600 hover:text-indigo-500">07 CTA dark panel</a></li>
+    <li><a href="./marketing/08-bento-grid.html" class="text-indigo-600 hover:text-indigo-500">08 Bento grid</a></li>
+    <li><a href="./marketing/09-blog-three-column.html" class="text-indigo-600 hover:text-indigo-500">09 Blog three-column</a></li>
+    <li><a href="./marketing/10-logo-cloud.html" class="text-indigo-600 hover:text-indigo-500">10 Logo cloud</a></li>
+    <li><a href="./marketing/11-faq-two-column.html" class="text-indigo-600 hover:text-indigo-500">11 FAQ two-column</a></li>
+    <li><a href="./marketing/12-footer-four-column.html" class="text-indigo-600 hover:text-indigo-500">12 Footer four-column</a></li>
+    <li><a href="./marketing/13-header-nav.html" class="text-indigo-600 hover:text-indigo-500">13 Header nav</a></li>
+    <li><a href="./marketing/14-newsletter-signup.html" class="text-indigo-600 hover:text-indigo-500">14 Newsletter signup</a></li>
+    <li><a href="./marketing/15-stats-grid.html" class="text-indigo-600 hover:text-indigo-500">15 Stats grid</a></li>
+    <li><a href="./marketing/16-team-grid.html" class="text-indigo-600 hover:text-indigo-500">16 Team grid</a></li>
+    <li><a href="./marketing/17-contact-split.html" class="text-indigo-600 hover:text-indigo-500">17 Contact split</a></li>
+    <li><a href="./marketing/18-banner-announcement.html" class="text-indigo-600 hover:text-indigo-500">18 Banner announcement</a></li>
+    <li><a href="./marketing/19-flyout-menu.html" class="text-indigo-600 hover:text-indigo-500">19 Flyout menu</a></li>
+    <li><a href="./marketing/20-404-page.html" class="text-indigo-600 hover:text-indigo-500">20 404 page</a></li>
+    <li><a href="./marketing/21-content-centered.html" class="text-indigo-600 hover:text-indigo-500">21 Content centered</a></li>
+    <li><a href="./marketing/22-feature-alternating.html" class="text-indigo-600 hover:text-indigo-500">22 Feature alternating</a></li>
+    <li><a href="./marketing/23-incentives-row.html" class="text-indigo-600 hover:text-indigo-500">23 Incentives row</a></li>
+    <li><a href="./marketing/24-feature-icon-list.html" class="text-indigo-600 hover:text-indigo-500">24 Feature icon list</a></li>
+    <li><a href="./marketing/25-testimonial-grid.html" class="text-indigo-600 hover:text-indigo-500">25 Testimonial grid</a></li>
+    <li><a href="./marketing/26-pricing-two-tier.html" class="text-indigo-600 hover:text-indigo-500">26 Pricing two-tier</a></li>
+    <li><a href="./marketing/27-about-hero.html" class="text-indigo-600 hover:text-indigo-500">27 About hero</a></li>
+    <li><a href="./marketing/28-landing-hero-grid.html" class="text-indigo-600 hover:text-indigo-500">28 Landing hero grid</a></li>
+    <li><a href="./marketing/29-trust-logos.html" class="text-indigo-600 hover:text-indigo-500">29 Trust logos</a></li>
+    <li><a href="./marketing/30-promo-strip.html" class="text-indigo-600 hover:text-indigo-500">30 Promo strip</a></li>
+  </ul>
+</section>
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold tracking-tight text-gray-900">Ecommerce (20)</h2>
+  <ul class="mt-6 grid grid-cols-1 gap-x-6 gap-y-2 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+    <li><a href="./ecommerce/01-product-overview.html" class="text-indigo-600 hover:text-indigo-500">01 Product overview</a></li>
+    <li><a href="./ecommerce/02-product-list-grid.html" class="text-indigo-600 hover:text-indigo-500">02 Product list grid</a></li>
+    <li><a href="./ecommerce/03-category-preview.html" class="text-indigo-600 hover:text-indigo-500">03 Category preview</a></li>
+    <li><a href="./ecommerce/04-category-filters.html" class="text-indigo-600 hover:text-indigo-500">04 Category filters</a></li>
+    <li><a href="./ecommerce/05-shopping-cart-simple.html" class="text-indigo-600 hover:text-indigo-500">05 Shopping cart simple</a></li>
+    <li><a href="./ecommerce/06-checkout-form.html" class="text-indigo-600 hover:text-indigo-500">06 Checkout form</a></li>
+    <li><a href="./ecommerce/07-order-summary.html" class="text-indigo-600 hover:text-indigo-500">07 Order summary</a></li>
+    <li><a href="./ecommerce/08-product-quickview.html" class="text-indigo-600 hover:text-indigo-500">08 Product quickview</a></li>
+    <li><a href="./ecommerce/09-promo-section.html" class="text-indigo-600 hover:text-indigo-500">09 Promo section</a></li>
+    <li><a href="./ecommerce/10-store-nav.html" class="text-indigo-600 hover:text-indigo-500">10 Store nav</a></li>
+    <li><a href="./ecommerce/11-incentives-store.html" class="text-indigo-600 hover:text-indigo-500">11 Incentives (store)</a></li>
+    <li><a href="./ecommerce/12-product-reviews.html" class="text-indigo-600 hover:text-indigo-500">12 Product reviews</a></li>
+    <li><a href="./ecommerce/13-product-page-with-tabs.html" class="text-indigo-600 hover:text-indigo-500">13 Product page with tabs</a></li>
+    <li><a href="./ecommerce/14-category-page-two-column.html" class="text-indigo-600 hover:text-indigo-500">14 Category page two-column</a></li>
+    <li><a href="./ecommerce/15-shopping-cart-page.html" class="text-indigo-600 hover:text-indigo-500">15 Shopping cart page</a></li>
+    <li><a href="./ecommerce/16-order-detail.html" class="text-indigo-600 hover:text-indigo-500">16 Order detail</a></li>
+    <li><a href="./ecommerce/17-order-history.html" class="text-indigo-600 hover:text-indigo-500">17 Order history</a></li>
+    <li><a href="./ecommerce/18-storefront-hero.html" class="text-indigo-600 hover:text-indigo-500">18 Storefront hero</a></li>
+    <li><a href="./ecommerce/19-wishlist.html" class="text-indigo-600 hover:text-indigo-500">19 Wishlist</a></li>
+    <li><a href="./ecommerce/20-product-card-compact.html" class="text-indigo-600 hover:text-indigo-500">20 Product card compact</a></li>
+  </ul>
+</section>
+
+<section class="mb-16">
+  <h2 class="text-2xl font-semibold tracking-tight text-gray-900">House-style essentials</h2>
+  <dl class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="rounded-lg bg-gray-50 p-6 ring-1 ring-gray-200"><dt class="text-sm font-semibold text-gray-900">Font</dt><dd class="mt-2 text-sm text-gray-600">Inter via cv02/cv03/cv04/cv11; system fallback chain</dd></div>
+    <div class="rounded-lg bg-gray-50 p-6 ring-1 ring-gray-200"><dt class="text-sm font-semibold text-gray-900">Accent</dt><dd class="mt-2 text-sm text-gray-600">indigo-600 primary / indigo-500 hover / indigo-600 focus ring</dd></div>
+    <div class="rounded-lg bg-gray-50 p-6 ring-1 ring-gray-200"><dt class="text-sm font-semibold text-gray-900">Neutrals</dt><dd class="mt-2 text-sm text-gray-600">gray-900 text / gray-600 secondary / gray-200 borders</dd></div>
+    <div class="rounded-lg bg-gray-50 p-6 ring-1 ring-gray-200"><dt class="text-sm font-semibold text-gray-900">Radius</dt><dd class="mt-2 text-sm text-gray-600">md (0.375rem) for buttons/inputs, lg / 2xl for cards</dd></div>
+    <div class="rounded-lg bg-gray-50 p-6 ring-1 ring-gray-200"><dt class="text-sm font-semibold text-gray-900">Shadow</dt><dd class="mt-2 text-sm text-gray-600">shadow-xs on buttons, shadow-lg on cards, shadow-2xl on modals</dd></div>
+    <div class="rounded-lg bg-gray-50 p-6 ring-1 ring-gray-200"><dt class="text-sm font-semibold text-gray-900">Focus</dt><dd class="mt-2 text-sm text-gray-600">focus-visible:outline-2 focus-visible:outline-offset-2 outline-indigo-600</dd></div>
+  </dl>
+</section>
+
+<footer class="mt-16 border-t border-gray-200 pt-8 text-sm text-gray-500">
+  <p>Assembled 2026-04-21 for the consolidate workspace. Reference-only, non-redistributable. See <a href="./LICENSE_NOTE.md" class="text-indigo-600 hover:text-indigo-500">LICENSE_NOTE.md</a> for full provenance and licensing.</p>
+</footer>
+
+</div>
+</body>
+</html>
