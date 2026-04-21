@@ -2,6 +2,15 @@
 
 Primary context file for Claude Design ingest. Read this first; it links the rest of the feed in the right order.
 
+## Status of this brief
+
+The HTML files, palettes, style systems, and tokens in this feed are **the closest approximation the operator has reached so far** — not dogma. Nine-plus prior iterations failed in specific, documented ways (see the Do-Not list below); those failure modes are hard constraints. Everything else is a starting point you are expected to **surpass**. If you see a structure, spacing, rhythm, motion, or composition that could more faithfully realise the operator's stated vision (dark, dense, data-first, retro-Mac-OS-9 + cyberpunk-HUD + brutalist composite, every pixel earns its keep, display not state), take it further. Don't mimic the finished HTMLs — out-execute them.
+
+The oceanic resource pool (62 palettes, 20 style systems, 10 identity rows, 1,400+ inline SVG icons, 157 historical UI references, 445 aesthetic references, 184 LS Graphics assets, 1,362 unDraw + Humaaans + Open Peeps illustrations, 40 tileable patterns, 288 authored pro-icons, Untitled UI Pro + Tailwind UI + Catalyst + Aceternity Pro component primitives) exists so you have breadth, not so you must use everything. Pick what serves the vision. Reject what doesn't.
+
+**Do-Not list (recurrence guards): follow dogmatically.**
+**Aesthetic direction (positive spec): use as floor, build higher.**
+
 ## What Clawmachine is
 
 Clawmachine is a macOS SwiftUI desktop application for second-hand tech-electronics arbitrage in the UK. A scout scrapes UK marketplaces for candidate listings, a brain evaluates each candidate against a live floor-price aggregate plus eBay sold comps, and the operator buys, fixes, and resells. Dark, dense, data-first. Not consumer-facing. Not a team tool. Not SaaS. Internal tooling for one operator running a fix-and-flip tech business.

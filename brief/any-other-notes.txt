@@ -1,7 +1,15 @@
+STATUS OF THIS BRIEF
+- the HTMLs, palettes, tokens in this feed are the closest approximation we have reached; they are a starting point, not dogma
+- the DO NOT list below is dogma — those are documented recurrence failures across nine-plus prior iterations, hard constraints
+- everything under DO, CONTENT, LAYOUT, DELIVERABLES is a floor — out-execute it, don't mimic it
+- the oceanic resource pool (62 palettes, 20 style systems, 1,400+ SVG icons, 157 historical UI refs, illustrations, patterns, component primitives) exists for breadth; pick what serves the vision, reject what doesn't
+- when in doubt, go further than the finished HTMLs; the finished HTMLs show what has been possible, not what is best
+
 GOAL
 - every deal row clicks through to the original listing
 - show floor-aggregate confidence next to each price
 - every control works or is removed; no placeholders
+- render the operator's vision more faithfully than anything in the reference HTMLs has achieved
 
 AUDIENCE
 - solo operator, desktop-only, UK fix-and-flip reseller, ten-hour days at a dense terminal

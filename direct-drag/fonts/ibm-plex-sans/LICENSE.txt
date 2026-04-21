@@ -1,0 +1,8 @@
+IBM Plex Sans
+License: SIL Open Font License, Version 1.1 (OFL-1.1)
+Source: https://github.com/IBM/plex
+
+Copyright 2017 IBM Corp. All rights reserved.
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+Full text: https://openfontlicense.org
