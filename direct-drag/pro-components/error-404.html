@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Error pages — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="../design.css">
+<style>
+  .err-demo-label { font-size: var(--text-md); font-weight: 600; color: var(--color-text-quaternary); text-transform: uppercase; letter-spacing: 0.08em; padding: 48px 32px 16px; text-align: center; background: var(--color-bg-secondary); }
+  .err-card { max-width: 640px; margin: 0 auto; padding: 48px; border-radius: var(--radius-2xl); background: var(--color-bg-primary); box-shadow: inset 0 0 0 1px var(--color-border-secondary); text-align: center; }
+  .err-ficon { width: 64px; height: 64px; border-radius: var(--radius-xl); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px; }
+  .err-ficon svg { width: 32px; height: 32px; }
+  .err-status { font-family: var(--font-mono); font-size: var(--text-display-2xl); font-weight: 600; letter-spacing: -0.04em; }
+  .err-subgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 32px; }
+  .err-subgrid a { padding: 16px; border-radius: var(--radius-lg); background: var(--color-bg-secondary); text-align: left; }
+  .err-subgrid a h4 { font-size: var(--text-sm); font-weight: 600; color: var(--color-text-primary); }
+  .err-subgrid a p { font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 2px; }
+</style>
+</head>
+<body style="background: var(--color-bg-secondary);">
+
+<header style="padding: 20px 32px; border-bottom: 1px solid var(--color-border-secondary); background: var(--color-bg-primary);">
+  <div class="uui-container" style="padding: 0; display: flex; justify-content: space-between; align-items: center;">
+    <a href="#" class="uui-row gap-2 items-center" style="text-decoration: none;">
+      <svg width="32" height="32" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="var(--color-brand-600)"/><path d="M10 11h12M10 16h9M10 21h6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      <span style="font-weight: 600; color: var(--color-text-primary);">Untitled UI</span>
+    </a>
+    <a href="/" class="uui-btn uui-btn--secondary uui-btn--md">return to home</a>
+  </div>
+</header>
+
+<div class="err-demo-label">variant 1 — 404 page not found</div>
+
+<!-- 404 -->
+<section style="padding: 96px 32px;">
+  <div class="err-card">
+    <span class="err-ficon" style="background: var(--color-bg-brand-primary); color: var(--color-fg-brand-primary);">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    </span>
+    <div class="err-status" style="color: var(--color-text-brand-secondary);">404</div>
+    <h1 class="t-display-md" style="font-weight: 600; color: var(--color-text-primary); margin-top: 12px;">we lost that page</h1>
+    <p style="font-size: var(--text-lg); color: var(--color-text-tertiary); margin-top: 16px; line-height: 1.5;">the url you followed doesn't match anything on our end. it may have moved, been renamed, or never existed. our apologies for the detour.</p>
+    <div class="uui-row gap-3 justify-center" style="margin-top: 32px;">
+      <a href="#" class="uui-btn uui-btn--secondary uui-btn--lg"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>go back</a>
+      <a href="/" class="uui-btn uui-btn--primary uui-btn--lg">take me home</a>
+    </div>
+    <div class="err-subgrid">
+      <a href="#">
+        <h4>docs</h4>
+        <p>the api and sdk reference.</p>
+      </a>
+      <a href="#">
+        <h4>changelog</h4>
+        <p>what shipped this week.</p>
+      </a>
+      <a href="#">
+        <h4>support</h4>
+        <p>reach a human engineer.</p>
+      </a>
+    </div>
+    <p style="font-size: var(--text-xs); color: var(--color-text-quaternary); margin-top: 24px;">if you arrived here from a link in our documentation, let us know — we'll fix it.</p>
+  </div>
+</section>
+
+<div class="err-demo-label">variant 2 — 500 internal server error</div>
+
+<!-- 500 -->
+<section style="padding: 96px 32px;">
+  <div class="err-card">
+    <span class="err-ficon" style="background: var(--color-bg-error-primary); color: var(--color-fg-error-primary);">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </span>
+    <div class="err-status" style="color: var(--color-error-600);">500</div>
+    <h1 class="t-display-md" style="font-weight: 600; color: var(--color-text-primary); margin-top: 12px;">something on our side broke</h1>
+    <p style="font-size: var(--text-lg); color: var(--color-text-tertiary); margin-top: 16px; line-height: 1.5;">this is on us, not you. our monitoring fired the moment the request failed and an on-call engineer is already looking.</p>
+    <div style="margin-top: 24px; padding: 16px; background: var(--color-bg-secondary); border-radius: var(--radius-lg); text-align: left;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: var(--text-xs); color: var(--color-text-quaternary); text-transform: uppercase; letter-spacing: 0.04em;">incident id</span>
+        <button class="uui-btn uui-btn--link-gray uui-btn--xs">copy</button>
+      </div>
+      <code style="font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-secondary);">INC-042-8f3a1c9e2b47</code>
+    </div>
+    <div class="uui-row gap-3 justify-center" style="margin-top: 32px;">
+      <a href="#" class="uui-btn uui-btn--secondary uui-btn--lg">try again</a>
+      <a href="/status" class="uui-btn uui-btn--primary uui-btn--lg">check status page</a>
+    </div>
+    <div style="margin-top: 32px; display: flex; gap: 12px; align-items: center; justify-content: center; padding: 12px 16px; border-radius: var(--radius-lg); background: var(--color-bg-warning-primary);">
+      <span class="uui-badge uui-badge--warning"><span class="dot"></span>degraded</span>
+      <span style="font-size: var(--text-sm); color: var(--color-text-warning-primary);">api response times elevated. eta resolution: 15 min.</span>
+    </div>
+  </div>
+</section>
+
+<div class="err-demo-label">variant 3 — 503 service unavailable</div>
+
+<!-- 503 -->
+<section style="padding: 96px 32px;">
+  <div class="err-card">
+    <span class="err-ficon" style="background: var(--color-bg-warning-primary); color: var(--color-fg-warning-primary);">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+    </span>
+    <div class="err-status" style="color: var(--color-warning-600);">503</div>
+    <h1 class="t-display-md" style="font-weight: 600; color: var(--color-text-primary); margin-top: 12px;">scheduled maintenance in progress</h1>
+    <p style="font-size: var(--text-lg); color: var(--color-text-tertiary); margin-top: 16px; line-height: 1.5;">we're deploying a planned change to the storage tier. the api is temporarily read-only. normal operation resumes at 02:30 utc.</p>
+    <div style="margin-top: 24px; padding: 20px; background: var(--color-bg-secondary); border-radius: var(--radius-lg); text-align: left;">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: var(--text-sm); font-weight: 600; color: var(--color-text-secondary);">window</span>
+        <span style="font-family: var(--font-mono); font-size: var(--text-sm); color: var(--color-text-primary);">02:00 — 02:30 UTC</span>
+      </div>
+      <div class="uui-progress" style="margin-top: 12px;">
+        <span style="width: 65%;"></span>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px;">
+        <span style="font-size: var(--text-xs); color: var(--color-text-quaternary);">progress</span>
+        <span style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-text-quaternary);">19 of 30 min</span>
+      </div>
+    </div>
+    <div class="uui-row gap-3 justify-center" style="margin-top: 32px;">
+      <a href="/status" class="uui-btn uui-btn--secondary uui-btn--lg">status page</a>
+      <a href="/status/subscribe" class="uui-btn uui-btn--primary uui-btn--lg">notify me when done</a>
+    </div>
+    <div style="margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--color-border-secondary); display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <div style="font-size: var(--text-xs); color: var(--color-text-quaternary); text-transform: uppercase; letter-spacing: 0.04em;">on call</div>
+        <div style="display: flex; gap: 8px; margin-top: 4px; align-items: center;">
+          <span class="uui-avatar uui-avatar--xs" style="background: var(--color-brand-100); color: var(--color-brand-700);">OK</span>
+          <span style="font-size: var(--text-sm); color: var(--color-text-secondary); font-weight: 500;">Oscar Kovalenko</span>
+        </div>
+      </div>
+      <a href="#" class="uui-btn uui-btn--link-color uui-btn--sm">read the runbook</a>
+    </div>
+  </div>
+</section>
+
+<!-- additional minor errors row -->
+<section style="padding: 96px 32px; background: var(--color-bg-primary); border-top: 1px solid var(--color-border-secondary);">
+  <div class="uui-container" style="padding: 0; text-align: center; margin-bottom: 32px;">
+    <h2 class="t-display-sm" style="font-weight: 600; color: var(--color-text-primary);">other pages you might see</h2>
+    <p style="color: var(--color-text-tertiary); margin-top: 12px;">shorter centered cards for common non-ok responses.</p>
+  </div>
+  <div class="uui-container" style="padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+    <div class="err-card" style="padding: 32px; max-width: none;">
+      <span class="err-ficon" style="background: var(--color-bg-tertiary); color: var(--color-fg-tertiary); width: 48px; height: 48px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67" width="24" height="24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </span>
+      <div class="err-status" style="color: var(--color-text-primary); font-size: var(--text-display-md);">401</div>
+      <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--color-text-primary); margin-top: 8px;">not signed in</h3>
+      <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">this area is for signed-in accounts only.</p>
+      <a class="uui-btn uui-btn--primary uui-btn--md" style="margin-top: 16px;">sign in</a>
+    </div>
+    <div class="err-card" style="padding: 32px; max-width: none;">
+      <span class="err-ficon" style="background: var(--color-bg-error-primary); color: var(--color-fg-error-primary); width: 48px; height: 48px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67" width="24" height="24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+      </span>
+      <div class="err-status" style="color: var(--color-text-primary); font-size: var(--text-display-md);">403</div>
+      <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--color-text-primary); margin-top: 8px;">access denied</h3>
+      <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">your account doesn't have permission here.</p>
+      <a class="uui-btn uui-btn--secondary uui-btn--md" style="margin-top: 16px;">request access</a>
+    </div>
+    <div class="err-card" style="padding: 32px; max-width: none;">
+      <span class="err-ficon" style="background: var(--color-bg-warning-primary); color: var(--color-fg-warning-primary); width: 48px; height: 48px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67" width="24" height="24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </span>
+      <div class="err-status" style="color: var(--color-text-primary); font-size: var(--text-display-md);">429</div>
+      <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--color-text-primary); margin-top: 8px;">rate limited</h3>
+      <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">retry after 30 seconds. reset: 02:18:44 utc.</p>
+      <a class="uui-btn uui-btn--secondary uui-btn--md" style="margin-top: 16px;">read rate-limit docs</a>
+    </div>
+  </div>
+</section>
+
+<footer style="padding: 48px 32px; border-top: 1px solid var(--color-border-secondary); background: var(--color-bg-primary); text-align: center; color: var(--color-text-tertiary); font-size: var(--text-sm);">
+  Untitled UI Pro — error-404 / 500 / 503 template
+</footer>
+
+</body>
+</html>

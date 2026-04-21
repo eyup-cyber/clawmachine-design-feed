@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" preserveAspectRatio="none">
+<rect width="1440" height="900" fill="#0f1115"/>
+<path d="M 0 270 L 0 188 L 180 79 L 360 135 L 540 148 L 720 116 L 900 129 L 1080 178 L 1260 158 L 1440 180 L 1440 270 L 1440 900 L 0 900 Z" fill="#ff6a3d" opacity="0.50"/>
+<path d="M 0 432 L 0 317 L 144 233 L 288 356 L 432 376 L 576 258 L 720 293 L 864 263 L 1008 267 L 1152 343 L 1296 312 L 1440 346 L 1440 432 L 1440 900 L 0 900 Z" fill="#ffb347" opacity="0.62"/>
+<path d="M 0 594 L 0 497 L 120 464 L 240 474 L 360 490 L 480 494 L 600 510 L 720 543 L 840 458 L 960 403 L 1080 425 L 1200 519 L 1320 497 L 1440 462 L 1440 594 L 1440 900 L 0 900 Z" fill="#ff8c42" opacity="0.74"/>
+<path d="M 0 756 L 0 595 L 103 582 L 206 561 L 309 571 L 411 642 L 514 615 L 617 589 L 720 597 L 823 686 L 926 640 L 1029 595 L 1131 706 L 1234 627 L 1337 668 L 1440 613 L 1440 756 L 1440 900 L 0 900 Z" fill="#f07b3f" opacity="0.86"/>
+
+</svg>

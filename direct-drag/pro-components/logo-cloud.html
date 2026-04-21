@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Logo cloud — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="../design.css">
+<style>
+  .lc-mark { height: 32px; display: inline-flex; align-items: center; gap: 10px; color: var(--color-text-tertiary); }
+  .lc-mark .glyph { width: 32px; height: 32px; border-radius: var(--radius-md); background: var(--color-bg-tertiary); color: var(--color-text-secondary); display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+  .lc-mark .name { font-weight: 600; font-size: var(--text-md); letter-spacing: -0.01em; color: var(--color-text-secondary); }
+  .lc-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 32px 48px; align-items: center; justify-items: center; }
+  .lc-card { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 32px; border-radius: var(--radius-2xl); background: var(--color-bg-primary); box-shadow: inset 0 0 0 1px var(--color-border-secondary); }
+  .lc-card .kpi { font-size: var(--text-display-sm); font-weight: 600; color: var(--color-text-primary); }
+  .lc-marquee { position: relative; overflow: hidden; padding: 32px 0; border-top: 1px solid var(--color-border-secondary); border-bottom: 1px solid var(--color-border-secondary); }
+  .lc-stack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .lc-stack .stack-card { padding: 24px; border-radius: var(--radius-xl); background: var(--color-bg-secondary); display: flex; flex-direction: column; gap: 8px; }
+  .lc-stack .stack-card .count { font-size: var(--text-sm); color: var(--color-text-quaternary); font-weight: 500; text-transform: uppercase; letter-spacing: 0.06em; }
+  .lc-stack .stack-card .names { font-weight: 600; color: var(--color-text-primary); font-size: var(--text-md); }
+  .lc-category-row { display: grid; grid-template-columns: 1fr 3fr; gap: 32px; align-items: center; padding: 32px; background: var(--color-bg-secondary); border-radius: var(--radius-2xl); }
+</style>
+</head>
+<body>
+
+<header style="padding: 20px 32px; border-bottom: 1px solid var(--color-border-secondary); background: var(--color-bg-primary);">
+  <div class="uui-container" style="padding: 0; display: flex; justify-content: space-between; align-items: center;">
+    <a href="#" class="uui-row gap-2 items-center" style="text-decoration: none;">
+      <svg width="32" height="32" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="var(--color-brand-600)"/><path d="M10 11h12M10 16h9M10 21h6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      <span style="font-weight: 600; color: var(--color-text-primary);">Untitled UI</span>
+    </a>
+    <nav class="uui-row gap-1">
+      <a class="uui-btn uui-btn--tertiary uui-btn--md">Products</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md">Resources</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md">Customers</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md">Pricing</a>
+    </nav>
+    <a href="#" class="uui-btn uui-btn--primary uui-btn--md">Get started</a>
+  </div>
+</header>
+
+<!-- page intro -->
+<section class="uui-container" style="padding: 96px 32px 48px; text-align: center;">
+  <span style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-brand-secondary);">trusted by teams worldwide</span>
+  <h1 class="t-display-lg" style="font-weight: 600; color: var(--color-text-primary); margin-top: 12px; max-width: 720px; margin-left: auto; margin-right: auto;">over 4,200 product teams pick untitled</h1>
+  <p style="font-size: var(--text-lg); color: var(--color-text-tertiary); margin-top: 16px; max-width: 640px; margin-left: auto; margin-right: auto;">from seed-stage startups to public-company product orgs, teams standardise on the same tokens.</p>
+</section>
+
+<!-- 12-logo primary grid -->
+<section class="uui-container" style="padding: 32px;">
+  <div class="lc-row">
+    <div class="lc-mark"><span class="glyph">Ax</span><span class="name">axiom</span></div>
+    <div class="lc-mark"><span class="glyph">Bp</span><span class="name">blueprint</span></div>
+    <div class="lc-mark"><span class="glyph">Cn</span><span class="name">canopy</span></div>
+    <div class="lc-mark"><span class="glyph">Dr</span><span class="name">draft</span></div>
+    <div class="lc-mark"><span class="glyph">Ev</span><span class="name">evergreen</span></div>
+    <div class="lc-mark"><span class="glyph">Fn</span><span class="name">fern</span></div>
+    <div class="lc-mark"><span class="glyph">Gl</span><span class="name">glacier</span></div>
+    <div class="lc-mark"><span class="glyph">Ha</span><span class="name">harbour</span></div>
+    <div class="lc-mark"><span class="glyph">Iv</span><span class="name">ivory</span></div>
+    <div class="lc-mark"><span class="glyph">Ju</span><span class="name">juniper</span></div>
+    <div class="lc-mark"><span class="glyph">Kr</span><span class="name">krate</span></div>
+    <div class="lc-mark"><span class="glyph">Lu</span><span class="name">lumen</span></div>
+  </div>
+</section>
+
+<!-- subtle divider -->
+<section style="padding: 64px 32px 32px;">
+  <div class="uui-container" style="padding: 0;">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto;">
+      <h2 class="t-display-sm" style="font-weight: 600; color: var(--color-text-primary);">from indie studios to listed companies</h2>
+      <p style="font-size: var(--text-md); color: var(--color-text-tertiary); margin-top: 12px;">no paid placements, no sponsorships — just organic adoption tracked via our public customer directory.</p>
+    </div>
+  </div>
+</section>
+
+<!-- categorised logo rows -->
+<section class="uui-container" style="padding: 32px;">
+  <div class="lc-category-row">
+    <div>
+      <span class="uui-badge uui-badge--brand"><span class="dot"></span>enterprise</span>
+      <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--color-text-primary); margin-top: 12px;">listed companies</h3>
+      <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 4px;">8 of our customers file on the nasdaq or lse.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: center;">
+      <div class="lc-mark"><span class="glyph">Mr</span><span class="name">meridian</span></div>
+      <div class="lc-mark"><span class="glyph">Nv</span><span class="name">novena</span></div>
+      <div class="lc-mark"><span class="glyph">Op</span><span class="name">opal</span></div>
+      <div class="lc-mark"><span class="glyph">Pm</span><span class="name">prism</span></div>
+    </div>
+  </div>
+
+  <div class="lc-category-row" style="margin-top: 24px;">
+    <div>
+      <span class="uui-badge uui-badge--purple"><span class="dot"></span>scale-ups</span>
+      <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--color-text-primary); margin-top: 12px;">series b+</h3>
+      <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 4px;">products between 50 and 500 people on a shared system.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: center;">
+      <div class="lc-mark"><span class="glyph">Qn</span><span class="name">quantum</span></div>
+      <div class="lc-mark"><span class="glyph">Rv</span><span class="name">revere</span></div>
+      <div class="lc-mark"><span class="glyph">Sg</span><span class="name">sage</span></div>
+      <div class="lc-mark"><span class="glyph">Tl</span><span class="name">tundra</span></div>
+    </div>
+  </div>
+
+  <div class="lc-category-row" style="margin-top: 24px;">
+    <div>
+      <span class="uui-badge uui-badge--success"><span class="dot"></span>indie</span>
+      <h3 style="font-size: var(--text-lg); font-weight: 600; color: var(--color-text-primary); margin-top: 12px;">bootstrapped studios</h3>
+      <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 4px;">two- to ten-person product teams shipping on the free tier.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: center;">
+      <div class="lc-mark"><span class="glyph">Um</span><span class="name">umbra</span></div>
+      <div class="lc-mark"><span class="glyph">Vt</span><span class="name">vantage</span></div>
+      <div class="lc-mark"><span class="glyph">Wh</span><span class="name">wharf</span></div>
+      <div class="lc-mark"><span class="glyph">Yn</span><span class="name">yonder</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- kpi strip with micro-brandmarks -->
+<section class="uui-container" style="padding: 96px 32px;">
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;">
+    <div class="lc-card">
+      <div class="lc-mark"><span class="glyph">Ax</span><span class="name">axiom</span></div>
+      <div class="kpi">+62%</div>
+      <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); text-align: center;">faster design-to-ship cadence</p>
+    </div>
+    <div class="lc-card">
+      <div class="lc-mark"><span class="glyph">Cn</span><span class="name">canopy</span></div>
+      <div class="kpi">$1.2M</div>
+      <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); text-align: center;">recovered engineering time / year</p>
+    </div>
+    <div class="lc-card">
+      <div class="lc-mark"><span class="glyph">Gl</span><span class="name">glacier</span></div>
+      <div class="kpi">3x</div>
+      <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); text-align: center;">pr review throughput</p>
+    </div>
+    <div class="lc-card">
+      <div class="lc-mark"><span class="glyph">Lu</span><span class="name">lumen</span></div>
+      <div class="kpi">&lt; 14d</div>
+      <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); text-align: center;">onboarding to production</p>
+    </div>
+  </div>
+</section>
+
+<!-- marquee scroll -->
+<section class="lc-marquee">
+  <div class="uui-container" style="padding: 0;">
+    <div style="text-align: center; margin-bottom: 32px;">
+      <span style="font-size: var(--text-sm); font-weight: 600; color: var(--color-text-quaternary); text-transform: uppercase; letter-spacing: 0.08em;">in production at</span>
+    </div>
+    <ul style="display: flex; gap: 64px; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; justify-content: center;">
+      <li class="lc-mark"><span class="glyph">Ax</span><span class="name">axiom</span></li>
+      <li class="lc-mark"><span class="glyph">Bp</span><span class="name">blueprint</span></li>
+      <li class="lc-mark"><span class="glyph">Cn</span><span class="name">canopy</span></li>
+      <li class="lc-mark"><span class="glyph">Dr</span><span class="name">draft</span></li>
+      <li class="lc-mark"><span class="glyph">Ev</span><span class="name">evergreen</span></li>
+      <li class="lc-mark"><span class="glyph">Fn</span><span class="name">fern</span></li>
+      <li class="lc-mark"><span class="glyph">Gl</span><span class="name">glacier</span></li>
+      <li class="lc-mark"><span class="glyph">Ha</span><span class="name">harbour</span></li>
+      <li class="lc-mark"><span class="glyph">Iv</span><span class="name">ivory</span></li>
+      <li class="lc-mark"><span class="glyph">Ju</span><span class="name">juniper</span></li>
+      <li class="lc-mark"><span class="glyph">Kr</span><span class="name">krate</span></li>
+      <li class="lc-mark"><span class="glyph">Lu</span><span class="name">lumen</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- tech stack integrations -->
+<section class="uui-container" style="padding: 96px 32px;">
+  <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
+    <span style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-brand-secondary);">integrations</span>
+    <h2 class="t-display-md" style="font-weight: 600; color: var(--color-text-primary); margin-top: 12px;">plays well with your stack</h2>
+  </div>
+  <div class="lc-stack">
+    <div class="stack-card">
+      <span class="count">design</span>
+      <span class="names">figma, sketch, penpot</span>
+    </div>
+    <div class="stack-card">
+      <span class="count">code</span>
+      <span class="names">react, vue, svelte, qwik</span>
+    </div>
+    <div class="stack-card">
+      <span class="count">source</span>
+      <span class="names">github, gitlab, bitbucket</span>
+    </div>
+    <div class="stack-card">
+      <span class="count">ci</span>
+      <span class="names">vercel, netlify, flightcontrol</span>
+    </div>
+    <div class="stack-card">
+      <span class="count">comms</span>
+      <span class="names">slack, linear, discord</span>
+    </div>
+    <div class="stack-card">
+      <span class="count">analytics</span>
+      <span class="names">posthog, mixpanel, amplitude</span>
+    </div>
+    <div class="stack-card">
+      <span class="count">auth</span>
+      <span class="names">auth0, clerk, workos</span>
+    </div>
+    <div class="stack-card">
+      <span class="count">storage</span>
+      <span class="names">r2, s3, cloudflare images</span>
+    </div>
+  </div>
+</section>
+
+<!-- press mentions -->
+<section style="background: var(--color-bg-secondary); padding: 64px 32px; border-top: 1px solid var(--color-border-secondary); border-bottom: 1px solid var(--color-border-secondary);">
+  <div class="uui-container" style="padding: 0; text-align: center;">
+    <span style="font-size: var(--text-sm); font-weight: 600; color: var(--color-text-quaternary); text-transform: uppercase; letter-spacing: 0.08em;">as seen in</span>
+    <div style="display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; align-items: center; margin-top: 24px;">
+      <span style="font-family: Georgia, serif; font-size: var(--text-xl); font-weight: 700; color: var(--color-text-tertiary);">the verge</span>
+      <span style="font-family: Georgia, serif; font-size: var(--text-xl); font-weight: 700; color: var(--color-text-tertiary); font-style: italic;">smashing mag</span>
+      <span style="font-family: var(--font-mono); font-size: var(--text-xl); font-weight: 700; color: var(--color-text-tertiary);">A.List</span>
+      <span style="font-family: Georgia, serif; font-size: var(--text-xl); font-weight: 700; color: var(--color-text-tertiary);">fast company</span>
+      <span style="font-family: Georgia, serif; font-size: var(--text-xl); font-weight: 700; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.08em;">wired</span>
+      <span style="font-family: Georgia, serif; font-size: var(--text-xl); font-weight: 700; color: var(--color-text-tertiary);">css-tricks</span>
+    </div>
+  </div>
+</section>
+
+<footer style="padding: 48px 32px; border-top: 1px solid var(--color-border-secondary); text-align: center; color: var(--color-text-tertiary); font-size: var(--text-sm);">
+  Untitled UI Pro — logo cloud template
+</footer>
+
+</body>
+</html>

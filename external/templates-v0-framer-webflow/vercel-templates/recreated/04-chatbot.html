@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vercel Chatbot</title>
+<link rel="stylesheet" href="../../_shared/dark-dashboard.css">
+<style></style>
+</head>
+<body class="">
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="brand-mark"></div><div class="brand-name">Vercel</div></div>
+<nav class="nav">
+  <div class="nav-group-label">Platform</div>
+  <div class="nav-item active"><span class="nav-icon"></span>Dashboard</div>
+  <div class="nav-item"><span class="nav-icon"></span>Deployments</div>
+  <div class="nav-item"><span class="nav-icon"></span>Functions</div>
+  <div class="nav-item"><span class="nav-icon"></span>Analytics</div>
+  <div class="nav-group-label">Team</div>
+  <div class="nav-item"><span class="nav-icon"></span>Members</div>
+  <div class="nav-item"><span class="nav-icon"></span>Tokens</div>
+  <div class="nav-item"><span class="nav-icon"></span>Webhooks</div>
+</nav>
+</aside>
+<div class="main">
+<div class="topbar">
+  <div class="row" style="gap:16px"><div class="h2">Vercel Chatbot</div></div>
+  <div class="row" style="gap:12px">
+    <div class="search"><input class="input" placeholder="Search..."></div>
+    <button class="btn btn-sm">+ New</button>
+    <div class="avatar">R</div>
+  </div>
+</div>
+<div class="content">
+<div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;height:calc(100vh - 96px)">
+  <div style="flex:1;overflow:auto;display:flex;flex-direction:column;gap:16px;padding:16px">
+    <div class="card" style="padding:16px"><div class="row" style="gap:8px;margin-bottom:4px"><span class="avatar" style="background:var(--accent)">R</span><b>You</b></div><div>What's the best way to ship a macOS app that uses Metal for rendering?</div></div>
+    <div class="card" style="padding:16px"><div class="row" style="gap:8px;margin-bottom:4px"><span class="avatar" style="background:linear-gradient(135deg,var(--purple),var(--pink))">A</span><b>Assistant</b></div>
+    <div>For shipping a macOS app with Metal, here are the essentials:
+      <ol style="margin-left:20px;margin-top:8px;font-size:13px">
+        <li>Use <code style="background:var(--bg-2);padding:1px 4px;border-radius:3px">MTLDevice</code> for GPU access</li>
+        <li>Enable Metal in Xcode capabilities</li>
+        <li>Target macOS 12+ for modern Metal features</li>
+        <li>Sign with Developer ID and notarise via altool</li>
+      </ol>
+      <div class="muted" style="font-size:11px;margin-top:12px">References: Apple Metal docs, WWDC 2023</div>
+    </div></div>
+    <div class="card" style="padding:16px"><div class="row" style="gap:8px;margin-bottom:4px"><span class="avatar" style="background:var(--accent)">R</span><b>You</b></div><div>What about GPU-family detection for broader device support?</div></div>
+  </div>
+  <div style="padding:16px;border-top:1px solid var(--line)"><div class="row" style="gap:8px;background:var(--bg-1);border:1px solid var(--line);border-radius:12px;padding:12px"><input class="input" style="flex:1;background:transparent;border:0" placeholder="Send a message..."><button class="btn btn-sm btn-primary">Send</button></div></div>
+</div>
+</div>
+</div></div>
+<div style="position:fixed;bottom:8px;right:8px;font-size:10px;color:var(--muted-2);background:var(--bg-1);padding:4px 8px;border-radius:4px;border:1px solid var(--line);font-family:var(--mono)">Recreation - inspired by Vercel (vercel.com/templates) - <a href="https://vercel.com/templates/next.js/chatbot" target="_blank" style="color:var(--muted-2)">source</a></div></body>
+</html>

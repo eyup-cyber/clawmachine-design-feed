@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2026 Life Planner</title>
+<link rel="stylesheet" href="../../_shared/dark-dashboard.css">
+<style>
+.notion { background: #1f1f1f; color: #e2e2e0; font-family: -apple-system, Inter, sans-serif; padding: 64px 96px; min-height: 100vh; max-width: 960px; margin: 0 auto; }
+.notion-hero { font-size: 40px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; display: flex; gap: 12px; align-items: center; }
+.notion-emoji { font-size: 44px; }
+.notion-description { color: #9b9b9b; margin-bottom: 32px; }
+.notion-h2 { font-size: 24px; font-weight: 600; margin: 48px 0 12px; display: flex; gap: 8px; align-items: center; }
+.notion-h3 { font-size: 18px; font-weight: 600; margin: 24px 0 8px; }
+.notion-callout { display: flex; gap: 12px; background: #2d2d2d; border-radius: 6px; padding: 16px; margin: 16px 0; }
+.notion-callout-icon { font-size: 20px; }
+.notion-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 16px 0; }
+.notion-col { background: #2a2a2a; border-radius: 6px; padding: 14px 16px; }
+.notion-col-title { color: #9b9b9b; font-size: 13px; margin-bottom: 6px; }
+.notion-table { width: 100%; border-collapse: collapse; margin: 16px 0; border: 1px solid #333; }
+.notion-table th, .notion-table td { border: 1px solid #333; padding: 10px 14px; text-align: left; font-size: 14px; }
+.notion-table th { background: #2a2a2a; color: #9b9b9b; font-weight: 500; font-size: 12px; }
+.notion-tag { background: rgba(200, 100, 50, 0.2); color: #e07848; border-radius: 4px; padding: 1px 8px; font-size: 12px; }
+.notion-tag-blue { background: rgba(68, 131, 237, 0.2); color: #6a96de; }
+.notion-tag-green { background: rgba(76, 175, 80, 0.2); color: #77aa7a; }
+.notion-tag-purple { background: rgba(168, 127, 203, 0.2); color: #a87fcb; }
+.notion-check { color: #6bb562; margin-right: 8px; }
+.notion-gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+.notion-card { background: #2a2a2a; border: 1px solid #333; border-radius: 6px; padding: 14px; }
+.notion-card-cover { background: linear-gradient(135deg, #4a5568, #2d3748); height: 80px; border-radius: 4px; margin-bottom: 10px; }
+.notion-p { margin: 8px 0; }
+.notion-divider { border-top: 1px solid #333; margin: 32px 0; }
+.notion-toggle { cursor: pointer; background: #262626; border-radius: 4px; padding: 8px 12px; margin: 4px 0; }
+</style>
+</head>
+<body class="">
+<div class="notion">
+  <div class="notion-hero"><span class="notion-emoji">[calendar]</span>2026 Life Planner</div>
+  <div class="notion-description">A Notion workspace template — recreated as HTML for research. Original by Notion Community.</div>
+
+  <div class="notion-callout"><div class="notion-callout-icon">[i]</div><div><b>How to use.</b> Duplicate this template to your workspace. Customise the databases for your own workflows. Every block here is optional — keep what works, delete the rest.</div></div>
+
+  <div class="notion-cols">
+    <div class="notion-col"><div class="notion-col-title">Owner</div><div>Regan C.</div></div>
+    <div class="notion-col"><div class="notion-col-title">Last updated</div><div>Apr 21, 2026</div></div>
+    <div class="notion-col"><div class="notion-col-title">Status</div><div><span class="notion-tag notion-tag-green">Active</span></div></div>
+    <div class="notion-col"><div class="notion-col-title">Template</div><div>v2.4</div></div>
+  </div>
+
+  <div class="notion-h2">[pin] Overview</div>
+  <div class="notion-p">This dashboard centralises the operational flows for 2026 life planner. Every database below is linked — changing a property in one reflects everywhere else.</div>
+
+  <div class="notion-h2">[sparkle] Key databases</div>
+  <table class="notion-table">
+    <thead><tr><th>Database</th><th>Purpose</th><th>Items</th><th>Last edit</th></tr></thead>
+    <tbody>
+      <tr><td>Items</td><td>Primary records</td><td>248</td><td>Today</td></tr>
+      <tr><td>Status</td><td>Workflow states</td><td>6</td><td>Apr 12</td></tr>
+      <tr><td>People</td><td>Contacts & assignees</td><td>14</td><td>Apr 18</td></tr>
+      <tr><td>Notes</td><td>Linked docs</td><td>42</td><td>Today</td></tr>
+      <tr><td>Archive</td><td>Closed items</td><td>1,284</td><td>Apr 20</td></tr>
+    </tbody>
+  </table>
+
+  <div class="notion-h2">[table] Active items</div>
+  <table class="notion-table">
+    <thead><tr><th>Name</th><th>Status</th><th>Owner</th><th>Priority</th><th>Due</th></tr></thead>
+    <tbody>
+      <tr><td>First entry for 2026 flow</td><td><span class="notion-tag notion-tag-green">In progress</span></td><td>Regan</td><td><span class="notion-tag">High</span></td><td>Apr 25</td></tr>
+      <tr><td>Second tracked item with longer name</td><td><span class="notion-tag notion-tag-blue">Queued</span></td><td>Aria</td><td><span class="notion-tag notion-tag-purple">Med</span></td><td>Apr 28</td></tr>
+      <tr><td>Third item requiring review</td><td><span class="notion-tag">To do</span></td><td>Kai</td><td><span class="notion-tag">High</span></td><td>Apr 30</td></tr>
+      <tr><td>Fourth item — awaiting approval</td><td><span class="notion-tag notion-tag-green">In progress</span></td><td>Mara</td><td><span class="notion-tag notion-tag-purple">Low</span></td><td>May 02</td></tr>
+      <tr><td>Fifth item — blocked on dependency</td><td><span class="notion-tag">Blocked</span></td><td>Regan</td><td><span class="notion-tag">High</span></td><td>May 05</td></tr>
+      <tr><td>Sixth entry — new this week</td><td><span class="notion-tag notion-tag-blue">Queued</span></td><td>Aria</td><td><span class="notion-tag notion-tag-purple">Med</span></td><td>May 08</td></tr>
+    </tbody>
+  </table>
+
+  <div class="notion-h2">[gallery] Gallery view</div>
+  <div class="notion-gallery">
+<div class="notion-card"><div class="notion-card-cover"></div><b>Item 1</b><div style="color:#9b9b9b;font-size:12px;margin-top:4px">Short description of card 1</div></div><div class="notion-card"><div class="notion-card-cover"></div><b>Item 2</b><div style="color:#9b9b9b;font-size:12px;margin-top:4px">Short description of card 2</div></div><div class="notion-card"><div class="notion-card-cover"></div><b>Item 3</b><div style="color:#9b9b9b;font-size:12px;margin-top:4px">Short description of card 3</div></div><div class="notion-card"><div class="notion-card-cover"></div><b>Item 4</b><div style="color:#9b9b9b;font-size:12px;margin-top:4px">Short description of card 4</div></div><div class="notion-card"><div class="notion-card-cover"></div><b>Item 5</b><div style="color:#9b9b9b;font-size:12px;margin-top:4px">Short description of card 5</div></div><div class="notion-card"><div class="notion-card-cover"></div><b>Item 6</b><div style="color:#9b9b9b;font-size:12px;margin-top:4px">Short description of card 6</div></div><div class="notion-card"><div class="notion-card-cover"></div><b>Item 7</b><div style="color:#9b9b9b;font-size:12px;margin-top:4px">Short description of card 7</div></div><div class="notion-card"><div class="notion-card-cover"></div><b>Item 8</b><div style="color:#9b9b9b;font-size:12px;margin-top:4px">Short description of card 8</div></div>
+  </div>
+
+  <div class="notion-h2">[check] Weekly checklist</div>
+  <div class="notion-p"><span class="notion-check">✓</span>Review items due this week</div>
+  <div class="notion-p"><span class="notion-check">✓</span>Triage new entries</div>
+  <div class="notion-p"><span class="notion-check">✓</span>Archive completed items older than 30 days</div>
+  <div class="notion-p" style="color:#9b9b9b">☐ Send weekly summary to team</div>
+  <div class="notion-p" style="color:#9b9b9b">☐ Plan next week&rsquo;s priorities</div>
+  <div class="notion-p" style="color:#9b9b9b">☐ 1:1 with direct reports</div>
+
+  <div class="notion-h2">[toggle] Linked pages</div>
+  <div class="notion-toggle">▸ Getting started guide</div>
+  <div class="notion-toggle">▸ Automations reference</div>
+  <div class="notion-toggle">▸ Weekly review template</div>
+  <div class="notion-toggle">▸ Quarterly planning template</div>
+
+  <div class="notion-divider"></div>
+  <div style="color:#5a5a5a;font-size:12px">Template recreated for research. Original by Notion Community. Source: <a href="https://notion.so/templates/life-planner-dashboard" style="color:#5a5a5a">https://notion.so/templates/life-planner-dashboard</a></div>
+</div>
+</body>
+</html>

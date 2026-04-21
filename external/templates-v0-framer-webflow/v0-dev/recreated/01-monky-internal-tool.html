@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>M.O.N.K.Y — Internal Tool</title>
+<link rel="stylesheet" href="../../_shared/dark-dashboard.css">
+<style></style>
+</head>
+<body class="">
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="brand-mark"></div><div class="brand-name">CLAWMACHINE</div></div>
+<nav class="nav">
+  <div class="nav-group-label">Workstation</div>
+  <div class="nav-item active"><span class="nav-icon"></span>Dashboard</div>
+  <div class="nav-item"><span class="nav-icon"></span>Chat</div>
+  <div class="nav-item"><span class="nav-icon"></span>Repairs</div>
+  <div class="nav-item"><span class="nav-icon"></span>Inventory</div>
+  <div class="nav-item"><span class="nav-icon"></span>Orders</div>
+  <div class="nav-group-label">Admin</div>
+  <div class="nav-item"><span class="nav-icon"></span>Users</div>
+  <div class="nav-item"><span class="nav-icon"></span>Settings</div>
+</nav>
+</aside>
+<div class="main">
+<div class="topbar">
+  <div class="row" style="gap:16px"><div class="h2">M.O.N.K.Y — Internal Tool</div></div>
+  <div class="row" style="gap:12px">
+    <div class="search"><input class="input" placeholder="Search..."></div>
+    <button class="btn btn-sm">+ New</button>
+    <div class="avatar">R</div>
+  </div>
+</div>
+<div class="content">
+<div class="grid grid-4">
+  <div class="kpi">
+  <div class="kpi-label">Active repairs</div>
+  <div class="kpi-value num">247</div>
+  <div class="kpi-delta ">+12 this week</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">In queue</div>
+  <div class="kpi-value num">18</div>
+  <div class="kpi-delta down">-3 vs yesterday</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Avg cycle time</div>
+  <div class="kpi-value num">2.4 d</div>
+  <div class="kpi-delta ">-0.3 d</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Revenue today</div>
+  <div class="kpi-value num">£4,128</div>
+  <div class="kpi-delta ">+8%</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+</div>
+<div class="grid" style="grid-template-columns: 2fr 1fr; gap:16px">
+  <div class="card">
+    <div class="card-hd"><div class="card-title">Active workstreams</div><div class="row" style="gap:8px"><button class="btn btn-sm">Filter</button><button class="btn btn-sm btn-primary">+ Task</button></div></div>
+    <table class="table"><thead><tr><th>Ticket</th><th>Device</th><th>Assignee</th><th>Status</th><th>Cycle</th></tr></thead><tbody><tr><td>CM-2041</td><td>iPhone 13 screen</td><td>Regan</td><td><span class="badge badge-good"><span class="dot"></span>In progress</span></td><td>1.2 d</td></tr><tr><td>CM-2040</td><td>MacBook Air 2020 — battery</td><td>Aria</td><td><span class="badge badge-warn"><span class="dot"></span>Parts wait</span></td><td>3.1 d</td></tr><tr><td>CM-2039</td><td>iPad Pro 11 — glass</td><td>Regan</td><td><span class="badge badge-good"><span class="dot"></span>In progress</span></td><td>0.4 d</td></tr><tr><td>CM-2038</td><td>Galaxy S23 — charging</td><td>Kai</td><td><span class="badge"><span class="dot"></span>Queued</span></td><td>0.0 d</td></tr><tr><td>CM-2037</td><td>Pixel 7 — water damage</td><td>Aria</td><td><span class="badge badge-bad"><span class="dot"></span>Blocked</span></td><td>4.8 d</td></tr><tr><td>CM-2036</td><td>Switch OLED — joystick</td><td>Regan</td><td><span class="badge badge-good"><span class="dot"></span>QA</span></td><td>1.8 d</td></tr></tbody></table>
+  </div>
+  <div class="card">
+    <div class="card-hd"><div class="card-title">Team chat</div><span class="badge">3 online</span></div>
+    <div class="list" style="font-size:13px">
+      <div><span class="avatar" style="display:inline-flex;margin-right:8px;vertical-align:middle">A</span><b>Aria</b> &middot; parts for CM-2040 arrive Tue</div>
+      <div><span class="avatar" style="background:linear-gradient(135deg,var(--teal),var(--accent));display:inline-flex;margin-right:8px;vertical-align:middle">K</span><b>Kai</b> &middot; re-soldering 3 boards before lunch</div>
+      <div><span class="avatar" style="background:linear-gradient(135deg,var(--pink),var(--purple));display:inline-flex;margin-right:8px;vertical-align:middle">M</span><b>Mara</b> &middot; Vinted batch listed, 42 items</div>
+      <div class="muted">Regan is typing...</div>
+    </div>
+    <div class="mt-4" style="display:flex;gap:8px"><input class="input" style="flex:1" placeholder="Message team..."><button class="btn btn-primary btn-sm">Send</button></div>
+  </div>
+</div>
+</div>
+</div></div>
+<div style="position:fixed;bottom:8px;right:8px;font-size:10px;color:var(--muted-2);background:var(--bg-1);padding:4px 8px;border-radius:4px;border:1px solid var(--line);font-family:var(--mono)">Recreation - inspired by joyco (v0.app) - <a href="https://v0.app/templates/b7GDYVxuoGC" target="_blank" style="color:var(--muted-2)">source</a></div></body>
+</html>

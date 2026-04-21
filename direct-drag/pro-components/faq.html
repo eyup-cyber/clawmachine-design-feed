@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FAQ — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="../design.css">
+<style>
+  details { border-bottom: 1px solid var(--color-border-secondary); padding: 24px 0; }
+  details:first-of-type { border-top: 1px solid var(--color-border-secondary); }
+  details summary { list-style: none; cursor: pointer; display: flex; align-items: flex-start; justify-content: space-between; gap: 24px; font-size: var(--text-lg); font-weight: 600; color: var(--color-text-primary); }
+  details summary::-webkit-details-marker { display: none; }
+  details summary::after { content: ""; width: 24px; height: 24px; flex-shrink: 0; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") center/contain no-repeat; transition: transform .2s; }
+  details[open] summary::after { transform: rotate(180deg); }
+  details .body { font-size: var(--text-md); color: var(--color-text-tertiary); margin: 12px 0 0; line-height: 1.55; }
+  .faq-nav-btn { justify-content: flex-start !important; width: 100%; }
+  .faq-tile { padding: 32px; border-radius: var(--radius-2xl); background: var(--color-bg-primary); box-shadow: inset 0 0 0 1px var(--color-border-secondary); }
+  .faq-topic-card { padding: 24px; border-radius: var(--radius-xl); background: var(--color-bg-primary); box-shadow: inset 0 0 0 1px var(--color-border-secondary); display: flex; gap: 16px; align-items: flex-start; }
+</style>
+</head>
+<body>
+
+<header style="padding: 20px 32px; border-bottom: 1px solid var(--color-border-secondary); background: var(--color-bg-primary);">
+  <div class="uui-container" style="padding: 0; display: flex; justify-content: space-between; align-items: center;">
+    <a href="#" class="uui-row gap-2 items-center" style="text-decoration: none;">
+      <svg width="32" height="32" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="var(--color-brand-600)"/><path d="M10 11h12M10 16h9M10 21h6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      <span style="font-weight: 600; color: var(--color-text-primary);">Untitled UI</span>
+    </a>
+    <nav class="uui-row gap-1">
+      <a class="uui-btn uui-btn--tertiary uui-btn--md">Product</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md">Docs</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md">Help</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md">Pricing</a>
+    </nav>
+    <a href="#" class="uui-btn uui-btn--primary uui-btn--md">Sign in</a>
+  </div>
+</header>
+
+<!-- page intro -->
+<section class="uui-container" style="padding: 96px 32px 48px; text-align: center;">
+  <span style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-brand-secondary);">help centre</span>
+  <h1 class="t-display-lg" style="font-weight: 600; color: var(--color-text-primary); margin-top: 12px;">frequently asked questions</h1>
+  <p style="font-size: var(--text-lg); color: var(--color-text-tertiary); margin-top: 16px; max-width: 640px; margin-left: auto; margin-right: auto;">everything you need to know before you buy, plus the stuff people ask during onboarding.</p>
+  <div class="uui-input uui-input--lg" style="max-width: 480px; margin: 32px auto 0;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="search" placeholder="search the help centre">
+  </div>
+</section>
+
+<!-- accordion 8-item (primary) -->
+<section class="uui-container" style="padding: 32px; display: grid; grid-template-columns: 1fr 2fr; gap: 64px;">
+  <div>
+    <h2 class="t-display-sm" style="font-weight: 600; color: var(--color-text-primary);">billing &amp; account</h2>
+    <p style="font-size: var(--text-md); color: var(--color-text-tertiary); margin-top: 16px;">the questions people ask most about plans, exports, and cancellation.</p>
+    <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 8px;">
+      <a class="uui-btn uui-btn--secondary uui-btn--md faq-nav-btn">billing</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md faq-nav-btn">security</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md faq-nav-btn">integrations</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md faq-nav-btn">support</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md faq-nav-btn">api &amp; sdk</a>
+    </div>
+    <div class="uui-alert" style="margin-top: 32px;">
+      <span class="uui-ficon uui-ficon--sm uui-ficon--brand-light"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></span>
+      <div class="body">
+        <div class="title">can't find it?</div>
+        <p style="font-size: var(--text-sm);">the docs site has 400+ articles indexed by search.</p>
+        <div class="actions">
+          <a class="uui-btn uui-btn--link-color uui-btn--sm">browse docs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <details open>
+      <summary>can i change plans at any time?</summary>
+      <p class="body">any change takes effect at the start of the next billing cycle. prorated credit is applied automatically for mid-cycle upgrades; downgrades keep the current tier until the cycle ends so you don't lose paid-for days.</p>
+    </details>
+    <details open>
+      <summary>do you offer a free trial?</summary>
+      <p class="body">every plan includes a 14-day trial, no card required. at the end of the trial you can pick a paid plan, stay on the free tier, or walk away with no data loss — exports are available for 30 days after cancellation.</p>
+    </details>
+    <details>
+      <summary>is my data encrypted in transit and at rest?</summary>
+      <p class="body">yes. all data moves over tls 1.3 and is stored encrypted with aes-256. enterprise workspaces can add customer-managed keys (cmek) and per-region data residency (eu-west, us-east, ap-southeast).</p>
+    </details>
+    <details>
+      <summary>how do exports work?</summary>
+      <p class="body">everything exports: design tokens as css / tailwind / style dictionary, components as html / react / vue, assets as png / webp / avif, and your whole workspace as a json archive you can import elsewhere.</p>
+    </details>
+    <details>
+      <summary>do you support single sign-on?</summary>
+      <p class="body">saml and oidc are available on the team plan. scim 2.0 user provisioning ships with enterprise. tested against okta, jumpcloud, google workspace, entra id, and auth0.</p>
+    </details>
+    <details>
+      <summary>can i self-host?</summary>
+      <p class="body">self-hosted deployments are available to enterprise customers with a signed msa. the package runs on kubernetes 1.27+ and includes its own postgres, object store, and redis layers. estimated install time is half a day with a dedicated devops engineer.</p>
+    </details>
+    <details open>
+      <summary>what happens if i cancel?</summary>
+      <p class="body">your workspace stays accessible in a read-only state for 30 days. during that window you can export, invite a new owner, or re-subscribe without losing history. after 30 days the workspace is permanently deleted.</p>
+    </details>
+    <details>
+      <summary>is there a non-profit discount?</summary>
+      <p class="body">yes — a 50% discount applies to registered 501(c)(3) organisations and the uk / eu equivalents. send a link to your charity registration and we'll verify within one business day.</p>
+    </details>
+  </div>
+</section>
+
+<!-- 3-column grid-FAQ variant -->
+<section style="background: var(--color-bg-secondary); padding: 96px 32px; border-top: 1px solid var(--color-border-secondary); border-bottom: 1px solid var(--color-border-secondary); margin-top: 96px;">
+  <div class="uui-container" style="padding: 0;">
+    <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
+      <span style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-brand-secondary);">quick answers</span>
+      <h2 class="t-display-md" style="font-weight: 600; color: var(--color-text-primary); margin-top: 12px;">short answers to common questions</h2>
+      <p style="color: var(--color-text-tertiary); margin-top: 16px;">the top-nine clicked questions in the last 30 days.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+      <div class="faq-tile">
+        <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+        <h3 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary); margin-top: 20px;">how fast is the search?</h3>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">p95 latency under 80ms, measured continuously in production and published on the status page.</p>
+      </div>
+      <div class="faq-tile">
+        <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+        <h3 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary); margin-top: 20px;">is it soc 2 audited?</h3>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">soc 2 type ii report available under nda. iso 27001 in flight, target completion q3.</p>
+      </div>
+      <div class="faq-tile">
+        <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>
+        <h3 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary); margin-top: 20px;">eu data residency?</h3>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">yes — enterprise can pin storage and processing to eu-west only. auditable via a single workspace flag.</p>
+      </div>
+      <div class="faq-tile">
+        <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+        <h3 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary); margin-top: 20px;">open api?</h3>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">rest and graphql documented with openapi 3.1. sdks in typescript, python, go, and ruby.</p>
+      </div>
+      <div class="faq-tile">
+        <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+        <h3 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary); margin-top: 20px;">team plan minimum?</h3>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">five seats minimum. additional seats prorate to the day, added or removed from the dashboard.</p>
+      </div>
+      <div class="faq-tile">
+        <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 15h6M9 12h6"/></svg></span>
+        <h3 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary); margin-top: 20px;">figma → code roundtrip?</h3>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">token updates in figma open a pr in code. token updates in code push back into figma styles.</p>
+      </div>
+      <div class="faq-tile">
+        <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <h3 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary); margin-top: 20px;">annual discount?</h3>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">17% off when billed annually. switch at any time from the billing page.</p>
+      </div>
+      <div class="faq-tile">
+        <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <h3 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary); margin-top: 20px;">support response time?</h3>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">under 4 hours on team, under 1 hour on enterprise, with dedicated slack channel on the top tier.</p>
+      </div>
+      <div class="faq-tile">
+        <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><circle cx="12" cy="12" r="10"/><polyline points="10 8 16 12 10 16"/></svg></span>
+        <h3 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary); margin-top: 20px;">migration help?</h3>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 8px;">white-glove migration from zeroheight, storybook, or a figma-only workflow is included on enterprise.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- topic navigator -->
+<section class="uui-container" style="padding: 96px 32px;">
+  <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
+    <h2 class="t-display-sm" style="font-weight: 600; color: var(--color-text-primary);">browse by topic</h2>
+    <p style="color: var(--color-text-tertiary); margin-top: 12px;">pick the area your question belongs to.</p>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+    <a href="#" class="faq-topic-card">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+      <div>
+        <h4 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary);">billing</h4>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 4px;">plans, invoices, refunds.</p>
+      </div>
+    </a>
+    <a href="#" class="faq-topic-card">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+      <div>
+        <h4 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary);">security</h4>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 4px;">sso, audit, compliance.</p>
+      </div>
+    </a>
+    <a href="#" class="faq-topic-card">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 15h6"/></svg></span>
+      <div>
+        <h4 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary);">integrations</h4>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 4px;">figma, slack, ci.</p>
+      </div>
+    </a>
+    <a href="#" class="faq-topic-card">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+      <div>
+        <h4 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary);">support</h4>
+        <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 4px;">response times, channels.</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- contact strip -->
+<section class="uui-container" style="padding: 0 32px 96px;">
+  <div class="uui-card" style="padding: 40px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; background: var(--color-bg-brand-section); color: #fff; box-shadow: none;">
+    <div>
+      <h3 style="font-size: var(--text-display-sm); font-weight: 600;">still stuck?</h3>
+      <p style="font-size: var(--text-md); color: rgba(255,255,255,0.8); margin-top: 8px;">a human reads every support ticket. median response time under 2 hours.</p>
+    </div>
+    <div class="uui-row gap-3">
+      <a class="uui-btn uui-btn--secondary uui-btn--lg">browse docs</a>
+      <a class="uui-btn uui-btn--primary uui-btn--lg" style="background: #fff; color: var(--color-text-primary);">contact support</a>
+    </div>
+  </div>
+</section>
+
+<footer style="padding: 48px 32px; border-top: 1px solid var(--color-border-secondary); text-align: center; color: var(--color-text-tertiary); font-size: var(--text-sm);">
+  Untitled UI Pro — faq template
+</footer>
+
+</body>
+</html>

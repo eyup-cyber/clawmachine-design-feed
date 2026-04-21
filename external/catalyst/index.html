@@ -1,102 +1,37 @@
 <!doctype html>
-<html lang="en" class="antialiased">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catalyst UI Kit — Clawmachine external reference</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-    html { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
-    .grid-card { transition: border-color .15s; }
-    .grid-card:hover { border-color: rgba(9,9,11,.2); }
-  </style>
-</head>
-<body class="bg-white text-zinc-950 dark:bg-zinc-900 dark:text-white">
-  <main class="mx-auto max-w-5xl px-6 py-12">
-    <header class="mb-10 border-b border-zinc-950/10 pb-6 dark:border-white/10">
-      <p class="text-xs font-medium uppercase tracking-wide text-zinc-500">External reference</p>
-      <h1 class="mt-1 text-3xl font-semibold">Catalyst UI Kit</h1>
-      <p class="mt-3 max-w-2xl text-sm text-zinc-500 dark:text-zinc-400">
-        Scraped public API (<a class="underline" href="https://catalyst.tailwindui.com/docs">catalyst.tailwindui.com/docs</a>) + clean-room TSX reconstructions. Reference only — see <code class="rounded border border-zinc-950/10 bg-zinc-950/[0.025] px-0.5 text-[0.8125rem]">LICENSE_NOTE.md</code>.
-      </p>
-    </header>
-
-    <section class="mb-10">
-      <h2 class="text-sm font-semibold uppercase tracking-wide text-zinc-500">Contents</h2>
-      <ul class="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3">
-        <li class="grid-card rounded-lg border border-zinc-950/10 p-3 dark:border-white/10"><div class="text-sm font-medium">sourced/</div><div class="text-xs text-zinc-500">25 scraped API pages</div></li>
-        <li class="grid-card rounded-lg border border-zinc-950/10 p-3 dark:border-white/10"><div class="text-sm font-medium">components/</div><div class="text-xs text-zinc-500">Reconstructed TSX</div></li>
-        <li class="grid-card rounded-lg border border-zinc-950/10 p-3 dark:border-white/10"><div class="text-sm font-medium">tokens.json</div><div class="text-xs text-zinc-500">Design tokens</div></li>
-      </ul>
-    </section>
-
-    <section class="mb-10 grid gap-6 md:grid-cols-2">
-      <div>
-        <h2 class="text-sm font-semibold uppercase tracking-wide text-zinc-500">Forms</h2>
-        <ul class="mt-3 space-y-1 text-sm">
-          <li>• Button (3 styles × 23 colors)</li>
-          <li>• Input · InputGroup</li>
-          <li>• Textarea</li>
-          <li>• Select (native) · Listbox (Headless) · Combobox (Headless+filter)</li>
-          <li>• Checkbox / CheckboxField / CheckboxGroup</li>
-          <li>• Radio / RadioField / RadioGroup</li>
-          <li>• Switch / SwitchField / SwitchGroup</li>
-          <li>• Fieldset / Legend / FieldGroup / Field / Label / Description / ErrorMessage</li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-sm font-semibold uppercase tracking-wide text-zinc-500">Navigation &amp; overlays</h2>
-        <ul class="mt-3 space-y-1 text-sm">
-          <li>• Navbar · NavbarSection · NavbarSpacer · NavbarDivider · NavbarItem</li>
-          <li>• Sidebar · SidebarHeader · SidebarBody · SidebarFooter · SidebarSection · SidebarSpacer · SidebarHeading · SidebarDivider · SidebarItem</li>
-          <li>• Dropdown (Menu) · Items · Section · Heading · Label · Description · Shortcut · Header · Divider</li>
-          <li>• Pagination · Previous · Next · List · Page · Gap</li>
-          <li>• Dialog · Alert · Title · Description · Body · Actions</li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-sm font-semibold uppercase tracking-wide text-zinc-500">Data display</h2>
-        <ul class="mt-3 space-y-1 text-sm">
-          <li>• Table (bleed / dense / grid / striped)</li>
-          <li>• DescriptionList · Term · Details</li>
-          <li>• Avatar · AvatarButton (src / initials / square)</li>
-          <li>• Badge (18 colors) · BadgeButton</li>
-          <li>• Heading · Subheading (level 1–6)</li>
-          <li>• Text · TextLink · Strong · Code</li>
-          <li>• Divider (soft)</li>
-        </ul>
-      </div>
-
-      <div>
-        <h2 class="text-sm font-semibold uppercase tracking-wide text-zinc-500">Layouts</h2>
-        <ul class="mt-3 space-y-1 text-sm">
-          <li>• SidebarLayout (mobile drawer + desktop rail)</li>
-          <li>• StackedLayout (horizontal nav + mobile drawer)</li>
-          <li>• AuthLayout (centered form)</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="mb-10">
-      <h2 class="text-sm font-semibold uppercase tracking-wide text-zinc-500">Design tokens</h2>
-      <div class="mt-4 rounded-lg border border-zinc-950/10 p-4 dark:border-white/10">
-        <dl class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm">
-          <dt class="text-zinc-500">Font</dt><dd>Inter + feature settings <code class="rounded border border-zinc-950/10 bg-zinc-950/[0.025] px-0.5 text-xs">cv02 cv03 cv04 cv11</code></dd>
-          <dt class="text-zinc-500">Radius (input/btn)</dt><dd>0.625rem (lg)</dd>
-          <dt class="text-zinc-500">Adaptive colors</dt><dd>dark/zinc · light · dark/white</dd>
-          <dt class="text-zinc-500">Solid palette</dt><dd>20 colors (red→rose)</dd>
-          <dt class="text-zinc-500">Focus ring</dt><dd>2px blue-500, 2px offset</dd>
-          <dt class="text-zinc-500">Touch target</dt><dd>2.75rem minimum</dd>
-        </dl>
-      </div>
-    </section>
-
-    <footer class="mt-16 border-t border-zinc-950/10 pt-6 text-xs text-zinc-500 dark:border-white/10">
-      Scraped 2026-04-21 · Catalyst is a paid product of Tailwind Labs. This folder contains scraped public docs + independent reconstructions for internal reference only. See LICENSE_NOTE.md.
-    </footer>
-  </main>
-</body>
-</html>
+<html lang="en"><head>
+<meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Catalyst — gallery</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+<style>html{ font-family: 'Inter', sans-serif; }</style>
+</head><body class="bg-gray-50 antialiased text-gray-900">
+<div class="mx-auto max-w-6xl px-6 py-12">
+  <header>
+    <h1 class="text-3xl font-bold text-gray-900">Catalyst — gallery</h1>
+    <p class="mt-2 text-sm text-gray-600">Clean-room Catalyst-aesthetic TSX components + docs scrapes. See <a href="LICENSE_NOTE.md" class="text-indigo-600 underline">LICENSE_NOTE.md</a>.</p>
+  </header>
+  
+<section class="mt-10">
+  <h2 class="text-xl font-semibold text-gray-900">Components</h2>
+  <p class="text-sm text-gray-500 mt-1">30 files</p>
+  <ul class="mt-4 grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3 rounded-lg bg-white shadow-xs ring-1 ring-gray-200 p-2"><li><a href="components/LICENSE_NOTE.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">LICENSE_NOTE.md</a></li><li><a href="components/alert.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">alert.tsx</a></li><li><a href="components/auth-layout.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">auth-layout.tsx</a></li><li><a href="components/avatar.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">avatar.tsx</a></li><li><a href="components/badge.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">badge.tsx</a></li><li><a href="components/button.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">button.tsx</a></li><li><a href="components/checkbox.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">checkbox.tsx</a></li><li><a href="components/combobox.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">combobox.tsx</a></li><li><a href="components/description-list.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">description-list.tsx</a></li><li><a href="components/dialog.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">dialog.tsx</a></li><li><a href="components/divider.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">divider.tsx</a></li><li><a href="components/dropdown.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">dropdown.tsx</a></li><li><a href="components/fieldset.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">fieldset.tsx</a></li><li><a href="components/heading.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">heading.tsx</a></li><li><a href="components/input.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">input.tsx</a></li><li><a href="components/link.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">link.tsx</a></li><li><a href="components/listbox.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">listbox.tsx</a></li><li><a href="components/navbar.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">navbar.tsx</a></li><li><a href="components/pagination.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">pagination.tsx</a></li><li><a href="components/radio.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">radio.tsx</a></li><li><a href="components/select.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">select.tsx</a></li><li><a href="components/sheet.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">sheet.tsx</a></li><li><a href="components/sidebar-layout.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">sidebar-layout.tsx</a></li><li><a href="components/sidebar.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">sidebar.tsx</a></li><li><a href="components/stacked-layout.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">stacked-layout.tsx</a></li><li><a href="components/switch.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">switch.tsx</a></li><li><a href="components/table.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">table.tsx</a></li><li><a href="components/text.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">text.tsx</a></li><li><a href="components/textarea.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">textarea.tsx</a></li><li><a href="components/toast.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">toast.tsx</a></li></ul>
+</section>
+<section class="mt-10">
+  <h2 class="text-xl font-semibold text-gray-900">Templates</h2>
+  <p class="text-sm text-gray-500 mt-1">4 files</p>
+  <ul class="mt-4 grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3 rounded-lg bg-white shadow-xs ring-1 ring-gray-200 p-2"><li><a href="templates/LICENSE_NOTE.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">LICENSE_NOTE.md</a></li><li><a href="templates/dashboard.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">dashboard.tsx</a></li><li><a href="templates/settings.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">settings.tsx</a></li><li><a href="templates/signin.tsx" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">signin.tsx</a></li></ul>
+</section>
+<section class="mt-10">
+  <h2 class="text-xl font-semibold text-gray-900">Sourced</h2>
+  <p class="text-sm text-gray-500 mt-1">27 files</p>
+  <ul class="mt-4 grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3 rounded-lg bg-white shadow-xs ring-1 ring-gray-200 p-2"><li><a href="sourced/LICENSE_NOTE.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">LICENSE_NOTE.md</a></li><li><a href="sourced/alert.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">alert.md</a></li><li><a href="sourced/auth-layout.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">auth-layout.md</a></li><li><a href="sourced/avatar.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">avatar.md</a></li><li><a href="sourced/badge.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">badge.md</a></li><li><a href="sourced/button.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">button.md</a></li><li><a href="sourced/checkbox.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">checkbox.md</a></li><li><a href="sourced/combobox.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">combobox.md</a></li><li><a href="sourced/description-list.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">description-list.md</a></li><li><a href="sourced/dialog.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">dialog.md</a></li><li><a href="sourced/divider.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">divider.md</a></li><li><a href="sourced/dropdown.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">dropdown.md</a></li><li><a href="sourced/fieldset.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">fieldset.md</a></li><li><a href="sourced/heading.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">heading.md</a></li><li><a href="sourced/input.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">input.md</a></li><li><a href="sourced/listbox.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">listbox.md</a></li><li><a href="sourced/navbar.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">navbar.md</a></li><li><a href="sourced/pagination.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">pagination.md</a></li><li><a href="sourced/radio.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">radio.md</a></li><li><a href="sourced/select.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">select.md</a></li><li><a href="sourced/sidebar-layout.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">sidebar-layout.md</a></li><li><a href="sourced/sidebar.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">sidebar.md</a></li><li><a href="sourced/stacked-layout.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">stacked-layout.md</a></li><li><a href="sourced/switch.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">switch.md</a></li><li><a href="sourced/table.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">table.md</a></li><li><a href="sourced/text.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">text.md</a></li><li><a href="sourced/textarea.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">textarea.md</a></li></ul>
+</section>
+<section class="mt-10">
+  <h2 class="text-xl font-semibold text-gray-900">Demos</h2>
+  <p class="text-sm text-gray-500 mt-1">1 files</p>
+  <ul class="mt-4 grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3 rounded-lg bg-white shadow-xs ring-1 ring-gray-200 p-2"><li><a href="demos/LICENSE_NOTE.md" target="_blank" class="block rounded-md px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 font-mono text-xs">LICENSE_NOTE.md</a></li></ul>
+</section>
+  <footer class="mt-20 border-t border-gray-200 pt-6 text-xs text-gray-500">consolidate/claude-design-feed · 2026-04-21</footer>
+</div>
+</body></html>

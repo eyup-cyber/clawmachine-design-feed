@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Research Agent</title>
+<link rel="stylesheet" href="../../_shared/dark-dashboard.css">
+<style></style>
+</head>
+<body class="">
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="brand-mark"></div><div class="brand-name">Vercel</div></div>
+<nav class="nav">
+  <div class="nav-group-label">Platform</div>
+  <div class="nav-item active"><span class="nav-icon"></span>Dashboard</div>
+  <div class="nav-item"><span class="nav-icon"></span>Deployments</div>
+  <div class="nav-item"><span class="nav-icon"></span>Functions</div>
+  <div class="nav-item"><span class="nav-icon"></span>Analytics</div>
+  <div class="nav-group-label">Team</div>
+  <div class="nav-item"><span class="nav-icon"></span>Members</div>
+  <div class="nav-item"><span class="nav-icon"></span>Tokens</div>
+  <div class="nav-item"><span class="nav-icon"></span>Webhooks</div>
+</nav>
+</aside>
+<div class="main">
+<div class="topbar">
+  <div class="row" style="gap:16px"><div class="h2">AI Research Agent</div></div>
+  <div class="row" style="gap:12px">
+    <div class="search"><input class="input" placeholder="Search..."></div>
+    <button class="btn btn-sm">+ New</button>
+    <div class="avatar">R</div>
+  </div>
+</div>
+<div class="content">
+<div class="grid" style="grid-template-columns:1fr 1fr 1fr;gap:16px">
+  <div class="card"><div class="card-hd"><div class="card-title">Browser 1 — arxiv.org</div><span class="badge badge-good">active</span></div><div style="background:var(--bg-2);padding:20px;min-height:280px;border-radius:8px;font-family:var(--mono);font-size:11px;color:var(--muted);white-space:pre-wrap">Reading: Llemma — an open language model for mathematics (2310.10631)...
+
+abstract: We present Llemma, a large language model for mathematics...
+
+extracting citations...
+[32/148] parsed</div></div>
+  <div class="card"><div class="card-hd"><div class="card-title">Browser 2 — semanticscholar.org</div><span class="badge badge-good">active</span></div><div style="background:var(--bg-2);padding:20px;min-height:280px;border-radius:8px;font-family:var(--mono);font-size:11px;color:var(--muted);white-space:pre-wrap">Querying: "open-source math LLMs 2024"...
+
+found 241 results.
+ranked by citation count.
+fetching top 20 abstracts...
+[12/20]</div></div>
+  <div class="card"><div class="card-hd"><div class="card-title">Browser 3 — huggingface.co</div><span class="badge badge-warn">slow</span></div><div style="background:var(--bg-2);padding:20px;min-height:280px;border-radius:8px;font-family:var(--mono);font-size:11px;color:var(--muted);white-space:pre-wrap">Reading: meta-math/MetaMath model card...
+
+extracting benchmark scores...
+GSM8K: 82.3%
+MATH: 26.6%
+
+waiting for page load... (retry 1/3)</div></div>
+</div>
+<div class="card"><div class="card-hd"><div class="card-title">Synthesis — live</div><span class="badge badge-accent">Claude Sonnet 4.7</span></div>
+<div style="background:var(--bg-2);padding:20px;border-radius:8px;font-size:13px;line-height:1.6">
+  <b>Open-source math LLMs — current SOTA (as of today):</b><br><br>
+  Based on 3 concurrent browser sessions across arxiv, Semantic Scholar, and HF Hub:
+  <ol style="margin-left:24px;margin-top:8px">
+    <li><b>Llemma-34B</b> (EleutherAI, Oct 2023) — 51.5% MATH, 83.3% GSM8K. Strongest open checkpoint for proof-generation workloads.</li>
+    <li><b>MetaMath-70B</b> (MIT + UCL) — 82.3% GSM8K but weaker on MATH (26.6%). Optimised for word problems.</li>
+    <li><b>MAmmoTH-70B</b> (Waterloo) — Tool-augmented; 58.8% MATH with calculator access...</li>
+  </ol>
+  <span style="color:var(--muted)">[cursor blinking]</span>
+</div></div>
+</div>
+</div></div>
+<div style="position:fixed;bottom:8px;right:8px;font-size:10px;color:var(--muted-2);background:var(--bg-1);padding:4px 8px;border-radius:4px;border:1px solid var(--line);font-family:var(--mono)">Recreation - inspired by Vercel (vercel.com/templates) - <a href="https://vercel.com/templates/next.js/ai-research-agent" target="_blank" style="color:var(--muted-2)">source</a></div></body>
+</html>

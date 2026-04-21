@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" class="h-full bg-gray-50">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+<style>html { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }</style>
+</head>
+<body class="h-full antialiased text-gray-900">
+
+<div class="flex min-h-full">
+  <aside class="hidden w-64 shrink-0 bg-gray-900 p-6 text-white lg:block">
+    <div class="text-lg font-semibold">Clawmachine</div>
+    <nav class="mt-8 space-y-1 text-sm">
+      <a class="block rounded-md bg-gray-800 px-3 py-2 font-medium">Dashboard</a>
+      <a class="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-800">Inventory</a>
+      <a class="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-800">Sourcing</a>
+      <a class="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-800">Listings</a>
+      <a class="block rounded-md px-3 py-2 text-gray-300 hover:bg-gray-800">Reports</a>
+    </nav>
+  </aside>
+  <div class="flex-1">
+    <header class="flex items-center justify-between border-b border-gray-200 bg-white px-6 py-4">
+      <h1 class="text-xl font-semibold">Dashboard</h1>
+      <div class="flex items-center gap-3">
+        <button class="rounded-md bg-white px-3 py-2 text-sm font-semibold ring-1 ring-gray-300 ring-inset hover:bg-gray-50">Export</button>
+        <button class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500">New source</button>
+        <img class="size-9 rounded-full" src="https://i.pravatar.cc/64?u=op" />
+      </div>
+    </header>
+    <main class="p-6">
+      <dl class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-lg bg-white p-5 shadow-xs ring-1 ring-gray-200"><dt class="text-sm text-gray-500">GMV</dt><dd class="mt-1 text-2xl font-semibold">£42,187</dd></div>
+        <div class="rounded-lg bg-white p-5 shadow-xs ring-1 ring-gray-200"><dt class="text-sm text-gray-500">Gross margin</dt><dd class="mt-1 text-2xl font-semibold">38.2%</dd></div>
+        <div class="rounded-lg bg-white p-5 shadow-xs ring-1 ring-gray-200"><dt class="text-sm text-gray-500">In-stock</dt><dd class="mt-1 text-2xl font-semibold">147</dd></div>
+        <div class="rounded-lg bg-white p-5 shadow-xs ring-1 ring-gray-200"><dt class="text-sm text-gray-500">Cash cycle</dt><dd class="mt-1 text-2xl font-semibold">21d</dd></div>
+      </dl>
+      <section class="mt-6 rounded-lg bg-white p-6 shadow-xs ring-1 ring-gray-200">
+        <h2 class="text-base font-semibold">Recent activity</h2>
+        <ul class="mt-4 divide-y divide-gray-200">
+          <li class="flex items-center justify-between py-3 text-sm"><span>Listed MacBook Pro 14" M1</span><time class="text-gray-500">3m ago</time></li>
+          <li class="flex items-center justify-between py-3 text-sm"><span>Purchased iPhone 14 pallet</span><time class="text-gray-500">1h ago</time></li>
+          <li class="flex items-center justify-between py-3 text-sm"><span>Sold Dyson V11</span><time class="text-gray-500">3h ago</time></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</div>
+</body>
+</html>

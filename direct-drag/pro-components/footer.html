@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Footer variants — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="../design.css">
+<style>
+  .ft-link { font-size: var(--text-md); font-weight: 500; color: var(--color-text-secondary); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+  .ft-link:hover { color: var(--color-text-primary); }
+  .ft-heading { font-size: var(--text-sm); font-weight: 600; color: var(--color-text-quaternary); text-transform: uppercase; letter-spacing: 0.04em; }
+  .ft-col ul { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-direction: column; gap: 12px; }
+  .ft-social { color: var(--color-fg-quaternary); }
+  .ft-social:hover { color: var(--color-fg-secondary); }
+  .ft-demo-label { font-size: var(--text-md); font-weight: 600; color: var(--color-text-quaternary); text-transform: uppercase; letter-spacing: 0.08em; padding: 32px 0 16px; text-align: center; background: var(--color-bg-primary); }
+  .ft-divider { border-top: 2px dashed var(--color-border-secondary); margin: 0; }
+</style>
+</head>
+<body style="background: var(--color-bg-primary);">
+
+<div class="ft-demo-label">variant 1 — newsletter + 4-column</div>
+
+<!-- variant 1: 4-column + newsletter + socials + bottom bar -->
+<footer style="background: var(--color-bg-primary); border-top: 1px solid var(--color-border-secondary); padding: 64px 32px 32px;">
+  <div class="uui-container" style="padding: 0; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 48px;">
+    <div>
+      <a href="#" class="uui-row gap-2 items-center" style="text-decoration: none;">
+        <svg width="32" height="32" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="var(--color-brand-600)"/><path d="M10 11h12M10 16h9M10 21h6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+        <span style="font-weight: 600; color: var(--color-text-primary); font-size: var(--text-lg);">Untitled UI</span>
+      </a>
+      <p style="font-size: var(--text-md); color: var(--color-text-tertiary); margin-top: 24px; max-width: 360px;">design beautiful ui in minutes, not months. a complete component library for modern product teams.</p>
+      <form style="display: flex; gap: 8px; margin-top: 24px; max-width: 360px;">
+        <div class="uui-input" style="flex: 1;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+          <input type="email" placeholder="enter your email">
+        </div>
+        <button type="submit" class="uui-btn uui-btn--primary uui-btn--md">subscribe</button>
+      </form>
+      <p style="font-size: var(--text-xs); color: var(--color-text-quaternary); margin-top: 12px;">monthly digest only. unsubscribe any time.</p>
+    </div>
+    <div class="ft-col">
+      <p class="ft-heading">product</p>
+      <ul>
+        <li><a href="#" class="ft-link">overview</a></li>
+        <li><a href="#" class="ft-link">features <span class="uui-badge uui-badge--brand">new</span></a></li>
+        <li><a href="#" class="ft-link">solutions</a></li>
+        <li><a href="#" class="ft-link">tutorials</a></li>
+        <li><a href="#" class="ft-link">pricing</a></li>
+        <li><a href="#" class="ft-link">releases</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-heading">company</p>
+      <ul>
+        <li><a href="#" class="ft-link">about</a></li>
+        <li><a href="#" class="ft-link">careers <span class="uui-badge uui-badge--success">we're hiring</span></a></li>
+        <li><a href="#" class="ft-link">press</a></li>
+        <li><a href="#" class="ft-link">news</a></li>
+        <li><a href="#" class="ft-link">contact</a></li>
+        <li><a href="#" class="ft-link">partners</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-heading">resources</p>
+      <ul>
+        <li><a href="#" class="ft-link">blog</a></li>
+        <li><a href="#" class="ft-link">newsletter</a></li>
+        <li><a href="#" class="ft-link">events</a></li>
+        <li><a href="#" class="ft-link">help centre</a></li>
+        <li><a href="#" class="ft-link">tutorials</a></li>
+        <li><a href="#" class="ft-link">support</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-heading">legal</p>
+      <ul>
+        <li><a href="#" class="ft-link">terms</a></li>
+        <li><a href="#" class="ft-link">privacy</a></li>
+        <li><a href="#" class="ft-link">cookies</a></li>
+        <li><a href="#" class="ft-link">licenses</a></li>
+        <li><a href="#" class="ft-link">contact</a></li>
+        <li><a href="#" class="ft-link">dpa</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="uui-container" style="padding: 0; margin-top: 64px; padding-top: 32px; border-top: 1px solid var(--color-border-secondary); display: flex; justify-content: space-between; align-items: center;">
+    <p style="font-size: var(--text-md); color: var(--color-text-quaternary); margin: 0;">© 2026 Untitled UI. all rights reserved.</p>
+    <div class="uui-row gap-5">
+      <a href="#" aria-label="Twitter" class="ft-social"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.3l-7.2 8.2L23 22h-6.6l-5.2-6.8L5.3 22H2l7.7-8.8L1.5 2h6.8l4.7 6.2L18.2 2zm-1.1 18h1.8L7 4H5.1l12 16z"/></svg></a>
+      <a href="#" aria-label="LinkedIn" class="ft-social"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg></a>
+      <a href="#" aria-label="GitHub" class="ft-social"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.4C24 5.9 18.6.5 12 .5z"/></svg></a>
+      <a href="#" aria-label="Dribbble" class="ft-social"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm6.6 4.6c1.2 1.4 1.92 3.2 1.92 5.2 0 .2 0 .4-.02.58-3.4-.7-6.5-.3-8.4.1-.2-.5-.4-1-.62-1.48 2.2-.9 4.2-2.3 5.8-4.2-.22-.1-.44-.2-.68-.2zm-1.9-.84c-1.4 1.7-3.2 3-5.2 3.8C10.4 7.8 9.2 6.2 8 4.6c1.2-.4 2.6-.6 4-.6 1.6 0 3.2.4 4.6 1.2z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<hr class="ft-divider">
+<div class="ft-demo-label">variant 2 — 6-column product footer</div>
+
+<!-- variant 2: 6-column product footer (wide taxonomy) -->
+<footer style="background: var(--color-bg-secondary); border-top: 1px solid var(--color-border-secondary); padding: 64px 32px;">
+  <div class="uui-container" style="padding: 0; display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr; gap: 32px;">
+    <div>
+      <a href="#" class="uui-row gap-2 items-center" style="text-decoration: none;">
+        <svg width="32" height="32" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="var(--color-brand-600)"/><path d="M10 11h12M10 16h9M10 21h6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+        <span style="font-weight: 600; color: var(--color-text-primary); font-size: var(--text-lg);">Untitled UI</span>
+      </a>
+      <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 12px;">© 2026 Untitled UI, Inc.<br>1125 market street, san francisco.</p>
+      <div class="uui-row gap-3" style="margin-top: 24px;">
+        <span class="uui-badge uui-badge--success"><span class="dot"></span>systems operational</span>
+      </div>
+    </div>
+    <div class="ft-col">
+      <p class="ft-heading">product</p>
+      <ul>
+        <li><a href="#" class="ft-link">features</a></li>
+        <li><a href="#" class="ft-link">pricing</a></li>
+        <li><a href="#" class="ft-link">templates</a></li>
+        <li><a href="#" class="ft-link">integrations</a></li>
+        <li><a href="#" class="ft-link">changelog</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-heading">solutions</p>
+      <ul>
+        <li><a href="#" class="ft-link">for designers</a></li>
+        <li><a href="#" class="ft-link">for engineers</a></li>
+        <li><a href="#" class="ft-link">for agencies</a></li>
+        <li><a href="#" class="ft-link">for enterprise</a></li>
+        <li><a href="#" class="ft-link">for startups</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-heading">resources</p>
+      <ul>
+        <li><a href="#" class="ft-link">blog</a></li>
+        <li><a href="#" class="ft-link">docs</a></li>
+        <li><a href="#" class="ft-link">api reference</a></li>
+        <li><a href="#" class="ft-link">cli</a></li>
+        <li><a href="#" class="ft-link">community</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-heading">company</p>
+      <ul>
+        <li><a href="#" class="ft-link">about</a></li>
+        <li><a href="#" class="ft-link">careers</a></li>
+        <li><a href="#" class="ft-link">contact</a></li>
+        <li><a href="#" class="ft-link">partners</a></li>
+        <li><a href="#" class="ft-link">brand assets</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <p class="ft-heading">legal</p>
+      <ul>
+        <li><a href="#" class="ft-link">terms</a></li>
+        <li><a href="#" class="ft-link">privacy</a></li>
+        <li><a href="#" class="ft-link">cookies</a></li>
+        <li><a href="#" class="ft-link">licenses</a></li>
+        <li><a href="#" class="ft-link">security</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="uui-container" style="padding: 0; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--color-border-secondary); display: flex; justify-content: space-between; align-items: center;">
+    <div class="uui-row gap-4 items-center">
+      <span style="font-size: var(--text-sm); color: var(--color-text-quaternary);">region</span>
+      <div class="uui-select" style="padding: 6px 12px;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        <span class="value" style="font-size: var(--text-sm);">English (United Kingdom)</span>
+        <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+    </div>
+    <div class="uui-row gap-5">
+      <a href="#" aria-label="Twitter" class="ft-social"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.3l-7.2 8.2L23 22h-6.6l-5.2-6.8L5.3 22H2l7.7-8.8L1.5 2h6.8l4.7 6.2L18.2 2z"/></svg></a>
+      <a href="#" aria-label="LinkedIn" class="ft-social"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2z"/></svg></a>
+      <a href="#" aria-label="GitHub" class="ft-social"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.4C24 5.9 18.6.5 12 .5z"/></svg></a>
+    </div>
+  </div>
+</footer>
+
+<hr class="ft-divider">
+<div class="ft-demo-label">variant 3 — minimal centered</div>
+
+<!-- variant 3: minimal center footer -->
+<footer style="padding: 64px 32px; border-top: 1px solid var(--color-border-secondary); background: var(--color-bg-primary); text-align: center;">
+  <div class="uui-container" style="padding: 0;">
+    <a href="#" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+      <svg width="32" height="32" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="var(--color-brand-600)"/><path d="M10 11h12M10 16h9M10 21h6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      <span style="font-weight: 600; color: var(--color-text-primary); font-size: var(--text-lg);">Untitled UI</span>
+    </a>
+    <nav class="uui-row gap-6 justify-center" style="margin-top: 32px; flex-wrap: wrap;">
+      <a href="#" class="ft-link">overview</a>
+      <a href="#" class="ft-link">features</a>
+      <a href="#" class="ft-link">pricing</a>
+      <a href="#" class="ft-link">customers</a>
+      <a href="#" class="ft-link">changelog</a>
+      <a href="#" class="ft-link">docs</a>
+      <a href="#" class="ft-link">blog</a>
+      <a href="#" class="ft-link">contact</a>
+    </nav>
+    <div class="uui-row gap-5 justify-center" style="margin-top: 32px;">
+      <a href="#" aria-label="Twitter" class="ft-social"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.2 2h3.3l-7.2 8.2L23 22h-6.6l-5.2-6.8L5.3 22H2l7.7-8.8L1.5 2h6.8l4.7 6.2L18.2 2z"/></svg></a>
+      <a href="#" aria-label="LinkedIn" class="ft-social"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2z"/></svg></a>
+      <a href="#" aria-label="GitHub" class="ft-social"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.4.5 0 5.9 0 12.5c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.8-1.6 8.2-6.1 8.2-11.4C24 5.9 18.6.5 12 .5z"/></svg></a>
+      <a href="#" aria-label="Dribbble" class="ft-social"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg></a>
+    </div>
+    <p style="font-size: var(--text-sm); color: var(--color-text-quaternary); margin-top: 32px;">© 2026 Untitled UI. all rights reserved.</p>
+    <div class="uui-row gap-4 justify-center" style="margin-top: 12px;">
+      <a href="#" style="font-size: var(--text-sm); color: var(--color-text-quaternary);">privacy</a>
+      <span style="color: var(--color-text-quaternary);">·</span>
+      <a href="#" style="font-size: var(--text-sm); color: var(--color-text-quaternary);">terms</a>
+      <span style="color: var(--color-text-quaternary);">·</span>
+      <a href="#" style="font-size: var(--text-sm); color: var(--color-text-quaternary);">cookies</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

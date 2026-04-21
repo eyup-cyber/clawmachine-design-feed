@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>tailwind ui + catalyst — application components (authored)</title>
+<meta name="viewport" content="width=1440">
+<meta name="generator" content="clawmachine design feed / authored by Opus 4.7 / 2026-04-21 / fair-use recreation from Tailwind Labs public design language">
+<style>
+  /* tokens pulled from Tailwind Labs' public design language (Catalyst + Tailwind UI) */
+  :root {
+    --zinc-50: #fafafa; --zinc-100: #f4f4f5; --zinc-200: #e4e4e7; --zinc-300: #d4d4d8;
+    --zinc-400: #a1a1aa; --zinc-500: #71717a; --zinc-600: #52525b; --zinc-700: #3f3f46;
+    --zinc-800: #27272a; --zinc-900: #18181b; --zinc-950: #09090b;
+    --blue-500: #3b82f6; --blue-600: #2563eb; --blue-700: #1d4ed8;
+    --emerald-500: #10b981; --emerald-600: #059669;
+    --rose-500: #f43f5e; --rose-600: #e11d48;
+    --amber-500: #f59e0b; --amber-600: #d97706;
+    --violet-500: #8b5cf6; --violet-600: #7c3aed;
+
+    --radius-sm: 4px; --radius: 6px; --radius-md: 8px; --radius-lg: 10px;
+    --ring: 0 0 0 1px rgb(24 24 27 / 0.06), 0 1px 3px rgb(24 24 27 / 0.08);
+    --ring-focus: 0 0 0 2px #fff, 0 0 0 4px var(--blue-500);
+
+    --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html { font-family: var(--font-sans); color: var(--zinc-900); background: var(--zinc-50); font-size: 14px; line-height: 1.5; }
+  body { margin: 0; padding: 32px; max-width: 1440px; }
+  h1, h2, h3 { margin: 0 0 8px 0; letter-spacing: -0.01em; }
+  h1 { font-size: 28px; font-weight: 700; }
+  h2 { font-size: 20px; font-weight: 600; margin-top: 48px; padding-bottom: 8px; border-bottom: 1px solid var(--zinc-200); }
+  h3 { font-size: 14px; font-weight: 600; color: var(--zinc-500); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 32px; }
+  p  { color: var(--zinc-600); max-width: 720px; }
+  code { font-family: var(--font-mono); font-size: 12px; background: var(--zinc-100); padding: 2px 6px; border-radius: 4px; }
+
+  /* layout rails */
+  .grid-demo { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin: 12px 0 24px; }
+  .demo-card { background: #fff; border-radius: var(--radius-md); box-shadow: var(--ring); padding: 20px; }
+  .demo-card > .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--zinc-400); margin-bottom: 12px; }
+
+  /* ============ BUTTONS ============ */
+  .btn { display: inline-flex; align-items: center; gap: 8px; border: 1px solid transparent; border-radius: var(--radius); padding: 6px 12px; font-size: 13px; font-weight: 500; line-height: 1.2; cursor: pointer; transition: all 150ms; text-decoration: none; white-space: nowrap; }
+  .btn-sm { padding: 4px 10px; font-size: 12px; }
+  .btn-lg { padding: 10px 16px; font-size: 14px; border-radius: var(--radius-md); }
+  .btn-primary { background: var(--zinc-900); color: #fff; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08); }
+  .btn-primary:hover { background: var(--zinc-800); }
+  .btn-secondary { background: #fff; color: var(--zinc-900); border-color: var(--zinc-300); box-shadow: 0 1px 2px rgb(24 24 27 / 0.06); }
+  .btn-secondary:hover { background: var(--zinc-50); border-color: var(--zinc-400); }
+  .btn-danger { background: var(--rose-600); color: #fff; }
+  .btn-danger:hover { background: var(--rose-500); }
+  .btn-success { background: var(--emerald-600); color: #fff; }
+  .btn-ghost { background: transparent; color: var(--zinc-700); }
+  .btn-ghost:hover { background: var(--zinc-100); }
+  .btn-link { background: transparent; color: var(--blue-600); padding: 0; border: none; }
+  .btn-link:hover { text-decoration: underline; }
+  .btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+  .btn-icon { padding: 6px; border-radius: var(--radius); }
+
+  /* ============ INPUTS ============ */
+  .input-group { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+  .input-label { font-size: 13px; font-weight: 500; color: var(--zinc-900); }
+  .input-help  { font-size: 12px; color: var(--zinc-500); }
+  .input-error { font-size: 12px; color: var(--rose-600); }
+  .input { width: 100%; padding: 6px 10px; font-size: 13px; border: 1px solid var(--zinc-300); border-radius: var(--radius); background: #fff; transition: box-shadow 150ms, border 150ms; font-family: var(--font-sans); }
+  .input:focus { outline: none; border-color: var(--blue-600); box-shadow: var(--ring-focus); }
+  .input.invalid { border-color: var(--rose-600); }
+  .input-wrap { position: relative; display: flex; }
+  .input-wrap .input { padding-left: 30px; }
+  .input-wrap .icon-left { position: absolute; left: 8px; top: 50%; transform: translateY(-50%); color: var(--zinc-400); width: 16px; height: 16px; }
+  .textarea { min-height: 72px; resize: vertical; font-family: var(--font-sans); }
+  .select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--zinc-500) 50%), linear-gradient(135deg, var(--zinc-500) 50%, transparent 50%); background-position: calc(100% - 15px) 50%, calc(100% - 10px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 28px; }
+
+  /* ============ CHECKBOX / RADIO / TOGGLE ============ */
+  .check, .radio { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--zinc-900); cursor: pointer; }
+  .check input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--blue-600); }
+  .radio input[type="radio"] { width: 16px; height: 16px; accent-color: var(--blue-600); }
+  .toggle { position: relative; display: inline-flex; align-items: center; width: 36px; height: 20px; border-radius: 999px; background: var(--zinc-300); cursor: pointer; transition: background 150ms; }
+  .toggle::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; background: #fff; border-radius: 50%; transition: transform 150ms; box-shadow: 0 1px 2px rgb(0 0 0 / 0.1); }
+  .toggle.on { background: var(--blue-600); }
+  .toggle.on::after { transform: translateX(16px); }
+
+  /* ============ BADGE / TAG / DOT ============ */
+  .badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; font-size: 11px; font-weight: 500; border-radius: 999px; letter-spacing: 0.02em; }
+  .badge-zinc { background: var(--zinc-100); color: var(--zinc-700); }
+  .badge-blue { background: #dbeafe; color: #1e40af; }
+  .badge-emerald { background: #d1fae5; color: #065f46; }
+  .badge-rose { background: #ffe4e6; color: #9f1239; }
+  .badge-amber { background: #fef3c7; color: #92400e; }
+  .badge-violet { background: #ede9fe; color: #5b21b6; }
+  .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--emerald-500); }
+  .dot.dot-rose { background: var(--rose-500); }
+  .dot.dot-amber { background: var(--amber-500); }
+
+  /* ============ AVATAR ============ */
+  .avatar { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: var(--zinc-200); color: var(--zinc-600); font-size: 12px; font-weight: 600; overflow: hidden; }
+  .avatar-sm { width: 24px; height: 24px; font-size: 10px; }
+  .avatar-lg { width: 48px; height: 48px; font-size: 16px; }
+  .avatar-group { display: inline-flex; }
+  .avatar-group .avatar { border: 2px solid #fff; margin-left: -8px; }
+  .avatar-group .avatar:first-child { margin-left: 0; }
+
+  /* ============ ALERT ============ */
+  .alert { display: flex; gap: 12px; padding: 12px 16px; border-radius: var(--radius-md); border-left: 3px solid; }
+  .alert-info    { background: #eff6ff; border-color: var(--blue-600); color: #1e3a8a; }
+  .alert-success { background: #ecfdf5; border-color: var(--emerald-600); color: #064e3b; }
+  .alert-warn    { background: #fffbeb; border-color: var(--amber-600); color: #78350f; }
+  .alert-danger  { background: #fff1f2; border-color: var(--rose-600); color: #881337; }
+
+  /* ============ CARD / PANEL ============ */
+  .panel { background: #fff; border-radius: var(--radius-md); box-shadow: var(--ring); padding: 20px; }
+  .panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--zinc-100); }
+  .panel-title { font-size: 14px; font-weight: 600; }
+
+  /* ============ TABLE ============ */
+  .table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .table th { text-align: left; padding: 8px 12px; font-weight: 600; color: var(--zinc-500); text-transform: uppercase; font-size: 11px; letter-spacing: 0.04em; background: var(--zinc-50); border-bottom: 1px solid var(--zinc-200); }
+  .table td { padding: 10px 12px; border-bottom: 1px solid var(--zinc-100); }
+  .table tr:hover td { background: var(--zinc-50); }
+  .table-striped tr:nth-child(even) td { background: var(--zinc-50); }
+
+  /* ============ TABS ============ */
+  .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--zinc-200); }
+  .tab { padding: 8px 16px; font-size: 13px; font-weight: 500; color: var(--zinc-500); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+  .tab:hover { color: var(--zinc-800); }
+  .tab.active { color: var(--blue-700); border-bottom-color: var(--blue-600); }
+
+  /* ============ BREADCRUMBS ============ */
+  .bcrumb { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--zinc-500); }
+  .bcrumb a { color: var(--zinc-700); text-decoration: none; }
+  .bcrumb a:hover { color: var(--zinc-900); }
+  .bcrumb .sep { color: var(--zinc-300); }
+
+  /* ============ PAGINATION ============ */
+  .pagination { display: inline-flex; gap: 4px; }
+  .pagination .btn { padding: 4px 10px; font-size: 12px; }
+  .pagination .btn.active { background: var(--zinc-900); color: #fff; }
+
+  /* ============ DROPDOWN MENU (visual mock) ============ */
+  .menu { background: #fff; border-radius: var(--radius-md); box-shadow: 0 8px 24px rgb(24 24 27 / 0.12); border: 1px solid var(--zinc-200); padding: 4px; min-width: 200px; }
+  .menu-item { display: flex; align-items: center; gap: 8px; padding: 6px 10px; font-size: 13px; border-radius: 4px; cursor: pointer; color: var(--zinc-800); }
+  .menu-item:hover { background: var(--zinc-100); }
+  .menu-sep { height: 1px; background: var(--zinc-100); margin: 4px 0; }
+
+  /* ============ TOOLTIP ============ */
+  .tooltip { position: relative; display: inline-block; }
+  .tooltip::after { content: attr(data-tip); position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%) translateY(-6px); background: var(--zinc-900); color: #fff; font-size: 11px; padding: 4px 8px; border-radius: 4px; white-space: nowrap; opacity: 0; transition: opacity 150ms; pointer-events: none; }
+  .tooltip:hover::after { opacity: 1; }
+
+  /* ============ MODAL ============ */
+  .modal-backdrop { background: rgb(24 24 27 / 0.4); padding: 40px; border-radius: var(--radius-md); }
+  .modal { background: #fff; border-radius: var(--radius-md); box-shadow: 0 20px 40px rgb(24 24 27 / 0.2); padding: 24px; max-width: 480px; margin: 0 auto; }
+  .modal-head { display: flex; justify-content: space-between; align-items: start; margin-bottom: 16px; }
+  .modal-foot { display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px; }
+
+  /* ============ STAT CARD ============ */
+  .stat { padding: 20px; background: #fff; border-radius: var(--radius-md); box-shadow: var(--ring); }
+  .stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--zinc-500); }
+  .stat-value { font-size: 28px; font-weight: 700; margin-top: 6px; font-family: var(--font-mono); }
+  .stat-delta { font-size: 12px; margin-top: 4px; }
+  .stat-delta.up   { color: var(--emerald-600); }
+  .stat-delta.down { color: var(--rose-600); }
+
+  /* ============ PROGRESS ============ */
+  .progress { width: 100%; height: 6px; background: var(--zinc-100); border-radius: 999px; overflow: hidden; }
+  .progress-fill { height: 100%; background: var(--blue-600); transition: width 300ms; }
+
+  /* ============ SIDEBAR (app shell) ============ */
+  .shell { display: grid; grid-template-columns: 240px 1fr; gap: 0; background: var(--zinc-50); border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--zinc-200); height: 560px; }
+  .shell-side { background: var(--zinc-950); color: var(--zinc-300); padding: 16px; }
+  .shell-side .brand { color: #fff; font-weight: 700; font-size: 14px; margin-bottom: 20px; letter-spacing: -0.01em; }
+  .shell-nav { display: flex; flex-direction: column; gap: 2px; }
+  .shell-nav-item { padding: 6px 10px; font-size: 13px; border-radius: var(--radius); color: var(--zinc-400); cursor: pointer; display: flex; align-items: center; gap: 8px; }
+  .shell-nav-item:hover { background: var(--zinc-800); color: #fff; }
+  .shell-nav-item.active { background: var(--zinc-800); color: #fff; }
+  .shell-main { padding: 20px; overflow: auto; }
+
+  /* ============ EMPTY STATE ============ */
+  .empty { text-align: center; padding: 40px 20px; color: var(--zinc-500); }
+  .empty-ico { width: 48px; height: 48px; margin: 0 auto 12px; color: var(--zinc-300); }
+
+  /* ============ SEARCH COMMAND (⌘K style) ============ */
+  .cmdk { background: #fff; border-radius: var(--radius-md); box-shadow: 0 20px 40px rgb(24 24 27 / 0.2); max-width: 520px; overflow: hidden; border: 1px solid var(--zinc-200); }
+  .cmdk-input { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--zinc-100); }
+  .cmdk-input input { flex: 1; border: none; outline: none; font-size: 14px; font-family: var(--font-sans); }
+  .cmdk-kbd { background: var(--zinc-100); font-size: 10px; padding: 2px 6px; border-radius: 4px; font-family: var(--font-mono); color: var(--zinc-600); }
+  .cmdk-group { padding: 8px 0; }
+  .cmdk-group-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--zinc-400); padding: 4px 16px; }
+
+  /* ============ KBD ============ */
+  kbd { font-family: var(--font-mono); font-size: 10px; background: #fff; border: 1px solid var(--zinc-300); border-bottom-width: 2px; padding: 2px 5px; border-radius: 4px; color: var(--zinc-700); }
+
+  /* simple svg icon */
+  .ico { width: 16px; height: 16px; stroke: currentColor; stroke-width: 1.67; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+</style>
+</head>
+<body>
+
+<h1>Tailwind UI + Catalyst — Application Components</h1>
+<p>Self-authored recreation of Tailwind Labs' public application-UI design language for the clawmachine design-feed. Inter + 6–8px radii + measured zinc palette + 1.67 stroke icons. Not a clone of any proprietary file — tokens and component semantics reconstructed from the widely-public Tailwind UI + Catalyst visual language.</p>
+
+<h2>Buttons</h2>
+<div class="grid-demo">
+  <div class="demo-card"><div class="label">PRIMARY / SECONDARY / DANGER / SUCCESS / GHOST / LINK</div>
+    <div style="display:flex; gap:8px; flex-wrap: wrap;">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-danger">Delete</button>
+      <button class="btn btn-success">Confirm</button>
+      <button class="btn btn-ghost">Ghost</button>
+      <button class="btn btn-link">Learn more →</button>
+    </div>
+  </div>
+  <div class="demo-card"><div class="label">SIZE RAMP</div>
+    <div style="display:flex; gap:8px; align-items: center; flex-wrap: wrap;">
+      <button class="btn btn-primary btn-sm">Small</button>
+      <button class="btn btn-primary">Default</button>
+      <button class="btn btn-primary btn-lg">Large</button>
+      <button class="btn btn-secondary btn-icon" aria-label="menu"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+  <div class="demo-card"><div class="label">WITH ICONS</div>
+    <div style="display:flex; gap:8px; flex-wrap: wrap;">
+      <button class="btn btn-primary"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>New deal</button>
+      <button class="btn btn-secondary"><svg class="ico" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Export</button>
+      <button class="btn btn-secondary" disabled>Disabled</button>
+    </div>
+  </div>
+  <div class="demo-card"><div class="label">DESTRUCTIVE CONFIRM</div>
+    <div style="display:flex; gap:8px; flex-wrap: wrap;">
+      <button class="btn btn-ghost">Cancel</button>
+      <button class="btn btn-danger">Archive 12 items</button>
+    </div>
+  </div>
+</div>
+
+<h2>Inputs</h2>
+<div class="grid-demo">
+  <div class="demo-card"><div class="label">TEXT INPUT</div>
+    <div class="input-group">
+      <label class="input-label">Email</label>
+      <input class="input" type="email" placeholder="you@domain.com">
+      <div class="input-help">We'll never share your address.</div>
+    </div>
+  </div>
+  <div class="demo-card"><div class="label">WITH LEADING ICON</div>
+    <div class="input-group">
+      <label class="input-label">Search</label>
+      <div class="input-wrap">
+        <svg class="icon-left ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+        <input class="input" placeholder="iPhone 12, MacBook Air…">
+      </div>
+    </div>
+  </div>
+  <div class="demo-card"><div class="label">ERROR STATE</div>
+    <div class="input-group">
+      <label class="input-label">Floor price</label>
+      <input class="input invalid" type="number" value="-5">
+      <div class="input-error">Floor price must be positive.</div>
+    </div>
+  </div>
+  <div class="demo-card"><div class="label">SELECT</div>
+    <div class="input-group">
+      <label class="input-label">Source marketplace</label>
+      <select class="input select">
+        <option>eBay</option><option>CeX</option><option>Gumtree</option><option>Facebook Marketplace</option><option>Shpock</option><option>Preloved</option>
+      </select>
+    </div>
+  </div>
+  <div class="demo-card"><div class="label">TEXTAREA</div>
+    <div class="input-group">
+      <label class="input-label">Notes</label>
+      <textarea class="input textarea" placeholder="Condition, fault, reseller context…"></textarea>
+    </div>
+  </div>
+  <div class="demo-card"><div class="label">TOGGLES</div>
+    <div style="display:flex; flex-direction: column; gap: 10px;">
+      <label class="check"><input type="checkbox" checked> Email me on new deals</label>
+      <label class="check"><input type="checkbox"> Include negative-profit rows</label>
+      <label class="radio"><input type="radio" name="r1" checked> Conservative</label>
+      <label class="radio"><input type="radio" name="r1"> Aggressive</label>
+      <div style="display:flex; gap:8px; align-items: center;">
+        <span class="toggle on"></span><span style="font-size:13px;">BlueBubbles enabled</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Badges & Tags</h2>
+<div class="demo-card">
+  <div class="label">SEMANTIC COLOUR RAMP</div>
+  <div style="display:flex; gap:8px; flex-wrap: wrap;">
+    <span class="badge badge-zinc">neutral</span>
+    <span class="badge badge-blue">info</span>
+    <span class="badge badge-emerald"><span class="dot"></span>live</span>
+    <span class="badge badge-rose"><span class="dot dot-rose"></span>loss</span>
+    <span class="badge badge-amber"><span class="dot dot-amber"></span>watching</span>
+    <span class="badge badge-violet">pro</span>
+    <span class="badge badge-zinc"><code>v1.2.0</code></span>
+  </div>
+</div>
+
+<h2>Avatars</h2>
+<div class="demo-card">
+  <div class="label">SIZE RAMP + GROUP</div>
+  <div style="display:flex; gap: 16px; align-items: center;">
+    <span class="avatar avatar-sm">RC</span>
+    <span class="avatar">RC</span>
+    <span class="avatar avatar-lg" style="background:var(--blue-600); color:#fff;">RC</span>
+    <span class="avatar-group">
+      <span class="avatar">RC</span>
+      <span class="avatar" style="background:var(--violet-500); color:#fff;">AB</span>
+      <span class="avatar" style="background:var(--emerald-500); color:#fff;">KL</span>
+      <span class="avatar" style="background:var(--zinc-300);">+4</span>
+    </span>
+  </div>
+</div>
+
+<h2>Alerts</h2>
+<div class="grid-demo">
+  <div class="demo-card"><div class="alert alert-info">🛈&nbsp;Pi scout is rebuilding its vendor registry — results may be sparse.</div></div>
+  <div class="demo-card"><div class="alert alert-success">✓&nbsp;Deal £140 → £215 (iPhone 12) committed to ledger.</div></div>
+  <div class="demo-card"><div class="alert alert-warn">⚠&nbsp;Decodo residential tier exhausted — routing through dedicated-secondary.</div></div>
+  <div class="demo-card"><div class="alert alert-danger">✕&nbsp;Gateway handshake failed — check Keychain token.</div></div>
+</div>
+
+<h2>Tables</h2>
+<div class="panel">
+  <div class="panel-head"><div class="panel-title">Active deals · live scout feed</div><button class="btn btn-secondary btn-sm">Export CSV</button></div>
+  <table class="table">
+    <thead><tr><th>Item</th><th>Source</th><th>Asking</th><th>eBay sold</th><th>Profit</th><th>ROI</th><th></th></tr></thead>
+    <tbody>
+      <tr><td>iPhone 12 128GB</td><td><span class="badge badge-rose">eBay</span></td><td>£185.00</td><td>£270.50</td><td>£85.50</td><td><span class="badge badge-emerald">+46%</span></td><td><button class="btn btn-link">BUY</button></td></tr>
+      <tr><td>MacBook Air M1</td><td><span class="badge badge-amber">CeX</span></td><td>£410.00</td><td>£522.00</td><td>£112.00</td><td><span class="badge badge-emerald">+27%</span></td><td><button class="btn btn-link">BUY</button></td></tr>
+      <tr><td>Switch OLED</td><td><span class="badge badge-violet">Shpock</span></td><td>£245.00</td><td>£313.00</td><td>£68.00</td><td><span class="badge badge-emerald">+27%</span></td><td><button class="btn btn-link">BUY</button></td></tr>
+      <tr><td>Sony WH-1000XM4</td><td><span class="badge badge-zinc">Gumtree</span></td><td>£95.00</td><td>£147.00</td><td>£52.00</td><td><span class="badge badge-emerald">+54%</span></td><td><button class="btn btn-link">BUY</button></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Tabs & Breadcrumbs & Pagination</h2>
+<div class="grid-demo">
+  <div class="demo-card"><div class="label">TABS</div>
+    <div class="tabs">
+      <div class="tab active">Overview</div><div class="tab">Analytics</div><div class="tab">Inventory</div><div class="tab">Settings</div>
+    </div>
+  </div>
+  <div class="demo-card"><div class="label">BREADCRUMBS</div>
+    <div class="bcrumb"><a href="#">Dashboard</a><span class="sep">/</span><a href="#">Deals</a><span class="sep">/</span><span>iPhone 12 · £185</span></div>
+  </div>
+  <div class="demo-card"><div class="label">PAGINATION</div>
+    <div class="pagination">
+      <button class="btn btn-secondary">‹</button>
+      <button class="btn btn-secondary">1</button>
+      <button class="btn btn-secondary active">2</button>
+      <button class="btn btn-secondary">3</button>
+      <button class="btn btn-secondary">4</button>
+      <span style="padding:4px 6px;">…</span>
+      <button class="btn btn-secondary">27</button>
+      <button class="btn btn-secondary">›</button>
+    </div>
+  </div>
+</div>
+
+<h2>Dropdown menu</h2>
+<div class="demo-card" style="max-width: 260px;">
+  <div class="menu">
+    <div class="menu-item"><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>New deal</div>
+    <div class="menu-item"><svg class="ico" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Export CSV <span style="margin-left:auto; color:var(--zinc-400); font-size: 11px;"><kbd>⌘</kbd><kbd>E</kbd></span></div>
+    <div class="menu-item"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</div>
+    <div class="menu-sep"></div>
+    <div class="menu-item" style="color: var(--rose-600);"><svg class="ico" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="m19 6-2 14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2L5 6"/></svg>Archive</div>
+  </div>
+</div>
+
+<h2>Tooltip & kbd</h2>
+<div class="demo-card">
+  <div style="display:flex; gap: 20px; align-items: center;">
+    <span class="tooltip" data-tip="Hover shows full URL"><button class="btn btn-secondary">Hover me</button></span>
+    <span>Press <kbd>⌘</kbd><kbd>K</kbd> to search</span>
+    <span>Dismiss: <kbd>Esc</kbd></span>
+  </div>
+</div>
+
+<h2>Modal</h2>
+<div class="demo-card">
+  <div class="modal-backdrop">
+    <div class="modal">
+      <div class="modal-head">
+        <div><h3 style="font-size:16px; color:var(--zinc-900); margin:0;">Archive deal</h3><p style="margin:4px 0 0 0; font-size:13px;">This will remove the deal from the active feed. You can restore it from the archive view.</p></div>
+        <button class="btn btn-icon btn-ghost" aria-label="close"><svg class="ico" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="input-group"><label class="input-label">Reason (optional)</label><textarea class="input textarea" placeholder="e.g. duplicated from feed earlier today"></textarea></div>
+      <div class="modal-foot"><button class="btn btn-ghost">Cancel</button><button class="btn btn-danger">Archive</button></div>
+    </div>
+  </div>
+</div>
+
+<h2>Stat cards</h2>
+<div class="grid-demo">
+  <div class="stat"><div class="stat-label">24h Revenue</div><div class="stat-value">£2,845</div><div class="stat-delta up">↑ 18% vs yesterday</div></div>
+  <div class="stat"><div class="stat-label">Active deals</div><div class="stat-value">148</div><div class="stat-delta up">↑ 12 since 08:00</div></div>
+  <div class="stat"><div class="stat-label">Avg ROI</div><div class="stat-value">+38%</div><div class="stat-delta down">↓ 4 pts week-over-week</div></div>
+  <div class="stat"><div class="stat-label">Days-to-sell</div><div class="stat-value">8.2</div><div class="stat-delta up">↓ 0.4 days</div></div>
+</div>
+
+<h2>Progress</h2>
+<div class="demo-card">
+  <div style="display:flex; flex-direction: column; gap: 12px;">
+    <div><div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;"><span>Scout scan</span><span>72%</span></div><div class="progress"><div class="progress-fill" style="width:72%;"></div></div></div>
+    <div><div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;"><span>Brain evaluation</span><span>34%</span></div><div class="progress"><div class="progress-fill" style="width:34%; background: var(--amber-500);"></div></div></div>
+    <div><div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;"><span>Ledger writes</span><span>100%</span></div><div class="progress"><div class="progress-fill" style="width:100%; background: var(--emerald-500);"></div></div></div>
+  </div>
+</div>
+
+<h2>App shell</h2>
+<div class="shell">
+  <aside class="shell-side">
+    <div class="brand">clawmachine</div>
+    <nav class="shell-nav">
+      <div class="shell-nav-item active"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</div>
+      <div class="shell-nav-item"><svg class="ico" viewBox="0 0 24 24"><path d="M20 7 12 3 4 7v10l8 4 8-4V7zM12 22V12M20 7l-8 5-8-5"/></svg>Inventory</div>
+      <div class="shell-nav-item"><svg class="ico" viewBox="0 0 24 24"><path d="M3 3v18h18M7 14l4-4 4 4 6-6"/></svg>Analytics</div>
+      <div class="shell-nav-item"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7v3a5 5 0 0 1-2 4h18a5 5 0 0 1-2-4V9a7 7 0 0 0-7-7zM10 21a2 2 0 0 0 4 0"/></svg>Brain</div>
+      <div class="shell-nav-item"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="12" cy="20" r="2"/><path d="M12 15v3M10 9 7 6M14 9l3-3"/></svg>Mesh</div>
+      <div class="shell-nav-item"><svg class="ico" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>AgentConsole</div>
+      <div class="shell-nav-item"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>Settings</div>
+    </nav>
+  </aside>
+  <main class="shell-main">
+    <div class="panel-head" style="margin-bottom: 16px;">
+      <div><h3 style="font-size:14px; color:var(--zinc-500); margin:0; text-transform: uppercase;">Dashboard</h3><div style="font-size:20px; font-weight:700; margin-top:4px;">Good evening, Regan</div></div>
+      <div style="display:flex; gap:8px;"><button class="btn btn-secondary btn-sm">Filters</button><button class="btn btn-primary btn-sm">+ New deal</button></div>
+    </div>
+    <div class="grid-demo">
+      <div class="stat"><div class="stat-label">Active</div><div class="stat-value">148</div></div>
+      <div class="stat"><div class="stat-label">Revenue</div><div class="stat-value">£2,845</div></div>
+      <div class="stat"><div class="stat-label">ROI</div><div class="stat-value">+38%</div></div>
+    </div>
+  </main>
+</div>
+
+<h2>Command palette (⌘K)</h2>
+<div class="demo-card" style="background: var(--zinc-900);">
+  <div class="cmdk">
+    <div class="cmdk-input">
+      <svg class="ico" viewBox="0 0 24 24" style="color: var(--zinc-400);"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+      <input placeholder="Search commands, deals, devices…" value="iphone">
+      <span class="cmdk-kbd">Esc</span>
+    </div>
+    <div class="cmdk-group">
+      <div class="cmdk-group-label">Deals</div>
+      <div class="menu-item">iPhone 12 128GB · £185 · eBay <span style="margin-left:auto; color:var(--zinc-400); font-size:11px;">BUY</span></div>
+      <div class="menu-item">iPhone 13 Pro · £425 · CeX <span style="margin-left:auto; color:var(--zinc-400); font-size:11px;">WATCH</span></div>
+      <div class="cmdk-group-label" style="margin-top: 4px;">Commands</div>
+      <div class="menu-item">Rescan now <span style="margin-left:auto;"><kbd>⌘</kbd><kbd>R</kbd></span></div>
+      <div class="menu-item">Open Settings → Channels</div>
+    </div>
+  </div>
+</div>
+
+<h2>Empty state</h2>
+<div class="panel">
+  <div class="empty">
+    <svg class="empty-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+    <div style="font-weight: 600; color: var(--zinc-800); margin-bottom: 4px;">No deals yet</div>
+    <div style="font-size: 13px;">Your scout runs next at 16:42.</div>
+    <button class="btn btn-primary btn-sm" style="margin-top: 12px;">Run now</button>
+  </div>
+</div>
+
+<!-- END OF FILE -->
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Retool — Analytics Dashboard</title>
+<link rel="stylesheet" href="../../_shared/dark-dashboard.css">
+<style></style>
+</head>
+<body class="">
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="brand-mark"></div><div class="brand-name">Retool</div></div>
+<nav class="nav">
+  <div class="nav-group-label">App</div>
+  <div class="nav-item active"><span class="nav-icon"></span>Dashboard</div>
+  <div class="nav-item"><span class="nav-icon"></span>Queries</div>
+  <div class="nav-item"><span class="nav-icon"></span>Components</div>
+  <div class="nav-item"><span class="nav-icon"></span>Settings</div>
+  <div class="nav-group-label">Resources</div>
+  <div class="nav-item"><span class="nav-icon"></span>Postgres</div>
+  <div class="nav-item"><span class="nav-icon"></span>REST</div>
+  <div class="nav-item"><span class="nav-icon"></span>Slack</div>
+  <div class="nav-item"><span class="nav-icon"></span>GitHub</div>
+</nav>
+</aside>
+<div class="main">
+<div class="topbar">
+  <div class="row" style="gap:16px"><div class="h2">Retool — Analytics Dashboard</div></div>
+  <div class="row" style="gap:12px">
+    <div class="search"><input class="input" placeholder="Search..."></div>
+    <button class="btn btn-sm">+ New</button>
+    <div class="avatar">R</div>
+  </div>
+</div>
+<div class="content">
+<div class="grid grid-4">
+  <div class="kpi">
+  <div class="kpi-label">Total Sales</div>
+  <div class="kpi-value num">35,031</div>
+  <div class="kpi-delta ">+12%</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Clicks</div>
+  <div class="kpi-value num">5,211</div>
+  <div class="kpi-delta ">+8%</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Impressions</div>
+  <div class="kpi-value num">85,234</div>
+  <div class="kpi-delta ">+4%</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">CTR</div>
+  <div class="kpi-value num">6.12%</div>
+  <div class="kpi-delta ">+0.3pt</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+</div>
+<div class="grid" style="grid-template-columns: 2fr 1fr">
+  <div class="card"><div class="card-hd"><div class="card-title">Monthly Revenue</div></div><div class="chart chart-line">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+    <defs><linearGradient id="g7" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity="0.35"/><stop offset="100%" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>
+    <path d="M 0,100 L 0.0,35.0 L 5.3,50.0 L 10.5,65.0 L 15.8,45.0 L 21.1,60.0 L 26.3,40.0 L 31.6,55.0 L 36.8,35.0 L 42.1,50.0 L 47.4,65.0 L 52.6,45.0 L 57.9,60.0 L 63.2,40.0 L 68.4,55.0 L 73.7,35.0 L 78.9,50.0 L 84.2,65.0 L 89.5,45.0 L 94.7,60.0 L 100.0,40.0 L 100,100 Z" fill="url(#g7)" stroke="none" style="color:var(--accent)"/>
+    <path d="M 0.0,35.0 L 5.3,50.0 L 10.5,65.0 L 15.8,45.0 L 21.1,60.0 L 26.3,40.0 L 31.6,55.0 L 36.8,35.0 L 42.1,50.0 L 47.4,65.0 L 52.6,45.0 L 57.9,60.0 L 63.2,40.0 L 68.4,55.0 L 73.7,35.0 L 78.9,50.0 L 84.2,65.0 L 89.5,45.0 L 94.7,60.0 L 100.0,40.0" fill="none" stroke="var(--accent)" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div></div>
+  <div class="card"><div class="card-hd"><div class="card-title">Campaign Revenue</div></div><div class="row" style="gap:20px"><div class="chart-pie"></div><div class="col" style="gap:8px;font-size:12px"><div><span class="dot" style="color:var(--accent)"></span> Summer Sale &middot; 42.9%</div><div><span class="dot" style="color:var(--purple)"></span> Back to School &middot; 42.9%</div><div><span class="dot" style="color:var(--teal)"></span> Holiday Sale &middot; 14.3%</div></div></div></div>
+</div>
+<div class="card"><div class="card-hd"><div class="card-title">Campaigns</div><div class="row" style="gap:8px"><button class="btn btn-sm">View Details</button><button class="btn btn-sm">Export Data</button></div></div>
+<table class="table"><thead><tr><th>Id</th><th>Campaign Name</th><th>Campaign Owner</th><th>Start Date</th><th>End Date</th><th>Budget</th><th>Impressions</th></tr></thead><tbody><tr><td>001</td><td>Summer Sale</td><td>Regan C.</td><td>May 01</td><td>Jun 30</td><td>£12,000</td><td>42,188</td></tr><tr><td>002</td><td>Back to School</td><td>Aria P.</td><td>Aug 15</td><td>Sep 30</td><td>£8,000</td><td>28,441</td></tr><tr><td>003</td><td>Holiday Sale</td><td>Kai J.</td><td>Nov 20</td><td>Dec 24</td><td>£18,000</td><td>14,605</td></tr><tr><td>004</td><td>Spring Refresh</td><td>Mara S.</td><td>Mar 01</td><td>Apr 15</td><td>£6,000</td><td>9,842</td></tr><tr><td>005</td><td>Flash Friday</td><td>Regan C.</td><td>Apr 19</td><td>Apr 19</td><td>£2,000</td><td>3,221</td></tr></tbody></table>
+</div>
+</div>
+</div></div>
+<div style="position:fixed;bottom:8px;right:8px;font-size:10px;color:var(--muted-2);background:var(--bg-1);padding:4px 8px;border-radius:4px;border:1px solid var(--line);font-family:var(--mono)">Recreation - inspired by Retool (retool.com) - <a href="https://retool.com/templates/analytics-dashboard" target="_blank" style="color:var(--muted-2)">source</a></div></body>
+</html>

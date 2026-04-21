@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" preserveAspectRatio="none">
+<rect width="1440" height="900" fill="#2b2f36"/>
+<rect x="0" y="840" width="111" height="60" fill="#6fb3ff" opacity="0.40"/>
+<rect x="111" y="780" width="111" height="120" fill="#4f8cff" opacity="0.46"/>
+<rect x="222" y="720" width="111" height="180" fill="#357abd" opacity="0.52"/>
+<rect x="332" y="660" width="111" height="240" fill="#2b4a7a" opacity="0.58"/>
+<rect x="443" y="600" width="111" height="300" fill="#b68cff" opacity="0.64"/>
+<rect x="554" y="540" width="111" height="360" fill="#ff6a3d" opacity="0.70"/>
+<rect x="665" y="480" width="111" height="420" fill="#ffb347" opacity="0.76"/>
+<rect x="775" y="420" width="111" height="480" fill="#ff8c42" opacity="0.82"/>
+<rect x="886" y="360" width="111" height="540" fill="#f07b3f" opacity="0.88"/>
+<rect x="997" y="300" width="111" height="600" fill="#d14b3a" opacity="0.94"/>
+<rect x="1108" y="240" width="111" height="660" fill="#6fb3ff" opacity="1.00"/>
+<rect x="1218" y="180" width="111" height="720" fill="#4f8cff" opacity="1.06"/>
+<rect x="1329" y="120" width="111" height="780" fill="#357abd" opacity="1.12"/>
+
+</svg>

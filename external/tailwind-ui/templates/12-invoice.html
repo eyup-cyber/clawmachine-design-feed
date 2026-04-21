@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" class="h-full bg-gray-50">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Invoice</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+<style>html { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }</style>
+</head>
+<body class="h-full antialiased text-gray-900">
+
+<main class="bg-white px-6 py-12">
+  <div class="mx-auto max-w-3xl">
+    <header class="flex items-start justify-between"><div><h1 class="text-2xl font-semibold text-gray-900">Invoice #INV-2026-412</h1><p class="mt-1 text-sm text-gray-500">Due Apr 28, 2026</p></div><div class="rounded-md bg-green-100 px-2 py-1 text-xs font-medium text-green-700">Paid</div></header>
+    <div class="mt-10 grid grid-cols-2 gap-8 text-sm"><div class="text-gray-500"><div class="font-semibold text-gray-900">From</div><div class="mt-1">Clawmachine Ltd</div><div>UK</div></div><div class="text-gray-500"><div class="font-semibold text-gray-900">To</div><div class="mt-1">Regan Cooney</div><div>regacooney@gmail.com</div></div></div>
+    <table class="mt-10 w-full text-sm"><thead class="border-b border-gray-200 text-left text-gray-500"><tr><th class="py-3">Description</th><th class="py-3 text-right">Qty</th><th class="py-3 text-right">Price</th><th class="py-3 text-right">Total</th></tr></thead><tbody class="divide-y divide-gray-200">
+      <tr><td class="py-3">Pro subscription</td><td class="py-3 text-right">1</td><td class="py-3 text-right">£29.00</td><td class="py-3 text-right">£29.00</td></tr>
+      <tr><td class="py-3">Additional seat</td><td class="py-3 text-right">2</td><td class="py-3 text-right">£19.00</td><td class="py-3 text-right">£38.00</td></tr>
+    </tbody></table>
+    <dl class="mt-6 space-y-2 border-t border-gray-200 pt-4 text-sm"><div class="flex justify-between"><dt>Subtotal</dt><dd>£67.00</dd></div><div class="flex justify-between"><dt>VAT (20%)</dt><dd>£13.40</dd></div><div class="flex justify-between text-base font-semibold"><dt>Total</dt><dd>£80.40</dd></div></dl>
+  </div>
+</main>
+</body>
+</html>

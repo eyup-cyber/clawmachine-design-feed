@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Bayer ordered dither gradient stripe, used as a tileable gradient pattern -->
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="128" viewBox="0 0 16 128" shape-rendering="crispEdges">
+  <rect width="16" height="128" fill="#000000"/>
+  <g fill="#ffffff">
+    <!-- Row 0: 100% black -->
+    <!-- Row 1: 6.25% white (1/16 pixels) -->
+    <rect x="0" y="8" width="1" height="8"/>
+    <!-- Row 2: 12.5% -->
+    <rect x="0" y="16" width="1" height="8"/>
+    <rect x="8" y="16" width="1" height="8"/>
+    <!-- Row 3: 18.75% -->
+    <rect x="0" y="24" width="1" height="8"/>
+    <rect x="4" y="24" width="1" height="8"/>
+    <rect x="8" y="24" width="1" height="8"/>
+    <!-- Row 4: 25% -->
+    <rect x="0" y="32" width="1" height="8"/>
+    <rect x="4" y="32" width="1" height="8"/>
+    <rect x="8" y="32" width="1" height="8"/>
+    <rect x="12" y="32" width="1" height="8"/>
+    <!-- Row 5: 31% -->
+    <rect x="0" y="40" width="1" height="8"/>
+    <rect x="2" y="40" width="1" height="8"/>
+    <rect x="4" y="40" width="1" height="8"/>
+    <rect x="8" y="40" width="1" height="8"/>
+    <rect x="12" y="40" width="1" height="8"/>
+    <!-- Row 6: 37.5% -->
+    <rect x="0" y="48" width="1" height="8"/>
+    <rect x="2" y="48" width="1" height="8"/>
+    <rect x="4" y="48" width="1" height="8"/>
+    <rect x="8" y="48" width="1" height="8"/>
+    <rect x="10" y="48" width="1" height="8"/>
+    <rect x="12" y="48" width="1" height="8"/>
+    <!-- Row 7: 43% -->
+    <rect x="0" y="56" width="1" height="8"/>
+    <rect x="2" y="56" width="1" height="8"/>
+    <rect x="4" y="56" width="1" height="8"/>
+    <rect x="6" y="56" width="1" height="8"/>
+    <rect x="8" y="56" width="1" height="8"/>
+    <rect x="10" y="56" width="1" height="8"/>
+    <rect x="12" y="56" width="1" height="8"/>
+    <!-- Row 8: 50% -->
+    <rect x="0" y="64" width="1" height="8"/>
+    <rect x="2" y="64" width="1" height="8"/>
+    <rect x="4" y="64" width="1" height="8"/>
+    <rect x="6" y="64" width="1" height="8"/>
+    <rect x="8" y="64" width="1" height="8"/>
+    <rect x="10" y="64" width="1" height="8"/>
+    <rect x="12" y="64" width="1" height="8"/>
+    <rect x="14" y="64" width="1" height="8"/>
+    <!-- Row 9: 62.5% -->
+    <rect x="0" y="72" width="2" height="8"/>
+    <rect x="2" y="72" width="1" height="8"/>
+    <rect x="4" y="72" width="2" height="8"/>
+    <rect x="6" y="72" width="1" height="8"/>
+    <rect x="8" y="72" width="2" height="8"/>
+    <rect x="10" y="72" width="1" height="8"/>
+    <rect x="12" y="72" width="2" height="8"/>
+    <rect x="14" y="72" width="1" height="8"/>
+    <!-- Row 10: 75% -->
+    <rect x="0" y="80" width="3" height="8"/>
+    <rect x="4" y="80" width="3" height="8"/>
+    <rect x="8" y="80" width="3" height="8"/>
+    <rect x="12" y="80" width="3" height="8"/>
+    <!-- Row 11-15: solid white -->
+    <rect x="0" y="88" width="16" height="40"/>
+  </g>
+</svg>

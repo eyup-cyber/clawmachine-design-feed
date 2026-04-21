@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SalesOps — Pipeline & Leaderboard</title>
+<link rel="stylesheet" href="../../_shared/dark-dashboard.css">
+<style></style>
+</head>
+<body class="">
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="brand-mark"></div><div class="brand-name">CLAWMACHINE</div></div>
+<nav class="nav">
+  <div class="nav-group-label">Sales</div>
+  <div class="nav-item active"><span class="nav-icon"></span>Pipeline</div>
+  <div class="nav-item"><span class="nav-icon"></span>Leaderboard</div>
+  <div class="nav-item"><span class="nav-icon"></span>Forecast</div>
+  <div class="nav-group-label">Team</div>
+  <div class="nav-item"><span class="nav-icon"></span>Reps</div>
+  <div class="nav-item"><span class="nav-icon"></span>Regions</div>
+</nav>
+</aside>
+<div class="main">
+<div class="topbar">
+  <div class="row" style="gap:16px"><div class="h2">SalesOps — Pipeline & Leaderboard</div></div>
+  <div class="row" style="gap:12px">
+    <div class="search"><input class="input" placeholder="Search..."></div>
+    <button class="btn btn-sm">+ New</button>
+    <div class="avatar">R</div>
+  </div>
+</div>
+<div class="content">
+<div class="grid grid-4">
+  <div class="kpi">
+  <div class="kpi-label">Pipeline value</div>
+  <div class="kpi-value num">£412K</div>
+  <div class="kpi-delta ">+£18K</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Closed won</div>
+  <div class="kpi-value num">£48K</div>
+  <div class="kpi-delta ">+22%</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Win rate</div>
+  <div class="kpi-value num">34%</div>
+  <div class="kpi-delta ">+2pt</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Avg cycle</div>
+  <div class="kpi-value num">18d</div>
+  <div class="kpi-delta ">-2d</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+</div>
+<div class="grid" style="grid-template-columns: 2fr 1fr">
+  <div class="card"><div class="card-hd"><div class="card-title">Pipeline by stage</div></div>
+    <div class="col" style="gap:10px">
+      <div class="row between"><span>Qualify</span><span class="num">£112K &middot; 42 deals</span></div><div class="progress"><div class="progress-bar" style="width:92%"></div></div>
+      <div class="row between"><span>Demo</span><span class="num">£84K &middot; 28 deals</span></div><div class="progress"><div class="progress-bar" style="width:68%"></div></div>
+      <div class="row between"><span>Proposal</span><span class="num">£61K &middot; 14 deals</span></div><div class="progress"><div class="progress-bar" style="width:51%"></div></div>
+      <div class="row between"><span>Negotiate</span><span class="num">£42K &middot; 9 deals</span></div><div class="progress"><div class="progress-bar" style="width:35%"></div></div>
+      <div class="row between"><span>Closed won</span><span class="num">£48K &middot; 11 deals</span></div><div class="progress"><div class="progress-bar" style="width:40%;background:var(--good)"></div></div>
+    </div>
+  </div>
+  <div class="card"><div class="card-hd"><div class="card-title">Top performers</div></div>
+    <div class="list"><div class="list-row">
+  <div class="avatar">R</div>
+  <div class="col" style="gap:2px;flex:1"><div>Regan C.</div><div class="muted" style="font-size:11px">£92K closed</div></div>
+  <span class="badge badge-good">+18%</span>
+</div><div class="list-row">
+  <div class="avatar">A</div>
+  <div class="col" style="gap:2px;flex:1"><div>Aria P.</div><div class="muted" style="font-size:11px">£74K closed</div></div>
+  <span class="badge badge-good">+11%</span>
+</div><div class="list-row">
+  <div class="avatar">K</div>
+  <div class="col" style="gap:2px;flex:1"><div>Kai J.</div><div class="muted" style="font-size:11px">£51K closed</div></div>
+  <span class="badge">+4%</span>
+</div><div class="list-row">
+  <div class="avatar">M</div>
+  <div class="col" style="gap:2px;flex:1"><div>Mara S.</div><div class="muted" style="font-size:11px">£38K closed</div></div>
+  <span class="badge badge-bad">-2%</span>
+</div><div class="list-row">
+  <div class="avatar">T</div>
+  <div class="col" style="gap:2px;flex:1"><div>Theo R.</div><div class="muted" style="font-size:11px">£21K closed</div></div>
+  <span class="badge">+0%</span>
+</div></div>
+  </div>
+</div>
+<div class="grid grid-2">
+  <div class="card"><div class="card-hd"><div class="card-title">Monthly bookings</div></div><div class="chart"><div class="chart-bars"><span style="height:83%"></span><span style="height:56%"></span><span style="height:29%"></span><span style="height:82%"></span><span style="height:55%"></span><span style="height:28%"></span><span style="height:81%"></span><span style="height:54%"></span><span style="height:27%"></span><span style="height:80%"></span><span style="height:53%"></span><span style="height:26%"></span></div></div></div>
+  <div class="card"><div class="card-hd"><div class="card-title">Forecast trend</div></div><div class="chart chart-line">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+    <defs><linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity="0.35"/><stop offset="100%" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>
+    <path d="M 0,100 L 0.0,50.0 L 5.3,65.0 L 10.5,45.0 L 15.8,60.0 L 21.1,40.0 L 26.3,55.0 L 31.6,35.0 L 36.8,50.0 L 42.1,65.0 L 47.4,45.0 L 52.6,60.0 L 57.9,40.0 L 63.2,55.0 L 68.4,35.0 L 73.7,50.0 L 78.9,65.0 L 84.2,45.0 L 89.5,60.0 L 94.7,40.0 L 100.0,55.0 L 100,100 Z" fill="url(#g3)" stroke="none" style="color:var(--accent)"/>
+    <path d="M 0.0,50.0 L 5.3,65.0 L 10.5,45.0 L 15.8,60.0 L 21.1,40.0 L 26.3,55.0 L 31.6,35.0 L 36.8,50.0 L 42.1,65.0 L 47.4,45.0 L 52.6,60.0 L 57.9,40.0 L 63.2,55.0 L 68.4,35.0 L 73.7,50.0 L 78.9,65.0 L 84.2,45.0 L 89.5,60.0 L 94.7,40.0 L 100.0,55.0" fill="none" stroke="var(--accent)" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div></div>
+</div>
+</div>
+</div></div>
+<div style="position:fixed;bottom:8px;right:8px;font-size:10px;color:var(--muted-2);background:var(--bg-1);padding:4px 8px;border-radius:4px;border:1px solid var(--line);font-family:var(--mono)">Recreation - inspired by kerroudj (v0.app) - <a href="https://v0.app/templates/9q2Mfgu6cDi" target="_blank" style="color:var(--muted-2)">source</a></div></body>
+</html>

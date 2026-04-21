@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" class="h-full bg-gray-50">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Product detail</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+<style>html { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }</style>
+</head>
+<body class="h-full antialiased text-gray-900">
+
+<main class="bg-white p-8">
+  <div class="mx-auto grid max-w-6xl grid-cols-1 gap-8 lg:grid-cols-2">
+    <div class="grid grid-cols-4 gap-4">
+      <img class="col-span-4 rounded-lg aspect-square object-cover" src="https://images.unsplash.com/photo-1527576539890-dfa815648363?w=800" />
+      <img class="rounded-md aspect-square object-cover" src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300" />
+      <img class="rounded-md aspect-square object-cover" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=300" />
+      <img class="rounded-md aspect-square object-cover" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=300" />
+      <img class="rounded-md aspect-square object-cover" src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=300" />
+    </div>
+    <div>
+      <h1 class="text-2xl font-bold text-gray-900">MacBook Pro 14" M1 Pro</h1>
+      <p class="mt-3 text-2xl text-gray-900 font-semibold">£1,299</p>
+      <p class="mt-6 text-sm text-gray-600">Refurbished to grade A. 90-day warranty. Free shipping.</p>
+      <fieldset class="mt-6"><legend class="text-sm font-medium text-gray-900">Storage</legend><div class="mt-3 flex gap-2">
+        <label class="flex cursor-pointer items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium ring-2 ring-transparent has-[:checked]:border-indigo-600 has-[:checked]:ring-indigo-600"><input type="radio" name="s" class="sr-only" />512GB</label>
+        <label class="flex cursor-pointer items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium has-[:checked]:border-indigo-600 has-[:checked]:ring-indigo-600"><input type="radio" name="s" class="sr-only" />1TB</label>
+      </div></fieldset>
+      <div class="mt-8 flex gap-3"><button class="flex-1 rounded-md bg-indigo-600 px-5 py-3 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500">Add to cart</button><button class="rounded-md bg-white px-5 py-3 text-sm font-semibold text-gray-900 ring-1 ring-gray-300 ring-inset hover:bg-gray-50">Save</button></div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

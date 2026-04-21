@@ -1,55 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><title>CTA sections — Untitled UI Pro</title>
+<meta charset="UTF-8">
+<title>CTA sections — Untitled UI Pro</title>
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 <link rel="stylesheet" href="../design.css">
+<style>
+  .cta-darkhero { background: var(--color-neutral-950); padding: 128px 32px; color: #fff; text-align: center; }
+  .cta-split { background: var(--color-bg-brand-section); padding: 96px 32px; color: #fff; }
+  .cta-banner { background: var(--color-brand-600); padding: 64px 32px; color: #fff; }
+  .cta-feature-row { padding: 32px; border-radius: var(--radius-2xl); background: rgba(255,255,255,0.06); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12); }
+  .cta-imagetile { aspect-ratio: 4/3; border-radius: var(--radius-2xl); background: rgba(255,255,255,0.08); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2); padding: 32px; display: flex; flex-direction: column; justify-content: flex-end; color: #fff; }
+  .cta-section-header { font-size: var(--text-md); font-weight: 600; color: var(--color-text-quaternary); text-transform: uppercase; letter-spacing: 0.1em; padding: 32px 0 16px; text-align: center; }
+</style>
 </head>
 <body>
 
-<!-- Variant 1: dark hero CTA with two buttons -->
-<section style="background:var(--color-neutral-950);padding:96px 32px;color:#fff;text-align:center;">
-  <div class="uui-container">
-    <h2 class="t-display-xl" style="font-weight:600;color:#fff;max-width:720px;margin:0 auto;">Start building today. Cancel anytime.</h2>
-    <p style="font-size:var(--text-xl);line-height:var(--text-xl-lh);color:rgba(255,255,255,0.75);margin-top:20px;max-width:600px;margin-left:auto;margin-right:auto;">Join 4,000+ teams shipping faster with a design system they actually maintain.</p>
-    <div class="uui-row gap-3 justify-center" style="margin-top:40px;">
-      <a href="#" class="uui-btn uui-btn--secondary uui-btn--xl" style="background:#fff;color:var(--color-neutral-900);">Talk to sales</a>
-      <a href="#" class="uui-btn uui-btn--primary uui-btn--xl">Start free trial</a>
+<header style="padding: 20px 32px; border-bottom: 1px solid var(--color-border-secondary); background: var(--color-bg-primary);">
+  <div class="uui-container" style="padding: 0; display: flex; justify-content: space-between; align-items: center;">
+    <a href="#" class="uui-row gap-2 items-center" style="text-decoration: none;">
+      <svg width="32" height="32" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="var(--color-brand-600)"/><path d="M10 11h12M10 16h9M10 21h6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg>
+      <span style="font-weight: 600; color: var(--color-text-primary);">Untitled UI</span>
+    </a>
+    <nav class="uui-row gap-1">
+      <a class="uui-btn uui-btn--tertiary uui-btn--md">Product</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md">Resources</a>
+      <a class="uui-btn uui-btn--tertiary uui-btn--md">Pricing</a>
+    </nav>
+    <a href="#" class="uui-btn uui-btn--primary uui-btn--md">Start free</a>
+  </div>
+</header>
+
+<div class="cta-section-header">variant 1 — centered dark hero</div>
+
+<!-- variant 1: centered dark hero with two ctas -->
+<section class="cta-darkhero">
+  <div class="uui-container" style="max-width: 880px;">
+    <span class="uui-badge uui-badge--modern" style="background: rgba(255,255,255,0.12); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);"><span class="dot" style="background: var(--color-brand-400);"></span>v3.0 now shipping</span>
+    <h1 class="t-display-xl" style="font-weight: 600; color: #fff; margin-top: 20px;">start building today. cancel any time.</h1>
+    <p style="font-size: var(--text-xl); line-height: var(--text-xl-lh); color: rgba(255,255,255,0.75); margin-top: 20px; max-width: 720px; margin-left: auto; margin-right: auto;">join 4,200+ teams shipping faster with a design system they actually maintain. seat-based pricing, no overages, no retention interview on the way out.</p>
+    <div class="uui-row gap-3 justify-center" style="margin-top: 40px;">
+      <a href="#" class="uui-btn uui-btn--secondary uui-btn--xl" style="background: rgba(255,255,255,0.08); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16);">talk to sales</a>
+      <a href="#" class="uui-btn uui-btn--primary uui-btn--xl">start free trial</a>
+    </div>
+    <div class="uui-row gap-6 justify-center" style="margin-top: 40px; color: rgba(255,255,255,0.65); font-size: var(--text-sm);">
+      <span class="uui-row gap-2 items-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>no credit card required</span>
+      <span class="uui-row gap-2 items-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>14-day free trial</span>
+      <span class="uui-row gap-2 items-center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>cancel any time</span>
     </div>
   </div>
 </section>
 
-<!-- Variant 2: split image/text CTA with brand gradient -->
-<section style="background:linear-gradient(135deg,var(--color-brand-800),var(--color-brand-600));padding:96px 32px;color:#fff;">
-  <div class="uui-container" style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;">
+<div class="cta-section-header">variant 2 — split image + product feature cta</div>
+
+<!-- variant 2: split image + text cta on brand panel -->
+<section class="cta-split">
+  <div class="uui-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;">
     <div>
-      <span class="uui-badge uui-badge--modern" style="background:rgba(255,255,255,0.2);color:#fff;">v3.0 now shipping</span>
-      <h2 class="t-display-lg" style="font-weight:600;margin-top:20px;">Ship your next release with confidence</h2>
-      <p style="font-size:var(--text-lg);opacity:0.85;margin-top:20px;max-width:480px;">Version 3 adds real-time co-edit, AI token suggestions, and a public changelog engine. All included on every paid plan.</p>
-      <div class="uui-row gap-3" style="margin-top:32px;">
-        <a href="#" class="uui-btn uui-btn--secondary uui-btn--xl" style="background:#fff;color:var(--color-brand-700);">See what's new</a>
-        <a href="#" class="uui-btn uui-btn--tertiary uui-btn--xl" style="color:#fff;">Read changelog →</a>
+      <span class="uui-badge uui-badge--modern" style="background: rgba(255,255,255,0.18); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.24);">new in v3</span>
+      <h2 class="t-display-lg" style="font-weight: 600; margin-top: 20px;">ship your next release with confidence</h2>
+      <p style="font-size: var(--text-lg); color: rgba(255,255,255,0.82); margin-top: 20px; max-width: 480px;">version 3 adds real-time co-edit, ai token suggestions, and a public changelog engine. all included on every paid plan.</p>
+      <ul style="list-style: none; padding: 0; margin-top: 32px; display: flex; flex-direction: column; gap: 12px;">
+        <li style="display: flex; gap: 12px; color: rgba(255,255,255,0.88);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>real-time co-edit with per-cursor presence.</li>
+        <li style="display: flex; gap: 12px; color: rgba(255,255,255,0.88);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>ai token suggestions with opt-out for regulated teams.</li>
+        <li style="display: flex; gap: 12px; color: rgba(255,255,255,0.88);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>public changelog engine with rss and atom.</li>
+        <li style="display: flex; gap: 12px; color: rgba(255,255,255,0.88);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>no legacy api breakage — every v2 endpoint still responds.</li>
+      </ul>
+      <div class="uui-row gap-3" style="margin-top: 32px;">
+        <a href="#" class="uui-btn uui-btn--primary uui-btn--xl" style="background: #fff; color: var(--color-text-primary);">see what's new</a>
+        <a href="#" class="uui-btn uui-btn--tertiary uui-btn--xl" style="color: #fff;">read changelog<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
     </div>
-    <div style="aspect-ratio:4/3;border-radius:var(--radius-2xl);background:rgba(255,255,255,0.1);box-shadow:inset 0 0 0 1px rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.4);">
-      <svg width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <div class="cta-imagetile">
+      <div style="position: absolute; top: 24px; right: 24px;"><span class="uui-badge uui-badge--modern" style="background: rgba(255,255,255,0.2); color: #fff; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.3);">preview</span></div>
+      <svg width="96" height="96" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="color: rgba(255,255,255,0.4); margin-bottom: 16px;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <h3 style="font-size: var(--text-lg); font-weight: 600;">workspace · dashboard view</h3>
+      <p style="font-size: var(--text-sm); color: rgba(255,255,255,0.7); margin-top: 4px;">live token preview across six themes at once.</p>
     </div>
   </div>
 </section>
 
-<!-- Variant 3: minimal stacked CTA with newsletter capture -->
-<section style="background:var(--color-neutral-900);padding:128px 32px;color:#fff;text-align:center;">
-  <div class="uui-container" style="max-width:560px;">
-    <span style="font-size:var(--text-md);font-weight:600;color:var(--color-brand-300);">Stay in the loop</span>
-    <h2 class="t-display-md" style="font-weight:600;margin-top:16px;">Monthly updates, no noise</h2>
-    <p style="font-size:var(--text-md);color:rgba(255,255,255,0.75);margin-top:16px;">Product notes, the team's reading list, and one opinion worth disagreeing with — once a month, unsubscribe any time.</p>
-    <form style="display:flex;gap:12px;margin-top:32px;">
-      <input type="email" placeholder="you@work.com" class="uui-input" style="flex:1;background:rgba(255,255,255,0.08);color:#fff;border-color:rgba(255,255,255,0.15);"/>
-      <button type="submit" class="uui-btn uui-btn--primary uui-btn--lg">Subscribe</button>
+<div class="cta-section-header">variant 3 — banner with email capture</div>
+
+<!-- variant 3: banner with email capture -->
+<section class="cta-banner">
+  <div class="uui-container" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 64px; align-items: center;">
+    <div>
+      <span style="font-size: var(--text-md); font-weight: 600; color: var(--color-brand-200);">monthly digest</span>
+      <h2 class="t-display-md" style="font-weight: 600; margin-top: 12px;">stay in the loop without the noise</h2>
+      <p style="font-size: var(--text-md); color: rgba(255,255,255,0.82); margin-top: 16px; max-width: 520px;">product notes, the team's reading list, and one opinion worth disagreeing with — once a month, unsubscribe any time, no dark patterns.</p>
+    </div>
+    <form style="display: flex; gap: 12px; align-items: flex-start;">
+      <div class="uui-input uui-input--lg" style="flex: 1; background: rgba(255,255,255,0.1); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25); color: #fff;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67" style="color: rgba(255,255,255,0.7);"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+        <input type="email" placeholder="you@work.com" style="color: #fff;">
+      </div>
+      <button type="submit" class="uui-btn uui-btn--primary uui-btn--xl" style="background: #fff; color: var(--color-text-primary);">subscribe</button>
     </form>
-    <p style="font-size:var(--text-xs);color:rgba(255,255,255,0.55);margin-top:16px;">We care about your data in our <a href="#" style="color:#fff;text-decoration:underline;">privacy policy</a>.</p>
+  </div>
+  <div class="uui-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 48px;">
+    <div class="cta-feature-row">
+      <h4 style="font-size: var(--text-md); font-weight: 600;">release notes</h4>
+      <p style="font-size: var(--text-sm); color: rgba(255,255,255,0.75); margin-top: 4px;">what shipped, what changed, what broke.</p>
+    </div>
+    <div class="cta-feature-row">
+      <h4 style="font-size: var(--text-md); font-weight: 600;">roadmap peek</h4>
+      <p style="font-size: var(--text-sm); color: rgba(255,255,255,0.75); margin-top: 4px;">the quarter ahead, annotated honestly.</p>
+    </div>
+    <div class="cta-feature-row">
+      <h4 style="font-size: var(--text-md); font-weight: 600;">field notes</h4>
+      <p style="font-size: var(--text-sm); color: rgba(255,255,255,0.75); margin-top: 4px;">one piece the team argued over this month.</p>
+    </div>
+  </div>
+  <p style="text-align: center; font-size: var(--text-sm); color: rgba(255,255,255,0.7); margin-top: 32px;">we care about your data. read the <a href="#" style="color: #fff; text-decoration: underline;">privacy policy</a>.</p>
+</section>
+
+<div class="cta-section-header">variant 4 — light panel with dual cta</div>
+
+<!-- bonus: centered light cta -->
+<section style="background: var(--color-bg-secondary); padding: 96px 32px; text-align: center; border-top: 1px solid var(--color-border-secondary); border-bottom: 1px solid var(--color-border-secondary);">
+  <div class="uui-container" style="max-width: 720px;">
+    <span class="uui-badge uui-badge--brand">
+      <span class="dot"></span>limited slots
+    </span>
+    <h2 class="t-display-lg" style="font-weight: 600; color: var(--color-text-primary); margin-top: 20px;">
+      book a 30-minute architecture review
+    </h2>
+    <p style="font-size: var(--text-lg); color: var(--color-text-tertiary); margin-top: 16px;">
+      a founding engineer walks your team through the integration, the export formats, and the security story. no slides, no pitch.
+    </p>
+    <div class="uui-row gap-3 justify-center" style="margin-top: 32px;">
+      <a href="#" class="uui-btn uui-btn--secondary uui-btn--lg">watch the 2-minute intro</a>
+      <a href="#" class="uui-btn uui-btn--primary uui-btn--lg">book your slot</a>
+    </div>
+    <div class="uui-avatar-group" style="margin-top: 40px; justify-content: center; display: flex;">
+      <span class="uui-avatar uui-avatar--md" style="background: var(--color-brand-100); color: var(--color-brand-700);">JL</span>
+      <span class="uui-avatar uui-avatar--md" style="background: var(--color-neutral-100); color: var(--color-neutral-700);">BN</span>
+      <span class="uui-avatar uui-avatar--md" style="background: var(--color-brand-100); color: var(--color-brand-700);">SH</span>
+      <span class="uui-avatar uui-avatar--md" style="background: var(--color-neutral-100); color: var(--color-neutral-700);">RS</span>
+      <span class="uui-avatar uui-avatar--md" style="background: var(--color-brand-100); color: var(--color-brand-700);">MH</span>
+    </div>
+    <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 16px;">
+      120+ teams have taken the call this quarter.
+    </p>
   </div>
 </section>
+
+<div class="cta-section-header">variant 5 — sticky bottom bar</div>
+
+<!-- variant 5: sticky bottom bar style (rendered inline) -->
+<section style="padding: 48px 32px; background: var(--color-bg-primary);">
+  <div class="uui-container" style="padding: 24px; border-radius: var(--radius-2xl); background: var(--color-neutral-900); color: #fff; display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center; box-shadow: var(--shadow-xl);">
+    <span class="uui-ficon uui-ficon--lg" style="background: rgba(255,255,255,0.12); color: #fff;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67">
+        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      </svg>
+    </span>
+    <div>
+      <h3 style="font-size: var(--text-md); font-weight: 600;">v3.0 is live today</h3>
+      <p style="font-size: var(--text-sm); color: rgba(255,255,255,0.75); margin-top: 2px;">
+        real-time co-edit, ai suggestions, public changelog engine — all included on every paid plan.
+      </p>
+    </div>
+    <div class="uui-row gap-3">
+      <a href="#" class="uui-btn uui-btn--tertiary uui-btn--md" style="color: #fff;">read the notes</a>
+      <a href="#" class="uui-btn uui-btn--primary uui-btn--md" style="background: #fff; color: var(--color-text-primary);">try v3</a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section-header">variant 6 — inline card with feature list</div>
+
+<!-- variant 6: card cta with feature list -->
+<section style="padding: 96px 32px; background: var(--color-bg-primary);">
+  <div class="uui-container" style="padding: 0;">
+    <div class="uui-card" style="padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+      <div>
+        <span class="uui-badge uui-badge--brand">
+          <span class="dot"></span>enterprise
+        </span>
+        <h3 class="t-display-md" style="font-weight: 600; color: var(--color-text-primary); margin-top: 16px;">
+          the enterprise package, itemised
+        </h3>
+        <p style="font-size: var(--text-lg); color: var(--color-text-tertiary); margin-top: 16px;">
+          everything in team, plus the compliance, residency, and dedicated-support story your legal and security teams already asked for.
+        </p>
+        <div class="uui-row gap-3" style="margin-top: 32px;">
+          <a href="#" class="uui-btn uui-btn--secondary uui-btn--lg">see full comparison</a>
+          <a href="#" class="uui-btn uui-btn--primary uui-btn--lg">book enterprise demo</a>
+        </div>
+      </div>
+      <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 16px;">
+        <li style="display: flex; gap: 12px; align-items: flex-start;">
+          <span class="uui-ficon uui-ficon--sm uui-ficon--brand-light">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </span>
+          <div>
+            <strong style="color: var(--color-text-primary); font-size: var(--text-md);">soc 2 type ii</strong>
+            <p style="color: var(--color-text-tertiary); font-size: var(--text-sm); margin-top: 2px;">
+              audit report under nda, updated annually.
+            </p>
+          </div>
+        </li>
+        <li style="display: flex; gap: 12px; align-items: flex-start;">
+          <span class="uui-ficon uui-ficon--sm uui-ficon--brand-light">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </span>
+          <div>
+            <strong style="color: var(--color-text-primary); font-size: var(--text-md);">sso + scim provisioning</strong>
+            <p style="color: var(--color-text-tertiary); font-size: var(--text-sm); margin-top: 2px;">
+              saml, oidc, scim 2.0, tested against okta / entra / workos.
+            </p>
+          </div>
+        </li>
+        <li style="display: flex; gap: 12px; align-items: flex-start;">
+          <span class="uui-ficon uui-ficon--sm uui-ficon--brand-light">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </span>
+          <div>
+            <strong style="color: var(--color-text-primary); font-size: var(--text-md);">regional data residency</strong>
+            <p style="color: var(--color-text-tertiary); font-size: var(--text-sm); margin-top: 2px;">
+              pin storage and processing to us, eu, or ap-southeast.
+            </p>
+          </div>
+        </li>
+        <li style="display: flex; gap: 12px; align-items: flex-start;">
+          <span class="uui-ficon uui-ficon--sm uui-ficon--brand-light">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </span>
+          <div>
+            <strong style="color: var(--color-text-primary); font-size: var(--text-md);">named support engineer</strong>
+            <p style="color: var(--color-text-tertiary); font-size: var(--text-sm); margin-top: 2px;">
+              a real person, a real slack channel, 1-hour response sla.
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer style="padding: 48px 32px; border-top: 1px solid var(--color-border-secondary); text-align: center; color: var(--color-text-tertiary); font-size: var(--text-sm); background: var(--color-bg-primary);">
+  Untitled UI Pro — cta-section template
+</footer>
 
 </body>
 </html>

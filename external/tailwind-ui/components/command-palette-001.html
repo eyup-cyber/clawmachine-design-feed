@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" class="h-full bg-white">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Command Palette</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+<style>html { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }</style>
+</head>
+<body class="h-full bg-gray-50 p-8 antialiased text-gray-900">
+<!-- Command Palette — clean-room Tailwind UI recreation -->
+<div class="mx-auto max-w-xl transform divide-y divide-gray-100 overflow-hidden rounded-xl bg-white shadow-2xl ring-1 ring-gray-200">
+  <div class="flex items-center px-4">
+    <svg class="size-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path d="M9 3.5a5.5 5.5 0 1 0 3.437 9.791l3.386 3.386a.75.75 0 1 0 1.06-1.06l-3.386-3.386A5.5 5.5 0 0 0 9 3.5Z"/></svg>
+    <input class="h-12 w-full bg-transparent px-4 text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm" placeholder="Search..." />
+  </div>
+  <ul class="max-h-72 scroll-py-2 overflow-y-auto py-2 text-sm text-gray-800">
+    <li class="cursor-default select-none px-4 py-2 hover:bg-gray-100">Open palette</li>
+    <li class="cursor-default select-none px-4 py-2 hover:bg-gray-100">Toggle theme</li>
+    <li class="cursor-default select-none px-4 py-2 hover:bg-gray-100">Go to settings</li>
+  </ul>
+</div>
+</body>
+</html>

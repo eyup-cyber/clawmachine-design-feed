@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pulse — Incident Response Console</title>
+<link rel="stylesheet" href="../../_shared/dark-dashboard.css">
+<style></style>
+</head>
+<body class="">
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="brand-mark"></div><div class="brand-name">CLAWMACHINE</div></div>
+<nav class="nav">
+  <div class="nav-group-label">Pulse</div>
+  <div class="nav-item active"><span class="nav-icon"></span>Overview</div>
+  <div class="nav-item"><span class="nav-icon"></span>Incidents</div>
+  <div class="nav-item"><span class="nav-icon"></span>Deploys</div>
+  <div class="nav-item"><span class="nav-icon"></span>SLO</div>
+  <div class="nav-group-label">Signals</div>
+  <div class="nav-item"><span class="nav-icon"></span>Alerts</div>
+  <div class="nav-item"><span class="nav-icon"></span>Runbooks</div>
+</nav>
+</aside>
+<div class="main">
+<div class="topbar">
+  <div class="row" style="gap:16px"><div class="h2">Pulse — Incident Response Console</div></div>
+  <div class="row" style="gap:12px">
+    <div class="search"><input class="input" placeholder="Search..."></div>
+    <button class="btn btn-sm">+ New</button>
+    <div class="avatar">R</div>
+  </div>
+</div>
+<div class="content">
+<div class="grid grid-4">
+  <div class="kpi">
+  <div class="kpi-label">P50 latency</div>
+  <div class="kpi-value num">128ms</div>
+  <div class="kpi-delta ">+2ms</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">P95 latency</div>
+  <div class="kpi-value num">412ms</div>
+  <div class="kpi-delta ">-18ms</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">P99 latency</div>
+  <div class="kpi-value num">1.28s</div>
+  <div class="kpi-delta down">+240ms</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Uptime 30d</div>
+  <div class="kpi-value num">99.94%</div>
+  <div class="kpi-delta ">+0.02pt</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+</div>
+<div class="grid grid-2">
+  <div class="card">
+    <div class="card-hd"><div class="card-title">Live incidents</div><span class="badge badge-bad"><span class="dot"></span>2 active</span></div>
+    <table class="table"><thead><tr><th>ID</th><th>Service</th><th>Severity</th><th>Duration</th><th>Owner</th></tr></thead><tbody><tr><td>INC-412</td><td>api-gateway</td><td><span class="badge badge-bad">P1</span></td><td>00:14:22</td><td>Regan</td></tr><tr><td>INC-411</td><td>worker-dispatch</td><td><span class="badge badge-warn">P2</span></td><td>00:47:02</td><td>Kai</td></tr><tr><td>INC-410</td><td>redis-01</td><td><span class="badge badge-good">Resolved</span></td><td>01:22:00</td><td>Aria</td></tr></tbody></table>
+  </div>
+  <div class="card"><div class="card-hd"><div class="card-title">Deploy velocity</div></div><div class="chart"><div class="chart-bars"><span style="height:20%"></span><span style="height:73%"></span><span style="height:46%"></span><span style="height:19%"></span><span style="height:72%"></span><span style="height:45%"></span><span style="height:18%"></span><span style="height:71%"></span><span style="height:44%"></span><span style="height:17%"></span><span style="height:70%"></span><span style="height:43%"></span><span style="height:16%"></span><span style="height:69%"></span><span style="height:42%"></span><span style="height:15%"></span><span style="height:68%"></span><span style="height:41%"></span><span style="height:94%"></span><span style="height:67%"></span><span style="height:40%"></span><span style="height:93%"></span><span style="height:66%"></span><span style="height:39%"></span><span style="height:92%"></span><span style="height:65%"></span><span style="height:38%"></span><span style="height:91%"></span></div></div></div>
+</div>
+<div class="card"><div class="card-hd"><div class="card-title">Response time distribution</div></div><div class="chart chart-line">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+    <defs><linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="currentColor" stop-opacity="0.35"/><stop offset="100%" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs>
+    <path d="M 0,100 L 0.0,45.0 L 5.3,60.0 L 10.5,40.0 L 15.8,55.0 L 21.1,35.0 L 26.3,50.0 L 31.6,65.0 L 36.8,45.0 L 42.1,60.0 L 47.4,40.0 L 52.6,55.0 L 57.9,35.0 L 63.2,50.0 L 68.4,65.0 L 73.7,45.0 L 78.9,60.0 L 84.2,40.0 L 89.5,55.0 L 94.7,35.0 L 100.0,50.0 L 100,100 Z" fill="url(#g2)" stroke="none" style="color:var(--accent)"/>
+    <path d="M 0.0,45.0 L 5.3,60.0 L 10.5,40.0 L 15.8,55.0 L 21.1,35.0 L 26.3,50.0 L 31.6,65.0 L 36.8,45.0 L 42.1,60.0 L 47.4,40.0 L 52.6,55.0 L 57.9,35.0 L 63.2,50.0 L 68.4,65.0 L 73.7,45.0 L 78.9,60.0 L 84.2,40.0 L 89.5,55.0 L 94.7,35.0 L 100.0,50.0" fill="none" stroke="var(--accent)" stroke-width="1.2" vector-effect="non-scaling-stroke"/>
+  </svg>
+</div></div>
+</div>
+</div></div>
+<div style="position:fixed;bottom:8px;right:8px;font-size:10px;color:var(--muted-2);background:var(--bg-1);padding:4px 8px;border-radius:4px;border:1px solid var(--line);font-family:var(--mono)">Recreation - inspired by kerroudj (v0.app) - <a href="https://v0.app/templates/3hZwaLtyRbc" target="_blank" style="color:var(--muted-2)">source</a></div></body>
+</html>

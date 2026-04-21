@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" preserveAspectRatio="none">
+<rect width="1440" height="900" fill="#22252a"/>
+<ellipse cx="555" cy="422" rx="70" ry="64" fill="none" stroke="#b68cff" stroke-width="1.5" opacity="0.10"/>
+<ellipse cx="759" cy="400" rx="154" ry="109" fill="none" stroke="#57e0a3" stroke-width="1.5" opacity="0.15"/>
+<ellipse cx="873" cy="500" rx="219" ry="171" fill="none" stroke="#ff6a3d" stroke-width="1.5" opacity="0.20"/>
+<ellipse cx="592" cy="476" rx="295" ry="202" fill="none" stroke="#ffb347" stroke-width="1.5" opacity="0.25"/>
+<ellipse cx="577" cy="452" rx="318" ry="256" fill="none" stroke="#ff8c42" stroke-width="1.5" opacity="0.10"/>
+<ellipse cx="627" cy="314" rx="390" ry="318" fill="none" stroke="#f07b3f" stroke-width="1.5" opacity="0.15"/>
+<ellipse cx="738" cy="362" rx="433" ry="334" fill="none" stroke="#6fb3ff" stroke-width="1.5" opacity="0.20"/>
+<ellipse cx="916" cy="529" rx="526" ry="397" fill="none" stroke="#4f8cff" stroke-width="1.5" opacity="0.25"/>
+<ellipse cx="861" cy="333" rx="597" ry="453" fill="none" stroke="#357abd" stroke-width="1.5" opacity="0.10"/>
+<ellipse cx="638" cy="519" rx="629" ry="492" fill="none" stroke="#2b4a7a" stroke-width="1.5" opacity="0.15"/>
+<ellipse cx="621" cy="359" rx="729" ry="518" fill="none" stroke="#b68cff" stroke-width="1.5" opacity="0.20"/>
+<ellipse cx="616" cy="377" rx="760" ry="563" fill="none" stroke="#57e0a3" stroke-width="1.5" opacity="0.25"/>
+<ellipse cx="537" cy="406" rx="817" ry="600" fill="none" stroke="#ff6a3d" stroke-width="1.5" opacity="0.10"/>
+<ellipse cx="914" cy="334" rx="881" ry="684" fill="none" stroke="#ffb347" stroke-width="1.5" opacity="0.15"/>
+<ellipse cx="837" cy="567" rx="967" ry="717" fill="none" stroke="#ff8c42" stroke-width="1.5" opacity="0.20"/>
+<ellipse cx="741" cy="471" rx="987" ry="773" fill="none" stroke="#f07b3f" stroke-width="1.5" opacity="0.25"/>
+<ellipse cx="707" cy="513" rx="1041" ry="783" fill="none" stroke="#6fb3ff" stroke-width="1.5" opacity="0.10"/>
+<ellipse cx="741" cy="594" rx="1116" ry="835" fill="none" stroke="#4f8cff" stroke-width="1.5" opacity="0.15"/>
+<ellipse cx="683" cy="594" rx="1164" ry="886" fill="none" stroke="#357abd" stroke-width="1.5" opacity="0.20"/>
+<ellipse cx="798" cy="375" rx="1238" ry="923" fill="none" stroke="#2b4a7a" stroke-width="1.5" opacity="0.25"/>
+
+</svg>

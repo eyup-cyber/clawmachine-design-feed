@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Retool — HR Analytics</title>
+<link rel="stylesheet" href="../../_shared/dark-dashboard.css">
+<style></style>
+</head>
+<body class="">
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="brand-mark"></div><div class="brand-name">Retool</div></div>
+<nav class="nav">
+  <div class="nav-group-label">App</div>
+  <div class="nav-item active"><span class="nav-icon"></span>Dashboard</div>
+  <div class="nav-item"><span class="nav-icon"></span>Queries</div>
+  <div class="nav-item"><span class="nav-icon"></span>Components</div>
+  <div class="nav-item"><span class="nav-icon"></span>Settings</div>
+  <div class="nav-group-label">Resources</div>
+  <div class="nav-item"><span class="nav-icon"></span>Postgres</div>
+  <div class="nav-item"><span class="nav-icon"></span>REST</div>
+  <div class="nav-item"><span class="nav-icon"></span>Slack</div>
+  <div class="nav-item"><span class="nav-icon"></span>GitHub</div>
+</nav>
+</aside>
+<div class="main">
+<div class="topbar">
+  <div class="row" style="gap:16px"><div class="h2">Retool — HR Analytics</div></div>
+  <div class="row" style="gap:12px">
+    <div class="search"><input class="input" placeholder="Search..."></div>
+    <button class="btn btn-sm">+ New</button>
+    <div class="avatar">R</div>
+  </div>
+</div>
+<div class="content">
+<div class="grid grid-4">
+  <div class="kpi">
+  <div class="kpi-label">Employees</div>
+  <div class="kpi-value num">247</div>
+  <div class="kpi-delta ">+4 new</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Retention</div>
+  <div class="kpi-value num">94%</div>
+  <div class="kpi-delta ">+2pt</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Open roles</div>
+  <div class="kpi-value num">18</div>
+  <div class="kpi-delta ">+3</div>
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Avg tenure</div>
+  <div class="kpi-value num">3.2 yr</div>
+  
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+</div>
+<div class="grid" style="grid-template-columns: 2fr 1fr">
+  <div class="card"><div class="card-hd"><div class="card-title">Headcount by department</div></div><div class="chart"><div class="chart-bars"><span style="height:49%"></span><span style="height:22%"></span><span style="height:75%"></span><span style="height:48%"></span><span style="height:21%"></span><span style="height:74%"></span><span style="height:47%"></span><span style="height:20%"></span></div></div></div>
+  <div class="card"><div class="card-hd"><div class="card-title">Gender balance</div></div><div class="row" style="gap:20px"><div class="chart-donut"></div><div class="col" style="gap:6px;font-size:12px"><div><span class="dot" style="color:var(--accent)"></span> Women 48%</div><div><span class="dot" style="color:var(--purple)"></span> Men 47%</div><div><span class="dot" style="color:var(--teal)"></span> Non-binary 3%</div><div><span class="dot" style="color:var(--amber)"></span> Undisclosed 2%</div></div></div></div>
+</div>
+<div class="card"><div class="card-hd"><div class="card-title">Employees</div></div>
+<table class="table"><thead><tr><th>Name</th><th>Dept</th><th>Role</th><th>Tenure</th><th>Manager</th></tr></thead><tbody><tr><td>Regan C.</td><td>Ops</td><td>Founder</td><td>5 yr</td><td>—</td></tr><tr><td>Aria P.</td><td>Engineering</td><td>Senior SE</td><td>2.3 yr</td><td>Regan</td></tr><tr><td>Kai J.</td><td>Engineering</td><td>SE</td><td>1.1 yr</td><td>Aria</td></tr><tr><td>Mara S.</td><td>Ops</td><td>Analyst</td><td>2.8 yr</td><td>Regan</td></tr><tr><td>Theo R.</td><td>Sales</td><td>AE</td><td>0.8 yr</td><td>Regan</td></tr></tbody></table>
+</div>
+</div>
+</div></div>
+<div style="position:fixed;bottom:8px;right:8px;font-size:10px;color:var(--muted-2);background:var(--bg-1);padding:4px 8px;border-radius:4px;border:1px solid var(--line);font-family:var(--mono)">Recreation - inspired by Retool (retool.com) - <a href="https://retool.com/templates/hr-analytics-dashboard" target="_blank" style="color:var(--muted-2)">source</a></div></body>
+</html>

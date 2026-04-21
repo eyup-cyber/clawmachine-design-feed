@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Convex — Fullstack Template</title>
+<link rel="stylesheet" href="../../_shared/dark-dashboard.css">
+<style></style>
+</head>
+<body class="">
+<div class="app">
+<aside class="sidebar">
+<div class="brand"><div class="brand-mark"></div><div class="brand-name">Convex</div></div>
+<nav class="nav">
+  <div class="nav-group-label">Platform</div>
+  <div class="nav-item active"><span class="nav-icon"></span>Projects</div>
+  <div class="nav-item"><span class="nav-icon"></span>Models</div>
+  <div class="nav-item"><span class="nav-icon"></span>API</div>
+  <div class="nav-item"><span class="nav-icon"></span>Settings</div>
+</nav>
+</aside>
+<div class="main">
+<div class="topbar">
+  <div class="row" style="gap:16px"><div class="h2">Convex — Fullstack Template</div></div>
+  <div class="row" style="gap:12px">
+    <div class="search"><input class="input" placeholder="Search..."></div>
+    <button class="btn btn-sm">+ New</button>
+    <div class="avatar">R</div>
+  </div>
+</div>
+<div class="content">
+<div class="grid grid-3">
+  <div class="kpi">
+  <div class="kpi-label">Documents</div>
+  <div class="kpi-value num">12,418</div>
+  
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Active sessions</div>
+  <div class="kpi-value num">128</div>
+  
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+  <div class="kpi">
+  <div class="kpi-label">Functions/min</div>
+  <div class="kpi-value num">842</div>
+  
+  <div class="kpi-spark"><span style="height:20%"></span><span style="height:57%"></span><span style="height:24%"></span><span style="height:61%"></span><span style="height:28%"></span><span style="height:65%"></span><span style="height:32%"></span><span style="height:69%"></span><span style="height:36%"></span><span style="height:73%"></span><span style="height:40%"></span><span style="height:77%"></span><span style="height:44%"></span><span style="height:81%"></span></div>
+</div>
+
+</div>
+<div class="grid grid-2">
+  <div class="card"><div class="card-hd"><div class="card-title">Real-time log</div></div>
+    <div class="mono" style="font-size:11px;background:var(--bg);padding:12px;border-radius:6px;height:220px;overflow:auto">
+      <div class="muted">[04:21:02.142] query:getUser user_42</div>
+      <div class="muted">[04:21:02.148] mutation:sendMessage</div>
+      <div style="color:var(--good)">[04:21:02.158] mutation:sendMessage OK 16ms</div>
+      <div class="muted">[04:21:02.201] query:listMessages</div>
+      <div style="color:var(--good)">[04:21:02.204] query:listMessages OK 3ms</div>
+      <div class="muted">[04:21:02.301] action:generateReply</div>
+      <div style="color:var(--accent)">[04:21:02.302] action:generateReply running (Claude Sonnet)</div>
+      <div style="color:var(--good)">[04:21:03.814] action:generateReply OK 1512ms</div>
+    </div>
+  </div>
+  <div class="card"><div class="card-hd"><div class="card-title">Schema</div></div>
+    <pre class="mono" style="background:var(--bg);padding:12px;border-radius:6px;font-size:11px;overflow:auto">export default defineSchema({
+  users: defineTable({
+    name: v.string(),
+    email: v.string(),
+    clerkId: v.string(),
+  }).index("by_clerkId", ["clerkId"]),
+
+  messages: defineTable({
+    body: v.string(),
+    userId: v.id("users"),
+    conversationId: v.id("conversations"),
+  }).index("by_conversation", ["conversationId"]),
+
+  conversations: defineTable({
+    title: v.string(),
+    ownerId: v.id("users"),
+  }),
+});</pre>
+  </div>
+</div>
+</div>
+</div></div>
+<div style="position:fixed;bottom:8px;right:8px;font-size:10px;color:var(--muted-2);background:var(--bg-1);padding:4px 8px;border-radius:4px;border:1px solid var(--line);font-family:var(--mono)">Recreation - inspired by Convex (design-to-code) - <a href="https://www.convex.dev/templates" target="_blank" style="color:var(--muted-2)">source</a></div></body>
+</html>

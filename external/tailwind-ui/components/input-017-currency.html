@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" class="h-full bg-white">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Input currency</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://rsms.me/inter/inter.css" rel="stylesheet" />
+<style>html { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }</style>
+</head>
+<body class="h-full bg-gray-50 p-8 antialiased text-gray-900">
+<!-- Input currency — clean-room Tailwind UI recreation -->
+<div>
+  <label class="block text-sm font-medium text-gray-900">Price</label>
+  <div class="relative mt-2">
+    <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center text-gray-500 sm:text-sm">$</span>
+    <input type="text" class="block w-full rounded-md bg-white py-1.5 pl-7 pr-12 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm" placeholder="0.00" />
+    <span class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-gray-500 sm:text-sm">USD</span>
+  </div>
+</div>
+</body>
+</html>
