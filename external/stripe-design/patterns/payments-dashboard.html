@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stripe — Payments Dashboard (recreation)</title>
+<style>
+/* Tokens from b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/*.css + docs.stripe.com */
+:root {
+  --bg-page: #FFFFFF;
+  --bg-panel: #F6F9FC;
+  --bg-panel-cool: #F8FAFD;
+  --bg-panel-soft: #FCFDFE;
+  --bg-side: #FFFFFF;
+  --border-faint: #E3ECF7;
+  --border-soft: #E5EDF5;
+  --border: #D6DEE7;
+  --text-primary: #061B31;
+  --text-navy: #0A2540;
+  --text-slate: #273951;
+  --text-muted: #3C4F69;
+  --text-body: #414552;
+  --text-subtle: #697386;
+  --indigo: #5469D4;
+  --indigo-bright: #556CD6;
+  --indigo-deep: #1318C1;
+  --violet: #533AFD;
+  --success: #00D66F;
+  --info: #0073E6;
+  --warn: #FFCF5E;
+  --danger: #EA2261;
+  --radius: 4px;
+  --radius-lg: 8px;
+  --font-sans: sohne-var, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Source Code Pro', ui-monospace, SFMono-Regular, monospace;
+  --shadow-card: 0 0 0 1px rgba(60,66,87,0.08), rgba(60,66,87,0.08) 0 2px 5px 0, rgba(0,0,0,0.12) 0 1px 1px 0;
+  --shadow-soft: 0 1px 2px rgba(0,0,0,0.04), 0 4px 8px rgba(60,66,87,0.04);
+}
+@font-face { font-family: 'sohne-var'; src: url('https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/media/Sohne.cb178166.woff2') format('woff2-variations'); font-weight: 1 1000; font-display: swap; }
+@font-face { font-family: 'SourceCodePro'; src: url('https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/media/SourceCodePro-Medium.f5ba3e6a.woff2') format('woff2'); font-weight: 500; font-display: swap; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg-page); color: var(--text-body); font-family: var(--font-sans); font-size: 14px; line-height: 1.5; font-weight: 300; }
+code { font-family: var(--font-mono); }
+
+.app { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; }
+
+.sidebar { background: var(--bg-panel); border-right: 1px solid var(--border-faint); padding: 20px 0; display: flex; flex-direction: column; gap: 2px; }
+.sidebar-brand { padding: 0 20px 20px; display: flex; align-items: center; gap: 10px; font-weight: 500; color: var(--text-navy); font-size: 15px; }
+.sidebar-brand svg { width: 24px; height: 24px; }
+.sidebar-account { padding: 0 20px 16px; border-bottom: 1px solid var(--border-faint); font-size: 13px; color: var(--text-muted); }
+.account-pill { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; background: var(--bg-panel-soft); border-radius: var(--radius); border: 1px solid var(--border-faint); }
+.account-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--success); }
+.sidebar-section { padding: 14px 20px 4px; font-size: 11px; color: var(--text-subtle); text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500; }
+.nav-item { display: flex; align-items: center; gap: 10px; padding: 6px 20px; font-size: 14px; color: var(--text-muted); cursor: pointer; border-left: 2px solid transparent; font-weight: 400; }
+.nav-item:hover { color: var(--text-navy); background: var(--bg-panel-soft); }
+.nav-item.active { color: var(--indigo); border-left-color: var(--indigo); background: rgba(84,105,212,0.04); font-weight: 500; }
+.nav-icon { width: 14px; height: 14px; opacity: 0.7; }
+
+.main { padding: 24px 32px; background: var(--bg-page); }
+.topbar { display: flex; align-items: center; margin-bottom: 20px; gap: 16px; }
+.topbar h1 { font-size: 24px; font-weight: 500; color: var(--text-navy); letter-spacing: -0.01em; }
+.topbar-right { margin-left: auto; display: flex; gap: 8px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 6px; height: 30px; padding: 0 12px; border-radius: var(--radius); font-size: 13px; font-weight: 500; cursor: pointer; border: none; font-family: inherit; }
+.btn.ghost { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
+.btn.ghost:hover { background: var(--bg-panel-soft); }
+.btn.primary { background: var(--indigo); color: white; box-shadow: 0 1px 1px rgba(0,0,0,0.05), 0 2px 4px rgba(84,105,212,0.2); }
+.btn.primary:hover { background: var(--indigo-bright); }
+
+.date-range { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--bg-panel); border: 1px solid var(--border-faint); border-radius: var(--radius); font-size: 13px; color: var(--text-muted); }
+
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+.stat-card { background: var(--bg-page); border: 1px solid var(--border-faint); border-radius: var(--radius); padding: 16px 20px; box-shadow: var(--shadow-soft); }
+.stat-label { font-size: 13px; color: var(--text-subtle); font-weight: 400; margin-bottom: 6px; }
+.stat-value { font-size: 26px; font-weight: 500; color: var(--text-navy); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.stat-delta { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--success); margin-left: 8px; font-weight: 500; }
+.stat-delta.neg { color: var(--danger); }
+.stat-sub { font-size: 12px; color: var(--text-subtle); margin-top: 4px; }
+
+/* Big panel */
+.panel { background: var(--bg-page); border: 1px solid var(--border-faint); border-radius: var(--radius); margin-bottom: 16px; overflow: hidden; box-shadow: var(--shadow-soft); }
+.panel-h { padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-faint); }
+.panel-h h2 { font-size: 16px; font-weight: 500; color: var(--text-navy); }
+.chip-group { display: flex; gap: 6px; }
+.chip { padding: 3px 10px; font-size: 12px; color: var(--text-muted); border-radius: 12px; background: var(--bg-panel); cursor: pointer; font-weight: 500; }
+.chip.active { background: var(--indigo); color: white; }
+
+.chart-area { padding: 20px; }
+.chart { height: 180px; position: relative; }
+.chart svg { width: 100%; height: 100%; }
+
+/* Balance + Payments split */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* Table */
+.table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.table thead th { text-align: left; padding: 10px 20px; font-size: 12px; color: var(--text-subtle); font-weight: 500; background: var(--bg-panel); border-bottom: 1px solid var(--border-faint); text-transform: uppercase; letter-spacing: 0.03em; }
+.table tbody td { padding: 12px 20px; border-bottom: 1px solid var(--border-faint); color: var(--text-body); vertical-align: middle; }
+.table tbody tr:hover { background: var(--bg-panel-soft); }
+.amount { font-weight: 500; color: var(--text-navy); font-variant-numeric: tabular-nums; }
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; font-size: 12px; font-weight: 500; border-radius: 12px; }
+.badge.success { color: var(--success); background: rgba(0,214,111,0.1); }
+.badge.failed { color: var(--danger); background: rgba(234,34,97,0.1); }
+.badge.pending { color: #B78400; background: rgba(255,207,94,0.15); }
+.badge.refunded { color: var(--text-muted); background: var(--bg-panel); }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.cust-cell { display: flex; align-items: center; gap: 8px; }
+.cust-avatar { width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, var(--indigo), var(--violet)); font-size: 10px; color: white; display: flex; align-items: center; justify-content: center; font-weight: 500; }
+.card-brand { display: inline-block; padding: 2px 6px; border-radius: 3px; font-family: var(--font-mono); font-size: 11px; font-weight: 500; border: 1px solid var(--border-faint); background: var(--bg-panel); color: var(--text-muted); margin-right: 6px; vertical-align: middle; }
+.time-cell { font-variant-numeric: tabular-nums; color: var(--text-muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <svg viewBox="0 0 60 25" fill="#0A2540"><path fill-rule="evenodd" d="M59.64 14.28h-8.06c.19 1.93 1.6 2.55 3.2 2.55 1.64 0 2.96-.37 4.05-.95v3.32a8.33 8.33 0 0 1-4.56 1.1c-4.01 0-6.83-2.5-6.83-7.48 0-4.19 2.39-7.52 6.3-7.52 3.92 0 5.96 3.28 5.96 7.5 0 .4-.04 1.26-.06 1.48zm-5.92-5.62c-1.03 0-2.17.73-2.17 2.58h4.25c0-1.85-1.07-2.58-2.08-2.58zM40.95 20.3c-1.44 0-2.32-.6-2.9-1.04l-.02 4.63-4.12.87V5.57h3.76l.08 1.02a4.7 4.7 0 0 1 3.23-1.29c2.9 0 5.62 2.6 5.62 7.4 0 5.23-2.7 7.6-5.65 7.6zM40 8.95c-.95 0-1.54.34-1.97.81l.02 6.12c.4.44.98.78 1.95.78 1.52 0 2.54-1.65 2.54-3.87 0-2.15-1.04-3.84-2.54-3.84zM28.24 5.57h4.13v14.44h-4.13V5.57zm0-4.7L32.37 0v3.36l-4.13.88V.88zm-4.32 9.35v9.79H19.8V5.57h3.7l.12 1.22c1-1.77 3.07-1.41 3.62-1.22v3.79c-.52-.17-2.29-.43-3.32.86zm-8.55 4.72c0 2.43 2.6 1.68 3.12 1.46v3.36c-.55.3-1.54.54-2.89.54a4.15 4.15 0 0 1-4.27-4.24l.01-13.17 4.02-.86v3.54h3.14V9.1h-3.13v5.85zm-4.91.7c0 2.97-2.31 4.66-5.73 4.66a11.2 11.2 0 0 1-4.46-.93v-3.93c1.38.75 3.1 1.31 4.46 1.31.92 0 1.53-.24 1.53-1C6.26 13.77 0 14.51 0 9.95 0 7.04 2.28 5.3 5.62 5.3c1.36 0 2.72.2 4.09.75v3.88a9.23 9.23 0 0 0-4.1-1.06c-.86 0-1.44.25-1.44.9 0 1.85 6.29.97 6.29 5.88z"/></svg>
+      Clawmachine
+    </div>
+    <div class="sidebar-account">
+      <span class="account-pill"><span class="account-dot"></span>Test mode</span>
+    </div>
+    <div class="sidebar-section">Home</div>
+    <div class="nav-item active"><span class="nav-icon">◎</span>Dashboard</div>
+    <div class="nav-item"><span class="nav-icon">✓</span>Payments</div>
+    <div class="nav-item"><span class="nav-icon">⊙</span>Balances</div>
+    <div class="nav-item"><span class="nav-icon">▸</span>Customers</div>
+    <div class="nav-item"><span class="nav-icon">☰</span>Products</div>
+
+    <div class="sidebar-section">Billing</div>
+    <div class="nav-item"><span class="nav-icon">↻</span>Subscriptions</div>
+    <div class="nav-item"><span class="nav-icon">📄</span>Invoices</div>
+    <div class="nav-item"><span class="nav-icon">%</span>Tax</div>
+
+    <div class="sidebar-section">Tools</div>
+    <div class="nav-item"><span class="nav-icon">◌</span>Radar</div>
+    <div class="nav-item"><span class="nav-icon">∑</span>Sigma</div>
+    <div class="nav-item"><span class="nav-icon">⚙</span>Settings</div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <h1>Today</h1>
+      <div class="topbar-right">
+        <span class="date-range">📅 Apr 14 – Apr 21 <span style="color:var(--text-subtle);">▾</span></span>
+        <button class="btn ghost">Export</button>
+        <button class="btn primary">+ Create payment</button>
+      </div>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-label">Gross volume</div>
+        <div class="stat-value">$12,847.50 <span class="stat-delta">▲ 12.4%</span></div>
+        <div class="stat-sub">vs $11,427.18 previous 7 days</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Successful payments</div>
+        <div class="stat-value">342 <span class="stat-delta">▲ 8.1%</span></div>
+        <div class="stat-sub">vs 316 previous 7 days</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Net volume (after fees)</div>
+        <div class="stat-value">$12,412.82</div>
+        <div class="stat-sub">$434.68 in fees · 3.38% avg rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Failed payments</div>
+        <div class="stat-value">11 <span class="stat-delta neg">▲ 2</span></div>
+        <div class="stat-sub">3.1% of attempts</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h">
+        <h2>Gross volume</h2>
+        <div class="chip-group">
+          <span class="chip active">7D</span>
+          <span class="chip">30D</span>
+          <span class="chip">90D</span>
+          <span class="chip">YTD</span>
+          <span class="chip">All</span>
+        </div>
+      </div>
+      <div class="chart-area">
+        <div class="chart">
+          <svg viewBox="0 0 700 180" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="sg" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#5469D4" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#5469D4" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <g stroke="#E3ECF7" stroke-width="1">
+              <line x1="0" y1="45"  x2="700" y2="45"/>
+              <line x1="0" y1="90"  x2="700" y2="90"/>
+              <line x1="0" y1="135" x2="700" y2="135"/>
+            </g>
+            <path d="M0,140 L100,118 L200,108 L300,84 L400,62 L500,72 L600,54 L700,36 L700,180 L0,180 Z" fill="url(#sg)"/>
+            <path d="M0,140 L100,118 L200,108 L300,84 L400,62 L500,72 L600,54 L700,36" fill="none" stroke="#5469D4" stroke-width="2.5"/>
+            <g fill="#5469D4">
+              <circle cx="0" cy="140" r="3"/><circle cx="100" cy="118" r="3"/><circle cx="200" cy="108" r="3"/>
+              <circle cx="300" cy="84" r="3"/><circle cx="400" cy="62" r="3"/><circle cx="500" cy="72" r="3"/>
+              <circle cx="600" cy="54" r="3"/><circle cx="700" cy="36" r="4"/>
+            </g>
+            <g font-family="sohne-var, sans-serif" font-size="11" fill="#697386">
+              <text x="0"   y="175">Apr 14</text>
+              <text x="175" y="175">Apr 16</text>
+              <text x="350" y="175">Apr 18</text>
+              <text x="525" y="175">Apr 20</text>
+              <text x="665" y="175">Today</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-h">
+        <h2>Recent payments</h2>
+        <div class="chip-group">
+          <span class="chip">All</span>
+          <span class="chip active">Succeeded</span>
+          <span class="chip">Refunded</span>
+          <span class="chip">Failed</span>
+        </div>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Customer</th>
+            <th>Payment method</th>
+            <th>Description</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="amount">$249.00</td>
+            <td><span class="badge success"><span class="dot"></span>Succeeded</span></td>
+            <td><div class="cust-cell"><div class="cust-avatar">MR</div>morgan.r@proton.me</div></td>
+            <td><span class="card-brand">VISA</span>•••• 4242</td>
+            <td>ClawMachine Pro — Monthly</td>
+            <td class="time-cell">11:47 AM</td>
+          </tr>
+          <tr>
+            <td class="amount">$49.00</td>
+            <td><span class="badge success"><span class="dot"></span>Succeeded</span></td>
+            <td><div class="cust-cell"><div class="cust-avatar">JL</div>jlovell@gmail.com</div></td>
+            <td><span class="card-brand">MC</span>•••• 5100</td>
+            <td>Scout — Starter</td>
+            <td class="time-cell">10:32 AM</td>
+          </tr>
+          <tr>
+            <td class="amount">$999.00</td>
+            <td><span class="badge success"><span class="dot"></span>Succeeded</span></td>
+            <td><div class="cust-cell"><div class="cust-avatar">NT</div>nick@tradein.uk</div></td>
+            <td><span class="card-brand">AMEX</span>•••• 0005</td>
+            <td>Enterprise — Annual</td>
+            <td class="time-cell">09:14 AM</td>
+          </tr>
+          <tr>
+            <td class="amount">$149.00</td>
+            <td><span class="badge pending"><span class="dot"></span>Pending</span></td>
+            <td><div class="cust-cell"><div class="cust-avatar">SV</div>s.verma@wholesale-uk.com</div></td>
+            <td>SEPA •••• 8291</td>
+            <td>Pallet-buy credits</td>
+            <td class="time-cell">Yesterday</td>
+          </tr>
+          <tr>
+            <td class="amount">$49.00</td>
+            <td><span class="badge failed"><span class="dot"></span>Failed</span></td>
+            <td><div class="cust-cell"><div class="cust-avatar">DR</div>d.ray@cex.co.uk</div></td>
+            <td><span class="card-brand">VISA</span>•••• 0002</td>
+            <td>Scout — Starter</td>
+            <td class="time-cell">Yesterday</td>
+          </tr>
+          <tr>
+            <td class="amount">$249.00</td>
+            <td><span class="badge refunded"><span class="dot"></span>Refunded</span></td>
+            <td><div class="cust-cell"><div class="cust-avatar">LP</div>leo@photoroom.com</div></td>
+            <td><span class="card-brand">VISA</span>•••• 3149</td>
+            <td>ClawMachine Pro — refund</td>
+            <td class="time-cell">2 days ago</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="split">
+      <div class="panel">
+        <div class="panel-h"><h2>Balance</h2></div>
+        <div class="chart-area">
+          <div style="display:flex;justify-content:space-between;gap:24px;">
+            <div>
+              <div class="stat-label">Available to pay out</div>
+              <div class="stat-value" style="font-size:28px;">$8,214.02</div>
+              <div class="stat-sub">USD</div>
+            </div>
+            <div>
+              <div class="stat-label">In transit</div>
+              <div class="stat-value" style="font-size:28px;color:var(--text-muted);">$4,198.80</div>
+              <div class="stat-sub">Arrives Apr 23</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-h"><h2>Payment methods</h2></div>
+        <div class="chart-area" style="display:flex;flex-direction:column;gap:10px;font-size:13px;">
+          <div style="display:flex;justify-content:space-between;"><span>Card</span><span class="amount">$11,982.00 · 93.3%</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>Link</span><span class="amount">$564.50 · 4.4%</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>SEPA</span><span class="amount">$201.00 · 1.6%</span></div>
+          <div style="display:flex;justify-content:space-between;"><span>Apple Pay</span><span class="amount">$100.00 · 0.7%</span></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

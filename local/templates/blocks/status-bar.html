@@ -1,0 +1,108 @@
+<div class="block-status-bar">
+<style>
+.block-status-bar .sb-strip {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-lg);
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow-x: auto;
+}
+.block-status-bar .sb-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-xs);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.block-status-bar .sb-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.block-status-bar .sb-dot.green { background: var(--sl-accent); }
+.block-status-bar .sb-dot.red { background: var(--sl-secondary); }
+.block-status-bar .sb-dot.yellow {
+  background: color-mix(in srgb, var(--sl-accent) 50%, var(--sl-secondary));
+}
+.block-status-bar .sb-dot.muted { background: var(--sl-muted); }
+.block-status-bar .sb-dot.green.pulse {
+  animation: sb-pulse 2s ease infinite;
+}
+@keyframes sb-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.block-status-bar .sb-label {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  
+  color: var(--sl-muted);
+}
+.block-status-bar .sb-val {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--sl-text);
+}
+.block-status-bar .sb-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--sl-border-color);
+  flex-shrink: 0;
+}
+</style>
+
+<div class="sb-strip">
+  <div class="sb-item">
+    <span class="sb-dot green pulse"></span>
+    <span class="sb-label">STATUS</span>
+    <span class="sb-val">OPERATIONAL</span>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-item">
+    <span class="sb-dot green"></span>
+    <span class="sb-label">UPTIME</span>
+    <span class="sb-val">99.97%</span>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-item">
+    <span class="sb-dot green"></span>
+    <span class="sb-label">LATENCY</span>
+    <span class="sb-val">12MS</span>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-item">
+    <span class="sb-dot yellow"></span>
+    <span class="sb-label">NODES</span>
+    <span class="sb-val">142/145</span>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-item">
+    <span class="sb-dot green"></span>
+    <span class="sb-label">SYNC</span>
+    <span class="sb-val">2M AGO</span>
+  </div>
+
+  <div class="sb-divider"></div>
+
+  <div class="sb-item">
+    <span class="sb-dot red"></span>
+    <span class="sb-label">ALERTS</span>
+    <span class="sb-val">1 PENDING</span>
+  </div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "id": "palette-061",
+  "name": "synthwave-circuit",
+  "source": "media.io-cyberpunk-triadic",
+  "colors": {
+    "bg": "#120A3A",
+    "surface": "#2D1B69",
+    "card": "#3A2878",
+    "accent": "#FF3B7F",
+    "secondary": "#00F5D4",
+    "text": "#E0D0FF",
+    "muted": "#FFD166"
+  },
+  "weight": 10
+}

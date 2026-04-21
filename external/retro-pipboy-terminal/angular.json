@@ -1,0 +1,173 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "pip-terminal": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "pip",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/pip-terminal",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public",
+                "ignore": []
+              }
+            ],
+            "styles": ["src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "2.5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "5kb",
+                  "maximumError": "8kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "outputPath": {
+                "base": "dist",
+                "browser": "",
+                "server": ""
+              },
+              "outputHashing": "all",
+              "serviceWorker": "ngsw-config.json"
+            },
+            "test": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "2.5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kb",
+                  "maximumError": "8kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.test.ts"
+                }
+              ],
+              "outputPath": {
+                "base": "dist",
+                "browser": "",
+                "server": ""
+              },
+              "outputHashing": "all",
+              "serviceWorker": "ngsw-config.json"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "pip-terminal:build:production"
+            },
+            "test": {
+              "buildTarget": "pip-terminal:build:test"
+            },
+            "development": {
+              "buildTarget": "pip-terminal:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
+            ],
+            "styles": ["src/styles.scss"],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "schematicCollections": ["angular-eslint"],
+    "analytics": false
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "palette-086",
+  "name": "vaporwave-midnight",
+  "source": "ultra-expansion-cycle2-vaporwave",
+  "colors": {
+    "bg": "#0D041A",
+    "surface": "#1E0B33",
+    "card": "#150826",
+    "accent": "#FF61D2",
+    "secondary": "#00E5FF",
+    "text": "#FFF0FA",
+    "muted": "#A37093"
+  },
+  "weight": 10
+}

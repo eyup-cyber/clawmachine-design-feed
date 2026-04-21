@@ -1,0 +1,15 @@
+{
+  "id": "palette-012",
+  "name": "ember-scope",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#000000",
+    "surface": "#0a0a0a",
+    "card": "#151515",
+    "accent": "#ff0000",
+    "secondary": "#00ff00",
+    "text": "#ffff00",
+    "muted": "#ff8800"
+  },
+  "weight": 0
+}

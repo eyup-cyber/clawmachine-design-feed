@@ -1,0 +1,15 @@
+{
+  "id": "palette-072",
+  "name": "outline-magenta",
+  "source": "design-brief-bold-bg",
+  "colors": {
+    "bg": "#E91E63",
+    "surface": "#CD1A57",
+    "card": "#AF174A",
+    "accent": "#000000",
+    "secondary": "#FFD600",
+    "text": "#1A0008",
+    "muted": "#880E4F"
+  },
+  "weight": 5
+}

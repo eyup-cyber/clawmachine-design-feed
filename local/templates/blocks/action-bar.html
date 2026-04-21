@@ -1,0 +1,90 @@
+<div class="block-action-bar">
+<style>
+.block-action-bar .action-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+  padding: var(--sl-space-md);
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+}
+.block-action-bar .btn {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  
+  padding: 8px 20px;
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sl-space-xs);
+}
+.block-action-bar .btn-primary {
+  background: var(--sl-accent);
+  color: var(--sl-bg);
+  border-color: var(--sl-accent);
+}
+.block-action-bar .btn-primary:hover {
+  box-shadow: 0 0 12px color-mix(in srgb, var(--sl-accent) 40%, transparent);
+}
+.block-action-bar .btn-ghost {
+  background: transparent;
+  color: var(--sl-text);
+}
+.block-action-bar .btn-ghost:hover {
+  border-color: var(--sl-accent);
+  color: var(--sl-accent);
+}
+.block-action-bar .btn-danger {
+  background: transparent;
+  color: var(--sl-secondary);
+  border-color: var(--sl-secondary);
+}
+.block-action-bar .btn-danger:hover {
+  background: var(--sl-secondary);
+  color: var(--sl-bg);
+}
+.block-action-bar .action-spacer { flex: 1; }
+.block-action-bar .action-label {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-muted);
+  letter-spacing: 0.08em;
+  
+}
+.block-action-bar .toggle {
+  width: 36px;
+  height: 18px;
+  border-radius: var(--sl-border-radius);
+  background: color-mix(in srgb, var(--sl-accent) 20%, var(--sl-surface));
+  border: 1px solid var(--sl-accent);
+  position: relative;
+  cursor: pointer;
+}
+.block-action-bar .toggle-knob {
+  width: 14px;
+  height: 14px;
+  background: var(--sl-accent);
+  border-radius: 2px;
+  position: absolute;
+  top: 1px;
+  left: 19px;
+}
+</style>
+
+<div class="action-row">
+  <button class="btn btn-primary">DEPLOY UPDATE</button>
+  <button class="btn btn-ghost">EXPORT DATA</button>
+  <button class="btn btn-ghost">SCHEDULE MAINTENANCE</button>
+  <div class="action-spacer"></div>
+  <span class="action-label">AUTO-SYNC</span>
+  <div class="toggle"><div class="toggle-knob"></div></div>
+  <button class="btn btn-danger">EMERGENCY HALT</button>
+</div>
+</div>

@@ -1,0 +1,114 @@
+<div class="block-stats-ring">
+<style>
+.block-stats-ring .ring-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sl-content-gap);
+}
+.block-stats-ring .ring-card {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  padding: var(--sl-space-md);
+  box-shadow: var(--sl-shadow-raised);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sl-space-sm);
+}
+.block-stats-ring .ring-wrap {
+  width: 80px;
+  height: 80px;
+  position: relative;
+}
+.block-stats-ring .ring-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.block-stats-ring .ring-track {
+  fill: none;
+  stroke: var(--sl-surface);
+  stroke-width: 6;
+}
+.block-stats-ring .ring-fill {
+  fill: none;
+  stroke: var(--sl-accent);
+  stroke-width: 6;
+  stroke-linecap: butt;
+  stroke-dasharray: 226.2;
+  transition: stroke-dashoffset 0.6s ease;
+}
+.block-stats-ring .ring-fill.warn {
+  stroke: var(--sl-secondary);
+}
+.block-stats-ring .ring-pct {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--sl-font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--sl-text);
+}
+.block-stats-ring .ring-label {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-muted);
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .block-stats-ring .ring-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+
+<div class="ring-grid">
+  <div class="ring-card">
+    <div class="ring-wrap">
+      <svg class="ring-svg" viewBox="0 0 80 80">
+        <circle class="ring-track" cx="40" cy="40" r="36"/>
+        <circle class="ring-fill" cx="40" cy="40" r="36" style="stroke-dashoffset:49.7"/>
+      </svg>
+      <span class="ring-pct">78%</span>
+    </div>
+    <span class="ring-label">UPTIME</span>
+  </div>
+
+  <div class="ring-card">
+    <div class="ring-wrap">
+      <svg class="ring-svg" viewBox="0 0 80 80">
+        <circle class="ring-track" cx="40" cy="40" r="36"/>
+        <circle class="ring-fill" cx="40" cy="40" r="36" style="stroke-dashoffset:90.5"/>
+      </svg>
+      <span class="ring-pct">60%</span>
+    </div>
+    <span class="ring-label">INVENTORY</span>
+  </div>
+
+  <div class="ring-card">
+    <div class="ring-wrap">
+      <svg class="ring-svg" viewBox="0 0 80 80">
+        <circle class="ring-track" cx="40" cy="40" r="36"/>
+        <circle class="ring-fill" cx="40" cy="40" r="36" style="stroke-dashoffset:22.6"/>
+      </svg>
+      <span class="ring-pct">90%</span>
+    </div>
+    <span class="ring-label">EFFICIENCY</span>
+  </div>
+
+  <div class="ring-card">
+    <div class="ring-wrap">
+      <svg class="ring-svg" viewBox="0 0 80 80">
+        <circle class="ring-track" cx="40" cy="40" r="36"/>
+        <circle class="ring-fill warn" cx="40" cy="40" r="36" style="stroke-dashoffset:158.3"/>
+      </svg>
+      <span class="ring-pct">30%</span>
+    </div>
+    <span class="ring-label">CAPACITY</span>
+  </div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "id": "palette-054",
+  "name": "colormind-plasma",
+  "source": "colormind-api",
+  "colors": {
+    "bg": "#3d5077",
+    "surface": "#475a81",
+    "card": "#51648b",
+    "accent": "#b0bac7",
+    "secondary": "#86677d",
+    "text": "#f1e985",
+    "muted": "#c8b862"
+  },
+  "weight": 0
+}

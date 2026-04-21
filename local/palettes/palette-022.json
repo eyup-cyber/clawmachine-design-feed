@@ -1,0 +1,15 @@
+{
+  "id": "palette-022",
+  "name": "hot-neon-mix",
+  "source": "chromatic-research-colorhex",
+  "colors": {
+    "bg": "#0d2bd5",
+    "surface": "#1735df",
+    "card": "#213fe9",
+    "accent": "#F32097",
+    "secondary": "#A028FF",
+    "text": "#3BFD23",
+    "muted": "#3f5dff"
+  },
+  "weight": 0
+}

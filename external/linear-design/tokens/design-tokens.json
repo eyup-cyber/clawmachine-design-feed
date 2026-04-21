@@ -1,0 +1,190 @@
+{
+  "_source": {
+    "url": "https://linear.app",
+    "extracted_from": ["static.linear.app/web/_next/static/css/*.css (45 bundles)", "linear.app/brand", "linear.app/method", "linear.app/docs", "linear.app/customers", "linear.app/now"],
+    "extraction_method": "firecrawl branding + raw CSS bundle scrape + CSS variable frequency analysis",
+    "extracted_at": "2026-04-21",
+    "authoritative_for": "dense dark-mode product UI with graphite-black foundation and cool-violet accent"
+  },
+  "brand": {
+    "name": "Linear",
+    "mode": "dark-first (light variants exist)",
+    "theme-color_meta": "#08090a",
+    "personality": "sharp, dense, refined, keyboard-first, graphite",
+    "official_palette": {
+      "mercury_white": "#F4F5F8",
+      "nordic_gray": "#222326",
+      "note": "From linear.app/brand — the ONLY colors Linear officially publishes for mark usage"
+    }
+  },
+  "color": {
+    "foundation_dark": {
+      "bg-level-0": "#08090A",
+      "bg-level-1": "#0F1011",
+      "bg-level-2": "#141516",
+      "bg-level-3": "#191A1B",
+      "bg-marketing": "#010102",
+      "bg-panel": "#0F1011",
+      "bg-shade": "#191D20",
+      "bg-base": "#0F1011",
+      "bg-primary": "#08090A"
+    },
+    "foundation_light": {
+      "bg-level-0": "#FFFFFF",
+      "bg-level-1": "#F8F8F8",
+      "bg-level-2": "#F4F4F4",
+      "bg-level-3": "#F0F0F0"
+    },
+    "text_dark": {
+      "primary": "#F7F8F8",
+      "secondary": "#B4B8BF",
+      "tertiary": "#62666D",
+      "disabled": "#3C4149"
+    },
+    "text_light": {
+      "primary": "#08090A",
+      "secondary": "#282A30",
+      "tertiary": "#6F6E77"
+    },
+    "border_dark": {
+      "faint-thin": "#191D21",
+      "frame": "#151616",
+      "thin": "#24282C",
+      "solid": "#2A2E33",
+      "hairline-width": "0.5px"
+    },
+    "border_light": {
+      "thin": "#E2E4E7",
+      "solid": "#E9E8EA"
+    },
+    "accent": {
+      "primary": "#5E6AD2",
+      "brand-purple": "#7170FF",
+      "hover-dark": "#828FFF",
+      "hover-light": "#8989F0",
+      "tint-dark": "#18182F",
+      "tint-light": "#F1F1FF",
+      "note": "#5E6AD2 appears in marketing body text; #7170FF is interactive control accent; #828FFF is hover-state"
+    },
+    "semantic": {
+      "red-error": "#D6303D",
+      "blue-info": "#56CDFF",
+      "sky-bar": "#21B3FF",
+      "pink": "#F79CE0"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "sans": "'Inter Variable', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif",
+      "mono": "'Berkeley Mono', ui-monospace, 'SF Mono', 'Menlo', monospace",
+      "serif-display": "'Tiempos Headline', ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif",
+      "emoji": "'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Segoe UI', 'Twemoji Mozilla', 'Noto Color Emoji', 'Android Emoji'"
+    },
+    "font_files": {
+      "InterVariable.woff2": "https://static.linear.app/fonts/InterVariable.woff2?v=4.1",
+      "InterVariable-Italic.woff2": "https://static.linear.app/fonts/InterVariable-Italic.woff2?v=4.1",
+      "Berkeley-Mono-Variable.woff2": "https://static.linear.app/fonts/Berkeley-Mono-Variable.woff2?v=3.2"
+    },
+    "font_feature_settings": "'cv01', 'ss03'",
+    "scale_rem": {
+      "micro": "0.6875rem",
+      "microPlus": "0.75rem",
+      "mini": "0.75rem",
+      "miniPlus": "0.8125rem",
+      "small": "0.8125rem",
+      "smallPlus": "0.875rem",
+      "regular": "0.9375rem",
+      "regularPlus": "1rem",
+      "large": "1.125rem",
+      "largePlus": "1.125rem"
+    },
+    "scale_px_marketing": {
+      "h1_homepage": "64px",
+      "h1_section": "48px",
+      "h2_section": "40px",
+      "h2_narrow": "17px",
+      "body_lead": "17px",
+      "body_standard": "15px",
+      "body_compact": "14px"
+    }
+  },
+  "spacing": {
+    "base_unit": "4px",
+    "app_radius": "12px",
+    "radius_scale": {
+      "r4": "4px",
+      "r6": "6px",
+      "r8": "8px",
+      "r12": "12px",
+      "r16": "16px",
+      "r24": "24px",
+      "r32": "32px",
+      "circle": "50%",
+      "pill": "9999px"
+    },
+    "block_spacing": {
+      "small": "8px",
+      "default": "14px",
+      "medium": "16px",
+      "large": "20px"
+    },
+    "inset_scale": ["0", "8px", "12px", "24px"],
+    "padding_marketing": {
+      "section_x": "32px",
+      "section_y_compact": "28px",
+      "section_y_default": "48px",
+      "section_y_large": "112px"
+    }
+  },
+  "elevation": {
+    "shadow-none": "0px 0px 0px transparent",
+    "shadow-low_dark": "0px 2px 4px rgba(0,0,0,0.1)",
+    "shadow-low_light": "0px 1px 4px -1px rgba(0,0,0,0.09)",
+    "shadow-medium_dark": "0px 4px 24px rgba(0,0,0,0.2)",
+    "shadow-medium_light": "0px 3px 12px rgba(0,0,0,0.09)",
+    "shadow-high_dark": "0px 7px 32px rgba(0,0,0,0.35)",
+    "shadow-high_light": "0px 7px 24px rgba(0,0,0,0.06)"
+  },
+  "motion": {
+    "duration_base": "180ms",
+    "duration_blink": "1.2s",
+    "blink_timing": "step-end",
+    "easings": {
+      "ease-in-circ": "cubic-bezier(0.6, 0.04, 0.98, 0.335)",
+      "ease-in-cubic": "cubic-bezier(0.55, 0.055, 0.675, 0.19)",
+      "ease-in-expo": "cubic-bezier(0.95, 0.05, 0.795, 0.035)",
+      "ease-in-out-circ": "cubic-bezier(0.785, 0.135, 0.15, 0.86)",
+      "ease-in-out-cubic": "cubic-bezier(0.645, 0.045, 0.355, 1)",
+      "ease-in-out-expo": "cubic-bezier(1, 0, 0, 1)"
+    }
+  },
+  "components": {
+    "button_primary": {
+      "bg": "#E5E5E6",
+      "text": "#08090A",
+      "border": "#E5E5E6",
+      "radius": "9999px",
+      "shadow": "rgba(0,0,0,0) 0 8px 2px, rgba(0,0,0,0.01) 0 5px 2px, rgba(0,0,0,0.04) 0 3px 2px, rgba(0,0,0,0.07) 0 1px 1px, rgba(0,0,0,0.08) 0 0 1px",
+      "note": "Pill-shaped white-on-dark button. Signature Linear CTA."
+    },
+    "button_secondary": {
+      "bg": "#141516",
+      "text": "#F7F8F8",
+      "radius": "9999px",
+      "shadow": "inset 0 0 0 1px rgba(255,255,255,0.03), inset 0 1px 0 rgba(255,255,255,0.04), 0 0 0 1px rgba(0,0,0,0.6), 0 4px 4px rgba(0,0,0,0.1)",
+      "note": "Subtle inset + hairline outer shadow. The Linear dark-button recipe."
+    },
+    "input": {
+      "bg": "transparent",
+      "text": "#F7F8F8",
+      "radius": "0",
+      "shadow": "none"
+    }
+  },
+  "signature_effects": {
+    "hairline_borders": "0.5px borders on retina via --border-hairline",
+    "metal_button_shadow": "layered micro-shadows for the pill CTA (see button_primary.shadow)",
+    "dual_theme": "every surface/border has -level-N dark AND light variant declared in same bundle",
+    "cursor_blink": "--blink-duration:1.2s; --blink-timing:step-end — used in terminal-style UI"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "palette-119",
+  "name": "electric-azure",
+  "source": "ultra-expansion-cycle2-vaporwave",
+  "colors": {
+    "bg": "#00B0FF",
+    "surface": "#33BFFF",
+    "card": "#1AB8FF",
+    "accent": "#33001A",
+    "secondary": "#FFEA00",
+    "text": "#00141A",
+    "muted": "#995540"
+  },
+  "weight": 5
+}

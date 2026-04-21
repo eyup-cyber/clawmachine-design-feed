@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1050" width="800">
+  <rect x="20" y="20" width="760" height="1010" rx="42" fill="#0A0A0A"/>
+  <rect x="46" y="46" width="708" height="958" rx="18" fill="#F5F2EC"/>
+  <circle cx="400" cy="33" r="3" fill="#222"/>
+  <text x="400" y="530" font-family="system-ui" font-size="16" fill="#888" text-anchor="middle">iPad Pro — 708×958</text>
+</svg>

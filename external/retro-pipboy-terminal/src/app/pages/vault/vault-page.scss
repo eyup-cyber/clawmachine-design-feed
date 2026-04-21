@@ -1,0 +1,87 @@
+@use '../../styles/breakpoints' as bps;
+@use '../../styles/colors' as col;
+@use '../../styles/variables' as var;
+
+:host {
+  align-items: center;
+  box-sizing: border-box;
+  color: col.$pip-green;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  justify-content: normal;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  max-width: var.$page-max-width;
+  width: 100%;
+}
+
+pip-title[h1] {
+  margin-top: 3rem;
+  text-align: center;
+  width: 100%;
+}
+
+section.user-identification {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  max-width: var.$section-max-width;
+  width: 100%;
+}
+
+section.user-actions {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0 1rem;
+  max-width: var.$section-max-width;
+  width: 100%;
+
+  @include bps.media('max', 'md') {
+    align-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    padding: 0 1rem;
+  }
+
+  .action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
+
+pip-divider {
+  margin: 0 auto;
+  max-width: var.$section-max-width;
+}
+
+section.posts {
+  box-sizing: border-box;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: var.$section-max-width;
+
+  @include bps.media('max', 'md') {
+    padding: 1rem;
+  }
+}
+
+pip-footer {
+  align-self: stretch;
+  display: block;
+  margin-top: auto;
+}

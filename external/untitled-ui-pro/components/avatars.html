@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Avatars — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css"><link rel="stylesheet" href="../design.css">
+</head>
+<body>
+<main class="uui-container showcase">
+  <h2>Avatars</h2>
+  <p class="lead">6 sizes, initials fallback, status dot, verified badge, avatar groups, avatar-label groups.</p>
+
+  <section class="uui-stack gap-8">
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Sizes</h3>
+      <div class="uui-row gap-4 items-end">
+        <div class="uui-avatar uui-avatar--xs">OR</div>
+        <div class="uui-avatar uui-avatar--sm">OR</div>
+        <div class="uui-avatar uui-avatar--md">OR</div>
+        <div class="uui-avatar uui-avatar--lg">OR</div>
+        <div class="uui-avatar uui-avatar--xl">OR</div>
+        <div class="uui-avatar uui-avatar--2xl">OR</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">With status</h3>
+      <div class="uui-row gap-4 items-end">
+        <div class="uui-avatar uui-avatar--md">PB<span class="status"></span></div>
+        <div class="uui-avatar uui-avatar--lg">LS<span class="status"></span></div>
+        <div class="uui-avatar uui-avatar--lg">DK<span class="status status--offline"></span></div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">With icon fallback</h3>
+      <div class="uui-row gap-4 items-end">
+        <div class="uui-avatar uui-avatar--md">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="60%" height="60%"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="uui-avatar uui-avatar--lg" style="background:var(--color-bg-brand-primary);color:var(--color-text-brand-secondary);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="60%" height="60%"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Avatar group</h3>
+      <div class="uui-avatar-group">
+        <div class="uui-avatar uui-avatar--md">OR</div>
+        <div class="uui-avatar uui-avatar--md">PB</div>
+        <div class="uui-avatar uui-avatar--md">LS</div>
+        <div class="uui-avatar uui-avatar--md">DK</div>
+        <div class="uui-avatar uui-avatar--md" style="background:var(--color-bg-brand-primary);color:var(--color-text-brand-secondary);font-size:12px;font-weight:600;">+12</div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Avatar + Label</h3>
+      <div class="uui-stack gap-4">
+        <div class="uui-avatar-label-group">
+          <div class="uui-avatar uui-avatar--md">OR</div>
+          <div class="meta">
+            <span class="title">Olivia Rhye</span>
+            <span class="subtitle">olivia@untitledui.com</span>
+          </div>
+        </div>
+        <div class="uui-avatar-label-group">
+          <div class="uui-avatar uui-avatar--lg">PB<span class="status"></span></div>
+          <div class="meta">
+            <span class="title" style="display:inline-flex;align-items:center;gap:4px;">Phoenix Baker
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path fill="#2E90FA" d="m10 0 2.24 2.24h3.17V5.4L17.65 7.65v3.17l2.35 2.18-2.35 2.18v3.17h-2.24L13.17 20h-3.17L7.65 17.65H4.48V14.48L2.24 12.18 0 10l2.24-2.35V4.48h3.17L7.65 2.35z"/><path d="m7 10 2.3 2.3L13.6 8" stroke="white" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="subtitle">Product designer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+</body>
+</html>

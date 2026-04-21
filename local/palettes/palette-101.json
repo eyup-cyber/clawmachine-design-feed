@@ -1,0 +1,15 @@
+{
+  "id": "palette-101",
+  "name": "midnight-drifter",
+  "source": "ultra-expansion-cycle2-neon-noir",
+  "colors": {
+    "bg": "#030A14",
+    "surface": "#081A33",
+    "card": "#051224",
+    "accent": "#FF2A2A",
+    "secondary": "#FFFF00",
+    "text": "#E6F0FF",
+    "muted": "#994D4D"
+  },
+  "weight": 10
+}

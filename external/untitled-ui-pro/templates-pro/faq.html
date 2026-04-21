@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>FAQ — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="../design.css">
+<style>
+  details{border-bottom:1px solid var(--color-border-secondary);padding:24px 0;}
+  details summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-size:var(--text-lg);font-weight:600;color:var(--color-text-primary);}
+  details summary::-webkit-details-marker{display:none;}
+  details summary::after{content:"";width:16px;height:16px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .2s;}
+  details[open] summary::after{transform:rotate(180deg);}
+  details p{font-size:var(--text-md);color:var(--color-text-tertiary);margin:12px 0 0;line-height:1.55;}
+</style>
+</head>
+<body>
+
+<section class="uui-container" style="padding:96px 32px;display:grid;grid-template-columns:1fr 2fr;gap:64px;">
+  <div>
+    <h2 class="t-display-md" style="font-weight:600;color:var(--color-text-primary);">Frequently asked questions</h2>
+    <p style="font-size:var(--text-md);color:var(--color-text-tertiary);margin-top:20px;">Everything you need to know before you buy. Don't see your question? <a href="#" style="color:var(--color-text-brand-primary);text-decoration:none;">Email us</a>.</p>
+    <div style="margin-top:32px;display:flex;flex-direction:column;gap:16px;">
+      <a class="uui-btn uui-btn--secondary uui-btn--md">Billing</a>
+      <a class="uui-btn uui-btn--secondary uui-btn--md">Security</a>
+      <a class="uui-btn uui-btn--secondary uui-btn--md">Integrations</a>
+      <a class="uui-btn uui-btn--secondary uui-btn--md">Support</a>
+    </div>
+  </div>
+  <div>
+    <details open>
+      <summary>Can I change plans later?</summary>
+      <p>Any change takes effect at the start of the next billing cycle. Prorated credit is applied automatically for mid-cycle upgrades; downgrades keep the current tier until the cycle ends.</p>
+    </details>
+    <details>
+      <summary>Do you offer a free trial?</summary>
+      <p>Every plan includes a 14-day trial, no card required. At the end of the trial you can pick a paid plan, stay on the free tier, or walk away with no data loss — exports are available for 30 days after cancellation.</p>
+    </details>
+    <details>
+      <summary>Is my data encrypted in transit and at rest?</summary>
+      <p>Yes. All data moves over TLS 1.3 and is stored encrypted with AES-256. Enterprise workspaces can add customer-managed keys (CMEK) and per-region data residency.</p>
+    </details>
+    <details>
+      <summary>How do exports work?</summary>
+      <p>Everything exports: design tokens as CSS / Tailwind / Style Dictionary, components as HTML / React / Vue, assets as PNG / WebP / AVIF, and your whole workspace as a JSON archive you can import elsewhere.</p>
+    </details>
+    <details>
+      <summary>Do you support single sign-on?</summary>
+      <p>SAML and OIDC are available on the Team plan. SCIM 2.0 user provisioning ships with Enterprise. We've tested against Okta, JumpCloud, Google Workspace, Entra ID, and Auth0.</p>
+    </details>
+    <details>
+      <summary>Can I self-host?</summary>
+      <p>Self-hosted deployments are available to Enterprise customers with a signed MSA. The package runs on Kubernetes 1.27+ and includes its own Postgres, object-store, and Redis layers.</p>
+    </details>
+    <details>
+      <summary>What happens if I cancel?</summary>
+      <p>Your workspace stays accessible in a read-only state for 30 days. During that window you can export, invite a new owner, or re-subscribe without losing history. After 30 days the workspace is permanently deleted.</p>
+    </details>
+    <details>
+      <summary>Is there a non-profit discount?</summary>
+      <p>Yes — a 50% discount applies to registered 501(c)(3) organisations and the UK / EU equivalents. Send a link to your charity registration and we'll verify within one business day.</p>
+    </details>
+  </div>
+</section>
+
+</body>
+</html>

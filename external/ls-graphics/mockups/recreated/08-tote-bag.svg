@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" width="600">
+  <rect width="600" height="720" fill="#EAE7DF"/>
+  <path d="M170 120 Q170 40 220 40 T270 120" stroke="#2A2A2A" stroke-width="14" fill="none"/>
+  <path d="M330 120 Q330 40 380 40 T430 120" stroke="#2A2A2A" stroke-width="14" fill="none"/>
+  <rect x="130" y="120" width="340" height="440" fill="#F0EDE4"/>
+  <text x="300" y="350" font-family="system-ui" font-size="14" fill="#999" text-anchor="middle">Tote bag print area 340×440</text>
+</svg>

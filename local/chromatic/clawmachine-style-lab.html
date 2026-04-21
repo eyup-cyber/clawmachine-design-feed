@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAWMACHINE — STYLE LAB</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--lab-bg:#0A0A0F;--lab-s:#141419;--lab-b:#2A2A35;--lab-t:#E8E8F0;--lab-m:#6B6B80;--mono:'Space Mono',monospace;--sans:'Space Grotesk',sans-serif;--body:'Inter',sans-serif}
+html{scroll-behavior:smooth}
+body{background:var(--lab-bg);color:var(--lab-t);font-family:var(--body);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:0.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:256px}
+
+.hdr{position:sticky;top:0;z-index:100;background:rgba(10,10,15,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--lab-b);padding:0 32px;height:52px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase}
+.logo span{opacity:0.4}
+
+.hero{padding:80px 32px 60px;max-width:1400px;margin:0 auto;border-bottom:1px solid var(--lab-b)}
+.hero h1{font-family:var(--sans);font-size:clamp(48px,8vw,96px);font-weight:700;line-height:0.95;letter-spacing:-0.03em;text-transform:uppercase;margin-bottom:20px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#FF0066,#FFD700,#00FF88,#00D4FF,#C800FF,#FF0066);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16px;color:var(--lab-m);max-width:700px;line-height:1.7}
+.cnt{margin-top:24px;font-family:var(--mono);font-size:11px;color:var(--lab-m);letter-spacing:0.1em}
+.cnt strong{color:var(--lab-t);font-size:28px;display:block;margin-bottom:4px;letter-spacing:-0.02em}
+
+.container{max-width:1400px;margin:0 auto;padding:40px 32px}
+
+.card{margin-bottom:64px;border:1px solid var(--lab-b);border-radius:3px;overflow:hidden;animation:fadeIn 0.5s ease both}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+.card-hdr{padding:28px 32px;display:flex;align-items:flex-start;justify-content:space-between;gap:32px}
+.card-num{font-family:var(--mono);font-size:10px;color:var(--lab-m);letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px}
+.card-name{font-family:var(--sans);font-size:32px;font-weight:700;letter-spacing:-0.02em;text-transform:uppercase;margin-bottom:6px}
+.card-desc{font-size:14px;max-width:500px;line-height:1.6}
+.card-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.card-tag{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;text-transform:uppercase;padding:3px 8px;border:1px solid;border-radius:2px;opacity:0.7}
+
+.card-body{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(max-width:900px){.card-body{grid-template-columns:1fr}}
+
+.card-col{padding:24px 32px}
+.sec-label{font-family:var(--mono);font-size:9px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid}
+
+.comp-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+
+.c-btn{padding:8px 18px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;cursor:default;display:inline-flex;align-items:center}
+.c-inp{padding:8px 12px;font-family:'IBM Plex Mono',monospace;font-size:11px;width:160px;display:inline-block}
+.c-tgl{width:40px;height:20px;position:relative;display:inline-block;cursor:default;box-sizing:border-box}
+.c-tgl-knob{width:16px;height:16px;position:absolute;top:50%;transform:translateY(-50%);border-radius:1px;box-sizing:border-box}
+.c-badge{padding:2px 8px;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;display:inline-flex;align-items:center}
+
+.mini-mk{border-radius:3px;overflow:hidden;aspect-ratio:16/10;position:relative}
+.mk-bar{height:22px;display:flex;align-items:center;padding:0 8px;gap:4px}
+.mk-dot{width:5px;height:5px;border-radius:50%}
+.mk-body{position:absolute;top:22px;left:0;right:0;bottom:0;display:grid;grid-template-columns:48px 1fr}
+.mk-side{padding:6px 4px;display:flex;flex-direction:column;gap:3px}
+.mk-nav-i{height:3px;border-radius:1px}
+.mk-main{padding:8px;display:flex;flex-direction:column;gap:5px}
+.mk-h{height:6px;border-radius:1px;width:35%}
+.mk-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;flex:1}
+.mk-card{border-radius:2px;position:relative}
+.mk-card-top{position:absolute;top:0;left:0;right:0;height:2px}
+.mk-chart{flex:1;border-radius:2px;min-height:30px}
+
+.tbl-prev{width:100%;font-family:'IBM Plex Mono',monospace;font-size:10px;border-collapse:collapse;margin-top:8px}
+.tbl-prev th{text-align:left;padding:5px 8px;font-size:8px;letter-spacing:0.12em;font-weight:700;text-transform:uppercase}
+.tbl-prev td{padding:5px 8px}
+
+.depth-row{display:flex;gap:8px;margin-top:8px}
+.depth-box{width:56px;height:56px;border-radius:2px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:8px;letter-spacing:0.06em}
+
+.nav-pill{display:inline-block;padding:4px 12px;font-family:var(--mono);font-size:9px;letter-spacing:0.08em;text-transform:uppercase;border-radius:2px;margin-top:8px}
+
+.toast{position:fixed;bottom:24px;right:24px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#fff;padding:8px 16px;font-family:var(--mono);font-size:11px;border-radius:3px;opacity:0;transition:opacity 0.2s;pointer-events:none;z-index:1000}
+.toast.show{opacity:1}
+</style>
+</head>
+<body>
+<div class="hdr">
+  <div class="logo">CLAWMACHINE <span>// STYLE LAB V1</span></div>
+</div>
+<div class="hero">
+  <h1>STYLE<br><em>LABORATORY</em></h1>
+  <p>Twenty radically different UI/UX style systems for Clawmachine. Each renders real buttons, inputs, toggles, badges, tables, depth layers, and app mockups in its actual design language. No two share a navigation paradigm. Each fuses immersive, experimental navigation, neumorphism, and retrofuturism.</p>
+  <div class="cnt"><strong>20</strong>COMPLETE STYLE SYSTEMS</div>
+</div>
+<div class="container" id="cards"></div>
+<div class="toast" id="toast">COPIED</div>
+<script>
+const STYLES = [
+  {
+    "id": "cathode-worship",
+    "num": "01",
+    "name": "CATHODE WORSHIP",
+    "desc": "CRT-era terminal fused with soft-extruded neumorphic panels. Green phosphor glow meets ergonomic depth.",
+    "bg": "#0a0e0a",
+    "s1": "#1a2a1a",
+    "s2": "#0f1f0f",
+    "t1": "#00ff41",
+    "t2": "#00cc33",
+    "t3": "#008020",
+    "primary": "#00ff41",
+    "secondary": "#ff6b00",
+    "btn": "border:1px solid #00ff41;border-radius:2px;box-shadow:inset 0 1px 0 rgba(0,255,65,0.3),0 4px 8px rgba(0,0,0,0.6);background:#0f2a0f;color:#00ff41",
+    "inp": "border:1px solid #00ff41;background:#0a1a0a;box-shadow:inset 0 1px 3px rgba(0,0,0,0.9);color:#00ff41",
+    "tgl_off": "background:#1a2a1a;border:2px inset #008020;box-shadow:inset 0 2px 4px rgba(0,0,0,0.8)",
+    "tgl_on": "background:rgba(0,255,65,0.3);border:2px inset #00ff41",
+    "badge": "border:1px solid #ff6b00;background:rgba(255,107,0,0.1);color:#ff6b00",
+    "table_h": "background:#0f1f0f;border-bottom:1px solid #008020",
+    "table_r1": "background:#0a1a0a",
+    "table_r2": "background:#141f14",
+    "depth": "box-shadow:inset -2px -2px 4px rgba(0,0,0,0.5),inset 2px 2px 4px rgba(0,255,65,0.15),0 2px 4px rgba(0,0,0,0.8)",
+    "nav": "Circular radial menu \u2014 orbital dial knob",
+    "tags": [
+      "crt",
+      "phosphor",
+      "radial-nav"
+    ]
+  },
+  {
+    "id": "solar-forge",
+    "num": "02",
+    "name": "SOLAR FORGE",
+    "desc": "Molten metal workshop. Every control hand-forged from burning copper on deep carbon darkness.",
+    "bg": "#0d0b0a",
+    "s1": "#1a1815",
+    "s2": "#252219",
+    "t1": "#f5deb3",
+    "t2": "#c4a574",
+    "t3": "#8b7355",
+    "primary": "#ff7f00",
+    "secondary": "#d4481d",
+    "btn": "border:2px solid #ff7f00;border-radius:3px;background:linear-gradient(135deg,#1a1815,#252219);box-shadow:0 4px 0 #8b4513,0 6px 12px rgba(0,0,0,0.7),inset 0 1px 0 rgba(255,127,0,0.2);color:#ff7f00",
+    "inp": "border:2px solid #8b7355;border-radius:2px;background:#0d0b0a;color:#f5deb3;box-shadow:inset 0 2px 4px rgba(0,0,0,0.8)",
+    "tgl_off": "background:#1a1815;border:2px solid #8b7355;box-shadow:inset 0 2px 4px rgba(0,0,0,0.6)",
+    "tgl_on": "background:rgba(255,127,0,0.3);border:2px solid #ff7f00;box-shadow:0 0 8px rgba(255,127,0,0.4)",
+    "badge": "border:1px solid #ff7f00;background:rgba(255,127,0,0.08);color:#ff7f00",
+    "table_h": "background:#252219;border-bottom:2px solid #ff7f00",
+    "table_r1": "background:#0d0b0a",
+    "table_r2": "background:#1a1815",
+    "depth": "box-shadow:inset -3px -3px 6px rgba(0,0,0,0.8),inset 3px 3px 6px rgba(255,127,0,0.1),0 8px 16px rgba(0,0,0,0.9)",
+    "nav": "Forge carousel \u2014 heavy iron plates sliding horizontally",
+    "tags": [
+      "industrial",
+      "copper",
+      "carousel-nav"
+    ]
+  },
+  {
+    "id": "tokyo-drift",
+    "num": "03",
+    "name": "TOKYO DRIFT",
+    "desc": "Japanese city nightscape. Blue-black base with neon signage accents. Kanji-inspired grid. Utility meets urban poetry.",
+    "bg": "#0a0d15",
+    "s1": "#0f1425",
+    "s2": "#14192a",
+    "t1": "#e8f0f8",
+    "t2": "#a0b0c8",
+    "t3": "#6b7a8f",
+    "primary": "#00d4ff",
+    "secondary": "#c800ff",
+    "btn": "border:2px solid #00d4ff;border-radius:0;background:#0f1425;box-shadow:0 0 8px rgba(0,212,255,0.4),inset 0 1px 2px rgba(0,212,255,0.1);color:#00d4ff;letter-spacing:2px",
+    "inp": "border:1px solid #6b7a8f;border-radius:0;background:#0a0d15;color:#e8f0f8;box-shadow:inset 0 1px 2px rgba(0,0,0,0.8)",
+    "tgl_off": "background:#0a0d15;border:1px solid #6b7a8f;box-shadow:inset 0 1px 3px rgba(0,0,0,0.6)",
+    "tgl_on": "background:rgba(0,212,255,0.2);border:1px solid #00d4ff;box-shadow:0 0 12px rgba(0,212,255,0.5)",
+    "badge": "border:1px solid #c800ff;background:transparent;color:#c800ff",
+    "table_h": "background:#14192a;border-bottom:1px solid #00d4ff",
+    "table_r1": "background:#0a0d15",
+    "table_r2": "background:#0f1425",
+    "depth": "box-shadow:0 0 8px rgba(0,212,255,0.2),0 0 1px rgba(200,0,255,0.3)",
+    "nav": "Kanji grid compass \u2014 3x3 sacred geometry map",
+    "tags": [
+      "cyberpunk",
+      "neon-line",
+      "grid-nav"
+    ]
+  },
+  {
+    "id": "orbital-deck",
+    "num": "04",
+    "name": "ORBITAL DECK",
+    "desc": "Space station instrument panel. Cool grey neumorphic surfaces with warning-system chromatic alerts.",
+    "bg": "#0f1419",
+    "s1": "#1a202a",
+    "s2": "#232d3a",
+    "t1": "#d4dce8",
+    "t2": "#8f9aaf",
+    "t3": "#6b7a8f",
+    "primary": "#4da6ff",
+    "secondary": "#ff3333",
+    "btn": "border:1px solid #4da6ff;border-radius:4px;background:linear-gradient(180deg,#232d3a,#1a202a);box-shadow:inset 0 1px 2px rgba(77,166,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.6),0 2px 8px rgba(0,0,0,0.5);color:#d4dce8",
+    "inp": "border:1px solid #6b7a8f;border-radius:2px;background:#0f1419;color:#d4dce8;box-shadow:inset 0 1px 3px rgba(0,0,0,0.8)",
+    "tgl_off": "background:#1a202a;border:1px solid #6b7a8f;box-shadow:inset 0 1px 3px rgba(0,0,0,0.6),0 2px 4px rgba(0,0,0,0.4)",
+    "tgl_on": "background:linear-gradient(180deg,#1a3a4a,#0f2a3a);border:1px solid #4da6ff;box-shadow:0 0 8px rgba(77,166,255,0.4)",
+    "badge": "border:1px solid #ff3333;background:rgba(255,51,51,0.1);color:#ff3333",
+    "table_h": "background:#232d3a;border-bottom:1px solid #4da6ff",
+    "table_r1": "background:#0f1419",
+    "table_r2": "background:#1a202a",
+    "depth": "box-shadow:inset -1px -1px 3px rgba(0,0,0,0.8),inset 1px 1px 2px rgba(255,255,255,0.1),0 4px 12px rgba(0,0,0,0.6)",
+    "nav": "Orbital ring \u2014 docking procedures navigation",
+    "tags": [
+      "space",
+      "neumorphic",
+      "orbital-nav"
+    ]
+  },
+  {
+    "id": "acid-press",
+    "num": "05",
+    "name": "ACID PRESS",
+    "desc": "Risograph/screen-print aesthetic. Paper texture, misregistered colors, halftone dots. Handmade meets digital.",
+    "bg": "#fffdf8",
+    "s1": "#f5f3ee",
+    "s2": "#e8e4dc",
+    "t1": "#2c2420",
+    "t2": "#6b6560",
+    "t3": "#9a9290",
+    "primary": "#f70039",
+    "secondary": "#00b8a9",
+    "btn": "border:2px solid #2c2420;border-radius:2px;background:#f5f3ee;box-shadow:2px 2px 0 #f70039,4px 4px 0 #00b8a9,6px 6px 12px rgba(0,0,0,0.05);color:#2c2420",
+    "inp": "border:2px solid #2c2420;border-radius:1px;background:#fffdf8;color:#2c2420;box-shadow:2px 2px 0 rgba(247,0,57,0.2)",
+    "tgl_off": "background:#f5f3ee;border:2px solid #2c2420;box-shadow:2px 2px 0 #00b8a9",
+    "tgl_on": "background:#e8e4dc;border:2px solid #f70039;box-shadow:2px 2px 0 #f70039",
+    "badge": "border:2px solid #2c2420;background:transparent;color:#2c2420",
+    "table_h": "background:#e8e4dc;border-bottom:2px solid #2c2420",
+    "table_r1": "background:#fffdf8",
+    "table_r2": "background:#f5f3ee",
+    "depth": "box-shadow:-1px -1px 0 #e8e4dc,2px 2px 4px rgba(0,0,0,0.08)",
+    "nav": "Carousel card flip \u2014 risograph print stack",
+    "tags": [
+      "risograph",
+      "paper",
+      "card-flip-nav"
+    ]
+  },
+  {
+    "id": "velvet-engine",
+    "num": "06",
+    "name": "VELVET ENGINE",
+    "desc": "Luxury automotive dashboard meets music studio. Deep aubergine leather, rose gold accents, indicator lights.",
+    "bg": "#1a0d1a",
+    "s1": "#2d1a2d",
+    "s2": "#3d2a3d",
+    "t1": "#f0e5f0",
+    "t2": "#b89ab8",
+    "t3": "#8b6d8b",
+    "primary": "#d4af37",
+    "secondary": "#ff4d94",
+    "btn": "border:1px solid #d4af37;border-radius:3px;background:linear-gradient(135deg,#2d1a2d,#3d2a3d);box-shadow:inset 0 1px 2px rgba(212,175,55,0.2),0 4px 12px rgba(0,0,0,0.6),0 0 8px rgba(212,175,55,0.15);color:#d4af37;letter-spacing:1.5px",
+    "inp": "border:1px solid #8b6d8b;border-radius:2px;background:#1a0d1a;color:#f0e5f0;box-shadow:inset 0 2px 4px rgba(0,0,0,0.8),inset 0 -1px 1px rgba(212,175,55,0.1)",
+    "tgl_off": "background:#1a0d1a;border:1px solid #8b6d8b;box-shadow:inset 0 1px 3px rgba(0,0,0,0.8)",
+    "tgl_on": "background:linear-gradient(90deg,#2d1a2d,#d4af37);border:1px solid #d4af37;box-shadow:0 0 12px rgba(212,175,55,0.4)",
+    "badge": "border:1px solid #d4af37;background:rgba(212,175,55,0.08);color:#d4af37",
+    "table_h": "background:#3d2a3d;border-top:2px solid #d4af37;border-bottom:1px solid #d4af37",
+    "table_r1": "background:#1a0d1a",
+    "table_r2": "background:#2d1a2d",
+    "depth": "box-shadow:inset -2px -2px 4px rgba(0,0,0,0.6),inset 2px 2px 4px rgba(212,175,55,0.1),0 6px 16px rgba(0,0,0,0.7)",
+    "nav": "Rotary knob matrix \u2014 studio mixer EQ dials",
+    "tags": [
+      "luxury",
+      "rose-gold",
+      "rotary-nav"
+    ]
+  },
+  {
+    "id": "concrete-garden",
+    "num": "07",
+    "name": "CONCRETE GARDEN",
+    "desc": "Brutalist architecture invaded by vivid botanical colour. Grey concrete, neon plant-like accents.",
+    "bg": "#303030",
+    "s1": "#424242",
+    "s2": "#4a4a4a",
+    "t1": "#efefef",
+    "t2": "#b0b0b0",
+    "t3": "#7a7a7a",
+    "primary": "#00ff00",
+    "secondary": "#ff1493",
+    "btn": "border:2px solid #00ff00;border-radius:0;background:#303030;box-shadow:0 4px 0 #00ff00,0 6px 12px rgba(0,0,0,0.4);color:#00ff00;font-weight:bold",
+    "inp": "border:2px solid #7a7a7a;border-radius:0;background:#1a1a1a;color:#efefef;box-shadow:inset 0 2px 4px rgba(0,0,0,0.8)",
+    "tgl_off": "background:#303030;border:2px solid #7a7a7a;box-shadow:0 2px 4px rgba(0,0,0,0.5)",
+    "tgl_on": "background:rgba(0,255,0,0.2);border:2px solid #00ff00;box-shadow:0 0 12px rgba(0,255,0,0.5)",
+    "badge": "border:2px solid #00ff00;background:rgba(0,255,0,0.05);color:#00ff00",
+    "table_h": "background:#4a4a4a;border-bottom:2px solid #00ff00",
+    "table_r1": "background:#303030",
+    "table_r2": "background:#424242",
+    "depth": "box-shadow:inset 0 -2px 0 rgba(0,0,0,0.6),0 4px 8px rgba(0,0,0,0.6)",
+    "nav": "Garden corridor \u2014 walking through brutalist chambers",
+    "tags": [
+      "brutalist",
+      "botanical",
+      "corridor-nav"
+    ]
+  },
+  {
+    "id": "rust-protocol",
+    "num": "08",
+    "name": "RUST PROTOCOL",
+    "desc": "Post-industrial control room. Oxidized metallics, hazard stripes, functional beauty through age.",
+    "bg": "#1a1410",
+    "s1": "#2a2218",
+    "s2": "#3a3228",
+    "t1": "#e8dcc8",
+    "t2": "#b89968",
+    "t3": "#8b7a68",
+    "primary": "#c65911",
+    "secondary": "#ffd700",
+    "btn": "border:2px solid #c65911;border-radius:0;background:linear-gradient(135deg,#2a2218,#3a3228);box-shadow:inset -1px -1px 0 #1a1410,inset 1px 1px 0 #ffd700,0 4px 12px rgba(0,0,0,0.7);color:#c65911;font-weight:bold",
+    "inp": "border:2px solid #8b7a68;border-radius:0;background:#0f0b08;color:#e8dcc8;box-shadow:inset 0 2px 4px rgba(0,0,0,0.9)",
+    "tgl_off": "background:#1a1410;border:2px solid #8b7a68;box-shadow:inset 0 1px 2px rgba(0,0,0,0.8)",
+    "tgl_on": "background:linear-gradient(90deg,#2a2218,#c65911);border:2px solid #c65911",
+    "badge": "border:2px solid #ffd700;background:rgba(255,215,0,0.05);color:#ffd700",
+    "table_h": "background:#3a3228;border-bottom:2px solid #c65911",
+    "table_r1": "background:#1a1410",
+    "table_r2": "background:#2a2218",
+    "depth": "box-shadow:inset -2px -2px 0 rgba(0,0,0,0.8),inset 2px 2px 0 rgba(255,215,0,0.15),0 6px 16px rgba(0,0,0,0.8)",
+    "nav": "Lever switches \u2014 physical throw controls",
+    "tags": [
+      "post-industrial",
+      "hazard",
+      "lever-nav"
+    ]
+  },
+  {
+    "id": "neon-monastery",
+    "num": "09",
+    "name": "NEON MONASTERY",
+    "desc": "Sacred geometry meets neon signage. Deep indigo void, gold leaf and electric cyan. Transcendent technology.",
+    "bg": "#0a0620",
+    "s1": "#1a1240",
+    "s2": "#251860",
+    "t1": "#f0e8ff",
+    "t2": "#b8a8ff",
+    "t3": "#8878b8",
+    "primary": "#ffd700",
+    "secondary": "#00ffff",
+    "btn": "border:1px solid #ffd700;border-radius:0;background:#1a1240;box-shadow:0 0 12px rgba(255,215,0,0.3),inset 0 1px 2px rgba(255,215,0,0.1);color:#ffd700;letter-spacing:2px",
+    "inp": "border:1px solid #8878b8;border-radius:1px;background:#0a0620;color:#f0e8ff;box-shadow:inset 0 1px 3px rgba(0,0,0,0.8),0 0 4px rgba(255,215,0,0.1)",
+    "tgl_off": "background:#0a0620;border:1px solid #8878b8;box-shadow:inset 0 1px 3px rgba(0,0,0,0.8)",
+    "tgl_on": "background:rgba(0,255,255,0.15);border:1px solid #00ffff;box-shadow:0 0 16px rgba(0,255,255,0.4)",
+    "badge": "border:1px solid #ffd700;background:transparent;color:#ffd700",
+    "table_h": "background:#251860;border-bottom:1px solid rgba(255,215,0,0.3)",
+    "table_r1": "background:#0a0620",
+    "table_r2": "background:#1a1240",
+    "depth": "box-shadow:0 0 8px rgba(255,215,0,0.2),0 0 16px rgba(0,255,255,0.1)",
+    "nav": "Sacred mandala \u2014 meditative petal navigation",
+    "tags": [
+      "sacred",
+      "gold-leaf",
+      "mandala-nav"
+    ]
+  },
+  {
+    "id": "paper-machine",
+    "num": "10",
+    "name": "PAPER MACHINE",
+    "desc": "Japanese stationery. Warm cream paper, ink stamps, thread-binding references. Precious and handcrafted.",
+    "bg": "#fefcf7",
+    "s1": "#f9f6f0",
+    "s2": "#f0ede6",
+    "t1": "#2a261e",
+    "t2": "#6b6458",
+    "t3": "#9a9286",
+    "primary": "#c41e3a",
+    "secondary": "#1e3a8a",
+    "btn": "border:1px solid #2a261e;border-radius:1px;background:#f9f6f0;box-shadow:0 2px 4px rgba(0,0,0,0.08);color:#2a261e;letter-spacing:1px",
+    "inp": "border:1px solid #2a261e;border-radius:0;background:#fefcf7;color:#2a261e;box-shadow:inset 0 1px 2px rgba(0,0,0,0.05)",
+    "tgl_off": "background:#fefcf7;border:1px solid #2a261e;box-shadow:0 1px 2px rgba(0,0,0,0.05)",
+    "tgl_on": "background:#f0ede6;border:1px solid #c41e3a",
+    "badge": "border:1px solid #c41e3a;background:transparent;color:#c41e3a;transform:rotate(-2deg)",
+    "table_h": "background:#f0ede6;border-bottom:1px dashed #9a9286",
+    "table_r1": "background:#fefcf7",
+    "table_r2": "background:#f9f6f0",
+    "depth": "box-shadow:-2px 2px 6px rgba(0,0,0,0.08)",
+    "nav": "Notebook page tabs \u2014 bound journal flipping",
+    "tags": [
+      "stationery",
+      "cream",
+      "tab-nav"
+    ]
+  },
+  {
+    "id": "chromatic-bunker",
+    "num": "11",
+    "name": "CHROMATIC BUNKER",
+    "desc": "Military operations center. Olive drab + saturated neon alerts. Tactical restraint with chromatic bursts.",
+    "bg": "#2d3d28",
+    "s1": "#3d4d38",
+    "s2": "#4d5d48",
+    "t1": "#e8e8e8",
+    "t2": "#a8a8a0",
+    "t3": "#787870",
+    "primary": "#00ff00",
+    "secondary": "#ff0000",
+    "btn": "border:2px solid #00ff00;border-radius:0;background:#2d3d28;box-shadow:0 0 8px rgba(0,255,0,0.4),0 4px 0 #00ff00;color:#00ff00;letter-spacing:2px;font-weight:bold",
+    "inp": "border:2px solid #787870;border-radius:0;background:#1a2a15;color:#e8e8e8;box-shadow:inset 0 2px 4px rgba(0,0,0,0.8)",
+    "tgl_off": "background:#2d3d28;border:2px solid #787870;box-shadow:0 2px 4px rgba(0,0,0,0.6)",
+    "tgl_on": "background:rgba(0,255,0,0.2);border:2px solid #00ff00;box-shadow:0 0 12px rgba(0,255,0,0.6)",
+    "badge": "border:2px solid #ff0000;background:rgba(255,0,0,0.1);color:#ff0000",
+    "table_h": "background:#4d5d48;border-bottom:2px solid #00ff00",
+    "table_r1": "background:#2d3d28",
+    "table_r2": "background:#3d4d38",
+    "depth": "box-shadow:inset 0 1px 0 rgba(0,255,0,0.1),0 4px 12px rgba(0,0,0,0.7)",
+    "nav": "Command wheel with alert overlay",
+    "tags": [
+      "military",
+      "olive",
+      "command-wheel-nav"
+    ]
+  },
+  {
+    "id": "silk-circuit",
+    "num": "12",
+    "name": "SILK CIRCUIT",
+    "desc": "Woven textile meets technology. Thread-thin borders, fabric-soft neumorphism. Stitched, not rendered.",
+    "bg": "#e8dcc8",
+    "s1": "#ede5d0",
+    "s2": "#f0ead8",
+    "t1": "#3a3228",
+    "t2": "#7a6e5d",
+    "t3": "#a89880",
+    "primary": "#8b4513",
+    "secondary": "#d4a574",
+    "btn": "border:1px solid #8b4513;border-radius:2px;background:linear-gradient(135deg,#ede5d0,#e8dcc8);box-shadow:inset 0 1px 1px rgba(255,255,255,0.6),inset 0 -1px 1px rgba(139,69,19,0.2),0 2px 4px rgba(0,0,0,0.05);color:#3a3228",
+    "inp": "border:1px solid #a89880;border-radius:2px;background:#f0ead8;color:#3a3228;box-shadow:inset 0 1px 2px rgba(0,0,0,0.03),inset 0 -1px 0 rgba(255,255,255,0.5)",
+    "tgl_off": "background:#e8dcc8;border:1px solid #a89880;box-shadow:inset 0 1px 2px rgba(0,0,0,0.05)",
+    "tgl_on": "background:linear-gradient(90deg,#8b4513,#d4a574);border:1px solid #8b4513",
+    "badge": "border:1px solid #8b4513;background:rgba(139,69,19,0.08);color:#8b4513",
+    "table_h": "background:#ede5d0;border-bottom:1px dashed #a89880",
+    "table_r1": "background:#e8dcc8",
+    "table_r2": "background:#ede5d0",
+    "depth": "box-shadow:inset 0 1px 2px rgba(255,255,255,0.8),inset 0 -1px 2px rgba(0,0,0,0.05),0 2px 6px rgba(0,0,0,0.08)",
+    "nav": "Woven tapestry \u2014 vertical scroll thread-follow",
+    "tags": [
+      "textile",
+      "linen",
+      "tapestry-nav"
+    ]
+  },
+  {
+    "id": "mercury-pool",
+    "num": "13",
+    "name": "MERCURY POOL",
+    "desc": "Liquid metal surfaces. Chrome-like reflections, pooling highlights, silver neumorphism. Molten precision.",
+    "bg": "#1a1a1a",
+    "s1": "#2a2a2a",
+    "s2": "#3a3a3a",
+    "t1": "#f0f0f0",
+    "t2": "#b0b0b0",
+    "t3": "#808080",
+    "primary": "#c0c0c0",
+    "secondary": "#e8e8e8",
+    "btn": "border:1px solid #c0c0c0;border-radius:3px;background:linear-gradient(135deg,#3a3a3a 0%,#2a2a2a 50%,#3a3a3a);box-shadow:inset 0 1px 2px rgba(255,255,255,0.3),inset 0 -1px 2px rgba(0,0,0,0.6),0 4px 12px rgba(0,0,0,0.7),0 0 8px rgba(192,192,192,0.4);color:#e8e8e8",
+    "inp": "border:1px solid #808080;border-radius:2px;background:#1a1a1a;color:#f0f0f0;box-shadow:inset 0 2px 4px rgba(0,0,0,0.8),inset 0 -1px 0 rgba(255,255,255,0.1)",
+    "tgl_off": "background:linear-gradient(180deg,#2a2a2a,#1a1a1a);border:1px solid #808080;box-shadow:inset 0 1px 2px rgba(255,255,255,0.2),inset 0 -1px 2px rgba(0,0,0,0.4)",
+    "tgl_on": "background:linear-gradient(180deg,#3a3a3a,#2a2a2a);border:1px solid #c0c0c0;box-shadow:0 0 12px rgba(192,192,192,0.5)",
+    "badge": "border:1px solid #c0c0c0;background:linear-gradient(90deg,rgba(192,192,192,0.1),rgba(192,192,192,0.05));color:#c0c0c0",
+    "table_h": "background:#3a3a3a;border-bottom:1px solid #c0c0c0",
+    "table_r1": "background:#1a1a1a",
+    "table_r2": "background:#2a2a2a",
+    "depth": "box-shadow:inset -2px -2px 4px rgba(0,0,0,0.8),inset 2px 2px 4px rgba(255,255,255,0.2),0 6px 16px rgba(0,0,0,0.7),0 0 12px rgba(192,192,192,0.3)",
+    "nav": "Pooling liquid menu \u2014 mercury droplet drift",
+    "tags": [
+      "chrome",
+      "liquid-metal",
+      "pool-nav"
+    ]
+  },
+  {
+    "id": "ember-scope",
+    "num": "14",
+    "name": "EMBER SCOPE",
+    "desc": "Night-vision/thermal imaging. Black body with heat-map gradients. Data appears as thermal signatures.",
+    "bg": "#000000",
+    "s1": "#0a0a0a",
+    "s2": "#151515",
+    "t1": "#ffff00",
+    "t2": "#ff8800",
+    "t3": "#ff0000",
+    "primary": "#ff0000",
+    "secondary": "#00ff00",
+    "btn": "border:1px solid #ff0000;border-radius:1px;background:#000000;box-shadow:0 0 12px rgba(255,0,0,0.5),inset 0 1px 2px rgba(255,0,0,0.2);color:#ffff00",
+    "inp": "border:1px solid #ff0000;border-radius:0;background:#000000;color:#ffff00;box-shadow:inset 0 1px 2px rgba(255,0,0,0.2),0 0 4px rgba(255,0,0,0.3)",
+    "tgl_off": "background:#0a0a0a;border:1px solid #ff0000;box-shadow:0 0 8px rgba(255,0,0,0.3)",
+    "tgl_on": "background:rgba(255,0,0,0.3);border:1px solid #ff0000;box-shadow:0 0 16px rgba(255,0,0,0.6)",
+    "badge": "border:1px solid #00ff00;background:transparent;color:#00ff00",
+    "table_h": "background:#0a0a0a;border-bottom:1px solid #ff0000",
+    "table_r1": "background:#000000",
+    "table_r2": "background:#0a0a0a",
+    "depth": "box-shadow:0 0 12px rgba(255,0,0,0.3),0 0 24px rgba(255,128,0,0.1)",
+    "nav": "Thermal scanner sweep \u2014 radar beam hunting",
+    "tags": [
+      "thermal",
+      "infrared",
+      "radar-nav"
+    ]
+  },
+  {
+    "id": "tape-deck",
+    "num": "15",
+    "name": "TAPE DECK",
+    "desc": "Cassette-era audio equipment. VU meters, mechanical counters, analog warmth. Press record.",
+    "bg": "#3a3228",
+    "s1": "#4a4838",
+    "s2": "#5a5848",
+    "t1": "#efefef",
+    "t2": "#b0a890",
+    "t3": "#8a7a68",
+    "primary": "#ff6b00",
+    "secondary": "#00cc00",
+    "btn": "border:2px solid #efefef;border-radius:0;background:linear-gradient(135deg,#4a4838,#3a3228);box-shadow:inset -1px -1px 2px rgba(0,0,0,0.6),inset 1px 1px 2px rgba(255,255,255,0.2),0 4px 0 #2a2218;color:#efefef;font-weight:bold",
+    "inp": "border:2px solid #efefef;border-radius:0;background:#2a2218;color:#ff6b00;box-shadow:inset 0 2px 4px rgba(0,0,0,0.8)",
+    "tgl_off": "background:#3a3228;border:2px solid #efefef;box-shadow:inset 0 1px 2px rgba(0,0,0,0.6)",
+    "tgl_on": "background:#ff6b00;border:2px solid #efefef",
+    "badge": "border:2px solid #ff6b00;background:transparent;color:#ff6b00;font-weight:bold",
+    "table_h": "background:#5a5848;border-bottom:2px solid #ff6b00",
+    "table_r1": "background:#3a3228",
+    "table_r2": "background:#4a4838",
+    "depth": "box-shadow:inset -2px -2px 4px rgba(0,0,0,0.6),inset 2px 2px 4px rgba(255,255,255,0.15),0 4px 0 #2a2218,0 6px 12px rgba(0,0,0,0.7)",
+    "nav": "Deck button matrix \u2014 transport controls",
+    "tags": [
+      "cassette",
+      "analog",
+      "deck-nav"
+    ]
+  },
+  {
+    "id": "glacier-byte",
+    "num": "16",
+    "name": "GLACIER BYTE",
+    "desc": "Arctic laboratory. Ice-blue neumorphic surfaces, hot coral alerts. Crystalline precision meets warmth.",
+    "bg": "#0a1825",
+    "s1": "#1a3a4a",
+    "s2": "#2a4a5a",
+    "t1": "#e8f0f8",
+    "t2": "#a8c0d0",
+    "t3": "#7a8a9a",
+    "primary": "#00d4ff",
+    "secondary": "#ff5030",
+    "btn": "border:1px solid #00d4ff;border-radius:3px;background:linear-gradient(135deg,#1a3a4a,#2a4a5a);box-shadow:inset 0 1px 2px rgba(0,212,255,0.2),0 4px 12px rgba(0,0,0,0.5),0 0 8px rgba(0,212,255,0.3);color:#e8f0f8",
+    "inp": "border:1px solid #7a8a9a;border-radius:2px;background:#0a1825;color:#e8f0f8;box-shadow:inset 0 2px 4px rgba(0,0,0,0.8)",
+    "tgl_off": "background:#0a1825;border:1px solid #7a8a9a;box-shadow:inset 0 1px 3px rgba(0,0,0,0.6)",
+    "tgl_on": "background:linear-gradient(90deg,#0a1825,#00d4ff);border:1px solid #00d4ff;box-shadow:0 0 12px rgba(0,212,255,0.4)",
+    "badge": "border:1px solid #ff5030;background:rgba(255,80,48,0.1);color:#ff5030",
+    "table_h": "background:#2a4a5a;border-bottom:1px solid #00d4ff",
+    "table_r1": "background:#0a1825",
+    "table_r2": "background:#1a3a4a",
+    "depth": "box-shadow:inset -1px -1px 3px rgba(0,0,0,0.6),inset 1px 1px 3px rgba(0,212,255,0.15),0 4px 12px rgba(0,0,0,0.6)",
+    "nav": "Crystalline compass \u2014 directional spatial navigation",
+    "tags": [
+      "arctic",
+      "ice-blue",
+      "compass-nav"
+    ]
+  },
+  {
+    "id": "volt-garden",
+    "num": "17",
+    "name": "VOLT GARDEN",
+    "desc": "Electric greenhouse. Vivid chartreuse on deep soil brown. Growth + electricity. Botanical tech.",
+    "bg": "#3d3d2a",
+    "s1": "#4d4d3a",
+    "s2": "#5d5d4a",
+    "t1": "#e8ffe8",
+    "t2": "#a8d08a",
+    "t3": "#7a9a6a",
+    "primary": "#ccff00",
+    "secondary": "#ff6b35",
+    "btn": "border:2px solid #ccff00;border-radius:2px;background:#3d3d2a;box-shadow:0 0 12px rgba(204,255,0,0.4),0 4px 0 #ccff00;color:#ccff00;font-weight:bold",
+    "inp": "border:2px solid #7a9a6a;border-radius:0;background:#2d2d1a;color:#ccff00;box-shadow:inset 0 2px 4px rgba(0,0,0,0.8)",
+    "tgl_off": "background:#3d3d2a;border:2px solid #7a9a6a;box-shadow:0 2px 4px rgba(0,0,0,0.6)",
+    "tgl_on": "background:rgba(204,255,0,0.2);border:2px solid #ccff00;box-shadow:0 0 16px rgba(204,255,0,0.6)",
+    "badge": "border:2px solid #ccff00;background:rgba(204,255,0,0.08);color:#ccff00",
+    "table_h": "background:#5d5d4a;border-bottom:2px solid #ccff00",
+    "table_r1": "background:#3d3d2a",
+    "table_r2": "background:#4d4d3a",
+    "depth": "box-shadow:inset -2px -2px 4px rgba(0,0,0,0.6),inset 2px 2px 4px rgba(204,255,0,0.1),0 6px 12px rgba(0,0,0,0.7)",
+    "nav": "Root network \u2014 organic branching paths",
+    "tags": [
+      "botanical",
+      "chartreuse",
+      "root-nav"
+    ]
+  },
+  {
+    "id": "indigo-protocol",
+    "num": "18",
+    "name": "INDIGO PROTOCOL",
+    "desc": "Aviation instrument panel. Deep navy, amber instruments, red alerts. Military precision and trust.",
+    "bg": "#0d1a2d",
+    "s1": "#1a2a3d",
+    "s2": "#2a3a4d",
+    "t1": "#e8f0f8",
+    "t2": "#a8b8c8",
+    "t3": "#787888",
+    "primary": "#ffaa00",
+    "secondary": "#ff2222",
+    "btn": "border:1px solid #ffaa00;border-radius:1px;background:#1a2a3d;box-shadow:0 0 8px rgba(255,170,0,0.3),inset 0 1px 2px rgba(255,170,0,0.1),0 2px 6px rgba(0,0,0,0.6);color:#ffaa00;letter-spacing:2px",
+    "inp": "border:1px solid #787888;border-radius:1px;background:#0d1a2d;color:#ffaa00;box-shadow:inset 0 2px 4px rgba(0,0,0,0.8)",
+    "tgl_off": "background:#0d1a2d;border:1px solid #787888;box-shadow:inset 0 1px 3px rgba(0,0,0,0.8)",
+    "tgl_on": "background:rgba(255,170,0,0.2);border:1px solid #ffaa00;box-shadow:0 0 12px rgba(255,170,0,0.4)",
+    "badge": "border:1px solid #ff2222;background:rgba(255,34,34,0.1);color:#ff2222",
+    "table_h": "background:#2a3a4d;border-bottom:1px solid #ffaa00",
+    "table_r1": "background:#0d1a2d",
+    "table_r2": "background:#1a2a3d",
+    "depth": "box-shadow:inset -1px -1px 2px rgba(0,0,0,0.8),inset 1px 1px 2px rgba(255,170,0,0.15),0 4px 12px rgba(0,0,0,0.7)",
+    "nav": "Instrument cluster \u2014 airspeed/altitude gauges",
+    "tags": [
+      "aviation",
+      "amber",
+      "instrument-nav"
+    ]
+  },
+  {
+    "id": "candy-machine",
+    "num": "19",
+    "name": "CANDY MACHINE",
+    "desc": "Arcade claw machine turned serious. Bright primaries, coin-slot details, playful-precise controls.",
+    "bg": "#ffcc00",
+    "s1": "#ffdd33",
+    "s2": "#ffee66",
+    "t1": "#1a1a1a",
+    "t2": "#4a4a4a",
+    "t3": "#7a7a7a",
+    "primary": "#ff0066",
+    "secondary": "#0066ff",
+    "btn": "border:3px solid #ff0066;border-radius:4px;background:#ffdd33;box-shadow:0 6px 0 #cc0055,0 8px 12px rgba(0,0,0,0.2),inset 0 -2px 0 rgba(255,255,255,0.5);color:#1a1a1a;font-weight:bold;font-size:14px",
+    "inp": "border:2px solid #ff0066;border-radius:2px;background:#ffdd33;color:#1a1a1a;box-shadow:0 3px 0 #cc0055",
+    "tgl_off": "background:#ffdd33;border:2px solid #ff0066;box-shadow:0 4px 0 #cc0055",
+    "tgl_on": "background:#0066ff;border:2px solid #00ccff",
+    "badge": "border:2px solid #0066ff;background:rgba(0,102,255,0.1);color:#0066ff;font-weight:bold",
+    "table_h": "background:#ffee66;border-bottom:2px solid #0066ff",
+    "table_r1": "background:#ffcc00",
+    "table_r2": "background:#ffdd33",
+    "depth": "box-shadow:0 6px 0 #cc0055,0 8px 12px rgba(0,0,0,0.2)",
+    "nav": "Joystick arcade buttons \u2014 8-direction + center",
+    "tags": [
+      "arcade",
+      "primary-colors",
+      "joystick-nav"
+    ]
+  },
+  {
+    "id": "obsidian-prism",
+    "num": "20",
+    "name": "OBSIDIAN PRISM",
+    "desc": "Black glass surfaces refracting chromatic light. Rainbow edge-lighting on dark obsidian. Light through darkness.",
+    "bg": "#0a0a0a",
+    "s1": "#151515",
+    "s2": "#1f1f1f",
+    "t1": "#ffffff",
+    "t2": "#d0d0d0",
+    "t3": "#808080",
+    "primary": "#ff0080",
+    "secondary": "#00ffff",
+    "btn": "border:1px solid rgba(255,0,128,0.6);border-radius:2px;background:rgba(21,21,21,0.8);box-shadow:inset 0 1px 2px rgba(255,255,255,0.1),0 0 12px rgba(255,0,128,0.3),0 0 24px rgba(0,255,255,0.1);color:#ffffff",
+    "inp": "border:1px solid rgba(255,0,128,0.4);border-radius:2px;background:rgba(10,10,10,0.9);color:#ffffff;box-shadow:inset 0 1px 2px rgba(255,255,255,0.05),0 0 8px rgba(255,0,128,0.2)",
+    "tgl_off": "background:rgba(15,15,15,0.9);border:1px solid rgba(255,0,128,0.4);box-shadow:0 0 8px rgba(0,0,0,0.5)",
+    "tgl_on": "background:rgba(0,255,255,0.15);border:1px solid rgba(0,255,255,0.6);box-shadow:0 0 16px rgba(0,255,255,0.5)",
+    "badge": "border:1px solid rgba(0,255,255,0.5);background:rgba(0,255,255,0.05);color:#00ffff",
+    "table_h": "background:#1f1f1f;border-bottom:1px solid rgba(255,0,128,0.3)",
+    "table_r1": "background:rgba(10,10,10,0.5)",
+    "table_r2": "background:rgba(21,21,21,0.5)",
+    "depth": "box-shadow:inset 0 0 8px rgba(255,0,128,0.15),0 0 20px rgba(0,255,255,0.2),0 -2px 0 rgba(255,0,128,0.3),0 2px 0 rgba(0,255,255,0.3)",
+    "nav": "Prismatic light refraction \u2014 manipulating light through glass",
+    "tags": [
+      "obsidian",
+      "prismatic",
+      "refraction-nav"
+    ]
+  }
+];
+
+function isLight(h){if(!h||h==='transparent'||h.startsWith('rgba')||h.startsWith('linear'))return false;try{const r=parseInt(h.slice(1,3),16),g=parseInt(h.slice(3,5),16),b=parseInt(h.slice(5,7),16);return(r*299+g*587+b*114)/1000>128}catch(e){return false}}
+function textOn(bg){return isLight(bg)?'#0A0A0A':'#F0F0F0'}
+function copyHex(h){navigator.clipboard?.writeText(h);const t=document.getElementById('toast');t.textContent=h+' COPIED';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1200)}
+
+function render(s){
+  const lt=isLight(s.bg);
+  const borderC=lt?'rgba(0,0,0,0.12)':'rgba(255,255,255,0.08)';
+  return `
+  <div class="card" style="background:${s.bg};border-color:${borderC}">
+    <div class="card-hdr" style="border-bottom:1px solid ${borderC}">
+      <div>
+        <div class="card-num" style="color:${s.t3}">${s.num} / 20</div>
+        <div class="card-name" style="color:${s.t1}">${s.name}</div>
+        <div class="card-desc" style="color:${s.t2}">${s.desc}</div>
+        <div class="card-tags">
+          ${s.tags.map(t=>`<span class="card-tag" style="color:${s.primary};border-color:${s.primary}40">${t}</span>`).join('')}
+        </div>
+      </div>
+      <div style="display:flex;gap:8px">
+        <div style="width:48px;height:48px;background:${s.primary};border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:8px;font-weight:700;color:${textOn(s.primary)};cursor:pointer" onclick="copyHex('${s.primary}')">P</div>
+        <div style="width:48px;height:48px;background:${s.secondary};border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:8px;font-weight:700;color:${textOn(s.secondary)};cursor:pointer" onclick="copyHex('${s.secondary}')">S</div>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <!-- LEFT: COMPONENTS -->
+      <div class="card-col" style="background:${s.s1};border-right:1px solid ${borderC}">
+        <div class="sec-label" style="color:${s.t3};border-color:${borderC}">COMPONENT LANGUAGE</div>
+        
+        <div style="font-family:var(--mono);font-size:8px;color:${s.t3};letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px">BUTTONS</div>
+        <div class="comp-row">
+          <div class="c-btn" style="${s.btn}">PRIMARY</div>
+          <div class="c-btn" style="background:transparent;color:${s.secondary};border:1px solid ${s.secondary}40;padding:8px 18px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase">SECONDARY</div>
+        </div>
+
+        <div style="font-family:var(--mono);font-size:8px;color:${s.t3};letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px">INPUTS</div>
+        <div class="comp-row">
+          <div class="c-inp" style="${s.inp};opacity:0.5">placeholder...</div>
+          <div class="c-inp" style="${s.inp}">focused input</div>
+        </div>
+
+        <div style="font-family:var(--mono);font-size:8px;color:${s.t3};letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px">TOGGLES & BADGES</div>
+        <div class="comp-row">
+          <div class="c-tgl" style="${s.tgl_off}"><div class="c-tgl-knob" style="background:${s.t3};left:2px"></div></div>
+          <div class="c-tgl" style="${s.tgl_on}"><div class="c-tgl-knob" style="background:${s.primary};left:22px"></div></div>
+          <div class="c-badge" style="${s.badge}">LIVE</div>
+          <div class="c-badge" style="border:1px solid ${s.primary};background:${s.primary}15;color:${s.primary}">PENDING</div>
+        </div>
+
+        <div style="font-family:var(--mono);font-size:8px;color:${s.t3};letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;margin-top:8px">DATA TABLE</div>
+        <table class="tbl-prev" style="border:1px solid ${borderC}">
+          <tr style="${s.table_h}"><th style="color:${s.t3}">ITEM</th><th style="color:${s.t3}">SOURCE</th><th style="color:${s.t3}">MARGIN</th><th style="color:${s.t3}">STATUS</th></tr>
+          <tr style="${s.table_r1}"><td style="color:${s.t2}">RTX 4070</td><td style="color:${s.t3}">CEX UK</td><td style="color:${s.secondary}">+£42</td><td><span style="${s.badge};font-size:8px;padding:1px 6px">LIVE</span></td></tr>
+          <tr style="${s.table_r2}"><td style="color:${s.t2}">iPad Air</td><td style="color:${s.t3}">FB MKT</td><td style="color:${s.primary}">+£28</td><td><span style="border:1px solid ${s.primary};color:${s.primary};font-size:8px;padding:1px 6px;font-family:var(--mono)">PENDING</span></td></tr>
+        </table>
+
+        <div style="font-family:var(--mono);font-size:8px;color:${s.t3};letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;margin-top:14px">DEPTH LAYERS</div>
+        <div class="depth-row">
+          <div class="depth-box" style="background:${s.bg};${s.depth};color:${s.t3}">BG</div>
+          <div class="depth-box" style="background:${s.s1};${s.depth};color:${s.t3}">S1</div>
+          <div class="depth-box" style="background:${s.s2};${s.depth};color:${s.t3}">S2</div>
+        </div>
+
+        <div style="font-family:var(--mono);font-size:8px;color:${s.t3};letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;margin-top:14px">NAVIGATION PARADIGM</div>
+        <div class="nav-pill" style="background:${s.primary}15;border:1px solid ${s.primary}40;color:${s.primary}">${s.nav}</div>
+      </div>
+
+      <!-- RIGHT: MOCKUP -->
+      <div class="card-col" style="background:${s.bg}">
+        <div class="sec-label" style="color:${s.t3};border-color:${borderC}">APP MOCKUP — DASHBOARD</div>
+        <div class="mini-mk" style="background:${s.s2};border:1px solid ${borderC}">
+          <div class="mk-bar" style="background:${s.bg};border-bottom:1px solid ${borderC}">
+            <div class="mk-dot" style="background:${s.primary}"></div>
+            <div class="mk-dot" style="background:${s.t3}40"></div>
+            <div class="mk-dot" style="background:${s.t3}40"></div>
+          </div>
+          <div class="mk-body">
+            <div class="mk-side" style="background:${s.s1};border-right:1px solid ${borderC}">
+              <div class="mk-nav-i" style="background:${s.primary}60"></div>
+              <div class="mk-nav-i" style="background:${s.secondary}40"></div>
+              <div class="mk-nav-i" style="background:${s.t3}30"></div>
+              <div class="mk-nav-i" style="background:${s.t3}30"></div>
+              <div class="mk-nav-i" style="background:${s.t3}30"></div>
+              <div class="mk-nav-i" style="background:${s.t3}30"></div>
+              <div class="mk-nav-i" style="background:${s.t3}30"></div>
+            </div>
+            <div class="mk-main" style="background:${s.bg}">
+              <div class="mk-h" style="background:${s.primary}"></div>
+              <div class="mk-cards">
+                <div class="mk-card" style="background:${s.s1};border:1px solid ${borderC}"><div class="mk-card-top" style="background:${s.primary}"></div></div>
+                <div class="mk-card" style="background:${s.s1};border:1px solid ${borderC}"><div class="mk-card-top" style="background:${s.secondary}"></div></div>
+                <div class="mk-card" style="background:${s.s1};border:1px solid ${borderC}"><div class="mk-card-top" style="background:${s.t3}"></div></div>
+              </div>
+              <div class="mk-chart" style="background:${s.s1};border:1px solid ${borderC};position:relative;overflow:hidden">
+                <svg width="100%" height="100%" viewBox="0 0 200 50" preserveAspectRatio="none">
+                  <polyline fill="none" stroke="${s.primary}" stroke-width="1.5" points="0,40 20,35 40,25 60,30 80,18 100,22 120,12 140,20 160,8 180,15 200,5"/>
+                  <polyline fill="none" stroke="${s.secondary}" stroke-width="1" stroke-dasharray="3,3" points="0,45 20,42 40,38 60,40 80,35 100,37 120,32 140,34 160,28 180,30 200,25" opacity="0.5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sec-label" style="color:${s.t3};border-color:${borderC};margin-top:20px">NEUTRAL RAMP</div>
+        <div style="display:flex;height:48px;border-radius:2px;overflow:hidden;border:1px solid ${borderC}">
+          <div style="flex:1;background:${s.bg};display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:7px;color:${textOn(s.bg)}" onclick="copyHex('${s.bg}')" title="BG">${s.bg}</div>
+          <div style="flex:1;background:${s.s1};display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:7px;color:${textOn(s.s1)}" onclick="copyHex('${s.s1}')" title="S1">${s.s1}</div>
+          <div style="flex:1;background:${s.s2};display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:7px;color:${textOn(s.s2)}" onclick="copyHex('${s.s2}')" title="S2">${s.s2}</div>
+          <div style="flex:1;background:${s.t3};display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:7px;color:${textOn(s.t3)}" onclick="copyHex('${s.t3}')" title="T3">${s.t3}</div>
+          <div style="flex:1;background:${s.t2};display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:7px;color:${textOn(s.t2)}" onclick="copyHex('${s.t2}')" title="T2">${s.t2}</div>
+          <div style="flex:1;background:${s.t1};display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:7px;color:${textOn(s.t1)}" onclick="copyHex('${s.t1}')" title="T1">${s.t1}</div>
+        </div>
+
+        <div class="sec-label" style="color:${s.t3};border-color:${borderC};margin-top:20px">BRAND PAIR</div>
+        <div style="display:flex;height:48px;border-radius:2px;overflow:hidden;border:1px solid ${borderC}">
+          <div style="flex:1;background:${s.primary};display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;font-weight:700;color:${textOn(s.primary)};cursor:pointer" onclick="copyHex('${s.primary}')">PRIMARY ${s.primary}</div>
+          <div style="flex:1;background:${s.secondary};display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;font-weight:700;color:${textOn(s.secondary)};cursor:pointer" onclick="copyHex('${s.secondary}')">SECONDARY ${s.secondary}</div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+document.getElementById('cards').innerHTML = STYLES.map(render).join('');
+</script>
+</body>
+</html>

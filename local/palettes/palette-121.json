@@ -1,0 +1,15 @@
+{
+  "id": "palette-121",
+  "name": "synthwave-sunset",
+  "source": "ultra-expansion-cycle2-synthwave",
+  "colors": {
+    "bg": "#FF1744",
+    "surface": "#FF4568",
+    "card": "#FF2E56",
+    "accent": "#001A33",
+    "secondary": "#FFEA00",
+    "text": "#000000",
+    "muted": "#409199"
+  },
+  "weight": 5
+}

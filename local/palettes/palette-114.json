@@ -1,0 +1,15 @@
+{
+  "id": "palette-114",
+  "name": "hyper-violet",
+  "source": "ultra-expansion-cycle2-vaporwave",
+  "colors": {
+    "bg": "#AA00FF",
+    "surface": "#C233FF",
+    "card": "#B61AFF",
+    "accent": "#00E676",
+    "secondary": "#FFD600",
+    "text": "#FFFFFF",
+    "muted": "#409965"
+  },
+  "weight": 10
+}

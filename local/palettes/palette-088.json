@@ -1,0 +1,15 @@
+{
+  "id": "palette-088",
+  "name": "neon-noir-blood",
+  "source": "ultra-expansion-cycle2-neon-noir",
+  "colors": {
+    "bg": "#140003",
+    "surface": "#260009",
+    "card": "#1C0006",
+    "accent": "#FF1E1E",
+    "secondary": "#FFB800",
+    "text": "#FFE6E6",
+    "muted": "#994747"
+  },
+  "weight": 10
+}

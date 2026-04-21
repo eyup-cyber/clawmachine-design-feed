@@ -1,0 +1,15 @@
+{
+  "id": "palette-033",
+  "name": "roller-disco",
+  "source": "chromatic-research-paperheart",
+  "colors": {
+    "bg": "#540270",
+    "surface": "#5e0c7a",
+    "card": "#681684",
+    "accent": "#147772",
+    "secondary": "#003D3E",
+    "text": "#FFD101",
+    "muted": "#8634a2"
+  },
+  "weight": 0
+}

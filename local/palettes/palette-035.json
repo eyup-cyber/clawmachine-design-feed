@@ -1,0 +1,15 @@
+{
+  "id": "palette-035",
+  "name": "hong-kong-neon",
+  "source": "chromatic-research-paperheart",
+  "colors": {
+    "bg": "#3E142C",
+    "surface": "#481e36",
+    "card": "#522840",
+    "accent": "#F75E59",
+    "secondary": "#B8113C",
+    "text": "#7FE9F6",
+    "muted": "#70465e"
+  },
+  "weight": 10
+}

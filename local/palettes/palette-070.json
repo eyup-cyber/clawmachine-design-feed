@@ -1,0 +1,15 @@
+{
+  "id": "palette-070",
+  "name": "starface-pop",
+  "source": "design-brief-bold-bg",
+  "colors": {
+    "bg": "#00C853",
+    "surface": "#00B049",
+    "card": "#00963E",
+    "accent": "#FFD600",
+    "secondary": "#FF4081",
+    "text": "#0a0a0a",
+    "muted": "#005C28"
+  },
+  "weight": 5
+}

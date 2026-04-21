@@ -1,0 +1,86 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Pricing & Licensing — Free MIT Code + Affordable Icon Licenses | Pxlkit',
+  description:
+    'Pxlkit: MIT-licensed React UI kit & free icon packs with attribution. Indie $9.50 / Team $24.50 for no-attribution commercial use. One-time payment.',
+  keywords: [
+    'pxlkit pricing',
+    'pxlkit plans',
+    'pxlkit free plan',
+    'pxlkit indie license',
+    'pxlkit team license',
+    'react ui kit pricing',
+    'react ui kit free',
+    'free react components',
+    'pixel art icons price',
+    'pixel icons license',
+    'icon license',
+    'icon pack license',
+    'svg icon license',
+    'open source license',
+    'mit license',
+    'mit code license',
+    'mit react ui kit',
+    'commercial license',
+    'commercial icon license',
+    'commercial use icons',
+    'source available icon license',
+    'retro ui license',
+    'one-time purchase',
+    'one-time payment ui kit',
+    'no subscription',
+    'lifetime license',
+    'lifetime updates license',
+    'developer license',
+    'indie developer license',
+    'team license',
+    'enterprise license',
+    'free with attribution',
+    'attribution license',
+    'no attribution license',
+    'remove attribution icons',
+    'react component license',
+    'tailwind ui pricing',
+    'ui kit comparison pricing',
+    'affordable ui kit',
+    'cheap icon pack',
+    'budget react components',
+    'free tier ui kit',
+    'split licensing model',
+    'code vs asset licensing',
+    'icon licensing terms',
+    'commercial project icons',
+    'startup license react',
+    'agency license icons',
+    'multi-project license',
+    'per-seat licensing',
+    'pxlkit cost',
+    'pxlkit buy',
+    'pxlkit upgrade',
+  ],
+  openGraph: {
+    title: 'Pricing & Licensing — Free MIT Code + Affordable Icon Licenses | Pxlkit',
+    description:
+      'MIT-licensed React UI kit (free forever). Icon packs free with attribution. Indie $9.50 / Team $24.50 for no-attribution commercial use. One-time payment, lifetime updates.',
+    url: 'https://pxlkit.xyz/pricing',
+  },
+  twitter: {
+    title: 'Pricing & Licensing — Free MIT Code + Affordable Icon Licenses | Pxlkit',
+    description:
+      'MIT code is free forever. Icon packs free with attribution. Indie ($9.50) / Team ($24.50) for commercial use. One-time payment.',
+  },
+  alternates: {
+    canonical: 'https://pxlkit.xyz/pricing',
+  },
+  other: {
+    'article:author': 'Pxlkit',
+    'og:updated_time': new Date().toISOString(),
+    'og:type': 'website',
+    'og:site_name': 'Pxlkit',
+  },
+};
+
+export default function PricingLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
+}

@@ -1,0 +1,65 @@
+/* Decorative Layer: Cyberpunk HUD
+ * Adds corner brackets, scan lines, and tech-border styling to cards and containers.
+ * Uses --sl-accent for all glow/border colours.
+ */
+
+.deco-cyberpunk-hud .card,
+.deco-cyberpunk-hud [data-card] {
+  border: 1px solid color-mix(in srgb, var(--sl-accent) 30%, transparent);
+  position: relative;
+}
+
+.deco-cyberpunk-hud .card::before,
+.deco-cyberpunk-hud [data-card]::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  pointer-events: none;
+  border: 1px solid transparent;
+  border-image: linear-gradient(
+      135deg,
+      var(--sl-accent) 0%,
+      transparent 40%,
+      transparent 60%,
+      var(--sl-accent) 100%
+    )
+    1;
+}
+
+.deco-cyberpunk-hud .card::after,
+.deco-cyberpunk-hud [data-card]::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid var(--sl-accent);
+  border-left: 2px solid var(--sl-accent);
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.deco-cyberpunk-hud h1,
+.deco-cyberpunk-hud h2,
+.deco-cyberpunk-hud h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 8px color-mix(in srgb, var(--sl-accent) 40%, transparent);
+}
+
+.deco-cyberpunk-hud hr,
+.deco-cyberpunk-hud [data-divider] {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--sl-accent),
+    transparent
+  );
+  opacity: 0.4;
+}

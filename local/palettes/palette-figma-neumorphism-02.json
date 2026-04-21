@@ -1,0 +1,15 @@
+{
+  "id": "palette-figma-neumorphism-02",
+  "name": "dark-clay",
+  "source": "figma-neumorphism-kit",
+  "colors": {
+    "bg": "#2d3436",
+    "surface": "#353b3d",
+    "card": "#252b2d",
+    "accent": "#00cec9",
+    "secondary": "#6c5ce7",
+    "text": "#dfe6e9",
+    "muted": "#636e72"
+  },
+  "weight": 0
+}

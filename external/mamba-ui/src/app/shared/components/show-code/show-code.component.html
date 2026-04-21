@@ -1,0 +1,252 @@
+<section
+	class="container mx-auto overflow-hidden rounded-lg shadow-sm scrollbar-none"
+	data-cy="section-component"
+>
+	<div
+		class="overflow-hidden divide-y rounded shadow-sm"
+		[ngClass]="['bg' + default, 'divide' + neutralInv]"
+	>
+		<div class="flex justify-between px-2 py-4 overflow-x-auto sm:p-4 flex-nowrap">
+			<div class="space-x-2">
+				<button
+					class="px-2 py-1 text-sm bg-opacity-25 rounded-md hover:bg-opacity-50 focus-visible:bg-opacity-50"
+					[ngClass]="[
+						options.language === '' ? 'bg' + primary : 'bg-transparent',
+						'hover:bg' + primary
+					]"
+					type="button"
+					(click)="showPreview()"
+					name="Show preview"
+					data-cy="show-preview-button"
+				>
+					Preview
+				</button>
+				<button
+					class="px-2 py-1 text-sm bg-opacity-25 rounded-md hover:bg-opacity-50 focus-visible:bg-opacity-50"
+					[ngClass]="[
+						options.language === 'html' ? 'bg' + primary : 'bg-transparent',
+						'hover:bg' + primary
+					]"
+					type="button"
+					(click)="showHtml()"
+					name="Show HTML code"
+					data-cy="show-html-button"
+				>
+					HTML
+				</button>
+				<button
+					class="px-2 py-1 text-sm bg-opacity-25 rounded-md hover:bg-opacity-50 focus-visible:bg-opacity-50"
+					[ngClass]="[
+						options.language === 'vue' ? 'bg' + primary : 'bg-transparent',
+						'hover:bg' + primary
+					]"
+					type="button"
+					(click)="showVue()"
+					name="Show Vue template"
+					data-cy="show-vue-button"
+				>
+					Vue
+				</button>
+				<button
+					class="px-2 py-1 text-sm bg-opacity-25 rounded-md hover:bg-opacity-50 focus-visible:bg-opacity-50"
+					[ngClass]="[
+						options.language === 'jsx' ? 'bg' + primary : 'bg-transparent',
+						'hover:bg' + primary
+					]"
+					type="button"
+					(click)="showJSX()"
+					name="Show JSX code"
+					data-cy="show-jsx-button"
+				>
+					JSX
+				</button>
+			</div>
+			<button
+				class="px-2 text-sm rounded-md hover:bg-opacity-50 focus-visible:bg-opacity-50"
+				(click)="showFullscreen()"
+				type="button"
+				title="Show in fullscreen"
+				data-cy="show-fullscreen-button"
+				[ngClass]="['hover:bg' + primary]"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 512 512"
+					class="w-4 h-4 mx-auto"
+					fill="currentColor"
+				>
+					<polygon
+						points="208 48 208 16 16 16 16 208 48 208 48 70.627 208.687 231.313 231.313 208.687 70.627 48 208 48"
+					/>
+					<polygon
+						points="464 304 464 441.373 299.313 276.687 276.687 299.313 441.373 464 304 464 304 496 496 496 496 304 464 304"
+					/>
+				</svg>
+			</button>
+		</div>
+		@defer (on idle) {
+			<div class="relative">
+				<custom-requirements
+					*ngIf="requires && !codeVisible"
+					[requires]="requires"
+				></custom-requirements>
+				<div
+					#rawContent
+					*ngIf="!codeVisible"
+					class="p-3"
+					[ngClass]="{
+						'px-6 min-h-48 flex justify-center items-center': centered,
+						'overflow-y-auto overscroll-contain max-h-[75vh]': isTemplate
+					}"
+				>
+					<ng-content></ng-content>
+				</div>
+				<pre
+					*ngIf="codeVisible"
+					class="p-6 overflow-auto whitespace-pre-line language-html max-h-half-screen overscroll-y-contain"
+					[ngClass]="this.options.darkTheme ? 'prism-dark' : 'prism-light'"
+				>
+				<code class="language-html" [innerHTML]="code">
+				</code>
+			</pre>
+				<div
+					*ngIf="codeVisible"
+					class="absolute top-0 right-0 flex items-center mt-3 mr-6 border rounded-lg shadow-md"
+					[ngClass]="[
+						'border' + primary,
+						copied ? 'bg' + primary : 'bg' + contrast,
+						copied ? 'hover:bg' + primary : 'hover:bg' + default,
+						copied ? 'focus-visible:bg' + primary : 'focus-visible:bg' + default,
+						copied ? 'text' + contrast : 'text' + defaultInv,
+						copied ? 'divide-none' : 'divide-x',
+						'divide' + neutral,
+						dropdownOpen ? 'rounded-b-none' : 'rounded-lg'
+					]"
+				>
+					<button
+						*ngIf="!copied"
+						class="px-4 py-2"
+						name="Copy to clipboard"
+						type="button"
+						data-cy="copy-code-button"
+						(click)="copyToClipboard()"
+					>
+						Copy
+					</button>
+					<button
+						*ngIf="!copied"
+						class="p-2"
+						type="button"
+						title="Toggle dropdown"
+						data-cy="copy-caret-button"
+						(click)="toggleDropdown()"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							class="w-5 h-5"
+							[ngClass]="dropdownOpen ? 'rotate-180' : 'rotate-0'"
+							viewBox="0 0 24 24"
+							stroke="currentColor"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M19 9l-7 7-7-7"
+							/>
+						</svg>
+					</button>
+					<div *ngIf="!!copied" class="flex gap-2 px-3 py-2" data-cy="copy-code-success">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 512 512"
+							fill="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16ZM403.078,403.078a207.253,207.253,0,1,1,44.589-66.125A207.332,207.332,0,0,1,403.078,403.078Z"
+							/>
+							<path d="M256,384A104,104,0,0,0,360,280H152A104,104,0,0,0,256,384Z" />
+							<polygon
+								points="205.757 228.292 226.243 203.708 168 155.173 109.757 203.708 130.243 228.292 168 196.827 205.757 228.292"
+							/>
+							<polygon
+								points="285.757 203.708 306.243 228.292 344 196.827 381.757 228.292 402.243 203.708 344 155.173 285.757 203.708"
+							/>
+						</svg>
+						<span>Copied</span>
+					</div>
+				</div>
+				<ul
+					*ngIf="dropdownOpen"
+					class="absolute top-0 right-0 flex flex-col mr-6 shadow-lg mt-14"
+					[ngClass]="['bg' + contrast, 'text' + defaultInv]"
+				>
+					<li class="">
+						<button
+							class="w-full px-3 py-1"
+							[ngClass]="[
+								'hover:bg' + default,
+								'hover:text' + defaultInv,
+								'focus-visible:bg' + default,
+								'focus-visible:text' + defaultInv
+							]"
+							(click)="copyWithMode(themevariant.both)"
+						>
+							Both modes
+						</button>
+					</li>
+					<li class="">
+						<button
+							class="w-full px-3 py-1"
+							[ngClass]="[
+								'hover:bg' + default,
+								'hover:text' + defaultInv,
+								'focus-visible:bg' + default,
+								'focus-visible:text' + defaultInv
+							]"
+							(click)="copyWithMode(themevariant.light)"
+						>
+							Light mode
+						</button>
+					</li>
+					<li class="">
+						<button
+							class="w-full px-3 py-1"
+							[ngClass]="[
+								'hover:bg' + default,
+								'hover:text' + defaultInv,
+								'focus-visible:bg' + default,
+								'focus-visible:text' + defaultInv
+							]"
+							(click)="copyWithMode(themevariant.dark)"
+						>
+							Dark mode
+						</button>
+					</li>
+					<div *ngIf="!!copied" class="flex gap-2 px-3 py-2" data-cy="copy-code-success">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							viewBox="0 0 512 512"
+							fill="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								d="M256,16C123.452,16,16,123.452,16,256S123.452,496,256,496,496,388.548,496,256,388.548,16,256,16ZM403.078,403.078a207.253,207.253,0,1,1,44.589-66.125A207.332,207.332,0,0,1,403.078,403.078Z"
+							/>
+							<path d="M256,384A104,104,0,0,0,360,280H152A104,104,0,0,0,256,384Z" />
+							<polygon
+								points="205.757 228.292 226.243 203.708 168 155.173 109.757 203.708 130.243 228.292 168 196.827 205.757 228.292"
+							/>
+							<polygon
+								points="285.757 203.708 306.243 228.292 344 196.827 381.757 228.292 402.243 203.708 344 155.173 285.757 203.708"
+							/>
+						</svg>
+						<span>Copied</span>
+					</div>
+				</ul>
+			</div>
+		}
+	</div>
+</section>

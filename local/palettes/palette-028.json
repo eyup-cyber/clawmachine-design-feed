@@ -1,0 +1,15 @@
+{
+  "id": "palette-028",
+  "name": "ultra-violet",
+  "source": "chromatic-research-colorhex",
+  "colors": {
+    "bg": "#000000",
+    "surface": "#0a0a0a",
+    "card": "#141414",
+    "accent": "#7D12FF",
+    "secondary": "#200589",
+    "text": "#FBF8FD",
+    "muted": "#323232"
+  },
+  "weight": 5
+}

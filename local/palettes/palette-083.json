@@ -1,0 +1,15 @@
+{
+  "id": "palette-083",
+  "name": "terminal-hacker",
+  "source": "ultra-expansion-cycle2-terminal-green",
+  "colors": {
+    "bg": "#011206",
+    "surface": "#04240E",
+    "card": "#021A0A",
+    "accent": "#39FF14",
+    "secondary": "#FFFF00",
+    "text": "#E0FFE0",
+    "muted": "#4B8F42"
+  },
+  "weight": 10
+}

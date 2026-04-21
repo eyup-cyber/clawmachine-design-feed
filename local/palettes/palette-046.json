@@ -1,0 +1,15 @@
+{
+  "id": "palette-046",
+  "name": "the-outline",
+  "source": "inspiration-image",
+  "colors": {
+    "bg": "#0a0a14",
+    "surface": "#14142a",
+    "card": "#1e1e3a",
+    "accent": "#FF3B94",
+    "secondary": "#1a1a6e",
+    "text": "#ffffff",
+    "muted": "#6b6b8a"
+  },
+  "weight": 10
+}

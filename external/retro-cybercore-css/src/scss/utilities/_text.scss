@@ -1,0 +1,177 @@
+// ============================================================
+// Text Utilities
+// ============================================================
+
+@layer utilities {
+  // --------------------------------------------------------
+  // Text Alignment
+  // --------------------------------------------------------
+
+  .cyber-text-left {
+    text-align: left;
+  }
+
+  .cyber-text-center {
+    text-align: center;
+  }
+
+  .cyber-text-right {
+    text-align: right;
+  }
+
+  // --------------------------------------------------------
+  // Text Colors
+  // --------------------------------------------------------
+
+  .cyber-text-primary {
+    color: var(--color-text-primary);
+  }
+
+  .cyber-text-secondary {
+    color: var(--color-text-secondary);
+  }
+
+  .cyber-text-muted {
+    color: var(--color-text-muted);
+  }
+
+  .cyber-text-cyan {
+    color: var(--cyber-cyan-500);
+  }
+
+  .cyber-text-magenta {
+    color: var(--cyber-magenta-500);
+  }
+
+  .cyber-text-yellow {
+    color: var(--cyber-yellow-500);
+  }
+
+  .cyber-text-green {
+    color: var(--cyber-green-500);
+  }
+
+  // --------------------------------------------------------
+  // Text with Glow
+  // --------------------------------------------------------
+
+  // Base glow (cyan)
+  .cyber-text-glow {
+    color: var(--cyber-cyan-500);
+    text-shadow: var(--glow-text-cyan);
+
+    // BEM modifiers
+    &--magenta {
+      color: var(--cyber-magenta-500);
+      text-shadow: var(--glow-text-magenta);
+    }
+
+    &--yellow {
+      color: var(--cyber-yellow-500);
+      text-shadow: var(--glow-text-yellow);
+    }
+
+    &--green {
+      color: var(--cyber-green-500);
+      text-shadow: var(--glow-text-green);
+    }
+  }
+
+  // Alternative flat naming (keep for backwards compatibility)
+  .cyber-text-glow-cyan {
+    color: var(--cyber-cyan-500);
+    text-shadow: var(--glow-text-cyan);
+  }
+
+  .cyber-text-glow-magenta {
+    color: var(--cyber-magenta-500);
+    text-shadow: var(--glow-text-magenta);
+  }
+
+  .cyber-text-glow-yellow {
+    color: var(--cyber-yellow-500);
+    text-shadow: var(--glow-text-yellow);
+  }
+
+  .cyber-text-glow-green {
+    color: var(--cyber-green-500);
+    text-shadow: var(--glow-text-green);
+  }
+
+  // --------------------------------------------------------
+  // Font Weights
+  // --------------------------------------------------------
+
+  .cyber-font-normal {
+    font-weight: 400;
+  }
+
+  .cyber-font-medium {
+    font-weight: 500;
+  }
+
+  .cyber-font-semibold {
+    font-weight: 600;
+  }
+
+  .cyber-font-bold {
+    font-weight: 700;
+  }
+
+  // --------------------------------------------------------
+  // Font Families
+  // --------------------------------------------------------
+
+  .cyber-font-display {
+    font-family: var(--font-display);
+  }
+
+  .cyber-font-body {
+    font-family: var(--font-body);
+  }
+
+  .cyber-font-mono {
+    font-family: var(--font-mono);
+  }
+
+  // --------------------------------------------------------
+  // Text Transform
+  // --------------------------------------------------------
+
+  .cyber-uppercase {
+    letter-spacing: var(--tracking-wider);
+    text-transform: uppercase;
+  }
+
+  .cyber-lowercase {
+    text-transform: lowercase;
+  }
+
+  .cyber-capitalize {
+    text-transform: capitalize;
+  }
+
+  // --------------------------------------------------------
+  // Text Overflow
+  // --------------------------------------------------------
+
+  .cyber-truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .cyber-line-clamp-2 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .cyber-line-clamp-3 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+  }
+}

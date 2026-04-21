@@ -1,0 +1,17 @@
+@use '../../styles/colors' as col;
+@use '../../styles/scrollbar' as sb;
+@use '../../styles/variables' as var;
+
+:host {
+  @include sb.scrollbar;
+
+  display: block;
+
+  background-color: transparent;
+  color: col.$pip-green;
+  height: 100%;
+  width: 100%;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+}

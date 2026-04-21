@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Sign in — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css"><link rel="stylesheet" href="../design.css">
+</head>
+<body>
+<main style="min-height:100vh;display:grid;grid-template-columns:1fr 1fr;">
+
+  <section style="display:flex;flex-direction:column;padding:48px 32px;max-width:480px;margin:0 auto;width:100%;">
+    <a href="/" aria-label="home" style="display:inline-block;width:40px;height:40px;">
+      <svg viewBox="0 0 40 40" width="40" height="40" fill="none"><rect width="40" height="40" rx="8" fill="var(--color-brand-600)"/><path d="M12 14h16M12 20h12M12 26h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+    </a>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:48px 0;">
+      <h1 class="t-display-sm" style="font-weight:600;color:var(--color-text-primary);">Log in to your account</h1>
+      <p style="font-size:var(--text-md);color:var(--color-text-tertiary);margin-top:12px;">Welcome back! Please enter your details.</p>
+
+      <form style="display:flex;flex-direction:column;gap:20px;margin-top:32px;">
+        <div class="uui-input-wrap">
+          <label class="uui-label">Email</label>
+          <div class="uui-input"><input type="email" placeholder="Enter your email"></div>
+        </div>
+        <div class="uui-input-wrap">
+          <label class="uui-label">Password</label>
+          <div class="uui-input"><input type="password" placeholder="••••••••"></div>
+        </div>
+        <div class="uui-row justify-between items-center">
+          <label class="uui-check-label"><input type="checkbox" class="uui-check" checked><span class="lbl">Remember for 30 days</span></label>
+          <a href="#" class="uui-btn uui-btn--link-color uui-btn--sm">Forgot password</a>
+        </div>
+        <button type="submit" class="uui-btn uui-btn--primary uui-btn--lg" style="width:100%;">Sign in</button>
+        <button type="button" class="uui-btn uui-btn--secondary uui-btn--lg" style="width:100%;">
+          <svg width="20" height="20" viewBox="0 0 20 20"><path fill="#4285F4" d="M19.6 10.23c0-.74-.06-1.45-.17-2.14H10v4.05h5.39a4.6 4.6 0 0 1-2 3.03v2.52h3.24c1.9-1.74 2.97-4.3 2.97-7.46z"/><path fill="#34A853" d="M10 20c2.7 0 4.96-.9 6.62-2.43l-3.24-2.52a5.98 5.98 0 0 1-8.91-3.13H1.14v2.6A9.97 9.97 0 0 0 10 20z"/><path fill="#FBBC04" d="M4.47 11.92a5.97 5.97 0 0 1 0-3.83V5.48H1.14a9.99 9.99 0 0 0 0 9.04l3.33-2.6z"/><path fill="#EA4335" d="M10 4a5.43 5.43 0 0 1 3.83 1.48l2.87-2.87A9.6 9.6 0 0 0 10 0a9.97 9.97 0 0 0-8.86 5.48l3.33 2.6A5.97 5.97 0 0 1 10 4z"/></svg>
+          Sign in with Google
+        </button>
+      </form>
+
+      <p style="font-size:var(--text-sm);color:var(--color-text-tertiary);text-align:center;margin-top:32px;">Don't have an account? <a href="#" style="color:var(--color-text-brand-secondary);font-weight:600;">Sign up</a></p>
+    </div>
+    <footer style="display:flex;justify-content:space-between;font-size:var(--text-sm);color:var(--color-text-tertiary);">
+      <span>&copy; Untitled UI 2026</span>
+      <a href="mailto:hello@untitledui.com" style="display:inline-flex;align-items:center;gap:8px;">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="1.67" y="4.17" width="16.67" height="11.67" rx="1.67"/><path d="m1.67 5.83 7.37 5.16a1.67 1.67 0 0 0 1.91 0l7.38-5.16"/></svg>
+        hello@untitledui.com
+      </a>
+    </footer>
+  </section>
+
+  <aside style="background:linear-gradient(135deg,var(--color-brand-50),var(--color-brand-200));padding:80px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;">
+    <svg style="position:absolute;top:0;right:0;opacity:.18;" width="600" height="600" viewBox="0 0 600 600" fill="none">
+      <circle cx="300" cy="300" r="280" stroke="var(--color-brand-500)" stroke-width="1"/>
+      <circle cx="300" cy="300" r="200" stroke="var(--color-brand-500)" stroke-width="1"/>
+      <circle cx="300" cy="300" r="120" stroke="var(--color-brand-500)" stroke-width="1"/>
+      <circle cx="300" cy="300" r="60" stroke="var(--color-brand-500)" stroke-width="1"/>
+    </svg>
+    <blockquote style="position:relative;max-width:520px;">
+      <p style="font-size:var(--text-display-xs);line-height:1.4;color:var(--color-brand-950);font-weight:500;">We've been using Untitled to kick-start every new project and can't imagine working without it.</p>
+      <div class="uui-avatar-label-group" style="margin-top:32px;">
+        <div class="uui-avatar uui-avatar--xl">CB</div>
+        <div class="meta">
+          <span class="title" style="font-size:var(--text-lg);color:var(--color-brand-950);">Candice Wu</span>
+          <span class="subtitle" style="color:var(--color-brand-800);">Product Manager, Sisyphus</span>
+        </div>
+      </div>
+    </blockquote>
+  </aside>
+</main>
+</body>
+</html>

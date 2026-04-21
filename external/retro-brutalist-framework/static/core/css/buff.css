@@ -1,0 +1,106 @@
+/* BUFF: Blend Utility & Fancy Filters  */
+ 
+ /* Blenders */
+.multi-blend { mix-blend-mode: multiply; }
+.screen-blend { mix-blend-mode: screen; }
+.overlay-blend { mix-blend-mode: overlay; }
+.darken-blend { mix-blend-mode: darken; }
+.lighten-blend { mix-blend-mode: lighten; }
+.dodge-blend { mix-blend-mode: color-dodge; }
+.burn-blend { mix-blend-mode: color-burn; }
+.hard-blend { mix-blend-mode: hard-light; }
+.soft-blend { mix-blend-mode: soft-light; }
+.diff-blend { mix-blend-mode: difference; }
+.exc-blend { mix-blend-mode: exclusion; }
+.hue-blend { mix-blend-mode: hue; }
+.sat-blend { mix-blend-mode: saturation; }
+.color-blend { mix-blend-mode: color; }
+.lum-blend { mix-blend-mode: luminosity; }
+.init-blend { mix-blend-mode: initial; }
+.inherit-blend { mix-blend-mode: inherit; }
+.isolate-blend { mix-blend-mode: isolate; }
+.unblend { mix-blend-mode: unset !important; }
+
+/* BASIC FILTERS */
+.unfilter,.unfilter-h:hover{-webkit-filter:none; filter: none;}
+.blur, img.blur, *.blur-h:hover {
+	filter: blur(4px);-webkit-filter: blur(4px);-moz-filter: blur(4px);-o-filter: blur(4px);-ms-filter: blur(4px);
+}
+.blur-i, img.blur-i, *.blur-i-h:hover {
+	filter: blur(6px);-webkit-filter: blur(6px);-moz-filter: blur(6px);-o-filter: blur(6px);-ms-filter: blur(6px);
+}
+.blur-d, img.blur-d, *.blur-d-h:hover {
+	filter: blur(2px);-webkit-filter: blur(2px);-moz-filter: blur(2px);-o-filter: blur(2px);-ms-filter: blur(2px);
+}
+.darken, img.darken, *.darken-h:hover {
+	filter: brightness(0.5);-webkit-filter: brightness(0.5);-moz-filter: brightness(0.5);-o-filter: brightness(0.5);-ms-filter: brightness(0.5);
+}
+.darken-i, img.darken-i, *.darken-i-h:hover {
+	filter: brightness(0.75);-webkit-filter: brightness(0.75);-moz-filter: brightness(0.75);-o-filter: brightness(0.75);-ms-filter: brightness(0.75);
+}
+.darken-d, img.darken-d, *.darken-d-h:hover {
+	filter: brightness(0.25);-webkit-filter: brightness(0.25);-moz-filter: brightness(0.25);-o-filter: brightness(0.25);-ms-filter: brightness(0.25);
+}
+.lighten, img.lighten, *.lighten-h:hover {
+	filter: brightness(2);-webkit-filter: brightness(2);-moz-filter: brightness(2);-o-filter: brightness(2);-ms-filter: brightness(2);
+}
+.lighten-i, img.lighten-i, *.lighten-i-h:hover {
+	filter: brightness(2.5);-webkit-filter: brightness(2.5);-moz-filter: brightness(2.5);-o-filter: brightness(2.5);-ms-filter: brightness(2.5);
+}
+.lighten-d, img.lighten-d, *.lighten-d-h:hover {
+	filter: brightness(1.5);-webkit-filter: brightness(1.5);-moz-filter: brightness(1.5);-o-filter: brightness(1.5);-ms-filter: brightness(1.5);
+}
+.hue, img.hue, *.hue-h:hover {
+	filter:hue-rotate(90deg);-webkit-filter: hue-rotate(90deg);-moz-filter: hue-rotate(90deg);-o-filter: hue-rotate(90deg);-ms-filter: hue-rotate(90deg);
+}
+.hue-i, img.hue-i, *.hue-i-h:hover {
+	filter:hue-rotate(135deg);-webkit-filter: hue-rotate(135deg);-moz-filter: hue-rotate(135deg);-o-filter: hue-rotate(135deg);-ms-filter: hue-rotate(135deg);
+}
+.hue-d, img.hue-d, *.hue-d-h:hover {
+	filter:hue-rotate(45deg);-webkit-filter: hue-rotate(45deg);-moz-filter: hue-rotate(45deg);-o-filter: hue-rotate(45deg);-ms-filter: hue-rotate(45deg);
+}
+.invert, img.invert, *.invert-h:hover {
+	filter: invert(100%);-webkit-filter: invert(100%);-moz-filter: invert(100%);-o-filter: invert(100%);-ms-filter: invert(100%);
+}
+.grayscale, .greyscale, img.grayscale, img.greyscale, *.grayscale-h:hover, *.greyscale-h:hover {
+	filter: grayscale(100%); -webkit-filter: grayscale(100%);-moz-filter: grayscale(100%);-o-filter: grayscale(100%);-ms-filter: grayscale(100%);
+}
+.grayscale-d, .greyscale-d, img.grayscale-d, img.greyscale-d, *.grayscale-d-h:hover, *.greyscale-d-h:hover {
+	filter: grayscale(50%); -webkit-filter: grayscale(50%);-moz-filter: grayscale(50%);-o-filter: grayscale(50%);-ms-filter: grayscale(100%);
+}
+.sepia, img.sepia, *.sepia-h:hover {
+	filter: sepia(100%);-webkit-filter: sepia(100%);-moz-filter: sepia(100%);-o-filter: sepia(100%);-ms-filter: sepia(100%);
+}
+.sepia-d, img.sepia-d, *.sepia-d-h:hover {
+	filter: sepia(50%);-webkit-filter: sepia(50%);-moz-filter: sepia(50%);-o-filter: sepia(50%);-ms-filter: sepia(50%);
+}
+.saturate, img.saturate, *.saturate-h:hover {
+	filter: saturate(150%);-webkit-filter: saturate(150%);-moz-filter: saturate(150%);-o-filter: saturate(150%);-ms-filter: saturate(150%);
+}
+.saturate-i, img.saturate-i, *.saturate-i-h:hover {
+	filter: saturate(225%);-webkit-filter: saturate(225%);-moz-filter: saturate(225%);-o-filter: saturate(225%);-ms-filter: saturate(225%);
+}
+.saturate-d, img.saturate-d, *.saturate-d-h:hover {
+	filter: saturate(50%);-webkit-filter: saturate(50%);-moz-filter: saturate(50%);-o-filter: saturate(50%);-ms-filter: saturate(50%);
+}
+.contrast, img.contrast, *.contrast-h:hover {
+	filter: contrast(150%);-webkit-filter: contrast(150%);-moz-filter: contrast(150%);-o-filter: contrast(150%);-ms-filter: contrast(150%);
+}
+.contrast-i, img.contrast-i, *.contrast-i-h:hover {
+	filter: contrast(200%);-webkit-filter: contrast(200%);-moz-filter: contrast(200%);-o-filter: contrast(200%);-ms-filter: contrast(200%);
+}
+.contrast-d, img.contrast-d, *.contrast-d-h:hover {
+	filter: contrast(50%);-webkit-filter: contrast(50%);-moz-filter: contrast(50%);-o-filter: contrast(50%);-ms-filter: contrast(50%);
+}
+
+/* Background Filters */
+.glassmorph { background: linear-gradient(107.18deg, rgba(255, 255, 255, 0.5) 1.84%, rgba(255, 255, 255, 0.2) 100%); 
+	backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.grayscale-bg,.greyscale-bg { backdrop-filter: grayscale(1); -webkit-backdrop-filter: grayscale(1);}
+.sepia-bg { backdrop-filter: sepia(100%); -webkit-backgrop-filter: sepia(100%);}
+.saturate-bg { backdrop-filter: saturate(5); -webkit-backdrop-filter: saturate(5);}
+.hue-bg { backdrop-filter: hue-rotate(180deg); -webkit-backdrop-filter: hue-rotate(180deg);}
+.brighten-bg { backdrop-filter: brightness(150%); -webkit-backdrop-filter: brightness(150%);}
+.darken-bg { backdrop-filter: brightness(60%); -webkit-backdrop-filter: brightness(60%);}
+.invert-bg { backdrop-filter: invert(80%); -webkit-backdrop-filter: invert(80%);}

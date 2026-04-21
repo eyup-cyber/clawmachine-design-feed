@@ -1,0 +1,15 @@
+{
+  "id": "palette-085",
+  "name": "acid-techno-void",
+  "source": "ultra-expansion-cycle2-acid-techno",
+  "colors": {
+    "bg": "#120014",
+    "surface": "#260029",
+    "card": "#1C001F",
+    "accent": "#D4FF00",
+    "secondary": "#FF00E6",
+    "text": "#F5F5F5",
+    "muted": "#8A994C"
+  },
+  "weight": 10
+}

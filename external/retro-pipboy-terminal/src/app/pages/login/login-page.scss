@@ -1,0 +1,52 @@
+@use '../../styles/breakpoints' as bps;
+@use '../../styles/colors' as col;
+@use '../../styles/variables' as var;
+
+:host {
+  align-items: center;
+  box-sizing: border-box;
+  color: col.$pip-green;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+pip-title {
+  margin: 3rem 1rem;
+}
+
+.login-intro {
+  max-width: var.$section-max-width;
+  width: 100%;
+
+  > p {
+    margin: 0 1rem 2rem 1rem;
+    text-align: center;
+
+    &.notice {
+      color: col.$warn;
+    }
+  }
+}
+
+.login-form-container {
+  max-width: var.$auth-forms-width;
+  margin-bottom: 4rem;
+
+  @include bps.media('max', 'sm') {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;
+
+    pip-login-form {
+      width: 100%;
+    }
+  }
+}
+
+pip-footer {
+  align-self: stretch;
+  margin-top: auto;
+  display: block;
+}

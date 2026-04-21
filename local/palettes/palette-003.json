@@ -1,0 +1,15 @@
+{
+  "id": "palette-003",
+  "name": "tokyo-drift",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0a0d15",
+    "surface": "#0f1425",
+    "card": "#14192a",
+    "accent": "#00d4ff",
+    "secondary": "#c800ff",
+    "text": "#e8f0f8",
+    "muted": "#6b7a8f"
+  },
+  "weight": 10
+}

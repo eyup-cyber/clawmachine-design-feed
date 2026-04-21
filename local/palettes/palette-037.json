@@ -1,0 +1,15 @@
+{
+  "id": "palette-037",
+  "name": "midnight-dream",
+  "source": "chromatic-research-kittl",
+  "colors": {
+    "bg": "#000015",
+    "surface": "#0a0a1f",
+    "card": "#141429",
+    "accent": "#836FFF",
+    "secondary": "#15F5BA",
+    "text": "#F0F3FF",
+    "muted": "#323247"
+  },
+  "weight": 10
+}

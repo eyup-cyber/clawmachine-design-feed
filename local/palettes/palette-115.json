@@ -1,0 +1,15 @@
+{
+  "id": "palette-115",
+  "name": "cyber-rose",
+  "source": "ultra-expansion-cycle2-cyberpunk-neon",
+  "colors": {
+    "bg": "#F50057",
+    "surface": "#F93378",
+    "card": "#F71A67",
+    "accent": "#001433",
+    "secondary": "#FFEA00",
+    "text": "#000000",
+    "muted": "#4081A6"
+  },
+  "weight": 5
+}

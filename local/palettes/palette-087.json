@@ -1,0 +1,15 @@
+{
+  "id": "palette-087",
+  "name": "y2k-abyss",
+  "source": "ultra-expansion-cycle2-Y2K",
+  "colors": {
+    "bg": "#000B1A",
+    "surface": "#001D38",
+    "card": "#001429",
+    "accent": "#FF00FF",
+    "secondary": "#00FF00",
+    "text": "#E6F3FF",
+    "muted": "#804080"
+  },
+  "weight": 10
+}

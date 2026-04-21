@@ -1,0 +1,15 @@
+{
+  "id": "palette-025",
+  "name": "primary-neon",
+  "source": "chromatic-research-colorhex",
+  "colors": {
+    "bg": "#011EFE",
+    "surface": "#0b28ff",
+    "card": "#1532ff",
+    "accent": "#FE00F6",
+    "secondary": "#FE0000",
+    "text": "#FDFE02",
+    "muted": "#3350ff"
+  },
+  "weight": 0
+}

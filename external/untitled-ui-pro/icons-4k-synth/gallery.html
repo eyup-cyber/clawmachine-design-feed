@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Untitled UI Pro Icons 4K Synth Gallery</title>
+<link rel="stylesheet" href="../design.css"/>
+<style>
+  :root{
+    --uip-icon-primary: var(--uip-brand-700, #2d8460);
+    --uip-icon-secondary: var(--uip-accent-500, #7c3aed);
+  }
+  body{
+    margin:0;
+    background: var(--uip-bg-canvas, #0b0d0c);
+    color: var(--uip-fg-primary, #e8ede9);
+    font-family: var(--uip-font-sans, "Inter", system-ui, sans-serif);
+    line-height: 1.45;
+  }
+  header{
+    position:sticky; top:0; z-index:10;
+    background: rgba(11,13,12,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--uip-border-subtle, #1f2422);
+    padding: 1rem 1.25rem;
+    display:flex; gap:1rem; align-items:center; flex-wrap:wrap;
+  }
+  header h1{
+    font-size: 0.95rem; font-weight:600; margin:0; letter-spacing:-0.01em;
+  }
+  header input{
+    flex:1 1 240px; min-width:200px; max-width:420px;
+    padding: 0.55rem 0.85rem;
+    background: var(--uip-bg-surface, #12161400);
+    border: 1px solid var(--uip-border-subtle, #252a28);
+    border-radius: 8px;
+    color: inherit;
+    font: inherit;
+  }
+  .tabs{display:flex; gap:.25rem; flex-wrap:wrap;}
+  .tabs button{
+    background:none; border:1px solid var(--uip-border-subtle,#252a28);
+    color: inherit; padding: .4rem .75rem; border-radius: 6px;
+    font: inherit; cursor:pointer; font-size:.85rem;
+  }
+  .tabs button[aria-pressed="true"]{
+    background: var(--uip-brand-700, #2d8460); border-color: transparent;
+    color: #000;
+  }
+  .count{opacity:.55; font-size:.8rem;}
+  main{padding: 1.25rem;}
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(20, minmax(0, 1fr));
+    gap: 2px;
+  }
+  @media (max-width: 1400px){ .grid{ grid-template-columns: repeat(15, minmax(0,1fr)); } }
+  @media (max-width: 1000px){ .grid{ grid-template-columns: repeat(10, minmax(0,1fr)); } }
+  @media (max-width: 600px){ .grid{ grid-template-columns: repeat(6, minmax(0,1fr)); } }
+  .cell{
+    aspect-ratio: 1;
+    border: 1px solid var(--uip-border-subtle, #1c201e);
+    background: var(--uip-bg-surface, #0f1311);
+    display:flex; align-items:center; justify-content:center;
+    position: relative;
+    border-radius: 4px;
+  }
+  .cell:hover{
+    border-color: var(--uip-brand-700, #2d8460);
+    z-index: 2;
+  }
+  .cell img{
+    width: 24px; height: 24px;
+    color: var(--uip-fg-primary, #e8ede9);
+  }
+  .cell .name{
+    position:absolute; inset: auto 0 100% 0;
+    background: #000; color: #fff;
+    font-size: 10px; padding: 3px 5px;
+    display: none;
+    white-space: nowrap; overflow:hidden; text-overflow:ellipsis;
+    pointer-events:none;
+  }
+  .cell:hover .name{ display:block; }
+  .empty{padding: 3rem 1rem; text-align:center; opacity:.55;}
+  footer{
+    padding: 2rem 1.25rem; border-top: 1px solid var(--uip-border-subtle, #1f2422);
+    font-size: .8rem; opacity: .6;
+  }
+  /* Visual hint for duocolor cells */
+  .grid.duocolor .cell{
+    --uip-icon-primary: var(--uip-brand-700, #2d8460);
+    --uip-icon-secondary: var(--uip-accent-500, #7c3aed);
+  }
+  .grid.solid .cell img,
+  .grid.stroke .cell img,
+  .grid.duotone .cell img{
+    color: var(--uip-brand-700, #2d8460);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Untitled UI Pro Icons 4K Synth</h1>
+  <div class="tabs" id="tabs">
+    <button data-style="stroke" aria-pressed="true">stroke</button>
+    <button data-style="solid">solid</button>
+    <button data-style="duotone">duotone</button>
+    <button data-style="duocolor">duocolor</button>
+  </div>
+  <input id="search" type="search" placeholder="Filter by name (e.g. arrow, heart, shield)"/>
+  <span class="count" id="count">loading...</span>
+</header>
+
+<main>
+  <div class="grid stroke" id="grid"></div>
+  <div class="empty" id="empty" style="display:none;">No icons match your filter.</div>
+</main>
+
+<footer>
+  Lazy-loads via <code>&lt;img loading="lazy"&gt;</code> and a visibility-culling rAF pass.
+  Hover an icon to see its filename. Filenames retain source prefix
+  (none = Lucide, <code>ph-</code> = Phosphor, <code>lu-</code> = Lucide synth, <code>ms-</code> = Material Symbols,
+  <code>iconoir-</code> = Iconoir, <code>feather-</code> = Feather, <code>phb-</code> = Phosphor bold synth).
+  Licenses in <code>LICENSE_NOTE.md</code>. Categories in <code>INDEX.md</code>.
+</footer>
+
+<script>
+  let manifest = null;
+  let currentStyle = 'stroke';
+  let filter = '';
+
+  const grid = document.getElementById('grid');
+  const count = document.getElementById('count');
+  const emptyEl = document.getElementById('empty');
+  const tabs = document.getElementById('tabs');
+  const search = document.getElementById('search');
+
+  fetch('manifest.json').then(r => r.json()).then(m => {
+    manifest = m;
+    render();
+  }).catch(err => {
+    count.textContent = 'manifest.json failed to load — serve this file from a local HTTP server (e.g. `python3 -m http.server` in this folder)';
+    console.error(err);
+  });
+
+  function render(){
+    if (!manifest) return;
+    const all = manifest[currentStyle] || [];
+    const filtered = filter
+      ? all.filter(n => n.toLowerCase().includes(filter))
+      : all;
+    count.textContent = `${filtered.length.toLocaleString()} / ${all.length.toLocaleString()} icons`;
+    grid.className = `grid ${currentStyle}`;
+    grid.innerHTML = '';
+    if (filtered.length === 0){
+      emptyEl.style.display = '';
+      return;
+    }
+    emptyEl.style.display = 'none';
+    // batch-append DOM nodes for perf
+    const frag = document.createDocumentFragment();
+    for (const name of filtered){
+      const cell = document.createElement('div');
+      cell.className = 'cell';
+      const img = document.createElement('img');
+      img.loading = 'lazy';
+      img.src = `${currentStyle}/${name}`;
+      img.alt = name;
+      const nm = document.createElement('span');
+      nm.className = 'name';
+      nm.textContent = name;
+      cell.appendChild(img);
+      cell.appendChild(nm);
+      frag.appendChild(cell);
+    }
+    grid.appendChild(frag);
+  }
+
+  tabs.addEventListener('click', (e) => {
+    if (e.target.tagName !== 'BUTTON') return;
+    for (const b of tabs.querySelectorAll('button')) b.setAttribute('aria-pressed', 'false');
+    e.target.setAttribute('aria-pressed', 'true');
+    currentStyle = e.target.dataset.style;
+    render();
+  });
+
+  let searchTimer = null;
+  search.addEventListener('input', () => {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => {
+      filter = search.value.trim().toLowerCase();
+      render();
+    }, 120);
+  });
+</script>
+
+</body>
+</html>

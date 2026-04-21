@@ -1,0 +1,15 @@
+{
+  "id": "palette-116",
+  "name": "atomic-tangerine",
+  "source": "ultra-expansion-cycle2-Y2K",
+  "colors": {
+    "bg": "#FF9100",
+    "surface": "#FFA733",
+    "card": "#FF9C1A",
+    "accent": "#6200EA",
+    "secondary": "#00E5FF",
+    "text": "#1A0E00",
+    "muted": "#8A4099"
+  },
+  "weight": 10
+}

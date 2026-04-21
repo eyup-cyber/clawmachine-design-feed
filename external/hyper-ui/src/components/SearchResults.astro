@@ -1,0 +1,211 @@
+---
+interface Result {
+  category: string
+  components?: number
+  slug: string
+  terms: string[]
+  title: string
+}
+
+interface Props {
+  collections: Result[]
+  posts: Result[]
+}
+
+const { collections, posts } = Astro.props
+---
+
+<search-results data-collections={JSON.stringify(collections)} data-posts={JSON.stringify(posts)}>
+  <div
+    data-container="false"
+    class="absolute top-full right-0 z-50 mt-2 w-64 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-lg data-[container=false]:hidden data-[container=true]:block md:w-80"
+  >
+    <p data-error="false" class="px-4 py-2 text-gray-700 data-[error=false]:hidden">
+      No results found.
+    </p>
+
+    <div data-list class="max-h-96 divide-y divide-gray-200 overflow-y-auto"></div>
+  </div>
+
+  <span data-status aria-live="polite" class="sr-only"></span>
+</search-results>
+
+<script>
+  interface Result {
+    category: string
+    components?: number
+    slug: string
+    terms: string[]
+    title: string
+  }
+
+  class SearchResults extends HTMLElement {
+    private collectionItems: Result[] = []
+    private postItems: Result[] = []
+
+    private searchResults: Result[] = []
+
+    private enterHandler: (() => void) | null = null
+    private escapeHandler: (() => void) | null = null
+    private searchHandler: ((event: CustomEvent<{ value: string }>) => void) | null = null
+
+    connectedCallback() {
+      const containerEl = this.querySelector('[data-container]')
+      const errorEl = this.querySelector('[data-error]')
+      const resultsEl = this.querySelector('[data-list]')
+      const statusEl = this.querySelector('[data-status]')
+
+      if (!containerEl || !errorEl || !resultsEl || !statusEl) {
+        return
+      }
+
+      try {
+        this.collectionItems = JSON.parse(this.dataset.collections || '[]')
+        this.postItems = JSON.parse(this.dataset.posts || '[]')
+      } catch {
+        return
+      }
+
+      this.enterHandler = () => {
+        if (this.searchResults.length !== 1) {
+          return
+        }
+
+        const [searchResult] = this.searchResults
+
+        if (!searchResult) {
+          return
+        }
+
+        const returnUrl = new URL(searchResult.slug, globalThis.location.href)
+
+        globalThis.location.href = returnUrl.toString()
+      }
+
+      this.escapeHandler = () => {
+        this.searchResults = []
+
+        resultsEl.innerHTML = ''
+
+        containerEl.setAttribute('data-container', 'false')
+        errorEl.setAttribute('data-error', 'false')
+      }
+
+      this.searchHandler = (searchEvent) => {
+        const searchQuery = searchEvent.detail.value.toLowerCase()
+
+        if (!searchQuery) {
+          this.searchResults = []
+
+          resultsEl.innerHTML = ''
+
+          containerEl.setAttribute('data-container', 'false')
+          errorEl.setAttribute('data-error', 'false')
+
+          return
+        }
+
+        containerEl.setAttribute('data-container', 'true')
+
+        const filterResults = (items: Result[]) => {
+          return items.filter((potentialResult) => {
+            const resultTerms = potentialResult.terms.map((searchTerm) => searchTerm.toLowerCase())
+            const resultTitle = potentialResult.title.toLowerCase()
+
+            return (
+              resultTerms.some((resultTerm) => resultTerm.includes(searchQuery)) ||
+              resultTitle.includes(searchQuery)
+            )
+          })
+        }
+
+        const filteredCollections = filterResults(this.collectionItems)
+        const filteredPosts = filterResults(this.postItems)
+
+        const totalResults = filteredCollections.length + filteredPosts.length
+
+        if (totalResults === 0) {
+          this.searchResults = []
+
+          resultsEl.innerHTML = ''
+          statusEl.textContent = 'No results found'
+
+          errorEl.setAttribute('data-error', 'true')
+
+          return
+        }
+
+        this.searchResults = [...filteredCollections, ...filteredPosts]
+
+        statusEl.textContent = `${totalResults} ${totalResults === 1 ? 'result' : 'results'} found`
+
+        const renderSection = (title: string, items: Result[]) => {
+          if (items.length === 0) {
+            return ''
+          }
+
+          return `
+            <div>
+              <strong class="px-3 py-2 text-xs font-medium text-gray-500 bg-gray-50 block">
+                ${title}
+              </strong>
+
+              <ul role="listbox" class="divide-y divide-gray-200 border-t border-gray-200">
+                ${items
+                  .map(({ category, components, slug, title }) => {
+                    return `
+                      <li role="option">
+                        <a
+                          href="${slug}"
+                          class="block px-4 py-3 hover:bg-gray-50"
+                        >
+                          <div class="flex items-center justify-between gap-2">
+                            <h3 class="text-sm text-gray-900 font-medium">${title}</h3>
+
+                            ${category ? `<span class="text-xs text-gray-500 shrink-0 capitalize">${category}</span>` : ''}
+                          </div>
+
+                          ${components ? `<p class="text-xs text-gray-500 mt-0.5">${components} components</p>` : ''}
+                        </a>
+                      </li>
+                    `
+                  })
+                  .join('')}
+              </ul>
+            </div>
+          `
+        }
+
+        resultsEl.innerHTML = `
+          ${renderSection('Components', filteredCollections)}
+          ${renderSection('Blog Posts', filteredPosts)}
+        `
+
+        errorEl.setAttribute('data-error', 'false')
+      }
+
+      document.addEventListener('input:enter', this.enterHandler)
+      document.addEventListener('input:escape', this.escapeHandler)
+      // @ts-expect-error -- CustomEvent handler is not assignable to EventListener
+      document.addEventListener('input:search', this.searchHandler)
+    }
+
+    disconnectedCallback() {
+      if (this.enterHandler && this.escapeHandler && this.searchHandler) {
+        document.removeEventListener('input:enter', this.enterHandler)
+        document.removeEventListener('input:escape', this.escapeHandler)
+        // @ts-expect-error -- CustomEvent handler is not assignable to EventListener
+        document.removeEventListener('input:search', this.searchHandler)
+
+        this.enterHandler = null
+        this.escapeHandler = null
+        this.searchHandler = null
+      }
+
+      this.collectionItems = []
+      this.postItems = []
+    }
+  }
+
+  customElements.define('search-results', SearchResults)
+</script>

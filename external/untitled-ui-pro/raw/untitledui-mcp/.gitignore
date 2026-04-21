@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Environment
+.env
+
+# Private/local only
+docs/
+inspiration/
+.worktrees/
+.mcp.json
+.claude/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS files
+.DS_Store

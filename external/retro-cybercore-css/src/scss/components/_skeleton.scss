@@ -1,0 +1,337 @@
+// ============================================================
+// Skeleton Component
+// Shimmer loading placeholders with cyberpunk aesthetics
+// ============================================================
+
+@layer components {
+  .cyber-skeleton {
+    --skeleton-base: var(--cyber-void-400);
+    --skeleton-shine: color-mix(in srgb, var(--cyber-cyan-500) 15%, var(--cyber-void-200));
+    --skeleton-glow: color-mix(in srgb, var(--cyber-cyan-500) 8%, transparent);
+
+    position: relative;
+    display: block;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    background: var(--skeleton-base);
+
+    // Shimmer animation overlay with cyan tint
+    &::after {
+      content: "";
+      position: absolute;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--skeleton-glow) 25%,
+        var(--skeleton-shine) 50%,
+        var(--skeleton-glow) 75%,
+        transparent 100%
+      );
+      transform: translateX(-100%);
+      animation: skeleton-shimmer 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      inset: 0;
+    }
+
+    // --------------------------------------------------------
+    // Shape Variants
+    // --------------------------------------------------------
+
+    &--text {
+      width: 100%;
+      height: 1em;
+      border-radius: var(--radius-sm);
+    }
+
+    &--title {
+      width: 60%;
+      height: 1.5em;
+      border-radius: var(--radius-sm);
+    }
+
+    &--avatar {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+
+    &--avatar-sm {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+    }
+
+    &--avatar-lg {
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+    }
+
+    &--thumbnail {
+      width: 100%;
+      border-radius: var(--radius-md);
+      aspect-ratio: 16 / 9;
+    }
+
+    &--square {
+      width: 100%;
+      border-radius: var(--radius-md);
+      aspect-ratio: 1;
+    }
+
+    &--button {
+      width: 120px;
+      height: 2.5rem;
+      border-radius: 0;
+      clip-path: polygon(
+        0 0,
+        calc(100% - 8px) 0,
+        100% 8px,
+        100% 100%,
+        8px 100%,
+        0 calc(100% - 8px)
+      );
+    }
+
+    &--badge {
+      display: inline-block;
+      width: 60px;
+      height: 1.25rem;
+      border-radius: 0;
+    }
+
+    // --------------------------------------------------------
+    // Color Variants (for themed skeletons)
+    // --------------------------------------------------------
+
+    &--cyan {
+      --skeleton-base: color-mix(in srgb, var(--cyber-cyan-500) 8%, var(--cyber-void-400));
+      --skeleton-shine: color-mix(in srgb, var(--cyber-cyan-500) 25%, var(--cyber-void-200));
+      --skeleton-glow: color-mix(in srgb, var(--cyber-cyan-500) 12%, transparent);
+    }
+
+    &--magenta {
+      --skeleton-base: color-mix(in srgb, var(--cyber-magenta-500) 8%, var(--cyber-void-400));
+      --skeleton-shine: color-mix(in srgb, var(--cyber-magenta-500) 25%, var(--cyber-void-200));
+      --skeleton-glow: color-mix(in srgb, var(--cyber-magenta-500) 12%, transparent);
+    }
+
+    &--yellow {
+      --skeleton-base: color-mix(in srgb, var(--cyber-yellow-500) 8%, var(--cyber-void-400));
+      --skeleton-shine: color-mix(in srgb, var(--cyber-yellow-500) 25%, var(--cyber-void-200));
+      --skeleton-glow: color-mix(in srgb, var(--cyber-yellow-500) 12%, transparent);
+    }
+
+    &--green {
+      --skeleton-base: color-mix(in srgb, var(--cyber-green-500) 8%, var(--cyber-void-400));
+      --skeleton-shine: color-mix(in srgb, var(--cyber-green-500) 25%, var(--cyber-void-200));
+      --skeleton-glow: color-mix(in srgb, var(--cyber-green-500) 12%, transparent);
+    }
+
+    // --------------------------------------------------------
+    // Animation Variants
+    // --------------------------------------------------------
+
+    &--pulse {
+      animation: skeleton-pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    &--wave {
+      &::after {
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          var(--skeleton-glow) 15%,
+          color-mix(in srgb, var(--skeleton-shine) 70%, transparent) 35%,
+          var(--skeleton-shine) 50%,
+          color-mix(in srgb, var(--skeleton-shine) 70%, transparent) 65%,
+          var(--skeleton-glow) 85%,
+          transparent 100%
+        );
+        animation: skeleton-wave 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+    }
+
+    &--glow {
+      box-shadow: 0 0 8px var(--skeleton-glow);
+      animation: skeleton-glow 2s ease-in-out infinite;
+
+      &::after {
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          var(--skeleton-shine) 50%,
+          transparent 100%
+        );
+        animation: skeleton-shimmer 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      }
+    }
+
+    &--no-animation {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  // Shimmer animation - smooth sweep effect
+  @keyframes skeleton-shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  // Pulse animation - subtle fade
+  @keyframes skeleton-pulse {
+    0%,
+    100% {
+      opacity: 100%;
+    }
+
+    50% {
+      opacity: 60%;
+    }
+  }
+
+  // Wave animation - continuous flow
+  @keyframes skeleton-wave {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  // Glow animation - pulsing box shadow
+  @keyframes skeleton-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 8px var(--skeleton-glow);
+    }
+
+    50% {
+      box-shadow:
+        0 0 16px var(--skeleton-glow),
+        0 0 24px var(--skeleton-glow);
+    }
+  }
+
+  // Reduced motion support
+  @media (prefers-reduced-motion: reduce) {
+    .cyber-skeleton {
+      &::after {
+        background: var(--skeleton-shine);
+        opacity: 50%;
+        transform: none;
+        animation: none;
+      }
+
+      &--pulse,
+      &--glow {
+        animation: none;
+      }
+    }
+  }
+
+  // --------------------------------------------------------
+  // Skeleton Layout Components
+  // --------------------------------------------------------
+
+  // Card skeleton
+  .cyber-skeleton-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    border: var(--border-thin) solid var(--color-border-default);
+    background: var(--color-bg-secondary);
+
+    &__header {
+      display: flex;
+      gap: var(--space-sm);
+      align-items: center;
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+  }
+
+  // List skeleton
+  .cyber-skeleton-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+
+    &__item {
+      display: flex;
+      gap: var(--space-sm);
+      align-items: center;
+      padding: var(--space-sm);
+      border: var(--border-thin) solid var(--color-border-default);
+      background: var(--color-bg-secondary);
+    }
+
+    &__content {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: var(--space-2xs);
+    }
+  }
+
+  // Table skeleton
+  .cyber-skeleton-table {
+    width: 100%;
+    border: var(--border-thin) solid var(--color-border-default);
+    background: var(--color-bg-secondary);
+    border-collapse: collapse;
+
+    &__row {
+      display: flex;
+      gap: var(--space-md);
+      padding: var(--space-sm) var(--space-md);
+      border-bottom: var(--border-thin) solid var(--color-border-default);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &--header {
+        background: var(--color-bg-tertiary);
+      }
+    }
+
+    &__cell {
+      flex: 1;
+    }
+  }
+
+  // Profile skeleton
+  .cyber-skeleton-profile {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+
+    &__info {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+  }
+}

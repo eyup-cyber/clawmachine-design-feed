@@ -1,0 +1,15 @@
+{
+  "id": "palette-015",
+  "name": "volt-garden",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#1a1a0f",
+    "surface": "#3d3d2a",
+    "card": "#4d4d3a",
+    "accent": "#ccff00",
+    "secondary": "#ff6b35",
+    "text": "#e8ffe8",
+    "muted": "#7a9a6a"
+  },
+  "weight": 10
+}

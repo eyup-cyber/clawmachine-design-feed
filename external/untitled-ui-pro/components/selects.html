@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Selects, Combobox, Menus — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css"><link rel="stylesheet" href="../design.css">
+</head>
+<body>
+<main class="uui-container showcase">
+  <h2>Selects & Menus</h2>
+  <p class="lead">Select trigger, open dropdown panel with item avatars/icons, multi-select with tags, command menu.</p>
+
+  <div class="grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;max-width:920px;">
+
+    <div>
+      <label class="uui-label" style="margin-bottom:6px;display:block;">Team member</label>
+      <div class="uui-select">
+        <div class="uui-avatar uui-avatar--sm"><span>OR</span></div>
+        <span class="value">Olivia Rhye</span>
+        <svg class="caret" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7.5 5 5 5-5"/></svg>
+      </div>
+      <div class="uui-menu" style="margin-top:8px;">
+        <div class="uui-menu-item">
+          <div class="uui-avatar uui-avatar--sm">PB</div>
+          <div>
+            <div style="font-weight:500;color:var(--color-text-primary);">Phoenix Baker</div>
+            <div style="font-size:var(--text-xs);color:var(--color-text-tertiary);">phoenix@untitledui.com</div>
+          </div>
+        </div>
+        <div class="uui-menu-item" style="background:var(--color-bg-primary-hover);">
+          <div class="uui-avatar uui-avatar--sm">OR</div>
+          <div>
+            <div style="font-weight:500;color:var(--color-text-primary);">Olivia Rhye</div>
+            <div style="font-size:var(--text-xs);color:var(--color-text-tertiary);">olivia@untitledui.com</div>
+          </div>
+          <svg style="color:var(--color-fg-brand-primary);width:16px;height:16px;" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.667 5 7.5 14.167 3.333 10"/></svg>
+        </div>
+        <div class="uui-menu-item">
+          <div class="uui-avatar uui-avatar--sm">LS</div>
+          <div>
+            <div style="font-weight:500;color:var(--color-text-primary);">Lana Steiner</div>
+            <div style="font-size:var(--text-xs);color:var(--color-text-tertiary);">lana@untitledui.com</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label class="uui-label" style="margin-bottom:6px;display:block;">Country</label>
+      <div class="uui-select">
+        <span style="font-size:20px;">UK</span>
+        <span class="value">United Kingdom</span>
+        <svg class="caret" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7.5 5 5 5-5"/></svg>
+      </div>
+    </div>
+
+    <div>
+      <label class="uui-label" style="margin-bottom:6px;display:block;">Workflow tags (multi-select)</label>
+      <div class="uui-select" style="flex-wrap:wrap;align-items:center;gap:6px;padding:6px 10px;">
+        <span class="uui-tag">Design <button aria-label="remove"><svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 5 10 10M15 5 5 15"/></svg></button></span>
+        <span class="uui-tag">Engineering <button aria-label="remove"><svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 5 10 10M15 5 5 15"/></svg></button></span>
+        <span class="uui-tag">Research <button aria-label="remove"><svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 5 10 10M15 5 5 15"/></svg></button></span>
+        <input placeholder="Add more..." style="border:0;outline:0;background:transparent;flex:1;min-width:120px;font-size:var(--text-md);">
+        <svg class="caret" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7.5 5 5 5-5"/></svg>
+      </div>
+    </div>
+
+    <div>
+      <label class="uui-label" style="margin-bottom:6px;display:block;">Command menu</label>
+      <div class="uui-menu" style="min-width:380px;">
+        <div style="padding:10px 10px;border-bottom:1px solid var(--color-border-secondary);display:flex;gap:8px;align-items:center;">
+          <svg viewBox="0 0 20 20" fill="none" stroke="var(--color-fg-quaternary)" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="9.17" cy="9.17" r="7.5"/><path d="m17.5 17.5-3.62-3.62"/></svg>
+          <input placeholder="Search commands..." style="border:0;outline:0;flex:1;font-size:var(--text-md);">
+          <span style="font-family:var(--font-mono);font-size:var(--text-xs);color:var(--color-text-quaternary);padding:2px 6px;border-radius:var(--radius-sm);box-shadow:inset 0 0 0 1px var(--color-border-primary);">ESC</span>
+        </div>
+        <div style="padding:8px 10px;font-size:var(--text-xs);color:var(--color-text-quaternary);font-weight:500;">QUICK ACTIONS</div>
+        <div class="uui-menu-item">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M10 4.17v11.66M4.17 10h11.66"/></svg>
+          New document
+          <span class="kbd">cmd N</span>
+        </div>
+        <div class="uui-menu-item">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M16.67 13.33v2.5a1.67 1.67 0 0 1-1.67 1.67H5a1.67 1.67 0 0 1-1.67-1.67v-2.5M13.33 6.67 10 3.33 6.67 6.67M10 3.33v10"/></svg>
+          Import file
+          <span class="kbd">cmd I</span>
+        </div>
+        <div class="uui-menu-item">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M10 12.5v-8.33M13.33 9.17 10 12.5 6.67 9.17M2.5 15.83V17.5H17.5V15.83"/></svg>
+          Export PDF
+          <span class="kbd">cmd E</span>
+        </div>
+        <div class="uui-menu-item">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><circle cx="10" cy="10" r="7.5"/><path d="M7.58 7.5a2.5 2.5 0 0 1 4.86.83c0 1.67-2.5 2.5-2.5 2.5M10 14.17h.01"/></svg>
+          Get help
+          <span class="kbd">?</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<div class="block-table-full">
+<style>
+.block-table-full .panel {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow: hidden;
+}
+.block-table-full .panel-hdr {
+  padding: var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block-table-full .panel-title {
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  
+  letter-spacing: 0.04em;
+}
+.block-table-full .panel-badge {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  
+  padding: 3px 8px;
+  border: 1px solid var(--sl-accent);
+  border-radius: var(--sl-border-radius);
+  color: var(--sl-accent);
+}
+.block-table-full .panel-body { padding: var(--sl-space-md); }
+.block-table-full .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+}
+.block-table-full .data-table th {
+  text-align: left;
+  padding: 8px var(--sl-space-md);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-muted);
+  border-bottom: 1px solid var(--sl-border-color);
+  font-weight: 600;
+}
+.block-table-full .data-table td {
+  padding: 8px var(--sl-space-md);
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-text) 4%, transparent);
+  color: var(--sl-text);
+}
+.block-table-full .data-table tr:hover td {
+  background: color-mix(in srgb, var(--sl-text) 2%, transparent);
+}
+.block-table-full .cell-accent { color: var(--sl-accent); font-weight: 600; }
+.block-table-full .cell-warn { color: var(--sl-secondary); }
+</style>
+
+<div class="panel">
+  <div class="panel-hdr">
+    <span class="panel-title">MACHINE FLEET</span>
+    <span class="panel-badge">142 ACTIVE</span>
+  </div>
+  <div class="panel-body">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>LOCATION</th>
+          <th>MACHINES</th>
+          <th>REVENUE</th>
+          <th>MARGIN</th>
+          <th>STATUS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>WESTFIELD MALL — NORTH</td>
+          <td>24</td>
+          <td class="cell-accent">$42,180</td>
+          <td>38.4%</td>
+          <td class="cell-accent">OPTIMAL</td>
+        </tr>
+        <tr>
+          <td>CENTRAL STATION HUB</td>
+          <td>18</td>
+          <td class="cell-accent">$38,920</td>
+          <td>35.1%</td>
+          <td class="cell-accent">OPTIMAL</td>
+        </tr>
+        <tr>
+          <td>HARBOUR DISTRICT</td>
+          <td>12</td>
+          <td class="cell-accent">$24,640</td>
+          <td>31.8%</td>
+          <td>NOMINAL</td>
+        </tr>
+        <tr>
+          <td>UNIVERSITY QUARTER</td>
+          <td>16</td>
+          <td class="cell-accent">$28,400</td>
+          <td>29.2%</td>
+          <td>NOMINAL</td>
+        </tr>
+        <tr>
+          <td>EAST ARCADE ZONE</td>
+          <td>8</td>
+          <td>$12,300</td>
+          <td class="cell-warn">22.1%</td>
+          <td class="cell-warn">UNDERPERFORM</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

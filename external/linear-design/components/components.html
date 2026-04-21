@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Linear — Component Specimens</title>
+<style>
+:root {
+  --bg-0:#08090A; --bg-1:#0F1011; --bg-2:#141516; --bg-3:#191A1B;
+  --border-faint:#191D21; --border-thin:#24282C; --border-solid:#2A2E33;
+  --text-primary:#F7F8F8; --text-secondary:#B4B8BF; --text-tertiary:#62666D;
+  --accent:#5E6AD2; --accent-hover:#828FFF; --accent-tint-dark:#18182F;
+  --red:#D6303D; --blue:#56CDFF; --amber:#F2994A; --pink:#F79CE0;
+  --radius-4:4px; --radius-6:6px; --radius-8:8px; --radius-12:12px; --pill:9999px;
+  --shadow-low:0 2px 4px rgba(0,0,0,0.1);
+  --shadow-medium:0 4px 24px rgba(0,0,0,0.2);
+  --shadow-high:0 7px 32px rgba(0,0,0,0.35);
+  --shadow-metal-btn:rgba(0,0,0,0) 0 8px 2px, rgba(0,0,0,0.01) 0 5px 2px, rgba(0,0,0,0.04) 0 3px 2px, rgba(0,0,0,0.07) 0 1px 1px, rgba(0,0,0,0.08) 0 0 1px;
+  --shadow-dark-btn:inset 0 0 0 1px rgba(255,255,255,0.03), inset 0 1px 0 rgba(255,255,255,0.04), 0 0 0 1px rgba(0,0,0,0.6), 0 4px 4px rgba(0,0,0,0.1);
+  --ease:cubic-bezier(0.645, 0.045, 0.355, 1);
+  --duration:180ms;
+  --font-sans:'Inter Variable','SF Pro Display',-apple-system,sans-serif;
+  --font-mono:'Berkeley Mono',ui-monospace,'SF Mono',Menlo,monospace;
+}
+@font-face { font-family: 'Inter Variable'; font-weight: 100 900; font-display: swap; src: url('https://static.linear.app/fonts/InterVariable.woff2?v=4.1') format('woff2'); }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 48px; background: var(--bg-0); color: var(--text-primary); font-family: var(--font-sans); font-size: 14px; font-feature-settings: 'cv01','ss03'; }
+h1 { font-size: 32px; font-weight: 600; letter-spacing: -0.01em; margin: 0 0 8px; }
+h2 { font-size: 17px; font-weight: 500; margin: 48px 0 16px; padding-top: 24px; border-top: 1px solid var(--border-faint); }
+p.lede { color: var(--text-secondary); margin: 0 0 32px; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+pre { background: var(--bg-1); border: 1px solid var(--border-faint); border-radius: var(--radius-6); padding: 12px 16px; font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); overflow-x: auto; margin: 8px 0 0; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; border-radius: var(--pill); font-size: 13px; font-weight: 500; font-family: inherit; cursor: pointer; border: none; transition: all var(--duration) var(--ease); }
+.btn--primary { background: #E5E5E6; color: var(--bg-0); box-shadow: var(--shadow-metal-btn); }
+.btn--primary:hover { background: #fff; }
+.btn--secondary { background: var(--bg-2); color: var(--text-primary); box-shadow: var(--shadow-dark-btn); }
+.btn--secondary:hover { background: var(--bg-3); }
+.btn--ghost { background: transparent; color: var(--text-secondary); }
+.btn--ghost:hover { background: var(--bg-2); color: var(--text-primary); }
+.btn--accent { background: var(--accent); color: white; }
+.btn--accent:hover { background: var(--accent-hover); }
+.btn--sm { height: 22px; padding: 0 8px; font-size: 12px; border-radius: var(--radius-4); }
+.btn--lg { height: 36px; padding: 0 16px; font-size: 14px; }
+
+/* Input */
+.input { display: block; width: 320px; height: 32px; padding: 0 12px; background: var(--bg-2); border: 1px solid var(--border-thin); border-radius: var(--radius-6); color: var(--text-primary); font-family: inherit; font-size: 13px; transition: border-color var(--duration) var(--ease); }
+.input:focus { outline: none; border-color: var(--accent); }
+.input::placeholder { color: var(--text-tertiary); }
+
+/* Card */
+.card { background: var(--bg-1); border: 1px solid var(--border-faint); border-radius: var(--radius-12); padding: 20px; max-width: 420px; box-shadow: var(--shadow-low); }
+.card-title { font-size: 15px; font-weight: 500; margin-bottom: 4px; }
+.card-sub { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; }
+.card-meta { display: flex; gap: 16px; font-size: 12px; color: var(--text-tertiary); padding-top: 12px; border-top: 1px solid var(--border-faint); margin-top: 12px; }
+
+/* Badges */
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; font-size: 11px; font-weight: 500; border-radius: var(--radius-4); background: var(--bg-2); color: var(--text-secondary); border: 1px solid var(--border-faint); }
+.badge--accent { background: color-mix(in srgb, var(--accent) 10%, transparent); color: var(--accent-hover); border-color: color-mix(in srgb, var(--accent) 25%, transparent); }
+.badge--red { color: var(--red); background: rgba(214,48,61,0.08); border-color: rgba(214,48,61,0.2); }
+.badge--blue { color: var(--blue); background: rgba(86,205,255,0.08); border-color: rgba(86,205,255,0.2); }
+.badge--amber { color: var(--amber); background: rgba(242,153,74,0.08); border-color: rgba(242,153,74,0.2); }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+/* Kbd */
+.kbd { display: inline-block; background: var(--bg-2); border: 1px solid var(--border-thin); border-bottom-width: 2px; border-radius: 3px; padding: 1px 6px; font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); }
+
+/* Menu */
+.menu { display: inline-block; background: var(--bg-1); border: 1px solid var(--border-faint); border-radius: var(--radius-8); box-shadow: var(--shadow-medium); padding: 4px; min-width: 220px; }
+.menu-item { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: var(--radius-4); color: var(--text-primary); font-size: 13px; cursor: pointer; }
+.menu-item:hover { background: var(--bg-2); }
+.menu-item .kbd { margin-left: auto; }
+.menu-sep { height: 1px; background: var(--border-faint); margin: 4px 0; }
+
+/* Checkbox */
+.checkbox { width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--border-solid); background: var(--bg-2); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; vertical-align: middle; }
+.checkbox.checked { background: var(--accent); border-color: var(--accent); color: white; font-size: 10px; line-height: 1; }
+
+/* Status */
+.status { width: 14px; height: 14px; border-radius: 50%; border: 1.5px solid var(--text-tertiary); position: relative; display: inline-block; vertical-align: middle; }
+.status.progress { border-color: var(--amber); }
+.status.progress::after { content: ''; position: absolute; inset: 2px; border-radius: 50%; background: conic-gradient(var(--amber) 0deg, var(--amber) 180deg, transparent 180deg); }
+.status.done { background: var(--accent); border-color: var(--accent); }
+.status.done::after { content: '✓'; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 9px; color: white; }
+</style>
+</head>
+<body>
+<h1>Linear — Component Specimens</h1>
+<p class="lede">Tokens extracted from static.linear.app production CSS. Signatures: pill buttons, 0.5px hairlines, metal-button shadow, graphite bg-level scale.</p>
+
+<h2>Buttons</h2>
+<div class="row">
+  <button class="btn btn--primary">Get started</button>
+  <button class="btn btn--secondary">Contact sales</button>
+  <button class="btn btn--ghost">Cancel</button>
+  <button class="btn btn--accent">Create issue <span class="kbd" style="background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.15);">C</span></button>
+</div>
+<div class="row">
+  <button class="btn btn--primary btn--sm">Small</button>
+  <button class="btn btn--secondary btn--sm">Small</button>
+  <button class="btn btn--primary btn--lg">Large</button>
+</div>
+
+<h2>Inputs</h2>
+<div class="row"><input class="input" placeholder="Search issues…"></div>
+<div class="row"><input class="input" value="Wire scout-bridge to Pi"></div>
+
+<h2>Card</h2>
+<div class="card">
+  <div class="card-title">CORE-314 · Wire vllm-mlx into scout-bridge</div>
+  <div class="card-sub">Agent loop needs session-aware rotation via Decodo ISP pool; target p95 &lt; 900ms per tool-call.</div>
+  <div class="row" style="margin-bottom:0;">
+    <span class="badge badge--accent"><span class="dot"></span>In Progress</span>
+    <span class="badge badge--red">P1</span>
+    <span class="badge">infra</span>
+  </div>
+  <div class="card-meta">
+    <span>RC</span>
+    <span>Due Apr 22</span>
+    <span>3 sub-issues</span>
+  </div>
+</div>
+
+<h2>Badges</h2>
+<div class="row">
+  <span class="badge"><span class="dot"></span>Backlog</span>
+  <span class="badge badge--amber"><span class="dot"></span>In Progress</span>
+  <span class="badge badge--accent"><span class="dot"></span>In Review</span>
+  <span class="badge badge--blue"><span class="dot"></span>Done</span>
+  <span class="badge badge--red"><span class="dot"></span>Canceled</span>
+</div>
+
+<h2>Status indicators</h2>
+<div class="row">
+  <span class="status"></span>Todo
+  <span class="status progress"></span>In Progress
+  <span class="status done"></span>Done
+</div>
+
+<h2>Checkboxes</h2>
+<div class="row">
+  <span class="checkbox"></span>Unchecked
+  <span class="checkbox checked">✓</span>Checked
+</div>
+
+<h2>Keyboard</h2>
+<div class="row">
+  Create: <span class="kbd">C</span>
+  Search: <span class="kbd">⌘</span><span class="kbd">K</span>
+  Toggle sidebar: <span class="kbd">⌘</span><span class="kbd">.</span>
+</div>
+
+<h2>Menu / Command palette</h2>
+<div class="menu">
+  <div class="menu-item"><span>◎</span>Create issue<span class="kbd">C</span></div>
+  <div class="menu-item"><span>⚑</span>Set priority<span class="kbd">P</span></div>
+  <div class="menu-item"><span>⌀</span>Change status<span class="kbd">S</span></div>
+  <div class="menu-sep"></div>
+  <div class="menu-item"><span>⚙</span>Settings<span class="kbd">⌘,</span></div>
+</div>
+</body>
+</html>

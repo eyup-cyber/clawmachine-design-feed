@@ -1,0 +1,15 @@
+{
+  "id": "palette-094",
+  "name": "biohazard-zone",
+  "source": "ultra-expansion-cycle2-acid-techno",
+  "colors": {
+    "bg": "#141200",
+    "surface": "#292600",
+    "card": "#1F1C00",
+    "accent": "#FFE600",
+    "secondary": "#FF003C",
+    "text": "#FFFFE0",
+    "muted": "#998F3D"
+  },
+  "weight": 10
+}

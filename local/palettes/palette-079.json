@@ -1,0 +1,15 @@
+{
+  "id": "palette-079",
+  "name": "solar-yellow",
+  "source": "design-brief-bold-bg",
+  "colors": {
+    "bg": "#FFD600",
+    "surface": "#E0BC00",
+    "card": "#BFA100",
+    "accent": "#6200EA",
+    "secondary": "#00BFA5",
+    "text": "#0a0a0a",
+    "muted": "#B89A00"
+  },
+  "weight": 5
+}

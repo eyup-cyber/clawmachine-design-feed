@@ -1,0 +1,15 @@
+{
+  "id": "palette-078",
+  "name": "bubblegum-blast",
+  "source": "design-brief-bold-bg",
+  "colors": {
+    "bg": "#F50057",
+    "surface": "#D8004D",
+    "card": "#B80041",
+    "accent": "#00E5FF",
+    "secondary": "#76FF03",
+    "text": "#1A0008",
+    "muted": "#A00038"
+  },
+  "weight": 5
+}

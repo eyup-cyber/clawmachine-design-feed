@@ -1,0 +1,25 @@
+name: Compressed Size
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - uses: preactjs/compressed-size-action@v2
+        with:
+          repo-token: '${{ secrets.TOKEN }}'
+          build-script: 'ng build --prod'
+          pattern: '**/dist/mamba-ui/**/*.{js,css,html,json}'
+          minimum-change-threshold: 10000

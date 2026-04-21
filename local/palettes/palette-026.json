@@ -1,0 +1,15 @@
+{
+  "id": "palette-026",
+  "name": "carnival-neon",
+  "source": "chromatic-research-colorhex",
+  "colors": {
+    "bg": "#3D144C",
+    "surface": "#471e56",
+    "card": "#512860",
+    "accent": "#1685F8",
+    "secondary": "#F52789",
+    "text": "#FAEB2C",
+    "muted": "#6f467e"
+  },
+  "weight": 0
+}

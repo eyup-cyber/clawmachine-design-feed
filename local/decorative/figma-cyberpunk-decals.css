@@ -1,0 +1,78 @@
+/* Decorative Layer: Figma Cyberpunk Decals
+ * Adds corner warning triangles, chevron accents, and hazard-stripe
+ * borders derived from the cyberpunk-ui decal SVG kit.
+ * Uses --sl-accent and --sl-secondary for all decorative colour.
+ *
+ * Source: assets/figma-extracted/cyberpunk-ui/decals-01.svg,
+ *         decals-02.svg, random-decals.svg
+ */
+
+/* corner triangles on cards — inspired by decals-01 warning triangles */
+.deco-figma-cyberpunk-decals .card,
+.deco-figma-cyberpunk-decals [data-card] {
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--sl-accent) 25%, transparent);
+}
+
+.deco-figma-cyberpunk-decals .card::before,
+.deco-figma-cyberpunk-decals [data-card]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 24px 24px 0;
+  border-color: transparent var(--sl-accent) transparent transparent;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* bottom-left chevron accent — inspired by decals-02 arrow elements */
+.deco-figma-cyberpunk-decals .card::after,
+.deco-figma-cyberpunk-decals [data-card]::after {
+  content: "\25B8\25B8";
+  position: absolute;
+  bottom: 6px;
+  left: 8px;
+  font-size: 10px;
+  letter-spacing: -2px;
+  color: var(--sl-accent);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* hazard-stripe top border on panels — from random-decals chevron motif */
+.deco-figma-cyberpunk-decals h1,
+.deco-figma-cyberpunk-decals h2,
+.deco-figma-cyberpunk-decals h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.deco-figma-cyberpunk-decals hr,
+.deco-figma-cyberpunk-decals [data-divider] {
+  border: none;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--sl-accent) 0px,
+    var(--sl-accent) 8px,
+    transparent 8px,
+    transparent 12px
+  );
+  opacity: 0.3;
+}
+
+/* diamond grid accent on nav — inspired by random-decals diamond elements */
+.deco-figma-cyberpunk-decals nav,
+.deco-figma-cyberpunk-decals [data-nav] {
+  border-bottom: 2px solid color-mix(in srgb, var(--sl-accent) 20%, transparent);
+  background-image: radial-gradient(
+    circle,
+    color-mix(in srgb, var(--sl-accent) 8%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 16px 16px;
+}

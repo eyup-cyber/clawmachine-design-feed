@@ -1,0 +1,14 @@
+{
+  "Root": {
+    "props": {
+      "value": {
+        "type": "T | null | undefined",
+        "isRequired": true
+      },
+      "formatValue": {
+        "type": "(value: NonNullable<T>) => string | null | undefined",
+        "isRequired": false
+      }
+    }
+  }
+}

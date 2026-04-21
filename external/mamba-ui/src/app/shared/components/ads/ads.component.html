@@ -1,0 +1,38 @@
+<div
+	*ngIf="fixed"
+	#fixedAd
+	class="raised custom-ad"
+	[ngClass]="{'dark': darkTheme}"
+	data-ea-publisher="mambauicom"
+	data-ea-type="text"
+	data-ea-style="fixedfooter"
+	attr.data-ea-keywords="{{ keywords }}"
+	id="fixedfooter"
+></div>
+<div *ngIf="sticky && !mobileView && !manuallyClosed" class="absolute z-50 bottom-4 right-6">
+	<button
+		class="absolute px-2 pb-0.5 rounded-full -right-3 -top-3 text-gray-900 bg-gray-200 border border-gray-800"
+		(click)="clickAd()"
+	>
+		X
+	</button>
+	<div
+		#stickyAd
+		class="raised custom-ad"
+		[ngClass]="{'dark': darkTheme}"
+		data-ea-publisher="mambauicom"
+		data-ea-type="image"
+		attr.data-ea-keywords="{{ keywords }}"
+		id="{{ keyword || 'Sticky' }}"
+	></div>
+</div>
+<div
+	#showcaseAd
+	*ngIf="showcase"
+	class="flat custom-ad"
+	[ngClass]="{'dark': darkTheme}"
+	data-ea-publisher="mambauicom"
+	data-ea-type="text"
+	attr.data-ea-keywords="{{ keywords }}"
+	id="showcase"
+></div>

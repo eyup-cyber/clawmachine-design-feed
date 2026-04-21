@@ -1,0 +1,178 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"mamba-ui": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "css"
+				}
+			},
+			"root": "",
+			"sourceRoot": "src",
+			"prefix": "custom",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:application",
+					"defaultConfiguration": "production",
+					"options": {
+						"allowedCommonJsDependencies": ["prismjs", "tailwindcss/colors"],
+						"outputPath": "dist/mamba-ui",
+						"index": "src/index.html",
+						"browser": "src/main.ts",
+						"polyfills": ["src/polyfills.ts"],
+						"tsConfig": "tsconfig.app.json",
+						"aot": true,
+						"assets": [
+							"src/favicon.ico",
+							"src/favicon-16x16.png",
+							"src/favicon-32x32.png",
+							"src/apple-touch-icon.png",
+							"src/android-chrome-192x192.png",
+							"src/mstile-150x150.png",
+							"src/safari-pinned-tab.svg",
+							"src/site.webmanifest",
+							"src/sitemap.xml",
+							"src/robots.txt",
+							{
+								"glob": "**/*",
+								"input": "src/assets",
+								"output": "assets"
+							}
+						],
+						"styles": [
+							"src/styles/prism_light.css",
+							"src/styles/prism_dark.css",
+							"src/styles/styles.css"
+						],
+						"stylePreprocessorOptions": {
+							"includePaths": ["src/styles"]
+						},
+						"server": "src/main.server.ts",
+						"prerender": true,
+						"ssr": {
+							"entry": "server.ts"
+						}
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": {
+								"styles": {
+									"inlineCritical": false
+								}
+							},
+							"outputHashing": "all",
+							"sourceMap": false,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "6kb",
+									"maximumError": "10kb"
+								}
+							]
+						},
+						"development": {
+							"optimization": {
+								"styles": {
+									"inlineCritical": false
+								}
+							},
+							"sourceMap": true,
+							"namedChunks": true,
+							"extractLicenses": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "6kb",
+									"maximumError": "10kb"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"buildTarget": "mamba-ui:build"
+					},
+					"configurations": {
+						"production": {
+							"buildTarget": "mamba-ui:build:production"
+						},
+						"development": {
+							"buildTarget": "mamba-ui:build:development"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"buildTarget": "mamba-ui:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "src/test.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "tsconfig.spec.json",
+						"karmaConfig": "karma.conf.js",
+						"assets": ["src/favicon.ico", "src/assets", "src/site.webmanifest"],
+						"styles": ["src/styles/styles.css"],
+						"stylePreprocessorOptions": {
+							"includePaths": ["src/styles"]
+						},
+						"scripts": []
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"tsconfig.app.json",
+							"tsconfig.spec.json",
+							"e2e/tsconfig.json"
+						],
+						"exclude": ["**/node_modules/**"]
+					}
+				},
+				"e2e": {
+					"builder": "@angular-devkit/build-angular:protractor",
+					"options": {
+						"protractorConfig": "e2e/protractor.conf.js",
+						"devServerTarget": "mamba-ui:serve"
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "mamba-ui:serve:production"
+						}
+					}
+				},
+				"deploy": {
+					"builder": "angular-cli-ghpages:deploy",
+					"options": {}
+				}
+			}
+		}
+	}
+}

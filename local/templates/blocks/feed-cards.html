@@ -1,0 +1,138 @@
+<div class="block-feed-cards">
+<style>
+.block-feed-cards .fc-panel {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow: hidden;
+}
+.block-feed-cards .fc-hdr {
+  padding: var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block-feed-cards .fc-title {
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  
+  letter-spacing: 0.04em;
+}
+.block-feed-cards .fc-count {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  
+  color: var(--sl-muted);
+}
+.block-feed-cards .fc-list {
+  padding: var(--sl-space-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-space-xs);
+}
+.block-feed-cards .fc-item {
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-left: 3px solid var(--sl-accent);
+  background: var(--sl-surface);
+  border-radius: 0 var(--sl-border-radius) var(--sl-border-radius) 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+.block-feed-cards .fc-item:hover {
+  background: color-mix(in srgb, var(--sl-accent) 5%, var(--sl-surface));
+}
+.block-feed-cards .fc-item.warn {
+  border-left-color: var(--sl-secondary);
+}
+.block-feed-cards .fc-item.warn:hover {
+  background: color-mix(in srgb, var(--sl-secondary) 5%, var(--sl-surface));
+}
+.block-feed-cards .fc-item.muted {
+  border-left-color: var(--sl-muted);
+}
+.block-feed-cards .fc-item-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+.block-feed-cards .fc-item-type {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  
+  color: var(--sl-accent);
+}
+.block-feed-cards .fc-item.warn .fc-item-type {
+  color: var(--sl-secondary);
+}
+.block-feed-cards .fc-item.muted .fc-item-type {
+  color: var(--sl-muted);
+}
+.block-feed-cards .fc-item-time {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-muted);
+  letter-spacing: 0.06em;
+}
+.block-feed-cards .fc-item-text {
+  font-size: 12px;
+  color: var(--sl-text);
+  line-height: 1.4;
+}
+</style>
+
+<div class="fc-panel">
+  <div class="fc-hdr">
+    <span class="fc-title">OPERATIONS LOG</span>
+    <span class="fc-count">6 EVENTS</span>
+  </div>
+  <div class="fc-list">
+    <div class="fc-item">
+      <div class="fc-item-top">
+        <span class="fc-item-type">RESTOCK</span>
+        <span class="fc-item-time">14:32</span>
+      </div>
+      <div class="fc-item-text">machine #0847 restocked with 240 units — operator confirmed</div>
+    </div>
+    <div class="fc-item warn">
+      <div class="fc-item-top">
+        <span class="fc-item-type">ANOMALY</span>
+        <span class="fc-item-time">13:18</span>
+      </div>
+      <div class="fc-item-text">revenue drop detected at harbour district — 34% below baseline</div>
+    </div>
+    <div class="fc-item">
+      <div class="fc-item-top">
+        <span class="fc-item-type">SHIFT</span>
+        <span class="fc-item-time">12:00</span>
+      </div>
+      <div class="fc-item-text">team bravo now active — 12 operators on shift</div>
+    </div>
+    <div class="fc-item muted">
+      <div class="fc-item-top">
+        <span class="fc-item-type">SYSTEM</span>
+        <span class="fc-item-time">04:00</span>
+      </div>
+      <div class="fc-item-text">daily backup — 847 records archived to cold storage</div>
+    </div>
+    <div class="fc-item">
+      <div class="fc-item-top">
+        <span class="fc-item-type">DEPLOY</span>
+        <span class="fc-item-time">02:45</span>
+      </div>
+      <div class="fc-item-text">firmware v2.4.1 rolled out to 38 machines in north region</div>
+    </div>
+    <div class="fc-item warn">
+      <div class="fc-item-top">
+        <span class="fc-item-type">MAINTENANCE</span>
+        <span class="fc-item-time">01:12</span>
+      </div>
+      <div class="fc-item-text">machine #0219 — claw tension sensor recalibrated after drift alert</div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "id": "palette-009",
+  "name": "neon-monastery",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0a0620",
+    "surface": "#1a1240",
+    "card": "#251860",
+    "accent": "#ffd700",
+    "secondary": "#00ffff",
+    "text": "#f0e8ff",
+    "muted": "#8878b8"
+  },
+  "weight": 10
+}

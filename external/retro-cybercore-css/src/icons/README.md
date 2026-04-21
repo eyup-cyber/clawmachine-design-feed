@@ -1,0 +1,378 @@
+# Cyber Icons
+
+Cyberpunk-themed SVG icon system for CYBERCORE CSS. Production-ready,
+tree-shakeable, and fully typed.
+
+## Features
+
+- **150+ icon specs** across 10 categories
+- **Stroke-based design** - scales perfectly at any size
+- **currentColor** - inherits text color automatically
+- **Zero dependencies** - pure SVG
+- **Tree-shakeable** - import only what you need
+- **TypeScript** - full type definitions
+- **Accessible** - aria-label support built-in
+
+## Installation
+
+Icons are included with CYBERCORE CSS:
+
+```bash
+npm install cybercore-css
+```
+
+## Quick Start
+
+### Simple HTML/CSS (No Build Tools)
+
+Copy SVG files directly from `node_modules/cybercore-css/src/icons/svg/` or use
+the CDN:
+
+```html
+<!-- Include CSS for icon utilities -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/cybercore-css/dist/cybercore.min.css"
+/>
+
+<!-- Option 1: Copy SVG inline -->
+<span class="cyber-icon cyber-icon--cyan" style="width: 24px; height: 24px;">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="4 17 10 11 4 5" />
+    <line x1="12" y1="19" x2="20" y2="19" />
+  </svg>
+</span>
+
+<!-- Option 2: Use as background image -->
+<span class="my-icon"></span>
+<style>
+  .my-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('path/to/terminal.svg');
+    background-size: contain;
+  }
+</style>
+```
+
+**Icon CSS Classes:**
+
+- `.cyber-icon--cyan` / `--magenta` / `--yellow` / `--green` - Color variants
+- `.cyber-icon--sm` (16px) / `--md` (24px) / `--lg` (32px) / `--xl` (48px) -
+  Sizes
+- `.cyber-icon--spin` / `--pulse` / `--glitch` - Animations
+
+### React / Next.js / Vite
+
+```tsx
+import { renderIcon, getRegisteredIcons } from 'cybercore-css/icons';
+
+function App() {
+  return (
+    <div>
+      {/* Method 1: Render as HTML string */}
+      <span
+        dangerouslySetInnerHTML={{
+          __html: renderIcon('terminal', { size: 24, color: 'cyan' }),
+        }}
+      />
+
+      {/* Method 2: Create a reusable Icon component */}
+      <Icon name="shield" size={32} color="magenta" />
+    </div>
+  );
+}
+
+// Reusable Icon Component
+function Icon({ name, size = 24, color = 'current', className = '' }) {
+  return (
+    <span
+      className={`cyber-icon ${className}`}
+      style={{
+        color: color !== 'current' ? `var(--cyber-${color}-500)` : undefined,
+      }}
+      dangerouslySetInnerHTML={{ __html: renderIcon(name, { size }) }}
+    />
+  );
+}
+```
+
+### Vue.js
+
+```vue
+<template>
+  <span v-html="iconHtml" class="cyber-icon"></span>
+</template>
+
+<script setup>
+import { computed } from 'vue';
+import { renderIcon } from 'cybercore-css/icons';
+
+const props = defineProps({
+  name: String,
+  size: { type: Number, default: 24 },
+  color: { type: String, default: 'cyan' },
+});
+
+const iconHtml = computed(() =>
+  renderIcon(props.name, { size: props.size, color: props.color })
+);
+</script>
+```
+
+### Svelte
+
+```svelte
+<script>
+  import { renderIcon } from 'cybercore-css/icons';
+
+  export let name = 'terminal';
+  export let size = 24;
+  export let color = 'cyan';
+
+  $: html = renderIcon(name, { size, color });
+</script>
+
+<span class="cyber-icon" {@html html}></span>
+```
+
+## Usage
+
+### Import Everything
+
+```ts
+import * as CyberIcons from 'cybercore-css/icons';
+
+// Render an icon
+const html = CyberIcons.renderIcon('terminal', {
+  size: 24,
+  color: 'cyan',
+});
+```
+
+### Import Specific Functions
+
+```ts
+import { renderIcon, getIcon, icons } from 'cybercore-css/icons';
+
+// Get raw SVG string
+const svg = getIcon('terminal');
+
+// Render with options
+const html = renderIcon('terminal', { size: 32, color: 'magenta' });
+
+// Access registry directly
+const chipSvg = icons.chip.svg;
+```
+
+### Tree-Shakeable Imports (Optimal Bundle Size)
+
+For the smallest bundle, import icons directly and use `renderIconDef`:
+
+```ts
+// Import only the icons you need
+import { renderIconDef } from 'cybercore-css/icons';
+import { terminal, chip } from 'cybercore-css/icons/defs/tech';
+import { arrowUp } from 'cybercore-css/icons/defs/navigation';
+
+// Render with full options - bundler only includes these 3 icons
+const html = renderIconDef(terminal, { size: 24, color: 'cyan' });
+const chipHtml = renderIconDef(chip, { size: 32, variant: 'solid' });
+
+// Access SVG directly
+element.innerHTML = arrowUp.svg;
+```
+
+**Why this works for tree-shaking:**
+
+- `renderIcon('terminal')` - NOT tree-shakeable (needs full registry for string
+  lookup)
+- `renderIconDef(terminal)` - Tree-shakeable (bundler sees the direct import)
+
+### Legacy Individual Imports
+
+```ts
+import {
+  ChipIcon,
+  TerminalIcon,
+  SignalIcon,
+} from 'cybercore-css/icons/individual';
+
+// Each export is the raw SVG string
+element.innerHTML = ChipIcon;
+```
+
+### Sprite Sheet (For Many Icons)
+
+```ts
+import { createSpriteSheet, renderIconRef } from 'cybercore-css/icons';
+
+// Add sprite sheet once to your HTML
+document.body.insertAdjacentHTML('beforeend', createSpriteSheet());
+
+// Then reference icons by ID (smaller HTML)
+const html = renderIconRef('terminal', { size: 24 });
+// Output: <svg><use href="#cyber-icon-terminal"/></svg>
+```
+
+### Data URI (For CSS)
+
+```ts
+import { getIconDataUri } from 'cybercore-css/icons';
+
+const uri = getIconDataUri('chip', '#00f0ff');
+// Use in CSS: background-image: url(${uri});
+```
+
+## API Reference
+
+### `renderIcon(name, options?)`
+
+Renders an icon as an HTML string. **Not tree-shakeable** - use for convenience
+when bundle size isn't critical.
+
+| Option        | Type                                                      | Default     | Description              |
+| ------------- | --------------------------------------------------------- | ----------- | ------------------------ |
+| `size`        | `16 \| 20 \| 24 \| 32 \| 48 \| 64`                        | `24`        | Icon size in pixels      |
+| `color`       | `'cyan' \| 'magenta' \| 'yellow' \| 'green' \| 'current'` | `'current'` | Color variant            |
+| `variant`     | `'outline' \| 'solid' \| 'duotone' \| 'glitch'`           | `'outline'` | Icon variant             |
+| `className`   | `string`                                                  | `''`        | Additional CSS classes   |
+| `aria-label`  | `string`                                                  | -           | Accessibility label      |
+| `aria-hidden` | `boolean`                                                 | `true`      | Hide from screen readers |
+
+### `renderIconDef(icon, options?)`
+
+Renders an icon from its definition. **Tree-shakeable** - bundler only includes
+icons you import.
+
+```ts
+import { renderIconDef } from 'cybercore-css/icons';
+import { terminal } from 'cybercore-css/icons/defs/tech';
+
+const html = renderIconDef(terminal, { size: 24, color: 'cyan' });
+```
+
+Same options as `renderIcon`.
+
+### `getIconSvg(icon, variant?)`
+
+Returns the SVG string from an icon definition. **Tree-shakeable**.
+
+```ts
+import { getIconSvg } from 'cybercore-css/icons';
+import { shield } from 'cybercore-css/icons/defs/security';
+
+const svg = getIconSvg(shield, 'solid');
+```
+
+### `getIcon(name, variant?)`
+
+Returns the raw SVG string for an icon by name, or `null` if not found. **Not
+tree-shakeable**.
+
+### `iconExists(name)`
+
+Returns `true` if the icon exists in the registry.
+
+### `createSpriteSheet()`
+
+Generates an SVG sprite sheet containing all icons.
+
+### `getIconDataUri(name, color?)`
+
+Returns a data URI for use in CSS `background-image`.
+
+## Icon Categories
+
+| Category        | Description       | Examples                                 |
+| --------------- | ----------------- | ---------------------------------------- |
+| `navigation`    | UI navigation     | arrow-up, chevron-right, home, menu      |
+| `actions`       | User interactions | search, edit, delete, copy, download     |
+| `media`         | Audio/video       | play, pause, volume-high, camera         |
+| `communication` | Messaging         | bell, message, mail, send                |
+| `data`          | Analytics         | chart-bar, database, calendar, clock     |
+| `security`      | Auth & privacy    | lock, key, shield, eye, user             |
+| `tech`          | Development       | terminal, code, chip, server, git-branch |
+| `files`         | Documents         | file, folder, clipboard, attachment      |
+| `status`        | Feedback          | info, warning, error, success, loading   |
+| `social`        | Social            | heart, star, thumbs-up, bookmark         |
+
+## Design Guidelines
+
+When creating new icons, follow these rules:
+
+### Structure
+
+- **ViewBox**: Always `0 0 24 24`
+- **Stroke-based**: Use `fill="none" stroke="currentColor"`
+- **Stroke width**: Always `1.5`
+- **Line caps**: Use `stroke-linecap="round" stroke-linejoin="round"`
+
+### Template
+
+```svg
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Icon paths here -->
+</svg>
+```
+
+### Style
+
+- Keep it simple - icons should be recognizable at 16px
+- Use geometric shapes with subtle cyber/tech details
+- Avoid complex gradients or effects
+- Test at multiple sizes: 16, 24, 32, 48px
+
+### Don'ts
+
+- No inline styles
+- No embedded scripts
+- No raster images
+- No external references
+- No proprietary fonts
+
+## Validation
+
+Run the validation script to check all icons:
+
+```bash
+npm run validate:icons
+```
+
+This checks:
+
+- SVG structure and attributes
+- Security (no scripts or event handlers)
+- Consistency (stroke width, viewBox)
+- Coverage (implemented vs. specified)
+
+## Contributing Icons
+
+1. Check `icon-list.ts` for icons that need to be created
+2. Create the SVG following the design guidelines
+3. Add to `registry.ts` with proper metadata
+4. Add individual export to `individual.ts`
+5. Run validation and tests
+
+## Color Palette
+
+Icons work with the CYBERCORE color system:
+
+| Color   | CSS Variable          | Hex       |
+| ------- | --------------------- | --------- |
+| Cyan    | `--cyber-cyan-500`    | `#00f0ff` |
+| Magenta | `--cyber-magenta-500` | `#ff00aa` |
+| Yellow  | `--cyber-yellow-500`  | `#f0ff00` |
+| Green   | `--cyber-green-500`   | `#00ff88` |
+
+## License
+
+MIT - Part of CYBERCORE CSS

@@ -1,0 +1,15 @@
+{
+  "id": "palette-014",
+  "name": "glacier-byte",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0a1825",
+    "surface": "#1a3a4a",
+    "card": "#2a4a5a",
+    "accent": "#00d4ff",
+    "secondary": "#ff5030",
+    "text": "#e8f0f8",
+    "muted": "#7a8a9a"
+  },
+  "weight": 10
+}

@@ -1,0 +1,15 @@
+{
+  "id": "palette-099",
+  "name": "synthcity-nights",
+  "source": "ultra-expansion-cycle2-synthwave",
+  "colors": {
+    "bg": "#0D041A",
+    "surface": "#1E0B33",
+    "card": "#150826",
+    "accent": "#FF9D00",
+    "secondary": "#A800FF",
+    "text": "#FFF2E6",
+    "muted": "#99733D"
+  },
+  "weight": 10
+}

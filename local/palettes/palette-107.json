@@ -1,0 +1,15 @@
+{
+  "id": "palette-107",
+  "name": "solar-yellow-flare",
+  "source": "ultra-expansion-cycle2-electric-industrial",
+  "colors": {
+    "bg": "#FFEA00",
+    "surface": "#FFEE33",
+    "card": "#FFEC1A",
+    "accent": "#6200EA",
+    "secondary": "#FF1744",
+    "text": "#1A1700",
+    "muted": "#6840A6"
+  },
+  "weight": 10
+}

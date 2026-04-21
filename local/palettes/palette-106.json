@@ -1,0 +1,15 @@
+{
+  "id": "palette-106",
+  "name": "neon-magenta-core",
+  "source": "ultra-expansion-cycle2-Y2K",
+  "colors": {
+    "bg": "#D500F9",
+    "surface": "#E233FB",
+    "card": "#DB1AFA",
+    "accent": "#C6FF00",
+    "secondary": "#00E5FF",
+    "text": "#1A0026",
+    "muted": "#8A9940"
+  },
+  "weight": 10
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Checkboxes, Radios, Toggles — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css"><link rel="stylesheet" href="../design.css">
+</head>
+<body>
+<main class="uui-container showcase">
+  <h2>Checkboxes, Radios, Toggles</h2>
+  <p class="lead">Form selection primitives with label + hint composition and sm/md sizes.</p>
+
+  <div class="grid" style="grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;max-width:1000px;">
+
+    <div class="uui-stack gap-5">
+      <h3 style="font-size:var(--text-lg);font-weight:600;">Checkbox</h3>
+      <label class="uui-check-label">
+        <input type="checkbox" class="uui-check" checked>
+        <span><span class="lbl">Remember me</span></span>
+      </label>
+      <label class="uui-check-label">
+        <input type="checkbox" class="uui-check">
+        <span><span class="lbl">Subscribe to newsletter</span><span class="hint">Get weekly design tips and updates.</span></span>
+      </label>
+      <label class="uui-check-label">
+        <input type="checkbox" class="uui-check uui-check--md" checked>
+        <span><span class="lbl">Medium size</span></span>
+      </label>
+      <label class="uui-check-label" style="opacity:.5;cursor:not-allowed;">
+        <input type="checkbox" class="uui-check" disabled>
+        <span><span class="lbl">Disabled</span></span>
+      </label>
+    </div>
+
+    <div class="uui-stack gap-5">
+      <h3 style="font-size:var(--text-lg);font-weight:600;">Radio</h3>
+      <label class="uui-radio-label">
+        <input type="radio" name="plan" class="uui-radio" checked>
+        <span><span class="lbl">Monthly</span><span class="hint">Billed every month.</span></span>
+      </label>
+      <label class="uui-radio-label">
+        <input type="radio" name="plan" class="uui-radio">
+        <span><span class="lbl">Annually</span><span class="hint">Save 20% billed yearly.</span></span>
+      </label>
+      <label class="uui-radio-label">
+        <input type="radio" name="plan" class="uui-radio">
+        <span><span class="lbl">Lifetime</span><span class="hint">Pay once, use forever.</span></span>
+      </label>
+    </div>
+
+    <div class="uui-stack gap-5">
+      <h3 style="font-size:var(--text-lg);font-weight:600;">Toggle</h3>
+      <label style="display:flex;gap:12px;align-items:flex-start;">
+        <input type="checkbox" class="uui-toggle" checked>
+        <span>
+          <span style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-secondary);">Email notifications</span>
+          <span style="display:block;font-size:var(--text-sm);color:var(--color-text-tertiary);margin-top:2px;">Receive product updates and announcements.</span>
+        </span>
+      </label>
+      <label style="display:flex;gap:12px;align-items:flex-start;">
+        <input type="checkbox" class="uui-toggle uui-toggle--lg">
+        <span>
+          <span style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-secondary);">Large toggle</span>
+          <span style="display:block;font-size:var(--text-sm);color:var(--color-text-tertiary);margin-top:2px;">Off state.</span>
+        </span>
+      </label>
+      <label style="display:flex;gap:12px;align-items:flex-start;opacity:.5;cursor:not-allowed;">
+        <input type="checkbox" class="uui-toggle" disabled>
+        <span><span style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-secondary);">Disabled</span></span>
+      </label>
+    </div>
+
+  </div>
+
+  <!-- horizontal card-style radio -->
+  <div style="margin-top:64px;max-width:720px;">
+    <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Card-style radio group</h3>
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:16px;">
+      <label style="display:flex;gap:12px;padding:16px;border-radius:var(--radius-xl);background:var(--color-bg-primary);box-shadow:inset 0 0 0 2px var(--color-border-brand),var(--shadow-xs);cursor:pointer;">
+        <input type="radio" name="tier" class="uui-radio" checked style="margin-top:2px;">
+        <span style="flex:1;">
+          <span style="display:block;font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-secondary);">Basic plan</span>
+          <span style="display:block;font-size:var(--text-sm);color:var(--color-text-tertiary);margin-top:2px;">$10/mth — everything for starters.</span>
+        </span>
+      </label>
+      <label style="display:flex;gap:12px;padding:16px;border-radius:var(--radius-xl);background:var(--color-bg-primary);box-shadow:inset 0 0 0 1px var(--color-border-primary),var(--shadow-xs);cursor:pointer;">
+        <input type="radio" name="tier" class="uui-radio" style="margin-top:2px;">
+        <span style="flex:1;">
+          <span style="display:block;font-size:var(--text-sm);font-weight:600;color:var(--color-text-secondary);">Business plan</span>
+          <span style="display:block;font-size:var(--text-sm);color:var(--color-text-tertiary);margin-top:2px;">$20/mth — everything for teams.</span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+</main>
+</body>
+</html>

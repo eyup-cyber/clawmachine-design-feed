@@ -1,0 +1,15 @@
+{
+  "id": "palette-097",
+  "name": "plasma-chamber",
+  "source": "ultra-expansion-cycle2-deep-space",
+  "colors": {
+    "bg": "#120121",
+    "surface": "#250342",
+    "card": "#1C0233",
+    "accent": "#00FFAA",
+    "secondary": "#FF00AA",
+    "text": "#E8FFF5",
+    "muted": "#4D997C"
+  },
+  "weight": 10
+}

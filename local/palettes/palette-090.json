@@ -1,0 +1,15 @@
+{
+  "id": "palette-090",
+  "name": "outrun-cruiser",
+  "source": "ultra-expansion-cycle2-synthwave",
+  "colors": {
+    "bg": "#1A0510",
+    "surface": "#2E0F21",
+    "card": "#240A18",
+    "accent": "#FFB300",
+    "secondary": "#00F5D4",
+    "text": "#FFE8F0",
+    "muted": "#997E40"
+  },
+  "weight": 10
+}

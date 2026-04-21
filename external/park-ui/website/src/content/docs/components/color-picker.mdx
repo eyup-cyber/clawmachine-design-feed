@@ -1,0 +1,74 @@
+---
+title: Color Picker (WIP)
+description: An input component for selecting and manipulating color values.
+metaDescription: Color Picker component for React and Solid.js with intuitive color selection and manipulation. Support for multiple color formats and visual color spaces.
+category: forms
+links:
+  recipe: https://github.com/chakra-ui/park-ui/blob/main/packages/preset/src/recipes/color-picker.ts
+  ark: https://ark-ui.com/docs/components/color-picker
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { ColorPicker } from '@/components/ui'
+```
+
+```tsx
+<ColorPicker.Root>
+  <ColorPicker.Control>
+    <ColorPicker.ChannelInput channel="hex" />
+    <ColorPicker.Trigger>
+      <ColorPicker.Swatch value="#000000" />
+    </ColorPicker.Trigger>
+  </ColorPicker.Control>
+</ColorPicker.Root>
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Area
+
+<PropsTable part="Area" />
+
+### ChannelInput
+
+<PropsTable part="ChannelInput" />
+
+### ChannelSlider
+
+<PropsTable part="ChannelSlider" />
+
+### Swatch
+
+<PropsTable part="Swatch" />
+
+### SwatchTrigger
+
+<PropsTable part="SwatchTrigger" />
+
+### TransparencyGrid
+
+<PropsTable part="TransparencyGrid" />
+
+### ValueSwatch
+
+<PropsTable part="ValueSwatch" />
+
+### ValueText
+
+<PropsTable part="ValueText" />
+
+### View
+
+<PropsTable part="View" />

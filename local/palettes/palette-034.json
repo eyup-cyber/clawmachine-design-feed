@@ -1,0 +1,15 @@
+{
+  "id": "palette-034",
+  "name": "at-the-station",
+  "source": "chromatic-research-paperheart",
+  "colors": {
+    "bg": "#052240",
+    "surface": "#0f2c4a",
+    "card": "#193654",
+    "accent": "#0080b6",
+    "secondary": "#750037",
+    "text": "#95DEFF",
+    "muted": "#375472"
+  },
+  "weight": 10
+}

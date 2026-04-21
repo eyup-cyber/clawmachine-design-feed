@@ -1,0 +1,15 @@
+{
+  "id": "palette-041",
+  "name": "retro-future-glow",
+  "source": "chromatic-research-kittl",
+  "colors": {
+    "bg": "#130000",
+    "surface": "#1d0a0a",
+    "card": "#271414",
+    "accent": "#FF8400",
+    "secondary": "#FFD93D",
+    "text": "#F6F1E9",
+    "muted": "#453232"
+  },
+  "weight": 5
+}

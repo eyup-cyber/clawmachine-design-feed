@@ -1,0 +1,15 @@
+{
+  "id": "palette-042",
+  "name": "electric-dreams",
+  "source": "chromatic-research-piktochart",
+  "colors": {
+    "bg": "#d71500",
+    "surface": "#e11f0a",
+    "card": "#eb2914",
+    "accent": "#00B0FF",
+    "secondary": "#FF6F00",
+    "text": "#FFD600",
+    "muted": "#ff4732"
+  },
+  "weight": 0
+}

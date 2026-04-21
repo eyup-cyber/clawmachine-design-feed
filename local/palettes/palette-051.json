@@ -1,0 +1,15 @@
+{
+  "id": "palette-051",
+  "name": "colormind-neon",
+  "source": "colormind-api",
+  "colors": {
+    "bg": "#342b23",
+    "surface": "#3e352d",
+    "card": "#483f37",
+    "accent": "#41a3ee",
+    "secondary": "#8b6d7d",
+    "text": "#f4f3f0",
+    "muted": "#a5bac9"
+  },
+  "weight": 0
+}

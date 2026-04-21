@@ -1,0 +1,15 @@
+{
+  "id": "palette-075",
+  "name": "hot-coral",
+  "source": "design-brief-bold-bg",
+  "colors": {
+    "bg": "#FF5252",
+    "surface": "#E04848",
+    "card": "#BF3E3E",
+    "accent": "#000000",
+    "secondary": "#00E5FF",
+    "text": "#1A0008",
+    "muted": "#B23A3A"
+  },
+  "weight": 5
+}

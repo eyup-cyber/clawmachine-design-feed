@@ -1,0 +1,15 @@
+{
+  "id": "palette-figma-neumorphism-01",
+  "name": "soft-clay",
+  "source": "figma-neumorphism-kit",
+  "colors": {
+    "bg": "#e0e5ec",
+    "surface": "#d4d9e0",
+    "card": "#eaeff6",
+    "accent": "#6c63ff",
+    "secondary": "#3b82f6",
+    "text": "#2d3748",
+    "muted": "#a0aec0"
+  },
+  "weight": 0
+}

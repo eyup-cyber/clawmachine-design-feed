@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>clawmachine // TERMINAL HUD</title>
+<!-- FONT_FACE_BLOCK -->
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  /* colours */
+  --sl-bg: #0a0a0f;
+  --sl-surface: #141419;
+  --sl-card: #1a1a22;
+  --sl-accent: #00ff88;
+  --sl-secondary: #ff0066;
+  --sl-text: #e8e8f0;
+  --sl-muted: #6b6b80;
+
+  /* fonts */
+  --sl-font-display: 'Space Grotesk', system-ui, sans-serif;
+  --sl-font-body: 'Inter', system-ui, sans-serif;
+  --sl-font-mono: 'Space Mono', monospace;
+
+  /* spacing */
+  --sl-space-xs: 4px;
+  --sl-space-sm: 8px;
+  --sl-space-md: 16px;
+  --sl-space-lg: 24px;
+  --sl-space-xl: 40px;
+
+  /* surfaces */
+  --sl-shadow-raised: 0 2px 8px rgba(0,0,0,0.25);
+  --sl-shadow-inset: inset 0 2px 4px rgba(0,0,0,0.2);
+  --sl-border-radius: 3px;
+  --sl-border-color: color-mix(in srgb, var(--sl-text) 12%, transparent);
+
+  /* layout */
+  --sl-grid-template: 'readout readout readout' auto 'terminal terminal hud' 1fr 'statusbar statusbar statusbar' auto / 1fr 1fr 380px;
+  --sl-sidebar-width: 0px;
+  --sl-content-gap: 0px;
+}
+
+html { height: 100%; width: 100%; background: var(--sl-bg); }
+body { height: 100%; width: 100%; overflow: hidden; margin: 0; }
+
+body {
+  background: var(--sl-bg);
+  color: var(--sl-text);
+  font-family: var(--sl-font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* === GRID SHELL === */
+.shell {
+  display: grid;
+  grid-template: var(--sl-grid-template);
+  min-height: 100vh;
+  width: 100%;
+  gap: 1px;
+  background: var(--sl-border-color);
+}
+
+/* === TOP READOUT — big monospace status === */
+.readout {
+  grid-area: readout;
+  background: var(--sl-bg);
+  padding: var(--sl-space-md) var(--sl-space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sl-space-xl);
+  border-bottom: 2px solid var(--sl-accent);
+  overflow: hidden;
+}
+
+.readout-brand {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  
+  color: var(--sl-accent);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.readout-brand span { color: var(--sl-muted); font-weight: 400; }
+
+.readout-metrics {
+  display: flex;
+  align-items: baseline;
+  gap: var(--sl-space-xl);
+  flex: 1;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.readout-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.readout-metric .metric-value {
+  font-family: var(--sl-font-display);
+  font-size: clamp(20px, 3vw, 36px);
+  font-weight: 700;
+  color: var(--sl-text);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.readout-metric .metric-value .prefix {
+  color: var(--sl-muted);
+  font-size: 0.5em;
+}
+
+.readout-metric .metric-label {
+  font-family: var(--sl-font-mono);
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  
+  color: var(--sl-muted);
+}
+
+.readout-metric .metric-delta {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-accent);
+}
+
+.readout-metric .metric-delta.neg { color: var(--sl-secondary); }
+
+.readout-nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+  flex-shrink: 0;
+}
+
+.readout-nav-btn {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  color: var(--sl-muted);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.readout-nav-btn:hover { border-color: var(--sl-accent); color: var(--sl-accent); }
+
+.readout-nav-btn.active {
+  border-color: var(--sl-accent);
+  color: var(--sl-accent);
+  background: color-mix(in srgb, var(--sl-accent) 5%, transparent);
+}
+
+/* === TERMINAL ZONE (primary) === */
+.zone-primary {
+  grid-area: terminal;
+  background: var(--sl-bg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  background: var(--sl-surface);
+}
+
+.terminal-title {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  
+  color: var(--sl-accent);
+}
+
+.terminal-title::before {
+  content: '>';
+  margin-right: var(--sl-space-sm);
+  color: var(--sl-muted);
+}
+
+.terminal-meta {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-muted);
+  letter-spacing: 0.05em;
+}
+
+.terminal-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--sl-space-md);
+  font-family: var(--sl-font-mono);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.log-line {
+  display: grid;
+  grid-template-columns: 70px 50px 1fr;
+  gap: var(--sl-space-sm);
+  padding: 2px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-text) 3%, transparent);
+}
+
+.log-line .ts {
+  color: var(--sl-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.log-line .lvl {
+  font-weight: 700;
+  
+}
+
+.log-line .lvl.ok { color: var(--sl-accent); }
+.log-line .lvl.wrn { color: var(--sl-secondary); }
+.log-line .lvl.dbg { color: var(--sl-muted); }
+.log-line .lvl.crt { color: #ff3333; }
+
+.log-line .msg { color: var(--sl-text); }
+.log-line .msg .highlight { color: var(--sl-accent); font-weight: 700; }
+
+/* === HUD ZONE (secondary) === */
+.zone-secondary {
+  grid-area: hud;
+  background: var(--sl-bg);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-left: 2px solid var(--sl-accent);
+}
+
+.hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  background: var(--sl-surface);
+}
+
+.hud-title {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  
+  color: var(--sl-accent);
+}
+
+.hud-body {
+  flex: 1;
+  padding: var(--sl-space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-space-md);
+}
+
+.gauge {
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  padding: var(--sl-space-md);
+  background: var(--sl-surface);
+}
+
+.gauge-label {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-muted);
+  margin-bottom: var(--sl-space-sm);
+}
+
+.gauge-value {
+  font-family: var(--sl-font-display);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--sl-space-sm);
+}
+
+.gauge-bar {
+  height: 4px;
+  background: var(--sl-card);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: var(--sl-space-xs);
+}
+
+.gauge-bar-fill {
+  height: 100%;
+  background: var(--sl-accent);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.gauge-bar-fill.warn { background: var(--sl-secondary); }
+
+.gauge-sub {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.gauge-sub .delta { color: var(--sl-accent); }
+.gauge-sub .delta.neg { color: var(--sl-secondary); }
+
+/* mini table in HUD */
+.hud-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+}
+
+.hud-table th {
+  text-align: left;
+  font-weight: 400;
+  font-size: 8px;
+  
+  letter-spacing: 0.12em;
+  color: var(--sl-muted);
+  padding: var(--sl-space-xs) var(--sl-space-sm);
+  border-bottom: 1px solid var(--sl-border-color);
+}
+
+.hud-table td {
+  padding: var(--sl-space-xs) var(--sl-space-sm);
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-text) 4%, transparent);
+}
+
+.hud-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.hud-table .hi { color: var(--sl-accent); font-weight: 700; }
+
+/* === STATUS BAR (tertiary) === */
+.zone-tertiary {
+  grid-area: statusbar;
+  background: var(--sl-surface);
+  border-top: 2px solid var(--sl-accent);
+  padding: 0 var(--sl-space-lg);
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-lg);
+  overflow: hidden;
+}
+
+.status-segment {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-xs);
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  
+  color: var(--sl-muted);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.status-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sl-accent);
+  flex-shrink: 0;
+}
+
+.status-dot.warn { background: var(--sl-secondary); }
+.status-dot.crit { background: #ff3333; }
+
+.status-scroll {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.status-scroll-inner {
+  display: flex;
+  gap: var(--sl-space-xl);
+  animation: scroll-left 30s linear infinite;
+  white-space: nowrap;
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  color: var(--sl-muted);
+  
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* TEXTURE_BLOCK */
+
+@media (max-width: 768px) {
+  .shell {
+    grid-template: 'readout' auto 'terminal' 1fr 'hud' auto 'statusbar' auto / 1fr;
+  }
+  .zone-secondary { border-left: none; border-top: 2px solid var(--sl-accent); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV_BLOCK_START -->
+<!-- NAV_BLOCK_END -->
+
+<div class="shell">
+
+  <!-- TOP READOUT — big monospace status display -->
+  <div class="readout">
+    <div class="readout-brand">clawmachine <span>// TERMINAL v3.1</span></div>
+    <div class="readout-metrics">
+      <div class="readout-metric">
+        <span class="metric-value"><span class="prefix">$</span>184,320</span>
+        <span class="metric-label">total revenue</span>
+        <span class="metric-delta">+8.7%</span>
+      </div>
+      <div class="readout-metric">
+        <span class="metric-value">2,847</span>
+        <span class="metric-label">active machines</span>
+        <span class="metric-delta">+142</span>
+      </div>
+      <div class="readout-metric">
+        <span class="metric-value">99.97<span class="prefix">%</span></span>
+        <span class="metric-label">fleet uptime</span>
+        <span class="metric-delta">nominal</span>
+      </div>
+      <div class="readout-metric">
+        <span class="metric-value">12<span class="prefix">ms</span></span>
+        <span class="metric-label">avg latency</span>
+        <span class="metric-delta neg">+3ms</span>
+      </div>
+    </div>
+    <div class="readout-nav">
+      <button class="readout-nav-btn active">OPS</button>
+      <button class="readout-nav-btn">FLEET</button>
+      <button class="readout-nav-btn">ALERTS</button>
+    </div>
+  </div>
+
+  <!-- TERMINAL — primary zone: operations log -->
+  <div class="zone-primary">
+    <div class="terminal-header">
+      <span class="terminal-title">OPERATIONS LOG</span>
+      <span class="terminal-meta">142 events today &mdash; 3 warnings</span>
+    </div>
+    <div class="terminal-body">
+      <!-- ZONE:primary -->
+      <div class="log-line"><span class="ts">14:32:18</span><span class="lvl ok">OK</span><span class="msg">machine #0847 restock &mdash; <span class="highlight">240 units</span> loaded at westfield_north</span></div>
+      <div class="log-line"><span class="ts">14:32:14</span><span class="lvl dbg">DBG</span><span class="msg">inventory sync: westfield_north &rarr; central_db completed [1.2s]</span></div>
+      <div class="log-line"><span class="ts">14:28:03</span><span class="lvl ok">OK</span><span class="msg">payment batch #4820 processed &mdash; <span class="highlight">$6,144</span> daily revenue confirmed</span></div>
+      <div class="log-line"><span class="ts">13:18:02</span><span class="lvl wrn">WRN</span><span class="msg">anomaly: harbour_district revenue <span class="highlight">-34%</span> vs 7d rolling avg</span></div>
+      <div class="log-line"><span class="ts">13:17:58</span><span class="lvl ok">OK</span><span class="msg">alert dispatched to ops team &mdash; ticket #4821 created</span></div>
+      <div class="log-line"><span class="ts">12:44:21</span><span class="lvl ok">OK</span><span class="msg">machine #1204 firmware update v2.4.1 &mdash; deployed to airport_terminal cluster</span></div>
+      <div class="log-line"><span class="ts">12:00:01</span><span class="lvl ok">OK</span><span class="msg">shift_change: team_alpha &rarr; team_bravo (12 operators across 4 regions)</span></div>
+      <div class="log-line"><span class="ts">11:45:33</span><span class="lvl wrn">WRN</span><span class="msg">machine #0612 coin acceptor jam &mdash; dispatching maintenance crew</span></div>
+      <div class="log-line"><span class="ts">11:30:00</span><span class="lvl ok">OK</span><span class="msg">daily revenue target checkpoint: <span class="highlight">$3,072 / $6,144</span> (50% at midday)</span></div>
+      <div class="log-line"><span class="ts">08:00:12</span><span class="lvl dbg">DBG</span><span class="msg">morning diagnostics: 2,847 machines responding, 0 offline</span></div>
+      <div class="log-line"><span class="ts">04:00:12</span><span class="lvl dbg">DBG</span><span class="msg">backup_job: 2,847 records &rarr; cold_storage [3.2s]</span></div>
+      <div class="log-line"><span class="ts">02:15:44</span><span class="lvl wrn">WRN</span><span class="msg">SSL cert renewal pending for api.clawmachine.io &mdash; expires in 14d</span></div>
+    </div>
+  </div>
+
+  <!-- HUD PANEL — secondary zone: gauges and metrics -->
+  <div class="zone-secondary">
+    <div class="hud-header">
+      <span class="hud-title">SYSTEM GAUGES</span>
+    </div>
+    <div class="hud-body">
+      <!-- ZONE:secondary -->
+
+      <div class="gauge">
+        <div class="gauge-label">fleet capacity</div>
+        <div class="gauge-value">2,847</div>
+        <div class="gauge-bar"><div class="gauge-bar-fill" style="width:94%"></div></div>
+        <div class="gauge-sub"><span>2,847 / 3,024 slots</span><span class="delta">+142 this Q</span></div>
+      </div>
+
+      <div class="gauge">
+        <div class="gauge-label">daily revenue</div>
+        <div class="gauge-value">$6,144</div>
+        <div class="gauge-bar"><div class="gauge-bar-fill" style="width:72%"></div></div>
+        <div class="gauge-sub"><span>target: $8,520</span><span class="delta">+12.4% vs yesterday</span></div>
+      </div>
+
+      <div class="gauge">
+        <div class="gauge-label">system load</div>
+        <div class="gauge-value">34.2%</div>
+        <div class="gauge-bar"><div class="gauge-bar-fill" style="width:34%"></div></div>
+        <div class="gauge-sub"><span>142/145 nodes</span><span>12ms avg</span></div>
+      </div>
+
+      <div class="gauge">
+        <div class="gauge-label">alerts</div>
+        <div class="gauge-value">3</div>
+        <div class="gauge-bar"><div class="gauge-bar-fill warn" style="width:15%"></div></div>
+        <div class="gauge-sub"><span>1 critical, 2 warning</span><span class="delta neg">+1 today</span></div>
+      </div>
+
+      <table class="hud-table">
+        <thead><tr><th>region</th><th class="num">machines</th><th class="num">rev (30d)</th><th class="num">status</th></tr></thead>
+        <tbody>
+          <tr><td>westfield</td><td class="num">847</td><td class="num hi">$42,180</td><td class="num">nominal</td></tr>
+          <tr><td>central</td><td class="num">612</td><td class="num hi">$38,920</td><td class="num">nominal</td></tr>
+          <tr><td>harbour</td><td class="num">534</td><td class="num">$24,640</td><td class="num">alert</td></tr>
+          <tr><td>university</td><td class="num">489</td><td class="num">$28,400</td><td class="num">nominal</td></tr>
+          <tr><td>airport</td><td class="num">365</td><td class="num hi">$50,180</td><td class="num">maint</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- DECORATIVE_BLOCK -->
+
+  <!-- STATUS BAR — tertiary zone: scrolling system info -->
+  <div class="zone-tertiary">
+    <!-- ZONE:tertiary -->
+    <div class="status-segment"><span class="status-dot"></span>ALL SYSTEMS OPERATIONAL</div>
+    <div class="status-segment"><span class="status-dot"></span>UPTIME: 99.97%</div>
+    <div class="status-segment"><span class="status-dot warn"></span>3 ALERTS PENDING</div>
+    <div class="status-scroll">
+      <div class="status-scroll-inner">
+        <span>NODE 142/145 ACTIVE</span>
+        <span>LATENCY: 12MS AVG</span>
+        <span>LAST SYNC: 2 MIN AGO</span>
+        <span>BACKUP: OK [04:00 UTC]</span>
+        <span>SSL RENEWAL: 14D</span>
+        <span>REVENUE TARGET: 72%</span>
+        <span>FLEET CAPACITY: 94%</span>
+        <span>SHIFT: TEAM BRAVO</span>
+        <!-- duplicate for seamless scroll -->
+        <span>NODE 142/145 ACTIVE</span>
+        <span>LATENCY: 12MS AVG</span>
+        <span>LAST SYNC: 2 MIN AGO</span>
+        <span>BACKUP: OK [04:00 UTC]</span>
+        <span>SSL RENEWAL: 14D</span>
+        <span>REVENUE TARGET: 72%</span>
+        <span>FLEET CAPACITY: 94%</span>
+        <span>SHIFT: TEAM BRAVO</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

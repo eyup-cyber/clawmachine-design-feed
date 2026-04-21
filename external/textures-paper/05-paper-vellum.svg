@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <filter id="vellum">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.5" numOctaves="3" seed="45"/>
+      <feColorMatrix values="0 0 0 0 0.98 0 0 0 0 0.96 0 0 0 0 0.90 0 0 0 0.12 0"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="#fbf6e6"/>
+  <rect width="400" height="400" filter="url(#vellum)"/>
+</svg>

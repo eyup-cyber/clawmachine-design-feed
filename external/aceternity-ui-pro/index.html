@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aceternity UI Pro — Block Gallery</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #0a0a0a;
+  color: #e5e5e5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3rem 2rem;
+  line-height: 1.5;
+}
+.container { max-width: 1400px; margin: 0 auto; }
+header { margin-bottom: 3rem; border-bottom: 1px solid #222; padding-bottom: 2rem; }
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+header p { color: #888; font-size: 1rem; max-width: 700px; }
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+}
+.stat { color: #666; }
+.stat strong { color: #fff; font-size: 1rem; }
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #222;
+}
+.filter button {
+  background: #111;
+  color: #aaa;
+  border: 1px solid #222;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter button:hover { background: #1a1a1a; color: #fff; border-color: #444; }
+.filter button.active { background: #fff; color: #000; border-color: #fff; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: #0f0f0f;
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.04) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+.card:hover { border-color: #444; transform: translateY(-2px); }
+.card:hover::before { opacity: 1; }
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+.card .category {
+  display: inline-block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  background: #1a1a1a;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.card .summary {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0.5rem 0 0.8rem;
+  line-height: 1.4;
+}
+.card .links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+.card .links a {
+  font-size: 0.75rem;
+  color: #aaa;
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.card .links a:hover { background: #252525; color: #fff; border-color: #444; }
+.card .links a.primary { background: #fff; color: #000; border-color: #fff; }
+.card .links a.primary:hover { background: #ddd; }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+.tag {
+  font-size: 0.65rem;
+  color: #555;
+}
+.tag::before { content: '#'; }
+.stats-row {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.7rem;
+  color: #555;
+  margin-top: 0.5rem;
+  border-top: 1px solid #1a1a1a;
+  padding-top: 0.5rem;
+}
+.difficulty-easy { color: #22c55e; }
+.difficulty-intermediate { color: #eab308; }
+.difficulty-advanced { color: #ef4444; }
+footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #222; color: #555; font-size: 0.8rem; }
+footer a { color: #aaa; text-decoration: none; }
+footer a:hover { color: #fff; }
+
+.card iframe {
+  width: 100%;
+  height: 180px;
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
+  background: #fff;
+  margin-bottom: 0.75rem;
+  pointer-events: none;
+  transform-origin: top left;
+  transform: scale(0.5);
+  width: 200%;
+  height: 360px;
+  margin-bottom: -180px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Aceternity UI Pro — Blocks</h1>
+<p>134 premium component blocks captured from ui.aceternity.com/live-preview/* (SSR'd HTML). Each block is production-ready: hero sections, bento grids, navbars, pricing, testimonials, shaders, feature sections. Pro tier source code is behind auth; what we have is the fully-rendered HTML+CSS output.</p>
+<div class="stats">
+<span class="stat"><strong>134</strong> blocks captured</span>
+<span class="stat"><strong>22</strong> block categories</span>
+<span class="stat"><strong>151</strong> blocks catalogued</span>
+</div>
+</header>
+<div class="filter">
+<button data-cat="all" class="active">All</button>
+<button data-cat="backgrounds">Backgrounds</button>
+<button data-cat="bento-grids">Bento Grids</button>
+<button data-cat="blog-content-sections">Blog Content Sections</button>
+<button data-cat="blog-sections">Blog Sections</button>
+<button data-cat="cards">Cards</button>
+<button data-cat="contact-sections">Contact Sections</button>
+<button data-cat="cta-sections">Cta Sections</button>
+<button data-cat="faqs">Faqs</button>
+<button data-cat="feature-sections">Feature Sections</button>
+<button data-cat="footers">Footers</button>
+<button data-cat="hero-sections">Hero Sections</button>
+<button data-cat="illustrations">Illustrations</button>
+<button data-cat="login-and-signup-sections">Login And Signup Sections</button>
+<button data-cat="logo-clouds">Logo Clouds</button>
+<button data-cat="navbars">Navbars</button>
+<button data-cat="pricing-sections">Pricing Sections</button>
+<button data-cat="shaders">Shaders</button>
+<button data-cat="sidebars">Sidebars</button>
+<button data-cat="stats-sections">Stats Sections</button>
+<button data-cat="team-sections">Team Sections</button>
+<button data-cat="testimonials">Testimonials</button>
+<button data-cat="text-animations">Text Animations</button>
+</div>
+<div class='grid'>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Animated Beam Path Illustration</h3>
+<div class="links">
+<a href="demos/animated-beam-path-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/animated-beam-path-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/animated-beam-path-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="backgrounds">
+<span class="category">Backgrounds</span>
+<h3>Background Grid With Dots And Animations</h3>
+<div class="links">
+<a href="demos/background-grid-with-dots-and-animations.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/backgrounds/background-grid-with-dots-and-animations" target="_blank">source page</a>
+<a href="raw/live-previews/background-grid-with-dots-and-animations.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="backgrounds">
+<span class="category">Backgrounds</span>
+<h3>Background Grid With Dots</h3>
+<div class="links">
+<a href="demos/background-grid-with-dots.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/backgrounds/background-grid-with-dots" target="_blank">source page</a>
+<a href="raw/live-previews/background-grid-with-dots.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="backgrounds">
+<span class="category">Backgrounds</span>
+<h3>Background With Full Video</h3>
+<div class="links">
+<a href="demos/background-with-full-video.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/backgrounds/background-with-full-video" target="_blank">source page</a>
+<a href="raw/live-previews/background-with-full-video.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="backgrounds">
+<span class="category">Backgrounds</span>
+<h3>Background With Shooting Stars</h3>
+<div class="links">
+<a href="demos/background-with-shooting-stars.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/backgrounds/background-with-shooting-stars" target="_blank">source page</a>
+<a href="raw/live-previews/background-with-shooting-stars.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="backgrounds">
+<span class="category">Backgrounds</span>
+<h3>Background With Skewed Lines</h3>
+<div class="links">
+<a href="demos/background-with-skewed-lines.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/backgrounds/background-with-skewed-lines" target="_blank">source page</a>
+<a href="raw/live-previews/background-with-skewed-lines.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="backgrounds">
+<span class="category">Backgrounds</span>
+<h3>Background With Skewed Rectangles</h3>
+<div class="links">
+<a href="demos/background-with-skewed-rectangles.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/backgrounds/background-with-skewed-rectangles" target="_blank">source page</a>
+<a href="raw/live-previews/background-with-skewed-rectangles.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="bento-grids">
+<span class="category">Bento Grids</span>
+<h3>Bento Grid Illustrations</h3>
+<div class="links">
+<a href="demos/bento-grid-illustrations.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/bento-grids/bento-grid-illustrations" target="_blank">source page</a>
+<a href="raw/live-previews/bento-grid-illustrations.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="bento-grids">
+<span class="category">Bento Grids</span>
+<h3>Bento Grid With Skeletons</h3>
+<div class="links">
+<a href="demos/bento-grid-with-skeletons.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/bento-grids/bento-grid-with-skeletons" target="_blank">source page</a>
+<a href="raw/live-previews/bento-grid-with-skeletons.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Bento Grid</h3>
+<div class="links">
+<a href="demos/bento-grid.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/bento-grid" target="_blank">source page</a>
+<a href="raw/live-previews/bento-grid.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="blog-content-sections">
+<span class="category">Blog Content Sections</span>
+<h3>Blog Content Centered</h3>
+<div class="links">
+<a href="demos/blog-content-centered.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/blog-content-sections/blog-content-centered" target="_blank">source page</a>
+<a href="raw/live-previews/blog-content-centered.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="blog-content-sections">
+<span class="category">Blog Content Sections</span>
+<h3>Blog Content With Toc</h3>
+<div class="links">
+<a href="demos/blog-content-with-toc.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/blog-content-sections/blog-content-with-toc" target="_blank">source page</a>
+<a href="raw/live-previews/blog-content-with-toc.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="blog-sections">
+<span class="category">Blog Sections</span>
+<h3>Blog With Search Magazine</h3>
+<div class="links">
+<a href="demos/blog-with-search-magazine.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/blog-sections/blog-with-search-magazine" target="_blank">source page</a>
+<a href="raw/live-previews/blog-with-search-magazine.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="blog-sections">
+<span class="category">Blog Sections</span>
+<h3>Blog With Search</h3>
+<div class="links">
+<a href="demos/blog-with-search.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/blog-sections/blog-with-search" target="_blank">source page</a>
+<a href="raw/live-previews/blog-with-search.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Box Illustration</h3>
+<div class="links">
+<a href="demos/box-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/box-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/box-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Centered Around Testimonials</h3>
+<div class="links">
+<a href="demos/centered-around-testimonials.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/centered-around-testimonials" target="_blank">source page</a>
+<a href="raw/live-previews/centered-around-testimonials.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="footers">
+<span class="category">Footers</span>
+<h3>Centered With Logo</h3>
+<div class="links">
+<a href="demos/centered-with-logo.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/footers/centered-with-logo" target="_blank">source page</a>
+<a href="raw/live-previews/centered-with-logo.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Chat Conversation</h3>
+<div class="links">
+<a href="demos/chat-conversation.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/chat-conversation" target="_blank">source page</a>
+<a href="raw/live-previews/chat-conversation.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Collaborative Cursors</h3>
+<div class="links">
+<a href="demos/collaborative-cursors.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/collaborative-cursors" target="_blank">source page</a>
+<a href="raw/live-previews/collaborative-cursors.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="sidebars">
+<span class="category">Sidebars</span>
+<h3>Collapsible Sidebar</h3>
+<div class="links">
+<a href="demos/collapsible-sidebar.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/sidebars/collapsible-sidebar" target="_blank">source page</a>
+<a href="raw/live-previews/collapsible-sidebar.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="contact-sections">
+<span class="category">Contact Sections</span>
+<h3>Contact Form Grid With Details</h3>
+<div class="links">
+<a href="demos/contact-form-grid-with-details.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/contact-sections/contact-form-grid-with-details" target="_blank">source page</a>
+<a href="raw/live-previews/contact-form-grid-with-details.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="contact-sections">
+<span class="category">Contact Sections</span>
+<h3>Contact Section With Shader</h3>
+<div class="links">
+<a href="demos/contact-section-with-shader.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/contact-sections/contact-section-with-shader" target="_blank">source page</a>
+<a href="raw/live-previews/contact-section-with-shader.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="cta-sections">
+<span class="category">Cta Sections</span>
+<h3>Cta Centered Masonry Gallery</h3>
+<div class="links">
+<a href="demos/cta-centered-masonry-gallery.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/cta-sections/cta-centered-masonry-gallery" target="_blank">source page</a>
+<a href="raw/live-previews/cta-centered-masonry-gallery.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="cta-sections">
+<span class="category">Cta Sections</span>
+<h3>Cta With Background Noise</h3>
+<div class="links">
+<a href="demos/cta-with-background-noise.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/cta-sections/cta-with-background-noise" target="_blank">source page</a>
+<a href="raw/live-previews/cta-with-background-noise.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="cta-sections">
+<span class="category">Cta Sections</span>
+<h3>Cta With Dashed Grid Lines</h3>
+<div class="links">
+<a href="demos/cta-with-dashed-grid-lines.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/cta-sections/cta-with-dashed-grid-lines" target="_blank">source page</a>
+<a href="raw/live-previews/cta-with-dashed-grid-lines.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="cta-sections">
+<span class="category">Cta Sections</span>
+<h3>Cta With Masonry Images</h3>
+<div class="links">
+<a href="demos/cta-with-masonry-images.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/cta-sections/cta-with-masonry-images" target="_blank">source page</a>
+<a href="raw/live-previews/cta-with-masonry-images.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Dither Features</h3>
+<div class="links">
+<a href="demos/dither-features.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/dither-features" target="_blank">source page</a>
+<a href="raw/live-previews/dither-features.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="shaders">
+<span class="category">Shaders</span>
+<h3>Dot Distortion Shader</h3>
+<div class="links">
+<a href="demos/dot-distortion-shader.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/shaders/dot-distortion-shader" target="_blank">source page</a>
+<a href="raw/live-previews/dot-distortion-shader.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Draggable Cards</h3>
+<div class="links">
+<a href="demos/draggable-cards.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/draggable-cards" target="_blank">source page</a>
+<a href="raw/live-previews/draggable-cards.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Dynamic Island</h3>
+<div class="links">
+<a href="demos/dynamic-island.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/dynamic-island" target="_blank">source page</a>
+<a href="raw/live-previews/dynamic-island.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="cards">
+<span class="category">Cards</span>
+<h3>Expandable Card On Click</h3>
+<div class="links">
+<a href="demos/expandable-card-on-click.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/cards/expandable-card-on-click" target="_blank">source page</a>
+<a href="raw/live-previews/expandable-card-on-click.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="faqs">
+<span class="category">Faqs</span>
+<h3>Faqs With Dashed Lines</h3>
+<div class="links">
+<a href="demos/faqs-with-dashed-lines.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/faqs/faqs-with-dashed-lines" target="_blank">source page</a>
+<a href="raw/live-previews/faqs-with-dashed-lines.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="faqs">
+<span class="category">Faqs</span>
+<h3>Faqs With Grid</h3>
+<div class="links">
+<a href="demos/faqs-with-grid.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/faqs/faqs-with-grid" target="_blank">source page</a>
+<a href="raw/live-previews/faqs-with-grid.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Feature Section Bento Skeletons</h3>
+<div class="links">
+<a href="demos/feature-section-bento-skeletons.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/feature-section-bento-skeletons" target="_blank">source page</a>
+<a href="raw/live-previews/feature-section-bento-skeletons.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Feature Section With Centered Skeleton</h3>
+<div class="links">
+<a href="demos/feature-section-with-centered-skeleton.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/feature-section-with-centered-skeleton" target="_blank">source page</a>
+<a href="raw/live-previews/feature-section-with-centered-skeleton.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Feature Section With Horizontal Skeletons</h3>
+<div class="links">
+<a href="demos/feature-section-with-horizontal-skeletons.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/feature-section-with-horizontal-skeletons" target="_blank">source page</a>
+<a href="raw/live-previews/feature-section-with-horizontal-skeletons.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Feature Section With Terminal</h3>
+<div class="links">
+<a href="demos/feature-section-with-terminal.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/feature-section-with-terminal" target="_blank">source page</a>
+<a href="raw/live-previews/feature-section-with-terminal.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Feature Section With Vertical Grids</h3>
+<div class="links">
+<a href="demos/feature-section-with-vertical-grids.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/feature-section-with-vertical-grids" target="_blank">source page</a>
+<a href="raw/live-previews/feature-section-with-vertical-grids.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Feature With Inline Icons</h3>
+<div class="links">
+<a href="demos/feature-with-inline-icons.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/feature-with-inline-icons" target="_blank">source page</a>
+<a href="raw/live-previews/feature-with-inline-icons.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Features Grid With Large Skeletons</h3>
+<div class="links">
+<a href="demos/features-grid-with-large-skeletons.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/features-grid-with-large-skeletons" target="_blank">source page</a>
+<a href="raw/live-previews/features-grid-with-large-skeletons.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Features Section With Skeletons</h3>
+<div class="links">
+<a href="demos/features-section-with-skeletons.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/features-section-with-skeletons" target="_blank">source page</a>
+<a href="raw/live-previews/features-section-with-skeletons.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Features With Hover And Text Animation</h3>
+<div class="links">
+<a href="demos/features-with-hover-and-text-animation.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/features-with-hover-and-text-animation" target="_blank">source page</a>
+<a href="raw/live-previews/features-with-hover-and-text-animation.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Features With Isometric Blocks</h3>
+<div class="links">
+<a href="demos/features-with-isometric-blocks.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/features-with-isometric-blocks" target="_blank">source page</a>
+<a href="raw/live-previews/features-with-isometric-blocks.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Features With Stacked Isometric Boxes</h3>
+<div class="links">
+<a href="demos/features-with-stacked-isometric-boxes.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/features-with-stacked-isometric-boxes" target="_blank">source page</a>
+<a href="raw/live-previews/features-with-stacked-isometric-boxes.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Features With Sticky Scroll</h3>
+<div class="links">
+<a href="demos/features-with-sticky-scroll.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/features-with-sticky-scroll" target="_blank">source page</a>
+<a href="raw/live-previews/features-with-sticky-scroll.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Flipping Images With Bar</h3>
+<div class="links">
+<a href="demos/flipping-images-with-bar.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/flipping-images-with-bar" target="_blank">source page</a>
+<a href="raw/live-previews/flipping-images-with-bar.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Folder With Files</h3>
+<div class="links">
+<a href="demos/folder-with-files.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/folder-with-files" target="_blank">source page</a>
+<a href="raw/live-previews/folder-with-files.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="footers">
+<span class="category">Footers</span>
+<h3>Footer With Big Text</h3>
+<div class="links">
+<a href="demos/footer-with-big-text.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/footers/footer-with-big-text" target="_blank">source page</a>
+<a href="raw/live-previews/footer-with-big-text.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Full Background Image With Text</h3>
+<div class="links">
+<a href="demos/full-background-image-with-text.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/full-background-image-with-text" target="_blank">source page</a>
+<a href="raw/live-previews/full-background-image-with-text.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="sidebars">
+<span class="category">Sidebars</span>
+<h3>Grouped Sidebar</h3>
+<div class="links">
+<a href="demos/grouped-sidebar.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/sidebars/grouped-sidebar" target="_blank">source page</a>
+<a href="raw/live-previews/grouped-sidebar.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero Section With Beams And Grid</h3>
+<div class="links">
+<a href="demos/hero-section-with-beams-and-grid.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-section-with-beams-and-grid" target="_blank">source page</a>
+<a href="raw/live-previews/hero-section-with-beams-and-grid.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero Section With Dither Background</h3>
+<div class="links">
+<a href="demos/hero-section-with-dither-background.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-section-with-dither-background" target="_blank">source page</a>
+<a href="raw/live-previews/hero-section-with-dither-background.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero Section With Flickering Lights</h3>
+<div class="links">
+<a href="demos/hero-section-with-flickering-lights.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-section-with-flickering-lights" target="_blank">source page</a>
+<a href="raw/live-previews/hero-section-with-flickering-lights.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero Section With Images Grid And Navbar</h3>
+<div class="links">
+<a href="demos/hero-section-with-images-grid-and-navbar.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-section-with-images-grid-and-navbar" target="_blank">source page</a>
+<a href="raw/live-previews/hero-section-with-images-grid-and-navbar.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero Section With Infinite Scroll Cards</h3>
+<div class="links">
+<a href="demos/hero-section-with-infinite-scroll-cards.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-section-with-infinite-scroll-cards" target="_blank">source page</a>
+<a href="raw/live-previews/hero-section-with-infinite-scroll-cards.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero Section With Mesh Gradient</h3>
+<div class="links">
+<a href="demos/hero-section-with-mesh-gradient.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-section-with-mesh-gradient" target="_blank">source page</a>
+<a href="raw/live-previews/hero-section-with-mesh-gradient.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero Section With Mousemove</h3>
+<div class="links">
+<a href="demos/hero-section-with-mousemove.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-section-with-mousemove" target="_blank">source page</a>
+<a href="raw/live-previews/hero-section-with-mousemove.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero Section With Multi Color Background</h3>
+<div class="links">
+<a href="demos/hero-section-with-multi-color-background.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-section-with-multi-color-background" target="_blank">source page</a>
+<a href="raw/live-previews/hero-section-with-multi-color-background.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero Section With Noise Background</h3>
+<div class="links">
+<a href="demos/hero-section-with-noise-background.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-section-with-noise-background" target="_blank">source page</a>
+<a href="raw/live-previews/hero-section-with-noise-background.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero Section With Shadow And Scales</h3>
+<div class="links">
+<a href="demos/hero-section-with-shadow-and-scales.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-section-with-shadow-and-scales" target="_blank">source page</a>
+<a href="raw/live-previews/hero-section-with-shadow-and-scales.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero Section With Tabs</h3>
+<div class="links">
+<a href="demos/hero-section-with-tabs.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-section-with-tabs" target="_blank">source page</a>
+<a href="raw/live-previews/hero-section-with-tabs.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero With Background And Navbar</h3>
+<div class="links">
+<a href="demos/hero-with-background-and-navbar.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-with-background-and-navbar" target="_blank">source page</a>
+<a href="raw/live-previews/hero-with-background-and-navbar.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero With Centered Image</h3>
+<div class="links">
+<a href="demos/hero-with-centered-image.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-with-centered-image" target="_blank">source page</a>
+<a href="raw/live-previews/hero-with-centered-image.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Hero With Image And Scales</h3>
+<div class="links">
+<a href="demos/hero-with-image-and-scales.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/hero-with-image-and-scales" target="_blank">source page</a>
+<a href="raw/live-previews/hero-with-image-and-scales.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Inline Icon Illustration</h3>
+<div class="links">
+<a href="demos/inline-icon-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/inline-icon-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/inline-icon-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Ipad Illustration</h3>
+<div class="links">
+<a href="demos/ipad-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/ipad-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/ipad-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Iphone Illustration</h3>
+<div class="links">
+<a href="demos/iphone-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/iphone-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/iphone-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Isometric Box</h3>
+<div class="links">
+<a href="demos/isometric-box.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/isometric-box" target="_blank">source page</a>
+<a href="raw/live-previews/isometric-box.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Keyboard Illustration</h3>
+<div class="links">
+<a href="demos/keyboard-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/keyboard-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/keyboard-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="shaders">
+<span class="category">Shaders</span>
+<h3>Lines Gradient Shader</h3>
+<div class="links">
+<a href="demos/lines-gradient-shader.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/shaders/lines-gradient-shader" target="_blank">source page</a>
+<a href="raw/live-previews/lines-gradient-shader.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="login-and-signup-sections">
+<span class="category">Login And Signup Sections</span>
+<h3>Login Form With Gradient</h3>
+<div class="links">
+<a href="demos/login-form-with-gradient.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/login-and-signup-sections/login-form-with-gradient" target="_blank">source page</a>
+<a href="raw/live-previews/login-form-with-gradient.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="login-and-signup-sections">
+<span class="category">Login And Signup Sections</span>
+<h3>Login Signup Minimal</h3>
+<div class="links">
+<a href="demos/login-signup-minimal.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/login-and-signup-sections/login-signup-minimal" target="_blank">source page</a>
+<a href="raw/live-previews/login-signup-minimal.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="login-and-signup-sections">
+<span class="category">Login And Signup Sections</span>
+<h3>Login With Socials And Email</h3>
+<div class="links">
+<a href="demos/login-with-socials-and-email.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/login-and-signup-sections/login-with-socials-and-email" target="_blank">source page</a>
+<a href="raw/live-previews/login-with-socials-and-email.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="logo-clouds">
+<span class="category">Logo Clouds</span>
+<h3>Logo Cloud Marquee</h3>
+<div class="links">
+<a href="demos/logo-cloud-marquee.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/logo-clouds/logo-cloud-marquee" target="_blank">source page</a>
+<a href="raw/live-previews/logo-cloud-marquee.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="logo-clouds">
+<span class="category">Logo Clouds</span>
+<h3>Logo Cloud With Blur Animation</h3>
+<div class="links">
+<a href="demos/logo-cloud-with-blur-animation.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/logo-clouds/logo-cloud-with-blur-animation" target="_blank">source page</a>
+<a href="raw/live-previews/logo-cloud-with-blur-animation.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="logo-clouds">
+<span class="category">Logo Clouds</span>
+<h3>Logo Cloud With Swap Animation</h3>
+<div class="links">
+<a href="demos/logo-cloud-with-swap-animation.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/logo-clouds/logo-cloud-with-swap-animation" target="_blank">source page</a>
+<a href="raw/live-previews/logo-cloud-with-swap-animation.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="logo-clouds">
+<span class="category">Logo Clouds</span>
+<h3>Logos With Blur Flip</h3>
+<div class="links">
+<a href="demos/logos-with-blur-flip.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/logo-clouds/logos-with-blur-flip" target="_blank">source page</a>
+<a href="raw/live-previews/logos-with-blur-flip.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Macbook Illustration With Icons</h3>
+<div class="links">
+<a href="demos/macbook-illustration-with-icons.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/macbook-illustration-with-icons" target="_blank">source page</a>
+<a href="raw/live-previews/macbook-illustration-with-icons.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Macbook Illustration</h3>
+<div class="links">
+<a href="demos/macbook-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/macbook-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/macbook-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="bento-grids">
+<span class="category">Bento Grids</span>
+<h3>Masonry Bento Grid With Images</h3>
+<div class="links">
+<a href="demos/masonry-bento-grid-with-images.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/bento-grids/masonry-bento-grid-with-images" target="_blank">source page</a>
+<a href="raw/live-previews/masonry-bento-grid-with-images.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Meeting Illustration</h3>
+<div class="links">
+<a href="demos/meeting-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/meeting-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/meeting-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Minimal Hero Section With Parallax Images</h3>
+<div class="links">
+<a href="demos/minimal-hero-section-with-parallax-images.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/minimal-hero-section-with-parallax-images" target="_blank">source page</a>
+<a href="raw/live-previews/minimal-hero-section-with-parallax-images.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Modern Hero With Gradients</h3>
+<div class="links">
+<a href="demos/modern-hero-with-gradients.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/modern-hero-with-gradients" target="_blank">source page</a>
+<a href="raw/live-previews/modern-hero-with-gradients.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Multi Illustration Bento</h3>
+<div class="links">
+<a href="demos/multi-illustration-bento.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/multi-illustration-bento" target="_blank">source page</a>
+<a href="raw/live-previews/multi-illustration-bento.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="feature-sections">
+<span class="category">Feature Sections</span>
+<h3>Multicolored Features</h3>
+<div class="links">
+<a href="demos/multicolored-features.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/feature-sections/multicolored-features" target="_blank">source page</a>
+<a href="raw/live-previews/multicolored-features.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="navbars">
+<span class="category">Navbars</span>
+<h3>Navbar Classic</h3>
+<div class="links">
+<a href="demos/navbar-classic.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/navbars/navbar-classic" target="_blank">source page</a>
+<a href="raw/live-previews/navbar-classic.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="navbars">
+<span class="category">Navbars</span>
+<h3>Navbar Dark Shadow</h3>
+<div class="links">
+<a href="demos/navbar-dark-shadow.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/navbars/navbar-dark-shadow" target="_blank">source page</a>
+<a href="raw/live-previews/navbar-dark-shadow.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="navbars">
+<span class="category">Navbars</span>
+<h3>Navbar Mega</h3>
+<div class="links">
+<a href="demos/navbar-mega.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/navbars/navbar-mega" target="_blank">source page</a>
+<a href="raw/live-previews/navbar-mega.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="navbars">
+<span class="category">Navbars</span>
+<h3>Navbar Pill</h3>
+<div class="links">
+<a href="demos/navbar-pill.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/navbars/navbar-pill" target="_blank">source page</a>
+<a href="raw/live-previews/navbar-pill.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="navbars">
+<span class="category">Navbars</span>
+<h3>Navbar Underline</h3>
+<div class="links">
+<a href="demos/navbar-underline.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/navbars/navbar-underline" target="_blank">source page</a>
+<a href="raw/live-previews/navbar-underline.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="navbars">
+<span class="category">Navbars</span>
+<h3>Navbar With Children</h3>
+<div class="links">
+<a href="demos/navbar-with-children.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/navbars/navbar-with-children" target="_blank">source page</a>
+<a href="raw/live-previews/navbar-with-children.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Playful Hero Section</h3>
+<div class="links">
+<a href="demos/playful-hero-section.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/playful-hero-section" target="_blank">source page</a>
+<a href="raw/live-previews/playful-hero-section.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="login-and-signup-sections">
+<span class="category">Login And Signup Sections</span>
+<h3>Premium Auth Split</h3>
+<div class="links">
+<a href="demos/premium-auth-split.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/login-and-signup-sections/premium-auth-split" target="_blank">source page</a>
+<a href="raw/live-previews/premium-auth-split.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="pricing-sections">
+<span class="category">Pricing Sections</span>
+<h3>Pricing Minimal</h3>
+<div class="links">
+<a href="demos/pricing-minimal.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/pricing-sections/pricing-minimal" target="_blank">source page</a>
+<a href="raw/live-previews/pricing-minimal.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="pricing-sections">
+<span class="category">Pricing Sections</span>
+<h3>Pricing Page With Featured And Enterprise</h3>
+<div class="links">
+<a href="demos/pricing-page-with-featured-and-enterprise.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/pricing-sections/pricing-page-with-featured-and-enterprise" target="_blank">source page</a>
+<a href="raw/live-previews/pricing-page-with-featured-and-enterprise.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="pricing-sections">
+<span class="category">Pricing Sections</span>
+<h3>Pricing With Header And Icons</h3>
+<div class="links">
+<a href="demos/pricing-with-header-and-icons.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/pricing-sections/pricing-with-header-and-icons" target="_blank">source page</a>
+<a href="raw/live-previews/pricing-with-header-and-icons.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="pricing-sections">
+<span class="category">Pricing Sections</span>
+<h3>Pricing With Switch And Add On</h3>
+<div class="links">
+<a href="demos/pricing-with-switch-and-add-on.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/pricing-sections/pricing-with-switch-and-add-on" target="_blank">source page</a>
+<a href="raw/live-previews/pricing-with-switch-and-add-on.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="pricing-sections">
+<span class="category">Pricing Sections</span>
+<h3>Pricing With Switch</h3>
+<div class="links">
+<a href="demos/pricing-with-switch.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/pricing-sections/pricing-with-switch" target="_blank">source page</a>
+<a href="raw/live-previews/pricing-with-switch.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="login-and-signup-sections">
+<span class="category">Login And Signup Sections</span>
+<h3>Registration Form With Images</h3>
+<div class="links">
+<a href="demos/registration-form-with-images.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/login-and-signup-sections/registration-form-with-images" target="_blank">source page</a>
+<a href="raw/live-previews/registration-form-with-images.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Rotating Tabs With Text</h3>
+<div class="links">
+<a href="demos/rotating-tabs-with-text.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/rotating-tabs-with-text" target="_blank">source page</a>
+<a href="raw/live-previews/rotating-tabs-with-text.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="blog-sections">
+<span class="category">Blog Sections</span>
+<h3>Simple Blog With Grid</h3>
+<div class="links">
+<a href="demos/simple-blog-with-grid.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/blog-sections/simple-blog-with-grid" target="_blank">source page</a>
+<a href="raw/live-previews/simple-blog-with-grid.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="contact-sections">
+<span class="category">Contact Sections</span>
+<h3>Simple Centered Contact Form</h3>
+<div class="links">
+<a href="demos/simple-centered-contact-form.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/contact-sections/simple-centered-contact-form" target="_blank">source page</a>
+<a href="raw/live-previews/simple-centered-contact-form.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="cta-sections">
+<span class="category">Cta Sections</span>
+<h3>Simple Cta With Images</h3>
+<div class="links">
+<a href="demos/simple-cta-with-images.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/cta-sections/simple-cta-with-images" target="_blank">source page</a>
+<a href="raw/live-previews/simple-cta-with-images.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="faqs">
+<span class="category">Faqs</span>
+<h3>Simple Faqs With Background</h3>
+<div class="links">
+<a href="demos/simple-faqs-with-background.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/faqs/simple-faqs-with-background" target="_blank">source page</a>
+<a href="raw/live-previews/simple-faqs-with-background.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="footers">
+<span class="category">Footers</span>
+<h3>Simple Footer With Four Grids</h3>
+<div class="links">
+<a href="demos/simple-footer-with-four-grids.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/footers/simple-footer-with-four-grids" target="_blank">source page</a>
+<a href="raw/live-previews/simple-footer-with-four-grids.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="login-and-signup-sections">
+<span class="category">Login And Signup Sections</span>
+<h3>Simple Login With Grid Lines</h3>
+<div class="links">
+<a href="demos/simple-login-with-grid-lines.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/login-and-signup-sections/simple-login-with-grid-lines" target="_blank">source page</a>
+<a href="raw/live-previews/simple-login-with-grid-lines.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="navbars">
+<span class="category">Navbars</span>
+<h3>Simple Navbar With Hover Effects</h3>
+<div class="links">
+<a href="demos/simple-navbar-with-hover-effects.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/navbars/simple-navbar-with-hover-effects" target="_blank">source page</a>
+<a href="raw/live-previews/simple-navbar-with-hover-effects.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="pricing-sections">
+<span class="category">Pricing Sections</span>
+<h3>Simple Pricing With Three Tiers</h3>
+<div class="links">
+<a href="demos/simple-pricing-with-three-tiers.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/pricing-sections/simple-pricing-with-three-tiers" target="_blank">source page</a>
+<a href="raw/live-previews/simple-pricing-with-three-tiers.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="sidebars">
+<span class="category">Sidebars</span>
+<h3>Simple Sidebar With Hover</h3>
+<div class="links">
+<a href="demos/simple-sidebar-with-hover.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/sidebars/simple-sidebar-with-hover" target="_blank">source page</a>
+<a href="raw/live-previews/simple-sidebar-with-hover.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Slider Illustration</h3>
+<div class="links">
+<a href="demos/slider-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/slider-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/slider-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="logo-clouds">
+<span class="category">Logo Clouds</span>
+<h3>Spotlight Logo Cloud</h3>
+<div class="links">
+<a href="demos/spotlight-logo-cloud.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/logo-clouds/spotlight-logo-cloud" target="_blank">source page</a>
+<a href="raw/live-previews/spotlight-logo-cloud.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="shaders">
+<span class="category">Shaders</span>
+<h3>Spotlight Shader</h3>
+<div class="links">
+<a href="demos/spotlight-shader.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/shaders/spotlight-shader" target="_blank">source page</a>
+<a href="raw/live-previews/spotlight-shader.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="stats-sections">
+<span class="category">Stats Sections</span>
+<h3>Stats For Changelog</h3>
+<div class="links">
+<a href="demos/stats-for-changelog.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/stats-sections/stats-for-changelog" target="_blank">source page</a>
+<a href="raw/live-previews/stats-for-changelog.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="stats-sections">
+<span class="category">Stats Sections</span>
+<h3>Stats With Gradient</h3>
+<div class="links">
+<a href="demos/stats-with-gradient.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/stats-sections/stats-with-gradient" target="_blank">source page</a>
+<a href="raw/live-previews/stats-with-gradient.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="stats-sections">
+<span class="category">Stats Sections</span>
+<h3>Stats With Grid Background</h3>
+<div class="links">
+<a href="demos/stats-with-grid-background.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/stats-sections/stats-with-grid-background" target="_blank">source page</a>
+<a href="raw/live-previews/stats-with-grid-background.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="stats-sections">
+<span class="category">Stats Sections</span>
+<h3>Stats With Number Ticker</h3>
+<div class="links">
+<a href="demos/stats-with-number-ticker.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/stats-sections/stats-with-number-ticker" target="_blank">source page</a>
+<a href="raw/live-previews/stats-with-number-ticker.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="team-sections">
+<span class="category">Team Sections</span>
+<h3>Team Section With Light Background</h3>
+<div class="links">
+<a href="demos/team-section-with-light-background.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/team-sections/team-section-with-light-background" target="_blank">source page</a>
+<a href="raw/live-previews/team-section-with-light-background.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="team-sections">
+<span class="category">Team Sections</span>
+<h3>Team Section With Scales</h3>
+<div class="links">
+<a href="demos/team-section-with-scales.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/team-sections/team-section-with-scales" target="_blank">source page</a>
+<a href="raw/live-previews/team-section-with-scales.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="team-sections">
+<span class="category">Team Sections</span>
+<h3>Team Section With Small Avatars</h3>
+<div class="links">
+<a href="demos/team-section-with-small-avatars.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/team-sections/team-section-with-small-avatars" target="_blank">source page</a>
+<a href="raw/live-previews/team-section-with-small-avatars.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="team-sections">
+<span class="category">Team Sections</span>
+<h3>Team Section With Timeline Cards</h3>
+<div class="links">
+<a href="demos/team-section-with-timeline-cards.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/team-sections/team-section-with-timeline-cards" target="_blank">source page</a>
+<a href="raw/live-previews/team-section-with-timeline-cards.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="testimonials">
+<span class="category">Testimonials</span>
+<h3>Testimonials Background With Drag</h3>
+<div class="links">
+<a href="demos/testimonials-background-with-drag.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/testimonials/testimonials-background-with-drag" target="_blank">source page</a>
+<a href="raw/live-previews/testimonials-background-with-drag.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="testimonials">
+<span class="category">Testimonials</span>
+<h3>Testimonials Grid With Centered Carousel</h3>
+<div class="links">
+<a href="demos/testimonials-grid-with-centered-carousel.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/testimonials/testimonials-grid-with-centered-carousel" target="_blank">source page</a>
+<a href="raw/live-previews/testimonials-grid-with-centered-carousel.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Testimonials Hover Illustration</h3>
+<div class="links">
+<a href="demos/testimonials-hover-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/testimonials-hover-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/testimonials-hover-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="testimonials">
+<span class="category">Testimonials</span>
+<h3>Testimonials Marquee Grid Boxed</h3>
+<div class="links">
+<a href="demos/testimonials-marquee-grid-boxed.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/testimonials/testimonials-marquee-grid-boxed" target="_blank">source page</a>
+<a href="raw/live-previews/testimonials-marquee-grid-boxed.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="testimonials">
+<span class="category">Testimonials</span>
+<h3>Testimonials Marquee Grid</h3>
+<div class="links">
+<a href="demos/testimonials-marquee-grid.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/testimonials/testimonials-marquee-grid" target="_blank">source page</a>
+<a href="raw/live-previews/testimonials-marquee-grid.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="testimonials">
+<span class="category">Testimonials</span>
+<h3>Testimonials Masonry Grid</h3>
+<div class="links">
+<a href="demos/testimonials-masonry-grid.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/testimonials/testimonials-masonry-grid" target="_blank">source page</a>
+<a href="raw/live-previews/testimonials-masonry-grid.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="testimonials">
+<span class="category">Testimonials</span>
+<h3>Testimonials With Carousel</h3>
+<div class="links">
+<a href="demos/testimonials-with-carousel.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/testimonials/testimonials-with-carousel" target="_blank">source page</a>
+<a href="raw/live-previews/testimonials-with-carousel.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="testimonials">
+<span class="category">Testimonials</span>
+<h3>Testimonials With Centered Highlight</h3>
+<div class="links">
+<a href="demos/testimonials-with-centered-highlight.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/testimonials/testimonials-with-centered-highlight" target="_blank">source page</a>
+<a href="raw/live-previews/testimonials-with-centered-highlight.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="text-animations">
+<span class="category">Text Animations</span>
+<h3>Text Generate Typewriter</h3>
+<div class="links">
+<a href="demos/text-generate-typewriter.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/text-animations/text-generate-typewriter" target="_blank">source page</a>
+<a href="raw/live-previews/text-generate-typewriter.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Text Highlight Illustration</h3>
+<div class="links">
+<a href="demos/text-highlight-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/text-highlight-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/text-highlight-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="bento-grids">
+<span class="category">Bento Grids</span>
+<h3>Three Column Bento Grid</h3>
+<div class="links">
+<a href="demos/three-column-bento-grid.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/bento-grids/three-column-bento-grid" target="_blank">source page</a>
+<a href="raw/live-previews/three-column-bento-grid.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<span class="category">Hero Sections</span>
+<h3>Two Column With Image</h3>
+<div class="links">
+<a href="demos/two-column-with-image.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/hero-sections/two-column-with-image" target="_blank">source page</a>
+<a href="raw/live-previews/two-column-with-image.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>Uptime Status Illustration</h3>
+<div class="links">
+<a href="demos/uptime-status-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/uptime-status-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/uptime-status-illustration.html">raw html</a>
+</div>
+</div>
+<div class="card" data-cats="illustrations">
+<span class="category">Illustrations</span>
+<h3>World Map Illustration</h3>
+<div class="links">
+<a href="demos/world-map-illustration.html" class="primary" target="_blank">preview</a>
+<a href="https://ui.aceternity.com/blocks/illustrations/world-map-illustration" target="_blank">source page</a>
+<a href="raw/live-previews/world-map-illustration.html">raw html</a>
+</div>
+</div>
+</div>
+<footer>
+<p>Aceternity UI Pro blocks captured from public live-preview URLs. Full TSX source is paywalled at <a href="https://ui.aceternity.com/pricing" target="_blank">ui.aceternity.com/pricing</a>.
+Demos here are the rendered HTML — they reference ui.aceternity.com CDN for CSS/JS/images, so preview links need internet access to render fully. For internal / reference use only.</p>
+</footer>
+</div>
+
+<script>
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--x', `${e.clientX - r.left}px`);
+    card.style.setProperty('--y', `${e.clientY - r.top}px`);
+  });
+});
+const filterBtns = document.querySelectorAll('.filter button');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const cat = btn.dataset.cat;
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.card').forEach(c => {
+      c.style.display = (cat === 'all' || c.dataset.cats.split(',').includes(cat)) ? '' : 'none';
+    });
+  });
+});
+</script>
+
+</body>
+</html>

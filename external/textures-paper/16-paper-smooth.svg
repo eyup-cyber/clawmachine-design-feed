@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <filter id="smooth">
+      <feTurbulence type="fractalNoise" baseFrequency="3" numOctaves="1" seed="91"/>
+      <feColorMatrix values="0 0 0 0 0.92 0 0 0 0 0.88 0 0 0 0 0.80 0 0 0 0.08 0"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="#f9f4e6"/>
+  <rect width="400" height="400" filter="url(#smooth)"/>
+</svg>

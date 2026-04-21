@@ -1,0 +1,35 @@
+// ============================================================
+// Utilities - Forward all utility modules
+// ============================================================
+
+// Layout
+@forward "display";
+@forward "flex";
+@forward "grid";
+@forward "position";
+@forward "sizing";
+@forward "layout";
+
+// Spacing & Typography
+@forward "spacing";
+@forward "text";
+
+// Visual
+@forward "backgrounds";
+@forward "borders";
+@forward "shadows";
+@forward "filters";
+
+// Transforms & Transitions
+@forward "transforms";
+@forward "transitions";
+@forward "animation";
+
+// Interactivity
+@forward "interactivity";
+
+// Accessibility
+@forward "accessibility";
+
+// Icons
+@forward "icons";

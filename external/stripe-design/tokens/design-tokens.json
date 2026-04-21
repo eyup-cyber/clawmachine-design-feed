@@ -1,0 +1,145 @@
+{
+  "_source": {
+    "url": "https://stripe.com",
+    "extracted_from": ["b.stripecdn.com/mkt-ssr-statics/assets/_next/static/css/*.css (10 bundles)", "stripe.com/newsroom", "stripe.com/payments", "stripe.com/billing", "docs.stripe.com"],
+    "extraction_method": "firecrawl branding + raw CSS bundle scrape + docs color analysis",
+    "extracted_at": "2026-04-21",
+    "authoritative_for": "trustworthy high-information financial dashboard — deep navy foundation, indigo/violet accents, pale-blue panels"
+  },
+  "brand": {
+    "name": "Stripe",
+    "mode": "light-first (dashboard has dark)",
+    "personality": "professional, high-density, financial, soft-edged",
+    "marketing_vs_dashboard": {
+      "marketing_site": "stripe.com — uses violet #533AFD hero accent",
+      "docs_site": "docs.stripe.com — uses indigo #5469D4 / #556CD6 primary",
+      "dashboard": "dashboard.stripe.com — uses the docs-family indigo palette"
+    }
+  },
+  "color": {
+    "foundation": {
+      "bg_page_white": "#FFFFFF",
+      "bg_panel_pale": "#F6F9FC",
+      "bg_panel_cool": "#F8FAFD",
+      "bg_panel_soft": "#FCFDFE",
+      "bg_panel_ice": "#FFFAFD",
+      "bg_border_faint": "#E3ECF7",
+      "bg_border_soft": "#E5EDF5",
+      "note": "Stripe's signature is the pale-cool-blue panel — #F6F9FC is the canonical 'Stripe panel' color"
+    },
+    "text": {
+      "primary_deepest": "#061B31",
+      "primary_navy": "#0A2540",
+      "secondary_slate": "#273951",
+      "secondary_muted": "#3C4F69",
+      "body_default": "#414552",
+      "note": "#0A2540 is the brand navy used in the wordmark; #061B31 is even deeper, used on dense body"
+    },
+    "accent_marketing": {
+      "violet_primary": "#533AFD",
+      "violet_soft_stop1": "#BDB4FF",
+      "violet_mid_stop2": "#643AFD",
+      "violet_dark_stop3": "#533AFD",
+      "gradient_example": "linear-gradient(#BDB4FF, #643AFD, #533AFD)",
+      "secondary_border": "#B9B9F9"
+    },
+    "accent_docs_dashboard": {
+      "indigo_primary": "#5469D4",
+      "indigo_bright": "#556CD6",
+      "indigo_deep": "#1318C1",
+      "indigo_link_hover": "#7232F1",
+      "note": "Stripe docs use an indigo family; marketing uses a more saturated violet-fuchsia. Do NOT mix."
+    },
+    "semantic": {
+      "success_green": "#00D66F",
+      "info_blue": "#0073E6",
+      "info_soft_blue": "#B4D8FF",
+      "danger_orange": "#FF6118",
+      "danger_pink": "#EA2261",
+      "warning_amber": "#FFCF5E"
+    },
+    "signature_fuchsia": {
+      "hero_gradient_pink": "#FB76FA",
+      "hero_gradient_violet": "#96F",
+      "secondary_gradient_peach": "#FFE0D1"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "sans_primary": "sohne-var, 'Helvetica Neue', Arial, sans-serif",
+      "sans_docs_fallback": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif",
+      "mono": "'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, monospace"
+    },
+    "font_files": {
+      "Sohne.woff2": "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/media/Sohne.cb178166.woff2 (variable, weights 1-1000)",
+      "SourceCodePro-Medium.woff2": "https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/media/SourceCodePro-Medium.f5ba3e6a.woff2"
+    },
+    "font_weights_default": {
+      "normal": 300,
+      "note": "Stripe's default body weight is 300 (light). Unusual — most systems use 400."
+    },
+    "scale_px": {
+      "h1_newsroom": "32px",
+      "h1_marketing": "48px",
+      "h2_sub": "21px",
+      "body_docs": "14px",
+      "body_dense": "14px"
+    },
+    "font_family_var": "--fontFamily:sohne-var,'Helvetica Neue',Arial,sans-serif"
+  },
+  "spacing": {
+    "base_unit": "4px",
+    "radius_default_marketing": "4px",
+    "radius_docs_button": "4px",
+    "radius_docs_card": "8px",
+    "note": "Stripe uses very restrained radii — sharper than Linear or Vercel. 4px is dominant."
+  },
+  "elevation": {
+    "shadow_card_docs": "0 0 0 1px rgba(0,0,0,0), rgba(60,66,87,0.08) 0 2px 5px 0, rgba(0,0,0,0.12) 0 1px 1px 0",
+    "shadow_agentic_box": "0 20.187px 40.374px -20.187px rgba(0,0,0,0.1)",
+    "note": "Stripe shadows are very subtle — layered hairline-ring + tiny drop. Never a harsh drop-shadow."
+  },
+  "motion": {
+    "easing_default": "cubic-bezier(0.25, 1, 0.5, 1)",
+    "note": "Stripe motion is minimal on content sites; heavy on scroll-tied gradient animations only"
+  },
+  "components": {
+    "button_marketing_primary": {
+      "bg": "#533AFD",
+      "text": "#FFFFFF",
+      "radius": "4px",
+      "shadow": "none"
+    },
+    "button_marketing_secondary": {
+      "bg": "#FFFFFF",
+      "text": "#533AFD",
+      "border": "1px solid #B9B9F9",
+      "radius": "4px"
+    },
+    "button_docs_primary": {
+      "bg": "#5469D4",
+      "text": "#FFFFFF",
+      "radius": "4px"
+    },
+    "button_docs_secondary": {
+      "bg": "#FFFFFF",
+      "text": "#414552",
+      "radius": "8px",
+      "shadow": "0 0 0 1px rgba(0,0,0,0), rgba(60,66,87,0.08) 0 2px 5px, rgba(0,0,0,0.12) 0 1px 1px"
+    },
+    "input_docs": {
+      "bg": "transparent",
+      "text": "#273951",
+      "radius": "6px",
+      "shadow": "none"
+    }
+  },
+  "signature_effects": {
+    "panel_pale_blue": "#F6F9FC on white — the Stripe dashboard panel look",
+    "soft_shadows_only": "never harsh drops; always hairline-ring + micro-blur",
+    "gradient_hero": "violet→fuchsia→pink on a light page; diagonal/scroll-tied",
+    "invoice_pattern": "signature table layout with tiered pricing rows, subtotal, discount-line — seen on /billing",
+    "code_samples_inline": "green accents + monospace columns, seen throughout docs",
+    "restrained_radius": "4px dominant — sharper than Vercel 6px or Linear 12px"
+  }
+}

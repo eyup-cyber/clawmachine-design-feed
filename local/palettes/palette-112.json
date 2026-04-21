@@ -1,0 +1,15 @@
+{
+  "id": "palette-112",
+  "name": "techno-lime",
+  "source": "ultra-expansion-cycle2-acid-techno",
+  "colors": {
+    "bg": "#AEEA00",
+    "surface": "#C2F033",
+    "card": "#B8ED1A",
+    "accent": "#AA00FF",
+    "secondary": "#FF1744",
+    "text": "#0E1A00",
+    "muted": "#7A4099"
+  },
+  "weight": 10
+}

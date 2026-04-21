@@ -1,0 +1,15 @@
+{
+  "id": "palette-100",
+  "name": "retrowave-alley",
+  "source": "ultra-expansion-cycle2-vaporwave",
+  "colors": {
+    "bg": "#1A0014",
+    "surface": "#330029",
+    "card": "#26001F",
+    "accent": "#00FFFF",
+    "secondary": "#FF007F",
+    "text": "#E6FFFF",
+    "muted": "#409999"
+  },
+  "weight": 10
+}

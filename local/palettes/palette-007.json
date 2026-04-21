@@ -1,0 +1,15 @@
+{
+  "id": "palette-007",
+  "name": "concrete-garden",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#1a1a1a",
+    "surface": "#303030",
+    "card": "#424242",
+    "accent": "#00ff00",
+    "secondary": "#ff1493",
+    "text": "#efefef",
+    "muted": "#7a7a7a"
+  },
+  "weight": 10
+}

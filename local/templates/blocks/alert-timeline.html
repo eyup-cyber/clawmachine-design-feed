@@ -1,0 +1,205 @@
+<div class="block-alert-timeline">
+<style>
+.block-alert-timeline .at-panel {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow: hidden;
+}
+.block-alert-timeline .at-hdr {
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block-alert-timeline .at-title {
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  
+  letter-spacing: 0.04em;
+  color: var(--sl-text);
+}
+.block-alert-timeline .at-range {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  
+  color: var(--sl-muted);
+}
+.block-alert-timeline .at-body {
+  padding: var(--sl-space-md);
+}
+.block-alert-timeline .at-track {
+  position: relative;
+  height: 80px;
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-inset);
+}
+.block-alert-timeline .at-bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  opacity: 0.15;
+  border-radius: 2px;
+}
+.block-alert-timeline .at-bar.shift {
+  background: var(--sl-accent);
+}
+.block-alert-timeline .at-bar.maintenance {
+  background: var(--sl-muted);
+  opacity: 0.1;
+  border-left: 2px dashed var(--sl-muted);
+  border-right: 2px dashed var(--sl-muted);
+}
+.block-alert-timeline .at-marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--sl-card);
+  cursor: default;
+  z-index: 2;
+}
+.block-alert-timeline .at-marker.alert {
+  background: color-mix(in srgb, var(--sl-secondary) 80%, red);
+}
+.block-alert-timeline .at-marker.deploy {
+  background: var(--sl-accent);
+}
+.block-alert-timeline .at-marker.incident {
+  background: var(--sl-secondary);
+  width: 14px;
+  height: 14px;
+  border-radius: 2px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.block-alert-timeline .at-marker-label {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--sl-font-mono);
+  font-size: 7px;
+  letter-spacing: 0.08em;
+  
+  color: var(--sl-text);
+  white-space: nowrap;
+  opacity: 0.7;
+}
+.block-alert-timeline .at-marker.incident .at-marker-label {
+  transform: translateX(-50%) rotate(-45deg);
+}
+.block-alert-timeline .at-axis {
+  display: flex;
+  justify-content: space-between;
+  padding-top: var(--sl-space-xs);
+}
+.block-alert-timeline .at-tick {
+  font-family: var(--sl-font-mono);
+  font-size: 8px;
+  color: var(--sl-muted);
+  letter-spacing: 0.08em;
+}
+.block-alert-timeline .at-legend {
+  display: flex;
+  gap: var(--sl-space-md);
+  padding-top: var(--sl-space-sm);
+  font-family: var(--sl-font-mono);
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  
+  color: var(--sl-muted);
+}
+.block-alert-timeline .at-legend-icon {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.block-alert-timeline .at-legend-icon.deploy { background: var(--sl-accent); }
+.block-alert-timeline .at-legend-icon.alert {
+  background: color-mix(in srgb, var(--sl-secondary) 80%, red);
+}
+.block-alert-timeline .at-legend-icon.incident {
+  background: var(--sl-secondary);
+  border-radius: 1px;
+  transform: rotate(45deg);
+}
+</style>
+
+<div class="at-panel">
+  <div class="at-hdr">
+    <span class="at-title">24H EVENT TIMELINE</span>
+    <span class="at-range">00:00 — 23:59 UTC</span>
+  </div>
+  <div class="at-body">
+    <div class="at-track">
+      <!-- shift bands: day shifts highlighted -->
+      <div class="at-bar shift" style="left:25%;width:33.3%"></div>
+      <div class="at-bar shift" style="left:66.7%;width:16.7%"></div>
+
+      <!-- maintenance window 02:00-04:00 -->
+      <div class="at-bar maintenance" style="left:8.3%;width:8.3%"></div>
+
+      <!-- event markers positioned by % of 24h -->
+      <!-- 03:15 deploy = 13.5% -->
+      <div class="at-marker deploy" style="left:13.5%">
+        <span class="at-marker-label">v2.4.1</span>
+      </div>
+
+      <!-- 07:42 alert = 32.2% -->
+      <div class="at-marker alert" style="left:32.2%">
+        <span class="at-marker-label">CPU SPIKE</span>
+      </div>
+
+      <!-- 09:10 deploy = 38.2% -->
+      <div class="at-marker deploy" style="left:38.2%">
+        <span class="at-marker-label">HOTFIX</span>
+      </div>
+
+      <!-- 13:18 incident = 55.4% -->
+      <div class="at-marker incident" style="left:55.4%">
+        <span class="at-marker-label">REVENUE DROP</span>
+      </div>
+
+      <!-- 16:45 deploy = 69.8% -->
+      <div class="at-marker deploy" style="left:69.8%">
+        <span class="at-marker-label">v2.4.2</span>
+      </div>
+
+      <!-- 19:22 alert = 80.6% -->
+      <div class="at-marker alert" style="left:80.6%">
+        <span class="at-marker-label">DISK 90%</span>
+      </div>
+
+      <!-- 21:05 deploy = 87.8% -->
+      <div class="at-marker deploy" style="left:87.8%">
+        <span class="at-marker-label">CLEANUP</span>
+      </div>
+    </div>
+    <div class="at-axis">
+      <span class="at-tick">00:00</span>
+      <span class="at-tick">04:00</span>
+      <span class="at-tick">08:00</span>
+      <span class="at-tick">12:00</span>
+      <span class="at-tick">16:00</span>
+      <span class="at-tick">20:00</span>
+      <span class="at-tick">24:00</span>
+    </div>
+    <div class="at-legend">
+      <span><span class="at-legend-icon deploy"></span>DEPLOY</span>
+      <span><span class="at-legend-icon alert"></span>ALERT</span>
+      <span><span class="at-legend-icon incident"></span>INCIDENT</span>
+    </div>
+  </div>
+</div>
+</div>

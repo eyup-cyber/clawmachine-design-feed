@@ -1,0 +1,40 @@
+---
+title: Display Value
+description: Display values with consistent fallback for empty values.
+metaDescription: Display values with automatic fallback for empty values. Format data without testing for validity. Supports strings, numbers, dates, and arrays.
+category: typography
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { DisplayValue } from '@/components/ui'
+```
+
+```tsx
+<DisplayValue value="Park UI" />
+```
+
+## Examples
+
+### With Formatting
+
+Use the `formatValue` prop to format complex values like dates, numbers, or arrays.
+
+<ComponentExample name="withFormatting" />
+
+### Empty Values
+
+When `null`, `undefined`, `""`, or `[]` are provided, the component displays a fallback dash with accessible text.
+
+<ComponentExample name="withNoValue" />
+
+## Props
+
+<PropsTable />

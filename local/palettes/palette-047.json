@@ -1,0 +1,15 @@
+{
+  "id": "palette-047",
+  "name": "starface",
+  "source": "inspiration-image",
+  "colors": {
+    "bg": "#0a0a0a",
+    "surface": "#141414",
+    "card": "#1e1e1e",
+    "accent": "#FFEA00",
+    "secondary": "#00FF00",
+    "text": "#FF00FF",
+    "muted": "#00FFFF"
+  },
+  "weight": 0
+}

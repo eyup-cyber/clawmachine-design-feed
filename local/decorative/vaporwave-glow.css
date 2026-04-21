@@ -1,0 +1,63 @@
+/* Decorative Layer: Vaporwave Glow
+ * Neon glow borders, gradient text effects, dreamy atmosphere.
+ * Uses --sl-accent and --sl-secondary for dual-tone glow.
+ */
+
+.deco-vaporwave-glow .card,
+.deco-vaporwave-glow [data-card] {
+  border: 1px solid color-mix(in srgb, var(--sl-accent) 40%, transparent);
+  box-shadow:
+    0 0 10px color-mix(in srgb, var(--sl-accent) 15%, transparent),
+    0 0 30px
+      color-mix(in srgb, var(--sl-secondary, var(--sl-accent)) 8%, transparent),
+    inset 0 0 10px color-mix(in srgb, var(--sl-accent) 5%, transparent);
+}
+
+.deco-vaporwave-glow button,
+.deco-vaporwave-glow [data-btn] {
+  border: 1px solid var(--sl-accent);
+  box-shadow:
+    0 0 8px color-mix(in srgb, var(--sl-accent) 30%, transparent),
+    0 0 20px color-mix(in srgb, var(--sl-accent) 10%, transparent);
+  transition: box-shadow 0.3s ease;
+}
+
+.deco-vaporwave-glow button:hover,
+.deco-vaporwave-glow [data-btn]:hover {
+  box-shadow:
+    0 0 12px color-mix(in srgb, var(--sl-accent) 50%, transparent),
+    0 0 30px color-mix(in srgb, var(--sl-accent) 20%, transparent),
+    0 0 50px
+      color-mix(in srgb, var(--sl-secondary, var(--sl-accent)) 10%, transparent);
+}
+
+.deco-vaporwave-glow h1,
+.deco-vaporwave-glow h2 {
+  background: linear-gradient(
+    135deg,
+    var(--sl-accent),
+    var(--sl-secondary, var(--sl-accent))
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: none;
+}
+
+.deco-vaporwave-glow h3 {
+  text-shadow: 0 0 10px color-mix(in srgb, var(--sl-accent) 30%, transparent);
+}
+
+.deco-vaporwave-glow hr,
+.deco-vaporwave-glow [data-divider] {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    var(--sl-accent),
+    var(--sl-secondary, var(--sl-accent)),
+    var(--sl-accent)
+  );
+  opacity: 0.5;
+  box-shadow: 0 0 8px color-mix(in srgb, var(--sl-accent) 30%, transparent);
+}

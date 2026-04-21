@@ -1,0 +1,130 @@
+<div class="block-feed-timeline">
+<style>
+.block-feed-timeline .panel {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow: hidden;
+}
+.block-feed-timeline .panel-hdr {
+  padding: var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block-feed-timeline .panel-title {
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  
+  letter-spacing: 0.04em;
+}
+.block-feed-timeline .panel-badge {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  
+  padding: 3px 8px;
+  border: 1px solid var(--sl-accent);
+  border-radius: var(--sl-border-radius);
+  color: var(--sl-accent);
+}
+.block-feed-timeline .feed-list { list-style: none; }
+.block-feed-timeline .feed-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sl-space-sm);
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-text) 4%, transparent);
+  transition: background 0.15s;
+}
+.block-feed-timeline .feed-item:hover {
+  background: color-mix(in srgb, var(--sl-text) 2%, transparent);
+}
+.block-feed-timeline .feed-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sl-accent);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+.block-feed-timeline .feed-dot.warn { background: var(--sl-secondary); }
+.block-feed-timeline .feed-dot.mute { background: var(--sl-muted); }
+.block-feed-timeline .feed-text {
+  font-size: 12px;
+  color: var(--sl-text);
+  line-height: 1.4;
+}
+.block-feed-timeline .feed-time {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-muted);
+  display: block;
+  margin-top: 2px;
+  letter-spacing: 0.06em;
+}
+</style>
+
+<div class="panel">
+  <div class="panel-hdr">
+    <span class="panel-title">SYSTEM FEED</span>
+    <span class="panel-badge">24H</span>
+  </div>
+  <div class="panel-body" style="padding:0">
+    <ul class="feed-list">
+      <li class="feed-item">
+        <span class="feed-dot"></span>
+        <span class="feed-text">
+          machine #0847 restocked — 240 units loaded
+          <span class="feed-time">14:32 UTC</span>
+        </span>
+      </li>
+      <li class="feed-item">
+        <span class="feed-dot warn"></span>
+        <span class="feed-text">
+          revenue anomaly detected at harbour district — investigating
+          <span class="feed-time">13:18 UTC</span>
+        </span>
+      </li>
+      <li class="feed-item">
+        <span class="feed-dot"></span>
+        <span class="feed-text">
+          operator shift change — team bravo now active
+          <span class="feed-time">12:00 UTC</span>
+        </span>
+      </li>
+      <li class="feed-item">
+        <span class="feed-dot mute"></span>
+        <span class="feed-text">
+          daily backup — 847 records archived
+          <span class="feed-time">04:00 UTC</span>
+        </span>
+      </li>
+      <li class="feed-item">
+        <span class="feed-dot"></span>
+        <span class="feed-text">
+          firmware v2.4.1 deployed to 38 machines
+          <span class="feed-time">02:45 UTC</span>
+        </span>
+      </li>
+      <li class="feed-item">
+        <span class="feed-dot warn"></span>
+        <span class="feed-text">
+          machine #0219 — claw tension sensor recalibrated
+          <span class="feed-time">01:12 UTC</span>
+        </span>
+      </li>
+      <li class="feed-item">
+        <span class="feed-dot mute"></span>
+        <span class="feed-text">
+          weekly performance report generated
+          <span class="feed-time">00:00 UTC</span>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>

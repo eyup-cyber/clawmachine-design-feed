@@ -1,0 +1,138 @@
+<!-- NAV VARIANT: HAMBURGER — full-screen overlay menu with staggered reveal -->
+<style>
+.nav-hamburger-trigger {
+  position: fixed;
+  top: var(--sl-space-md);
+  left: var(--sl-space-md);
+  z-index: 300;
+  width: 36px;
+  height: 36px;
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.nav-hamburger-trigger:hover {
+  border-color: var(--sl-accent);
+}
+
+.nav-hamburger-trigger .bar {
+  width: 16px;
+  height: 2px;
+  background: var(--sl-text);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-hamburger-trigger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translate(3px, 3px);
+}
+
+.nav-hamburger-trigger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-hamburger-trigger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(3px, -3px);
+}
+
+.nav-hamburger-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 250;
+  background: color-mix(in srgb, var(--sl-bg) 95%, transparent);
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sl-space-lg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.nav-hamburger-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.nav-hamburger-overlay .menu-item {
+  font-family: var(--sl-font-display);
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 700;
+  
+  letter-spacing: -0.02em;
+  color: var(--sl-muted);
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-md);
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.nav-hamburger-overlay.open .menu-item {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* staggered animation */
+.nav-hamburger-overlay.open .menu-item:nth-child(1) { transition-delay: 0.05s }
+.nav-hamburger-overlay.open .menu-item:nth-child(2) { transition-delay: 0.10s }
+.nav-hamburger-overlay.open .menu-item:nth-child(3) { transition-delay: 0.15s }
+.nav-hamburger-overlay.open .menu-item:nth-child(4) { transition-delay: 0.20s }
+.nav-hamburger-overlay.open .menu-item:nth-child(5) { transition-delay: 0.25s }
+.nav-hamburger-overlay.open .menu-item:nth-child(6) { transition-delay: 0.30s }
+
+.nav-hamburger-overlay .menu-item:hover {
+  color: var(--sl-accent);
+  transform: translateX(8px);
+}
+
+.nav-hamburger-overlay .menu-item.active {
+  color: var(--sl-accent);
+}
+
+.nav-hamburger-overlay .menu-item .menu-num {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: var(--sl-muted);
+  min-width: 28px;
+}
+
+.nav-hamburger-overlay .menu-footer {
+  position: absolute;
+  bottom: var(--sl-space-xl);
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-muted);
+}
+</style>
+
+<div class="nav-hamburger-trigger" onclick="this.classList.toggle('open');document.querySelector('.nav-hamburger-overlay').classList.toggle('open')">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</div>
+
+<div class="nav-hamburger-overlay">
+  <a class="menu-item active"><span class="menu-num">01</span> DASHBOARD</a>
+  <a class="menu-item"><span class="menu-num">02</span> INVENTORY</a>
+  <a class="menu-item"><span class="menu-num">03</span> ANALYTICS</a>
+  <a class="menu-item"><span class="menu-num">04</span> OPERATORS</a>
+  <a class="menu-item"><span class="menu-num">05</span> SETTINGS</a>
+  <a class="menu-item"><span class="menu-num">06</span> DIAGNOSTICS</a>
+  <div class="menu-footer">clawmachine // OPERATOR INTERFACE V3.1</div>
+</div>

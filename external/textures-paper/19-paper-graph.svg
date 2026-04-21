@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <filter id="graingraph">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="33"/>
+      <feColorMatrix values="0 0 0 0 0.85 0 0 0 0 0.82 0 0 0 0 0.75 0 0 0 0.18 0"/>
+    </filter>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#b4a378" stroke-width="0.4" opacity="0.6"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="400" fill="#f4eddb"/>
+  <rect width="400" height="400" fill="url(#grid)"/>
+  <rect width="400" height="400" filter="url(#graingraph)"/>
+</svg>

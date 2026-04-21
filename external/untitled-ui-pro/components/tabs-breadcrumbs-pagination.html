@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Tabs, Breadcrumbs, Pagination, Steppers — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css"><link rel="stylesheet" href="../design.css">
+</head>
+<body>
+<main class="uui-container showcase">
+  <h2>Navigation primitives</h2>
+  <p class="lead">Horizontal tabs, vertical tabs, breadcrumbs, pagination, progress steppers.</p>
+
+  <section class="uui-stack gap-8">
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Horizontal tabs (underline)</h3>
+      <nav class="uui-tabs">
+        <button class="uui-tab is-active">Overview</button>
+        <button class="uui-tab">Analytics</button>
+        <button class="uui-tab">Reports</button>
+        <button class="uui-tab">Notifications</button>
+        <button class="uui-tab">Settings</button>
+      </nav>
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Button tabs</h3>
+      <nav style="display:inline-flex;padding:4px;background:var(--color-bg-secondary);border-radius:var(--radius-lg);gap:2px;">
+        <button class="uui-btn uui-btn--sm" style="background:var(--color-bg-primary);color:var(--color-text-secondary);box-shadow:var(--shadow-xs);">12 months</button>
+        <button class="uui-btn uui-btn--sm" style="background:transparent;color:var(--color-text-tertiary);">30 days</button>
+        <button class="uui-btn uui-btn--sm" style="background:transparent;color:var(--color-text-tertiary);">7 days</button>
+        <button class="uui-btn uui-btn--sm" style="background:transparent;color:var(--color-text-tertiary);">24 hours</button>
+      </nav>
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Vertical tabs</h3>
+      <nav style="display:inline-flex;flex-direction:column;gap:4px;">
+        <a href="#" style="padding:8px 12px;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-secondary);background:var(--color-bg-brand-primary);">Personal info</a>
+        <a href="#" style="padding:8px 12px;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;color:var(--color-text-tertiary);">Company</a>
+        <a href="#" style="padding:8px 12px;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;color:var(--color-text-tertiary);">Billing</a>
+        <a href="#" style="padding:8px 12px;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;color:var(--color-text-tertiary);">Notifications</a>
+        <a href="#" style="padding:8px 12px;border-radius:var(--radius-md);font-size:var(--text-sm);font-weight:600;color:var(--color-text-tertiary);">Integrations</a>
+      </nav>
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Breadcrumbs</h3>
+      <nav class="uui-crumbs">
+        <a href="#">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;"><path d="M2.5 7.5 10 1.67 17.5 7.5V16.67a1.67 1.67 0 0 1-1.67 1.66H4.17a1.67 1.67 0 0 1-1.67-1.66V7.5Z"/><path d="M7.5 18.33v-8.33h5v8.33"/></svg>
+        </a>
+        <span class="sep">/</span>
+        <a href="#">Settings</a>
+        <span class="sep">/</span>
+        <a href="#">Team members</a>
+        <span class="sep">/</span>
+        <span class="current">Olivia Rhye</span>
+      </nav>
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Pagination</h3>
+      <div style="padding:16px 0;">
+        <div class="uui-pagination">
+          <button class="uui-btn uui-btn--secondary uui-btn--sm">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M15.83 10H4.17M10 15.83 4.17 10 10 4.17"/></svg>
+            Previous
+          </button>
+          <div class="pages">
+            <a href="#" class="is-active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <span style="padding:0 8px;color:var(--color-fg-quaternary);align-self:center;">...</span>
+            <a href="#">8</a>
+            <a href="#">9</a>
+            <a href="#">10</a>
+          </div>
+          <button class="uui-btn uui-btn--secondary uui-btn--sm">
+            Next
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M4.17 10h11.66M10 4.17 15.83 10 10 15.83"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Progress stepper — horizontal</h3>
+      <div style="display:flex;gap:16px;align-items:flex-start;">
+        <div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="uui-ficon uui-ficon--sm" style="background:var(--color-bg-brand-solid);color:#fff;box-shadow:0 0 0 4px var(--color-bg-brand-primary);"><svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.67 5 7.5 14.17 3.33 10"/></svg></span>
+            <span style="flex:1;height:2px;background:var(--color-brand-600);"></span>
+          </div>
+          <div>
+            <div style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-secondary);">Your details</div>
+            <div style="font-size:var(--text-sm);color:var(--color-text-tertiary);">Name and email</div>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="uui-ficon uui-ficon--sm" style="background:var(--color-bg-primary);color:var(--color-text-brand-secondary);box-shadow:inset 0 0 0 2px var(--color-brand-600),0 0 0 4px var(--color-bg-brand-primary);"><span style="font-size:var(--text-sm);font-weight:600;">2</span></span>
+            <span style="flex:1;height:2px;background:var(--color-border-secondary);"></span>
+          </div>
+          <div>
+            <div style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-secondary);">Choose a plan</div>
+            <div style="font-size:var(--text-sm);color:var(--color-text-tertiary);">Select your plan</div>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="uui-ficon uui-ficon--sm" style="background:var(--color-bg-primary);color:var(--color-text-quaternary);box-shadow:inset 0 0 0 1.5px var(--color-border-primary);"><span style="font-size:var(--text-sm);font-weight:600;">3</span></span>
+            <span style="flex:1;height:2px;background:var(--color-border-secondary);"></span>
+          </div>
+          <div>
+            <div style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-secondary);">Add payment</div>
+            <div style="font-size:var(--text-sm);color:var(--color-text-tertiary);">Enter billing</div>
+          </div>
+        </div>
+        <div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span class="uui-ficon uui-ficon--sm" style="background:var(--color-bg-primary);color:var(--color-text-quaternary);box-shadow:inset 0 0 0 1.5px var(--color-border-primary);"><span style="font-size:var(--text-sm);font-weight:600;">4</span></span>
+          </div>
+          <div>
+            <div style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-secondary);">Invite team</div>
+            <div style="font-size:var(--text-sm);color:var(--color-text-tertiary);">Optional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+</body>
+</html>

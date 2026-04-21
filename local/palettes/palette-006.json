@@ -1,0 +1,15 @@
+{
+  "id": "palette-006",
+  "name": "velvet-engine",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#1a0d1a",
+    "surface": "#2d1a2d",
+    "card": "#3d2a3d",
+    "accent": "#d4af37",
+    "secondary": "#ff4d94",
+    "text": "#f0e5f0",
+    "muted": "#8b6d8b"
+  },
+  "weight": 0
+}

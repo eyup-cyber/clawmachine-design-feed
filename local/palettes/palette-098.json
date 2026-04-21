@@ -1,0 +1,15 @@
+{
+  "id": "palette-098",
+  "name": "data-stream-deep",
+  "source": "ultra-expansion-cycle2-cyberpunk-neon",
+  "colors": {
+    "bg": "#00121A",
+    "surface": "#002838",
+    "card": "#001D29",
+    "accent": "#FF0055",
+    "secondary": "#00FFDD",
+    "text": "#E0F7FF",
+    "muted": "#994060"
+  },
+  "weight": 10
+}

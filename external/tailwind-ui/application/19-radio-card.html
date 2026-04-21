@@ -1,0 +1,19 @@
+<!-- Tailwind UI-style — Radio cards (pricing-plan style) -->
+<fieldset class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+  <legend class="sr-only">Select a plan</legend>
+  <label class="relative flex cursor-pointer rounded-lg border border-gray-300 bg-white p-4 shadow-xs focus:outline-hidden has-[:checked]:border-transparent has-[:checked]:ring-2 has-[:checked]:ring-indigo-600">
+    <input type="radio" name="plan" value="hobby" class="sr-only" checked aria-labelledby="plan-hobby-label" aria-describedby="plan-hobby-description">
+    <span class="flex flex-1">
+      <span class="flex flex-col"><span id="plan-hobby-label" class="block text-sm font-medium text-gray-900">Hobby</span><span id="plan-hobby-description" class="mt-1 flex items-center text-sm text-gray-500">8GB / 4 CPUs</span><span class="mt-6 text-sm font-medium text-gray-900">$40/mo</span></span>
+    </span>
+    <svg class="size-5 text-indigo-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/></svg>
+  </label>
+  <label class="relative flex cursor-pointer rounded-lg border border-gray-300 bg-white p-4 shadow-xs focus:outline-hidden has-[:checked]:border-transparent has-[:checked]:ring-2 has-[:checked]:ring-indigo-600">
+    <input type="radio" name="plan" value="startup" class="sr-only">
+    <span class="flex flex-1"><span class="flex flex-col"><span class="block text-sm font-medium text-gray-900">Startup</span><span class="mt-1 flex items-center text-sm text-gray-500">12GB / 6 CPUs</span><span class="mt-6 text-sm font-medium text-gray-900">$80/mo</span></span></span>
+  </label>
+  <label class="relative flex cursor-pointer rounded-lg border border-gray-300 bg-white p-4 shadow-xs focus:outline-hidden has-[:checked]:border-transparent has-[:checked]:ring-2 has-[:checked]:ring-indigo-600">
+    <input type="radio" name="plan" value="enterprise" class="sr-only">
+    <span class="flex flex-1"><span class="flex flex-col"><span class="block text-sm font-medium text-gray-900">Enterprise</span><span class="mt-1 flex items-center text-sm text-gray-500">32GB / 12 CPUs</span><span class="mt-6 text-sm font-medium text-gray-900">$160/mo</span></span></span>
+  </label>
+</fieldset>

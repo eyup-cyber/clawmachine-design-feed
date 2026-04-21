@@ -1,0 +1,76 @@
+---
+import { getCollection } from 'astro:content'
+
+import { SEO_TITLE_SITE, SEO_DESCRIPTION_SITE } from '../consts'
+
+import BaseAd from '../components/BaseAd.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import CollectionFeature from '../components/CollectionFeature.astro'
+
+const [applicationRaw, marketingRaw, neobrutalismRaw] = await Promise.all([
+  getCollection('application'),
+  getCollection('marketing'),
+  getCollection('neobrutalism'),
+])
+
+const application = applicationRaw
+  .map(({ data }) => data)
+  .sort((a, b) => a.title.localeCompare(b.title))
+  .slice(0, 9)
+
+const marketing = marketingRaw
+  .map(({ data }) => data)
+  .sort((a, b) => a.title.localeCompare(b.title))
+  .slice(0, 9)
+
+const neobrutalism = neobrutalismRaw
+  .map(({ data }) => data)
+  .sort((a, b) => a.title.localeCompare(b.title))
+  .slice(0, 9)
+---
+
+<BaseLayout title={SEO_TITLE_SITE} description={SEO_DESCRIPTION_SITE}>
+  <section class="bg-white">
+    <div class="mx-auto max-w-4xl space-y-6 px-4 py-8 text-center md:py-16">
+      <h1 class="text-6xl font-medium tracking-tight md:text-7xl lg:text-8xl">HyperUI</h1>
+
+      <h2 class="text-xl text-gray-600 md:text-2xl">Free Open Source Tailwind CSS Components</h2>
+
+      <p class="mx-auto max-w-2xl text-gray-600">
+        HyperUI is a collection of free Tailwind CSS components that can be used in your next
+        project. With a range of components, you can build your next marketing website, admin
+        dashboard, eCommerce store and much more.
+      </p>
+
+      <div class="*:mx-auto">
+        <BaseAd />
+      </div>
+    </div>
+  </section>
+
+  <main
+    id="main-content"
+    class="mx-auto max-w-7xl divide-y divide-gray-200 border-t border-gray-200 px-4"
+  >
+    <CollectionFeature
+      title="Application Components"
+      description="Components for building application user interfaces."
+      slug="application"
+      components={application}
+    />
+
+    <CollectionFeature
+      title="Marketing Components"
+      description="Components for building marketing websites and landing pages."
+      slug="marketing"
+      components={marketing}
+    />
+
+    <CollectionFeature
+      title="Neobrutalism Components"
+      description="Components for building neobrutalist designs."
+      slug="neobrutalism"
+      components={neobrutalism}
+    />
+  </main>
+</BaseLayout>

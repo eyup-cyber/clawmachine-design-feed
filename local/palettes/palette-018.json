@@ -1,0 +1,15 @@
+{
+  "id": "palette-018",
+  "name": "paper-machine-dark",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0a0808",
+    "surface": "#1a1610",
+    "card": "#2a261e",
+    "accent": "#c41e3a",
+    "secondary": "#1e3a8a",
+    "text": "#f0ead8",
+    "muted": "#6b6458"
+  },
+  "weight": 10
+}

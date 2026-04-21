@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 900" width="1440">
+  <rect width="1440" height="900" fill="#0A0A0A"/>
+  <rect x="40" y="40" width="1360" height="820" rx="10" fill="#F5F2EC"/>
+  <rect x="40" y="40" width="1360" height="40" rx="10" fill="#E8E4DC"/>
+  <circle cx="68" cy="60" r="6" fill="#FF5F56"/>
+  <circle cx="88" cy="60" r="6" fill="#FFBD2E"/>
+  <circle cx="108" cy="60" r="6" fill="#27C93F"/>
+  <rect x="160" y="50" width="1000" height="20" rx="10" fill="#D4D0C6"/>
+  <text x="720" y="470" font-family="system-ui" font-size="20" fill="#888" text-anchor="middle">Browser canvas 1360×780</text>
+</svg>

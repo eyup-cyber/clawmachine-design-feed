@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Stripe — Component Specimens</title>
+<style>
+:root {
+  --bg:#FFFFFF; --bg-panel:#F6F9FC; --bg-panel-cool:#F8FAFD;
+  --border-faint:#E3ECF7; --border:#D6DEE7;
+  --text-navy:#0A2540; --text-deep:#061B31; --text-slate:#273951; --text-muted:#3C4F69; --text-body:#414552; --text-subtle:#697386;
+  --indigo:#5469D4; --indigo-bright:#556CD6; --indigo-deep:#1318C1;
+  --violet:#533AFD; --violet-soft:#BDB4FF;
+  --success:#00D66F; --info:#0073E6; --warn:#FFCF5E; --danger:#EA2261;
+  --radius:4px; --radius-lg:8px;
+  --font-sans:sohne-var,'Helvetica Neue',Arial,sans-serif;
+  --font-mono:'Source Code Pro',ui-monospace,SFMono-Regular,monospace;
+  --shadow-card:0 0 0 1px rgba(60,66,87,0.08), rgba(60,66,87,0.08) 0 2px 5px, rgba(0,0,0,0.12) 0 1px 1px;
+  --shadow-soft:0 1px 2px rgba(0,0,0,0.04), 0 4px 8px rgba(60,66,87,0.04);
+}
+@font-face { font-family:'sohne-var'; src:url('https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/media/Sohne.cb178166.woff2') format('woff2-variations'); font-weight:1 1000; font-display:swap; }
+@font-face { font-family:'SourceCodePro'; src:url('https://b.stripecdn.com/mkt-ssr-statics/assets/_next/static/media/SourceCodePro-Medium.f5ba3e6a.woff2') format('woff2'); font-weight:500; font-display:swap; }
+
+* { box-sizing: border-box; }
+body { margin: 0; padding: 48px; background: var(--bg); color: var(--text-body); font-family: var(--font-sans); font-size: 14px; font-weight: 300; }
+h1 { font-size: 32px; font-weight: 500; color: var(--text-navy); letter-spacing: -0.01em; margin: 0 0 8px; }
+h2 { font-size: 16px; font-weight: 500; color: var(--text-navy); margin: 40px 0 16px; padding-top: 20px; border-top: 1px solid var(--border-faint); }
+p.lede { color: var(--text-muted); margin-bottom: 32px; }
+.row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 14px; border-radius: var(--radius); font-size: 14px; font-weight: 500; cursor: pointer; border: none; font-family: inherit; transition: all 0.15s ease; }
+.btn--primary { background: var(--indigo); color: white; box-shadow: 0 1px 1px rgba(0,0,0,0.05), 0 2px 4px rgba(84,105,212,0.25); }
+.btn--primary:hover { background: var(--indigo-bright); }
+.btn--violet { background: var(--violet); color: white; }
+.btn--violet:hover { background: #4428E8; }
+.btn--secondary { background: var(--bg); color: var(--text-navy); border: 1px solid var(--border); box-shadow: var(--shadow-soft); }
+.btn--secondary:hover { border-color: var(--indigo); }
+.btn--ghost { background: transparent; color: var(--indigo); }
+.btn--ghost:hover { background: rgba(84,105,212,0.05); }
+.btn--danger { background: var(--danger); color: white; }
+
+/* Input */
+.input { display: block; width: 320px; height: 36px; padding: 0 12px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); font-family: inherit; font-size: 14px; color: var(--text-navy); font-weight: 400; transition: border-color 0.15s; box-shadow: var(--shadow-soft); }
+.input:focus { outline: none; border-color: var(--indigo); box-shadow: 0 0 0 3px rgba(84,105,212,0.15); }
+.input::placeholder { color: var(--text-subtle); }
+
+/* Card */
+.card { background: var(--bg); border: 1px solid var(--border-faint); border-radius: var(--radius); padding: 20px 24px; max-width: 440px; box-shadow: var(--shadow-soft); }
+.card-label { font-size: 13px; color: var(--text-subtle); font-weight: 400; margin-bottom: 4px; }
+.card-value { font-size: 28px; font-weight: 500; color: var(--text-navy); letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.card-delta { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; color: var(--success); font-weight: 500; margin-left: 8px; }
+.card-delta.neg { color: var(--danger); }
+.card-sub { font-size: 12px; color: var(--text-subtle); margin-top: 6px; }
+
+/* Badge (pill) */
+.badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 8px; font-size: 12px; font-weight: 500; border-radius: 12px; }
+.badge--success { color: var(--success); background: rgba(0,214,111,0.1); }
+.badge--failed { color: var(--danger); background: rgba(234,34,97,0.1); }
+.badge--pending { color: #B78400; background: rgba(255,207,94,0.15); }
+.badge--info { color: var(--info); background: rgba(0,115,230,0.1); }
+.badge--refunded { color: var(--text-muted); background: var(--bg-panel); }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+/* Table */
+table.stripe { width: 100%; border-collapse: collapse; font-size: 13px; background: var(--bg); border: 1px solid var(--border-faint); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-soft); }
+table.stripe thead th { text-align: left; padding: 10px 16px; font-size: 11px; font-weight: 500; color: var(--text-subtle); background: var(--bg-panel); border-bottom: 1px solid var(--border-faint); text-transform: uppercase; letter-spacing: 0.04em; }
+table.stripe tbody td { padding: 12px 16px; border-bottom: 1px solid var(--border-faint); font-weight: 400; color: var(--text-body); }
+table.stripe tbody tr:last-child td { border-bottom: none; }
+table.stripe tbody tr:hover { background: var(--bg-panel-cool); }
+.amount { font-weight: 500; color: var(--text-navy); font-variant-numeric: tabular-nums; }
+.card-brand { display: inline-block; padding: 2px 6px; border-radius: 3px; font-family: var(--font-mono); font-size: 11px; font-weight: 500; border: 1px solid var(--border-faint); background: var(--bg-panel); color: var(--text-muted); margin-right: 6px; }
+
+/* Invoice line-item (signature Stripe pattern) */
+.invoice { max-width: 540px; background: var(--bg); border: 1px solid var(--border-faint); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-card); font-size: 13px; }
+.invoice h3 { font-size: 15px; font-weight: 500; color: var(--text-navy); margin-bottom: 4px; }
+.invoice-period { color: var(--text-subtle); font-size: 12px; margin-bottom: 16px; }
+.line { display: grid; grid-template-columns: 1fr 80px 100px 100px; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border-faint); align-items: center; }
+.line:last-of-type { border-bottom: none; }
+.line .lbl { color: var(--text-body); }
+.line .qty, .line .rate, .line .amt { font-variant-numeric: tabular-nums; text-align: right; color: var(--text-slate); }
+.line .amt { color: var(--text-navy); font-weight: 500; }
+.line--tier { padding-left: 16px; color: var(--text-subtle); font-size: 12px; }
+.line--total { padding-top: 12px; margin-top: 8px; border-top: 2px solid var(--text-navy); font-weight: 500; }
+.line--total .lbl { color: var(--text-navy); }
+.line--discount .amt { color: var(--danger); }
+
+/* Balance card */
+.balance { display: flex; gap: 0; background: var(--bg); border: 1px solid var(--border-faint); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-soft); }
+.balance > div { flex: 1; padding: 20px 24px; border-right: 1px solid var(--border-faint); }
+.balance > div:last-child { border-right: none; }
+
+/* Transaction timeline */
+.timeline { border-left: 2px solid var(--border-faint); padding-left: 20px; margin-left: 6px; }
+.timeline-item { position: relative; padding-bottom: 18px; font-size: 13px; color: var(--text-body); }
+.timeline-item::before { content: ''; position: absolute; left: -26px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--bg); border: 2px solid var(--indigo); }
+.timeline-item.done::before { background: var(--indigo); }
+.timeline-time { display: block; font-size: 11px; color: var(--text-subtle); font-variant-numeric: tabular-nums; margin-bottom: 2px; }
+</style>
+</head>
+<body>
+<h1>Stripe — Component Specimens</h1>
+<p class="lede">Tokens extracted from b.stripecdn.com production CSS + docs.stripe.com. Signatures: pale-cool #F6F9FC panels, hairline-ring shadows, indigo-on-white, tabular-num amounts.</p>
+
+<h2>Buttons</h2>
+<div class="row">
+  <button class="btn btn--primary">Get started</button>
+  <button class="btn btn--violet">Create payment</button>
+  <button class="btn btn--secondary">Contact sales</button>
+  <button class="btn btn--ghost">Cancel</button>
+  <button class="btn btn--danger">Refund</button>
+</div>
+
+<h2>Inputs</h2>
+<div class="row"><input class="input" placeholder="raygunelectronics@gmail.com"></div>
+<div class="row"><input class="input" value="cus_Q8XK2hT6aFxmP1"></div>
+
+<h2>Stat cards</h2>
+<div class="row" style="gap:16px;">
+  <div class="card">
+    <div class="card-label">Gross volume</div>
+    <div class="card-value">$12,847.50 <span class="card-delta">▲ 12.4%</span></div>
+    <div class="card-sub">vs $11,427.18 previous 7 days</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Failed payments</div>
+    <div class="card-value">11 <span class="card-delta neg">▲ 2</span></div>
+    <div class="card-sub">3.1% of 353 attempts</div>
+  </div>
+</div>
+
+<h2>Balance card</h2>
+<div class="balance" style="max-width:540px;">
+  <div>
+    <div class="card-label">Available to pay out</div>
+    <div class="card-value">$8,214.02</div>
+    <div class="card-sub">USD</div>
+  </div>
+  <div>
+    <div class="card-label">In transit</div>
+    <div class="card-value" style="color:var(--text-muted);">$4,198.80</div>
+    <div class="card-sub">Arrives Apr 23</div>
+  </div>
+</div>
+
+<h2>Badges</h2>
+<div class="row">
+  <span class="badge badge--success"><span class="dot"></span>Succeeded</span>
+  <span class="badge badge--failed"><span class="dot"></span>Failed</span>
+  <span class="badge badge--pending"><span class="dot"></span>Pending</span>
+  <span class="badge badge--info"><span class="dot"></span>Incomplete</span>
+  <span class="badge badge--refunded"><span class="dot"></span>Refunded</span>
+</div>
+
+<h2>Payments table</h2>
+<table class="stripe">
+  <thead><tr><th>Amount</th><th>Status</th><th>Customer</th><th>Card</th><th>Description</th><th>Date</th></tr></thead>
+  <tbody>
+    <tr><td class="amount">$249.00</td><td><span class="badge badge--success"><span class="dot"></span>Succeeded</span></td><td>morgan.r@proton.me</td><td><span class="card-brand">VISA</span>•••• 4242</td><td>ClawMachine Pro</td><td>11:47 AM</td></tr>
+    <tr><td class="amount">$49.00</td><td><span class="badge badge--success"><span class="dot"></span>Succeeded</span></td><td>jlovell@gmail.com</td><td><span class="card-brand">MC</span>•••• 5100</td><td>Scout Starter</td><td>10:32 AM</td></tr>
+    <tr><td class="amount">$149.00</td><td><span class="badge badge--pending"><span class="dot"></span>Pending</span></td><td>s.verma@wholesale-uk</td><td>SEPA •••• 8291</td><td>Pallet credits</td><td>Yesterday</td></tr>
+    <tr><td class="amount">$49.00</td><td><span class="badge badge--failed"><span class="dot"></span>Failed</span></td><td>d.ray@cex.co.uk</td><td><span class="card-brand">VISA</span>•••• 0002</td><td>Scout Starter</td><td>Yesterday</td></tr>
+  </tbody>
+</table>
+
+<h2>Invoice line-items (signature Stripe pattern)</h2>
+<div class="invoice">
+  <h3>Invoice</h3>
+  <div class="invoice-period">Billing period Apr 1 – Apr 30, 2026</div>
+  <div class="line" style="border-bottom:1px solid var(--border);font-size:11px;text-transform:uppercase;color:var(--text-subtle);letter-spacing:0.04em;">
+    <span class="lbl">Description</span><span class="qty">Qty</span><span class="rate">Price</span><span class="amt">Amount</span>
+  </div>
+  <div class="line"><span class="lbl">Setup fee</span><span class="qty">1</span><span class="rate">$600.00</span><span class="amt">$600.00</span></div>
+  <div class="line"><span class="lbl">Enterprise (per user)</span><span class="qty">28</span><span class="rate">$50.00</span><span class="amt">$1,400.00</span></div>
+  <div class="line"><span class="lbl">Additional bandwidth (per GB)</span><span class="qty">20</span><span class="rate">$50.00</span><span class="amt">$1,000.00</span></div>
+  <div class="line"><span class="lbl"><strong>Storage (per GB)</strong></span><span class="qty"></span><span class="rate"></span><span class="amt"></span></div>
+  <div class="line line--tier"><span class="lbl">First 1,000</span><span class="qty">1,000</span><span class="rate">$1.00</span><span class="amt">$1,000.00</span></div>
+  <div class="line line--tier"><span class="lbl">Next 1,001 to 10,000</span><span class="qty">9,000</span><span class="rate">$0.50</span><span class="amt">$4,500.00</span></div>
+  <div class="line line--tier"><span class="lbl">10,001 and above</span><span class="qty">100</span><span class="rate">$0.25</span><span class="amt">$25.00</span></div>
+  <div class="line line--discount"><span class="lbl">Discount (referral)</span><span class="qty"></span><span class="rate"></span><span class="amt">-$1,000.00</span></div>
+  <div class="line line--total"><span class="lbl">Total</span><span class="qty"></span><span class="rate"></span><span class="amt">$7,525.00</span></div>
+</div>
+
+<h2>Event timeline</h2>
+<div class="timeline" style="margin-top:12px;">
+  <div class="timeline-item done"><span class="timeline-time">2 hours ago</span>Updated payment method to Visa ending in 4028</div>
+  <div class="timeline-item done"><span class="timeline-time">7 hours ago</span>Payment failed and an alert was sent</div>
+  <div class="timeline-item done"><span class="timeline-time">1 day ago</span>Changed subscription from Bronze to Gold Plan</div>
+  <div class="timeline-item done"><span class="timeline-time">5 days ago</span>Canceled subscription to Additional Storage</div>
+  <div class="timeline-item done"><span class="timeline-time">7 days ago</span>Stripe automatically updated a Visa ending in 4242</div>
+  <div class="timeline-item done"><span class="timeline-time">10 days ago</span>Subscribed to Bronze Plan</div>
+  <div class="timeline-item done"><span class="timeline-time">15 days ago</span>Customer for John Appleseed was created</div>
+</div>
+</body>
+</html>

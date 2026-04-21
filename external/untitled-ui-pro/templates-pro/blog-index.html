@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Blog — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="../design.css">
+</head>
+<body>
+
+<!-- hero + filters -->
+<section class="uui-container" style="padding:96px 32px 48px;">
+  <div style="text-align:center;max-width:720px;margin:0 auto 48px;">
+    <span style="font-size:var(--text-md);font-weight:600;color:var(--color-text-brand-secondary);">Our blog</span>
+    <h1 class="t-display-xl" style="font-weight:600;color:var(--color-text-primary);margin-top:16px;">Field notes from product teams</h1>
+    <p style="font-size:var(--text-lg);color:var(--color-text-tertiary);margin-top:20px;">Design systems, token pipelines, and the occasional unpopular opinion.</p>
+  </div>
+
+  <!-- filter bar -->
+  <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:48px;">
+    <div class="uui-row gap-2" role="tablist">
+      <button role="tab" aria-selected="true" class="uui-btn uui-btn--primary uui-btn--md">All</button>
+      <button role="tab" class="uui-btn uui-btn--secondary uui-btn--md">Design</button>
+      <button role="tab" class="uui-btn uui-btn--secondary uui-btn--md">Engineering</button>
+      <button role="tab" class="uui-btn uui-btn--secondary uui-btn--md">Product</button>
+      <button role="tab" class="uui-btn uui-btn--secondary uui-btn--md">Customers</button>
+      <button role="tab" class="uui-btn uui-btn--secondary uui-btn--md">Changelog</button>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center;">
+      <input type="search" placeholder="Search posts..." class="uui-input" style="min-width:240px;"/>
+    </div>
+  </div>
+</section>
+
+<!-- 9-post grid -->
+<section class="uui-container" style="padding:0 32px 96px;">
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px 24px;">
+
+    <!-- post 1 -->
+    <article style="display:flex;flex-direction:column;gap:16px;">
+      <a href="#" style="display:block;aspect-ratio:16/10;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--color-brand-300),var(--color-brand-600));"></a>
+      <div>
+        <p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">Design · 6 min read</p>
+        <h3 style="font-size:var(--text-xl);font-weight:600;color:var(--color-text-primary);margin-top:12px;"><a href="#" style="color:inherit;text-decoration:none;">Stop naming colours "primary"</a></h3>
+        <p style="color:var(--color-text-tertiary);margin-top:8px;">Why semantic token names outlive the colour choices they describe, and a starter vocabulary for teams that keep re-branding.</p>
+        <div class="uui-row gap-2 items-center" style="margin-top:16px;">
+          <span class="uui-avatar uui-avatar--sm" style="background:var(--color-brand-200);color:var(--color-brand-700);">SV</span>
+          <span style="font-size:var(--text-sm);color:var(--color-text-secondary);">Sanna Virtanen · Apr 19</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- post 2 -->
+    <article style="display:flex;flex-direction:column;gap:16px;">
+      <a href="#" style="display:block;aspect-ratio:16/10;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--color-success-solid,#17b26a),var(--color-brand-800));"></a>
+      <div>
+        <p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">Engineering · 12 min read</p>
+        <h3 style="font-size:var(--text-xl);font-weight:600;color:var(--color-text-primary);margin-top:12px;"><a href="#" style="color:inherit;text-decoration:none;">A CSS variable pipeline that survives a rebrand</a></h3>
+        <p style="color:var(--color-text-tertiary);margin-top:8px;">We rebuilt our theming engine around two layers: raw tokens and semantic aliases. Here's how it survived our third colour refresh in two years.</p>
+        <div class="uui-row gap-2 items-center" style="margin-top:16px;">
+          <span class="uui-avatar uui-avatar--sm" style="background:var(--color-brand-200);color:var(--color-brand-700);">KA</span>
+          <span style="font-size:var(--text-sm);color:var(--color-text-secondary);">Kofi Asante · Apr 15</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- post 3 -->
+    <article style="display:flex;flex-direction:column;gap:16px;">
+      <a href="#" style="display:block;aspect-ratio:16/10;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--color-warning-solid,#f79009),var(--color-brand-700));"></a>
+      <div>
+        <p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">Product · 4 min read</p>
+        <h3 style="font-size:var(--text-xl);font-weight:600;color:var(--color-text-primary);margin-top:12px;"><a href="#" style="color:inherit;text-decoration:none;">Dark mode is a hostile environment — plan for it</a></h3>
+        <p style="color:var(--color-text-tertiary);margin-top:8px;">Four concrete techniques for making dark themes that don't collapse into "everything looks like a crow at night".</p>
+        <div class="uui-row gap-2 items-center" style="margin-top:16px;">
+          <span class="uui-avatar uui-avatar--sm" style="background:var(--color-brand-200);color:var(--color-brand-700);">ML</span>
+          <span style="font-size:var(--text-sm);color:var(--color-text-secondary);">Mei-Lin Chao · Apr 12</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- post 4 -->
+    <article style="display:flex;flex-direction:column;gap:16px;">
+      <a href="#" style="display:block;aspect-ratio:16/10;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-900));"></a>
+      <div>
+        <p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">Customers · 8 min read</p>
+        <h3 style="font-size:var(--text-xl);font-weight:600;color:var(--color-text-primary);margin-top:12px;"><a href="#" style="color:inherit;text-decoration:none;">How Parabola shipped a rebrand in 14 days</a></h3>
+        <p style="color:var(--color-text-tertiary);margin-top:8px;">Their new CMO wanted a new look before an earnings call. Here's the playbook the Parabola design team used to compress a 9-month project.</p>
+        <div class="uui-row gap-2 items-center" style="margin-top:16px;">
+          <span class="uui-avatar uui-avatar--sm" style="background:var(--color-brand-200);color:var(--color-brand-700);">LR</span>
+          <span style="font-size:var(--text-sm);color:var(--color-text-secondary);">Lucia Renard · Apr 08</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- post 5 -->
+    <article style="display:flex;flex-direction:column;gap:16px;">
+      <a href="#" style="display:block;aspect-ratio:16/10;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--color-brand-400),var(--color-error-700,#b42318));"></a>
+      <div>
+        <p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">Changelog · 3 min read</p>
+        <h3 style="font-size:var(--text-xl);font-weight:600;color:var(--color-text-primary);margin-top:12px;"><a href="#" style="color:inherit;text-decoration:none;">v3.2 — real-time cursors + audit log</a></h3>
+        <p style="color:var(--color-text-tertiary);margin-top:8px;">Multi-user presence, fine-grained audit events, and a new webhook for workspace events. The full changelog is inside.</p>
+        <div class="uui-row gap-2 items-center" style="margin-top:16px;">
+          <span class="uui-avatar uui-avatar--sm" style="background:var(--color-brand-200);color:var(--color-brand-700);">EO</span>
+          <span style="font-size:var(--text-sm);color:var(--color-text-secondary);">Eben Oduya · Apr 05</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- post 6 -->
+    <article style="display:flex;flex-direction:column;gap:16px;">
+      <a href="#" style="display:block;aspect-ratio:16/10;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--color-brand-600),var(--color-neutral-900));"></a>
+      <div>
+        <p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">Design · 7 min read</p>
+        <h3 style="font-size:var(--text-xl);font-weight:600;color:var(--color-text-primary);margin-top:12px;"><a href="#" style="color:inherit;text-decoration:none;">The case against design-system gatekeepers</a></h3>
+        <p style="color:var(--color-text-tertiary);margin-top:8px;">Most design-system friction is organisational, not technical. Six patterns that kept contributions flowing in our largest customer.</p>
+        <div class="uui-row gap-2 items-center" style="margin-top:16px;">
+          <span class="uui-avatar uui-avatar--sm" style="background:var(--color-brand-200);color:var(--color-brand-700);">SV</span>
+          <span style="font-size:var(--text-sm);color:var(--color-text-secondary);">Sanna Virtanen · Mar 28</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- post 7 -->
+    <article style="display:flex;flex-direction:column;gap:16px;">
+      <a href="#" style="display:block;aspect-ratio:16/10;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--color-brand-200),var(--color-brand-600));"></a>
+      <div>
+        <p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">Engineering · 9 min read</p>
+        <h3 style="font-size:var(--text-xl);font-weight:600;color:var(--color-text-primary);margin-top:12px;"><a href="#" style="color:inherit;text-decoration:none;">Inside our SOC 2 audit, without the theatrics</a></h3>
+        <p style="color:var(--color-text-tertiary);margin-top:8px;">A plain-English walkthrough of the audit process for founders who are about to start theirs. What actually matters, what's ceremony.</p>
+        <div class="uui-row gap-2 items-center" style="margin-top:16px;">
+          <span class="uui-avatar uui-avatar--sm" style="background:var(--color-brand-200);color:var(--color-brand-700);">TV</span>
+          <span style="font-size:var(--text-sm);color:var(--color-text-secondary);">Tomás Valdivia · Mar 22</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- post 8 -->
+    <article style="display:flex;flex-direction:column;gap:16px;">
+      <a href="#" style="display:block;aspect-ratio:16/10;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--color-brand-700),var(--color-neutral-600));"></a>
+      <div>
+        <p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">Product · 5 min read</p>
+        <h3 style="font-size:var(--text-xl);font-weight:600;color:var(--color-text-primary);margin-top:12px;"><a href="#" style="color:inherit;text-decoration:none;">We deleted our onboarding tour and bookings went up</a></h3>
+        <p style="color:var(--color-text-tertiary);margin-top:8px;">The "product tour" was gating our aha moment. Removing it cut time-to-value by two-thirds. Here's the data.</p>
+        <div class="uui-row gap-2 items-center" style="margin-top:16px;">
+          <span class="uui-avatar uui-avatar--sm" style="background:var(--color-brand-200);color:var(--color-brand-700);">PN</span>
+          <span style="font-size:var(--text-sm);color:var(--color-text-secondary);">Priya Nair · Mar 18</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- post 9 -->
+    <article style="display:flex;flex-direction:column;gap:16px;">
+      <a href="#" style="display:block;aspect-ratio:16/10;border-radius:var(--radius-xl);background:linear-gradient(135deg,var(--color-brand-800),var(--color-brand-400));"></a>
+      <div>
+        <p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">Customers · 6 min read</p>
+        <h3 style="font-size:var(--text-xl);font-weight:600;color:var(--color-text-primary);margin-top:12px;"><a href="#" style="color:inherit;text-decoration:none;">How Vertex consolidated five design tools into one</a></h3>
+        <p style="color:var(--color-text-tertiary);margin-top:8px;">Mira's team was running five separate subscriptions. Here's the audit they did, and why they picked what they picked.</p>
+        <div class="uui-row gap-2 items-center" style="margin-top:16px;">
+          <span class="uui-avatar uui-avatar--sm" style="background:var(--color-brand-200);color:var(--color-brand-700);">RD</span>
+          <span style="font-size:var(--text-sm);color:var(--color-text-secondary);">Ravi Deshpande · Mar 14</span>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- pagination -->
+  <nav class="uui-row gap-2 justify-center" style="margin-top:64px;">
+    <button class="uui-btn uui-btn--secondary uui-btn--md">Previous</button>
+    <button class="uui-btn uui-btn--primary uui-btn--md">1</button>
+    <button class="uui-btn uui-btn--tertiary uui-btn--md">2</button>
+    <button class="uui-btn uui-btn--tertiary uui-btn--md">3</button>
+    <button class="uui-btn uui-btn--tertiary uui-btn--md">...</button>
+    <button class="uui-btn uui-btn--tertiary uui-btn--md">8</button>
+    <button class="uui-btn uui-btn--secondary uui-btn--md">Next</button>
+  </nav>
+</section>
+
+</body>
+</html>

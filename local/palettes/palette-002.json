@@ -1,0 +1,15 @@
+{
+  "id": "palette-002",
+  "name": "solar-forge",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0d0b0a",
+    "surface": "#1a1815",
+    "card": "#252219",
+    "accent": "#ff7f00",
+    "secondary": "#d4481d",
+    "text": "#f5deb3",
+    "muted": "#8b7355"
+  },
+  "weight": 0
+}

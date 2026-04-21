@@ -1,0 +1,15 @@
+{
+  "id": "palette-010",
+  "name": "mercury-pool",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#1a1a1a",
+    "surface": "#2a2a2a",
+    "card": "#3a3a3a",
+    "accent": "#c0c0c0",
+    "secondary": "#e8e8e8",
+    "text": "#f0f0f0",
+    "muted": "#808080"
+  },
+  "weight": 0
+}

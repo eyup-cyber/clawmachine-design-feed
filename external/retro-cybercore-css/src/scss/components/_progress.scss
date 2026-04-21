@@ -1,0 +1,218 @@
+// ============================================================
+// Progress Component
+// Animated progress bars with cyber styling
+// ============================================================
+
+@layer components {
+  .cyber-progress {
+    --progress-value: 0%;
+    --progress-color: var(--cyber-cyan-500);
+
+    position: relative;
+    height: 10px;
+    border: 1px solid var(--color-border-default);
+    overflow: hidden;
+    background: var(--color-bg-tertiary);
+
+    // Progress bar fill
+    &__bar {
+      position: relative;
+      width: var(--progress-value);
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        var(--progress-color),
+        color-mix(in srgb, var(--progress-color) 70%, white)
+      );
+      box-shadow: 0 0 15px var(--progress-color);
+      transition: width var(--duration-slow) var(--ease-cyber);
+
+      // Animated diagonal stripes
+      &::before {
+        content: "";
+        position: absolute;
+        background: repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 5px,
+          rgb(255 255 255 / 15%) 5px,
+          rgb(255 255 255 / 15%) 10px
+        );
+        animation: progress-stripes 0.5s linear infinite;
+        inset: 0;
+      }
+    }
+
+    // Progress value text
+    &__value {
+      position: absolute;
+      top: 50%;
+      right: var(--space-xs);
+      z-index: 1;
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-primary);
+      transform: translateY(-50%);
+      text-shadow: 0 1px 2px var(--cyber-void-500);
+    }
+
+    // --------------------------------------------------------
+    // Color Variants
+    // --------------------------------------------------------
+
+    &--magenta {
+      --progress-color: var(--cyber-magenta-500);
+    }
+
+    &--yellow {
+      --progress-color: var(--cyber-yellow-500);
+    }
+
+    &--green {
+      --progress-color: var(--cyber-green-500);
+    }
+
+    // --------------------------------------------------------
+    // Size Variants
+    // --------------------------------------------------------
+
+    &--sm {
+      height: 6px;
+
+      .cyber-progress__value {
+        display: none;
+      }
+    }
+
+    &--lg {
+      height: 16px;
+
+      .cyber-progress__value {
+        font-size: var(--text-sm);
+      }
+    }
+
+    // --------------------------------------------------------
+    // Style Variants
+    // --------------------------------------------------------
+
+    &--no-animation {
+      .cyber-progress__bar::before {
+        animation: none;
+      }
+    }
+
+    &--indeterminate {
+      .cyber-progress__bar {
+        position: absolute;
+        left: 0;
+        width: 30%;
+        animation: progress-indeterminate 1.5s ease-in-out infinite;
+      }
+    }
+
+    // Segmented progress (like loading steps)
+    &--segmented {
+      display: flex;
+      gap: 2px;
+      border: none;
+      background: transparent;
+
+      .cyber-progress__segment {
+        flex: 1;
+        height: 100%;
+        border: var(--border-thin) solid var(--color-border-default);
+        background: var(--color-bg-tertiary);
+        transition: background var(--transition-fast);
+
+        &--active {
+          border-color: var(--progress-color);
+          background: var(--progress-color);
+        }
+      }
+    }
+  }
+
+  // Stripe animation
+  @keyframes progress-stripes {
+    from {
+      background-position: 0 0;
+    }
+
+    to {
+      background-position: 20px 0;
+    }
+  }
+
+  // Indeterminate animation - uses transform for GPU acceleration
+  @keyframes progress-indeterminate {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    100% {
+      transform: translateX(433%);
+    }
+  }
+
+  // --------------------------------------------------------
+  // Circular Progress
+  // --------------------------------------------------------
+
+  .cyber-progress-circle {
+    --progress-value: 0;
+    --progress-size: 80px;
+    --progress-stroke: 6px;
+    --progress-color: var(--cyber-cyan-500);
+
+    position: relative;
+    width: var(--progress-size);
+    height: var(--progress-size);
+
+    &__svg {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+    }
+
+    &__track {
+      fill: none;
+      stroke: var(--color-bg-tertiary);
+      stroke-width: var(--progress-stroke);
+    }
+
+    &__bar {
+      transition: stroke-dashoffset var(--transition-slow) var(--ease-out-expo);
+      fill: none;
+      filter: drop-shadow(0 0 4px var(--progress-color));
+      stroke: var(--progress-color);
+      stroke-dasharray: 251.2; // 2 * PI * 40 (radius)
+      stroke-dashoffset: calc(251.2 - (251.2 * var(--progress-value) / 100));
+      stroke-linecap: round;
+      stroke-width: var(--progress-stroke);
+    }
+
+    &__value {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      color: var(--color-text-primary);
+      transform: translate(-50%, -50%);
+    }
+
+    &--magenta {
+      --progress-color: var(--cyber-magenta-500);
+    }
+
+    &--yellow {
+      --progress-color: var(--cyber-yellow-500);
+    }
+
+    &--green {
+      --progress-color: var(--cyber-green-500);
+    }
+  }
+}

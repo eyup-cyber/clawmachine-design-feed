@@ -1,0 +1,72 @@
+# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+
+# Compiled output
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Ignore sitemap, this is generated on deploy
+public/sitemap.xml 
+
+# Node
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Husky Local Environment Files
+/.husky/_
+
+# Visual Studio Codef
+.vscode/*
+.vs
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Firebase
+*-debug.log
+.firebase/*.cache
+.firebase/**/*.cache
+.runtimeconfig.json
+
+# API
+api/lib/**/*.js
+api/lib/**/*.js.map
+api/typings/
+api/node_modules/
+api/*.local
+
+# Script outputs
+./scripts/output/*
+./scripts/output/
+./scripts/output
+
+# Cypress (e2e testing)
+cypress/downloads
+cypress/screenshots
+cypress/videos

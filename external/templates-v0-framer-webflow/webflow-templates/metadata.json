@@ -1,0 +1,64 @@
+{
+  "source_platform": "webflow.com/templates",
+  "scrape_date": "2026-04-21",
+  "license": "fair-use research reference",
+  "redistribution": "prohibited",
+  "notes": "Admin-dashboard category URL /category/admin-templates 404s; correct path is /search/admin-dashboard-b170a.",
+  "detail_captures": [
+    {
+      "slug": "dark-dasher-dashboard-website-template",
+      "title": "Dark Dasher",
+      "designer": "Yves Adrales",
+      "designer_profile": "https://webflow.com/templates/designers/yves-adrales",
+      "source_url": "https://webflow.com/templates/html/dark-dasher-dashboard-website-template",
+      "live_preview": "https://darkdasher.webflow.io/",
+      "designer_preview": "https://preview.webflow.com/preview/darkdasher",
+      "price_usd": 79,
+      "last_updated": "2023-08-25",
+      "categories": ["UI Kit", "Technology", "Retail & E-Commerce"],
+      "subcategories": ["UI Kit", "Software & SaaS", "Digital Products Store"],
+      "styles": ["Dark", "Modern"],
+      "features_list": ["3D transforms", "CMS", "CSS Grid", "Custom 404", "Ecommerce", "Forms", "Interactions", "Responsive design", "Responsive navigation", "Retina ready", "Components", "Web fonts"],
+      "pages": ["Dashboard Home", "Products", "Users", "Settings", "Notifications", "Pricing (E-com)", "Pricing Single (E-com)", "Contacts", "Companies", "Support", "Help Center (CMS)", "Help Center Single (CMS)", "Sign In", "Sign Up", "Email Verification", "Reset Password", "Privacy Policy", "Terms & Conditions", "Style Guide", "Instructions", "Licenses", "Changelog", "Password", "404"],
+      "visual_tags": ["dark", "dashboard", "analytics-showcase", "ecommerce-enabled", "sales-kpi", "user-management", "product-revenue", "sessions-by-country"],
+      "preview_file": "previews/dark-dasher-webflow.png"
+    },
+    {
+      "slug": "dashkit-website-template",
+      "title": "DashKit",
+      "designer": "Yves Adrales",
+      "designer_profile": "https://webflow.com/templates/designers/yves-adrales",
+      "source_url": "https://webflow.com/templates/html/dashkit-website-template",
+      "visual_tags": ["shadcn-based", "70-plus-components", "one-click-dark-mode", "native-webflow-properties"],
+      "preview_file": "previews/dashkit-webflow.png"
+    },
+    {
+      "slug": "dashflow-x-devlink-website-template",
+      "title": "Dashflow X",
+      "designer": "BRIX Templates",
+      "designer_profile": "https://webflow.com/templates/designers/brix-templates",
+      "source_url": "https://webflow.com/templates/html/dashflow-x-devlink-website-template",
+      "price_usd": 0,
+      "last_updated": "2023-06-05",
+      "categories": ["UI Kit"],
+      "visual_tags": ["devlink", "react-export", "78-components", "modern-dashboard", "free"],
+      "preview_file": "previews/dashflow-x-webflow.png"
+    }
+  ],
+  "discovered_templates_not_screenshotted": [
+    {"slug": "dashdark-x-devlink-website-template", "designer": "BRIX Templates", "price_usd": 0, "tags": ["devlink", "dark", "free"]},
+    {"slug": "dashbrdx-website-template", "designer": "(multi)", "tags": ["dark", "44-pages"]},
+    {"slug": "dashly-x-dashboard-website-template", "designer": "BRIX Templates", "price_usd": 129, "tags": ["sidebar", "clean", "minimal"]},
+    {"slug": "task-dasher-dashboard-website-template", "tags": ["saas", "task-management", "project-tracking"]},
+    {"slug": "todo-dark-website-template", "tags": ["dark", "todo"]},
+    {"slug": "dash-dashboard-website-template", "designer": "Kickstart Studio", "price_usd": 79, "tags": ["minimal", "light"]},
+    {"slug": "memberbase-learning-website-template", "designer": "Nikolai Bain", "price_usd": 0, "tags": ["clean", "minimal", "casual"]},
+    {"slug": "danamo-website-template", "tags": ["ecommerce-admin-dashboard"]},
+    {"slug": "pipeliner-website-template", "tags": ["dark-mode"]},
+    {"slug": "vectora-website-template", "tags": ["dark", "noise-overlay", "bold-typography"]},
+    {"slug": "cloudwhisper-website-template", "tags": ["generative-ai", "dark"]},
+    {"slug": "eilex-website-template", "tags": ["dark-mode", "ai-landing"]},
+    {"slug": "artifact-website-template", "tags": ["ai-saas", "business-software", "cybersecurity"]},
+    {"slug": "imagen-ai-website-template", "tags": ["dark", "advanced-animations", "ai-image-gen"]}
+  ]
+}

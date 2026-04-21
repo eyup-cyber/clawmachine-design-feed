@@ -1,0 +1,15 @@
+{
+  "id": "palette-017",
+  "name": "obsidian-prism",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0a0a0a",
+    "surface": "#151515",
+    "card": "#1f1f1f",
+    "accent": "#ff0080",
+    "secondary": "#00ffff",
+    "text": "#ffffff",
+    "muted": "#808080"
+  },
+  "weight": 10
+}

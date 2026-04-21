@@ -1,0 +1,15 @@
+{
+  "id": "palette-103",
+  "name": "hot-coral-rush",
+  "source": "ultra-expansion-cycle2-neobrutalism",
+  "colors": {
+    "bg": "#FF3D00",
+    "surface": "#FF6333",
+    "card": "#FF501A",
+    "accent": "#003366",
+    "secondary": "#FFEA00",
+    "text": "#0B001A",
+    "muted": "#409199"
+  },
+  "weight": 5
+}

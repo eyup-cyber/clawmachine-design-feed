@@ -1,0 +1,15 @@
+{
+  "id": "palette-064",
+  "name": "data-heist",
+  "source": "media.io-cyberpunk-triadic",
+  "colors": {
+    "bg": "#070A0F",
+    "surface": "#1A2030",
+    "card": "#242E40",
+    "accent": "#00F0FF",
+    "secondary": "#00FF6A",
+    "text": "#E8ECF0",
+    "muted": "#FF2E88"
+  },
+  "weight": 10
+}

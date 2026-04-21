@@ -1,0 +1,126 @@
+<div class="block-figma-gauge">
+<style>
+.block-figma-gauge .fgauge-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sl-content-gap);
+}
+.block-figma-gauge .fgauge-card {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  padding: var(--sl-space-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sl-space-sm);
+}
+.block-figma-gauge .fgauge-wrap {
+  width: 120px;
+  height: 72px;
+  position: relative;
+  overflow: visible;
+}
+.block-figma-gauge .fgauge-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.block-figma-gauge .fgauge-track {
+  fill: none;
+  stroke: var(--sl-surface);
+  stroke-width: 10;
+  stroke-linecap: round;
+}
+.block-figma-gauge .fgauge-fill {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+.block-figma-gauge .fgauge-fill.ok { stroke: var(--sl-accent); }
+.block-figma-gauge .fgauge-fill.warn { stroke: var(--sl-secondary); }
+.block-figma-gauge .fgauge-fill.crit {
+  stroke: color-mix(in srgb, var(--sl-secondary) 70%, red);
+}
+.block-figma-gauge .fgauge-value {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: var(--sl-font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--sl-text);
+  line-height: 1;
+}
+.block-figma-gauge .fgauge-label {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-muted);
+  text-align: center;
+}
+.block-figma-gauge .fgauge-sublabel {
+  font-family: var(--sl-font-body);
+  font-size: 11px;
+  color: var(--sl-text);
+  text-align: center;
+  opacity: 0.7;
+}
+@media (max-width: 600px) {
+  .block-figma-gauge .fgauge-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<!--
+  Each gauge is a 180-degree arc (semicircle).
+  Arc path: center=(60,65), r=50, from 180deg to 0deg.
+  Arc length = pi * 50 = 157.08
+  stroke-dasharray = 157.08
+  stroke-dashoffset = 157.08 * (1 - fraction) to fill fraction of arc.
+-->
+<div class="fgauge-grid">
+  <!-- Gauge 1: Fleet Uptime 94.2% -->
+  <div class="fgauge-card">
+    <div class="fgauge-wrap">
+      <svg class="fgauge-svg" viewBox="0 0 120 72">
+        <path class="fgauge-track" d="M10,65 A50,50 0 0,1 110,65"/>
+        <path class="fgauge-fill ok" d="M10,65 A50,50 0 0,1 110,65" style="stroke-dasharray:157.08; stroke-dashoffset:9.11"/>
+      </svg>
+      <span class="fgauge-value">94.2%</span>
+    </div>
+    <span class="fgauge-label">FLEET UPTIME</span>
+    <span class="fgauge-sublabel">347 / 368 machines online</span>
+  </div>
+
+  <!-- Gauge 2: Prize Stock 61% -->
+  <div class="fgauge-card">
+    <div class="fgauge-wrap">
+      <svg class="fgauge-svg" viewBox="0 0 120 72">
+        <path class="fgauge-track" d="M10,65 A50,50 0 0,1 110,65"/>
+        <path class="fgauge-fill warn" d="M10,65 A50,50 0 0,1 110,65" style="stroke-dasharray:157.08; stroke-dashoffset:61.26"/>
+      </svg>
+      <span class="fgauge-value">61%</span>
+    </div>
+    <span class="fgauge-label">PRIZE STOCK</span>
+    <span class="fgauge-sublabel">restock 14 locations this week</span>
+  </div>
+
+  <!-- Gauge 3: Payout Ratio 28.4% -->
+  <div class="fgauge-card">
+    <div class="fgauge-wrap">
+      <svg class="fgauge-svg" viewBox="0 0 120 72">
+        <path class="fgauge-track" d="M10,65 A50,50 0 0,1 110,65"/>
+        <path class="fgauge-fill crit" d="M10,65 A50,50 0 0,1 110,65" style="stroke-dasharray:157.08; stroke-dashoffset:112.47"/>
+      </svg>
+      <span class="fgauge-value">28.4%</span>
+    </div>
+    <span class="fgauge-label">PAYOUT RATIO</span>
+    <span class="fgauge-sublabel">target: 25% — adjust 3 machines</span>
+  </div>
+</div>
+</div>

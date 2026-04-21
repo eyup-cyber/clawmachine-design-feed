@@ -1,0 +1,15 @@
+{
+  "id": "palette-040",
+  "name": "cosmic-violet",
+  "source": "chromatic-research-kittl",
+  "colors": {
+    "bg": "#1a0060",
+    "surface": "#240a6a",
+    "card": "#2e1474",
+    "accent": "#8a56fc",
+    "secondary": "#8B5DFF",
+    "text": "#FFF7D1",
+    "muted": "#4c3292"
+  },
+  "weight": 0
+}

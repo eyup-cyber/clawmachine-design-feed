@@ -1,0 +1,28 @@
+<div
+	class="p-6 mx-auto lg:my-12 md:rounded-md md:flex md:max-w-4xl md:p-8"
+	[ngClass]="['bg' + default, 'text' + defaultInv]"
+>
+	<div class="flex flex-col justify-start w-48 space-y-1 col-span-full">
+		<a
+			*ngFor="let category of categories"
+			[routerLink]="[category.link]"
+			routerLinkActive
+			[routerLinkActiveOptions]="{exact: true}"
+			#rla="routerLinkActive"
+			[ngClass]="[
+				rla.isActive ? 'border' + primary : 'border' + plain,
+				rla.isActive ? 'bg' + primary : 'bg' + neutral,
+				rla.isActive ? 'text' + default : 'text' + defaultInv
+			]"
+			class="px-2 py-2 capitalize border-l-4 cursor-pointer rounded-r-md md:py-3"
+		>
+			{{ category.name }}
+		</a>
+	</div>
+	<div class="flex justify-center">
+		<ads [sticky]="true"></ads>
+	</div>
+	<div class="py-4" [ngClass]="[prose]">
+		<router-outlet></router-outlet>
+	</div>
+</div>

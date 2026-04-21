@@ -1,0 +1,15 @@
+{
+  "id": "palette-092",
+  "name": "holo-deck-blue",
+  "source": "ultra-expansion-cycle2-deep-space",
+  "colors": {
+    "bg": "#02081A",
+    "surface": "#071B33",
+    "card": "#051126",
+    "accent": "#00E5FF",
+    "secondary": "#FF00E5",
+    "text": "#D6E9FF",
+    "muted": "#4D99A6"
+  },
+  "weight": 10
+}

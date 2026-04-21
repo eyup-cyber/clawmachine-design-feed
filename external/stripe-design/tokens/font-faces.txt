@@ -1,0 +1,3 @@
+@font-face{font-family:sohne-var;src:url(/mkt-ssr-statics/assets/_next/static/media/Sohne.cb178166.woff2) format("woff2-variations");font-weight:1 1000;font-display:block}
+@font-face{font-family:sohne-var;src:url(/mkt-ssr-statics/assets/_next/static/media/Sohne.cb178166.woff2) format("woff2-variations");font-weight:1 1000;font-display:swap}
+@font-face{font-family:SourceCodePro;src:url(/mkt-ssr-statics/assets/_next/static/media/SourceCodePro-Medium.f5ba3e6a.woff2) format("woff2");font-weight:500;font-style:normal;font-display:swap}

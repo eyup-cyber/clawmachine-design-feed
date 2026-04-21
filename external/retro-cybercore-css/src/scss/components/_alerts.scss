@@ -1,0 +1,76 @@
+// ============================================================
+// Alerts Component
+// Notification alerts with icon badges
+// ============================================================
+
+@layer components {
+  .cyber-alert {
+    --alert-color: var(--cyber-cyan-500);
+
+    position: relative;
+    padding: var(--space-md);
+    padding-left: var(--space-xl);
+    border: var(--border-thin) solid var(--alert-color);
+    border-left: 4px solid var(--alert-color);
+    background: color-mix(in srgb, var(--alert-color) 10%, var(--color-bg-secondary));
+
+    // Icon badge via ::before pseudo-element
+    &::before {
+      content: "!";
+      position: absolute;
+      top: 50%;
+      left: var(--space-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--cyber-void-500);
+      background: var(--alert-color);
+      transform: translateY(-50%);
+    }
+
+    // Alert title
+    &__title {
+      margin-bottom: var(--space-2xs);
+      font-family: var(--font-display);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--alert-color);
+    }
+
+    // --------------------------------------------------------
+    // Semantic Variants
+    // --------------------------------------------------------
+
+    &--warning {
+      --alert-color: var(--cyber-yellow-500);
+
+      &::before {
+        content: "\26A0"; // ⚠
+      }
+    }
+
+    &--error {
+      --alert-color: var(--cyber-magenta-500);
+
+      &::before {
+        content: "\2715"; // ✕
+      }
+    }
+
+    &--success {
+      --alert-color: var(--cyber-green-500);
+
+      &::before {
+        content: "\2713"; // ✓
+      }
+    }
+  }
+}

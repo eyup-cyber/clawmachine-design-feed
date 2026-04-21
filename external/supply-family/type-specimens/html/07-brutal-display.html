@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brutal Display — Supply.Family specimen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Iowan+Old+Style&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Nunito:wght@200..900&family=Oswald:wght@200..700&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#0B0B0B; --paper:#F5F2EC; --muted:#6E6A60; --line:#CDC8BC; --accent:#CF2A0E; }
+* { box-sizing: border-box; margin:0; padding:0; }
+html,body { background:var(--paper); color:var(--ink); }
+body { font-family: 'Arial Black', 'Impact', sans-serif; font-weight:900; font-feature-settings: "kern","liga","calt"; -webkit-font-smoothing: antialiased; }
+a { color: inherit; }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 48px 56px 120px; }
+nav.topbar { display:flex; justify-content:space-between; align-items:baseline; padding-bottom:28px; border-bottom:1px solid var(--line); }
+nav .brand { font-weight:700; letter-spacing:-0.01em; }
+nav .meta  { font-size:12px; color:var(--muted); letter-spacing:0.04em; text-transform:uppercase; }
+.row { display:grid; grid-template-columns: 1fr; gap:72px; padding-top:72px; }
+h1.display { font-size: clamp(96px, 18vw, 320px); line-height:0.9; letter-spacing:-0.04em; font-weight:900; }
+h1.display em { font-style: italic; color: var(--accent); font-weight: inherit; }
+.meta-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap: 24px; font-size: 12px; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); border-top:1px solid var(--line); padding-top:20px; }
+.meta-grid div b { display:block; color:var(--ink); font-weight:600; margin-bottom:4px; }
+section h2 { font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:20px; }
+.alpha { font-size: clamp(28px, 4vw, 56px); line-height:1.1; letter-spacing:-0.01em; word-spacing:0.1em; }
+.alpha.small { font-size: 18px; color:var(--muted); }
+.paragraph { max-width: 780px; font-size: clamp(20px, 2vw, 28px); line-height:1.35; letter-spacing:-0.015em; }
+.paragraph em { color: var(--accent); font-style: italic; }
+.sizes { display:grid; grid-template-columns: 80px 1fr; gap:18px 36px; align-items:baseline; }
+.sizes .label { font-family: 'JetBrains Mono', monospace; font-size:11px; color:var(--muted); letter-spacing:0.06em; }
+.sizes .sample { line-height: 1.2; }
+.pairing { display:grid; grid-template-columns: 1fr 1fr; gap:32px; border-top:1px solid var(--line); padding-top:32px; }
+.pairing .card h3 { font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
+.pairing .card .big { font-size: 72px; line-height:0.95; letter-spacing:-0.02em; }
+.pairing .card .body { font-family:'Inter',sans-serif; font-size:14px; line-height:1.5; color:var(--ink); margin-top:16px; }
+.footer { border-top:1px solid var(--line); margin-top:96px; padding-top:24px; font-size:12px; letter-spacing:0.04em; text-transform:uppercase; color:var(--muted); display:flex; justify-content:space-between; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="topbar">
+    <div class="brand">Supply.Family — Specimen</div>
+    <div class="meta">Condensed / Bold-only · Internal reference · 07-BRUTAL-DISPLAY</div>
+  </nav>
+  <div class="row">
+    <section>
+      <h1 class="display">Brutal<em> Display</em></h1>
+      <div class="meta-grid" style="margin-top:40px">
+        <div><b>Category</b>Condensed / Bold-only</div>
+        <div><b>Weight</b>900</div>
+        <div><b>Stack</b>&#x27;Arial Black&#x27;, &#x27;Impact&#x27;, sans-</div>
+        <div><b>Use</b>Condensed display, one weight, bold only</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Uppercase</h2>
+      <div class="alpha">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+    </section>
+    <section>
+      <h2>Lowercase</h2>
+      <div class="alpha">a b c d e f g h i j k l m n o p q r s t u v w x y z</div>
+    </section>
+    <section>
+      <h2>Figures and punctuation</h2>
+      <div class="alpha">0 1 2 3 4 5 6 7 8 9</div>
+      <div class="alpha small" style="margin-top:12px">& ! ? @ # % $ , . : ; ' “”</div>
+    </section>
+
+    <section>
+      <h2>Paragraph — Editorial body</h2>
+      <p class="paragraph">Brutal is a single-weight condensed. There is no italic, no regular, no light. Set it at 72pt and above. At smaller sizes the stems collapse. <em>Read the grid, not the decoration.</em> The specimen holds up at text sizes because the spacing, not the shape, is doing the heavy work.</p>
+    </section>
+
+    <section>
+      <h2>Scale — 12 to 96</h2>
+      <div class="sizes">
+        <span class="label">12</span><span class="sample" style="font-size:12px">Brutal Display — The quick brown fox jumps over the lazy dog.</span>
+        <span class="label">14</span><span class="sample" style="font-size:14px">Brutal Display — The quick brown fox jumps over the lazy dog.</span>
+        <span class="label">18</span><span class="sample" style="font-size:18px">Brutal Display — The quick brown fox jumps over the lazy dog.</span>
+        <span class="label">24</span><span class="sample" style="font-size:24px">Brutal Display — The quick brown fox jumps over the lazy dog.</span>
+        <span class="label">36</span><span class="sample" style="font-size:36px">The quick brown fox jumps.</span>
+        <span class="label">56</span><span class="sample" style="font-size:56px">Supply.Family</span>
+        <span class="label">96</span><span class="sample" style="font-size:96px">Aa Bb</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Pairings</h2>
+      <div class="pairing">
+        <div class="card">
+          <h3>With Inter for UI</h3>
+          <div class="big" style="font-weight:900">Checkout</div>
+          <p class="body">Confirm the order by selecting a payment method. You can edit the delivery address until the carrier picks up the parcel.</p>
+        </div>
+        <div class="card">
+          <h3>With JetBrains Mono for data</h3>
+          <div class="big">Revision <span style="font-family:'JetBrains Mono',monospace; font-size:0.5em; vertical-align:middle; color:var(--accent)">0xA4F1</span></div>
+          <p class="body" style="font-family:'JetBrains Mono',monospace">commit 4a9c1d — refactor(pricing): drop legacy bundle flag<br/>2 files changed · +14 −42</p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="footer">
+    <span>Supply.Family / recreated for internal research</span>
+    <span>07-brutal-display · Open this file with a modern browser</span>
+  </div>
+</div>
+</body></html>

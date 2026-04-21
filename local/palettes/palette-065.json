@@ -1,0 +1,15 @@
+{
+  "id": "palette-065",
+  "name": "night-market-led",
+  "source": "media.io-cyberpunk-triadic",
+  "colors": {
+    "bg": "#0D0F14",
+    "surface": "#1F2233",
+    "card": "#282B40",
+    "accent": "#00D1FF",
+    "secondary": "#FF3D9A",
+    "text": "#E0E4F0",
+    "muted": "#FFE66D"
+  },
+  "weight": 10
+}

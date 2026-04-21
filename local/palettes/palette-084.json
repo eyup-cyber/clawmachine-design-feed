@@ -1,0 +1,15 @@
+{
+  "id": "palette-084",
+  "name": "cyberpunk-core",
+  "source": "ultra-expansion-cycle2-cyberpunk-neon",
+  "colors": {
+    "bg": "#050014",
+    "surface": "#0F0026",
+    "card": "#0A001C",
+    "accent": "#00FFFF",
+    "secondary": "#FF0055",
+    "text": "#FFFFFF",
+    "muted": "#5C9999"
+  },
+  "weight": 10
+}

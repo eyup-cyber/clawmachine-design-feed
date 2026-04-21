@@ -1,0 +1,15 @@
+{
+  "id": "palette-071",
+  "name": "c40-cyan-punch",
+  "source": "design-brief-bold-bg",
+  "colors": {
+    "bg": "#00B8D4",
+    "surface": "#00A2BB",
+    "card": "#008A9F",
+    "accent": "#FF6D00",
+    "secondary": "#FFD600",
+    "text": "#0a0a0a",
+    "muted": "#006070"
+  },
+  "weight": 5
+}

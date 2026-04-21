@@ -1,0 +1,68 @@
+@use '../../styles/breakpoints' as bps;
+@use '../../styles/colors' as col;
+@use '../../styles/variables' as var;
+
+:host {
+  align-items: center;
+  box-sizing: border-box;
+  color: col.$pip-green;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+pip-title {
+  margin: 3rem 1rem;
+}
+
+.register-intro,
+.register-outro {
+  max-width: var.$section-max-width;
+  width: 100%;
+}
+
+.register-outro {
+  margin-bottom: 4rem;
+}
+
+.register-form {
+  max-width: var.$auth-forms-width;
+}
+
+.register-intro > p {
+  margin: 0 1rem 2rem 1rem;
+  text-align: center;
+}
+
+.register-outro > p {
+  text-align: center;
+}
+
+.register-form {
+  margin-bottom: 2rem;
+
+  > p {
+    margin: 2rem 1rem 1rem;
+  }
+
+  @include bps.media('max', 'sm') {
+    padding: 1rem;
+    max-width: 100%;
+
+    .register-intro > p,
+    .register-form > p {
+      max-width: 100%;
+    }
+
+    pip-register-form {
+      width: 100%;
+    }
+  }
+}
+
+pip-footer {
+  align-self: stretch;
+  margin-top: auto;
+  display: block;
+}

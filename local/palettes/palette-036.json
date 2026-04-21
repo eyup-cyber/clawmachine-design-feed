@@ -1,0 +1,15 @@
+{
+  "id": "palette-036",
+  "name": "neon-magenta",
+  "source": "chromatic-research-kittl",
+  "colors": {
+    "bg": "#28006e",
+    "surface": "#320a78",
+    "card": "#3c1482",
+    "accent": "#FF3EA5",
+    "secondary": "#FF7ED4",
+    "text": "#FFB5DA",
+    "muted": "#5a32a0"
+  },
+  "weight": 10
+}

@@ -1,0 +1,15 @@
+{
+  "id": "palette-013",
+  "name": "tape-deck",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#1a1810",
+    "surface": "#3a3228",
+    "card": "#4a4838",
+    "accent": "#ff6b00",
+    "secondary": "#00cc00",
+    "text": "#efefef",
+    "muted": "#8a7a68"
+  },
+  "weight": 0
+}

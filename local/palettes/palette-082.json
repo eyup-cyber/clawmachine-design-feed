@@ -1,0 +1,15 @@
+{
+  "id": "palette-082",
+  "name": "deep-space-synthwave",
+  "source": "ultra-expansion-cycle2-synthwave",
+  "colors": {
+    "bg": "#0B031A",
+    "surface": "#1B0D33",
+    "card": "#130826",
+    "accent": "#FF007F",
+    "secondary": "#00F0FF",
+    "text": "#F8F8FF",
+    "muted": "#8A5C70"
+  },
+  "weight": 10
+}

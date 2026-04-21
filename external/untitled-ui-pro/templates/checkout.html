@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Checkout — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css"><link rel="stylesheet" href="../design.css">
+</head>
+<body style="background:var(--color-bg-secondary);">
+<main class="uui-container" style="padding-top:48px;padding-bottom:96px;">
+
+  <!-- steps -->
+  <div style="display:flex;gap:16px;margin-bottom:32px;">
+    <span class="uui-badge uui-badge--modern"><span class="dot" style="background:var(--color-success-500);"></span>Cart</span>
+    <span style="color:var(--color-fg-quaternary);">/</span>
+    <span class="uui-badge uui-badge--brand"><span class="dot"></span>Checkout</span>
+    <span style="color:var(--color-fg-quaternary);">/</span>
+    <span style="color:var(--color-text-quaternary);font-size:var(--text-sm);">Confirmation</span>
+  </div>
+
+  <div class="grid" style="grid-template-columns:1.2fr 1fr;gap:48px;">
+
+    <!-- form -->
+    <section style="background:var(--color-bg-primary);border-radius:var(--radius-xl);box-shadow:inset 0 0 0 1px var(--color-border-secondary);padding:32px;">
+      <h2 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text-primary);">Contact</h2>
+      <div class="uui-input-wrap" style="margin-top:16px;">
+        <div class="uui-input"><input type="email" value="olivia@untitledui.com"></div>
+      </div>
+      <label class="uui-check-label" style="margin-top:12px;"><input type="checkbox" class="uui-check" checked><span class="lbl">Email me with news and offers</span></label>
+
+      <h2 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text-primary);margin-top:32px;">Delivery</h2>
+      <div class="uui-input-wrap" style="margin-top:16px;">
+        <label class="uui-label">Country/region</label>
+        <div class="uui-select">
+          <span style="font-size:20px;">UK</span>
+          <span class="value">United Kingdom</span>
+          <svg class="caret" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7.5 5 5 5-5"/></svg>
+        </div>
+      </div>
+      <div class="grid gap-4" style="grid-template-columns:1fr 1fr;margin-top:16px;">
+        <div class="uui-input-wrap"><label class="uui-label">First name</label><div class="uui-input"><input value="Olivia"></div></div>
+        <div class="uui-input-wrap"><label class="uui-label">Last name</label><div class="uui-input"><input value="Rhye"></div></div>
+      </div>
+      <div class="uui-input-wrap" style="margin-top:16px;">
+        <label class="uui-label">Address</label>
+        <div class="uui-input"><input value="100 Smith Street"></div>
+      </div>
+      <div class="grid gap-4" style="grid-template-columns:2fr 1fr 1fr;margin-top:16px;">
+        <div class="uui-input-wrap"><label class="uui-label">City</label><div class="uui-input"><input value="London"></div></div>
+        <div class="uui-input-wrap"><label class="uui-label">Postal code</label><div class="uui-input"><input value="SW1A 1AA"></div></div>
+        <div class="uui-input-wrap"><label class="uui-label">Phone</label><div class="uui-input"><input value="+44 7700 900077"></div></div>
+      </div>
+
+      <h2 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text-primary);margin-top:32px;">Payment</h2>
+      <p style="font-size:var(--text-sm);color:var(--color-text-tertiary);margin-top:4px;">All transactions are secure and encrypted.</p>
+
+      <div style="margin-top:16px;background:var(--color-bg-secondary);border-radius:var(--radius-xl);padding:4px;">
+        <label style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--color-bg-primary);border-radius:var(--radius-lg);box-shadow:var(--shadow-xs);cursor:pointer;">
+          <span style="display:flex;gap:12px;align-items:center;"><input type="radio" name="pay" class="uui-radio" checked><span style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-secondary);">Credit card</span></span>
+          <span style="display:flex;gap:4px;">
+            <svg width="32" height="22" viewBox="0 0 32 22" fill="none"><rect width="32" height="22" rx="4" fill="#1A1F71"/><text x="16" y="14" text-anchor="middle" fill="white" font-size="7" font-weight="700" font-family="Inter">VISA</text></svg>
+            <svg width="32" height="22" viewBox="0 0 32 22" fill="none"><rect width="32" height="22" rx="4" fill="#fff" stroke="#e5e5e5"/><circle cx="12" cy="11" r="6" fill="#EB001B"/><circle cx="20" cy="11" r="6" fill="#F79E1B" opacity=".85"/></svg>
+            <svg width="32" height="22" viewBox="0 0 32 22" fill="none"><rect width="32" height="22" rx="4" fill="#0070BA"/><text x="16" y="14" text-anchor="middle" fill="white" font-size="6" font-weight="700" font-family="Inter">PayPal</text></svg>
+          </span>
+        </label>
+      </div>
+      <div class="grid gap-4" style="grid-template-columns:1fr;margin-top:16px;">
+        <div class="uui-input-wrap"><label class="uui-label">Card number</label>
+          <div class="uui-input">
+            <input placeholder="1234 1234 1234 1234">
+            <svg width="28" height="20" viewBox="0 0 32 22" fill="none"><rect width="32" height="22" rx="4" fill="#1A1F71"/><text x="16" y="14" text-anchor="middle" fill="white" font-size="7" font-weight="700" font-family="Inter">VISA</text></svg>
+          </div>
+        </div>
+        <div class="grid gap-4" style="grid-template-columns:1fr 1fr;">
+          <div class="uui-input-wrap"><label class="uui-label">Expiry</label><div class="uui-input"><input placeholder="MM / YY"></div></div>
+          <div class="uui-input-wrap"><label class="uui-label">CVC</label><div class="uui-input"><input placeholder="CVC"></div></div>
+        </div>
+      </div>
+
+      <button class="uui-btn uui-btn--primary uui-btn--xl" style="width:100%;margin-top:32px;">Pay £120.00</button>
+    </section>
+
+    <!-- summary -->
+    <aside>
+      <section style="background:var(--color-bg-primary);border-radius:var(--radius-xl);box-shadow:inset 0 0 0 1px var(--color-border-secondary);padding:24px;position:sticky;top:24px;">
+        <h2 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text-primary);">Order summary</h2>
+
+        <div style="display:flex;flex-direction:column;gap:16px;margin-top:16px;padding-bottom:16px;border-bottom:1px solid var(--color-border-secondary);">
+          <div class="uui-row gap-4 items-start">
+            <span style="width:64px;height:64px;border-radius:var(--radius-md);background:var(--color-bg-secondary);display:flex;align-items:center;justify-content:center;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-fg-brand-primary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+            </span>
+            <div style="flex:1;">
+              <div style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-secondary);">Untitled UI Pro</div>
+              <div style="font-size:var(--text-sm);color:var(--color-text-tertiary);">Lifetime license</div>
+            </div>
+            <span style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-primary);">£120.00</span>
+          </div>
+        </div>
+
+        <div class="uui-input" style="padding:6px 6px 6px 12px;margin-top:16px;">
+          <input placeholder="Add promo code" style="font-size:var(--text-sm);">
+          <button class="uui-btn uui-btn--secondary uui-btn--sm">Apply</button>
+        </div>
+
+        <dl style="display:flex;flex-direction:column;gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid var(--color-border-secondary);">
+          <div class="uui-row justify-between"><dt style="font-size:var(--text-sm);color:var(--color-text-tertiary);">Subtotal</dt><dd style="font-size:var(--text-sm);color:var(--color-text-secondary);font-weight:500;">£120.00</dd></div>
+          <div class="uui-row justify-between"><dt style="font-size:var(--text-sm);color:var(--color-text-tertiary);">Shipping</dt><dd style="font-size:var(--text-sm);color:var(--color-text-secondary);font-weight:500;">Free</dd></div>
+          <div class="uui-row justify-between"><dt style="font-size:var(--text-sm);color:var(--color-text-tertiary);">Tax (VAT 20%)</dt><dd style="font-size:var(--text-sm);color:var(--color-text-secondary);font-weight:500;">£24.00</dd></div>
+          <div class="uui-row justify-between" style="padding-top:12px;border-top:1px solid var(--color-border-secondary);"><dt style="font-size:var(--text-md);color:var(--color-text-primary);font-weight:600;">Total</dt><dd style="font-size:var(--text-md);color:var(--color-text-primary);font-weight:600;">£144.00</dd></div>
+        </dl>
+      </section>
+    </aside>
+
+  </div>
+</main>
+</body>
+</html>

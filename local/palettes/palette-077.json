@@ -1,0 +1,15 @@
+{
+  "id": "palette-077",
+  "name": "royal-indigo",
+  "source": "design-brief-bold-bg",
+  "colors": {
+    "bg": "#1A237E",
+    "surface": "#222D8E",
+    "card": "#2A379E",
+    "accent": "#FF4081",
+    "secondary": "#FFD740",
+    "text": "#C5CAE9",
+    "muted": "#101460"
+  },
+  "weight": 10
+}

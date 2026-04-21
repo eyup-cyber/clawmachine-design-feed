@@ -1,0 +1,15 @@
+{
+  "id": "palette-027",
+  "name": "chromatic-wheel",
+  "source": "chromatic-research-colorhex",
+  "colors": {
+    "bg": "#8200d7",
+    "surface": "#8c0ae1",
+    "card": "#9614eb",
+    "accent": "#00AAFF",
+    "secondary": "#FF00AA",
+    "text": "#AAFF00",
+    "muted": "#b432ff"
+  },
+  "weight": 0
+}

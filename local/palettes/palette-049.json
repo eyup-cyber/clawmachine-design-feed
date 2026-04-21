@@ -1,0 +1,15 @@
+{
+  "id": "palette-049",
+  "name": "tekki-grid",
+  "source": "inspiration-image",
+  "colors": {
+    "bg": "#0a0a2a",
+    "surface": "#1A1A4E",
+    "card": "#252570",
+    "accent": "#00FF66",
+    "secondary": "#3388ff",
+    "text": "#e8f0ff",
+    "muted": "#5a5a8a"
+  },
+  "weight": 10
+}

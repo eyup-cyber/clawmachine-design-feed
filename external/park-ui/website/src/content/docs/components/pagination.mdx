@@ -1,0 +1,73 @@
+---
+title: Pagination
+description: A navigation component for browsing through pages of content.
+metaDescription: Pagination component for React and Solid.js enabling navigation through multiple content pages. Accessible page controls with customizable appearance.
+category: navigation
+links:
+  recipe: https://github.com/chakra-ui/park-ui/blob/main/packages/preset/src/recipes/pagination.ts
+  ark: https://ark-ui.com/docs/components/pagination
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Pagination } from '@/components/ui'
+```
+
+```tsx
+<Pagination.Root>
+  <Pagination.PrevTrigger />
+  <Pagination.Ellipsis />
+  <Pagination.Item />
+  <Pagination.PageText />
+  <Pagination.NextTrigger />
+</Pagination.Root>
+```
+
+## Shortcuts
+
+The `Pagination` component also provides a set of shortcuts for common use cases.
+
+### PaginationItems
+
+This component renders the number of pages based on the `count` and `pageSize` props. Rendering this:
+
+```tsx
+<Pagination.Items />
+```
+
+is shorthand for this:
+
+```tsx
+<Pagination.Context>
+  {({ pages }) =>
+    pages.map((page, index) =>
+      page.type === "page" ? (
+        <Pagination.Item key={index} {...page} />
+      ) : (
+        <Pagination.Ellipsis key={index} index={index} />
+      ),
+    )
+  }
+</Pagination.Context>
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Ellipsis
+
+<PropsTable part="Ellipsis" />
+
+### Item
+
+<PropsTable part="Item" />

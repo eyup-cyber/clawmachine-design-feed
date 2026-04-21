@@ -1,0 +1,207 @@
+<div class="block-command-palette">
+<style>
+.block-command-palette .cp-panel {
+  background: var(--sl-bg);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-inset);
+  overflow: hidden;
+  font-family: var(--sl-font-mono);
+}
+.block-command-palette .cp-bar {
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  background: var(--sl-surface);
+  border-bottom: 1px solid var(--sl-border-color);
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  
+  color: var(--sl-muted);
+}
+.block-command-palette .cp-bar-dots {
+  display: flex;
+  gap: 4px;
+}
+.block-command-palette .cp-bar-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--sl-border-color);
+}
+.block-command-palette .cp-bar-dot:first-child {
+  background: color-mix(in srgb, var(--sl-secondary) 70%, red);
+}
+.block-command-palette .cp-bar-dot:nth-child(2) {
+  background: var(--sl-secondary);
+}
+.block-command-palette .cp-bar-dot:last-child {
+  background: var(--sl-accent);
+}
+.block-command-palette .cp-bar-title {
+  flex: 1;
+  text-align: center;
+  color: var(--sl-muted);
+}
+.block-command-palette .cp-body {
+  padding: var(--sl-space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-space-sm);
+}
+.block-command-palette .cp-history {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 160px;
+  overflow-y: auto;
+}
+.block-command-palette .cp-line {
+  display: flex;
+  gap: var(--sl-space-sm);
+  font-size: 11px;
+  line-height: 1.6;
+  padding: 2px 0;
+}
+.block-command-palette .cp-prompt {
+  color: var(--sl-accent);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+.block-command-palette .cp-cmd {
+  color: var(--sl-text);
+}
+.block-command-palette .cp-output {
+  color: var(--sl-muted);
+  font-size: 10px;
+  padding-left: 24px;
+  line-height: 1.5;
+}
+.block-command-palette .cp-output.ok {
+  color: var(--sl-accent);
+}
+.block-command-palette .cp-output.err {
+  color: color-mix(in srgb, var(--sl-secondary) 70%, red);
+}
+.block-command-palette .cp-input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+  padding-top: var(--sl-space-xs);
+  border-top: 1px solid var(--sl-border-color);
+}
+.block-command-palette .cp-input-prompt {
+  color: var(--sl-accent);
+  font-weight: 700;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+.block-command-palette .cp-input-text {
+  color: var(--sl-text);
+  font-size: 11px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.block-command-palette .cp-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 14px;
+  background: var(--sl-accent);
+  animation: cp-blink 1s step-end infinite;
+  vertical-align: middle;
+  margin-left: 1px;
+}
+@keyframes cp-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.block-command-palette .cp-suggest {
+  padding: var(--sl-space-xs) 0;
+  border-top: 1px solid var(--sl-border-color);
+}
+.block-command-palette .cp-suggest-title {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-muted);
+  padding-bottom: 4px;
+}
+.block-command-palette .cp-suggest-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.block-command-palette .cp-suggest-item {
+  padding: 2px 8px;
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  font-size: 9px;
+  color: var(--sl-text);
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+.block-command-palette .cp-suggest-item.match {
+  border-color: var(--sl-accent);
+  color: var(--sl-accent);
+  opacity: 1;
+}
+</style>
+
+<div class="cp-panel">
+  <div class="cp-bar">
+    <div class="cp-bar-dots">
+      <span class="cp-bar-dot"></span>
+      <span class="cp-bar-dot"></span>
+      <span class="cp-bar-dot"></span>
+    </div>
+    <span class="cp-bar-title">ops@clawmachine:~</span>
+    <span></span>
+  </div>
+  <div class="cp-body">
+    <div class="cp-history">
+      <div class="cp-line">
+        <span class="cp-prompt">$</span>
+        <span class="cp-cmd">fleet status --region north</span>
+      </div>
+      <div class="cp-output ok">  38/38 machines online | uptime 99.2% | last check 14s ago</div>
+
+      <div class="cp-line">
+        <span class="cp-prompt">$</span>
+        <span class="cp-cmd">restock --machine 0847 --count 240</span>
+      </div>
+      <div class="cp-output ok">  restock queued | ETA 12min | priority: normal</div>
+
+      <div class="cp-line">
+        <span class="cp-prompt">$</span>
+        <span class="cp-cmd">alert ack --id 4821</span>
+      </div>
+      <div class="cp-output">  alert #4821 acknowledged by ops@regan | escalation paused</div>
+
+      <div class="cp-line">
+        <span class="cp-prompt">$</span>
+        <span class="cp-cmd">diagnose --machine 0219 --sensor claw_tension</span>
+      </div>
+      <div class="cp-output err">  WARN: tension drift +12% detected | auto-recalibration started</div>
+      <div class="cp-output ok">  recalibration OK | tension within spec (3.2N +/- 0.1N)</div>
+    </div>
+
+    <div class="cp-input-row">
+      <span class="cp-input-prompt">$</span>
+      <span class="cp-input-text">deploy<span class="cp-cursor"></span></span>
+    </div>
+
+    <div class="cp-suggest">
+      <div class="cp-suggest-title">SUGGESTIONS</div>
+      <div class="cp-suggest-list">
+        <span class="cp-suggest-item match">deploy --firmware v2.4.2</span>
+        <span class="cp-suggest-item">deploy --config reload</span>
+        <span class="cp-suggest-item">deploy --rollback v2.4.1</span>
+        <span class="cp-suggest-item">deploy --dry-run</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

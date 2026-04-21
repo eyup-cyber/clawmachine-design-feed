@@ -1,0 +1,107 @@
+// ============================================================
+// Neon Border Effect - Animated rainbow gradient border with blur
+// ============================================================
+
+@layer components {
+  .cyber-neon-border {
+    position: relative;
+    isolation: isolate;
+
+    // Rainbow gradient border with blur glow (default: cyan theme)
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border-radius: inherit;
+      background: linear-gradient(
+        90deg,
+        var(--cyber-cyan-500, #00f0ff),
+        var(--cyber-magenta-500, #ff2a6d),
+        var(--cyber-yellow-500, #fcee0a),
+        var(--cyber-green-500, #05ffa1),
+        var(--cyber-cyan-500, #00f0ff)
+      );
+      background-size: 400% 100%;
+      animation: neon-flow 4s linear infinite;
+      filter: blur(15px);
+      inset: 0;
+    }
+
+    // Solid background to cover the center
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border-radius: inherit;
+      background: var(--color-bg-secondary, #0d1117);
+      inset: 0;
+    }
+
+    // Magenta variant
+    &--magenta::before {
+      background: linear-gradient(
+        90deg,
+        var(--cyber-magenta-500, #ff2a6d),
+        var(--cyber-cyan-500, #00f0ff),
+        var(--cyber-magenta-500, #ff2a6d),
+        var(--cyber-yellow-500, #fcee0a),
+        var(--cyber-magenta-500, #ff2a6d)
+      );
+    }
+
+    // Cyan only variant
+    &--cyan::before {
+      background: linear-gradient(
+        90deg,
+        var(--cyber-cyan-400, #33f3ff),
+        var(--cyber-cyan-600, #00c4cc),
+        var(--cyber-cyan-500, #00f0ff),
+        var(--cyber-cyan-400, #33f3ff)
+      );
+    }
+
+    // Yellow variant
+    &--yellow::before {
+      background: linear-gradient(
+        90deg,
+        var(--cyber-yellow-500, #fcee0a),
+        var(--cyber-green-500, #05ffa1),
+        var(--cyber-yellow-500, #fcee0a),
+        var(--cyber-cyan-500, #00f0ff),
+        var(--cyber-yellow-500, #fcee0a)
+      );
+    }
+
+    // Green variant
+    &--green::before {
+      background: linear-gradient(
+        90deg,
+        var(--cyber-green-500, #05ffa1),
+        var(--cyber-cyan-500, #00f0ff),
+        var(--cyber-green-500, #05ffa1),
+        var(--cyber-yellow-500, #fcee0a),
+        var(--cyber-green-500, #05ffa1)
+      );
+    }
+  }
+
+  @keyframes neon-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: 400% 50%;
+    }
+  }
+
+  // Respect reduced motion preference
+  @media (prefers-reduced-motion: reduce) {
+    .cyber-neon-border {
+      &::before {
+        background-position: 0% 50%;
+        animation: none;
+      }
+    }
+  }
+}

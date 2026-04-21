@@ -1,0 +1,328 @@
+<div class="block-heatmap-grid">
+<style>
+.block-heatmap-grid .hm-panel {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow: hidden;
+}
+.block-heatmap-grid .hm-hdr {
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block-heatmap-grid .hm-title {
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  
+  letter-spacing: 0.04em;
+  color: var(--sl-text);
+}
+.block-heatmap-grid .hm-subtitle {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  
+  color: var(--sl-muted);
+}
+.block-heatmap-grid .hm-body {
+  padding: var(--sl-space-md);
+  overflow-x: auto;
+}
+.block-heatmap-grid .hm-table {
+  display: grid;
+  grid-template-columns: 36px repeat(24, 1fr);
+  gap: 2px;
+  min-width: 520px;
+}
+.block-heatmap-grid .hm-hour-hdr {
+  font-family: var(--sl-font-mono);
+  font-size: 7px;
+  color: var(--sl-muted);
+  text-align: center;
+  padding-bottom: 4px;
+  letter-spacing: 0.05em;
+}
+.block-heatmap-grid .hm-day-label {
+  font-family: var(--sl-font-mono);
+  font-size: 8px;
+  color: var(--sl-muted);
+  
+  letter-spacing: 0.1em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6px;
+  height: 16px;
+}
+.block-heatmap-grid .hm-cell {
+  height: 16px;
+  border-radius: 2px;
+  background: var(--sl-accent);
+  transition: opacity 0.15s;
+}
+.block-heatmap-grid .hm-cell:hover {
+  outline: 1px solid var(--sl-text);
+  outline-offset: 1px;
+}
+.block-heatmap-grid .hm-scale {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-xs);
+  padding-top: var(--sl-space-sm);
+  justify-content: flex-end;
+}
+.block-heatmap-grid .hm-scale-label {
+  font-family: var(--sl-font-mono);
+  font-size: 8px;
+  color: var(--sl-muted);
+  letter-spacing: 0.08em;
+}
+.block-heatmap-grid .hm-scale-box {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--sl-accent);
+}
+</style>
+
+<div class="hm-panel">
+  <div class="hm-hdr">
+    <span class="hm-title">OPERATIONS HEATMAP</span>
+    <span class="hm-subtitle">PLAYS PER HOUR / 7 DAYS</span>
+  </div>
+  <div class="hm-body">
+    <div class="hm-table">
+      <!-- hour headers row: blank corner + 24 hours -->
+      <div></div>
+      <div class="hm-hour-hdr">0</div>
+      <div class="hm-hour-hdr">1</div>
+      <div class="hm-hour-hdr">2</div>
+      <div class="hm-hour-hdr">3</div>
+      <div class="hm-hour-hdr">4</div>
+      <div class="hm-hour-hdr">5</div>
+      <div class="hm-hour-hdr">6</div>
+      <div class="hm-hour-hdr">7</div>
+      <div class="hm-hour-hdr">8</div>
+      <div class="hm-hour-hdr">9</div>
+      <div class="hm-hour-hdr">10</div>
+      <div class="hm-hour-hdr">11</div>
+      <div class="hm-hour-hdr">12</div>
+      <div class="hm-hour-hdr">13</div>
+      <div class="hm-hour-hdr">14</div>
+      <div class="hm-hour-hdr">15</div>
+      <div class="hm-hour-hdr">16</div>
+      <div class="hm-hour-hdr">17</div>
+      <div class="hm-hour-hdr">18</div>
+      <div class="hm-hour-hdr">19</div>
+      <div class="hm-hour-hdr">20</div>
+      <div class="hm-hour-hdr">21</div>
+      <div class="hm-hour-hdr">22</div>
+      <div class="hm-hour-hdr">23</div>
+
+      <!-- MON -->
+      <div class="hm-day-label">MON</div>
+      <div class="hm-cell" style="opacity:0.08"></div>
+      <div class="hm-cell" style="opacity:0.05"></div>
+      <div class="hm-cell" style="opacity:0.03"></div>
+      <div class="hm-cell" style="opacity:0.03"></div>
+      <div class="hm-cell" style="opacity:0.05"></div>
+      <div class="hm-cell" style="opacity:0.10"></div>
+      <div class="hm-cell" style="opacity:0.20"></div>
+      <div class="hm-cell" style="opacity:0.35"></div>
+      <div class="hm-cell" style="opacity:0.50"></div>
+      <div class="hm-cell" style="opacity:0.65"></div>
+      <div class="hm-cell" style="opacity:0.80"></div>
+      <div class="hm-cell" style="opacity:0.90"></div>
+      <div class="hm-cell" style="opacity:0.85"></div>
+      <div class="hm-cell" style="opacity:0.75"></div>
+      <div class="hm-cell" style="opacity:0.70"></div>
+      <div class="hm-cell" style="opacity:0.60"></div>
+      <div class="hm-cell" style="opacity:0.55"></div>
+      <div class="hm-cell" style="opacity:0.65"></div>
+      <div class="hm-cell" style="opacity:0.80"></div>
+      <div class="hm-cell" style="opacity:0.90"></div>
+      <div class="hm-cell" style="opacity:0.70"></div>
+      <div class="hm-cell" style="opacity:0.45"></div>
+      <div class="hm-cell" style="opacity:0.25"></div>
+      <div class="hm-cell" style="opacity:0.12"></div>
+
+      <!-- TUE -->
+      <div class="hm-day-label">TUE</div>
+      <div class="hm-cell" style="opacity:0.10"></div>
+      <div class="hm-cell" style="opacity:0.06"></div>
+      <div class="hm-cell" style="opacity:0.04"></div>
+      <div class="hm-cell" style="opacity:0.03"></div>
+      <div class="hm-cell" style="opacity:0.04"></div>
+      <div class="hm-cell" style="opacity:0.08"></div>
+      <div class="hm-cell" style="opacity:0.18"></div>
+      <div class="hm-cell" style="opacity:0.30"></div>
+      <div class="hm-cell" style="opacity:0.48"></div>
+      <div class="hm-cell" style="opacity:0.60"></div>
+      <div class="hm-cell" style="opacity:0.72"></div>
+      <div class="hm-cell" style="opacity:0.85"></div>
+      <div class="hm-cell" style="opacity:0.80"></div>
+      <div class="hm-cell" style="opacity:0.70"></div>
+      <div class="hm-cell" style="opacity:0.65"></div>
+      <div class="hm-cell" style="opacity:0.58"></div>
+      <div class="hm-cell" style="opacity:0.52"></div>
+      <div class="hm-cell" style="opacity:0.60"></div>
+      <div class="hm-cell" style="opacity:0.75"></div>
+      <div class="hm-cell" style="opacity:0.82"></div>
+      <div class="hm-cell" style="opacity:0.65"></div>
+      <div class="hm-cell" style="opacity:0.40"></div>
+      <div class="hm-cell" style="opacity:0.22"></div>
+      <div class="hm-cell" style="opacity:0.10"></div>
+
+      <!-- WED -->
+      <div class="hm-day-label">WED</div>
+      <div class="hm-cell" style="opacity:0.09"></div>
+      <div class="hm-cell" style="opacity:0.05"></div>
+      <div class="hm-cell" style="opacity:0.04"></div>
+      <div class="hm-cell" style="opacity:0.03"></div>
+      <div class="hm-cell" style="opacity:0.05"></div>
+      <div class="hm-cell" style="opacity:0.12"></div>
+      <div class="hm-cell" style="opacity:0.22"></div>
+      <div class="hm-cell" style="opacity:0.38"></div>
+      <div class="hm-cell" style="opacity:0.55"></div>
+      <div class="hm-cell" style="opacity:0.70"></div>
+      <div class="hm-cell" style="opacity:0.85"></div>
+      <div class="hm-cell" style="opacity:0.95"></div>
+      <div class="hm-cell" style="opacity:0.90"></div>
+      <div class="hm-cell" style="opacity:0.80"></div>
+      <div class="hm-cell" style="opacity:0.75"></div>
+      <div class="hm-cell" style="opacity:0.68"></div>
+      <div class="hm-cell" style="opacity:0.60"></div>
+      <div class="hm-cell" style="opacity:0.72"></div>
+      <div class="hm-cell" style="opacity:0.88"></div>
+      <div class="hm-cell" style="opacity:1.00"></div>
+      <div class="hm-cell" style="opacity:0.78"></div>
+      <div class="hm-cell" style="opacity:0.50"></div>
+      <div class="hm-cell" style="opacity:0.30"></div>
+      <div class="hm-cell" style="opacity:0.15"></div>
+
+      <!-- THU -->
+      <div class="hm-day-label">THU</div>
+      <div class="hm-cell" style="opacity:0.08"></div>
+      <div class="hm-cell" style="opacity:0.05"></div>
+      <div class="hm-cell" style="opacity:0.03"></div>
+      <div class="hm-cell" style="opacity:0.03"></div>
+      <div class="hm-cell" style="opacity:0.04"></div>
+      <div class="hm-cell" style="opacity:0.09"></div>
+      <div class="hm-cell" style="opacity:0.19"></div>
+      <div class="hm-cell" style="opacity:0.33"></div>
+      <div class="hm-cell" style="opacity:0.50"></div>
+      <div class="hm-cell" style="opacity:0.62"></div>
+      <div class="hm-cell" style="opacity:0.78"></div>
+      <div class="hm-cell" style="opacity:0.88"></div>
+      <div class="hm-cell" style="opacity:0.82"></div>
+      <div class="hm-cell" style="opacity:0.72"></div>
+      <div class="hm-cell" style="opacity:0.68"></div>
+      <div class="hm-cell" style="opacity:0.60"></div>
+      <div class="hm-cell" style="opacity:0.55"></div>
+      <div class="hm-cell" style="opacity:0.62"></div>
+      <div class="hm-cell" style="opacity:0.78"></div>
+      <div class="hm-cell" style="opacity:0.85"></div>
+      <div class="hm-cell" style="opacity:0.68"></div>
+      <div class="hm-cell" style="opacity:0.42"></div>
+      <div class="hm-cell" style="opacity:0.25"></div>
+      <div class="hm-cell" style="opacity:0.12"></div>
+
+      <!-- FRI -->
+      <div class="hm-day-label">FRI</div>
+      <div class="hm-cell" style="opacity:0.10"></div>
+      <div class="hm-cell" style="opacity:0.06"></div>
+      <div class="hm-cell" style="opacity:0.04"></div>
+      <div class="hm-cell" style="opacity:0.03"></div>
+      <div class="hm-cell" style="opacity:0.05"></div>
+      <div class="hm-cell" style="opacity:0.10"></div>
+      <div class="hm-cell" style="opacity:0.20"></div>
+      <div class="hm-cell" style="opacity:0.35"></div>
+      <div class="hm-cell" style="opacity:0.52"></div>
+      <div class="hm-cell" style="opacity:0.68"></div>
+      <div class="hm-cell" style="opacity:0.82"></div>
+      <div class="hm-cell" style="opacity:0.92"></div>
+      <div class="hm-cell" style="opacity:0.88"></div>
+      <div class="hm-cell" style="opacity:0.80"></div>
+      <div class="hm-cell" style="opacity:0.75"></div>
+      <div class="hm-cell" style="opacity:0.70"></div>
+      <div class="hm-cell" style="opacity:0.68"></div>
+      <div class="hm-cell" style="opacity:0.78"></div>
+      <div class="hm-cell" style="opacity:0.92"></div>
+      <div class="hm-cell" style="opacity:0.98"></div>
+      <div class="hm-cell" style="opacity:0.85"></div>
+      <div class="hm-cell" style="opacity:0.60"></div>
+      <div class="hm-cell" style="opacity:0.35"></div>
+      <div class="hm-cell" style="opacity:0.18"></div>
+
+      <!-- SAT -->
+      <div class="hm-day-label">SAT</div>
+      <div class="hm-cell" style="opacity:0.15"></div>
+      <div class="hm-cell" style="opacity:0.10"></div>
+      <div class="hm-cell" style="opacity:0.06"></div>
+      <div class="hm-cell" style="opacity:0.04"></div>
+      <div class="hm-cell" style="opacity:0.05"></div>
+      <div class="hm-cell" style="opacity:0.08"></div>
+      <div class="hm-cell" style="opacity:0.15"></div>
+      <div class="hm-cell" style="opacity:0.28"></div>
+      <div class="hm-cell" style="opacity:0.42"></div>
+      <div class="hm-cell" style="opacity:0.58"></div>
+      <div class="hm-cell" style="opacity:0.75"></div>
+      <div class="hm-cell" style="opacity:0.90"></div>
+      <div class="hm-cell" style="opacity:0.95"></div>
+      <div class="hm-cell" style="opacity:0.92"></div>
+      <div class="hm-cell" style="opacity:0.88"></div>
+      <div class="hm-cell" style="opacity:0.82"></div>
+      <div class="hm-cell" style="opacity:0.78"></div>
+      <div class="hm-cell" style="opacity:0.85"></div>
+      <div class="hm-cell" style="opacity:0.95"></div>
+      <div class="hm-cell" style="opacity:1.00"></div>
+      <div class="hm-cell" style="opacity:0.90"></div>
+      <div class="hm-cell" style="opacity:0.65"></div>
+      <div class="hm-cell" style="opacity:0.40"></div>
+      <div class="hm-cell" style="opacity:0.20"></div>
+
+      <!-- SUN -->
+      <div class="hm-day-label">SUN</div>
+      <div class="hm-cell" style="opacity:0.12"></div>
+      <div class="hm-cell" style="opacity:0.08"></div>
+      <div class="hm-cell" style="opacity:0.05"></div>
+      <div class="hm-cell" style="opacity:0.04"></div>
+      <div class="hm-cell" style="opacity:0.05"></div>
+      <div class="hm-cell" style="opacity:0.08"></div>
+      <div class="hm-cell" style="opacity:0.15"></div>
+      <div class="hm-cell" style="opacity:0.25"></div>
+      <div class="hm-cell" style="opacity:0.38"></div>
+      <div class="hm-cell" style="opacity:0.52"></div>
+      <div class="hm-cell" style="opacity:0.68"></div>
+      <div class="hm-cell" style="opacity:0.82"></div>
+      <div class="hm-cell" style="opacity:0.85"></div>
+      <div class="hm-cell" style="opacity:0.80"></div>
+      <div class="hm-cell" style="opacity:0.78"></div>
+      <div class="hm-cell" style="opacity:0.72"></div>
+      <div class="hm-cell" style="opacity:0.68"></div>
+      <div class="hm-cell" style="opacity:0.75"></div>
+      <div class="hm-cell" style="opacity:0.85"></div>
+      <div class="hm-cell" style="opacity:0.90"></div>
+      <div class="hm-cell" style="opacity:0.78"></div>
+      <div class="hm-cell" style="opacity:0.55"></div>
+      <div class="hm-cell" style="opacity:0.32"></div>
+      <div class="hm-cell" style="opacity:0.15"></div>
+    </div>
+
+    <div class="hm-scale">
+      <span class="hm-scale-label">LOW</span>
+      <div class="hm-scale-box" style="opacity:0.1"></div>
+      <div class="hm-scale-box" style="opacity:0.3"></div>
+      <div class="hm-scale-box" style="opacity:0.5"></div>
+      <div class="hm-scale-box" style="opacity:0.7"></div>
+      <div class="hm-scale-box" style="opacity:1.0"></div>
+      <span class="hm-scale-label">HIGH</span>
+    </div>
+  </div>
+</div>
+</div>

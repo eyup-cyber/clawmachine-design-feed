@@ -1,0 +1,15 @@
+{
+  "id": "palette-031",
+  "name": "streets-of-japan",
+  "source": "chromatic-research-paperheart",
+  "colors": {
+    "bg": "#003C3D",
+    "surface": "#0a4647",
+    "card": "#145051",
+    "accent": "#089eb6",
+    "secondary": "#393A1B",
+    "text": "#FFFED7",
+    "muted": "#326e6f"
+  },
+  "weight": 0
+}

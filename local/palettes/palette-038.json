@@ -1,0 +1,15 @@
+{
+  "id": "palette-038",
+  "name": "festival-chaos",
+  "source": "chromatic-research-kittl",
+  "colors": {
+    "bg": "#4000c2",
+    "surface": "#4a0acc",
+    "card": "#5414d6",
+    "accent": "#F5004F",
+    "secondary": "#FFAF00",
+    "text": "#F9E400",
+    "muted": "#7232f4"
+  },
+  "weight": 0
+}

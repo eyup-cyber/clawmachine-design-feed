@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>clawmachine // OPERATOR INTERFACE</title>
+<!-- FONT_FACE_BLOCK -->
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  /* colours */
+  --sl-bg: #0a0a0f;
+  --sl-surface: #141419;
+  --sl-card: #1a1a22;
+  --sl-accent: #00ff88;
+  --sl-secondary: #ff0066;
+  --sl-text: #e8e8f0;
+  --sl-muted: #6b6b80;
+
+  /* fonts */
+  --sl-font-display: 'Space Grotesk', system-ui, sans-serif;
+  --sl-font-body: 'Inter', system-ui, sans-serif;
+  --sl-font-mono: 'Space Mono', monospace;
+
+  /* spacing */
+  --sl-space-xs: 4px;
+  --sl-space-sm: 8px;
+  --sl-space-md: 16px;
+  --sl-space-lg: 24px;
+  --sl-space-xl: 40px;
+
+  /* surfaces */
+  --sl-shadow-raised: none;
+  --sl-shadow-inset: none;
+  --sl-border-radius: 0px;
+  --sl-border-color: var(--sl-text);
+
+  /* layout */
+  --sl-grid-template: 'header' auto 'main' 1fr 'footer' auto / 1fr;
+}
+
+html,body { height: 100%; overflow: hidden; margin: 0; }
+
+body {
+  font-family: var(--sl-font-body);
+  background: var(--sl-bg);
+  color: var(--sl-text);
+}
+
+.shell {
+  display: grid;
+  grid-template: var(--sl-grid-template);
+  min-height: 100vh;
+}
+
+/* === BRUTALIST HEADER === */
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sl-space-md) var(--sl-space-lg);
+  border-bottom: 3px solid var(--sl-text);
+  background: var(--sl-bg);
+  font-family: var(--sl-font-mono);
+}
+
+header .brand {
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  
+  letter-spacing: 8px;
+  font-weight: 900;
+}
+
+header .brand em {
+  font-style: normal;
+  color: var(--sl-accent);
+}
+
+header .meta {
+  font-size: 10px;
+  
+  letter-spacing: 3px;
+  color: var(--sl-muted);
+}
+
+/* === BRUTALIST MAIN === */
+main {
+  grid-area: main;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* full-width stacked sections */
+.section {
+  border-bottom: 2px solid var(--sl-border-color);
+  padding: var(--sl-space-xl) var(--sl-space-lg);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.section-label {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  
+  letter-spacing: 6px;
+  color: var(--sl-muted);
+  margin-bottom: var(--sl-space-lg);
+  padding-bottom: var(--sl-space-sm);
+  border-bottom: 1px solid var(--sl-border-color);
+}
+
+/* hero metric — raw, enormous */
+.hero-metric {
+  font-family: var(--sl-font-display);
+  font-size: clamp(48px, 10vw, 120px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.hero-metric .prefix {
+  color: var(--sl-muted);
+  font-size: 0.4em;
+  vertical-align: super;
+}
+
+.hero-meta {
+  display: flex;
+  gap: var(--sl-space-xl);
+  margin-top: var(--sl-space-lg);
+  font-family: var(--sl-font-mono);
+  font-size: 12px;
+  
+  letter-spacing: 2px;
+}
+
+.hero-meta .delta {
+  color: var(--sl-accent);
+}
+
+.hero-meta .delta.neg {
+  color: var(--sl-secondary);
+}
+
+/* data strip — horizontal stat blocks */
+.data-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.data-cell {
+  padding: var(--sl-space-lg);
+  border-right: 1px solid var(--sl-border-color);
+}
+
+.data-cell:last-child {
+  border-right: none;
+}
+
+.data-cell .label {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  
+  letter-spacing: 4px;
+  color: var(--sl-muted);
+  margin-bottom: var(--sl-space-sm);
+}
+
+.data-cell .value {
+  font-family: var(--sl-font-display);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.data-cell .unit {
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+  color: var(--sl-muted);
+  margin-top: var(--sl-space-xs);
+}
+
+/* raw table */
+.raw-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sl-font-mono);
+  font-size: 12px;
+}
+
+.raw-table th {
+  text-align: left;
+  font-weight: 400;
+  font-size: 9px;
+  
+  letter-spacing: 4px;
+  color: var(--sl-muted);
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 2px solid var(--sl-text);
+}
+
+.raw-table td {
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  vertical-align: top;
+}
+
+.raw-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.raw-table .highlight {
+  color: var(--sl-accent);
+  font-weight: 700;
+}
+
+/* log feed */
+.log-entry {
+  display: grid;
+  grid-template-columns: 80px 60px 1fr;
+  gap: var(--sl-space-md);
+  padding: var(--sl-space-sm) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-border-color) 30%, transparent);
+  font-family: var(--sl-font-mono);
+  font-size: 12px;
+}
+
+.log-entry .time {
+  color: var(--sl-muted);
+}
+
+.log-entry .level {
+  
+  font-weight: 700;
+}
+
+.log-entry .level.info { color: var(--sl-accent); }
+.log-entry .level.warn { color: var(--sl-secondary); }
+.log-entry .level.dbg { color: var(--sl-muted); }
+
+/* === BRUTALIST FOOTER === */
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sl-space-sm) var(--sl-space-lg);
+  border-top: 3px solid var(--sl-text);
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  
+  letter-spacing: 3px;
+  color: var(--sl-muted);
+  background: var(--sl-bg);
+}
+
+footer .status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 0;
+  background: var(--sl-accent);
+  margin-right: var(--sl-space-sm);
+}
+
+/* === NAV ZONE === */
+</style>
+</head>
+<body>
+
+<!-- NAV_BLOCK_START -->
+<!-- NAV_BLOCK_END -->
+
+<div class="shell">
+
+<header>
+  <div class="brand"><em>clawmachine</em> // OPERATIONS</div>
+  <div class="meta">systems nominal &mdash; all nodes responding</div>
+</header>
+
+<main>
+  <!-- SECTION 1: HERO METRIC -->
+  <div class="section" data-zone="primary">
+    <div class="section-label">total revenue &mdash; current period</div>
+    <div class="hero-metric"><span class="prefix">$</span>184,320</div>
+    <div class="hero-meta">
+      <span><span class="delta">+8.7%</span> vs previous period</span>
+      <span>target: $252,000</span>
+      <span>margin: 34.2%</span>
+    </div>
+  </div>
+
+  <!-- SECTION 2: DATA STRIP -->
+  <div class="section" data-zone="secondary">
+    <div class="section-label">fleet status</div>
+    <div class="data-strip">
+      <div class="data-cell">
+        <div class="label">active machines</div>
+        <div class="value">2,847</div>
+        <div class="unit">+142 this quarter</div>
+      </div>
+      <div class="data-cell">
+        <div class="label">uptime</div>
+        <div class="value">99.97%</div>
+        <div class="unit">12ms avg latency</div>
+      </div>
+      <div class="data-cell">
+        <div class="label">operators online</div>
+        <div class="value">38</div>
+        <div class="unit">across 4 regions</div>
+      </div>
+      <div class="data-cell">
+        <div class="label">alerts pending</div>
+        <div class="value">3</div>
+        <div class="unit">1 critical, 2 warning</div>
+      </div>
+      <div class="data-cell">
+        <div class="label">daily revenue</div>
+        <div class="value">$6,144</div>
+        <div class="unit">+12.4% vs yesterday</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: RAW TABLE -->
+  <div class="section" data-zone="tertiary">
+    <div class="section-label">location performance</div>
+    <table class="raw-table">
+      <thead>
+        <tr>
+          <th>location</th>
+          <th class="num">machines</th>
+          <th class="num">revenue (30d)</th>
+          <th class="num">margin</th>
+          <th class="num">uptime</th>
+          <th>status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>westfield mall</td>
+          <td class="num">847</td>
+          <td class="num highlight">$42,180</td>
+          <td class="num">38.2%</td>
+          <td class="num">99.99%</td>
+          <td>operational</td>
+        </tr>
+        <tr>
+          <td>central station</td>
+          <td class="num">612</td>
+          <td class="num highlight">$38,920</td>
+          <td class="num">34.1%</td>
+          <td class="num">99.97%</td>
+          <td>operational</td>
+        </tr>
+        <tr>
+          <td>harbour district</td>
+          <td class="num">534</td>
+          <td class="num">$24,640</td>
+          <td class="num">31.8%</td>
+          <td class="num">99.94%</td>
+          <td>operational</td>
+        </tr>
+        <tr>
+          <td>university quarter</td>
+          <td class="num">489</td>
+          <td class="num">$28,400</td>
+          <td class="num">36.5%</td>
+          <td class="num">99.98%</td>
+          <td>operational</td>
+        </tr>
+        <tr>
+          <td>airport terminal</td>
+          <td class="num">365</td>
+          <td class="num">$50,180</td>
+          <td class="num">42.1%</td>
+          <td class="num">99.91%</td>
+          <td>maintenance</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4: LOG FEED -->
+  <div class="section" data-zone="quaternary">
+    <div class="section-label">operations log</div>
+    <div class="log-entry">
+      <span class="time">14:32:18</span>
+      <span class="level info">INFO</span>
+      <span>machine #0847 restock complete &mdash; 240 units loaded</span>
+    </div>
+    <div class="log-entry">
+      <span class="time">14:32:14</span>
+      <span class="level dbg">DBG</span>
+      <span>inventory sync: westfield_north &rarr; central_db OK</span>
+    </div>
+    <div class="log-entry">
+      <span class="time">13:18:02</span>
+      <span class="level warn">WARN</span>
+      <span>anomaly: harbour_district revenue -34% vs 7d avg</span>
+    </div>
+    <div class="log-entry">
+      <span class="time">13:17:58</span>
+      <span class="level info">INFO</span>
+      <span>alert dispatched to ops team &mdash; ticket #4821 created</span>
+    </div>
+    <div class="log-entry">
+      <span class="time">12:00:01</span>
+      <span class="level info">INFO</span>
+      <span>shift_change: team_alpha &rarr; team_bravo (12 operators)</span>
+    </div>
+    <div class="log-entry">
+      <span class="time">04:00:12</span>
+      <span class="level dbg">DBG</span>
+      <span>backup_job: 847 records &rarr; cold_storage [3.2s]</span>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div><span class="status-dot"></span>ALL SYSTEMS OPERATIONAL &mdash; UPTIME: 99.97% &mdash; LATENCY: 12MS</div>
+  <div>NODES: 142/145 &mdash; LAST SYNC: 2 MIN AGO &mdash; 1 ALERT PENDING</div>
+</footer>
+
+</div><!-- .shell -->
+
+</body>
+</html>

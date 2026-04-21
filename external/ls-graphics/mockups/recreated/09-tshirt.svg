@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 800" width="700">
+  <rect width="700" height="800" fill="#F2EFE7"/>
+  <path d="M120 200 L120 140 L220 80 L280 140 Q350 180 420 140 L480 80 L580 140 L580 200 L520 230 L520 720 L180 720 L180 230 Z" fill="#FAFAFA" stroke="#DADADA"/>
+  <rect x="260" y="260" width="180" height="280" fill="none" stroke="#ccc" stroke-dasharray="6 6"/>
+  <text x="350" y="410" font-family="system-ui" font-size="14" fill="#888" text-anchor="middle">Print zone 180×280</text>
+</svg>

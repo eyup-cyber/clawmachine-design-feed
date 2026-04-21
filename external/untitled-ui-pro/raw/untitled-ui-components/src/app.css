@@ -1,0 +1,28 @@
+@import './lib/untitled.css';
+/* The order here matters!! The panda layers first, as we will only be doing overrides with tailwind. */
+@layer reset, base, tokens, recipes, utilities;
+@layer tailwind.base {
+	@tailwind base;
+}
+@layer tailwind.components {
+	@tailwind components;
+}
+@layer tailwind.utilities {
+	@tailwind utilities;
+}
+
+/* Will automatically be assigned to tailwind.components layer :) */
+@layer components {
+	.no-scrollbar {
+		-ms-overflow-style: none; /* for Internet Explorer, Edge */
+		scrollbar-width: none; /* for Firefox */
+	}
+	.no-scrollbar::-webkit-scrollbar {
+		display: none; /* for Chrome, Safari, and Opera */
+	}
+}
+
+html {
+	-webkit-tap-highlight-color: transparent;
+	scroll-behavior: smooth;
+}

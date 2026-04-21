@@ -1,0 +1,93 @@
+<div class="block-chart-bar">
+<style>
+.block-chart-bar .panel {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow: hidden;
+}
+.block-chart-bar .panel-hdr {
+  padding: var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block-chart-bar .panel-title {
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  
+  letter-spacing: 0.04em;
+}
+.block-chart-bar .panel-badge {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  
+  padding: 3px 8px;
+  border: 1px solid var(--sl-accent);
+  border-radius: var(--sl-border-radius);
+  color: var(--sl-accent);
+}
+.block-chart-bar .panel-body {
+  padding: var(--sl-space-md);
+}
+.block-chart-bar .chart-area {
+  height: 200px;
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-inset);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--sl-space-md);
+  gap: var(--sl-space-xs);
+  position: relative;
+  overflow: hidden;
+}
+.block-chart-bar .chart-bar {
+  flex: 1;
+  background: linear-gradient(to top, var(--sl-accent), transparent);
+  border-radius: 2px 2px 0 0;
+  min-height: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.block-chart-bar .chart-bar:hover { opacity: 1; }
+.block-chart-bar .chart-gridline {
+  position: absolute;
+  left: var(--sl-space-md);
+  right: var(--sl-space-md);
+  height: 1px;
+  background: var(--sl-border-color);
+}
+</style>
+
+<div class="panel">
+  <div class="panel-hdr">
+    <span class="panel-title">REVENUE BY LOCATION</span>
+    <span class="panel-badge">LIVE</span>
+  </div>
+  <div class="panel-body">
+    <div class="chart-area">
+      <div class="chart-gridline" style="bottom:25%"></div>
+      <div class="chart-gridline" style="bottom:50%"></div>
+      <div class="chart-gridline" style="bottom:75%"></div>
+      <div class="chart-bar" style="height:65%"></div>
+      <div class="chart-bar" style="height:80%"></div>
+      <div class="chart-bar" style="height:45%"></div>
+      <div class="chart-bar" style="height:90%"></div>
+      <div class="chart-bar" style="height:55%"></div>
+      <div class="chart-bar" style="height:70%"></div>
+      <div class="chart-bar" style="height:85%"></div>
+      <div class="chart-bar" style="height:60%"></div>
+      <div class="chart-bar" style="height:75%"></div>
+      <div class="chart-bar" style="height:40%"></div>
+      <div class="chart-bar" style="height:95%"></div>
+      <div class="chart-bar" style="height:50%"></div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "id": "palette-053",
+  "name": "colormind-pulse",
+  "source": "colormind-api",
+  "colors": {
+    "bg": "#373835",
+    "surface": "#41423f",
+    "card": "#4b4c49",
+    "accent": "#cf884a",
+    "secondary": "#b5612d",
+    "text": "#f2f2eb",
+    "muted": "#9c999a"
+  },
+  "weight": 0
+}

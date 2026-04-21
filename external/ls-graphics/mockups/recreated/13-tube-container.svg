@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 640" width="400">
+  <defs><linearGradient id="tub" x1="0" x2="1"><stop offset="0" stop-color="#C8C2B5"/><stop offset="0.3" stop-color="#F0ECE4"/><stop offset="0.7" stop-color="#F0ECE4"/><stop offset="1" stop-color="#C8C2B5"/></linearGradient></defs>
+  <ellipse cx="200" cy="80" rx="110" ry="24" fill="#1A1A1A"/>
+  <rect x="90" y="80" width="220" height="500" fill="url(#tub)"/>
+  <ellipse cx="200" cy="580" rx="110" ry="18" fill="#C8C2B5"/>
+  <rect x="140" y="240" width="120" height="180" fill="#FFF8" stroke="#999" stroke-dasharray="4 4"/>
+</svg>

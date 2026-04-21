@@ -1,0 +1,187 @@
+{
+  "_source": {
+    "url": "https://vercel.com",
+    "extracted_from": ["vercel.com/vc-ap-vercel-marketing/_next/static/immutable/chunks/*.css (29 bundles)", "vercel.com/geist/colors", "vercel.com/geist/typography", "vercel.com/geist/button", "vercel.com/geist/table", "vercel.com/geist/input", "vercel.com/geist/introduction", "vercel.com/design"],
+    "extraction_method": "firecrawl branding + raw CSS bundle scrape + Geist docs",
+    "extracted_at": "2026-04-21",
+    "authoritative_for": "minimal geometric developer-first design, black-and-white with 10-step accessible color scales"
+  },
+  "brand": {
+    "name": "Vercel / Geist",
+    "mode": "dual-theme (light primary, dark first-class)",
+    "theme-color_meta": "#FAFAFA",
+    "personality": "geometric, minimal, monochrome with micro-accent colors, grid-forward",
+    "design_system": "Geist"
+  },
+  "color": {
+    "backgrounds": {
+      "note": "Two backgrounds. Background 1 is default; Background 2 sparingly for subtle differentiation.",
+      "bg_1_light": "#FFFFFF",
+      "bg_1_dark": "#000000",
+      "bg_2_light": "#FAFAFA",
+      "bg_2_dark": "#0A0A0A"
+    },
+    "geist_gray_scale": {
+      "note": "10-step gray scale used for component bg, border, text. Same semantic roles light↔dark.",
+      "light": {
+        "gray-100": "#FAFAFA",
+        "gray-200": "#EAEAEA",
+        "gray-300": "#999999",
+        "gray-400": "#888888",
+        "gray-500": "#666666",
+        "gray-600": "#444444",
+        "gray-700": "#333333",
+        "gray-800": "#111111",
+        "gray-900": "#0A0A0A",
+        "gray-1000": "#000000"
+      }
+    },
+    "semantic_role_map": {
+      "color-1": "Default component background",
+      "color-2": "Hover background",
+      "color-3": "Active background",
+      "color-4": "Default border",
+      "color-5": "Hover border",
+      "color-6": "Active border",
+      "color-7": "High contrast background",
+      "color-8": "Hover high contrast background",
+      "color-9": "Secondary text and icons",
+      "color-10": "Primary text and icons"
+    },
+    "accents_legacy": {
+      "accents-1_light": "#FAFAFA",
+      "accents-2_light": "#EAEAEA",
+      "accents-3_light": "#999999",
+      "accents-4_light": "#888888",
+      "accents-5_light": "#666666",
+      "accents-6_light": "#444444",
+      "accents-7_light": "#333333",
+      "accents-8_light": "#111111",
+      "accents-1_dark": "#111111",
+      "accents-2_dark": "#333333",
+      "accents-3_dark": "#444444",
+      "accents-4_dark": "#666666",
+      "accents-5_dark": "#666666",
+      "accents-6_dark": "#444444",
+      "accents-7_dark": "#333333",
+      "accents-8_dark": "#111111"
+    },
+    "scales": {
+      "blue_accent": "#0072F5",
+      "conic_border_gradient": "conic-gradient(from 180deg at 50% 50%, #E92A67 0deg, #A853BA 112.5deg, #2A8AF6 228.75deg, #2A8AF600 360deg)"
+    },
+    "p3_note": "Vercel uses P3 colors on supported browsers; sRGB fallbacks shown here"
+  },
+  "typography": {
+    "fonts": {
+      "sans": "'Geist', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+      "mono": "'Geist Mono', ui-monospace, SFMono-Regular, 'Roboto Mono', Menlo, Monaco, 'Liberation Mono', 'DejaVu Sans Mono', 'Courier New', monospace",
+      "pixel_square": "'GeistPixelSquare', Geist Mono, ui-monospace, SFMono-Regular, ...",
+      "pixel_grid": "'GeistPixelGrid', Geist Mono, ui-monospace, ...",
+      "pixel_line": "'GeistPixelLine', Geist Mono, ui-monospace, ...",
+      "pixel_circle": "'GeistPixelCircle', Geist Mono, ui-monospace, ...",
+      "pixel_triangle": "'GeistPixelTriangle', Geist Mono, ui-monospace, ..."
+    },
+    "font_files": {
+      "Geist_latin": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/media/caa3a2e1cccd8315.p.400zotvijr2rn.woff2",
+      "Geist_ext": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/media/8a480f0b521d4e75.0kma2ovy0zrmx.woff2",
+      "GeistMono_latin": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/media/797e433ab948586e.p.3f30ggp2vw8zj.woff2",
+      "GeistPixel_Square": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/media/GeistPixel_Square.p.2k-0ab8oywfv4.woff2",
+      "GeistPixel_Circle": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/media/GeistPixel_Circle.p.0jixsyww9kd4y.woff2",
+      "GeistPixel_Grid": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/media/GeistPixel_Grid.p.30wdobjl9hgxl.woff2",
+      "GeistPixel_Line": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/media/GeistPixel_Line.p.0rlph12vacpf4.woff2",
+      "GeistPixel_Triangle": "https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/media/GeistPixel_Triangle.p.0qs0n6zg5c5u1.woff2"
+    },
+    "geist_scale": {
+      "note": "Published typography scale from vercel.com/geist/typography. Classes prefix text-",
+      "headings": {
+        "heading-72": "Marketing heroes",
+        "heading-64": "",
+        "heading-56": "",
+        "heading-48": "",
+        "heading-40": "",
+        "heading-32": "Marketing subheadings, paragraphs, dashboard headings",
+        "heading-24": "",
+        "heading-20": "",
+        "heading-16": "",
+        "heading-14": ""
+      },
+      "buttons": {
+        "button-16": "Largest button",
+        "button-14": "Default button",
+        "button-12": "Tiny button inside an input field"
+      },
+      "labels": {
+        "label-20": "Marketing text",
+        "label-18": "",
+        "label-16": "Titles, differentiation",
+        "label-14": "Most common text style; menus",
+        "label-14-mono": "Largest mono, pairs with >14",
+        "label-13": "Secondary line next to other labels; supports Tabular for numeric",
+        "label-13-mono": "Pairs with Label 14",
+        "label-12": "Tertiary text — Comments, Show More, Calendar capitals",
+        "label-12-mono": ""
+      },
+      "copy": {
+        "copy-24": "Marketing hero areas",
+        "copy-20": "Marketing hero areas",
+        "copy-18": "Marketing, big quotes",
+        "copy-16": "Modals and simpler, larger views",
+        "copy-14": "Most commonly used",
+        "copy-13": "Secondary text, space-premium views",
+        "copy-13-mono": "Inline code mentions"
+      }
+    }
+  },
+  "spacing": {
+    "base_unit": "4px",
+    "radius_default": "6px",
+    "radius_modal_large": "8px",
+    "radius_marketing_rounded": "20px to 2.5rem (40px)",
+    "border_width": "1px (default), 2px, 3px",
+    "padding_scale": ["4px", "8px", "16px", "20px", "24px", "48px"]
+  },
+  "elevation": {
+    "shadow-extra-small": "0px 4px 8px #0000001F  /  0 0 0 1px var(--accents-2)",
+    "shadow-medium": "0 8px 30px #0000001F  /  0 0 0 1px var(--accents-2)",
+    "shadow-large": "0 30px 60px #0000001F  /  0 0 0 1px var(--accents-2)",
+    "shadow-hover": "0 30px 60px #0000001F  /  0 0 0 1px var(--geist-foreground)",
+    "note": "Geist uses 1px ring + drop-shadow layered — signature 'sharp on hover' card effect"
+  },
+  "motion": {
+    "durations": ["0.15s", "0.5s", "0.56104s", "0.8s", "1s"],
+    "easing_default": "cubic-bezier(0.46, 0.27, 0.16, 1.02)",
+    "transition_shorthand": "background 0.1s ease, color 0.1s ease, box-shadow 0.2s ease",
+    "complex_spring": "linear(0 0%, .00484 1%, .018323 2%, ... ) — bespoke smooth curves used in hero animations"
+  },
+  "components": {
+    "button_primary_marketing": {
+      "bg": "#171717",
+      "text": "#FFFFFF",
+      "radius": "6px",
+      "shadow": "none"
+    },
+    "button_secondary_marketing": {
+      "bg": "#FFFFFF",
+      "text": "#171717",
+      "radius": "100px",
+      "shadow": "0 0 0 1px rgba(0,0,0,0.08), 0 2px 2px rgba(0,0,0,0.04), 0 0 0 1px #FAFAFA"
+    },
+    "input_default": {
+      "bg": "#FFFFFF",
+      "text": "#000000",
+      "radius": "6px",
+      "shadow": "none",
+      "variants": ["Default", "Prefix/suffix", "Disabled", "Search (esc-to-clear)", "⌘K mode (shows Esc when dirty)", "Error", "Label"]
+    },
+    "table": {
+      "variants": ["Basic", "Striped", "Bordered", "Interactive", "Full featured (with subtotal)", "Virtualized"]
+    }
+  },
+  "signature_effects": {
+    "triangle_geometry": "Vercel mark is a triangle derived from the ▲ glyph",
+    "grid_foundation": "Literally a dotted grid is part of their aesthetic — geist/grid page",
+    "pixel_fonts": "Five bespoke pixel variants (Square, Grid, Line, Circle, Triangle) for geometric marketing treatments",
+    "p3_color": "Uses display-p3 where supported; sRGB fallbacks"
+  }
+}

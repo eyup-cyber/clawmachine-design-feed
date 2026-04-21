@@ -1,0 +1,15 @@
+{
+  "id": "palette-108",
+  "name": "neobrutalist-pink",
+  "source": "ultra-expansion-cycle2-neobrutalism",
+  "colors": {
+    "bg": "#FF4081",
+    "surface": "#FF6D9E",
+    "card": "#FF5690",
+    "accent": "#002B5C",
+    "secondary": "#FFEA00",
+    "text": "#26000D",
+    "muted": "#409965"
+  },
+  "weight": 5
+}

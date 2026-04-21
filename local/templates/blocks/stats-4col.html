@@ -1,0 +1,133 @@
+<div class="block-stats-4col">
+<style>
+.block-stats-4col .stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sl-content-gap);
+}
+.block-stats-4col .stat-card {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  padding: var(--sl-space-md);
+  box-shadow: var(--sl-shadow-raised);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.block-stats-4col .stat-card:hover {
+  transform: translateY(-1px);
+}
+.block-stats-4col .stat-label {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  
+  color: var(--sl-muted);
+  margin-bottom: var(--sl-space-xs);
+}
+.block-stats-4col .stat-value {
+  font-family: var(--sl-font-display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--sl-text);
+  line-height: 1;
+}
+.block-stats-4col .stat-delta {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  margin-top: var(--sl-space-sm);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.block-stats-4col .stat-delta.up { color: var(--sl-accent) }
+.block-stats-4col .stat-delta.down { color: var(--sl-secondary) }
+.block-stats-4col .stat-spark {
+  height: 24px;
+  margin-top: var(--sl-space-sm);
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+.block-stats-4col .stat-spark-bar {
+  flex: 1;
+  background: var(--sl-accent);
+  opacity: 0.3;
+  border-radius: 1px 1px 0 0;
+  min-height: 2px;
+  transition: opacity 0.15s;
+}
+.block-stats-4col .stat-card:hover .stat-spark-bar {
+  opacity: 0.6;
+}
+@media (max-width: 768px) {
+  .block-stats-4col .stats-row { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+
+<section class="stats-row">
+  <div class="stat-card">
+    <div class="stat-label">ACTIVE MACHINES</div>
+    <div class="stat-value">2,847</div>
+    <div class="stat-delta up">+12.4% vs last month</div>
+    <div class="stat-spark">
+      <div class="stat-spark-bar" style="height:40%"></div>
+      <div class="stat-spark-bar" style="height:55%"></div>
+      <div class="stat-spark-bar" style="height:45%"></div>
+      <div class="stat-spark-bar" style="height:70%"></div>
+      <div class="stat-spark-bar" style="height:60%"></div>
+      <div class="stat-spark-bar" style="height:85%"></div>
+      <div class="stat-spark-bar" style="height:90%"></div>
+      <div class="stat-spark-bar" style="height:75%"></div>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-label">REVENUE (30D)</div>
+    <div class="stat-value">$184,320</div>
+    <div class="stat-delta up">+8.7% vs last month</div>
+    <div class="stat-spark">
+      <div class="stat-spark-bar" style="height:30%"></div>
+      <div class="stat-spark-bar" style="height:50%"></div>
+      <div class="stat-spark-bar" style="height:65%"></div>
+      <div class="stat-spark-bar" style="height:55%"></div>
+      <div class="stat-spark-bar" style="height:70%"></div>
+      <div class="stat-spark-bar" style="height:80%"></div>
+      <div class="stat-spark-bar" style="height:70%"></div>
+      <div class="stat-spark-bar" style="height:95%"></div>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-label">PROFIT MARGIN</div>
+    <div class="stat-value">34.2%</div>
+    <div class="stat-delta down">-2.1% vs last month</div>
+    <div class="stat-spark">
+      <div class="stat-spark-bar" style="height:80%"></div>
+      <div class="stat-spark-bar" style="height:75%"></div>
+      <div class="stat-spark-bar" style="height:70%"></div>
+      <div class="stat-spark-bar" style="height:65%"></div>
+      <div class="stat-spark-bar" style="height:60%"></div>
+      <div class="stat-spark-bar" style="height:55%"></div>
+      <div class="stat-spark-bar" style="height:50%"></div>
+      <div class="stat-spark-bar" style="height:45%"></div>
+    </div>
+  </div>
+
+  <div class="stat-card">
+    <div class="stat-label">MACHINES ONLINE</div>
+    <div class="stat-value">142</div>
+    <div class="stat-delta up">+3 since yesterday</div>
+    <div class="stat-spark">
+      <div class="stat-spark-bar" style="height:90%"></div>
+      <div class="stat-spark-bar" style="height:92%"></div>
+      <div class="stat-spark-bar" style="height:88%"></div>
+      <div class="stat-spark-bar" style="height:91%"></div>
+      <div class="stat-spark-bar" style="height:93%"></div>
+      <div class="stat-spark-bar" style="height:90%"></div>
+      <div class="stat-spark-bar" style="height:95%"></div>
+      <div class="stat-spark-bar" style="height:97%"></div>
+    </div>
+  </div>
+</section>
+</div>

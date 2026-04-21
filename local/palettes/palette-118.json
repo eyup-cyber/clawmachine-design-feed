@@ -1,0 +1,15 @@
+{
+  "id": "palette-118",
+  "name": "future-fuchsia",
+  "source": "ultra-expansion-cycle2-synthwave",
+  "colors": {
+    "bg": "#E040FB",
+    "surface": "#E966FC",
+    "card": "#E453FC",
+    "accent": "#002E14",
+    "secondary": "#FF0055",
+    "text": "#210026",
+    "muted": "#999040"
+  },
+  "weight": 5
+}

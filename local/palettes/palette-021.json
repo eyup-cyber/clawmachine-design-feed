@@ -1,0 +1,15 @@
+{
+  "id": "palette-021",
+  "name": "pure-neon",
+  "source": "chromatic-research-colorhex",
+  "colors": {
+    "bg": "#001EFF",
+    "surface": "#0a28ff",
+    "card": "#1432ff",
+    "accent": "#74EE15",
+    "secondary": "#F000FF",
+    "text": "#FFE700",
+    "muted": "#3250ff"
+  },
+  "weight": 0
+}

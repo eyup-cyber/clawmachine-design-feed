@@ -1,0 +1,15 @@
+{
+  "id": "palette-050",
+  "name": "c40-cities",
+  "source": "inspiration-image",
+  "colors": {
+    "bg": "#0a0a0a",
+    "surface": "#141414",
+    "card": "#1e1e1e",
+    "accent": "#00BCD4",
+    "secondary": "#ff8a65",
+    "text": "#ffffff",
+    "muted": "#6b6b6b"
+  },
+  "weight": 10
+}

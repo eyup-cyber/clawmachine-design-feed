@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <filter id="grunge">
+      <feTurbulence type="turbulence" baseFrequency="0.04" numOctaves="7" seed="42"/>
+      <feColorMatrix values="0 0 0 0 0.2 0 0 0 0 0.15 0 0 0 0 0.08 0 0 0 0.7 0"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="#d9c89a"/>
+  <rect width="400" height="400" filter="url(#grunge)"/>
+</svg>

@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>clawmachine // OPERATOR INTERFACE</title>
+<!-- FONT_FACE_BLOCK -->
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  /* colours */
+  --sl-bg: #0a0a0f;
+  --sl-surface: #141419;
+  --sl-card: #1a1a22;
+  --sl-accent: #00ff88;
+  --sl-secondary: #ff0066;
+  --sl-text: #e8e8f0;
+  --sl-muted: #6b6b80;
+
+  /* fonts */
+  --sl-font-display: 'Space Grotesk', system-ui, sans-serif;
+  --sl-font-body: 'Inter', system-ui, sans-serif;
+  --sl-font-mono: 'Space Mono', monospace;
+
+  /* spacing */
+  --sl-space-xs: 4px;
+  --sl-space-sm: 8px;
+  --sl-space-md: 16px;
+  --sl-space-lg: 24px;
+  --sl-space-xl: 40px;
+
+  /* surfaces */
+  --sl-shadow-raised: 0 2px 8px rgba(0,0,0,0.25);
+  --sl-shadow-inset: inset 0 2px 4px rgba(0,0,0,0.2);
+  --sl-border-radius: 3px;
+  --sl-border-color: color-mix(in srgb, var(--sl-text) 12%, transparent);
+
+  /* layout */
+  --sl-grid-template: 'sidebar header' auto 'sidebar main' 1fr 'sidebar footer' auto / var(--sl-sidebar-width) 1fr;
+  --sl-sidebar-width: 220px;
+  --sl-content-gap: 16px;
+}
+
+html { scroll-behavior: smooth }
+
+body {
+  background: var(--sl-bg);
+  color: var(--sl-text);
+  font-family: var(--sl-font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* === GRID SHELL === */
+.shell {
+  display: grid;
+  grid-template: var(--sl-grid-template);
+  min-height: 100vh;
+}
+
+/* === HEADER === */
+.hdr {
+  grid-area: header;
+  background: var(--sl-surface);
+  border-bottom: 1px solid var(--sl-border-color);
+  padding: 0 var(--sl-space-lg);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.hdr-brand {
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  
+  color: var(--sl-accent);
+}
+
+.hdr-brand span {
+  color: var(--sl-muted);
+  font-weight: 400;
+}
+
+.hdr-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-md);
+}
+
+.hdr-status {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--sl-muted);
+  
+}
+
+.hdr-status .live-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--sl-accent);
+  border-radius: 50%;
+  margin-right: var(--sl-space-xs);
+  animation: pulse-dot 2s ease infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.hdr-btn {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  color: var(--sl-text);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.hdr-btn:hover {
+  border-color: var(--sl-accent);
+  color: var(--sl-accent);
+}
+
+/* === SIDEBAR === */
+.sidebar {
+  grid-area: sidebar;
+  background: var(--sl-surface);
+  border-right: 1px solid var(--sl-border-color);
+  padding: var(--sl-space-md) 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  width: var(--sl-sidebar-width);
+}
+
+.sidebar-logo {
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  margin-bottom: var(--sl-space-lg);
+}
+
+.sidebar-logo svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--sl-accent);
+}
+
+.sidebar-section {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  
+  color: var(--sl-muted);
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  margin-top: var(--sl-space-md);
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+  padding: 8px var(--sl-space-md);
+  color: var(--sl-muted);
+  font-family: var(--sl-font-body);
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.15s, background 0.15s;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+}
+
+.sidebar-item:hover {
+  color: var(--sl-text);
+  background: color-mix(in srgb, var(--sl-text) 3%, transparent);
+}
+
+.sidebar-item.active {
+  color: var(--sl-accent);
+  background: color-mix(in srgb, var(--sl-text) 5%, transparent);
+  border-right: 2px solid var(--sl-accent);
+}
+
+.sidebar-item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.sidebar-item.active svg {
+  opacity: 1;
+}
+
+.sidebar-spacer { flex: 1 }
+
+/* === MAIN CONTENT === */
+.main {
+  grid-area: main;
+  padding: var(--sl-space-lg);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-content-gap);
+}
+
+/* === KPI STATS ROW === */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sl-content-gap);
+}
+
+.stat-card {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  padding: var(--sl-space-md);
+  box-shadow: var(--sl-shadow-raised);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.stat-card:hover {
+  transform: translateY(-1px);
+}
+
+.stat-label {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  
+  color: var(--sl-muted);
+  margin-bottom: var(--sl-space-xs);
+}
+
+.stat-value {
+  font-family: var(--sl-font-display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--sl-text);
+  line-height: 1;
+}
+
+.stat-delta {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  margin-top: var(--sl-space-sm);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-delta.up { color: var(--sl-accent) }
+.stat-delta.down { color: var(--sl-secondary) }
+
+.stat-spark {
+  height: 24px;
+  margin-top: var(--sl-space-sm);
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.stat-spark-bar {
+  flex: 1;
+  background: var(--sl-accent);
+  opacity: 0.3;
+  border-radius: 1px 1px 0 0;
+  min-height: 2px;
+  transition: opacity 0.15s;
+}
+
+.stat-card:hover .stat-spark-bar {
+  opacity: 0.6;
+}
+
+/* === MAIN PANEL (chart/table area) === */
+.panel {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow: hidden;
+}
+
+.panel-hdr {
+  padding: var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panel-title {
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  
+  letter-spacing: 0.04em;
+}
+
+.panel-badge {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  
+  padding: 3px 8px;
+  border: 1px solid var(--sl-accent);
+  border-radius: var(--sl-border-radius);
+  color: var(--sl-accent);
+}
+
+.panel-body {
+  padding: var(--sl-space-md);
+}
+
+/* chart placeholder */
+.chart-area {
+  height: 200px;
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-inset);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--sl-space-md);
+  gap: var(--sl-space-xs);
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-bar {
+  flex: 1;
+  background: linear-gradient(to top, var(--sl-accent), transparent);
+  border-radius: 2px 2px 0 0;
+  min-height: 4px;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.chart-bar:hover {
+  opacity: 1;
+}
+
+.chart-gridline {
+  position: absolute;
+  left: var(--sl-space-md);
+  right: var(--sl-space-md);
+  height: 1px;
+  background: var(--sl-border-color);
+}
+
+/* data table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+}
+
+.data-table th {
+  text-align: left;
+  padding: 8px var(--sl-space-md);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-muted);
+  border-bottom: 1px solid var(--sl-border-color);
+  font-weight: 600;
+}
+
+.data-table td {
+  padding: 8px var(--sl-space-md);
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-text) 4%, transparent);
+  color: var(--sl-text);
+}
+
+.data-table tr:hover td {
+  background: color-mix(in srgb, var(--sl-text) 2%, transparent);
+}
+
+.data-table .cell-accent {
+  color: var(--sl-accent);
+  font-weight: 600;
+}
+
+.data-table .cell-warn {
+  color: var(--sl-secondary);
+}
+
+/* === SECONDARY PANEL (list/feed) === */
+.feed-list {
+  list-style: none;
+}
+
+.feed-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sl-space-sm);
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-text) 4%, transparent);
+  transition: background 0.15s;
+}
+
+.feed-item:hover {
+  background: color-mix(in srgb, var(--sl-text) 2%, transparent);
+}
+
+.feed-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sl-accent);
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.feed-dot.warn { background: var(--sl-secondary) }
+.feed-dot.mute { background: var(--sl-muted) }
+
+.feed-text {
+  font-size: 12px;
+  color: var(--sl-text);
+  line-height: 1.4;
+}
+
+.feed-text .feed-time {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-muted);
+  display: block;
+  margin-top: 2px;
+  letter-spacing: 0.06em;
+}
+
+/* === ACTION BAR === */
+.action-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+  padding: var(--sl-space-md);
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+}
+
+.btn {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  
+  padding: 8px 20px;
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sl-space-xs);
+}
+
+.btn-primary {
+  background: var(--sl-accent);
+  color: var(--sl-bg);
+  border-color: var(--sl-accent);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 12px color-mix(in srgb, var(--sl-accent) 40%, transparent);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--sl-text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--sl-accent);
+  color: var(--sl-accent);
+}
+
+.btn-danger {
+  background: transparent;
+  color: var(--sl-secondary);
+  border-color: var(--sl-secondary);
+}
+
+.btn-danger:hover {
+  background: var(--sl-secondary);
+  color: var(--sl-bg);
+}
+
+.action-spacer { flex: 1 }
+
+/* === TOGGLE === */
+.toggle {
+  width: 36px;
+  height: 18px;
+  border-radius: var(--sl-border-radius);
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-border-color);
+  box-shadow: var(--sl-shadow-inset);
+  position: relative;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.toggle.on {
+  background: color-mix(in srgb, var(--sl-accent) 20%, var(--sl-surface));
+  border-color: var(--sl-accent);
+}
+
+.toggle-knob {
+  width: 14px;
+  height: 14px;
+  background: var(--sl-muted);
+  border-radius: 2px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.toggle.on .toggle-knob {
+  transform: translateX(18px);
+  background: var(--sl-accent);
+}
+
+/* === INPUT === */
+.input {
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+  padding: 6px var(--sl-space-sm);
+  background: var(--sl-bg);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  color: var(--sl-text);
+  box-shadow: var(--sl-shadow-inset);
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.input:focus {
+  border-color: var(--sl-accent);
+}
+
+/* === FOOTER === */
+.ftr {
+  grid-area: footer;
+  background: var(--sl-surface);
+  border-top: 1px solid var(--sl-border-color);
+  padding: 0 var(--sl-space-lg);
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  
+  color: var(--sl-muted);
+}
+
+.ftr-left, .ftr-right {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-md);
+}
+
+.ftr-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ftr-indicator::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--sl-accent);
+}
+
+.ftr-indicator.warn::before {
+  background: var(--sl-secondary);
+}
+
+/* === CONTENT LAYOUTS === */
+.content-split {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--sl-content-gap);
+}
+
+/* === TEXTURE OVERLAY === */
+/* TEXTURE_BLOCK */
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .shell {
+    grid-template: 'header' auto 'main' 1fr 'footer' auto / 1fr;
+  }
+  .sidebar { display: none }
+  .stats-row { grid-template-columns: repeat(2, 1fr) }
+  .content-split { grid-template-columns: 1fr }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HEADER -->
+  <header class="hdr">
+    <div class="hdr-brand">clawmachine <span>// OPERATOR v3.1</span></div>
+    <div class="hdr-actions">
+      <span class="hdr-status"><span class="live-dot"></span>SYSTEMS NOMINAL</span>
+      <button class="hdr-btn">EXPORT</button>
+      <button class="hdr-btn">SETTINGS</button>
+    </div>
+  </header>
+
+  <!-- NAV_BLOCK_START — generator replaces everything between START and END -->
+  <nav class="sidebar">
+    <div class="sidebar-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+    </div>
+
+    <div class="sidebar-section">OPERATIONS</div>
+    <a class="sidebar-item active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+      dashboard
+    </a>
+    <a class="sidebar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-3a2 2 0 01-2-2V2"/><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7z"/></svg>
+      inventory
+    </a>
+    <a class="sidebar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      analytics
+    </a>
+    <a class="sidebar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      operators
+    </a>
+
+    <div class="sidebar-section">SYSTEMS</div>
+    <a class="sidebar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+      settings
+    </a>
+    <a class="sidebar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+      diagnostics
+    </a>
+
+    <div class="sidebar-spacer"></div>
+
+    <div class="sidebar-section">ACCOUNT</div>
+    <a class="sidebar-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+      log out
+    </a>
+  </nav>
+  <!-- NAV_BLOCK_END -->
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- KPI STATS ROW -->
+    <section class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">ACTIVE LISTINGS</div>
+        <div class="stat-value">2,847</div>
+        <div class="stat-delta up">+12.4% vs last month</div>
+        <div class="stat-spark">
+          <div class="stat-spark-bar" style="height:40%"></div>
+          <div class="stat-spark-bar" style="height:55%"></div>
+          <div class="stat-spark-bar" style="height:45%"></div>
+          <div class="stat-spark-bar" style="height:70%"></div>
+          <div class="stat-spark-bar" style="height:60%"></div>
+          <div class="stat-spark-bar" style="height:85%"></div>
+          <div class="stat-spark-bar" style="height:90%"></div>
+          <div class="stat-spark-bar" style="height:75%"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">REVENUE (30D)</div>
+        <div class="stat-value">$184,320</div>
+        <div class="stat-delta up">+8.7% vs last month</div>
+        <div class="stat-spark">
+          <div class="stat-spark-bar" style="height:30%"></div>
+          <div class="stat-spark-bar" style="height:50%"></div>
+          <div class="stat-spark-bar" style="height:65%"></div>
+          <div class="stat-spark-bar" style="height:55%"></div>
+          <div class="stat-spark-bar" style="height:70%"></div>
+          <div class="stat-spark-bar" style="height:80%"></div>
+          <div class="stat-spark-bar" style="height:70%"></div>
+          <div class="stat-spark-bar" style="height:95%"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">PROFIT MARGIN</div>
+        <div class="stat-value">34.2%</div>
+        <div class="stat-delta down">-2.1% vs last month</div>
+        <div class="stat-spark">
+          <div class="stat-spark-bar" style="height:80%"></div>
+          <div class="stat-spark-bar" style="height:75%"></div>
+          <div class="stat-spark-bar" style="height:70%"></div>
+          <div class="stat-spark-bar" style="height:65%"></div>
+          <div class="stat-spark-bar" style="height:60%"></div>
+          <div class="stat-spark-bar" style="height:55%"></div>
+          <div class="stat-spark-bar" style="height:50%"></div>
+          <div class="stat-spark-bar" style="height:45%"></div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-label">MACHINES ONLINE</div>
+        <div class="stat-value">142</div>
+        <div class="stat-delta up">+3 since yesterday</div>
+        <div class="stat-spark">
+          <div class="stat-spark-bar" style="height:90%"></div>
+          <div class="stat-spark-bar" style="height:92%"></div>
+          <div class="stat-spark-bar" style="height:88%"></div>
+          <div class="stat-spark-bar" style="height:91%"></div>
+          <div class="stat-spark-bar" style="height:93%"></div>
+          <div class="stat-spark-bar" style="height:90%"></div>
+          <div class="stat-spark-bar" style="height:95%"></div>
+          <div class="stat-spark-bar" style="height:97%"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN + SECONDARY PANELS -->
+    <div class="content-split">
+
+      <!-- MAIN PANEL -->
+      <div class="panel">
+        <div class="panel-hdr">
+          <span class="panel-title">REVENUE BY LOCATION</span>
+          <span class="panel-badge">LIVE</span>
+        </div>
+        <div class="panel-body">
+          <!-- chart area -->
+          <div class="chart-area">
+            <div class="chart-gridline" style="bottom:25%"></div>
+            <div class="chart-gridline" style="bottom:50%"></div>
+            <div class="chart-gridline" style="bottom:75%"></div>
+            <div class="chart-bar" style="height:65%"></div>
+            <div class="chart-bar" style="height:80%"></div>
+            <div class="chart-bar" style="height:45%"></div>
+            <div class="chart-bar" style="height:90%"></div>
+            <div class="chart-bar" style="height:55%"></div>
+            <div class="chart-bar" style="height:70%"></div>
+            <div class="chart-bar" style="height:85%"></div>
+            <div class="chart-bar" style="height:60%"></div>
+            <div class="chart-bar" style="height:75%"></div>
+            <div class="chart-bar" style="height:40%"></div>
+            <div class="chart-bar" style="height:95%"></div>
+            <div class="chart-bar" style="height:50%"></div>
+          </div>
+
+          <!-- data table -->
+          <table class="data-table" style="margin-top:var(--sl-space-md)">
+            <thead>
+              <tr>
+                <th>LOCATION</th>
+                <th>MACHINES</th>
+                <th>REVENUE</th>
+                <th>MARGIN</th>
+                <th>STATUS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>WESTFIELD MALL — NORTH</td>
+                <td>24</td>
+                <td class="cell-accent">$42,180</td>
+                <td>38.4%</td>
+                <td class="cell-accent">OPTIMAL</td>
+              </tr>
+              <tr>
+                <td>CENTRAL STATION HUB</td>
+                <td>18</td>
+                <td class="cell-accent">$38,920</td>
+                <td>35.1%</td>
+                <td class="cell-accent">OPTIMAL</td>
+              </tr>
+              <tr>
+                <td>HARBOUR DISTRICT</td>
+                <td>12</td>
+                <td class="cell-accent">$24,640</td>
+                <td>31.8%</td>
+                <td>NOMINAL</td>
+              </tr>
+              <tr>
+                <td>UNIVERSITY QUARTER</td>
+                <td>16</td>
+                <td class="cell-accent">$28,400</td>
+                <td>29.2%</td>
+                <td>NOMINAL</td>
+              </tr>
+              <tr>
+                <td>EAST ARCADE ZONE</td>
+                <td>8</td>
+                <td>$12,300</td>
+                <td class="cell-warn">22.1%</td>
+                <td class="cell-warn">UNDERPERFORM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- SECONDARY PANEL (feed/list) -->
+      <div class="panel">
+        <div class="panel-hdr">
+          <span class="panel-title">SYSTEM FEED</span>
+          <span class="panel-badge">24H</span>
+        </div>
+        <div class="panel-body" style="padding:0">
+          <ul class="feed-list">
+            <li class="feed-item">
+              <span class="feed-dot"></span>
+              <span class="feed-text">
+                machine #0847 restocked — 240 units loaded
+                <span class="feed-time">14:32 UTC</span>
+              </span>
+            </li>
+            <li class="feed-item">
+              <span class="feed-dot warn"></span>
+              <span class="feed-text">
+                revenue anomaly detected at harbour district — investigating
+                <span class="feed-time">13:18 UTC</span>
+              </span>
+            </li>
+            <li class="feed-item">
+              <span class="feed-dot"></span>
+              <span class="feed-text">
+                operator shift change — team bravo now active
+                <span class="feed-time">12:00 UTC</span>
+              </span>
+            </li>
+            <li class="feed-item">
+              <span class="feed-dot mute"></span>
+              <span class="feed-text">
+                daily backup completed — 847 records archived
+                <span class="feed-time">04:00 UTC</span>
+              </span>
+            </li>
+            <li class="feed-item">
+              <span class="feed-dot"></span>
+              <span class="feed-text">
+                new firmware v2.4.1 deployed to 38 machines
+                <span class="feed-time">02:45 UTC</span>
+              </span>
+            </li>
+            <li class="feed-item">
+              <span class="feed-dot warn"></span>
+              <span class="feed-text">
+                machine #0219 — claw tension sensor recalibrated
+                <span class="feed-time">01:12 UTC</span>
+              </span>
+            </li>
+            <li class="feed-item">
+              <span class="feed-dot mute"></span>
+              <span class="feed-text">
+                weekly performance report generated — emailed to ops team
+                <span class="feed-time">00:00 UTC</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ACTION BAR -->
+    <div class="action-bar">
+      <button class="btn btn-primary">DEPLOY UPDATE</button>
+      <button class="btn btn-ghost">EXPORT DATA</button>
+      <button class="btn btn-ghost">SCHEDULE MAINTENANCE</button>
+      <div class="action-spacer"></div>
+      <span style="font-family:var(--sl-font-mono);font-size:9px;color:var(--sl-muted);letter-spacing:0.08em;">AUTO-SYNC</span>
+      <div class="toggle on">
+        <div class="toggle-knob"></div>
+      </div>
+      <button class="btn btn-danger">EMERGENCY HALT</button>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="ftr">
+    <div class="ftr-left">
+      <span class="ftr-indicator">ALL SYSTEMS OPERATIONAL</span>
+      <span>UPTIME: 99.97%</span>
+      <span>LATENCY: 12MS</span>
+    </div>
+    <div class="ftr-right">
+      <span>NODES: 142/145</span>
+      <span>LAST SYNC: 2 MIN AGO</span>
+      <span class="ftr-indicator warn">1 ALERT PENDING</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

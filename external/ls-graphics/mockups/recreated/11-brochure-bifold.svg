@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 600" width="840">
+  <rect width="840" height="600" fill="#D9D5CC"/>
+  <rect x="40" y="40" width="760" height="520" fill="#F5F2EC"/>
+  <line x1="420" y1="40" x2="420" y2="560" stroke="#CCC"/>
+  <text x="230" y="300" font-family="system-ui" font-size="14" fill="#888" text-anchor="middle">Left panel 380×520</text>
+  <text x="610" y="300" font-family="system-ui" font-size="14" fill="#888" text-anchor="middle">Right panel 380×520</text>
+</svg>

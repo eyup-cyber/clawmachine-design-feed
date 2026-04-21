@@ -1,0 +1,29 @@
+<!-- Tailwind UI-style — Two-column checkout form with order summary -->
+<main class="lg:flex lg:min-h-full lg:flex-row-reverse lg:overflow-hidden">
+  <section aria-labelledby="summary-heading" class="w-full bg-gray-50 px-4 py-6 sm:px-6 lg:max-w-md lg:flex-col lg:overflow-auto lg:px-8">
+    <div class="mx-auto max-w-lg lg:max-w-none"><h2 id="summary-heading" class="text-lg font-medium text-gray-900">Order summary</h2>
+      <ul role="list" class="divide-y divide-gray-200 text-sm font-medium text-gray-900">
+        <li class="flex items-start space-x-4 py-6"><img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/checkout-page-02-product-01.jpg" alt="" class="size-20 flex-none rounded-md object-cover"><div class="flex-auto space-y-1"><h3>High Wall Tote</h3><p class="text-gray-500">Rose</p><p class="text-gray-500">Large</p></div><p class="flex-none text-base font-medium">$210.00</p></li>
+      </ul>
+      <dl class="hidden space-y-6 border-t border-gray-200 pt-6 text-sm font-medium text-gray-500 lg:block"><div class="flex justify-between"><dt>Subtotal</dt><dd class="text-gray-900">$210.00</dd></div><div class="flex justify-between"><dt>Shipping</dt><dd class="text-gray-900">$10.00</dd></div><div class="flex items-center justify-between border-t border-gray-200 pt-6 text-gray-900"><dt class="text-base">Total</dt><dd class="text-base">$220.00</dd></div></dl>
+    </div>
+  </section>
+  <form class="px-4 pt-16 pb-36 sm:px-6 lg:flex-auto lg:overflow-auto lg:px-8 lg:pt-0 lg:pb-16">
+    <div class="mx-auto max-w-lg lg:pt-16">
+      <div>
+        <h3 class="text-lg font-medium text-gray-900">Contact information</h3>
+        <div class="mt-4"><label for="email-address" class="block text-sm font-medium text-gray-700">Email address</label><div class="mt-1"><input type="email" id="email-address" name="email-address" autocomplete="email" class="block w-full rounded-md border-gray-300 shadow-xs focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></div></div>
+      </div>
+      <div class="mt-10">
+        <h3 class="text-lg font-medium text-gray-900">Shipping address</h3>
+        <div class="mt-4 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-3">
+          <div class="sm:col-span-3"><label for="address" class="block text-sm font-medium text-gray-700">Address</label><div class="mt-1"><input type="text" name="address" id="address" autocomplete="street-address" class="block w-full rounded-md border-gray-300 shadow-xs focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"></div></div>
+          <div><label for="city" class="block text-sm font-medium text-gray-700">City</label><div class="mt-1"><input type="text" name="city" id="city" class="block w-full rounded-md border-gray-300 shadow-xs sm:text-sm"></div></div>
+          <div><label for="region" class="block text-sm font-medium text-gray-700">State / Province</label><div class="mt-1"><input type="text" name="region" id="region" class="block w-full rounded-md border-gray-300 shadow-xs sm:text-sm"></div></div>
+          <div><label for="postal-code" class="block text-sm font-medium text-gray-700">Postal code</label><div class="mt-1"><input type="text" name="postal-code" id="postal-code" class="block w-full rounded-md border-gray-300 shadow-xs sm:text-sm"></div></div>
+        </div>
+      </div>
+      <div class="mt-10 border-t border-gray-200 pt-6 sm:flex sm:items-center sm:justify-between"><button type="submit" class="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-2 text-sm font-medium text-white shadow-xs hover:bg-indigo-700 sm:order-last sm:ml-6 sm:w-auto">Continue</button></div>
+    </div>
+  </form>
+</main>

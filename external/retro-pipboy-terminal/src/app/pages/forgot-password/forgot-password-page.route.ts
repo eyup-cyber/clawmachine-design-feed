@@ -1,0 +1,18 @@
+import { META_AUTHOR, META_DEFAULT_KEYWORDS } from 'src/app/constants';
+import { isLoggedOutGuard } from 'src/app/guards';
+
+import { PipRoute } from 'src/app/types/pip-route';
+
+export const FORGOT_PASSWORD_PAGE_ROUTE: PipRoute = {
+  path: 'forgot-password',
+  pathMatch: 'full',
+  canActivate: [isLoggedOutGuard],
+  data: {
+    author: META_AUTHOR,
+    description: 'Request a password reset for your Pip-Boy account.',
+    keywords: ['Forgot Password', ...META_DEFAULT_KEYWORDS],
+    title: 'Forgot Password',
+  },
+  loadComponent: () =>
+    import('src/app/pages').then((c) => c.ForgotPasswordPage),
+};

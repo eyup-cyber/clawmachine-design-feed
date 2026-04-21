@@ -1,0 +1,15 @@
+{
+  "id": "palette-113",
+  "name": "plasma-blue",
+  "source": "ultra-expansion-cycle2-deep-space",
+  "colors": {
+    "bg": "#2962FF",
+    "surface": "#5481FF",
+    "card": "#3E71FF",
+    "accent": "#FFEA00",
+    "secondary": "#FF0055",
+    "text": "#FFFFFF",
+    "muted": "#999040"
+  },
+  "weight": 10
+}

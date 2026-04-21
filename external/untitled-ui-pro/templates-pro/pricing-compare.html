@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Pricing comparison — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="../design.css">
+<style>
+  table.compare{width:100%;border-collapse:separate;border-spacing:0;}
+  table.compare th,table.compare td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--color-border-secondary);font-size:var(--text-sm);}
+  table.compare th{font-weight:600;color:var(--color-text-primary);}
+  table.compare tbody td{color:var(--color-text-secondary);}
+  table.compare tbody tr.group-head td{background:var(--color-bg-secondary);font-weight:600;color:var(--color-text-primary);text-transform:uppercase;font-size:var(--text-xs);letter-spacing:0.06em;}
+  table.compare tbody td.center{text-align:center;}
+  .check{color:var(--color-success-solid,#17b26a);}
+  .dash{color:var(--color-fg-quaternary);}
+</style>
+</head>
+<body>
+
+<!-- pricing header -->
+<section class="uui-container" style="padding:96px 32px 48px;text-align:center;">
+  <span style="font-size:var(--text-md);font-weight:600;color:var(--color-text-brand-secondary);">Pricing</span>
+  <h1 class="t-display-lg" style="font-weight:600;color:var(--color-text-primary);margin-top:12px;">Simple, transparent pricing</h1>
+  <p style="font-size:var(--text-lg);color:var(--color-text-tertiary);margin-top:16px;">No hidden fees. Annual saves 20%. Every plan includes all future updates.</p>
+  <div class="uui-row gap-1 justify-center" style="margin-top:32px;padding:4px;background:var(--color-bg-secondary);border-radius:var(--radius-full);width:fit-content;margin-left:auto;margin-right:auto;">
+    <button class="uui-btn uui-btn--primary uui-btn--md" style="border-radius:var(--radius-full);">Annual (save 20%)</button>
+    <button class="uui-btn uui-btn--tertiary uui-btn--md" style="border-radius:var(--radius-full);">Monthly</button>
+  </div>
+</section>
+
+<!-- tier comparison table -->
+<section class="uui-container" style="padding:0 32px 128px;overflow-x:auto;">
+  <table class="compare">
+    <thead>
+      <tr>
+        <th style="width:30%;">Features</th>
+        <th style="width:17.5%;">
+          <p>Free</p>
+          <p style="font-size:var(--text-display-sm);font-weight:600;color:var(--color-text-primary);margin:8px 0 4px;">$0</p>
+          <p style="font-size:var(--text-sm);color:var(--color-text-tertiary);font-weight:400;">forever</p>
+          <a href="#" class="uui-btn uui-btn--secondary uui-btn--md" style="width:100%;margin-top:16px;">Get started</a>
+        </th>
+        <th style="width:17.5%;">
+          <p>Starter</p>
+          <p style="font-size:var(--text-display-sm);font-weight:600;color:var(--color-text-primary);margin:8px 0 4px;">$12</p>
+          <p style="font-size:var(--text-sm);color:var(--color-text-tertiary);font-weight:400;">per user/month</p>
+          <a href="#" class="uui-btn uui-btn--secondary uui-btn--md" style="width:100%;margin-top:16px;">Start trial</a>
+        </th>
+        <th style="width:17.5%;background:var(--color-bg-brand-primary);border-top-left-radius:var(--radius-xl);border-top-right-radius:var(--radius-xl);">
+          <div class="uui-row gap-2 items-center"><span>Team</span><span class="uui-badge uui-badge--brand">Popular</span></div>
+          <p style="font-size:var(--text-display-sm);font-weight:600;color:var(--color-text-primary);margin:8px 0 4px;">$24</p>
+          <p style="font-size:var(--text-sm);color:var(--color-text-tertiary);font-weight:400;">per user/month</p>
+          <a href="#" class="uui-btn uui-btn--primary uui-btn--md" style="width:100%;margin-top:16px;">Start trial</a>
+        </th>
+        <th style="width:17.5%;">
+          <p>Enterprise</p>
+          <p style="font-size:var(--text-display-sm);font-weight:600;color:var(--color-text-primary);margin:8px 0 4px;">Custom</p>
+          <p style="font-size:var(--text-sm);color:var(--color-text-tertiary);font-weight:400;">talk to sales</p>
+          <a href="#" class="uui-btn uui-btn--secondary uui-btn--md" style="width:100%;margin-top:16px;">Talk to sales</a>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="group-head"><td colspan="5">Overview</td></tr>
+      <tr><td>Workspaces</td><td class="center">1</td><td class="center">3</td><td class="center">Unlimited</td><td class="center">Unlimited</td></tr>
+      <tr><td>Team seats</td><td class="center">1</td><td class="center">Up to 10</td><td class="center">Unlimited</td><td class="center">Unlimited</td></tr>
+      <tr><td>History retention</td><td class="center">14 days</td><td class="center">90 days</td><td class="center">1 year</td><td class="center">Unlimited</td></tr>
+      <tr><td>File storage</td><td class="center">500 MB</td><td class="center">25 GB</td><td class="center">250 GB</td><td class="center">Custom</td></tr>
+
+      <tr class="group-head"><td colspan="5">Design system</td></tr>
+      <tr><td>Design tokens</td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>Component library</td><td class="center">Basic</td><td class="center">Pro</td><td class="center">Pro</td><td class="center">Pro + custom</td></tr>
+      <tr><td>Custom themes</td><td class="center"><span class="dash">—</span></td><td class="center">3</td><td class="center">Unlimited</td><td class="center">Unlimited</td></tr>
+      <tr><td>White-label branding</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="check">✓</span></td></tr>
+
+      <tr class="group-head"><td colspan="5">Collaboration</td></tr>
+      <tr><td>Real-time cursors</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>Comments & threads</td><td class="center">Read only</td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>Guest access</td><td class="center"><span class="dash">—</span></td><td class="center">5</td><td class="center">Unlimited</td><td class="center">Unlimited</td></tr>
+      <tr><td>Version branching</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td></tr>
+
+      <tr class="group-head"><td colspan="5">Security & admin</td></tr>
+      <tr><td>2FA</td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>SAML SSO</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>SCIM provisioning</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>Audit log</td><td class="center"><span class="dash">—</span></td><td class="center">30 days</td><td class="center">1 year</td><td class="center">Unlimited</td></tr>
+      <tr><td>Customer-managed keys</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>Data residency (EU/US)</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="check">✓</span></td></tr>
+
+      <tr class="group-head"><td colspan="5">Integrations</td></tr>
+      <tr><td>Figma plugin</td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>GitHub / GitLab</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>Slack / Discord</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>REST / GraphQL API</td><td class="center">Read only</td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>Webhooks</td><td class="center"><span class="dash">—</span></td><td class="center">1 endpoint</td><td class="center">Unlimited</td><td class="center">Unlimited</td></tr>
+
+      <tr class="group-head"><td colspan="5">Support</td></tr>
+      <tr><td>Help centre</td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td><td class="center"><span class="check">✓</span></td></tr>
+      <tr><td>Email support</td><td class="center"><span class="dash">—</span></td><td class="center">Standard</td><td class="center">Priority</td><td class="center">Priority</td></tr>
+      <tr><td>Response SLA</td><td class="center"><span class="dash">—</span></td><td class="center">48 h</td><td class="center">8 h</td><td class="center">1 h</td></tr>
+      <tr><td>Dedicated success manager</td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="dash">—</span></td><td class="center"><span class="check">✓</span></td></tr>
+
+    </tbody>
+  </table>
+</section>
+
+</body>
+</html>

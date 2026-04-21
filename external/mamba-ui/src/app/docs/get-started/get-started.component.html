@@ -1,0 +1,115 @@
+<section>
+	<article class="p-4">
+		<h1>Getting started</h1>
+		<h2>How to use Mamba UI?</h2>
+
+		<ol>
+			<li>Setup Tailwind CSS</li>
+			<li>
+				Find something that you like from the
+				<a [routerLink]="['/components']">components</a>
+				or
+				<a [routerLink]="['/templates']">templates</a>
+				.
+			</li>
+			<li>Choose the primary color from the Tailwind CSS color palette</li>
+			<li>Select the light or dark theme</li>
+			<li>Click the HTML, Vue or JSX -buttons to see the code for the selected part</li>
+			<li>Copy-paste into your project</li>
+			<li>Profit!</li>
+		</ol>
+		<h2>Install Tailwind CSS</h2>
+
+		<p>
+			The recommended way to use Tailwind CSS in a project is to install it and it's
+			peer-dependencies via npm.
+		</p>
+		<pre
+			class="language-shell"
+		><code class="language-shell">npm install tailwindcss postcss autoprefixer -D</code></pre>
+		<p>
+			The official
+			<a
+				href="https://tailwindcss.com/docs/installation"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				installation instructions
+			</a>
+			are really good and they have integration guides for some of the most popular frameworks
+			as well.
+		</p>
+
+		<p>
+			If you don't want to install Tailwind you can add a
+			<a
+				href="https://tailwindcss.com/docs/installation#using-tailwind-via-cdn"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				link to the Tailwind stylesheet
+			</a>
+			inside the &lt;head&gt;&lt;&#8725;head&gt; tags in your html instead. Note that this way
+			doesn't remove all the unused classes from the production build.
+		</p>
+		<p>
+			In case you want to just quickly test the components or customize the code, you can also
+			copy them to Tailwind CSS's official online playground
+			<a href="https://play.tailwindcss.com/" target="_blank" rel="noopener noreferrer">
+				Tailwind Play
+			</a>
+			.
+		</p>
+
+		<p>
+			Note that Tailwind doesn't have all the colors enabled in the default configuration.
+			Below is an example of a configuration that has all the different colors enabled with
+			their respective names. I'd recommend using a copy of that and then removing the colors
+			that you don't need.
+		</p>
+		<pre class="language-js"><code class="language-js">
+const colors = require('tailwindcss/colors');
+
+module.exports = {{ '{' }}
+	purge: [],
+	theme: {{ '{' }}
+		colors: {{ '{' }}
+			transparent: 'transparent',
+			current: 'currentColor',
+			black: colors.black,
+			white: colors.white,
+			rose: colors.rose,
+			pink: colors.pink,
+			fuchsia: colors.fuchsia,
+			purple: colors.purple,
+			violet: colors.violet,
+			indigo: colors.indigo,
+			blue: colors.blue,
+			lightBlue: colors.lightBlue, // Only in Tailwind CSS &lt;=v2.1
+			sky: colors.sky, // As of Tailwind CSS v2.2, `lightBlue` has been renamed to `sky`&nbsp;&nbsp;
+			cyan: colors.cyan,
+			teal: colors.teal,
+			emerald: colors.emerald,
+			green: colors.green,
+			lime: colors.lime,
+			yellow: colors.yellow,
+			amber: colors.amber,
+			orange: colors.orange,
+			red: colors.red,
+			slate: colors.slate,
+			zinc: colors.zinc,
+			gray: colors.gray,
+			neutral: colors.blueGray,
+			stone: colors.stone,
+		{{ '}' }},
+		variants: {{ '{}' }},
+		plugins: [],
+	{{ '}' }}
+{{ '}' }}</code></pre>
+
+		<p>
+			This project is not affiliated with or endorsed by the creators of the Tailwind CSS
+			framework.
+		</p>
+	</article>
+</section>

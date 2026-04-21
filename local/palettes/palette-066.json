@@ -1,0 +1,15 @@
+{
+  "id": "palette-066",
+  "name": "quantum-dusk",
+  "source": "media.io-cyberpunk-tetradic",
+  "colors": {
+    "bg": "#0B132B",
+    "surface": "#F15BB5",
+    "card": "#F15BB5",
+    "accent": "#5BC0BE",
+    "secondary": "#FDE74C",
+    "text": "#F15BB5",
+    "muted": "#9B5DE5"
+  },
+  "weight": 0
+}

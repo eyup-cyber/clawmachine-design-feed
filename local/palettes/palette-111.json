@@ -1,0 +1,15 @@
+{
+  "id": "palette-111",
+  "name": "overdrive-orange",
+  "source": "ultra-expansion-cycle2-synthwave",
+  "colors": {
+    "bg": "#FF6D00",
+    "surface": "#FF8D33",
+    "card": "#FF7D1A",
+    "accent": "#0000FF",
+    "secondary": "#00E676",
+    "text": "#1A0700",
+    "muted": "#4D63A6"
+  },
+  "weight": 10
+}

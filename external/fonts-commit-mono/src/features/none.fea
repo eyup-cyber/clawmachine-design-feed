@@ -1,0 +1,8 @@
+feature none {
+	# Character Variant 01—99
+	
+	#> featur
+	  sub nbspace by space;
+	#< feature
+	
+} none;

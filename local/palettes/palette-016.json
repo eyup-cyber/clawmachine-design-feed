@@ -1,0 +1,15 @@
+{
+  "id": "palette-016",
+  "name": "indigo-protocol",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0d1a2d",
+    "surface": "#1a2a3d",
+    "card": "#2a3a4d",
+    "accent": "#ffaa00",
+    "secondary": "#ff2222",
+    "text": "#e8f0f8",
+    "muted": "#787888"
+  },
+  "weight": 10
+}

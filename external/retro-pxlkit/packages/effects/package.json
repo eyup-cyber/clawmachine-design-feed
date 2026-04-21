@@ -1,0 +1,63 @@
+{
+  "name": "@pxlkit/effects",
+  "version": "1.2.3",
+  "description": "Animated visual effect pixel art icons \u2014 12 icons for explosions, radar ping, flame, shockwave, signals, particles, glows, and VFX animations",
+  "author": {
+    "name": "Joangel De La Rosa",
+    "url": "https://github.com/joangeldelarosa"
+  },
+  "repository": "https://github.com/Joangeldelarosa/pxlkit",
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@pxlkit/core": "^1.2.3"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0",
+    "typescript": "^5.7.0",
+    "rimraf": "^6.0.0"
+  },
+  "keywords": [
+    "pixel-art",
+    "icons",
+    "effects",
+    "vfx",
+    "animated",
+    "explosion-icon",
+    "flame-icon",
+    "particle-effects",
+    "shockwave-icon",
+    "radar-ping",
+    "glow-effects",
+    "svg-animation",
+    "css-animation-icons",
+    "react-animated-icons",
+    "pxlkit",
+    "source-available-icons",
+    "free-animated-icons",
+    "game-effects",
+    "retro-effects"
+  ]
+}

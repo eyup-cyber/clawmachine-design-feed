@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" preserveAspectRatio="xMidYMid slice">
+  <defs><pattern id="p" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#F5F2EC"/><circle cx="7" cy="7" r="1" fill="#6E6A60"/></pattern></defs>
+  <rect width="400" height="400" fill="url(#p)"/>
+</svg>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>clawmachine // SPLIT MONITOR</title>
+<!-- FONT_FACE_BLOCK -->
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  /* colours */
+  --sl-bg: #0a0a0f;
+  --sl-surface: #141419;
+  --sl-card: #1a1a22;
+  --sl-accent: #00ff88;
+  --sl-secondary: #ff0066;
+  --sl-text: #e8e8f0;
+  --sl-muted: #6b6b80;
+
+  /* fonts */
+  --sl-font-display: 'Space Grotesk', system-ui, sans-serif;
+  --sl-font-body: 'Inter', system-ui, sans-serif;
+  --sl-font-mono: 'Space Mono', monospace;
+
+  /* spacing */
+  --sl-space-xs: 4px;
+  --sl-space-sm: 8px;
+  --sl-space-md: 16px;
+  --sl-space-lg: 24px;
+  --sl-space-xl: 40px;
+
+  /* surfaces */
+  --sl-shadow-raised: 0 2px 8px rgba(0,0,0,0.25);
+  --sl-shadow-inset: inset 0 2px 4px rgba(0,0,0,0.2);
+  --sl-border-radius: 3px;
+  --sl-border-color: color-mix(in srgb, var(--sl-text) 12%, transparent);
+
+  /* layout */
+  --sl-grid-template: 'topbar topbar topbar' auto 'left divider right' 1fr / 3fr 4px 2fr;
+  --sl-sidebar-width: 0px;
+  --sl-content-gap: 0px;
+}
+
+html,body { height: 100%; overflow: hidden; }
+
+body {
+  background: var(--sl-bg);
+  color: var(--sl-text);
+  font-family: var(--sl-font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* === GRID SHELL === */
+.shell {
+  display: grid;
+  grid-template: var(--sl-grid-template);
+  min-height: 100vh;
+}
+
+/* === TOP BAR (tertiary zone) — system status, no sidebar === */
+.zone-tertiary {
+  grid-area: topbar;
+  background: var(--sl-surface);
+  border-bottom: 1px solid var(--sl-border-color);
+  padding: 0 var(--sl-space-lg);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.topbar-brand {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  
+  color: var(--sl-accent);
+  flex-shrink: 0;
+}
+
+.topbar-brand span { color: var(--sl-muted); font-weight: 400; }
+
+.topbar-center {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-lg);
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  
+  color: var(--sl-muted);
+}
+
+.topbar-indicator {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-xs);
+}
+
+.topbar-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--sl-accent);
+  flex-shrink: 0;
+}
+
+.topbar-dot.warn { background: var(--sl-secondary); }
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+}
+
+.topbar-btn {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  
+  padding: 4px 12px;
+  background: transparent;
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  color: var(--sl-text);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.topbar-btn:hover { border-color: var(--sl-accent); color: var(--sl-accent); }
+
+/* === THICK DIVIDER === */
+.divider {
+  grid-area: divider;
+  background: var(--sl-accent);
+  opacity: 0.6;
+  cursor: col-resize;
+  transition: opacity 0.2s;
+}
+
+.divider:hover { opacity: 1; }
+
+/* === LEFT PANEL (primary) — hero metric + chart + table === */
+.zone-primary {
+  grid-area: left;
+  background: var(--sl-bg);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sl-space-sm) var(--sl-space-lg);
+  border-bottom: 1px solid var(--sl-border-color);
+  background: var(--sl-surface);
+  flex-shrink: 0;
+}
+
+.panel-title {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-accent);
+}
+
+.panel-meta {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-muted);
+}
+
+.panel-body {
+  flex: 1;
+  padding: var(--sl-space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-space-lg);
+}
+
+/* hero metric block */
+.hero-block {
+  padding-bottom: var(--sl-space-lg);
+  border-bottom: 1px solid var(--sl-border-color);
+}
+
+.hero-number {
+  font-family: var(--sl-font-display);
+  font-size: clamp(40px, 8vw, 80px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.hero-number .prefix {
+  color: var(--sl-muted);
+  font-size: 0.4em;
+  vertical-align: super;
+}
+
+.hero-sub {
+  display: flex;
+  gap: var(--sl-space-xl);
+  margin-top: var(--sl-space-md);
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+  
+  letter-spacing: 0.1em;
+}
+
+.hero-sub .delta { color: var(--sl-accent); font-weight: 700; }
+.hero-sub .delta.neg { color: var(--sl-secondary); }
+
+/* chart placeholder */
+.chart-block {
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  padding: var(--sl-space-md);
+  background: var(--sl-surface);
+}
+
+.chart-label {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  
+  color: var(--sl-muted);
+  margin-bottom: var(--sl-space-md);
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 120px;
+}
+
+.chart-bar {
+  flex: 1;
+  background: var(--sl-accent);
+  border-radius: 2px 2px 0 0;
+  opacity: 0.7;
+  min-height: 4px;
+  position: relative;
+}
+
+.chart-bar:hover { opacity: 1; }
+
+.chart-bar::after {
+  content: attr(data-label);
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--sl-font-mono);
+  font-size: 7px;
+  color: var(--sl-muted);
+  white-space: nowrap;
+}
+
+/* data table */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+}
+
+.data-table th {
+  text-align: left;
+  font-weight: 400;
+  font-size: 8px;
+  
+  letter-spacing: 0.12em;
+  color: var(--sl-muted);
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 2px solid var(--sl-border-color);
+}
+
+.data-table td {
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-text) 4%, transparent);
+}
+
+.data-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-table .hi { color: var(--sl-accent); font-weight: 700; }
+.data-table .lo { color: var(--sl-secondary); }
+
+/* === RIGHT PANEL (secondary) — live feed === */
+.zone-secondary {
+  grid-area: right;
+  background: var(--sl-bg);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.feed-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0;
+}
+
+.feed-entry {
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-text) 4%, transparent);
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+  display: grid;
+  grid-template-columns: 60px 40px 1fr;
+  gap: var(--sl-space-sm);
+}
+
+.feed-entry:hover { background: color-mix(in srgb, var(--sl-text) 3%, transparent); }
+
+.feed-ts {
+  color: var(--sl-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.feed-lvl {
+  font-weight: 700;
+  
+}
+
+.feed-lvl.ok { color: var(--sl-accent); }
+.feed-lvl.wrn { color: var(--sl-secondary); }
+.feed-lvl.dbg { color: var(--sl-muted); }
+
+.feed-msg { color: var(--sl-text); }
+.feed-msg .num { color: var(--sl-accent); font-weight: 700; }
+
+/* live pulse indicator */
+.feed-live {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-xs);
+  padding: var(--sl-space-xs) var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  
+  color: var(--sl-muted);
+  background: var(--sl-surface);
+}
+
+.feed-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sl-accent);
+  animation: pulse-dot 2s ease infinite;
+}
+
+@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* TEXTURE_BLOCK */
+
+@media (max-width: 768px) {
+  .shell {
+    grid-template: 'topbar' auto 'left' 1fr 'right' 1fr / 1fr;
+  }
+  .divider { display: none; }
+  .zone-secondary { border-top: 4px solid var(--sl-accent); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV_BLOCK_START -->
+<!-- NAV_BLOCK_END -->
+
+<div class="shell">
+
+  <!-- TOP BAR — tertiary zone: system status -->
+  <div class="zone-tertiary">
+    <!-- ZONE:tertiary -->
+    <div class="topbar-brand">clawmachine <span>// SPLIT MONITOR</span></div>
+    <div class="topbar-center">
+      <span class="topbar-indicator"><span class="topbar-dot"></span>SYSTEMS NOMINAL</span>
+      <span class="topbar-indicator"><span class="topbar-dot"></span>142/145 NODES</span>
+      <span class="topbar-indicator"><span class="topbar-dot warn"></span>3 ALERTS</span>
+      <span>UPTIME: 99.97%</span>
+      <span>LATENCY: 12MS</span>
+    </div>
+    <div class="topbar-actions">
+      <button class="topbar-btn">EXPORT</button>
+      <button class="topbar-btn">SETTINGS</button>
+    </div>
+  </div>
+
+  <!-- LEFT PANEL — primary zone: hero metric + chart + table -->
+  <div class="zone-primary">
+    <div class="panel-header">
+      <span class="panel-title">DATA VIEW</span>
+      <span class="panel-meta">last updated: 2 min ago</span>
+    </div>
+    <div class="panel-body">
+      <!-- ZONE:primary -->
+
+      <div class="hero-block">
+        <div class="hero-number"><span class="prefix">$</span>184,320</div>
+        <div class="hero-sub">
+          <span><span class="delta">+8.7%</span> vs prev period</span>
+          <span>target: $252,000</span>
+          <span>margin: 34.2%</span>
+        </div>
+      </div>
+
+      <div class="chart-block">
+        <div class="chart-label">revenue by region &mdash; 30 day</div>
+        <div class="chart-bars">
+          <div class="chart-bar" style="height:82%" data-label="WF"></div>
+          <div class="chart-bar" style="height:76%" data-label="CS"></div>
+          <div class="chart-bar" style="height:48%" data-label="HD"></div>
+          <div class="chart-bar" style="height:55%" data-label="UQ"></div>
+          <div class="chart-bar" style="height:100%" data-label="AT"></div>
+        </div>
+      </div>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>location</th>
+            <th class="num">machines</th>
+            <th class="num">revenue (30d)</th>
+            <th class="num">margin</th>
+            <th class="num">uptime</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>westfield mall</td><td class="num">847</td><td class="num hi">$42,180</td><td class="num">38.2%</td><td class="num">99.99%</td></tr>
+          <tr><td>central station</td><td class="num">612</td><td class="num hi">$38,920</td><td class="num">34.1%</td><td class="num">99.97%</td></tr>
+          <tr><td>harbour district</td><td class="num">534</td><td class="num lo">$24,640</td><td class="num">31.8%</td><td class="num">99.94%</td></tr>
+          <tr><td>university quarter</td><td class="num">489</td><td class="num">$28,400</td><td class="num">36.5%</td><td class="num">99.98%</td></tr>
+          <tr><td>airport terminal</td><td class="num">365</td><td class="num hi">$50,180</td><td class="num">42.1%</td><td class="num">99.91%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- DIVIDER — thick accent line between panels -->
+  <div class="divider"></div>
+
+  <!-- RIGHT PANEL — secondary zone: live operations feed -->
+  <div class="zone-secondary">
+    <div class="panel-header">
+      <span class="panel-title">LIVE FEED</span>
+      <span class="panel-meta">142 events today</span>
+    </div>
+    <div class="feed-live"><span class="feed-live-dot"></span>STREAMING &mdash; AUTO-REFRESH 5S</div>
+    <div class="feed-body">
+      <!-- ZONE:secondary -->
+      <div class="feed-entry"><span class="feed-ts">14:32</span><span class="feed-lvl ok">OK</span><span class="feed-msg">machine #0847 restock &mdash; <span class="num">240</span> units loaded</span></div>
+      <div class="feed-entry"><span class="feed-ts">14:32</span><span class="feed-lvl dbg">DBG</span><span class="feed-msg">inventory sync: westfield_north &rarr; central_db [1.2s]</span></div>
+      <div class="feed-entry"><span class="feed-ts">14:28</span><span class="feed-lvl ok">OK</span><span class="feed-msg">payment batch #4820 &mdash; <span class="num">$6,144</span> daily revenue</span></div>
+      <div class="feed-entry"><span class="feed-ts">13:18</span><span class="feed-lvl wrn">WRN</span><span class="feed-msg">harbour_district revenue <span class="num">-34%</span> vs 7d avg</span></div>
+      <div class="feed-entry"><span class="feed-ts">13:17</span><span class="feed-lvl ok">OK</span><span class="feed-msg">alert dispatched &mdash; ticket #4821 created</span></div>
+      <div class="feed-entry"><span class="feed-ts">12:44</span><span class="feed-lvl ok">OK</span><span class="feed-msg">firmware v2.4.1 deployed to airport cluster</span></div>
+      <div class="feed-entry"><span class="feed-ts">12:00</span><span class="feed-lvl ok">OK</span><span class="feed-msg">shift_change: team_alpha &rarr; team_bravo (12 ops)</span></div>
+      <div class="feed-entry"><span class="feed-ts">11:45</span><span class="feed-lvl wrn">WRN</span><span class="feed-msg">machine #0612 coin jam &mdash; maintenance dispatched</span></div>
+      <div class="feed-entry"><span class="feed-ts">11:30</span><span class="feed-lvl ok">OK</span><span class="feed-msg">midday checkpoint: <span class="num">$3,072</span> / $6,144 target (50%)</span></div>
+      <div class="feed-entry"><span class="feed-ts">08:00</span><span class="feed-lvl dbg">DBG</span><span class="feed-msg">morning diag: 2,847 machines OK, 0 offline</span></div>
+      <div class="feed-entry"><span class="feed-ts">04:00</span><span class="feed-lvl dbg">DBG</span><span class="feed-msg">backup: 2,847 records &rarr; cold_storage [3.2s]</span></div>
+      <div class="feed-entry"><span class="feed-ts">02:15</span><span class="feed-lvl wrn">WRN</span><span class="feed-msg">SSL cert renewal pending &mdash; 14d remaining</span></div>
+      <div class="feed-entry"><span class="feed-ts">00:00</span><span class="feed-lvl ok">OK</span><span class="feed-msg">daily summary: <span class="num">$6,892</span> revenue, <span class="num">2,847</span> machines active</span></div>
+      <div class="feed-entry"><span class="feed-ts">23:45</span><span class="feed-lvl dbg">DBG</span><span class="feed-msg">nightly optimization: query cache rebuilt [4.1s]</span></div>
+    </div>
+  </div>
+
+  <!-- DECORATIVE_BLOCK -->
+
+</div>
+</body>
+</html>

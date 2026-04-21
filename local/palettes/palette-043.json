@@ -1,0 +1,15 @@
+{
+  "id": "palette-043",
+  "name": "vibrant-spectrum",
+  "source": "chromatic-research-piktochart",
+  "colors": {
+    "bg": "#d70015",
+    "surface": "#e10a1f",
+    "card": "#eb1429",
+    "accent": "#FF9A00",
+    "secondary": "#FF6F61",
+    "text": "#FFEA00",
+    "muted": "#ff3247"
+  },
+  "weight": 0
+}

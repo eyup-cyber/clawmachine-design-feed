@@ -1,0 +1,15 @@
+{
+  "id": "palette-044",
+  "name": "neon-paradise",
+  "source": "chromatic-research-piktochart",
+  "colors": {
+    "bg": "#ad0045",
+    "surface": "#b70a4f",
+    "card": "#c11459",
+    "accent": "#FF1744",
+    "secondary": "#F50057",
+    "text": "#e8e8f0",
+    "muted": "#df3277"
+  },
+  "weight": 0
+}

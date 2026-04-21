@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <filter id="aged">
+      <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="6" seed="89"/>
+      <feColorMatrix values="0 0 0 0 0.70 0 0 0 0 0.55 0 0 0 0 0.35 0 0 0 0.55 0"/>
+    </filter>
+    <radialGradient id="vignette">
+      <stop offset="60%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#6b4e2e" stop-opacity="0.4"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="#d9c39a"/>
+  <rect width="400" height="400" filter="url(#aged)"/>
+  <rect width="400" height="400" fill="url(#vignette)"/>
+</svg>

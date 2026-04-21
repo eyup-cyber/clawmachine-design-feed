@@ -1,0 +1,60 @@
+/* Decorative Layer: Brutalist Raw
+ * Hard edges, thick borders, stark contrast, no rounding.
+ * Uses --sl-text for borders, --sl-accent for highlights.
+ */
+
+.deco-brutalist-raw .card,
+.deco-brutalist-raw [data-card] {
+  border: 3px solid var(--sl-text);
+  border-radius: 0;
+  box-shadow: 6px 6px 0 var(--sl-text);
+}
+
+.deco-brutalist-raw button,
+.deco-brutalist-raw [data-btn] {
+  border: 2px solid var(--sl-text);
+  border-radius: 0;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  box-shadow: 4px 4px 0 var(--sl-text);
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+
+.deco-brutalist-raw button:hover,
+.deco-brutalist-raw [data-btn]:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--sl-text);
+}
+
+.deco-brutalist-raw button:active,
+.deco-brutalist-raw [data-btn]:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--sl-text);
+}
+
+.deco-brutalist-raw input,
+.deco-brutalist-raw select,
+.deco-brutalist-raw textarea {
+  border: 2px solid var(--sl-text);
+  border-radius: 0;
+}
+
+.deco-brutalist-raw h1,
+.deco-brutalist-raw h2,
+.deco-brutalist-raw h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 900;
+  border-bottom: 3px solid var(--sl-accent);
+  padding-bottom: 0.25em;
+}
+
+.deco-brutalist-raw hr,
+.deco-brutalist-raw [data-divider] {
+  border: none;
+  height: 3px;
+  background: var(--sl-text);
+}

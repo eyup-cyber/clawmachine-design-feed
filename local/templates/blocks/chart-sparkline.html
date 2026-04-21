@@ -1,0 +1,127 @@
+<div class="block-chart-sparkline">
+<style>
+.block-chart-sparkline .spark-panel {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow: hidden;
+}
+.block-chart-sparkline .spark-hdr {
+  padding: var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  
+  letter-spacing: 0.04em;
+}
+.block-chart-sparkline .spark-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 80px;
+  align-items: center;
+  gap: var(--sl-space-md);
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-text) 4%, transparent);
+  transition: background 0.15s;
+}
+.block-chart-sparkline .spark-row:hover {
+  background: color-mix(in srgb, var(--sl-text) 2%, transparent);
+}
+.block-chart-sparkline .spark-label {
+  font-family: var(--sl-font-body);
+  font-size: 12px;
+  color: var(--sl-text);
+  text-transform: lowercase;
+}
+.block-chart-sparkline .spark-line {
+  height: 20px;
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+.block-chart-sparkline .spark-line-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--sl-surface);
+  border-radius: 2px;
+}
+.block-chart-sparkline .spark-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--sl-accent) 60%, transparent), var(--sl-accent));
+  opacity: 0.6;
+}
+.block-chart-sparkline .spark-line-fill.warn {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--sl-secondary) 60%, transparent), var(--sl-secondary));
+}
+.block-chart-sparkline .spark-val {
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sl-text);
+  text-align: right;
+}
+</style>
+
+<div class="spark-panel">
+  <div class="spark-hdr">LOCATION PERFORMANCE</div>
+
+  <div class="spark-row">
+    <span class="spark-label">westfield mall</span>
+    <div class="spark-line">
+      <div class="spark-line-bg"></div>
+      <div class="spark-line-fill" style="width:88%"></div>
+    </div>
+    <span class="spark-val">$42,180</span>
+  </div>
+
+  <div class="spark-row">
+    <span class="spark-label">central station</span>
+    <div class="spark-line">
+      <div class="spark-line-bg"></div>
+      <div class="spark-line-fill" style="width:76%"></div>
+    </div>
+    <span class="spark-val">$38,920</span>
+  </div>
+
+  <div class="spark-row">
+    <span class="spark-label">harbour district</span>
+    <div class="spark-line">
+      <div class="spark-line-bg"></div>
+      <div class="spark-line-fill" style="width:54%"></div>
+    </div>
+    <span class="spark-val">$24,640</span>
+  </div>
+
+  <div class="spark-row">
+    <span class="spark-label">university qtr</span>
+    <div class="spark-line">
+      <div class="spark-line-bg"></div>
+      <div class="spark-line-fill" style="width:62%"></div>
+    </div>
+    <span class="spark-val">$28,400</span>
+  </div>
+
+  <div class="spark-row">
+    <span class="spark-label">east arcade</span>
+    <div class="spark-line">
+      <div class="spark-line-bg"></div>
+      <div class="spark-line-fill warn" style="width:28%"></div>
+    </div>
+    <span class="spark-val">$12,300</span>
+  </div>
+
+  <div class="spark-row">
+    <span class="spark-label">south terminal</span>
+    <div class="spark-line">
+      <div class="spark-line-bg"></div>
+      <div class="spark-line-fill" style="width:71%"></div>
+    </div>
+    <span class="spark-val">$31,440</span>
+  </div>
+</div>
+</div>

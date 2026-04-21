@@ -1,0 +1,42 @@
+{
+  "scrape_date": "2026-04-21",
+  "platforms": [
+    {
+      "name": "Supabase UI",
+      "url": "https://supabase.com/ui",
+      "github": "https://github.com/supabase-community/supabase-ui",
+      "license": "MIT",
+      "stack": ["Next.js", "Tailwind", "Shadcn", "Supabase Auth helpers"],
+      "clawmachine_fit": "HIGH",
+      "components_included": ["Password input with zxcvbn", "Auth UI flows", "Dropzone", "Realtime-cursor", "Current-user avatar", "Infinite query hook", "Realtime chat", "File upload"],
+      "notes": "MIT-licensed, drop-in if Clawmachine backend uses Supabase."
+    },
+    {
+      "name": "Convex Templates",
+      "url": "https://www.convex.dev/templates",
+      "clawmachine_fit": "MEDIUM",
+      "notable_templates": ["fullstack-convex", "convex-chat", "convex-web-voyager", "multi-tenant-convex"],
+      "stack": ["Convex backend", "Next.js", "Clerk", "Tailwind", "Aceternity UI"],
+      "notes": "Backend-shift dependent."
+    },
+    {
+      "name": "Builder.io",
+      "url": "https://www.builder.io/examples",
+      "clawmachine_fit": "LOW",
+      "vercel_template_direct_use": "next.js/builderio-shopify-commerce-headless",
+      "notes": "Visual CMS + React/Vue/Angular/Qwik output. Marketing-oriented."
+    },
+    {
+      "name": "Plasmic",
+      "url": "https://www.plasmic.app/examples",
+      "clawmachine_fit": "LOW",
+      "notes": "Visual builder outputs React/Next.js. Marketing-site oriented."
+    },
+    {
+      "name": "Locofy.ai",
+      "url": "https://www.locofy.ai/templates",
+      "clawmachine_fit": "LOW-MEDIUM",
+      "notes": "Figma/XD to React/Next/RN translation layer. Useful as a bridge if the operator ever wants to port a Figma kit (from figma-community-top/) into the Clawmachine repo."
+    }
+  ]
+}

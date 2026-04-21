@@ -1,0 +1,115 @@
+<div class="block-hero-metric">
+<style>
+.block-hero-metric .hm-card {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  padding: var(--sl-space-xl) var(--sl-space-lg);
+  position: relative;
+  overflow: hidden;
+}
+.block-hero-metric .hm-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--sl-accent), var(--sl-secondary), var(--sl-accent));
+}
+.block-hero-metric .hm-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--sl-accent) 3%, transparent));
+  pointer-events: none;
+}
+.block-hero-metric .hm-label {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  
+  color: var(--sl-muted);
+  margin-bottom: var(--sl-space-sm);
+}
+.block-hero-metric .hm-value {
+  font-family: var(--sl-font-display);
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--sl-text);
+  line-height: 1;
+}
+.block-hero-metric .hm-sub {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-lg);
+  margin-top: var(--sl-space-md);
+}
+.block-hero-metric .hm-trend {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-xs);
+  font-family: var(--sl-font-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+.block-hero-metric .hm-trend.up { color: var(--sl-accent); }
+.block-hero-metric .hm-trend.down { color: var(--sl-secondary); }
+.block-hero-metric .hm-trend-arrow {
+  font-size: 16px;
+  line-height: 1;
+}
+.block-hero-metric .hm-context {
+  font-family: var(--sl-font-body);
+  font-size: 12px;
+  color: var(--sl-muted);
+}
+.block-hero-metric .hm-bar {
+  margin-top: var(--sl-space-lg);
+  height: 4px;
+  background: var(--sl-surface);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.block-hero-metric .hm-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--sl-accent), color-mix(in srgb, var(--sl-accent) 60%, var(--sl-secondary)));
+  transition: width 0.6s ease;
+}
+.block-hero-metric .hm-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--sl-space-xs);
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-muted);
+  letter-spacing: 0.06em;
+  
+}
+</style>
+
+<div class="hm-card">
+  <div class="hm-label">TOTAL REVENUE — CURRENT PERIOD</div>
+  <div class="hm-value">$184,320</div>
+  <div class="hm-sub">
+    <div class="hm-trend up">
+      <span class="hm-trend-arrow">^</span>
+      +8.7%
+    </div>
+    <div class="hm-context">vs $169,520 previous period</div>
+  </div>
+  <div class="hm-bar">
+    <div class="hm-bar-fill" style="width:73%"></div>
+  </div>
+  <div class="hm-bar-labels">
+    <span>$0</span>
+    <span>TARGET: $252,000</span>
+  </div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "id": "palette-062",
+  "name": "arcade-glitch",
+  "source": "media.io-cyberpunk-triadic",
+  "colors": {
+    "bg": "#0B1026",
+    "surface": "#252A41",
+    "card": "#2F3450",
+    "accent": "#FF2E63",
+    "secondary": "#08D9D6",
+    "text": "#E0E4F0",
+    "muted": "#F9ED69"
+  },
+  "weight": 10
+}

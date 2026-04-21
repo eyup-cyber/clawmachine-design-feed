@@ -1,0 +1,15 @@
+{
+  "id": "palette-figma-cyberpunk-02",
+  "name": "chrome-rain",
+  "source": "figma-cyberpunk-ui-kit",
+  "colors": {
+    "bg": "#0b0c10",
+    "surface": "#1f2833",
+    "card": "#0b0c10",
+    "accent": "#66fcf1",
+    "secondary": "#45a29e",
+    "text": "#c5c6c7",
+    "muted": "#3a3f47"
+  },
+  "weight": 0
+}

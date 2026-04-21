@@ -1,0 +1,15 @@
+{
+  "id": "palette-074",
+  "name": "acid-chartreuse",
+  "source": "design-brief-bold-bg",
+  "colors": {
+    "bg": "#AEEA00",
+    "surface": "#99CE00",
+    "card": "#83B000",
+    "accent": "#D500F9",
+    "secondary": "#00B8D4",
+    "text": "#0a0a0a",
+    "muted": "#6A8F00"
+  },
+  "weight": 5
+}

@@ -1,0 +1,52 @@
+---
+title: Fieldset
+description: A grouping component for organizing related form fields.
+metaDescription: Fieldset component for React and Solid.js grouping related form fields with semantic HTML. Create organized, accessible forms with proper field grouping.
+category: forms
+links:
+  recipe: https://github.com/chakra-ui/park-ui/blob/main/packages/preset/src/recipes/fieldset.ts
+  ark: https://ark-ui.com/docs/components/fieldset
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Fieldset } from '@/components/ui'
+```
+
+```tsx
+<Fieldset.Root>
+  <Fieldset.Control>
+    <Fieldset.Legend />
+    <Fieldset.HelperText />
+  </Fieldset.Control>
+  <Fieldset.Content />
+</Fieldset.Root>
+```
+
+## Examples
+
+### Disabled
+
+Use the `disabled` prop to disable the fieldset to disable all input elements within the fieldset.
+
+<ComponentExample name="disabled" />
+
+### Invalid
+
+Use the `invalid` prop to mark the fieldset as invalid, which will display the error text. 
+
+<ComponentExample name="invalid" />
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+

@@ -1,0 +1,2015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aceternity UI — Free Components Gallery</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #0a0a0a;
+  color: #e5e5e5;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 3rem 2rem;
+  line-height: 1.5;
+}
+.container { max-width: 1400px; margin: 0 auto; }
+header { margin-bottom: 3rem; border-bottom: 1px solid #222; padding-bottom: 2rem; }
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #fff 0%, #888 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+header p { color: #888; font-size: 1rem; max-width: 700px; }
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  font-size: 0.875rem;
+}
+.stat { color: #666; }
+.stat strong { color: #fff; font-size: 1rem; }
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #222;
+}
+.filter button {
+  background: #111;
+  color: #aaa;
+  border: 1px solid #222;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.filter button:hover { background: #1a1a1a; color: #fff; border-color: #444; }
+.filter button.active { background: #fff; color: #000; border-color: #fff; }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: #0f0f0f;
+  border: 1px solid #1f1f1f;
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.04) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+.card:hover { border-color: #444; transform: translateY(-2px); }
+.card:hover::before { opacity: 1; }
+.card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+.card .category {
+  display: inline-block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #666;
+  background: #1a1a1a;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+.card .summary {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0.5rem 0 0.8rem;
+  line-height: 1.4;
+}
+.card .links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+.card .links a {
+  font-size: 0.75rem;
+  color: #aaa;
+  background: #181818;
+  border: 1px solid #2a2a2a;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.card .links a:hover { background: #252525; color: #fff; border-color: #444; }
+.card .links a.primary { background: #fff; color: #000; border-color: #fff; }
+.card .links a.primary:hover { background: #ddd; }
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+}
+.tag {
+  font-size: 0.65rem;
+  color: #555;
+}
+.tag::before { content: '#'; }
+.stats-row {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.7rem;
+  color: #555;
+  margin-top: 0.5rem;
+  border-top: 1px solid #1a1a1a;
+  padding-top: 0.5rem;
+}
+.difficulty-easy { color: #22c55e; }
+.difficulty-intermediate { color: #eab308; }
+.difficulty-advanced { color: #ef4444; }
+footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #222; color: #555; font-size: 0.8rem; }
+footer a { color: #aaa; text-decoration: none; }
+footer a:hover { color: #fff; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Aceternity UI — Free Tier</h1>
+<p>106 free animated React/Next.js components. Tailwind CSS + Framer Motion. Shadcn-compatible registry. Source verbatim from ui.aceternity.com/registry/*.json.</p>
+<div class="stats">
+<span class="stat"><strong>106</strong> components</span>
+<span class="stat"><strong>16</strong> categories</span>
+<span class="stat"><strong>134</strong> demo variants</span>
+</div>
+</header>
+<div class="filter">
+<button data-cat="all" class="active">All</button>
+<button data-cat="3d-effects">3d-effects</button>
+<button data-cat="backgrounds">backgrounds</button>
+<button data-cat="cards">cards</button>
+<button data-cat="cta">cta</button>
+<button data-cat="feature-sections">feature-sections</button>
+<button data-cat="forms">forms</button>
+<button data-cat="hero-sections">hero-sections</button>
+<button data-cat="layout">layout</button>
+<button data-cat="loaders">loaders</button>
+<button data-cat="navbars">navbars</button>
+<button data-cat="navigation">navigation</button>
+<button data-cat="scroll-effects">scroll-effects</button>
+<button data-cat="sidebars">sidebars</button>
+<button data-cat="testimonials">testimonials</button>
+<button data-cat="text-effects">text-effects</button>
+<button data-cat="visualization">visualization</button>
+</div>
+<div class='grid'>
+<div class="card" data-cats="3d-effects,cards">
+<div><span class="category">3d-effects</span><span class="category">cards</span></div>
+<h3>3D Card Effect</h3>
+<p class="summary">A 3D Card Effect card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">3d </span><span class="tag">card </span><span class="tag">content </span><span class="tag">showcase </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/3d-card-effect" class="primary" target="_blank">docs</a>
+<a href="components/3d-card.tsx">source</a>
+<a href="demos/3d-card-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/3d-card.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 8/10</span>
+<span>anim 8/10</span>
+</div>
+</div>
+<div class="card" data-cats="3d-effects,visualization">
+<div><span class="category">3d-effects</span><span class="category">visualization</span></div>
+<h3>3D Globe</h3>
+<p class="summary">A reusable 3D Globe component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">3d </span><span class="tag">data-viz </span><span class="tag">globe </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/3d-globe" class="primary" target="_blank">docs</a>
+<a href="components/3d-globe.tsx">source</a>
+<a href="demos/3d-globe-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/3d-globe.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-advanced">● advanced</span>
+<span>viz 7/10</span>
+<span>anim 7/10</span>
+</div>
+</div>
+<div class="card" data-cats="3d-effects,layout">
+<div><span class="category">3d-effects</span><span class="category">layout</span></div>
+<h3>3D Marquee</h3>
+<p class="summary">A reusable 3D Marquee component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">3d </span><span class="tag">animated </span><span class="tag">marquee </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/3d-marquee" class="primary" target="_blank">docs</a>
+<a href="components/3d-marquee.tsx">source</a>
+<a href="demos/3d-marquee-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/3d-marquee.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 7/10</span>
+<span>anim 7/10</span>
+</div>
+</div>
+<div class="card" data-cats="3d-effects,layout">
+<div><span class="category">3d-effects</span><span class="category">layout</span></div>
+<h3>3D Pin</h3>
+<p class="summary">A reusable 3D Pin component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">3d </span><span class="tag">pin </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/3d-pin" class="primary" target="_blank">docs</a>
+<a href="components/3d-pin.tsx">source</a>
+<a href="demos/3d-pin-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/3d-pin.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 7/10</span>
+<span>anim 7/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Animated Modal</h3>
+<p class="summary">A reusable Animated Modal component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">modal </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/animated-modal" class="primary" target="_blank">docs</a>
+<a href="components/animated-modal.tsx">source</a>
+<a href="demos/animated-modal-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/animated-modal.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,testimonials">
+<div><span class="category">layout</span><span class="category">testimonials</span></div>
+<h3>Animated Testimonials</h3>
+<p class="summary">A reusable Animated Testimonials component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">testimonials </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/animated-testimonials" class="primary" target="_blank">docs</a>
+<a href="components/animated-testimonials.tsx">source</a>
+<a href="demos/animated-testimonials-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/animated-testimonials.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Animated Tooltip</h3>
+<p class="summary">A reusable Animated Tooltip component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">hover </span><span class="tag">tooltip </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/animated-tooltip" class="primary" target="_blank">docs</a>
+<a href="components/animated-tooltip.tsx">source</a>
+<a href="demos/animated-tooltip-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/animated-tooltip.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,layout">
+<div><span class="category">cards</span><span class="category">layout</span></div>
+<h3>Apple Cards Carousel</h3>
+<p class="summary">A Apple Cards Carousel card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">apple </span><span class="tag">card </span><span class="tag">cards </span><span class="tag">carousel </span><span class="tag">content </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/apple-cards-carousel" class="primary" target="_blank">docs</a>
+
+<a href="demos/apple-cards-carousel-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/apple-cards-carousel.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,visualization">
+<div><span class="category">layout</span><span class="category">visualization</span></div>
+<h3>ASCII Art</h3>
+<p class="summary">A reusable ASCII Art component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">art </span><span class="tag">ascii </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/ascii-art" class="primary" target="_blank">docs</a>
+<a href="components/ascii-art.tsx">source</a>
+<a href="demos/ascii-art-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/ascii-art.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Aurora Background</h3>
+<p class="summary">A reusable Aurora Background background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">aurora </span><span class="tag">background </span><span class="tag">decorative </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/aurora-background" class="primary" target="_blank">docs</a>
+<a href="components/aurora-background.tsx">source</a>
+<a href="demos/aurora-background-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/aurora-background.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Background Beams With Collision</h3>
+<p class="summary">A reusable Background Beams With Collision background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">atmospheric </span><span class="tag">background </span><span class="tag">beams </span><span class="tag">collision </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/background-beams-with-collision" class="primary" target="_blank">docs</a>
+<a href="components/background-beams-with-collision.tsx">source</a>
+<a href="demos/background-beams-with-collision-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/background-beams-with-collision.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Background Beams</h3>
+<p class="summary">A reusable Background Beams background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">atmospheric </span><span class="tag">background </span><span class="tag">beams </span><span class="tag">decorative </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/background-beams" class="primary" target="_blank">docs</a>
+<a href="components/background-beams.tsx">source</a>
+<a href="demos/background-beams-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/background-beams.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Background Boxes</h3>
+<p class="summary">A reusable Background Boxes background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">background </span><span class="tag">boxes </span><span class="tag">decorative </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/background-boxes" class="primary" target="_blank">docs</a>
+<a href="components/background-boxes.tsx">source</a>
+<a href="demos/background-boxes-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/background-boxes.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Background Gradient Animation</h3>
+<p class="summary">A reusable Background Gradient Animation background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">animation </span><span class="tag">atmospheric </span><span class="tag">background </span><span class="tag">decorative </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/background-gradient-animation" class="primary" target="_blank">docs</a>
+<a href="components/background-gradient-animation.tsx">source</a>
+<a href="demos/background-gradient-animation-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/background-gradient-animation.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Background Gradient</h3>
+<p class="summary">A reusable Background Gradient background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">background </span><span class="tag">decorative </span><span class="tag">gradient </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/background-gradient" class="primary" target="_blank">docs</a>
+<a href="components/background-gradient.tsx">source</a>
+<a href="demos/background-gradient-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/background-gradient.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Background Lines</h3>
+<p class="summary">A reusable Background Lines background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">background </span><span class="tag">decorative </span><span class="tag">lines </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/background-lines" class="primary" target="_blank">docs</a>
+<a href="components/background-lines.tsx">source</a>
+<a href="demos/background-lines-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/background-lines.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Background Ripple Effect</h3>
+<p class="summary">A reusable Background Ripple Effect background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">atmospheric </span><span class="tag">background </span><span class="tag">decorative </span><span class="tag">effect </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/background-ripple-effect" class="primary" target="_blank">docs</a>
+<a href="components/background-ripple-effect.tsx">source</a>
+<a href="demos/background-ripple-effect-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/background-ripple-effect.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,feature-sections">
+<div><span class="category">cards</span><span class="category">feature-sections</span></div>
+<h3>Bento Grid</h3>
+<p class="summary">A Bento Grid card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">bento </span><span class="tag">content </span><span class="tag">grid </span><span class="tag">showcase </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/bento-grid" class="primary" target="_blank">docs</a>
+<a href="components/bento-grid.tsx">source</a>
+<a href="demos/bento-grid-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/bento-grid.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="scroll-effects,visualization">
+<div><span class="category">scroll-effects</span><span class="category">visualization</span></div>
+<h3>Canvas Reveal Effect</h3>
+<p class="summary">A reusable Canvas Reveal Effect component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">canvas </span><span class="tag">effect </span><span class="tag">reveal </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/canvas-reveal-effect" class="primary" target="_blank">docs</a>
+<a href="components/canvas-reveal-effect.tsx">source</a>
+<a href="demos/canvas-reveal-effect-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/canvas-reveal-effect.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="text-effects,visualization">
+<div><span class="category">text-effects</span><span class="category">visualization</span></div>
+<h3>Canvas Text</h3>
+<p class="summary">A Canvas Text text effect for expressive headings, highlights, and animated content emphasis.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">canvas </span><span class="tag">text </span><span class="tag">typography </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/canvas-text" class="primary" target="_blank">docs</a>
+<a href="components/canvas-text.tsx">source</a>
+<a href="demos/canvas-text-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/canvas-text.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,layout">
+<div><span class="category">cards</span><span class="category">layout</span></div>
+<h3>Card Hover Effect</h3>
+<p class="summary">A Card Hover Effect card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">card </span><span class="tag">content </span><span class="tag">effect </span><span class="tag">hover </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/card-hover-effect" class="primary" target="_blank">docs</a>
+<a href="components/card-hover-effect.tsx">source</a>
+<a href="demos/card-hover-effect-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/card-hover-effect.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,hero-sections">
+<div><span class="category">cards</span><span class="category">hero-sections</span></div>
+<h3>Card Spotlight</h3>
+<p class="summary">A Card Spotlight card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">card </span><span class="tag">content </span><span class="tag">headline </span><span class="tag">landing </span><span class="tag">showcase </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/card-spotlight" class="primary" target="_blank">docs</a>
+
+<a href="demos/card-spotlight-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/card-spotlight.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 8/10</span>
+<span>anim 7/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,testimonials">
+<div><span class="category">cards</span><span class="category">testimonials</span></div>
+<h3>Card Stack</h3>
+<p class="summary">A Card Stack card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">card </span><span class="tag">content </span><span class="tag">showcase </span><span class="tag">stack </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/card-stack" class="primary" target="_blank">docs</a>
+<a href="components/card-stack.tsx">source</a>
+<a href="demos/card-stack-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/card-stack.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Carousel</h3>
+<p class="summary">A reusable Carousel component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">carousel </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/carousel" class="primary" target="_blank">docs</a>
+<a href="components/carousel.tsx">source</a>
+<a href="demos/carousel-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/carousel.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,text-effects">
+<div><span class="category">layout</span><span class="category">text-effects</span></div>
+<h3>Code Block</h3>
+<p class="summary">A reusable Code Block component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">block </span><span class="tag">code </span><span class="tag">typography </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/code-block" class="primary" target="_blank">docs</a>
+<a href="components/code-block.tsx">source</a>
+<a href="demos/code-block-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/code-block.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,text-effects">
+<div><span class="category">layout</span><span class="category">text-effects</span></div>
+<h3>Colourful Text</h3>
+<p class="summary">A Colourful Text text effect for expressive headings, highlights, and animated content emphasis.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">colourful </span><span class="tag">text </span><span class="tag">typography </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/colourful-text" class="primary" target="_blank">docs</a>
+<a href="components/colourful-text.tsx">source</a>
+<a href="demos/colourful-text-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/colourful-text.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,layout">
+<div><span class="category">cards</span><span class="category">layout</span></div>
+<h3>Comet Card</h3>
+<p class="summary">A Comet Card card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">card </span><span class="tag">comet </span><span class="tag">content </span><span class="tag">showcase </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/comet-card" class="primary" target="_blank">docs</a>
+<a href="components/comet-card.tsx">source</a>
+<a href="demos/comet-card-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/comet-card.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="feature-sections,layout">
+<div><span class="category">feature-sections</span><span class="category">layout</span></div>
+<h3>Compare</h3>
+<p class="summary">A reusable Compare component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">compare </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/compare" class="primary" target="_blank">docs</a>
+<a href="components/compare.tsx">source</a>
+<a href="demos/compare-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/compare.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,scroll-effects">
+<div><span class="category">layout</span><span class="category">scroll-effects</span></div>
+<h3>Container Scroll Animation</h3>
+<p class="summary">A reusable Container Scroll Animation component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">animation </span><span class="tag">container </span><span class="tag">scroll </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/container-scroll-animation" class="primary" target="_blank">docs</a>
+<a href="components/container-scroll-animation.tsx">source</a>
+<a href="demos/container-scroll-animation-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/container-scroll-animation.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,text-effects">
+<div><span class="category">layout</span><span class="category">text-effects</span></div>
+<h3>Container Text Flip</h3>
+<p class="summary">A Container Text Flip text effect for expressive headings, highlights, and animated content emphasis.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">container </span><span class="tag">flip </span><span class="tag">text </span><span class="tag">typography </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/container-text-flip" class="primary" target="_blank">docs</a>
+<a href="components/container-text-flip.tsx">source</a>
+<a href="demos/container-text-flip-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/container-text-flip.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="cta,layout">
+<div><span class="category">cta</span><span class="category">layout</span></div>
+<h3>Cover</h3>
+<p class="summary">A reusable Cover component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">cover </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/container-cover" class="primary" target="_blank">docs</a>
+
+<a href="demos/cover-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/cover.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Direction Aware Hover</h3>
+<p class="summary">A reusable Direction Aware Hover component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">aware </span><span class="tag">direction </span><span class="tag">hover </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/direction-aware-hover" class="primary" target="_blank">docs</a>
+<a href="components/direction-aware-hover.tsx">source</a>
+<a href="demos/direction-aware-hover-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/direction-aware-hover.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,visualization">
+<div><span class="category">layout</span><span class="category">visualization</span></div>
+<h3>Dither Shader</h3>
+<p class="summary">A reusable Dither Shader component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">dither </span><span class="tag">shader </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/dither-shader" class="primary" target="_blank">docs</a>
+<a href="components/dither-shader.tsx">source</a>
+<a href="demos/dither-shader-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/dither-shader.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 7/10</span>
+<span>anim 7/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Dotted Glow Background</h3>
+<p class="summary">A reusable Dotted Glow Background background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">background </span><span class="tag">decorative </span><span class="tag">dotted </span><span class="tag">glow </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/dotted-glow-background" class="primary" target="_blank">docs</a>
+<a href="components/dotted-glow-background.tsx">source</a>
+<a href="demos/dotted-glow-background-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/dotted-glow-background.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="3d-effects,cards">
+<div><span class="category">3d-effects</span><span class="category">cards</span></div>
+<h3>Draggable Card</h3>
+<p class="summary">A Draggable Card card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">card </span><span class="tag">content </span><span class="tag">draggable </span><span class="tag">showcase </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/draggable-card" class="primary" target="_blank">docs</a>
+<a href="components/draggable-card.tsx">source</a>
+<a href="demos/draggable-card-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/draggable-card.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,text-effects">
+<div><span class="category">layout</span><span class="category">text-effects</span></div>
+<h3>Encrypted Text</h3>
+<p class="summary">A Encrypted Text text effect for expressive headings, highlights, and animated content emphasis.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">encrypted </span><span class="tag">text </span><span class="tag">typography </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/encrypted-text" class="primary" target="_blank">docs</a>
+<a href="components/encrypted-text.tsx">source</a>
+<a href="demos/encrypted-text-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/encrypted-text.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,layout">
+<div><span class="category">cards</span><span class="category">layout</span></div>
+<h3>Evervault Card</h3>
+<p class="summary">A Evervault Card card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">card </span><span class="tag">content </span><span class="tag">evervault </span><span class="tag">showcase </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/evervault-card" class="primary" target="_blank">docs</a>
+<a href="components/evervault-card.tsx">source</a>
+<a href="demos/evervault-card-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/evervault-card.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="forms,layout">
+<div><span class="category">forms</span><span class="category">layout</span></div>
+<h3>File Upload</h3>
+<p class="summary">A File Upload form component that improves data entry UX with clear states and modern interactions.</p>
+<div class="tags"><span class="tag">file </span><span class="tag">form </span><span class="tag">upload </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/file-upload" class="primary" target="_blank">docs</a>
+<a href="components/file-upload.tsx">source</a>
+<a href="demos/file-upload-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/file-upload.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 3/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,text-effects">
+<div><span class="category">layout</span><span class="category">text-effects</span></div>
+<h3>Flip Words</h3>
+<p class="summary">A Flip Words text effect for expressive headings, highlights, and animated content emphasis.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">flip </span><span class="tag">typography </span><span class="tag">words </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/flip-words" class="primary" target="_blank">docs</a>
+<a href="components/flip-words.tsx">source</a>
+<a href="demos/flip-words-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/flip-words.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="navigation">
+<div><span class="category">navigation</span></div>
+<h3>Floating Dock</h3>
+<p class="summary">A Floating Dock navigation component for responsive headers, sidebars, and interaction-friendly layout flows.</p>
+<div class="tags"><span class="tag">dock </span><span class="tag">floating </span><span class="tag">layout </span><span class="tag">menu </span><span class="tag">navigation </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/floating-dock" class="primary" target="_blank">docs</a>
+<a href="components/floating-dock.tsx">source</a>
+<a href="demos/floating-dock-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/floating-dock.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 4/10</span>
+<span>anim 4/10</span>
+</div>
+</div>
+<div class="card" data-cats="navbars,navigation">
+<div><span class="category">navbars</span><span class="category">navigation</span></div>
+<h3>Floating Navbar</h3>
+<p class="summary">A Floating Navbar navigation component for responsive headers, sidebars, and interaction-friendly layout flows.</p>
+<div class="tags"><span class="tag">floating </span><span class="tag">layout </span><span class="tag">menu </span><span class="tag">navbar </span><span class="tag">navigation </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/floating-navbar" class="primary" target="_blank">docs</a>
+<a href="components/floating-navbar.tsx">source</a>
+<a href="demos/floating-navbar-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/floating-navbar.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 4/10</span>
+<span>anim 4/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,layout">
+<div><span class="category">cards</span><span class="category">layout</span></div>
+<h3>Focus Cards</h3>
+<p class="summary">A Focus Cards card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">card </span><span class="tag">cards </span><span class="tag">content </span><span class="tag">focus </span><span class="tag">showcase </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/focus-cards" class="primary" target="_blank">docs</a>
+<a href="components/focus-cards.tsx">source</a>
+<a href="demos/focus-cards-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/focus-cards.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Following Pointer</h3>
+<p class="summary">A reusable Following Pointer component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">following </span><span class="tag">pointer </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/following-pointer" class="primary" target="_blank">docs</a>
+<a href="components/following-pointer.tsx">source</a>
+<a href="demos/following-pointer-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/following-pointer.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,layout">
+<div><span class="category">cards</span><span class="category">layout</span></div>
+<h3>Glare Card</h3>
+<p class="summary">A Glare Card card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">card </span><span class="tag">content </span><span class="tag">glare </span><span class="tag">showcase </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/glare-card" class="primary" target="_blank">docs</a>
+<a href="components/glare-card.tsx">source</a>
+<a href="demos/glare-card-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/glare-card.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,visualization">
+<div><span class="category">layout</span><span class="category">visualization</span></div>
+<h3>Globe</h3>
+<p class="summary">A reusable Globe component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">data-viz </span><span class="tag">globe </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/github-globe" class="primary" target="_blank">docs</a>
+<a href="components/globe.tsx">source</a>
+<a href="demos/globe-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/globe.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 7/10</span>
+<span>anim 7/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Glowing Effect</h3>
+<p class="summary">A reusable Glowing Effect component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">effect </span><span class="tag">glowing </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/glowing-effect" class="primary" target="_blank">docs</a>
+<a href="components/glowing-effect.tsx">source</a>
+<a href="demos/glowing-effect-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/glowing-effect.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Glowing Stars</h3>
+<p class="summary">A reusable Glowing Stars component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">decorative </span><span class="tag">glowing </span><span class="tag">stars </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/glowing-stars" class="primary" target="_blank">docs</a>
+<a href="components/glowing-stars.tsx">source</a>
+<a href="demos/glowing-stars-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/glowing-stars.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="forms,layout">
+<div><span class="category">forms</span><span class="category">layout</span></div>
+<h3>Gooey Input</h3>
+<p class="summary">A Gooey Input form component that improves data entry UX with clear states and modern interactions.</p>
+<div class="tags"><span class="tag">form </span><span class="tag">gooey </span><span class="tag">input </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/gooey-input" class="primary" target="_blank">docs</a>
+<a href="components/gooey-input.tsx">source</a>
+<a href="demos/gooey-input-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/gooey-input.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 3/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Google Gemini Effect</h3>
+<p class="summary">A reusable Google Gemini Effect component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">effect </span><span class="tag">gemini </span><span class="tag">google </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/google-gemini-effect" class="primary" target="_blank">docs</a>
+<a href="components/google-gemini-effect.tsx">source</a>
+<a href="demos/google-gemini-effect-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/google-gemini-effect.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Grid</h3>
+<p class="summary">A reusable Grid component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">grid </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/grid" class="primary" target="_blank">docs</a>
+<a href="components/grid.tsx">source</a>
+<a href="demos/grid-demo.tsx">demo</a>
+<a href="https://ui.aceternity.com/registry/grid.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="cta,hero-sections">
+<div><span class="category">cta</span><span class="category">hero-sections</span></div>
+<h3>Hero Highlight</h3>
+<p class="summary">A reusable Hero Highlight component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">headline </span><span class="tag">hero </span><span class="tag">highlight </span><span class="tag">landing </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/hero-highlight" class="primary" target="_blank">docs</a>
+<a href="components/hero-highlight.tsx">source</a>
+<a href="demos/hero-highlight-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/hero-highlight.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="hero-sections,scroll-effects">
+<div><span class="category">hero-sections</span><span class="category">scroll-effects</span></div>
+<h3>Hero Parallax</h3>
+<p class="summary">A reusable Hero Parallax component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">headline </span><span class="tag">hero </span><span class="tag">landing </span><span class="tag">parallax </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/hero-parallax" class="primary" target="_blank">docs</a>
+<a href="components/hero-parallax.tsx">source</a>
+<a href="demos/hero-parallax-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/hero-parallax.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-advanced">● advanced</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Hover Border Gradient</h3>
+<p class="summary">A reusable Hover Border Gradient component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">border </span><span class="tag">gradient </span><span class="tag">hover </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/hover-border-gradient" class="primary" target="_blank">docs</a>
+<a href="components/hover-border-gradient.tsx">source</a>
+<a href="demos/hover-border-gradient-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/hover-border-gradient.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Images Badge</h3>
+<p class="summary">A reusable Images Badge component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">badge </span><span class="tag">images </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/images-badge" class="primary" target="_blank">docs</a>
+<a href="components/images-badge.tsx">source</a>
+<a href="demos/images-badge-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/images-badge.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Images Slider</h3>
+<p class="summary">A reusable Images Slider component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">images </span><span class="tag">slider </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/images-slider" class="primary" target="_blank">docs</a>
+<a href="components/images-slider.tsx">source</a>
+<a href="demos/images-slider-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/images-slider.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,layout">
+<div><span class="category">cards</span><span class="category">layout</span></div>
+<h3>Infinite Moving Cards</h3>
+<p class="summary">A Infinite Moving Cards card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">card </span><span class="tag">cards </span><span class="tag">content </span><span class="tag">infinite </span><span class="tag">moving </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/infinite-moving-cards" class="primary" target="_blank">docs</a>
+<a href="components/infinite-moving-cards.tsx">source</a>
+<a href="demos/infinite-moving-cards-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/infinite-moving-cards.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="forms,layout">
+<div><span class="category">forms</span><span class="category">layout</span></div>
+<h3>Input</h3>
+<p class="summary">A Input form component that improves data entry UX with clear states and modern interactions.</p>
+<div class="tags"><span class="tag">form </span><span class="tag">input </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/input" class="primary" target="_blank">docs</a>
+<a href="components/input.tsx">source</a>
+
+<a href="https://ui.aceternity.com/registry/input.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 3/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Keyboard</h3>
+<p class="summary">A reusable Keyboard component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">keyboard </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/keyboard" class="primary" target="_blank">docs</a>
+<a href="components/keyboard.tsx">source</a>
+<a href="demos/keyboard-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/keyboard.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="forms,layout">
+<div><span class="category">forms</span><span class="category">layout</span></div>
+<h3>Label</h3>
+<p class="summary">A Label form component that improves data entry UX with clear states and modern interactions.</p>
+<div class="tags"><span class="tag">label </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/label" class="primary" target="_blank">docs</a>
+<a href="components/label.tsx">source</a>
+
+<a href="https://ui.aceternity.com/registry/label.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 3/10</span>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<div><span class="category">hero-sections</span></div>
+<h3>Lamp</h3>
+<p class="summary">A reusable Lamp component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">headline </span><span class="tag">lamp </span><span class="tag">landing </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/lamp-effect" class="primary" target="_blank">docs</a>
+<a href="components/lamp.tsx">source</a>
+<a href="demos/lamp-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/lamp.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Layout Grid</h3>
+<p class="summary">A reusable Layout Grid component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">grid </span><span class="tag">layout </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/layout-grid" class="primary" target="_blank">docs</a>
+<a href="components/layout-grid.tsx">source</a>
+<a href="demos/layout-grid-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/layout-grid.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,text-effects">
+<div><span class="category">layout</span><span class="category">text-effects</span></div>
+<h3>Layout Text Flip</h3>
+<p class="summary">A Layout Text Flip text effect for expressive headings, highlights, and animated content emphasis.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">flip </span><span class="tag">layout </span><span class="tag">text </span><span class="tag">typography </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/layout-text-flip" class="primary" target="_blank">docs</a>
+<a href="components/layout-text-flip.tsx">source</a>
+<a href="demos/layout-text-flip-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/layout-text-flip.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Lens</h3>
+<p class="summary">A reusable Lens component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">lens </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/lens" class="primary" target="_blank">docs</a>
+<a href="components/lens.tsx">source</a>
+<a href="demos/lens-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/lens.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Link Preview</h3>
+<p class="summary">A reusable Link Preview component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">link </span><span class="tag">preview </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/link-preview" class="primary" target="_blank">docs</a>
+<a href="components/link-preview.tsx">source</a>
+<a href="demos/link-preview-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/link-preview.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,loaders">
+<div><span class="category">layout</span><span class="category">loaders</span></div>
+<h3>Loader</h3>
+<p class="summary">A Loader loader component for communicating progress and improving perceived responsiveness.</p>
+<div class="tags"><span class="tag">loader </span><span class="tag">loading </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/loader" class="primary" target="_blank">docs</a>
+<a href="components/loader.tsx">source</a>
+
+<a href="https://ui.aceternity.com/registry/loader.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 8/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,scroll-effects">
+<div><span class="category">layout</span><span class="category">scroll-effects</span></div>
+<h3>Macbook Scroll</h3>
+<p class="summary">A reusable Macbook Scroll component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">macbook </span><span class="tag">scroll </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/macbook-scroll" class="primary" target="_blank">docs</a>
+<a href="components/macbook-scroll.tsx">source</a>
+<a href="demos/macbook-scroll-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/macbook-scroll.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Meteors</h3>
+<p class="summary">A reusable Meteors background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">decorative </span><span class="tag">meteors </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/meteors" class="primary" target="_blank">docs</a>
+<a href="components/meteors.tsx">source</a>
+<a href="demos/meteors-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/meteors.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Moving Border</h3>
+<p class="summary">A reusable Moving Border component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">border </span><span class="tag">moving </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/moving-border" class="primary" target="_blank">docs</a>
+<a href="components/moving-border.tsx">source</a>
+<a href="demos/moving-border-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/moving-border.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>Moving Line</h3>
+<p class="summary">A reusable Moving Line component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">line </span><span class="tag">moving </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/moving-line" class="primary" target="_blank">docs</a>
+<a href="components/moving-line.tsx">source</a>
+
+<a href="https://ui.aceternity.com/registry/moving-line.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,loaders">
+<div><span class="category">layout</span><span class="category">loaders</span></div>
+<h3>Multi Step Loader</h3>
+<p class="summary">A Multi Step Loader loader component for communicating progress and improving perceived responsiveness.</p>
+<div class="tags"><span class="tag">loader </span><span class="tag">loading </span><span class="tag">multi </span><span class="tag">step </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/multi-step-loader" class="primary" target="_blank">docs</a>
+<a href="components/multi-step-loader.tsx">source</a>
+<a href="demos/multi-step-loader-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/multi-step-loader.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 8/10</span>
+</div>
+</div>
+<div class="card" data-cats="navbars,navigation">
+<div><span class="category">navbars</span><span class="category">navigation</span></div>
+<h3>Navbar Menu</h3>
+<p class="summary">A Navbar Menu navigation component for responsive headers, sidebars, and interaction-friendly layout flows.</p>
+<div class="tags"><span class="tag">layout </span><span class="tag">menu </span><span class="tag">navbar </span><span class="tag">navigation </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/navbar-menu" class="primary" target="_blank">docs</a>
+<a href="components/navbar-menu.tsx">source</a>
+<a href="demos/navbar-menu-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/navbar-menu.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 4/10</span>
+<span>anim 4/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Noise Background</h3>
+<p class="summary">A reusable Noise Background background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">background </span><span class="tag">decorative </span><span class="tag">noise </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/noise-background" class="primary" target="_blank">docs</a>
+<a href="components/noise-background.tsx">source</a>
+<a href="demos/noise-background-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/noise-background.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="hero-sections,scroll-effects">
+<div><span class="category">hero-sections</span><span class="category">scroll-effects</span></div>
+<h3>Parallax Hero Images</h3>
+<p class="summary">A reusable Parallax Hero Images component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">headline </span><span class="tag">hero </span><span class="tag">images </span><span class="tag">landing </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/parallax-hero-images" class="primary" target="_blank">docs</a>
+<a href="components/parallax-hero-images.tsx">source</a>
+<a href="demos/parallax-hero-images-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/parallax-hero-images.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-advanced">● advanced</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,scroll-effects">
+<div><span class="category">layout</span><span class="category">scroll-effects</span></div>
+<h3>Parallax Scroll 2</h3>
+<p class="summary">A reusable Parallax Scroll 2 component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">2 </span><span class="tag">animated </span><span class="tag">parallax </span><span class="tag">scroll </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/parallax-scroll-2" class="primary" target="_blank">docs</a>
+<a href="components/parallax-scroll-2.tsx">source</a>
+<a href="demos/parallax-scroll-2-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/parallax-scroll-2.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-advanced">● advanced</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,scroll-effects">
+<div><span class="category">layout</span><span class="category">scroll-effects</span></div>
+<h3>Parallax Scroll</h3>
+<p class="summary">A reusable Parallax Scroll component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">parallax </span><span class="tag">scroll </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/parallax-scroll" class="primary" target="_blank">docs</a>
+<a href="components/parallax-scroll.tsx">source</a>
+<a href="demos/parallax-scroll-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/parallax-scroll.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-advanced">● advanced</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,visualization">
+<div><span class="category">layout</span><span class="category">visualization</span></div>
+<h3>Pixelated Canvas</h3>
+<p class="summary">A reusable Pixelated Canvas component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">canvas </span><span class="tag">pixelated </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/pixelated-canvas" class="primary" target="_blank">docs</a>
+<a href="components/pixelated-canvas.tsx">source</a>
+<a href="demos/pixelated-canvas-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/pixelated-canvas.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 7/10</span>
+<span>anim 7/10</span>
+</div>
+</div>
+<div class="card" data-cats="forms,layout">
+<div><span class="category">forms</span><span class="category">layout</span></div>
+<h3>Placeholders And Vanish Input</h3>
+<p class="summary">A Placeholders And Vanish Input form component that improves data entry UX with clear states and modern interactions.</p>
+<div class="tags"><span class="tag">and </span><span class="tag">form </span><span class="tag">input </span><span class="tag">placeholders </span><span class="tag">vanish </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/placeholders-and-vanish-input" class="primary" target="_blank">docs</a>
+<a href="components/placeholders-and-vanish-input.tsx">source</a>
+<a href="demos/placeholders-and-vanish-input-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/placeholders-and-vanish-input.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 3/10</span>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<div><span class="category">hero-sections</span></div>
+<h3>Pointer Highlight</h3>
+<p class="summary">A reusable Pointer Highlight component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">headline </span><span class="tag">highlight </span><span class="tag">landing </span><span class="tag">pointer </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/pointer-highlight" class="primary" target="_blank">docs</a>
+<a href="components/pointer-highlight.tsx">source</a>
+<a href="demos/pointer-highlight-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/pointer-highlight.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="navbars,navigation">
+<div><span class="category">navbars</span><span class="category">navigation</span></div>
+<h3>Resizable Navbar</h3>
+<p class="summary">A Resizable Navbar navigation component for responsive headers, sidebars, and interaction-friendly layout flows.</p>
+<div class="tags"><span class="tag">layout </span><span class="tag">menu </span><span class="tag">navbar </span><span class="tag">navigation </span><span class="tag">resizable </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/resizable-navbar" class="primary" target="_blank">docs</a>
+<a href="components/resizable-navbar.tsx">source</a>
+<a href="demos/resizable-navbar-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/resizable-navbar.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 4/10</span>
+<span>anim 4/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Scales</h3>
+<p class="summary">A reusable Scales background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">decorative </span><span class="tag">scales </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/scales" class="primary" target="_blank">docs</a>
+<a href="components/scales.tsx">source</a>
+<a href="demos/scales-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/scales.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Shooting Stars</h3>
+<p class="summary">A reusable Shooting Stars component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">decorative </span><span class="tag">shooting </span><span class="tag">stars </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/shooting-stars-and-stars-background" class="primary" target="_blank">docs</a>
+<a href="components/shooting-stars.tsx">source</a>
+
+<a href="https://ui.aceternity.com/registry/shooting-stars.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="navigation,sidebars">
+<div><span class="category">navigation</span><span class="category">sidebars</span></div>
+<h3>Sidebar</h3>
+<p class="summary">A Sidebar navigation component for responsive headers, sidebars, and interaction-friendly layout flows.</p>
+<div class="tags"><span class="tag">layout </span><span class="tag">menu </span><span class="tag">navigation </span><span class="tag">sidebar </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/sidebar" class="primary" target="_blank">docs</a>
+<a href="components/sidebar.tsx">source</a>
+<a href="demos/sidebar-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/sidebar.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 4/10</span>
+<span>anim 4/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Sparkles</h3>
+<p class="summary">A reusable Sparkles background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">atmospheric </span><span class="tag">decorative </span><span class="tag">sparkles </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/sparkles" class="primary" target="_blank">docs</a>
+<a href="components/sparkles.tsx">source</a>
+<a href="demos/sparkles-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/sparkles.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<div><span class="category">hero-sections</span></div>
+<h3>Spotlight New</h3>
+<p class="summary">A reusable Spotlight New component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">headline </span><span class="tag">landing </span><span class="tag">new </span><span class="tag">spotlight </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/spotlight-new" class="primary" target="_blank">docs</a>
+<a href="components/spotlight-new.tsx">source</a>
+<a href="demos/spotlight-new-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/spotlight-new.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="hero-sections">
+<div><span class="category">hero-sections</span></div>
+<h3>Spotlight</h3>
+<p class="summary">A reusable Spotlight component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">headline </span><span class="tag">landing </span><span class="tag">spotlight </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/spotlight" class="primary" target="_blank">docs</a>
+<a href="components/spotlight.tsx">source</a>
+<a href="demos/spotlight-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/spotlight.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Stars Background</h3>
+<p class="summary">A reusable Stars Background background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">background </span><span class="tag">decorative </span><span class="tag">stars </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/shooting-stars-and-stars-background" class="primary" target="_blank">docs</a>
+<a href="components/stars-background.tsx">source</a>
+
+<a href="https://ui.aceternity.com/registry/stars-background.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="cta,forms">
+<div><span class="category">cta</span><span class="category">forms</span></div>
+<h3>Stateful Button</h3>
+<p class="summary">A reusable Stateful Button component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">button </span><span class="tag">stateful </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/stateful-button" class="primary" target="_blank">docs</a>
+<a href="components/stateful-button.tsx">source</a>
+<a href="demos/stateful-button-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/stateful-button.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 3/10</span>
+</div>
+</div>
+<div class="card" data-cats="navigation">
+<div><span class="category">navigation</span></div>
+<h3>Sticky Banner</h3>
+<p class="summary">A reusable Sticky Banner component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">banner </span><span class="tag">layout </span><span class="tag">menu </span><span class="tag">sticky </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/sticky-banner" class="primary" target="_blank">docs</a>
+<a href="components/sticky-banner.tsx">source</a>
+<a href="demos/sticky-banner-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/sticky-banner.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 4/10</span>
+<span>anim 4/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,scroll-effects">
+<div><span class="category">layout</span><span class="category">scroll-effects</span></div>
+<h3>Sticky Scroll Reveal</h3>
+<p class="summary">A reusable Sticky Scroll Reveal component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">reveal </span><span class="tag">scroll </span><span class="tag">sticky </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/sticky-scroll-reveal" class="primary" target="_blank">docs</a>
+<a href="components/sticky-scroll-reveal.tsx">source</a>
+<a href="demos/sticky-scroll-reveal-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/sticky-scroll-reveal.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout">
+<div><span class="category">layout</span></div>
+<h3>SVG Mask Effect</h3>
+<p class="summary">A reusable SVG Mask Effect component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">effect </span><span class="tag">mask </span><span class="tag">svg </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/svg-mask-effect" class="primary" target="_blank">docs</a>
+<a href="components/svg-mask-effect.tsx">source</a>
+<a href="demos/svg-mask-effect-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/svg-mask-effect.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="navigation">
+<div><span class="category">navigation</span></div>
+<h3>Tabs</h3>
+<p class="summary">A reusable Tabs component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">layout </span><span class="tag">menu </span><span class="tag">tabs </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/tabs" class="primary" target="_blank">docs</a>
+<a href="components/tabs.tsx">source</a>
+<a href="demos/tabs-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/tabs.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 4/10</span>
+<span>anim 4/10</span>
+</div>
+</div>
+<div class="card" data-cats="cta,layout">
+<div><span class="category">cta</span><span class="category">layout</span></div>
+<h3>Tailwind CSS Buttons</h3>
+<p class="summary">A reusable Tailwind CSS Buttons component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">buttons </span><span class="tag">tailwindcss </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/tailwindcss-buttons" class="primary" target="_blank">docs</a>
+<a href="components/tailwindcss-buttons.tsx">source</a>
+<a href="demos/tailwindcss-buttons-demo.tsx">demo</a>
+<a href="https://ui.aceternity.com/registry/tailwindcss-buttons.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,text-effects">
+<div><span class="category">layout</span><span class="category">text-effects</span></div>
+<h3>Terminal</h3>
+<p class="summary">A reusable Terminal component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">terminal </span><span class="tag">typography </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/terminal" class="primary" target="_blank">docs</a>
+<a href="components/terminal.tsx">source</a>
+<a href="demos/terminal-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/terminal.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,text-effects">
+<div><span class="category">layout</span><span class="category">text-effects</span></div>
+<h3>Text Flipping Board</h3>
+<p class="summary">A Text Flipping Board text effect for expressive headings, highlights, and animated content emphasis.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">board </span><span class="tag">flipping </span><span class="tag">text </span><span class="tag">typography </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/text-flipping-board" class="primary" target="_blank">docs</a>
+<a href="components/text-flipping-board.tsx">source</a>
+<a href="demos/text-flipping-board-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/text-flipping-board.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,text-effects">
+<div><span class="category">layout</span><span class="category">text-effects</span></div>
+<h3>Text Generate Effect</h3>
+<p class="summary">A Text Generate Effect text effect for expressive headings, highlights, and animated content emphasis.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">effect </span><span class="tag">generate </span><span class="tag">text </span><span class="tag">typography </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/text-generate-effect" class="primary" target="_blank">docs</a>
+<a href="components/text-generate-effect.tsx">source</a>
+<a href="demos/text-generate-effect-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/text-generate-effect.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,text-effects">
+<div><span class="category">layout</span><span class="category">text-effects</span></div>
+<h3>Text Hover Effect</h3>
+<p class="summary">A Text Hover Effect text effect for expressive headings, highlights, and animated content emphasis.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">effect </span><span class="tag">hover </span><span class="tag">text </span><span class="tag">typography </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/text-hover-effect" class="primary" target="_blank">docs</a>
+<a href="components/text-hover-effect.tsx">source</a>
+<a href="demos/text-hover-effect-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/text-hover-effect.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,scroll-effects,text-effects">
+<div><span class="category">cards</span><span class="category">scroll-effects</span><span class="category">text-effects</span></div>
+<h3>Text Reveal Card</h3>
+<p class="summary">A Text Reveal Card card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">card </span><span class="tag">content </span><span class="tag">reveal </span><span class="tag">showcase </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/text-reveal-card" class="primary" target="_blank">docs</a>
+<a href="components/text-reveal-card.tsx">source</a>
+<a href="demos/text-reveal-card-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/text-reveal-card.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="feature-sections,scroll-effects">
+<div><span class="category">feature-sections</span><span class="category">scroll-effects</span></div>
+<h3>Timeline</h3>
+<p class="summary">A reusable Timeline component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">timeline </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/timeline" class="primary" target="_blank">docs</a>
+<a href="components/timeline.tsx">source</a>
+<a href="demos/timeline-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/timeline.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-advanced">● advanced</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,layout">
+<div><span class="category">cards</span><span class="category">layout</span></div>
+<h3>Tooltip Card</h3>
+<p class="summary">A Tooltip Card card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">card </span><span class="tag">content </span><span class="tag">hover </span><span class="tag">showcase </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/tooltip-card" class="primary" target="_blank">docs</a>
+<a href="components/tooltip-card.tsx">source</a>
+<a href="demos/tooltip-card-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/tooltip-card.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,scroll-effects">
+<div><span class="category">layout</span><span class="category">scroll-effects</span></div>
+<h3>Tracing Beam</h3>
+<p class="summary">A reusable Tracing Beam component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">beam </span><span class="tag">tracing </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/tracing-beam" class="primary" target="_blank">docs</a>
+<a href="components/tracing-beam.tsx">source</a>
+<a href="demos/tracing-beam-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/tracing-beam.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,text-effects">
+<div><span class="category">layout</span><span class="category">text-effects</span></div>
+<h3>Typewriter Effect</h3>
+<p class="summary">A Typewriter Effect text effect for expressive headings, highlights, and animated content emphasis.</p>
+<div class="tags"><span class="tag">animated </span><span class="tag">effect </span><span class="tag">typewriter </span><span class="tag">typography </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/typewriter-effect" class="primary" target="_blank">docs</a>
+<a href="components/typewriter-effect.tsx">source</a>
+
+<a href="https://ui.aceternity.com/registry/typewriter-effect.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Vortex</h3>
+<p class="summary">A reusable Vortex background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">decorative </span><span class="tag">vortex </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/vortex" class="primary" target="_blank">docs</a>
+<a href="components/vortex.tsx">source</a>
+<a href="demos/vortex-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/vortex.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 9/10</span>
+<span>anim 8/10</span>
+</div>
+</div>
+<div class="card" data-cats="backgrounds,layout">
+<div><span class="category">backgrounds</span><span class="category">layout</span></div>
+<h3>Wavy Background</h3>
+<p class="summary">A reusable Wavy Background background effect that adds depth, focus, and atmosphere to modern UI sections.</p>
+<div class="tags"><span class="tag">atmospheric </span><span class="tag">background </span><span class="tag">decorative </span><span class="tag">wavy </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/wavy-background" class="primary" target="_blank">docs</a>
+<a href="components/wavy-background.tsx">source</a>
+<a href="demos/wavy-background-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/wavy-background.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 7/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,visualization">
+<div><span class="category">layout</span><span class="category">visualization</span></div>
+<h3>Webcam Pixel Grid</h3>
+<p class="summary">A reusable Webcam Pixel Grid component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">grid </span><span class="tag">pixel </span><span class="tag">webcam </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/webcam-pixel-grid" class="primary" target="_blank">docs</a>
+<a href="components/webcam-pixel-grid.tsx">source</a>
+<a href="demos/webcam-pixel-grid-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/webcam-pixel-grid.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-intermediate">● intermediate</span>
+<span>viz 7/10</span>
+<span>anim 7/10</span>
+</div>
+</div>
+<div class="card" data-cats="cards,layout">
+<div><span class="category">cards</span><span class="category">layout</span></div>
+<h3>Wobble Card</h3>
+<p class="summary">A Wobble Card card component for showcasing features, testimonials, and product content with visual polish.</p>
+<div class="tags"><span class="tag">card </span><span class="tag">content </span><span class="tag">showcase </span><span class="tag">wobble </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/wobble-card" class="primary" target="_blank">docs</a>
+<a href="components/wobble-card.tsx">source</a>
+<a href="demos/wobble-card-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/wobble-card.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 6/10</span>
+<span>anim 6/10</span>
+</div>
+</div>
+<div class="card" data-cats="layout,visualization">
+<div><span class="category">layout</span><span class="category">visualization</span></div>
+<h3>World Map</h3>
+<p class="summary">A reusable World Map component for React and Next.js projects using Tailwind CSS and modern interaction patterns.</p>
+<div class="tags"><span class="tag">data-viz </span><span class="tag">map </span><span class="tag">world </span></div>
+<div class="links">
+<a href="https://ui.aceternity.com/components/world-map" class="primary" target="_blank">docs</a>
+<a href="components/world-map.tsx">source</a>
+<a href="demos/world-map-demo/">demo</a>
+<a href="https://ui.aceternity.com/registry/world-map.json" target="_blank">registry</a>
+</div>
+<div class="stats-row">
+<span class="difficulty-beginner">● beginner</span>
+<span>viz 5/10</span>
+<span>anim 5/10</span>
+</div>
+</div>
+</div>
+<footer>
+<p>Aceternity UI by <a href="https://twitter.com/mannupaaji" target="_blank">Manu Arora</a>.
+Source pulled verbatim from the public registry at <code>ui.aceternity.com/registry/</code>.
+For internal / reference use only — see <a href="LICENSE_NOTE.md">LICENSE_NOTE.md</a>.</p>
+</footer>
+</div>
+
+<script>
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--x', `${e.clientX - r.left}px`);
+    card.style.setProperty('--y', `${e.clientY - r.top}px`);
+  });
+});
+const filterBtns = document.querySelectorAll('.filter button');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const cat = btn.dataset.cat;
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.card').forEach(c => {
+      c.style.display = (cat === 'all' || c.dataset.cats.split(',').includes(cat)) ? '' : 'none';
+    });
+  });
+});
+</script>
+
+</body>
+</html>

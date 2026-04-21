@@ -1,0 +1,15 @@
+{
+  "id": "palette-032",
+  "name": "viva-las-vegas",
+  "source": "chromatic-research-paperheart",
+  "colors": {
+    "bg": "#121639",
+    "surface": "#1c2043",
+    "card": "#262a4d",
+    "accent": "#DF4C21",
+    "secondary": "#D01935",
+    "text": "#e8e8f0",
+    "muted": "#44486b"
+  },
+  "weight": 0
+}

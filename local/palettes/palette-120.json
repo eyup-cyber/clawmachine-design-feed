@@ -1,0 +1,15 @@
+{
+  "id": "palette-120",
+  "name": "vapor-sun",
+  "source": "ultra-expansion-cycle2-vaporwave",
+  "colors": {
+    "bg": "#FFC400",
+    "surface": "#FFD033",
+    "card": "#FFCA1A",
+    "accent": "#6200EA",
+    "secondary": "#F50057",
+    "text": "#1A1400",
+    "muted": "#6840A6"
+  },
+  "weight": 10
+}

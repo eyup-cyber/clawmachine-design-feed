@@ -1,0 +1,21 @@
+<!-- Tailwind UI-style — Filter sidebar + sort bar -->
+<div class="bg-white">
+  <main class="mx-auto max-w-7xl px-4 lg:px-8">
+    <div class="border-b border-gray-200 pt-24 pb-10"><h1 class="text-4xl font-bold tracking-tight text-gray-900">New Arrivals</h1><p class="mt-4 text-base text-gray-500">Checkout out the latest release of Basic Tees, new and improved with four openings.</p></div>
+    <div class="pt-12 pb-24 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
+      <aside>
+        <h2 class="sr-only">Filters</h2>
+        <div class="hidden lg:block"><form class="divide-y divide-gray-200 space-y-10">
+          <div><fieldset><legend class="block text-sm font-medium text-gray-900">Color</legend><div class="space-y-3 pt-6"><div class="flex gap-3"><input id="color-0" name="color[]" value="white" type="checkbox" class="size-4 rounded-sm border-gray-300 text-indigo-600"><label for="color-0" class="text-sm text-gray-600">White</label></div><div class="flex gap-3"><input id="color-1" name="color[]" value="beige" type="checkbox" class="size-4 rounded-sm border-gray-300 text-indigo-600"><label for="color-1" class="text-sm text-gray-600">Beige</label></div><div class="flex gap-3"><input id="color-2" name="color[]" value="blue" type="checkbox" class="size-4 rounded-sm border-gray-300 text-indigo-600"><label for="color-2" class="text-sm text-gray-600">Blue</label></div></div></fieldset></div>
+          <div class="pt-10"><fieldset><legend class="block text-sm font-medium text-gray-900">Category</legend><div class="space-y-3 pt-6"><div class="flex gap-3"><input id="cat-0" type="checkbox" class="size-4 rounded-sm border-gray-300 text-indigo-600"><label for="cat-0" class="text-sm text-gray-600">New Arrivals</label></div><div class="flex gap-3"><input id="cat-1" type="checkbox" class="size-4 rounded-sm border-gray-300 text-indigo-600"><label for="cat-1" class="text-sm text-gray-600">Sale</label></div></div></fieldset></div>
+        </form></div>
+      </aside>
+      <section aria-labelledby="product-heading" class="mt-6 lg:col-span-2 lg:mt-0 xl:col-span-3">
+        <h2 id="product-heading" class="sr-only">Products</h2>
+        <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+          <div class="group relative"><img src="https://tailwindcss.com/plus-assets/img/ecommerce-images/category-page-04-image-card-01.jpg" alt="" class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75"><div class="mt-4 flex justify-between"><div><h3 class="text-sm text-gray-700"><a href="#"><span aria-hidden="true" class="absolute inset-0"></span>Focus Paper Refill</a></h3><p class="mt-1 text-sm text-gray-500">3 sizes available</p></div><p class="text-sm font-medium text-gray-900">$13</p></div></div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>

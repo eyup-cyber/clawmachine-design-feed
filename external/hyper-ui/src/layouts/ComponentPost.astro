@@ -1,0 +1,99 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import type { ComponentPreview } from '../types/component'
+
+import BaseLayout from './BaseLayout.astro'
+import PreviewWrapper from '../components/PreviewWrapper.astro'
+import RelatedComponents from '../components/RelatedComponents.astro'
+
+type Props =
+  | CollectionEntry<'application'>['data']
+  | CollectionEntry<'marketing'>['data']
+  | CollectionEntry<'neobrutalism'>['data']
+
+const { title, category, components, description, slug, terms, wrapper } = Astro.props
+
+const pageTitle = `Free Tailwind CSS ${title}`
+
+const formattedComponents: ComponentPreview[] = components
+  .map((component, index) => {
+    const { dark, ...rest } = component
+
+    const baseComponent = {
+      ...rest,
+      dark: false,
+      id: `component-${index + 1}`,
+      index: index + 1,
+    }
+
+    if (!dark) {
+      return [baseComponent]
+    }
+
+    const contributors =
+      Object.prototype.toString.call(dark) === '[object Object]'
+        ? // @ts-expect-error We know dark is an object at this point.
+          dark.contributors
+        : component.contributors
+
+    return [
+      baseComponent,
+      {
+        ...rest,
+        contributors,
+        dark: true,
+        id: `component-${index + 1}-dark`,
+        index: index + 1,
+        title: `${component.title} (Dark)`,
+      },
+    ]
+  })
+  .flat()
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+
+const componentPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: pageTitle,
+  description,
+  url: canonicalURL,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'HyperUI',
+    url: Astro.site,
+  },
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: formattedComponents.map((component, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: component.title,
+      url: `${canonicalURL}#${component.id}`,
+    })),
+  },
+}
+---
+
+<BaseLayout title={pageTitle} {description}>
+  <script
+    type="application/ld+json"
+    slot="head"
+    is:inline
+    set:html={JSON.stringify(componentPageSchema)}
+  />
+
+  <main id="main-content">
+    <slot />
+
+    <div class="mx-auto max-w-7xl space-y-8 px-4">
+      {
+        formattedComponents.map((component) => (
+          <PreviewWrapper {component} {category} {slug} {wrapper} />
+        ))
+      }
+
+      <RelatedComponents {slug} {terms} {category} />
+    </div>
+  </main>
+</BaseLayout>

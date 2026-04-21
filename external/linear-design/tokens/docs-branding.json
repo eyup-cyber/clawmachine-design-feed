@@ -1,0 +1,150 @@
+{
+  "colorScheme": "dark",
+  "fonts": [
+    {
+      "family": "Inter",
+      "role": "body"
+    },
+    {
+      "family": "SF Pro Display",
+      "role": "heading"
+    }
+  ],
+  "colors": {
+    "primary": "#5E6AD2",
+    "accent": "#5E6AD2",
+    "background": "#08090A",
+    "textPrimary": "#08090A",
+    "link": "#5E6AD2"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Inter",
+      "heading": "SF Pro Display"
+    },
+    "fontStacks": {
+      "heading": [
+        "Inter",
+        "SF Pro Display",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Open Sans",
+        "Helvetica Neue",
+        "sans-serif"
+      ],
+      "body": [
+        "Inter",
+        "SF Pro Display",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Open Sans",
+        "Helvetica Neue",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Inter",
+        "SF Pro Display",
+        "-apple-system",
+        "BlinkMacSystemFont",
+        "Segoe UI",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu",
+        "Cantarell",
+        "Open Sans",
+        "Helvetica Neue",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "40px",
+      "h2": "20px",
+      "body": "15px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 8,
+    "borderRadius": "6px"
+  },
+  "components": {
+    "buttonPrimary": {
+      "background": "#E5E5E6",
+      "textColor": "#08090A",
+      "borderColor": "#E5E5E6",
+      "borderRadius": "9999px",
+      "borderRadiusCorners": {
+        "topLeft": "9999px",
+        "topRight": "9999px",
+        "bottomRight": "9999px",
+        "bottomLeft": "9999px"
+      },
+      "shadow": "rgba(0, 0, 0, 0) 0px 8px 2px 0px, rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px"
+    }
+  },
+  "images": {
+    "logo": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%20100%20100%22%20fill%3D%22currentColor%22%20aria-label%3D%22Linear%22%20color%3D%22currentColor%22%20size%3D%2220%22%20data-fc-idx%3D%220%22%3E%3Cpath%20d%3D%22M1.22541%2061.5228c-.2225-.9485.90748-1.5459%201.59638-.857L39.3342%2097.1782c.6889.6889.0915%201.8189-.857%201.5964C20.0515%2094.4522%205.54779%2079.9485%201.22541%2061.5228ZM.00189135%2046.8891c-.01764375.2833.08887215.5599.28957165.7606L52.3503%2099.7085c.2007.2007.4773.3075.7606.2896%202.3692-.1476%204.6938-.46%206.9624-.9259.7645-.157%201.0301-1.0963.4782-1.6481L2.57595%2039.4485c-.55186-.5519-1.49117-.2863-1.648174.4782-.465915%202.2686-.77832%204.5932-.92588465%206.9624ZM4.21093%2029.7054c-.16649.3738-.08169.8106.20765%201.1l64.77602%2064.776c.2894.2894.7262.3742%201.1.2077%201.7861-.7956%203.5171-1.6927%205.1855-2.684.5521-.328.6373-1.0867.1832-1.5407L8.43566%2024.3367c-.45409-.4541-1.21271-.3689-1.54074.1832-.99132%201.6684-1.88843%203.3994-2.68399%205.1855ZM12.6587%2018.074c-.3701-.3701-.393-.9637-.0443-1.3541C21.7795%206.45931%2035.1114%200%2049.9519%200%2077.5927%200%20100%2022.4073%20100%2050.0481c0%2014.8405-6.4593%2028.1724-16.7199%2037.3375-.3903.3487-.984.3258-1.3542-.0443L12.6587%2018.074Z%22%20style%3D%22fill%3A%20rgb(247%2C%20248%2C%20248)%20!important%3B%22%2F%3E%3C%2Fsvg%3E",
+    "favicon": "https://linear.app/favicon.ico",
+    "ogImage": "https://linear.app/api/og/generic?title=Docs&v=3",
+    "logoHref": "/homepage",
+    "logoAlt": "Linear"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Selected #0 because it is located in the header, is visible, and matches the brand name 'Linear' from the page title and URL.",
+    "confidence": 0.95,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Sign up",
+      "reasoning": "The button labeled 'Sign up' is the only button available and uses a vibrant blue color (#E5E5E6), which is consistent with a primary call-to-action."
+    },
+    "secondary": {
+      "index": -1,
+      "text": "N/A",
+      "reasoning": "There is only one button available, so no secondary button can be selected."
+    },
+    "confidence": 0.9
+  },
+  "personality": {
+    "tone": "modern",
+    "energy": "medium",
+    "targetAudience": "tech-savvy professionals"
+  },
+  "designSystem": {
+    "framework": "custom",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.9,
+    "colors": 0.9,
+    "overall": 0.9
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 0,
+        "selectedLogoReasoning": "Selected #0 because it is located in the header, is visible, and matches the brand name 'Linear' from the page title and URL.",
+        "confidence": 0.95
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}

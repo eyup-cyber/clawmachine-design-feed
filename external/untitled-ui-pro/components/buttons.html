@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Buttons — Untitled UI Pro</title>
+<link rel="preconnect" href="https://rsms.me">
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="../design.css">
+</head>
+<body>
+<main class="uui-container showcase">
+  <h2>Buttons</h2>
+  <p class="lead">5 sizes x 9 color variants. Icon-leading, icon-trailing, icon-only, loading, disabled states.</p>
+
+  <section class="uui-stack gap-8">
+
+    <!-- sizes -->
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Sizes</h3>
+      <div class="uui-row gap-3 items-center" style="flex-wrap:wrap;">
+        <button class="uui-btn uui-btn--primary uui-btn--xs">Button CTA</button>
+        <button class="uui-btn uui-btn--primary uui-btn--sm">Button CTA</button>
+        <button class="uui-btn uui-btn--primary uui-btn--md">Button CTA</button>
+        <button class="uui-btn uui-btn--primary uui-btn--lg">Button CTA</button>
+        <button class="uui-btn uui-btn--primary uui-btn--xl">Button CTA</button>
+      </div>
+    </div>
+
+    <!-- color variants (md) -->
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Hierarchy</h3>
+      <div class="uui-row gap-3" style="flex-wrap:wrap;">
+        <button class="uui-btn uui-btn--primary uui-btn--md">Primary</button>
+        <button class="uui-btn uui-btn--secondary uui-btn--md">Secondary</button>
+        <button class="uui-btn uui-btn--tertiary uui-btn--md">Tertiary</button>
+        <button class="uui-btn uui-btn--link-color uui-btn--md">Link color</button>
+        <button class="uui-btn uui-btn--link-gray uui-btn--md">Link gray</button>
+      </div>
+    </div>
+
+    <!-- destructive -->
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Destructive</h3>
+      <div class="uui-row gap-3" style="flex-wrap:wrap;">
+        <button class="uui-btn uui-btn--primary-destructive uui-btn--md">Delete</button>
+        <button class="uui-btn uui-btn--secondary-destructive uui-btn--md">Delete</button>
+      </div>
+    </div>
+
+    <!-- icons -->
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Icons</h3>
+      <div class="uui-row gap-3 items-center" style="flex-wrap:wrap;">
+        <button class="uui-btn uui-btn--primary uui-btn--md">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16.25 4.583 7.708 13.125 3.75 9.167"/></svg>
+          Save changes
+        </button>
+        <button class="uui-btn uui-btn--secondary uui-btn--md">
+          Continue
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4.167 10h11.666M10 4.167 15.833 10 10 15.833"/></svg>
+        </button>
+        <button class="uui-btn uui-btn--secondary uui-btn--md" aria-label="Settings">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="2.5"/><path d="M16.167 12.583a1.375 1.375 0 0 0 .275 1.517l.05.05a1.667 1.667 0 1 1-2.358 2.358l-.05-.05a1.375 1.375 0 0 0-1.517-.275 1.375 1.375 0 0 0-.833 1.258v.142a1.667 1.667 0 1 1-3.333 0v-.075a1.375 1.375 0 0 0-.9-1.258 1.375 1.375 0 0 0-1.517.275l-.05.05a1.667 1.667 0 1 1-2.358-2.358l.05-.05a1.375 1.375 0 0 0 .275-1.517 1.375 1.375 0 0 0-1.258-.833h-.142a1.667 1.667 0 1 1 0-3.333h.075a1.375 1.375 0 0 0 1.258-.9 1.375 1.375 0 0 0-.275-1.517l-.05-.05a1.667 1.667 0 1 1 2.358-2.358l.05.05a1.375 1.375 0 0 0 1.517.275h.067a1.375 1.375 0 0 0 .833-1.258v-.142a1.667 1.667 0 1 1 3.333 0v.075a1.375 1.375 0 0 0 .833 1.258 1.375 1.375 0 0 0 1.517-.275l.05-.05a1.667 1.667 0 1 1 2.358 2.358l-.05.05a1.375 1.375 0 0 0-.275 1.517v.067a1.375 1.375 0 0 0 1.258.833h.142a1.667 1.667 0 1 1 0 3.333h-.075a1.375 1.375 0 0 0-1.258.833Z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- loading / disabled -->
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">States</h3>
+      <div class="uui-row gap-3 items-center" style="flex-wrap:wrap;">
+        <button class="uui-btn uui-btn--primary uui-btn--md" disabled>Disabled</button>
+        <button class="uui-btn uui-btn--secondary uui-btn--md" disabled>Disabled</button>
+        <button class="uui-btn uui-btn--primary uui-btn--md">
+          <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-opacity=".3" stroke-width="2"/><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" stroke-dasharray="12.5 50" stroke-linecap="round" style="transform-origin:center;animation:spin 1s linear infinite;"/></svg>
+          Loading
+        </button>
+      </div>
+    </div>
+
+    <!-- button groups -->
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Button groups</h3>
+      <div style="display:inline-flex;border-radius:var(--radius-lg);box-shadow:inset 0 0 0 1px var(--color-border-primary),var(--shadow-xs);background:var(--color-bg-primary);overflow:hidden;">
+        <button class="uui-btn uui-btn--md" style="border-radius:0;background:transparent;color:var(--color-text-secondary);padding:10px 14px;border-right:1px solid var(--color-border-primary);">Day</button>
+        <button class="uui-btn uui-btn--md" style="border-radius:0;background:var(--color-bg-primary-hover);color:var(--color-text-primary);padding:10px 14px;border-right:1px solid var(--color-border-primary);">Week</button>
+        <button class="uui-btn uui-btn--md" style="border-radius:0;background:transparent;color:var(--color-text-secondary);padding:10px 14px;border-right:1px solid var(--color-border-primary);">Month</button>
+        <button class="uui-btn uui-btn--md" style="border-radius:0;background:transparent;color:var(--color-text-secondary);padding:10px 14px;">Year</button>
+      </div>
+    </div>
+
+    <!-- social -->
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Social</h3>
+      <div class="uui-row gap-3" style="flex-wrap:wrap;">
+        <button class="uui-btn uui-btn--secondary uui-btn--md">
+          <svg viewBox="0 0 20 20"><path fill="#4285F4" d="M19.6 10.23c0-.74-.06-1.45-.17-2.14H10v4.05h5.39a4.6 4.6 0 0 1-2 3.03v2.52h3.24c1.9-1.74 2.97-4.3 2.97-7.46z"/><path fill="#34A853" d="M10 20c2.7 0 4.96-.9 6.62-2.43l-3.24-2.52a5.98 5.98 0 0 1-8.91-3.13H1.14v2.6A9.97 9.97 0 0 0 10 20z"/><path fill="#FBBC04" d="M4.47 11.92a5.97 5.97 0 0 1 0-3.83V5.48H1.14a9.99 9.99 0 0 0 0 9.04l3.33-2.6z"/><path fill="#EA4335" d="M10 4a5.43 5.43 0 0 1 3.83 1.48l2.87-2.87A9.6 9.6 0 0 0 10 0a9.97 9.97 0 0 0-8.86 5.48l3.33 2.6A5.97 5.97 0 0 1 10 4z"/></svg>
+          Sign in with Google
+        </button>
+        <button class="uui-btn uui-btn--secondary uui-btn--md">
+          <svg viewBox="0 0 20 20" fill="#000"><path d="M14.3 10.66c-.02-2.12 1.73-3.14 1.8-3.19-.98-1.43-2.51-1.63-3.06-1.65-1.3-.13-2.54.77-3.2.77-.66 0-1.68-.75-2.76-.73a4.07 4.07 0 0 0-3.43 2.09c-1.46 2.54-.37 6.3 1.06 8.36.7 1 1.52 2.13 2.6 2.09 1.04-.04 1.43-.67 2.68-.67s1.61.67 2.71.65c1.12-.02 1.83-1.02 2.51-2.03a8.98 8.98 0 0 0 1.14-2.34 3.9 3.9 0 0 1-2.05-3.35zm-2.1-6.15c.57-.7.96-1.67.85-2.63-.82.03-1.82.55-2.4 1.24-.53.6-.98 1.59-.86 2.53.92.07 1.85-.47 2.41-1.14z"/></svg>
+          Sign in with Apple
+        </button>
+        <button class="uui-btn uui-btn--secondary uui-btn--md">
+          <svg viewBox="0 0 20 20" fill="#24292F"><path d="M10 0a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.46-1.11-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.64.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5.02 0C13.8 2.97 14.64 3.24 14.64 3.24c.55 1.37.2 2.39.1 2.64a3.85 3.85 0 0 1 1.03 2.68c0 3.84-2.33 4.69-4.56 4.94.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 10 0z"/></svg>
+          Sign in with GitHub
+        </button>
+      </div>
+    </div>
+
+  </section>
+</main>
+<style>@keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }</style>
+</body>
+</html>

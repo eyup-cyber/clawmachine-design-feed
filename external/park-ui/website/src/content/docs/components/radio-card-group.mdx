@@ -1,0 +1,43 @@
+---
+title: Radio Card Group
+description: A form input component for selecting one option from a set of cards.
+metaDescription: Radio Card Group component for React and Solid.js enabling single selection from visually rich card options. Create engaging forms with card-based radios.
+category: forms
+links:
+  recipe: https://github.com/chakra-ui/park-ui/blob/main/packages/preset/src/recipes/radio-card-group.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { RadioCardGroup } from '@/components/ui'
+```
+
+```tsx
+<RadioCardGroup.Root>
+  <RadioCardGroup.Label />
+  <RadioCardGroup.Item>
+    <RadioCardGroup.ItemHiddenInput />
+    <RadioCardGroup.ItemText />
+    <RadioCardGroup.ItemControl />
+  </RadioCardGroup.Item>
+</RadioCardGroup.Root>
+```
+
+## Examples
+
+### Variants
+
+Use the `variant` prop to change the appearance of the radio cards.
+
+<ComponentExample name="variants" />
+
+## Props
+
+<PropsTable />

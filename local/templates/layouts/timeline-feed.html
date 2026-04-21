@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>clawmachine // OPERATIONS TIMELINE</title>
+<!-- FONT_FACE_BLOCK -->
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root {
+  /* colours */
+  --sl-bg: #0a0a0f;
+  --sl-surface: #141419;
+  --sl-card: #1a1a22;
+  --sl-accent: #00ff88;
+  --sl-secondary: #ff0066;
+  --sl-text: #e8e8f0;
+  --sl-muted: #6b6b80;
+
+  /* fonts */
+  --sl-font-display: 'Space Grotesk', system-ui, sans-serif;
+  --sl-font-body: 'Inter', system-ui, sans-serif;
+  --sl-font-mono: 'Space Mono', monospace;
+
+  /* spacing */
+  --sl-space-xs: 4px;
+  --sl-space-sm: 8px;
+  --sl-space-md: 16px;
+  --sl-space-lg: 24px;
+  --sl-space-xl: 40px;
+
+  /* surfaces */
+  --sl-shadow-raised: 0 2px 8px rgba(0,0,0,0.25);
+  --sl-shadow-inset: inset 0 2px 4px rgba(0,0,0,0.2);
+  --sl-border-radius: 3px;
+  --sl-border-color: color-mix(in srgb, var(--sl-text) 12%, transparent);
+
+  /* layout — timeline 65% | vitals sidebar 35% */
+  --sl-grid-template: 'topbar topbar' auto 'timeline vitals' 1fr 'footer footer' auto / 65fr 35fr;
+  --sl-sidebar-width: 0px;
+  --sl-content-gap: 0px;
+}
+
+html { background: var(--sl-bg); }
+
+body {
+  background: var(--sl-bg);
+  color: var(--sl-text);
+  font-family: var(--sl-font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* === GRID SHELL === */
+.shell {
+  display: grid;
+  grid-template: var(--sl-grid-template);
+  min-height: 100vh;
+}
+
+/* === TOP BAR — mission clock + classification === */
+.topbar {
+  grid-area: topbar;
+  background: var(--sl-surface);
+  border-bottom: 1px solid var(--sl-border-color);
+  padding: 0 var(--sl-space-lg);
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.topbar-brand {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  
+  color: var(--sl-accent);
+  flex-shrink: 0;
+}
+
+.topbar-brand span { color: var(--sl-muted); font-weight: 400; }
+
+.topbar-clock {
+  font-family: var(--sl-font-mono);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--sl-text);
+  text-align: center;
+}
+
+.topbar-clock-sub {
+  font-size: 8px;
+  letter-spacing: 0.15em;
+  color: var(--sl-muted);
+  display: block;
+  margin-top: -2px;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+}
+
+.topbar-btn {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  
+  padding: 4px 12px;
+  background: transparent;
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  color: var(--sl-text);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.topbar-btn:hover { border-color: var(--sl-accent); color: var(--sl-accent); }
+
+/* === TIMELINE ZONE (primary + secondary) — the core structure === */
+.zone-primary {
+  grid-area: timeline;
+  overflow-y: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sl-space-sm) var(--sl-space-lg);
+  border-bottom: 1px solid var(--sl-border-color);
+  background: var(--sl-surface);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.timeline-title {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-accent);
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+}
+
+.timeline-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sl-accent);
+  animation: pulse-dot 2s ease infinite;
+}
+
+@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.timeline-meta {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-muted);
+  letter-spacing: 0.05em;
+}
+
+.timeline-feed {
+  flex: 1;
+  padding: var(--sl-space-lg) var(--sl-space-lg) var(--sl-space-lg) var(--sl-space-xl);
+  position: relative;
+}
+
+/* vertical timeline spine */
+.timeline-feed::before {
+  content: '';
+  position: absolute;
+  left: 40px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--sl-border-color);
+}
+
+/* === TIMELINE ENTRY — each operation === */
+.tl-entry {
+  position: relative;
+  margin-bottom: var(--sl-space-lg);
+  padding-left: var(--sl-space-xl);
+}
+
+/* timestamp node on the spine */
+.tl-entry::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--sl-accent);
+  border: 2px solid var(--sl-bg);
+  z-index: 2;
+}
+
+/* connecting arm from spine to card */
+.tl-entry::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 18px;
+  width: 20px;
+  height: 2px;
+  background: var(--sl-border-color);
+  z-index: 1;
+}
+
+/* category-based node colors */
+.tl-entry.cat-warn::before { background: var(--sl-secondary); }
+.tl-entry.cat-system::before { background: var(--sl-muted); }
+.tl-entry.cat-critical::before { background: #ff3333; }
+
+.tl-card {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  padding: var(--sl-space-md);
+  border-left: 3px solid var(--sl-accent);
+  box-shadow: var(--sl-shadow-raised);
+}
+
+/* category-based left border colors */
+.tl-entry.cat-warn .tl-card { border-left-color: var(--sl-secondary); }
+.tl-entry.cat-system .tl-card { border-left-color: var(--sl-muted); }
+.tl-entry.cat-critical .tl-card { border-left-color: #ff3333; }
+
+.tl-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sl-space-sm);
+}
+
+.tl-timestamp {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  color: var(--sl-muted);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+}
+
+.tl-badge {
+  font-family: var(--sl-font-mono);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  
+  padding: 2px 8px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--sl-accent) 10%, transparent);
+  color: var(--sl-accent);
+  border: 1px solid color-mix(in srgb, var(--sl-accent) 20%, transparent);
+}
+
+.tl-entry.cat-warn .tl-badge {
+  background: color-mix(in srgb, var(--sl-secondary) 10%, transparent);
+  color: var(--sl-secondary);
+  border-color: color-mix(in srgb, var(--sl-secondary) 20%, transparent);
+}
+
+.tl-entry.cat-system .tl-badge {
+  background: color-mix(in srgb, var(--sl-muted) 10%, transparent);
+  color: var(--sl-muted);
+  border-color: color-mix(in srgb, var(--sl-muted) 20%, transparent);
+}
+
+.tl-entry.cat-critical .tl-badge {
+  background: color-mix(in srgb, #ff3333 10%, transparent);
+  color: #ff3333;
+  border-color: color-mix(in srgb, #ff3333 20%, transparent);
+}
+
+.tl-card-title {
+  font-family: var(--sl-font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--sl-text);
+  margin-bottom: var(--sl-space-xs);
+  line-height: 1.3;
+}
+
+.tl-card-desc {
+  font-family: var(--sl-font-body);
+  font-size: 12px;
+  color: var(--sl-muted);
+  line-height: 1.5;
+  margin-bottom: var(--sl-space-sm);
+}
+
+.tl-card-metric {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sl-space-xs);
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+  color: var(--sl-accent);
+  font-weight: 700;
+  background: color-mix(in srgb, var(--sl-accent) 5%, transparent);
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-right: var(--sl-space-sm);
+}
+
+.tl-card-metric.neg { color: var(--sl-secondary); background: color-mix(in srgb, var(--sl-secondary) 5%, transparent); }
+.tl-card-metric.neutral { color: var(--sl-muted); background: color-mix(in srgb, var(--sl-muted) 5%, transparent); }
+
+/* === SNAPSHOT ENTRY — periodic inline metrics === */
+.tl-snapshot {
+  position: relative;
+  margin-bottom: var(--sl-space-lg);
+  padding-left: var(--sl-space-xl);
+}
+
+.tl-snapshot::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 12px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--sl-accent);
+  background: var(--sl-bg);
+  z-index: 2;
+  transform: rotate(45deg);
+}
+
+.tl-snapshot::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 18px;
+  width: 18px;
+  height: 2px;
+  background: var(--sl-accent);
+  z-index: 1;
+}
+
+.tl-snapshot-inner {
+  background: var(--sl-surface);
+  border: 1px solid var(--sl-accent);
+  border-radius: var(--sl-border-radius);
+  padding: var(--sl-space-md);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--sl-accent) 6%, transparent);
+}
+
+.tl-snapshot-label {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  
+  color: var(--sl-accent);
+  margin-bottom: var(--sl-space-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+}
+
+.tl-snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sl-space-md);
+}
+
+.tl-snap-stat {
+  text-align: center;
+}
+
+.tl-snap-value {
+  font-family: var(--sl-font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--sl-text);
+  line-height: 1;
+}
+
+.tl-snap-value .prefix {
+  color: var(--sl-muted);
+  font-size: 0.5em;
+}
+
+.tl-snap-label {
+  font-family: var(--sl-font-mono);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-muted);
+  margin-top: 4px;
+}
+
+.tl-snap-delta {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-accent);
+  margin-top: 2px;
+}
+
+.tl-snap-delta.neg { color: var(--sl-secondary); }
+
+/* === VITALS SIDEBAR (secondary + tertiary) — fixed right panel === */
+.zone-secondary {
+  grid-area: vitals;
+  background: var(--sl-surface);
+  border-left: 2px solid var(--sl-accent);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.vitals-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  background: var(--sl-bg);
+  flex-shrink: 0;
+}
+
+.vitals-title {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  
+  color: var(--sl-accent);
+}
+
+.vitals-body {
+  flex: 1;
+  padding: var(--sl-space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-space-md);
+  overflow-y: auto;
+}
+
+/* gauge blocks in sidebar */
+.vital-gauge {
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  padding: var(--sl-space-md);
+  background: var(--sl-card);
+}
+
+.vital-gauge-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sl-space-sm);
+}
+
+.vital-gauge-label {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-muted);
+}
+
+.vital-gauge-status {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sl-accent);
+}
+
+.vital-gauge-status.warn { background: var(--sl-secondary); }
+.vital-gauge-status.crit { background: #ff3333; }
+
+.vital-gauge-value {
+  font-family: var(--sl-font-display);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: var(--sl-space-sm);
+}
+
+.vital-bar {
+  height: 4px;
+  background: var(--sl-bg);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: var(--sl-space-xs);
+}
+
+.vital-bar-fill {
+  height: 100%;
+  background: var(--sl-accent);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.vital-bar-fill.warn { background: var(--sl-secondary); }
+
+.vital-gauge-sub {
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  color: var(--sl-muted);
+  display: flex;
+  justify-content: space-between;
+}
+
+.vital-gauge-sub .delta { color: var(--sl-accent); }
+.vital-gauge-sub .delta.neg { color: var(--sl-secondary); }
+
+/* status indicators in sidebar */
+.vital-status-block {
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  background: var(--sl-card);
+}
+
+.vital-status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sl-space-xs) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-text) 4%, transparent);
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+}
+
+.vital-status-row:last-child { border-bottom: none; }
+
+.vital-status-name {
+  color: var(--sl-muted);
+  
+  letter-spacing: 0.08em;
+  font-size: 9px;
+}
+
+.vital-status-val {
+  color: var(--sl-accent);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.vital-status-val.warn { color: var(--sl-secondary); }
+
+/* === FOOTER === */
+.ftr {
+  grid-area: footer;
+  background: var(--sl-surface);
+  border-top: 1px solid var(--sl-border-color);
+  padding: 0 var(--sl-space-lg);
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--sl-font-mono);
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  
+  color: var(--sl-muted);
+}
+
+.ftr-left, .ftr-right { display: flex; align-items: center; gap: var(--sl-space-md); }
+.ftr-indicator { display: flex; align-items: center; gap: 4px; }
+.ftr-indicator::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--sl-accent); }
+.ftr-indicator.warn::before { background: var(--sl-secondary); }
+
+/* TEXTURE_BLOCK */
+
+@media (max-width: 768px) {
+  .shell {
+    grid-template: 'topbar' auto 'timeline' 1fr 'vitals' auto 'footer' auto / 1fr;
+  }
+  .zone-secondary {
+    border-left: none;
+    border-top: 2px solid var(--sl-accent);
+    position: static;
+    height: auto;
+    max-height: 50vh;
+  }
+  .tl-snapshot-grid { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV_BLOCK_START -->
+<!-- NAV_BLOCK_END -->
+
+<div class="shell">
+
+  <!-- TOP BAR — mission clock -->
+  <div class="topbar">
+    <div class="topbar-brand">clawmachine <span>// OPS TIMELINE</span></div>
+    <div class="topbar-clock">
+      14:32:18 <span class="topbar-clock-sub">UTC &mdash; 09 APR 2026 &mdash; SHIFT BRAVO</span>
+    </div>
+    <div class="topbar-actions">
+      <button class="topbar-btn">FILTER</button>
+      <button class="topbar-btn">EXPORT</button>
+    </div>
+  </div>
+
+  <!-- TIMELINE — primary zone: vertical operations feed -->
+  <div class="zone-primary">
+    <div class="timeline-header">
+      <span class="timeline-title"><span class="timeline-live-dot"></span>OPERATIONS FEED &mdash; LIVE</span>
+      <span class="timeline-meta">47 events today &mdash; 3 warnings &mdash; 1 critical</span>
+    </div>
+    <div class="timeline-feed" data-zone="timeline">
+      <!-- ZONE:primary -->
+
+      <!-- 14:32 — restock operation -->
+      <div class="tl-entry">
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <span class="tl-timestamp">14:32:18 UTC</span>
+            <span class="tl-badge">RESTOCK</span>
+          </div>
+          <div class="tl-card-title">Machine #0847 &mdash; Westfield North Restock</div>
+          <div class="tl-card-desc">Operator J. Vasquez completed full restock cycle. Coin hopper refilled, prize inventory restocked across all 6 tiers. Pre-restock diagnostic passed with zero faults. Estimated next restock in 72 hours based on current play rate.</div>
+          <span class="tl-card-metric">240 UNITS LOADED</span>
+          <span class="tl-card-metric">6 TIERS FILLED</span>
+          <span class="tl-card-metric neutral">EST NEXT: 72H</span>
+        </div>
+      </div>
+
+      <!-- 14:28 — payment batch -->
+      <div class="tl-entry">
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <span class="tl-timestamp">14:28:03 UTC</span>
+            <span class="tl-badge">REVENUE</span>
+          </div>
+          <div class="tl-card-title">Payment Batch #4820 &mdash; Daily Revenue Confirmed</div>
+          <div class="tl-card-desc">Automated batch settlement across all 5 regions. Westfield and Airport clusters outperforming 7-day average. Harbour District flagged for review due to declining volume.</div>
+          <span class="tl-card-metric">$6,144 SETTLED</span>
+          <span class="tl-card-metric">+12.4% VS YESTERDAY</span>
+          <span class="tl-card-metric neg">HARBOUR -34%</span>
+        </div>
+      </div>
+
+      <!-- === SYSTEM SNAPSHOT — 14:00 checkpoint === -->
+      <div class="tl-snapshot">
+        <div class="tl-snapshot-inner">
+          <div class="tl-snapshot-label">SYSTEM SNAPSHOT &mdash; 14:00 UTC CHECKPOINT</div>
+          <div class="tl-snapshot-grid">
+            <div class="tl-snap-stat">
+              <div class="tl-snap-value"><span class="prefix">$</span>4,608</div>
+              <div class="tl-snap-label">revenue today</div>
+              <div class="tl-snap-delta">+12.4%</div>
+            </div>
+            <div class="tl-snap-stat">
+              <div class="tl-snap-value">2,847</div>
+              <div class="tl-snap-label">machines online</div>
+              <div class="tl-snap-delta">100%</div>
+            </div>
+            <div class="tl-snap-stat">
+              <div class="tl-snap-value">12<span class="prefix">ms</span></div>
+              <div class="tl-snap-label">avg latency</div>
+              <div class="tl-snap-delta neg">+3ms</div>
+            </div>
+            <div class="tl-snap-stat">
+              <div class="tl-snap-value">3</div>
+              <div class="tl-snap-label">open alerts</div>
+              <div class="tl-snap-delta neg">+1</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13:18 — anomaly warning -->
+      <div class="tl-entry cat-warn">
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <span class="tl-timestamp">13:18:02 UTC</span>
+            <span class="tl-badge">ANOMALY</span>
+          </div>
+          <div class="tl-card-title">Harbour District Revenue Anomaly Detected</div>
+          <div class="tl-card-desc">Automated monitoring flagged a significant revenue decline in the Harbour District cluster. 12 machines reporting below-average play rates. Foot traffic data suggests local event diverting visitors. Ops team notified via ticket #4821.</div>
+          <span class="tl-card-metric neg">-34% VS 7D AVG</span>
+          <span class="tl-card-metric neg">12 MACHINES AFFECTED</span>
+          <span class="tl-card-metric neutral">TICKET #4821</span>
+        </div>
+      </div>
+
+      <!-- 12:44 — firmware deployment -->
+      <div class="tl-entry">
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <span class="tl-timestamp">12:44:21 UTC</span>
+            <span class="tl-badge">DEPLOY</span>
+          </div>
+          <div class="tl-card-title">Firmware v2.4.1 &mdash; Airport Terminal Cluster</div>
+          <div class="tl-card-desc">Rolling firmware deployment to 365 machines in the airport terminal cluster. Includes improved coin validation algorithm and updated prize tier calibration. Zero downtime during deployment window.</div>
+          <span class="tl-card-metric">365 MACHINES</span>
+          <span class="tl-card-metric">0 DOWNTIME</span>
+          <span class="tl-card-metric neutral">v2.3.8 &rarr; v2.4.1</span>
+        </div>
+      </div>
+
+      <!-- 12:00 — shift change -->
+      <div class="tl-entry cat-system">
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <span class="tl-timestamp">12:00:01 UTC</span>
+            <span class="tl-badge">SHIFT</span>
+          </div>
+          <div class="tl-card-title">Shift Change &mdash; Team Alpha to Team Bravo</div>
+          <div class="tl-card-desc">Scheduled shift handover across all regions. 12 operators rotating. Team Alpha logged 18 maintenance interventions and 4 restocks during their shift. All machines accounted for.</div>
+          <span class="tl-card-metric neutral">12 OPERATORS</span>
+          <span class="tl-card-metric neutral">4 REGIONS</span>
+        </div>
+      </div>
+
+      <!-- === SYSTEM SNAPSHOT — 12:00 checkpoint === -->
+      <div class="tl-snapshot">
+        <div class="tl-snapshot-inner">
+          <div class="tl-snapshot-label">SYSTEM SNAPSHOT &mdash; 12:00 UTC MIDDAY</div>
+          <div class="tl-snapshot-grid">
+            <div class="tl-snap-stat">
+              <div class="tl-snap-value"><span class="prefix">$</span>3,072</div>
+              <div class="tl-snap-label">revenue (noon)</div>
+              <div class="tl-snap-delta">50% of target</div>
+            </div>
+            <div class="tl-snap-stat">
+              <div class="tl-snap-value">2,847</div>
+              <div class="tl-snap-label">machines online</div>
+              <div class="tl-snap-delta">100%</div>
+            </div>
+            <div class="tl-snap-stat">
+              <div class="tl-snap-value">99.97<span class="prefix">%</span></div>
+              <div class="tl-snap-label">fleet uptime</div>
+              <div class="tl-snap-delta">nominal</div>
+            </div>
+            <div class="tl-snap-stat">
+              <div class="tl-snap-value">18</div>
+              <div class="tl-snap-label">interventions</div>
+              <div class="tl-snap-delta neg">+4 vs avg</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11:45 — maintenance warning -->
+      <div class="tl-entry cat-warn">
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <span class="tl-timestamp">11:45:33 UTC</span>
+            <span class="tl-badge">MAINTENANCE</span>
+          </div>
+          <div class="tl-card-title">Machine #0612 &mdash; Coin Acceptor Jam</div>
+          <div class="tl-card-desc">Sensor telemetry detected coin path obstruction in machine #0612 at Central Station. Machine auto-disabled coin input. Maintenance crew dispatched from depot, ETA 25 minutes.</div>
+          <span class="tl-card-metric neg">COIN INPUT DISABLED</span>
+          <span class="tl-card-metric neutral">ETA 25 MIN</span>
+        </div>
+      </div>
+
+      <!-- 08:00 — morning diagnostics -->
+      <div class="tl-entry cat-system">
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <span class="tl-timestamp">08:00:12 UTC</span>
+            <span class="tl-badge">DIAGNOSTIC</span>
+          </div>
+          <div class="tl-card-title">Morning Diagnostic Sweep</div>
+          <div class="tl-card-desc">Automated morning health check across all 2,847 machines. Full sensor suite validation, network connectivity test, and prize inventory audit. All machines reporting nominal status.</div>
+          <span class="tl-card-metric">2,847 OK</span>
+          <span class="tl-card-metric">0 OFFLINE</span>
+          <span class="tl-card-metric neutral">SWEEP TIME: 4.2S</span>
+        </div>
+      </div>
+
+      <!-- 02:15 — SSL warning -->
+      <div class="tl-entry cat-critical">
+        <div class="tl-card">
+          <div class="tl-card-head">
+            <span class="tl-timestamp">02:15:44 UTC</span>
+            <span class="tl-badge">SECURITY</span>
+          </div>
+          <div class="tl-card-title">SSL Certificate Renewal Pending</div>
+          <div class="tl-card-desc">SSL certificate for api.clawmachine.io expires in 14 days. Auto-renewal via Let's Encrypt scheduled for day 7. Manual intervention required if auto-renewal fails. Payment processing depends on this certificate.</div>
+          <span class="tl-card-metric neg">EXPIRES IN 14D</span>
+          <span class="tl-card-metric neutral">AUTO-RENEW DAY 7</span>
+        </div>
+      </div>
+
+      <!-- ZONE:secondary — block injection point within timeline -->
+    </div>
+  </div>
+
+  <!-- VITALS SIDEBAR — secondary zone: live system gauges -->
+  <div class="zone-secondary">
+    <div class="vitals-header">
+      <span class="vitals-title">SYSTEM VITALS</span>
+    </div>
+    <div class="vitals-body" data-zone="vitals">
+      <!-- ZONE:tertiary -->
+
+      <div class="vital-gauge">
+        <div class="vital-gauge-head">
+          <span class="vital-gauge-label">FLEET STATUS</span>
+          <span class="vital-gauge-status"></span>
+        </div>
+        <div class="vital-gauge-value">2,847</div>
+        <div class="vital-bar"><div class="vital-bar-fill" style="width:94%"></div></div>
+        <div class="vital-gauge-sub"><span>2,847 / 3,024 capacity</span><span class="delta">+142 this Q</span></div>
+      </div>
+
+      <div class="vital-gauge">
+        <div class="vital-gauge-head">
+          <span class="vital-gauge-label">REVENUE (TODAY)</span>
+          <span class="vital-gauge-status"></span>
+        </div>
+        <div class="vital-gauge-value">$6,144</div>
+        <div class="vital-bar"><div class="vital-bar-fill" style="width:72%"></div></div>
+        <div class="vital-gauge-sub"><span>target: $8,520</span><span class="delta">+12.4%</span></div>
+      </div>
+
+      <div class="vital-gauge">
+        <div class="vital-gauge-head">
+          <span class="vital-gauge-label">SYSTEM LOAD</span>
+          <span class="vital-gauge-status"></span>
+        </div>
+        <div class="vital-gauge-value">34.2%</div>
+        <div class="vital-bar"><div class="vital-bar-fill" style="width:34%"></div></div>
+        <div class="vital-gauge-sub"><span>142/145 nodes</span><span>12ms avg</span></div>
+      </div>
+
+      <div class="vital-gauge">
+        <div class="vital-gauge-head">
+          <span class="vital-gauge-label">OPEN ALERTS</span>
+          <span class="vital-gauge-status warn"></span>
+        </div>
+        <div class="vital-gauge-value">3</div>
+        <div class="vital-bar"><div class="vital-bar-fill warn" style="width:15%"></div></div>
+        <div class="vital-gauge-sub"><span>1 crit, 2 warn</span><span class="delta neg">+1 today</span></div>
+      </div>
+
+      <div class="vital-status-block">
+        <div class="vital-status-row">
+          <span class="vital-status-name">UPTIME</span>
+          <span class="vital-status-val">99.97%</span>
+        </div>
+        <div class="vital-status-row">
+          <span class="vital-status-name">LATENCY</span>
+          <span class="vital-status-val">12ms</span>
+        </div>
+        <div class="vital-status-row">
+          <span class="vital-status-name">LAST SYNC</span>
+          <span class="vital-status-val">2 min ago</span>
+        </div>
+        <div class="vital-status-row">
+          <span class="vital-status-name">BACKUP</span>
+          <span class="vital-status-val">04:00 UTC</span>
+        </div>
+        <div class="vital-status-row">
+          <span class="vital-status-name">SSL CERT</span>
+          <span class="vital-status-val warn">14d remain</span>
+        </div>
+        <div class="vital-status-row">
+          <span class="vital-status-name">SHIFT</span>
+          <span class="vital-status-val">BRAVO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DECORATIVE_BLOCK -->
+
+  <!-- FOOTER -->
+  <footer class="ftr">
+    <div class="ftr-left">
+      <span class="ftr-indicator">ALL SYSTEMS OPERATIONAL</span>
+      <span>UPTIME: 99.97%</span>
+      <span>LATENCY: 12MS</span>
+    </div>
+    <div class="ftr-right">
+      <span>NODES: 142/145</span>
+      <span>LAST SYNC: 2 MIN AGO</span>
+      <span class="ftr-indicator warn">1 CRITICAL ALERT</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

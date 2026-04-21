@@ -1,0 +1,15 @@
+{
+  "id": "palette-048",
+  "name": "stripe-depth",
+  "source": "inspiration-image",
+  "colors": {
+    "bg": "#0d0a20",
+    "surface": "#1a1440",
+    "card": "#251e5a",
+    "accent": "#7b5cf0",
+    "secondary": "#a78bfa",
+    "text": "#e8e0ff",
+    "muted": "#6b5a9a"
+  },
+  "weight": 0
+}

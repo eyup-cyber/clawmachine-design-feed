@@ -1,0 +1,27 @@
+{
+  "name": "Pxlkit — Retro React UI Kit, 226+ Pixel Art Icons & Ready-to-Use Templates",
+  "short_name": "Pxlkit",
+  "description": "Retro pixel-art React toolkit: 226+ SVG icons, 40+ UI components, ready-to-use templates & sections, visual icon builder, and Tailwind CSS integration. TypeScript-first, MIT-licensed code.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0F",
+  "theme_color": "#00FF88",
+  "categories": ["developer tools", "design", "graphics", "productivity"],
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

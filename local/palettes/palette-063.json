@@ -1,0 +1,15 @@
+{
+  "id": "palette-063",
+  "name": "biohazard-bloom",
+  "source": "media.io-cyberpunk-split-comp",
+  "colors": {
+    "bg": "#0C0F0A",
+    "surface": "#3A3F2A",
+    "card": "#454A36",
+    "accent": "#B7FF00",
+    "secondary": "#00FF87",
+    "text": "#D0E8C0",
+    "muted": "#FF4D6D"
+  },
+  "weight": 10
+}

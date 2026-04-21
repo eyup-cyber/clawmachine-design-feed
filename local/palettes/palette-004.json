@@ -1,0 +1,15 @@
+{
+  "id": "palette-004",
+  "name": "orbital-deck",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0f1419",
+    "surface": "#1a202a",
+    "card": "#232d3a",
+    "accent": "#4da6ff",
+    "secondary": "#ff3333",
+    "text": "#d4dce8",
+    "muted": "#6b7a8f"
+  },
+  "weight": 10
+}

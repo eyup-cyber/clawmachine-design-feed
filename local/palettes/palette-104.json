@@ -1,0 +1,15 @@
+{
+  "id": "palette-104",
+  "name": "acid-chartreuse",
+  "source": "ultra-expansion-cycle2-acid-techno",
+  "colors": {
+    "bg": "#C6FF00",
+    "surface": "#D9FF33",
+    "card": "#D0FF1A",
+    "accent": "#D500F9",
+    "secondary": "#003BFF",
+    "text": "#1A0024",
+    "muted": "#9A40A8"
+  },
+  "weight": 10
+}

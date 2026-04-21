@@ -1,0 +1,15 @@
+{
+  "id": "palette-figma-cyberpunk-01",
+  "name": "neon-district",
+  "source": "figma-cyberpunk-ui-kit",
+  "colors": {
+    "bg": "#0d0221",
+    "surface": "#150535",
+    "card": "#1a0842",
+    "accent": "#ff2a6d",
+    "secondary": "#05d9e8",
+    "text": "#d1f7ff",
+    "muted": "#7b2d8b"
+  },
+  "weight": 8
+}

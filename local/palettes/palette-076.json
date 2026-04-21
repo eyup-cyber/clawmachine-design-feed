@@ -1,0 +1,15 @@
+{
+  "id": "palette-076",
+  "name": "deep-teal-shift",
+  "source": "design-brief-bold-bg",
+  "colors": {
+    "bg": "#004D40",
+    "surface": "#005D50",
+    "card": "#006D60",
+    "accent": "#FF6E40",
+    "secondary": "#FFAB40",
+    "text": "#E0FFF8",
+    "muted": "#00332A"
+  },
+  "weight": 10
+}

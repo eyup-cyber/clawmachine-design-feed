@@ -1,0 +1,15 @@
+{
+  "id": "palette-005",
+  "name": "acid-press",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0f0d0a",
+    "surface": "#1a1815",
+    "card": "#25221a",
+    "accent": "#f70039",
+    "secondary": "#00b8a9",
+    "text": "#e8e0d0",
+    "muted": "#6b6560"
+  },
+  "weight": 10
+}

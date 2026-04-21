@@ -1,0 +1,23 @@
+name: Lighthouse CI
+on: [pull_request]
+jobs:
+  lighthouseci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm install
+      - run: npm install -g @angular/cli
+      - run: npm install -g @lhci/cli
+      - run: ng build
+      - run: lhci autorun
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Date picker, Calendar — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css"><link rel="stylesheet" href="../design.css">
+<style>
+.cal { background:var(--color-bg-primary); border-radius:var(--radius-xl); box-shadow:var(--shadow-lg); border:1px solid var(--color-border-secondary); padding:20px; max-width:320px; }
+.cal-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:0; margin-top:12px; }
+.cal-head { text-align:center; font-size:var(--text-xs); font-weight:500; color:var(--color-text-tertiary); padding:8px 0; }
+.cal-day { text-align:center; font-size:var(--text-sm); color:var(--color-text-secondary); width:40px; height:40px; display:inline-flex; align-items:center; justify-content:center; border-radius:9999px; cursor:pointer; }
+.cal-day.muted { color:var(--color-text-quaternary); }
+.cal-day:hover { background:var(--color-bg-primary-hover); }
+.cal-day.in-range { background:var(--color-bg-brand-primary); color:var(--color-text-brand-secondary); border-radius:0; }
+.cal-day.start-range { background:var(--color-bg-brand-solid); color:#fff; border-top-left-radius:9999px; border-bottom-left-radius:9999px; }
+.cal-day.end-range { background:var(--color-bg-brand-solid); color:#fff; border-top-right-radius:9999px; border-bottom-right-radius:9999px; }
+.cal-day.today { box-shadow:inset 0 0 0 1px var(--color-border-primary); }
+</style>
+</head>
+<body>
+<main class="uui-container showcase">
+  <h2>Date picker & Calendar</h2>
+  <p class="lead">Single-date picker trigger, calendar panel, date-range with preset dual-panel.</p>
+
+  <section class="grid" style="grid-template-columns:auto auto;gap:48px;align-items:flex-start;">
+
+    <div>
+      <label class="uui-label" style="display:block;margin-bottom:6px;">Select date</label>
+      <div class="uui-select" style="width:320px;">
+        <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><rect x="2.5" y="3.33" width="15" height="14.17" rx="1.67"/><path d="M13.33 1.67v3.33M6.67 1.67v3.33M2.5 8.33h15"/></svg>
+        <span class="value">Jan 10, 2026 – Jan 16, 2026</span>
+        <svg class="caret" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7.5 5 5 5-5"/></svg>
+      </div>
+    </div>
+
+    <div class="cal">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <button class="uui-btn uui-btn--tertiary uui-btn--sm" style="padding:6px;" aria-label="prev month"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M12.5 15 7.5 10l5-5"/></svg></button>
+        <span style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-primary);">January 2026</span>
+        <button class="uui-btn uui-btn--tertiary uui-btn--sm" style="padding:6px;" aria-label="next month"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 5 5 5-5 5"/></svg></button>
+      </div>
+      <div class="cal-grid">
+        <div class="cal-head">Mo</div><div class="cal-head">Tu</div><div class="cal-head">We</div><div class="cal-head">Th</div><div class="cal-head">Fr</div><div class="cal-head">Sa</div><div class="cal-head">Su</div>
+        <div class="cal-day muted">29</div><div class="cal-day muted">30</div><div class="cal-day muted">31</div><div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div><div class="cal-day">4</div>
+        <div class="cal-day">5</div><div class="cal-day">6</div><div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day start-range">10</div><div class="cal-day in-range">11</div>
+        <div class="cal-day in-range">12</div><div class="cal-day in-range">13</div><div class="cal-day in-range">14</div><div class="cal-day in-range">15</div><div class="cal-day end-range">16</div><div class="cal-day">17</div><div class="cal-day">18</div>
+        <div class="cal-day">19</div><div class="cal-day today">20</div><div class="cal-day">21</div><div class="cal-day">22</div><div class="cal-day">23</div><div class="cal-day">24</div><div class="cal-day">25</div>
+        <div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div><div class="cal-day">31</div><div class="cal-day muted">1</div>
+      </div>
+      <div style="border-top:1px solid var(--color-border-secondary);margin-top:16px;padding-top:16px;display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="uui-btn uui-btn--secondary uui-btn--sm">Today</button>
+        <button class="uui-btn uui-btn--secondary uui-btn--sm">7 days</button>
+        <button class="uui-btn uui-btn--secondary uui-btn--sm">30 days</button>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px;">
+        <button class="uui-btn uui-btn--secondary uui-btn--md" style="flex:1;">Cancel</button>
+        <button class="uui-btn uui-btn--primary uui-btn--md" style="flex:1;">Apply</button>
+      </div>
+    </div>
+
+  </section>
+</main>
+</body>
+</html>

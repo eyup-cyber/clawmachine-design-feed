@@ -1,0 +1,15 @@
+{
+  "id": "palette-figma-scifi-01",
+  "name": "void-station",
+  "source": "figma-scifi-ui-kit",
+  "colors": {
+    "bg": "#020b18",
+    "surface": "#0a1929",
+    "card": "#0d2137",
+    "accent": "#00b4d8",
+    "secondary": "#90e0ef",
+    "text": "#caf0f8",
+    "muted": "#023e8a"
+  },
+  "weight": 8
+}

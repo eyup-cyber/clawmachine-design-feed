@@ -1,0 +1,15 @@
+{
+  "id": "palette-093",
+  "name": "laser-grid-violet",
+  "source": "ultra-expansion-cycle2-vaporwave",
+  "colors": {
+    "bg": "#11001C",
+    "surface": "#240036",
+    "card": "#1A0029",
+    "accent": "#B100FF",
+    "secondary": "#00FFFF",
+    "text": "#FFFFFF",
+    "muted": "#8040A6"
+  },
+  "weight": 10
+}

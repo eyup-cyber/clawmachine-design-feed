@@ -1,0 +1,91 @@
+<div class="block-table-mini">
+<style>
+.block-table-mini .mini-panel {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow: hidden;
+}
+.block-table-mini .mini-hdr {
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  font-family: var(--sl-font-display);
+  font-size: 12px;
+  font-weight: 600;
+  
+  letter-spacing: 0.04em;
+}
+.block-table-mini .mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+}
+.block-table-mini .mini-table th {
+  text-align: left;
+  padding: 5px var(--sl-space-sm);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-muted);
+  border-bottom: 1px solid var(--sl-border-color);
+  font-weight: 600;
+}
+.block-table-mini .mini-table td {
+  padding: 4px var(--sl-space-sm);
+  border-bottom: 1px solid color-mix(in srgb, var(--sl-text) 3%, transparent);
+  color: var(--sl-text);
+}
+.block-table-mini .mini-table tr:hover td {
+  background: color-mix(in srgb, var(--sl-text) 2%, transparent);
+}
+.block-table-mini .c-accent { color: var(--sl-accent); font-weight: 600; }
+.block-table-mini .c-warn { color: var(--sl-secondary); }
+</style>
+
+<div class="mini-panel">
+  <div class="mini-hdr">TOP MACHINES</div>
+  <table class="mini-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>REVENUE</th>
+        <th>STATUS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>#0847</td>
+        <td class="c-accent">$4,218</td>
+        <td class="c-accent">ACTIVE</td>
+      </tr>
+      <tr>
+        <td>#0312</td>
+        <td class="c-accent">$3,892</td>
+        <td class="c-accent">ACTIVE</td>
+      </tr>
+      <tr>
+        <td>#0651</td>
+        <td class="c-accent">$3,640</td>
+        <td class="c-accent">ACTIVE</td>
+      </tr>
+      <tr>
+        <td>#0219</td>
+        <td>$2,180</td>
+        <td class="c-warn">MAINT</td>
+      </tr>
+      <tr>
+        <td>#0504</td>
+        <td>$1,940</td>
+        <td class="c-accent">ACTIVE</td>
+      </tr>
+      <tr>
+        <td>#0773</td>
+        <td>$1,720</td>
+        <td class="c-warn">LOW INV</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

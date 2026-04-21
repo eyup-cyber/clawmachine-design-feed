@@ -1,0 +1,187 @@
+<div class="block-network-status">
+<style>
+.block-network-status .net-panel {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow: hidden;
+}
+.block-network-status .net-hdr {
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.block-network-status .net-title {
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  
+  letter-spacing: 0.04em;
+  color: var(--sl-text);
+}
+.block-network-status .net-legend {
+  display: flex;
+  gap: var(--sl-space-md);
+  font-family: var(--sl-font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  
+  color: var(--sl-muted);
+}
+.block-network-status .net-legend-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.block-network-status .net-legend-dot.ok { background: var(--sl-accent); }
+.block-network-status .net-legend-dot.warn { background: var(--sl-secondary); }
+.block-network-status .net-legend-dot.off {
+  background: color-mix(in srgb, var(--sl-muted) 50%, transparent);
+}
+.block-network-status .net-body {
+  padding: var(--sl-space-md);
+  display: flex;
+  justify-content: center;
+}
+.block-network-status .net-svg {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+.block-network-status .net-link {
+  stroke: var(--sl-border-color);
+  stroke-width: 1.5;
+  fill: none;
+}
+.block-network-status .net-link.active {
+  stroke: var(--sl-accent);
+  stroke-width: 2;
+  stroke-dasharray: 6 3;
+  animation: net-flow 1.2s linear infinite;
+}
+@keyframes net-flow {
+  to { stroke-dashoffset: -18; }
+}
+.block-network-status .net-node {
+  fill: var(--sl-surface);
+  stroke: var(--sl-accent);
+  stroke-width: 2;
+}
+.block-network-status .net-node.warn {
+  stroke: var(--sl-secondary);
+}
+.block-network-status .net-node.off {
+  stroke: var(--sl-muted);
+  opacity: 0.5;
+}
+.block-network-status .net-node-core {
+  fill: var(--sl-accent);
+  stroke: none;
+}
+.block-network-status .net-node-core.warn {
+  fill: var(--sl-secondary);
+}
+.block-network-status .net-node-core.off {
+  fill: var(--sl-muted);
+}
+.block-network-status .net-label {
+  font-family: var(--sl-font-mono);
+  font-size: 8px;
+  fill: var(--sl-muted);
+  text-anchor: middle;
+  
+  letter-spacing: 0.1em;
+}
+.block-network-status .net-latency {
+  font-family: var(--sl-font-mono);
+  font-size: 7px;
+  fill: var(--sl-text);
+  text-anchor: middle;
+  opacity: 0.7;
+}
+.block-network-status .net-hub {
+  fill: var(--sl-card);
+  stroke: var(--sl-accent);
+  stroke-width: 2.5;
+}
+.block-network-status .net-hub-icon {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  fill: var(--sl-accent);
+  text-anchor: middle;
+  dominant-baseline: central;
+}
+</style>
+
+<div class="net-panel">
+  <div class="net-hdr">
+    <span class="net-title">NETWORK TOPOLOGY</span>
+    <div class="net-legend">
+      <span><span class="net-legend-dot ok"></span>ONLINE</span>
+      <span><span class="net-legend-dot warn"></span>DEGRADED</span>
+      <span><span class="net-legend-dot off"></span>OFFLINE</span>
+    </div>
+  </div>
+  <div class="net-body">
+    <svg class="net-svg" viewBox="0 0 480 260">
+      <!-- links from hub to nodes -->
+      <line class="net-link active" x1="240" y1="130" x2="80" y2="50"/>
+      <line class="net-link active" x1="240" y1="130" x2="400" y2="50"/>
+      <line class="net-link active" x1="240" y1="130" x2="80" y2="210"/>
+      <line class="net-link" x1="240" y1="130" x2="400" y2="210"/>
+      <line class="net-link active" x1="240" y1="130" x2="160" y2="130"/>
+      <line class="net-link active" x1="240" y1="130" x2="320" y2="130"/>
+
+      <!-- inter-node links -->
+      <line class="net-link" x1="80" y1="50" x2="160" y2="130"/>
+      <line class="net-link" x1="400" y1="50" x2="320" y2="130"/>
+
+      <!-- central hub -->
+      <rect class="net-hub" x="218" y="108" width="44" height="44" rx="8"/>
+      <text class="net-hub-icon" x="240" y="130">HUB</text>
+
+      <!-- node: NORTH -->
+      <circle class="net-node" cx="80" cy="50" r="18"/>
+      <circle class="net-node-core" cx="80" cy="50" r="5"/>
+      <text class="net-label" x="80" y="80">NORTH</text>
+      <text class="net-latency" x="80" y="90">12ms</text>
+
+      <!-- node: EAST -->
+      <circle class="net-node" cx="400" cy="50" r="18"/>
+      <circle class="net-node-core" cx="400" cy="50" r="5"/>
+      <text class="net-label" x="400" y="80">EAST</text>
+      <text class="net-latency" x="400" y="90">8ms</text>
+
+      <!-- node: RELAY-A -->
+      <circle class="net-node" cx="160" cy="130" r="14"/>
+      <circle class="net-node-core" cx="160" cy="130" r="4"/>
+      <text class="net-label" x="160" y="155">RELAY-A</text>
+      <text class="net-latency" x="160" y="165">3ms</text>
+
+      <!-- node: RELAY-B -->
+      <circle class="net-node warn" cx="320" cy="130" r="14"/>
+      <circle class="net-node-core warn" cx="320" cy="130" r="4"/>
+      <text class="net-label" x="320" y="155">RELAY-B</text>
+      <text class="net-latency" x="320" y="165">47ms</text>
+
+      <!-- node: SOUTH -->
+      <circle class="net-node" cx="80" cy="210" r="18"/>
+      <circle class="net-node-core" cx="80" cy="210" r="5"/>
+      <text class="net-label" x="80" y="240">SOUTH</text>
+      <text class="net-latency" x="80" y="250">15ms</text>
+
+      <!-- node: WEST (offline) -->
+      <circle class="net-node off" cx="400" cy="210" r="18"/>
+      <circle class="net-node-core off" cx="400" cy="210" r="5"/>
+      <text class="net-label" x="400" y="240">WEST</text>
+      <text class="net-latency" x="400" y="250">---</text>
+    </svg>
+  </div>
+</div>
+</div>

@@ -1,0 +1,26 @@
+// ============================================================
+// Minimal CSS Reset
+// ============================================================
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 16px;
+    color-scheme: dark;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

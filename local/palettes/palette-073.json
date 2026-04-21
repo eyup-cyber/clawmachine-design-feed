@@ -1,0 +1,15 @@
+{
+  "id": "palette-073",
+  "name": "electric-violet",
+  "source": "design-brief-bold-bg",
+  "colors": {
+    "bg": "#6200EA",
+    "surface": "#7010FA",
+    "card": "#7C20FF",
+    "accent": "#00E5FF",
+    "secondary": "#FF4081",
+    "text": "#E8E0FF",
+    "muted": "#3A0088"
+  },
+  "weight": 10
+}

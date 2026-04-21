@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <filter id="parchment">
+      <feTurbulence type="turbulence" baseFrequency="0.08" numOctaves="5" seed="56"/>
+      <feColorMatrix values="0 0 0 0 0.68 0 0 0 0 0.55 0 0 0 0 0.35 0 0 0 0.45 0"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="#e6d4a8"/>
+  <rect width="400" height="400" filter="url(#parchment)"/>
+</svg>

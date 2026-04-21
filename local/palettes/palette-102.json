@@ -1,0 +1,15 @@
+{
+  "id": "palette-102",
+  "name": "electric-violet",
+  "source": "ultra-expansion-cycle2-cyberpunk-neon",
+  "colors": {
+    "bg": "#6200EA",
+    "surface": "#8030F5",
+    "card": "#7118F0",
+    "accent": "#00FFD1",
+    "secondary": "#FF007A",
+    "text": "#FFFFFF",
+    "muted": "#40998B"
+  },
+  "weight": 10
+}

@@ -1,0 +1,129 @@
+<div class="block-feed-log">
+<style>
+.block-feed-log .log-panel {
+  background: var(--sl-bg);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-inset);
+  overflow: hidden;
+  font-family: var(--sl-font-mono);
+}
+.block-feed-log .log-hdr {
+  padding: var(--sl-space-sm) var(--sl-space-md);
+  background: var(--sl-surface);
+  border-bottom: 1px solid var(--sl-border-color);
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  
+  color: var(--sl-muted);
+}
+.block-feed-log .log-hdr-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--sl-accent);
+  animation: log-blink 1.4s ease infinite;
+}
+@keyframes log-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+.block-feed-log .log-body {
+  padding: var(--sl-space-sm) 0;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.block-feed-log .log-line {
+  display: flex;
+  gap: var(--sl-space-sm);
+  padding: 2px var(--sl-space-md);
+  font-size: 10px;
+  line-height: 1.6;
+  transition: background 0.1s;
+}
+.block-feed-log .log-line:hover {
+  background: color-mix(in srgb, var(--sl-text) 3%, transparent);
+}
+.block-feed-log .log-ts {
+  color: var(--sl-muted);
+  flex-shrink: 0;
+  min-width: 72px;
+}
+.block-feed-log .log-lvl {
+  flex-shrink: 0;
+  min-width: 40px;
+  font-weight: 700;
+  
+}
+.block-feed-log .log-lvl.info { color: var(--sl-accent); }
+.block-feed-log .log-lvl.warn { color: var(--sl-secondary); }
+.block-feed-log .log-lvl.dbg { color: var(--sl-muted); }
+.block-feed-log .log-msg {
+  color: var(--sl-text);
+  opacity: 0.85;
+}
+.block-feed-log .log-line.dim .log-msg { opacity: 0.5; }
+</style>
+
+<div class="log-panel">
+  <div class="log-hdr">
+    <span class="log-hdr-dot"></span>
+    LIVE TERMINAL
+  </div>
+  <div class="log-body">
+    <div class="log-line">
+      <span class="log-ts">14:32:18</span>
+      <span class="log-lvl info">INFO</span>
+      <span class="log-msg">machine #0847 restock complete — 240 units loaded</span>
+    </div>
+    <div class="log-line">
+      <span class="log-ts">14:32:14</span>
+      <span class="log-lvl dbg">DBG</span>
+      <span class="log-msg">inventory sync: westfield_north → central_db OK</span>
+    </div>
+    <div class="log-line">
+      <span class="log-ts">13:18:02</span>
+      <span class="log-lvl warn">WARN</span>
+      <span class="log-msg">anomaly: harbour_district revenue -34% vs 7d avg</span>
+    </div>
+    <div class="log-line">
+      <span class="log-ts">13:17:58</span>
+      <span class="log-lvl info">INFO</span>
+      <span class="log-msg">alert dispatched to ops team — ticket #4821 created</span>
+    </div>
+    <div class="log-line">
+      <span class="log-ts">12:00:01</span>
+      <span class="log-lvl info">INFO</span>
+      <span class="log-msg">shift_change: team_alpha → team_bravo (12 operators)</span>
+    </div>
+    <div class="log-line dim">
+      <span class="log-ts">04:00:12</span>
+      <span class="log-lvl dbg">DBG</span>
+      <span class="log-msg">backup_job: 847 records → cold_storage [3.2s]</span>
+    </div>
+    <div class="log-line dim">
+      <span class="log-ts">02:45:33</span>
+      <span class="log-lvl info">INFO</span>
+      <span class="log-msg">firmware v2.4.1 deployed: 38/38 machines [north_region]</span>
+    </div>
+    <div class="log-line">
+      <span class="log-ts">01:12:07</span>
+      <span class="log-lvl warn">WARN</span>
+      <span class="log-msg">machine #0219 claw_tension drift +12% — recalibrating</span>
+    </div>
+    <div class="log-line dim">
+      <span class="log-ts">01:12:44</span>
+      <span class="log-lvl info">INFO</span>
+      <span class="log-msg">machine #0219 recalibration OK — tension within spec</span>
+    </div>
+    <div class="log-line dim">
+      <span class="log-ts">00:00:02</span>
+      <span class="log-lvl dbg">DBG</span>
+      <span class="log-msg">weekly_report: generated + emailed to ops@clawmachine.io</span>
+    </div>
+  </div>
+</div>
+</div>

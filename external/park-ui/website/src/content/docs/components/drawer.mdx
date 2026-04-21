@@ -1,0 +1,56 @@
+---
+title: Drawer
+description: A slide-out panel component for navigation or additional content.
+metaDescription: Drawer component for React and Solid.js with smooth slide-out panels from any screen edge. Perfect for navigation menus and supplementary content displays.
+category: overlays
+links:
+  recipe: https://github.com/chakra-ui/park-ui/blob/main/packages/preset/src/recipes/drawer.ts
+  ark: https://ark-ui.com/docs/components/dialog
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Drawer } from '@/components/ui'
+```
+
+```tsx
+<Drawer.Root>
+  <Drawer.Backdrop />
+  <Drawer.Trigger />
+  <Drawer.Positioner>
+    <Drawer.Content>
+      <Drawer.CloseTrigger />
+      <Drawer.Header>
+        <Drawer.Title />
+      </Drawer.Header>
+      <Drawer.Body />
+      <Drawer.Footer />
+    </Drawer.Content>
+  </Drawer.Positioner>
+</Drawer.Root>
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the drawer.
+
+<ComponentExample name="sizes" />
+
+### Placements
+
+Use the `placement` prop to change the placement of the drawer.
+
+<ComponentExample name="placements" />
+
+## Props
+
+<PropsTable />

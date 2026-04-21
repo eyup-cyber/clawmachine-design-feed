@@ -1,0 +1,15 @@
+{
+  "id": "palette-023",
+  "name": "plasma-surge",
+  "source": "chromatic-research-colorhex",
+  "colors": {
+    "bg": "#5f00cf",
+    "surface": "#690ad9",
+    "card": "#7314e3",
+    "accent": "#F5CA22",
+    "secondary": "#F731EA",
+    "text": "#F4F322",
+    "muted": "#9132ff"
+  },
+  "weight": 0
+}

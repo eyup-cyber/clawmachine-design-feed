@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Sliders & Progress — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css"><link rel="stylesheet" href="../design.css">
+</head>
+<body>
+<main class="uui-container showcase">
+  <h2>Sliders & Progress</h2>
+  <p class="lead">Range sliders, linear progress, circular progress, loading spinners.</p>
+
+  <section class="uui-stack gap-8" style="max-width:640px;">
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Slider — single handle</h3>
+      <input type="range" class="uui-slider" min="0" max="100" value="40">
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Progress bar</h3>
+      <div class="uui-row gap-3 items-center">
+        <div class="uui-progress" style="flex:1;"><span style="width:76%;"></span></div>
+        <span style="font-size:var(--text-sm);font-weight:500;color:var(--color-text-secondary);">76%</span>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Segmented (steps)</h3>
+      <div class="uui-row gap-1">
+        <span style="flex:1;height:8px;background:var(--color-brand-600);border-radius:9999px;"></span>
+        <span style="flex:1;height:8px;background:var(--color-brand-600);border-radius:9999px;"></span>
+        <span style="flex:1;height:8px;background:var(--color-brand-600);border-radius:9999px;"></span>
+        <span style="flex:1;height:8px;background:var(--color-bg-quaternary);border-radius:9999px;"></span>
+        <span style="flex:1;height:8px;background:var(--color-bg-quaternary);border-radius:9999px;"></span>
+      </div>
+      <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:var(--text-xs);color:var(--color-text-tertiary);">
+        <span>Step 3 of 5</span><span>60% complete</span>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="font-size:var(--text-lg);font-weight:600;margin-bottom:16px;">Circular progress</h3>
+      <div class="uui-row gap-6 items-center">
+        <svg width="64" height="64" viewBox="0 0 36 36">
+          <circle cx="18" cy="18" r="16" fill="none" stroke="var(--color-bg-quaternary)" stroke-width="3"/>
+          <circle cx="18" cy="18" r="16" fill="none" stroke="var(--color-brand-600)" stroke-width="3" stroke-linecap="round" stroke-dasharray="100.5 100.5" stroke-dashoffset="25.1" transform="rotate(-90 18 18)"/>
+          <text x="18" y="20" text-anchor="middle" font-size="8" font-weight="600" fill="var(--color-text-primary)" font-family="Inter">75%</text>
+        </svg>
+        <svg width="40" height="40" viewBox="0 0 36 36" style="animation:spin 1s linear infinite;transform-origin:center;">
+          <circle cx="18" cy="18" r="15" fill="none" stroke="var(--color-bg-quaternary)" stroke-width="3"/>
+          <circle cx="18" cy="18" r="15" fill="none" stroke="var(--color-brand-600)" stroke-width="3" stroke-linecap="round" stroke-dasharray="20 80" transform="rotate(-90 18 18)"/>
+        </svg>
+      </div>
+    </div>
+
+  </section>
+</main>
+<style>@keyframes spin { from { transform: rotate(0); } to { transform: rotate(360deg); } }</style>
+</body>
+</html>

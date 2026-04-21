@@ -1,0 +1,3 @@
+Sitemap: https://mambaui.com/sitemap.xml
+User-agent: *
+Disallow: /*?

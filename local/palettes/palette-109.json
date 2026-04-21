@@ -1,0 +1,15 @@
+{
+  "id": "palette-109",
+  "name": "toxic-cyan",
+  "source": "ultra-expansion-cycle2-cyberpunk-neon",
+  "colors": {
+    "bg": "#00E5FF",
+    "surface": "#33EBFF",
+    "card": "#1AE8FF",
+    "accent": "#330014",
+    "secondary": "#FFEA00",
+    "text": "#001A1D",
+    "muted": "#99405D"
+  },
+  "weight": 5
+}

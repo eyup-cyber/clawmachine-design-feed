@@ -1,0 +1,1111 @@
+{
+  "ok": 0,
+  "fail": 184,
+  "skip": 0,
+  "items": [
+    {
+      "file": "mockups/devices/aa-mockups-iphone-16-pro-cd85e3fa.webp",
+      "alt": "AA-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/aa-mockups-iphone-16-pro-38c13294.webp",
+      "alt": "AA-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/aa-mockups-iphone-16-pro-2c445eeb.webp",
+      "alt": "AA-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/aa-mockups-iphone-16-pro-c8510c95.webp",
+      "alt": "AA-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ab-mockups-apple-devices-e7441118.webp",
+      "alt": "AB-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ab-mockups-apple-devices-31b27526.webp",
+      "alt": "AB-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ab-mockups-apple-devices-34c7f99d.webp",
+      "alt": "AB-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ab-mockups-apple-devices-7340f252.webp",
+      "alt": "AB-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ac-mockups-apple-devices-f3f34a12.webp",
+      "alt": "AC-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ac-mockups-apple-devices-a0c379c4.webp",
+      "alt": "AC-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ac-mockups-apple-devices-ca0f651e.webp",
+      "alt": "AC-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ac-mockups-apple-devices-1507628b.webp",
+      "alt": "AC-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ae-mockups-apple-devices-670d1b61.webp",
+      "alt": "AE-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ae-mockups-apple-devices-91737308.webp",
+      "alt": "AE-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ae-mockups-apple-devices-d33bc62a.webp",
+      "alt": "AE-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/ae-mockups-apple-devices-babcd32c.webp",
+      "alt": "AE-Mockups, Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ag-mockups-iphone-17-pro-20dd4da6.webp",
+      "alt": "AG-Mockups, iPhone 17 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ag-mockups-iphone-17-pro-e8a0d7cd.webp",
+      "alt": "AG-Mockups, iPhone 17 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ag-mockups-iphone-17-pro-7463e3ab.webp",
+      "alt": "AG-Mockups, iPhone 17 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ag-mockups-iphone-17-pro-708ca76b.webp",
+      "alt": "AG-Mockups, iPhone 17 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ah-mockup-iphone-air-scene-11-a9bb3a89.webp",
+      "alt": "AH Mockup, iPhone Air, Scene 11",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ah-mockup-iphone-air-scene-12-88489343.webp",
+      "alt": "AH Mockup, iPhone Air, Scene 12",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ah-mockup-iphone-air-scene-13-19940bd0.webp",
+      "alt": "AH Mockup, iPhone Air, Scene 13",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ah-mockup-iphone-air-scene-14-8827a6f5.webp",
+      "alt": "AH Mockup, iPhone Air, Scene 14",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ah-mockup-iphone-air-scene-15-c6816d99.webp",
+      "alt": "AH Mockup, iPhone Air, Scene 15",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ah-mockup-iphone-air-scene-16-6a360bf3.webp",
+      "alt": "AH Mockup, iPhone Air, Scene 16",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ah-mockup-iphone-air-scene-9-4077c03b.webp",
+      "alt": "AH Mockup, iPhone Air, Scene 9",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ah-mockups-iphone-air-4dbeb8cd.webp",
+      "alt": "AH-Mockups, iPhone Air",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ah-mockups-iphone-air-626c04c3.webp",
+      "alt": "AH-Mockups, iPhone Air",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ah-mockups-iphone-air-c28109c3.webp",
+      "alt": "AH-Mockups, iPhone Air",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/ah-mockups-iphone-air-cc95bf27.webp",
+      "alt": "AH-Mockups, iPhone Air",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/bvge-branding-mockups-94053223.webp",
+      "alt": "Bvge, Branding Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/bvge-branding-mockups-9e745024.webp",
+      "alt": "Bvge, Branding Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/bvge-branding-mockups-31a5426a.webp",
+      "alt": "Bvge, Branding Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/bvge-branding-mockups-109845f7.webp",
+      "alt": "Bvge, Branding Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/j-mockups-iphone-15-pro-88366c78.webp",
+      "alt": "J-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/j-mockups-iphone-15-pro-f71ea732.webp",
+      "alt": "J-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/j-mockups-iphone-15-pro-beb7cb01.webp",
+      "alt": "J-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/j-mockups-iphone-15-pro-68800410.webp",
+      "alt": "J-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/k-mockups-iphone-15-pro-c6ba9380.webp",
+      "alt": "K-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/k-mockups-iphone-15-pro-e572e4cf.webp",
+      "alt": "K-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/k-mockups-iphone-15-pro-b06a1326.webp",
+      "alt": "K-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/k-mockups-iphone-15-pro-d6da42dd.webp",
+      "alt": "K-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/kaine-branding-mockups-dfc4ad4e.webp",
+      "alt": "Kaine, Branding Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/kaine-branding-mockups-a52dc9ed.webp",
+      "alt": "Kaine, Branding Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/kaine-branding-mockups-287c1418.webp",
+      "alt": "Kaine, Branding Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/kaine-branding-mockups-6b85ed95.webp",
+      "alt": "Kaine, Branding Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/m-mockups-apple-devices-cf5ff834.webp",
+      "alt": "M-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/m-mockups-apple-devices-95f4ba59.webp",
+      "alt": "M-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/m-mockups-apple-devices-5cdeea57.webp",
+      "alt": "M-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/m-mockups-apple-devices-cb2b9f31.webp",
+      "alt": "M-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/p-mockups-iphone-15-pro-98c513f7.webp",
+      "alt": "P-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/p-mockups-iphone-15-pro-9a1ef61d.webp",
+      "alt": "P-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/p-mockups-iphone-15-pro-de2b238e.webp",
+      "alt": "P-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/p-mockups-iphone-15-pro-397a4969.webp",
+      "alt": "P-Mockups: iPhone 15 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/q-mockups-apple-devices-56e31605.webp",
+      "alt": "Q-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/q-mockups-apple-devices-159d9edf.webp",
+      "alt": "Q-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/q-mockups-apple-devices-c3b7d244.webp",
+      "alt": "Q-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/q-mockups-apple-devices-42cf98e1.webp",
+      "alt": "Q-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/r-mockups-interior-mockups-f46f8719.webp",
+      "alt": "R-Mockups: Interior Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/r-mockups-interior-mockups-c1f1f2ed.webp",
+      "alt": "R-Mockups: Interior Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/r-mockups-interior-mockups-3e1b6778.webp",
+      "alt": "R-Mockups: Interior Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/r-mockups-interior-mockups-921735bf.webp",
+      "alt": "R-Mockups: Interior Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/t-mockups-iphone-16-pro-d254e12c.webp",
+      "alt": "T-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/t-mockups-iphone-16-pro-9143f71d.webp",
+      "alt": "T-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/t-mockups-iphone-16-pro-75561338.webp",
+      "alt": "T-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/t-mockups-iphone-16-pro-04de64e0.webp",
+      "alt": "T-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/u-mockups-iphone-16-pro-47c714bc.webp",
+      "alt": "U-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/u-mockups-iphone-16-pro-ecf2cd36.webp",
+      "alt": "U-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/u-mockups-iphone-16-pro-883e1cd8.webp",
+      "alt": "U-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/u-mockups-iphone-16-pro-2181cd0c.webp",
+      "alt": "U-Mockups: iPhone 16 Pro",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/v-mockups-apple-devices-4f5d6c26.webp",
+      "alt": "V-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/v-mockups-apple-devices-28678c11.webp",
+      "alt": "V-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/v-mockups-apple-devices-f07ec680.webp",
+      "alt": "V-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/branding/v-mockups-apple-devices-fb9b123c.webp",
+      "alt": "V-Mockups: Apple Devices",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/z-mockups-iphone-16e-cae42064.webp",
+      "alt": "Z-Mockups: iPhone 16e",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/z-mockups-iphone-16e-5c686166.webp",
+      "alt": "Z-Mockups: iPhone 16e",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/z-mockups-iphone-16e-fa6b3c6c.webp",
+      "alt": "Z-Mockups: iPhone 16e",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/z-mockups-iphone-16e-1cf03839.webp",
+      "alt": "Z-Mockups: iPhone 16e",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-15-mockups-1c68737c.webp",
+      "alt": "iPhone 15 Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-15-mockups-4288ce0f.webp",
+      "alt": "iPhone 15 Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-15-mockups-49625289.webp",
+      "alt": "iPhone 15 Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-15-mockups-33838d5d.webp",
+      "alt": "iPhone 15 Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16-mockups-957c832c.webp",
+      "alt": "iPhone 16 Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16-mockups-f0d4b6ca.webp",
+      "alt": "iPhone 16 Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16-mockups-57753c9e.webp",
+      "alt": "iPhone 16 Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16-mockups-b2eaf875.webp",
+      "alt": "iPhone 16 Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16-pro-mockups-e6ec88a4.webp",
+      "alt": "iPhone 16 Pro Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16-pro-mockups-94adb44d.webp",
+      "alt": "iPhone 16 Pro Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16-pro-mockups-5ed168cc.webp",
+      "alt": "iPhone 16 Pro Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16-pro-mockups-57548863.webp",
+      "alt": "iPhone 16 Pro Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16e-mockups-89cbbcac.webp",
+      "alt": "iPhone 16e Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16e-mockups-68b80006.webp",
+      "alt": "iPhone 16e Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16e-mockups-5e4db730.webp",
+      "alt": "iPhone 16e Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-16e-mockups-b4d744bc.webp",
+      "alt": "iPhone 16e Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-e45122e0.webp",
+      "alt": "iPhone 17 Mockup",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-1-5e20638b.webp",
+      "alt": "iPhone 17 Mockup, Scene 1",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-1-dc6837c6.webp",
+      "alt": "iPhone 17 Mockup, Scene 1",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-1-4abe560d.webp",
+      "alt": "iPhone 17 Mockup, Scene 1",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-1-95aaf07f.webp",
+      "alt": "iPhone 17 Mockup, Scene 1",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-1-6cca3ef3.webp",
+      "alt": "iPhone 17 Mockup, Scene 1",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-10-e9e31df3.webp",
+      "alt": "iPhone 17 Mockup, Scene 10",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-10-8dcd9e17.webp",
+      "alt": "iPhone 17 Mockup, Scene 10",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-10-b97efaba.webp",
+      "alt": "iPhone 17 Mockup, Scene 10",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-10-5694d5c3.webp",
+      "alt": "iPhone 17 Mockup, Scene 10",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-10-8b49866b.webp",
+      "alt": "iPhone 17 Mockup, Scene 10",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-11-1371118b.webp",
+      "alt": "iPhone 17 Mockup, Scene 11",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-11-542c9dcb.webp",
+      "alt": "iPhone 17 Mockup, Scene 11",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-11-741550a0.webp",
+      "alt": "iPhone 17 Mockup, Scene 11",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-11-4c566199.webp",
+      "alt": "iPhone 17 Mockup, Scene 11",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-11-c466b9fc.webp",
+      "alt": "iPhone 17 Mockup, Scene 11",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-12-1073d998.webp",
+      "alt": "iPhone 17 Mockup, Scene 12",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-12-89d993f7.webp",
+      "alt": "iPhone 17 Mockup, Scene 12",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-12-129be593.webp",
+      "alt": "iPhone 17 Mockup, Scene 12",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-12-2d080c72.webp",
+      "alt": "iPhone 17 Mockup, Scene 12",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-12-24f94b51.webp",
+      "alt": "iPhone 17 Mockup, Scene 12",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-13-252a0526.webp",
+      "alt": "iPhone 17 Mockup, Scene 13",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-13-2091f2fd.webp",
+      "alt": "iPhone 17 Mockup, Scene 13",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-13-85857249.webp",
+      "alt": "iPhone 17 Mockup, Scene 13",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-13-76986c00.webp",
+      "alt": "iPhone 17 Mockup, Scene 13",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-13-8431cfc2.webp",
+      "alt": "iPhone 17 Mockup, Scene 13",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-14-c869e212.webp",
+      "alt": "iPhone 17 Mockup, Scene 14",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-14-7d6f4e10.webp",
+      "alt": "iPhone 17 Mockup, Scene 14",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-14-0c3d8dcd.webp",
+      "alt": "iPhone 17 Mockup, Scene 14",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-14-07ced565.webp",
+      "alt": "iPhone 17 Mockup, Scene 14",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-14-4ea63432.webp",
+      "alt": "iPhone 17 Mockup, Scene 14",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-15-576610b8.webp",
+      "alt": "iPhone 17 Mockup, Scene 15",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-15-2c3043e1.webp",
+      "alt": "iPhone 17 Mockup, Scene 15",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-15-cb3a689d.webp",
+      "alt": "iPhone 17 Mockup, Scene 15",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-15-1175766f.webp",
+      "alt": "iPhone 17 Mockup, Scene 15",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-16-c8fc6f04.webp",
+      "alt": "iPhone 17 Mockup, Scene 16",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-16-96a944ba.webp",
+      "alt": "iPhone 17 Mockup, Scene 16",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-16-7a95c0e6.webp",
+      "alt": "iPhone 17 Mockup, Scene 16",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-16-148b3bd9.webp",
+      "alt": "iPhone 17 Mockup, Scene 16",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-16-c498eeb2.webp",
+      "alt": "iPhone 17 Mockup, Scene 16",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-17-93510ff2.webp",
+      "alt": "iPhone 17 Mockup, Scene 17",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-17-96179118.webp",
+      "alt": "iPhone 17 Mockup, Scene 17",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-17-27af356b.webp",
+      "alt": "iPhone 17 Mockup, Scene 17",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-17-61adfdf3.webp",
+      "alt": "iPhone 17 Mockup, Scene 17",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-17-480cdfce.webp",
+      "alt": "iPhone 17 Mockup, Scene 17",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-2-b28c58a4.webp",
+      "alt": "iPhone 17 Mockup, Scene 2",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-2-966f66f9.webp",
+      "alt": "iPhone 17 Mockup, Scene 2",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-2-fe556c64.webp",
+      "alt": "iPhone 17 Mockup, Scene 2",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-2-3980e7ad.webp",
+      "alt": "iPhone 17 Mockup, Scene 2",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-2-a951cf7f.webp",
+      "alt": "iPhone 17 Mockup, Scene 2",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-3-b7e19477.webp",
+      "alt": "iPhone 17 Mockup, Scene 3",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-3-cc982691.webp",
+      "alt": "iPhone 17 Mockup, Scene 3",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-3-1338248b.webp",
+      "alt": "iPhone 17 Mockup, Scene 3",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-3-b4563bc1.webp",
+      "alt": "iPhone 17 Mockup, Scene 3",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-3-77c9ea90.webp",
+      "alt": "iPhone 17 Mockup, Scene 3",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-4-68ec4190.webp",
+      "alt": "iPhone 17 Mockup, Scene 4",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-4-4ed7b1b4.webp",
+      "alt": "iPhone 17 Mockup, Scene 4",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-4-3f5b063e.webp",
+      "alt": "iPhone 17 Mockup, Scene 4",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-4-1b3a8a49.webp",
+      "alt": "iPhone 17 Mockup, Scene 4",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-4-e2c437e9.webp",
+      "alt": "iPhone 17 Mockup, Scene 4",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-5-ae69e13b.webp",
+      "alt": "iPhone 17 Mockup, Scene 5",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-5-ba701e69.webp",
+      "alt": "iPhone 17 Mockup, Scene 5",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-5-2dc14cbe.webp",
+      "alt": "iPhone 17 Mockup, Scene 5",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-5-c0e93b24.webp",
+      "alt": "iPhone 17 Mockup, Scene 5",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-5-0ce1fa0e.webp",
+      "alt": "iPhone 17 Mockup, Scene 5",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-6-ada7e868.webp",
+      "alt": "iPhone 17 Mockup, Scene 6",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-6-7d2b4ef1.webp",
+      "alt": "iPhone 17 Mockup, Scene 6",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-6-8ddfb6fa.webp",
+      "alt": "iPhone 17 Mockup, Scene 6",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-6-a22824fd.webp",
+      "alt": "iPhone 17 Mockup, Scene 6",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-6-98b7becf.webp",
+      "alt": "iPhone 17 Mockup, Scene 6",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-7-b86b3c7c.webp",
+      "alt": "iPhone 17 Mockup, Scene 7",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-7-2ec32690.webp",
+      "alt": "iPhone 17 Mockup, Scene 7",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-7-c005d997.webp",
+      "alt": "iPhone 17 Mockup, Scene 7",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-7-fda8fd08.webp",
+      "alt": "iPhone 17 Mockup, Scene 7",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-7-174d4d3c.webp",
+      "alt": "iPhone 17 Mockup, Scene 7",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-8-c7640a49.webp",
+      "alt": "iPhone 17 Mockup, Scene 8",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-8-96b01b4a.webp",
+      "alt": "iPhone 17 Mockup, Scene 8",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-8-3e889643.webp",
+      "alt": "iPhone 17 Mockup, Scene 8",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-8-24accdab.webp",
+      "alt": "iPhone 17 Mockup, Scene 8",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-8-ef3a5678.webp",
+      "alt": "iPhone 17 Mockup, Scene 8",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-9-784f6258.webp",
+      "alt": "iPhone 17 Mockup, Scene 9",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-9-88d703dd.webp",
+      "alt": "iPhone 17 Mockup, Scene 9",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-9-49d52c2d.webp",
+      "alt": "iPhone 17 Mockup, Scene 9",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-9-6935de11.webp",
+      "alt": "iPhone 17 Mockup, Scene 9",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-mockup-scene-9-04589186.webp",
+      "alt": "iPhone 17 Mockup, Scene 9",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-pro-max-mockups-e8cc48da.webp",
+      "alt": "iPhone 17 Pro Max Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-pro-max-mockups-a2c1b7b2.webp",
+      "alt": "iPhone 17 Pro Max Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-pro-max-mockups-4570c3f0.webp",
+      "alt": "iPhone 17 Pro Max Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    },
+    {
+      "file": "mockups/devices/iphone-17-pro-max-mockups-4a08e22d.webp",
+      "alt": "iPhone 17 Pro Max Mockups",
+      "status": "fail",
+      "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1077)>"
+    }
+  ]
+}

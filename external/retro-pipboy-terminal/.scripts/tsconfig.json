@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "CommonJS",
+    "target": "ES2022",
+    "outDir": "./dist",
+    "rootDir": "./../",
+    "strict": true
+  },
+  "include": [
+    "./**/*.ts",
+    "../src/app/types/**/*.d.ts",
+    "../src/app/types/*.ts"
+  ]
+}

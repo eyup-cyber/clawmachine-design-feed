@@ -1,0 +1,57 @@
+// ============================================================
+// Accessibility Utilities
+// ============================================================
+
+@layer utilities {
+  // Screen reader only - visually hidden but accessible
+  .cyber-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  // Un-hide for focus (for skip links)
+  .cyber-sr-only-focusable:focus,
+  .cyber-sr-only-focusable:focus-within {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: inherit;
+    padding: inherit;
+    overflow: visible;
+    white-space: normal;
+    clip: auto;
+  }
+
+  // Not screen reader - hide from screen readers
+  .cyber-not-sr {
+    speak: none;
+  }
+
+  // Focus visible utilities
+  .cyber-focus-visible:focus-visible {
+    outline: 2px solid var(--cyber-cyan-500);
+    outline-offset: 2px;
+  }
+
+  // Reduced motion utility
+  .cyber-motion-safe {
+    @media (prefers-reduced-motion: reduce) {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+
+  .cyber-motion-reduce {
+    @media (prefers-reduced-motion: no-preference) {
+      transition: none !important;
+      animation: none !important;
+    }
+  }
+}

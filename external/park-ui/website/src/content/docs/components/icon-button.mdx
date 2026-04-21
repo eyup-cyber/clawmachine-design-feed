@@ -1,0 +1,56 @@
+---
+title: Icon Button
+description: A button component designed specifically for displaying icons.
+metaDescription: Icon Button component for React and Solid.js optimized for icon-only actions. Create accessible, compact buttons with proper labeling and multiple variants.
+category: buttons
+links:
+  recipe: https://github.com/chakra-ui/park-ui/blob/main/packages/preset/src/recipes/button.ts
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { IconButton } from '@/components/ui'
+```
+
+```tsx
+<IconButton aria-label="Search">
+  <SearchIcon />
+</IconButton>
+```
+
+## Examples
+
+### Sizes
+
+Use the `size` prop to change the size of the button.
+
+<ComponentExample name="sizes" />
+
+### Variants
+
+Use the `variant` prop to change the appearance of the button.
+
+<ComponentExample name="variants" />
+
+### Colors
+
+Use the `colorPalette` prop to change the appearance of the button.
+
+<ComponentExample name="colors" />
+
+### Rounded
+
+Set the `borderRadius` prop to `full` to get a rounded button.
+
+<ComponentExample name="rounded" />
+
+## Props
+
+<PropsTable />

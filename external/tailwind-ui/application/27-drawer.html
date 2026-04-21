@@ -1,0 +1,16 @@
+<!-- Tailwind UI-style — Slide-over (drawer) -->
+<div class="relative z-10" role="dialog" aria-modal="true">
+  <div class="fixed inset-0 bg-gray-500/75 transition-opacity"></div>
+  <div class="fixed inset-0 overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10 sm:pl-16">
+        <div class="pointer-events-auto w-screen max-w-md">
+          <div class="flex h-full flex-col overflow-y-scroll bg-white py-6 shadow-xl">
+            <div class="px-4 sm:px-6"><div class="flex items-start justify-between"><h2 class="text-base font-semibold text-gray-900">Panel title</h2><div class="ml-3 flex h-7 items-center"><button type="button" class="relative rounded-md bg-white text-gray-400 hover:text-gray-500"><svg class="size-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/></svg></button></div></div></div>
+            <div class="relative mt-6 flex-1 px-4 sm:px-6"><p class="text-sm text-gray-500">Main content.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

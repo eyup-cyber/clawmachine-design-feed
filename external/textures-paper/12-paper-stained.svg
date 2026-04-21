@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <filter id="stained">
+      <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="5" seed="123"/>
+      <feColorMatrix values="0 0 0 0 0.55 0 0 0 0 0.35 0 0 0 0 0.15 0 0 0 0.6 0"/>
+    </filter>
+    <filter id="stain-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="1.5" numOctaves="2" seed="8"/>
+      <feColorMatrix values="0 0 0 0 0.3 0 0 0 0 0.2 0 0 0 0 0.1 0 0 0 0.15 0"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="#ecd9ae"/>
+  <rect width="400" height="400" filter="url(#stained)"/>
+  <rect width="400" height="400" filter="url(#stain-grain)"/>
+</svg>

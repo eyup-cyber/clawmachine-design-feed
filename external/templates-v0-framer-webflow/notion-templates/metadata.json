@@ -1,0 +1,32 @@
+{
+  "source_platform": "notion.com/templates",
+  "scrape_date": "2026-04-21",
+  "notes": "Notion 'templates' = Notion pages, not web UI. Value is information-architecture only. /category/dashboards 404s; discovered via keyword map.",
+  "dashboard_templates_discovered": [
+    {"slug": "jobs-dashboard", "title": "Jobs Dashboard", "description": "Track job applications from applied to offer", "clawmachine_fit": "status-column layout"},
+    {"slug": "task-management-dashboard-141", "title": "Task Management Dashboard", "designer": "Emmanuel Ogwuma", "description": "Tasks + goals + schedules; upcoming/overdue views + goal-progress + calendar"},
+    {"slug": "life-dashboard", "title": "Life dashboard", "designer": "MuchelleB"},
+    {"slug": "life-planner-dashboard", "title": "2026 Life Planner", "description": "Daily/Weekly/Monthly + goals/vision + dark mode"},
+    {"slug": "digital-product-seller-dashboard", "title": "Digital Product Seller Dashboard", "description": "Solopreneurs: products + content + promotional pipeline", "clawmachine_fit": "reseller-ops IA"},
+    {"slug": "content-social-media-hq", "title": "Content & Social Media HQ"},
+    {"slug": "applicant-tracker-with-automations", "title": "Applicant Tracker with Automations", "designer": "Notion", "description": "Database Automations showcase"},
+    {"slug": "journal-2026", "title": "Journal 2026"},
+    {"slug": "advanced-3d-printing-management-system", "title": "3D Printing Management System Pro", "description": "Makers/labs project tracker; inventory + costs", "clawmachine_fit": "item-diagnosis-cost flow"},
+    {"slug": "music-production-release-metadata-tracker", "title": "Music Production Release Metadata Tracker"},
+    {"slug": "marketing-campaign-planner-vpm", "title": "Marketing Campaign Planner"},
+    {"slug": "campaign-tracker-612", "title": "Campaign Tracker"},
+    {"slug": "grant-tracking-management-system", "title": "Grant Tracking & Management System", "designer": "Lavender E"},
+    {"slug": "law-desk-small-law-firm-operating-system", "title": "Law Desk - Small Law Firm OS", "clawmachine_fit": "clients-cases-tasks-billables"},
+    {"slug": "execution-os", "title": "Execution OS", "description": "track/execute/finish productivity"},
+    {"slug": "team-collaboration-task-timeline", "title": "Team Collaboration & Task Timeline", "description": "members + meetings + tasks with visual timeline"},
+    {"slug": "insurance-portfolio-tracker", "title": "Insurance Portfolio Tracker"},
+    {"slug": "job-application-tracker-390", "title": "Job Application Tracker", "designer": "Panos M."},
+    {"slug": "goal-tracker", "title": "Goal Tracker"},
+    {"slug": "case-studies", "title": "Case Studies"},
+    {"slug": "end-to-end-human-resources-toolbox", "title": "End-to-End HR AI Platform 2026", "description": "19+ HR modules - full employee lifecycle"},
+    {"slug": "free-trading-journal", "title": "Free Trading Journal"},
+    {"slug": "seo-audit-and-checklist-template", "title": "SEO Audit & Checklist", "designer": "R. Designs"},
+    {"slug": "etsy-tracker", "title": "Etsy Sales Tracker", "clawmachine_fit": "reseller-adjacent"},
+    {"slug": "company-wiki-730", "title": "Company Wiki"}
+  ]
+}

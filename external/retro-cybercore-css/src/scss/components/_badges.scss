@@ -1,0 +1,198 @@
+// ============================================================
+// Badges Component
+// Inline pill badges with variants
+// ============================================================
+
+@layer components {
+  .cyber-badge {
+    display: inline-flex;
+    gap: var(--space-3xs);
+    align-items: center;
+    padding: var(--space-3xs) var(--space-sm);
+    border: var(--border-thin) solid var(--cyber-cyan-500);
+    border-radius: var(--radius-full);
+    font-family: var(--font-display);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--cyber-cyan-500);
+    background: color-mix(in srgb, var(--cyber-cyan-500) 20%, transparent);
+    transition:
+      background var(--transition-fast),
+      box-shadow var(--transition-fast);
+
+    // Icon support
+    svg,
+    &__icon {
+      flex-shrink: 0;
+      width: 0.875em;
+      height: 0.875em;
+    }
+
+    // --------------------------------------------------------
+    // Color Variants
+    // --------------------------------------------------------
+
+    &--magenta {
+      border-color: var(--cyber-magenta-500);
+      color: var(--cyber-magenta-500);
+      background: color-mix(in srgb, var(--cyber-magenta-500) 20%, transparent);
+    }
+
+    &--yellow {
+      border-color: var(--cyber-yellow-500);
+      color: var(--cyber-yellow-500);
+      background: color-mix(in srgb, var(--cyber-yellow-500) 20%, transparent);
+    }
+
+    &--green {
+      border-color: var(--cyber-green-500);
+      color: var(--cyber-green-500);
+      background: color-mix(in srgb, var(--cyber-green-500) 20%, transparent);
+    }
+
+    &--chrome {
+      border-color: var(--cyber-chrome-500);
+      color: var(--cyber-chrome-300);
+      background: color-mix(in srgb, var(--cyber-chrome-500) 20%, transparent);
+    }
+
+    // --------------------------------------------------------
+    // Style Variants
+    // --------------------------------------------------------
+
+    &--filled {
+      border-color: var(--cyber-cyan-500);
+      color: var(--cyber-void-500);
+      background: var(--cyber-cyan-500);
+
+      &.cyber-badge--magenta {
+        border-color: var(--cyber-magenta-500);
+        background: var(--cyber-magenta-500);
+      }
+
+      &.cyber-badge--yellow {
+        border-color: var(--cyber-yellow-500);
+        background: var(--cyber-yellow-500);
+      }
+
+      &.cyber-badge--green {
+        border-color: var(--cyber-green-500);
+        background: var(--cyber-green-500);
+      }
+    }
+
+    &--ghost {
+      border-color: transparent;
+      background: transparent;
+
+      &:hover {
+        background: color-mix(in srgb, currentcolor 10%, transparent);
+      }
+    }
+
+    // --------------------------------------------------------
+    // Pulse Animation Variant
+    // Uses box-shadow animation on the badge itself
+    // --------------------------------------------------------
+
+    &--pulse {
+      animation: badge-pulse 2s ease-in-out infinite;
+    }
+
+    // --------------------------------------------------------
+    // Size Variants
+    // --------------------------------------------------------
+
+    &--sm {
+      padding: 2px var(--space-2xs);
+      font-size: 0.625rem;
+    }
+
+    &--lg {
+      padding: var(--space-2xs) var(--space-sm);
+      font-size: var(--text-sm);
+    }
+
+    // --------------------------------------------------------
+    // Counter Badge (for notifications)
+    // --------------------------------------------------------
+
+    &--counter {
+      justify-content: center;
+      min-width: 1.5rem;
+      height: 1.5rem;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    // --------------------------------------------------------
+    // Status indicators
+    // --------------------------------------------------------
+
+    &--online {
+      border-color: var(--cyber-green-500);
+      color: var(--cyber-green-500);
+      background: color-mix(in srgb, var(--cyber-green-500) 20%, transparent);
+
+      &::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--cyber-green-500);
+        animation: badge-pulse 2s ease-in-out infinite;
+      }
+    }
+
+    &--offline {
+      border-color: var(--cyber-chrome-500);
+      color: var(--cyber-chrome-500);
+      background: color-mix(in srgb, var(--cyber-chrome-500) 20%, transparent);
+
+      &::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--cyber-chrome-500);
+      }
+    }
+
+    &--busy {
+      border-color: var(--cyber-magenta-500);
+      color: var(--cyber-magenta-500);
+      background: color-mix(in srgb, var(--cyber-magenta-500) 20%, transparent);
+
+      &::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--cyber-magenta-500);
+        animation: badge-pulse 1s ease-in-out infinite;
+      }
+    }
+  }
+
+  // Pulse animation - box-shadow animation matching demo
+  @keyframes badge-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 currentcolor;
+    }
+
+    50% {
+      box-shadow: 0 0 0 6px transparent;
+    }
+  }
+
+  // Badge group
+  .cyber-badge-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+  }
+}

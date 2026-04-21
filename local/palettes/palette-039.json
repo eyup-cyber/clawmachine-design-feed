@@ -1,0 +1,15 @@
+{
+  "id": "palette-039",
+  "name": "neon-citrus",
+  "source": "chromatic-research-kittl",
+  "colors": {
+    "bg": "#0a0a0f",
+    "surface": "#141419",
+    "card": "#1e1e23",
+    "accent": "#FFE700",
+    "secondary": "#B6FFA1",
+    "text": "#FEFFA7",
+    "muted": "#3c3c41"
+  },
+  "weight": 10
+}

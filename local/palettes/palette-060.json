@@ -1,0 +1,15 @@
+{
+  "id": "palette-060",
+  "name": "neon-alley",
+  "source": "media.io-cyberpunk-triadic",
+  "colors": {
+    "bg": "#0B0D17",
+    "surface": "#C9D1D9",
+    "card": "#C9D1D9",
+    "accent": "#FF2DAA",
+    "secondary": "#00E5FF",
+    "text": "#C9D1D9",
+    "muted": "#7C4DFF"
+  },
+  "weight": 0
+}

@@ -1,0 +1,15 @@
+{
+  "id": "palette-105",
+  "name": "deep-teal-dive",
+  "source": "ultra-expansion-cycle2-deep-space",
+  "colors": {
+    "bg": "#00BFA5",
+    "surface": "#29D4BD",
+    "card": "#14C9B1",
+    "accent": "#1A0033",
+    "secondary": "#FF0055",
+    "text": "#001A16",
+    "muted": "#994755"
+  },
+  "weight": 5
+}

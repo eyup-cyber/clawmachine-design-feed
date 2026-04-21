@@ -1,0 +1,15 @@
+{
+  "id": "palette-019",
+  "name": "silk-circuit-dark",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0a0908",
+    "surface": "#1a1610",
+    "card": "#2a2218",
+    "accent": "#a75317",
+    "secondary": "#d4a574",
+    "text": "#ede5d0",
+    "muted": "#7a6e5d"
+  },
+  "weight": 0
+}

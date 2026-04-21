@@ -1,0 +1,15 @@
+{
+  "id": "palette-096",
+  "name": "arcade-shadows",
+  "source": "ultra-expansion-cycle2-synthwave",
+  "colors": {
+    "bg": "#0A011F",
+    "surface": "#1A043D",
+    "card": "#12022E",
+    "accent": "#FF3366",
+    "secondary": "#33CCFF",
+    "text": "#F2E8FF",
+    "muted": "#995C6E"
+  },
+  "weight": 10
+}

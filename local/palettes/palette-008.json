@@ -1,0 +1,15 @@
+{
+  "id": "palette-008",
+  "name": "rust-protocol",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#1a1410",
+    "surface": "#2a2218",
+    "card": "#3a3228",
+    "accent": "#c65911",
+    "secondary": "#ffd700",
+    "text": "#e8dcc8",
+    "muted": "#8b7a68"
+  },
+  "weight": 0
+}

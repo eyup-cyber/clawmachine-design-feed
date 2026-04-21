@@ -1,0 +1,259 @@
+// ============================================================
+// Terminal Component
+// Terminal window with header bar, dots, and blinking cursor
+// ============================================================
+
+@layer components {
+  .cyber-terminal {
+    border: 1px solid var(--cyber-green-700);
+    overflow: hidden;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    background: var(--color-bg-secondary);
+
+    // Header bar with dots and title
+    &__header {
+      display: flex;
+      gap: var(--space-xs);
+      align-items: center;
+      padding: var(--space-xs) var(--space-sm);
+      border-bottom: 1px solid var(--cyber-green-700);
+      background: var(--cyber-green-900);
+    }
+
+    // Traffic light dots
+    &__dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+
+      &--red {
+        background: var(--cyber-magenta-500);
+      }
+
+      &--yellow {
+        background: var(--cyber-yellow-500);
+      }
+
+      &--green {
+        background: var(--cyber-green-500);
+      }
+    }
+
+    // Window title (positioned to the right)
+    &__title {
+      margin-left: auto;
+      font-size: var(--text-xs);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cyber-green-500);
+    }
+
+    // Terminal body with green-themed text
+    &__body {
+      padding: var(--space-md);
+      line-height: 1.8;
+      color: var(--cyber-green-400);
+    }
+
+    // Prompt styling with cyan color
+    &__prompt {
+      color: var(--cyber-cyan-500);
+    }
+
+    // Blinking cursor
+    &__cursor {
+      display: inline-block;
+      width: 8px;
+      height: 1.1em;
+      margin-left: 2px;
+      background: var(--cyber-green-500);
+      transform: translateY(0.1em);
+      animation: blink 1s step-end infinite;
+      vertical-align: middle;
+    }
+
+    // Terminal line
+    &__line {
+      display: flex;
+      gap: var(--space-xs);
+      line-height: 1.8;
+      white-space: pre-wrap;
+      word-break: break-word;
+
+      &--input {
+        color: var(--color-text-primary);
+      }
+
+      &--output {
+        color: var(--color-text-secondary);
+      }
+
+      &--error {
+        color: var(--cyber-magenta-500);
+      }
+
+      &--success {
+        color: var(--cyber-green-500);
+      }
+
+      &--warning {
+        color: var(--cyber-yellow-500);
+      }
+
+      &--info {
+        color: var(--cyber-cyan-500);
+      }
+    }
+
+    // Command text
+    &__command {
+      color: var(--color-text-primary);
+    }
+
+    // Input line (for interactive terminals)
+    &__input {
+      display: flex;
+      gap: var(--space-xs);
+      align-items: center;
+      padding: var(--space-sm);
+      border-top: 1px solid var(--cyber-green-700);
+      background: var(--color-bg-tertiary);
+    }
+
+    &__input-field {
+      flex: 1;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+      color: var(--color-text-primary);
+      background: transparent;
+      caret-color: var(--cyber-cyan-500);
+      outline: none;
+
+      &::placeholder {
+        color: var(--color-text-muted);
+      }
+    }
+
+    // --------------------------------------------------------
+    // Syntax Highlighting
+    // --------------------------------------------------------
+
+    .syntax-keyword {
+      color: var(--cyber-magenta-500);
+    }
+
+    .syntax-string {
+      color: var(--cyber-green-500);
+    }
+
+    .syntax-number {
+      color: var(--cyber-yellow-500);
+    }
+
+    .syntax-comment {
+      font-style: italic;
+      color: var(--cyber-chrome-500);
+    }
+
+    .syntax-function {
+      color: var(--cyber-cyan-500);
+    }
+
+    .syntax-variable {
+      color: var(--cyber-chrome-200);
+    }
+
+    .syntax-operator {
+      color: var(--cyber-chrome-400);
+    }
+
+    // --------------------------------------------------------
+    // Size Variants
+    // --------------------------------------------------------
+
+    &--sm {
+      font-size: var(--text-xs);
+
+      .cyber-terminal__body {
+        min-height: 100px;
+        max-height: 250px;
+      }
+    }
+
+    &--lg {
+      font-size: var(--text-base);
+
+      .cyber-terminal__body {
+        min-height: 300px;
+        max-height: 700px;
+      }
+    }
+
+    &--fullheight {
+      .cyber-terminal__body {
+        max-height: none;
+      }
+    }
+
+    // --------------------------------------------------------
+    // Style Variants
+    // --------------------------------------------------------
+
+    &--no-header {
+      .cyber-terminal__header {
+        display: none;
+      }
+    }
+
+    &--rounded {
+      border-radius: var(--radius-lg);
+
+      .cyber-terminal__header {
+        border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      }
+    }
+
+    &--glow {
+      box-shadow:
+        0 0 20px color-mix(in srgb, var(--cyber-green-500) 20%, transparent),
+        inset 0 0 60px color-mix(in srgb, var(--cyber-green-500) 5%, transparent);
+    }
+  }
+
+  // Blink animation for cursor
+  @keyframes blink {
+    50% {
+      opacity: 0%;
+    }
+  }
+
+  // Typing animation helper
+  .cyber-terminal-typing {
+    border-right: 2px solid var(--cyber-cyan-500);
+    overflow: hidden;
+    white-space: nowrap;
+    animation:
+      typing 2s steps(30, end),
+      blink 1s step-end infinite;
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 100%;
+      }
+    }
+  }
+
+  // ASCII art container
+  .cyber-terminal-ascii {
+    line-height: 1.2;
+    white-space: pre;
+    color: var(--cyber-cyan-500);
+    text-shadow: 0 0 10px var(--cyber-cyan-500);
+  }
+}

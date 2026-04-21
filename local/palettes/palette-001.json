@@ -1,0 +1,15 @@
+{
+  "id": "palette-001",
+  "name": "cathode-worship",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0a0e0a",
+    "surface": "#1a2a1a",
+    "card": "#0f1f0f",
+    "accent": "#00ff41",
+    "secondary": "#ff6b00",
+    "text": "#00ff41",
+    "muted": "#008020"
+  },
+  "weight": 10
+}

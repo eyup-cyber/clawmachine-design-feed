@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Untitled UI Pro — component gallery</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="design.css">
+<style>
+  .tile { padding:24px; background:var(--color-bg-primary); border-radius:var(--radius-xl); box-shadow:inset 0 0 0 1px var(--color-border-secondary); transition: box-shadow .15s, transform .15s; text-decoration:none; color:inherit; }
+  .tile:hover { box-shadow: inset 0 0 0 1px var(--color-border-secondary), var(--shadow-lg); transform: translateY(-2px); }
+  .tile h4 { font-size: var(--text-md); font-weight:600; color: var(--color-text-primary); }
+  .tile p { font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top:4px; }
+  .tile .ico { margin-bottom:16px; }
+</style>
+</head>
+<body style="background:var(--color-bg-secondary);">
+
+<header style="padding:48px 32px 32px;border-bottom:1px solid var(--color-border-secondary);background:var(--color-bg-primary);">
+  <div class="uui-container" style="padding:0;">
+    <div class="uui-row gap-3 items-center">
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect width="40" height="40" rx="8" fill="var(--color-brand-600)"/><path d="M12 14h16M12 20h12M12 26h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+      <div>
+        <h1 style="font-size:var(--text-display-sm);font-weight:600;color:var(--color-text-primary);">Untitled UI Pro — extracted</h1>
+        <p style="font-size:var(--text-md);color:var(--color-text-tertiary);margin-top:2px;">MIT open-source base + recreated Pro templates. Clawmachine internal reference pool.</p>
+      </div>
+    </div>
+    <div class="uui-row gap-3" style="margin-top:24px;flex-wrap:wrap;">
+      <span class="uui-badge uui-badge--brand"><span class="dot"></span>14 component pages</span>
+      <span class="uui-badge uui-badge--success"><span class="dot"></span>20 template pages (8 free + 12 pro)</span>
+      <span class="uui-badge uui-badge--purple"><span class="dot"></span>15,566 icons in 4 styles</span>
+      <span class="uui-badge">294 MIT-licensed .tsx files in <code>raw/untitled-ui-react/</code></span>
+      <span class="uui-badge uui-badge--modern">v8 / Tailwind v4.2 / React 19.2</span>
+    </div>
+  </div>
+</header>
+
+<main class="uui-container" style="padding-top:48px;padding-bottom:96px;">
+
+<section>
+  <div class="uui-row justify-between items-end" style="margin-bottom:24px;">
+    <div>
+      <h2 style="font-size:var(--text-display-xs);font-weight:600;color:var(--color-text-primary);">Components</h2>
+      <p style="font-size:var(--text-md);color:var(--color-text-tertiary);margin-top:4px;">Inline-CSS, framework-free HTML demos of every core component.</p>
+    </div>
+    <a class="uui-btn uui-btn--secondary uui-btn--md" href="tokens.json">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      tokens.json
+    </a>
+  </div>
+
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:20px;">
+    <a class="tile" href="components/buttons.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6.67" width="15" height="6.67" rx="2"/></svg></span>
+      <h4>Buttons</h4><p>5 sizes x 9 colors, icons, loading, groups, social.</p>
+    </a>
+    <a class="tile" href="components/inputs.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="1.67" y="5.83" width="16.67" height="8.33" rx="1.67"/><path d="M5 10h1"/></svg></span>
+      <h4>Inputs</h4><p>Text, email, search, textarea, pin, error/disabled states.</p>
+    </a>
+    <a class="tile" href="components/selects.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="m5 7.5 5 5 5-5"/><rect x="1.67" y="2.5" width="16.67" height="10" rx="1.67"/></svg></span>
+      <h4>Selects &amp; Menus</h4><p>Combobox, multi-select, command menu, dropdown panels.</p>
+    </a>
+    <a class="tile" href="components/checkboxes-radios-toggles.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,8 7,12 13,4"/></svg></span>
+      <h4>Checkbox, Radio, Toggle</h4><p>Form selection primitives with hints and card variants.</p>
+    </a>
+    <a class="tile" href="components/badges-tags-dots.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="14" height="8" rx="4"/></svg></span>
+      <h4>Badges &amp; Tags</h4><p>3 sizes x 13 colors x 3 styles. Dots, icons, removable tags.</p>
+    </a>
+    <a class="tile" href="components/avatars.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="7.5" r="3.33"/><path d="M3.33 17.5a6.67 6.67 0 0 1 13.34 0"/></svg></span>
+      <h4>Avatars</h4><p>6 sizes, status, verified, groups, label groups.</p>
+    </a>
+    <a class="tile" href="components/featured-icons.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><polygon points="10,2 13,8 19,8 14,13 16,19 10,15 4,19 6,13 1,8 7,8"/></svg></span>
+      <h4>Featured icons</h4><p>4 sizes x 6 themes x 5 color tracks.</p>
+    </a>
+    <a class="tile" href="components/alerts-banners.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8.33"/><path d="M10 13.33V10M10 6.67h.01"/></svg></span>
+      <h4>Alerts &amp; Banners</h4><p>Inline alerts, feature banners, dismissable top bars.</p>
+    </a>
+    <a class="tile" href="components/modals-drawers-sheets.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="14" height="14" rx="2"/><path d="M3 7h14"/></svg></span>
+      <h4>Modals, Drawers, Sheets</h4><p>Destructive confirm, feature modal, side drawer.</p>
+    </a>
+    <a class="tile" href="components/tooltips-popovers.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 13.33a1.67 1.67 0 0 1-1.67 1.67H5.83L2.5 18.33V3.33a1.67 1.67 0 0 1 1.67-1.66h11.66a1.67 1.67 0 0 1 1.67 1.66Z"/></svg></span>
+      <h4>Tooltips &amp; Popovers</h4><p>Dark tooltip, rich user card, notification popover.</p>
+    </a>
+    <a class="tile" href="components/tabs-breadcrumbs-pagination.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 10h15M6.67 5.83 2.5 10l4.17 4.17M13.33 14.17 17.5 10l-4.17-4.17"/></svg></span>
+      <h4>Tabs, Crumbs, Pagination</h4><p>Horizontal/vertical tabs, breadcrumbs, steppers.</p>
+    </a>
+    <a class="tile" href="components/tables.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3.33" width="15" height="13.33" rx="1.67"/><path d="M2.5 8.33h15M9.17 3.33v13.34"/></svg></span>
+      <h4>Tables</h4><p>Avatar cells, status badges, sort, filters, selection.</p>
+    </a>
+    <a class="tile" href="components/file-upload.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 13v3.33A1.67 1.67 0 0 1 15.83 18H4.17a1.67 1.67 0 0 1-1.67-1.67V13M14.17 6.67 10 2.5 5.83 6.67M10 2.5v10.83"/></svg></span>
+      <h4>File upload</h4><p>Dropzone + per-file progress + error row.</p>
+    </a>
+    <a class="tile" href="components/date-picker.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3.33" width="15" height="14.17" rx="1.67"/><path d="M13.33 1.67v3.33M6.67 1.67v3.33M2.5 8.33h15"/></svg></span>
+      <h4>Date picker</h4><p>Single-date, range-select with preset toolbar.</p>
+    </a>
+    <a class="tile" href="components/empty-states.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><circle cx="9.17" cy="9.17" r="7.5"/><path d="m17.5 17.5-3.62-3.62"/></svg></span>
+      <h4>Empty states</h4><p>Zero-search, first-run, error-recovery patterns.</p>
+    </a>
+    <a class="tile" href="components/sliders-progress.html">
+      <span class="uui-ficon uui-ficon--md uui-ficon--brand-light ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8.33"/><path d="M10 5v5l3.33 2.5"/></svg></span>
+      <h4>Sliders &amp; Progress</h4><p>Range sliders, linear, segmented, circular progress.</p>
+    </a>
+  </div>
+</section>
+
+<section style="margin-top:64px;">
+  <div style="margin-bottom:24px;">
+    <h2 style="font-size:var(--text-display-xs);font-weight:600;color:var(--color-text-primary);">Templates</h2>
+    <p style="font-size:var(--text-md);color:var(--color-text-tertiary);margin-top:4px;">Full-page shells and marketing layouts, recreated in the Untitled language.</p>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:20px;">
+    <a class="tile" href="templates/landing.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-400),var(--color-brand-700));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 5.83h15M2.5 14.17h15M2.5 10h15"/></svg></span>
+      <h4>Landing page</h4><p>Hero, features grid, CTA, footer, announcement bar.</p>
+    </a>
+    <a class="tile" href="templates/dashboard.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-400),var(--color-brand-700));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="6.67" height="6.67" rx="1.67"/><rect x="10.83" y="2.5" width="6.67" height="6.67" rx="1.67"/><rect x="2.5" y="10.83" width="6.67" height="6.67" rx="1.67"/><rect x="10.83" y="10.83" width="6.67" height="6.67" rx="1.67"/></svg></span>
+      <h4>Dashboard</h4><p>Sidebar shell + 4-metric row + chart + activity feed.</p>
+    </a>
+    <a class="tile" href="templates/pricing.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-400),var(--color-brand-700));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6.67H6.67a2.5 2.5 0 0 0 0 5h6.66a2.5 2.5 0 0 1 0 5H4.17M10 2.5v15"/></svg></span>
+      <h4>Pricing</h4><p>3-tier plan comparison with billing toggle.</p>
+    </a>
+    <a class="tile" href="templates/sign-in.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-400),var(--color-brand-700));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M13.33 17.5H15.83a1.67 1.67 0 0 0 1.67-1.67V4.17a1.67 1.67 0 0 0-1.67-1.67H13.33M9.17 14.17 13.33 10 9.17 5.83M13.33 10H3.33"/></svg></span>
+      <h4>Sign in</h4><p>Split hero with testimonial aside.</p>
+    </a>
+    <a class="tile" href="templates/sign-up.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-400),var(--color-brand-700));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M13.33 17.5v-1.67a3.33 3.33 0 0 0-3.33-3.33H4.17a3.33 3.33 0 0 0-3.34 3.33V17.5M7.08 9.17a3.33 3.33 0 1 0 0-6.67 3.33 3.33 0 0 0 0 6.67ZM16.67 6.67v5M19.17 9.17h-5"/></svg></span>
+      <h4>Sign up</h4><p>Centered card with social + email signup.</p>
+    </a>
+    <a class="tile" href="templates/forgot-password.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-400),var(--color-brand-700));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="9.17" width="15" height="9.17" rx="1.67"/><path d="M5.83 9.17V5.83a4.17 4.17 0 0 1 8.34 0v3.34"/></svg></span>
+      <h4>Forgot password</h4><p>Reset flow with back-to-login link.</p>
+    </a>
+    <a class="tile" href="templates/settings.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-400),var(--color-brand-700));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="2.5"/><path d="M16.17 12.58a1.38 1.38 0 0 0 .28 1.52l.05.05a1.67 1.67 0 1 1-2.36 2.36l-.05-.05a1.38 1.38 0 0 0-1.52-.28 1.38 1.38 0 0 0-.83 1.26v.14a1.67 1.67 0 1 1-3.33 0v-.07a1.38 1.38 0 0 0-.9-1.26 1.38 1.38 0 0 0-1.52.28l-.05.05a1.67 1.67 0 1 1-2.36-2.36l.05-.05a1.38 1.38 0 0 0 .28-1.52 1.38 1.38 0 0 0-1.26-.83h-.14a1.67 1.67 0 1 1 0-3.33h.07a1.38 1.38 0 0 0 1.26-.9 1.38 1.38 0 0 0-.28-1.52l-.05-.05a1.67 1.67 0 1 1 2.36-2.36l.05.05a1.38 1.38 0 0 0 1.52.28h.07a1.38 1.38 0 0 0 .83-1.26V2.5a1.67 1.67 0 1 1 3.33 0v.07a1.38 1.38 0 0 0 .83 1.26 1.38 1.38 0 0 0 1.52-.28l.05-.05a1.67 1.67 0 1 1 2.36 2.36l-.05.05a1.38 1.38 0 0 0-.28 1.52v.07a1.38 1.38 0 0 0 1.26.83h.14a1.67 1.67 0 1 1 0 3.33h-.07a1.38 1.38 0 0 0-1.26.83Z"/></svg></span>
+      <h4>Settings</h4><p>Two-column form-shell with photo upload.</p>
+    </a>
+    <a class="tile" href="templates/checkout.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-400),var(--color-brand-700));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="17.5" r="1.67"/><circle cx="15" cy="17.5" r="1.67"/><path d="M.83 1.67h3.34l2.23 11.15a1.67 1.67 0 0 0 1.67 1.35h8.1a1.67 1.67 0 0 0 1.67-1.35l1.33-6.98H5"/></svg></span>
+      <h4>Checkout</h4><p>Contact + delivery + payment + sticky summary.</p>
+    </a>
+  </div>
+</section>
+
+<section style="margin-top:64px;">
+  <div class="uui-row justify-between items-end" style="margin-bottom:24px;">
+    <div>
+      <h2 style="font-size:var(--text-display-xs);font-weight:600;color:var(--color-text-primary);">Pro templates</h2>
+      <p style="font-size:var(--text-md);color:var(--color-text-tertiary);margin-top:4px;">12 Pro-tier marketing + info templates synthesised in the same token grammar.</p>
+    </div>
+    <span class="uui-badge uui-badge--purple">Pro tier</span>
+  </div>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);gap:20px;">
+    <a class="tile" href="templates-pro/feature-grid.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="5" height="5" rx="1"/><rect x="10" y="2.5" width="5" height="5" rx="1"/><rect x="2.5" y="10" width="5" height="5" rx="1"/><rect x="10" y="10" width="5" height="5" rx="1"/></svg></span>
+      <h4>Feature grid</h4><p>3-column feature cards + 6-tile bento.</p>
+    </a>
+    <a class="tile" href="templates-pro/logo-cloud.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M1.67 10h16.66M5 5.83h10M6.67 14.17h6.66"/></svg></span>
+      <h4>Logo cloud</h4><p>Dense row + monogram badge + marquee scroll.</p>
+    </a>
+    <a class="tile" href="templates-pro/testimonials.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 13.33a1.67 1.67 0 0 1-1.67 1.67H5.83L2.5 18.33V3.33a1.67 1.67 0 0 1 1.67-1.66h11.66a1.67 1.67 0 0 1 1.67 1.66Z"/></svg></span>
+      <h4>Testimonials</h4><p>3 cards + branded hero + carousel variant.</p>
+    </a>
+    <a class="tile" href="templates-pro/faq.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8.33"/><path d="M7.58 7.5a2.5 2.5 0 0 1 4.84 0c0 1.67-2.5 2.5-2.5 2.5M10 13.33h.01"/></svg></span>
+      <h4>FAQ</h4><p>Accordion grid with filter sidebar.</p>
+    </a>
+    <a class="tile" href="templates-pro/cta-section.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.17" width="15" height="11.67" rx="1.67"/><path d="M6.67 10h6.66"/></svg></span>
+      <h4>CTA section</h4><p>3 variants: dark hero + brand split + newsletter.</p>
+    </a>
+    <a class="tile" href="templates-pro/footer.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 13.33h15M2.5 15.83h15M2.5 6.67v5M6.67 6.67v5M10.83 6.67v5M15 6.67v5"/></svg></span>
+      <h4>Footer</h4><p>4-column + newsletter + minimal variants.</p>
+    </a>
+    <a class="tile" href="templates-pro/about.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="6.67" r="2.5"/><circle cx="12.5" cy="6.67" r="2.5"/><path d="M3.33 15.83a4.17 4.17 0 0 1 8.34 0M8.33 15.83a4.17 4.17 0 0 1 8.34 0"/></svg></span>
+      <h4>About</h4><p>Hero + stats + team grid + timeline story.</p>
+    </a>
+    <a class="tile" href="templates-pro/blog-index.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="3.33" width="15" height="13.33" rx="1.67"/><path d="M5.83 7.5h8.34M5.83 10.83h8.34M5.83 14.17h5"/></svg></span>
+      <h4>Blog index</h4><p>9-post card grid + tab filters + pagination.</p>
+    </a>
+    <a class="tile" href="templates-pro/case-study.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2.5H7.5a1.67 1.67 0 0 0-1.67 1.67v11.66A1.67 1.67 0 0 0 7.5 17.5H15a1.67 1.67 0 0 0 1.67-1.67V4.17A1.67 1.67 0 0 0 15 2.5Z"/><path d="M9.17 7.5h4.16M9.17 10.83h4.16M9.17 14.17h2.5"/></svg></span>
+      <h4>Case study</h4><p>Long-scroll shell with sticky TOC + stats strip.</p>
+    </a>
+    <a class="tile" href="templates-pro/error-404.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><circle cx="10" cy="10" r="8.33"/><path d="m7.5 7.5 5 5M12.5 7.5l-5 5"/></svg></span>
+      <h4>404 &amp; 500</h4><p>Paired error pages with status code art.</p>
+    </a>
+    <a class="tile" href="templates-pro/empty-state-gallery.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="2.5" width="15" height="15" rx="1.67"/><path d="M6.67 6.67h.01M13.33 6.67h.01M6.67 13.33a4.17 4.17 0 0 1 6.66 0"/></svg></span>
+      <h4>Empty states</h4><p>12 patterns with copy + primary action.</p>
+    </a>
+    <a class="tile" href="templates-pro/pricing-compare.html">
+      <span class="uui-ficon uui-ficon--md" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;" class="ico"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.17" width="15" height="11.67" rx="1.67"/><path d="M2.5 8.33h15M6.67 4.17v11.66M13.33 4.17v11.66"/></svg></span>
+      <h4>Pricing comparison</h4><p>4-tier wide table with group headers.</p>
+    </a>
+  </div>
+</section>
+
+<section style="margin-top:64px;">
+  <div style="margin-bottom:24px;">
+    <h2 style="font-size:var(--text-display-xs);font-weight:600;color:var(--color-text-primary);">Icons 4K Synth</h2>
+    <p style="font-size:var(--text-md);color:var(--color-text-tertiary);margin-top:4px;">15,566 icons in four styles — stroke / solid / duotone / duocolor — across <code>icons-4k-synth/</code>.</p>
+  </div>
+  <a class="tile" href="icons-4k-synth/gallery.html" style="display:block;">
+    <div class="uui-row gap-4 items-center">
+      <span class="uui-ficon uui-ficon--lg" style="background:linear-gradient(135deg,var(--color-brand-500),var(--color-brand-800));color:#fff;"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"><polygon points="10,2 12.5,7 18,8 14,12 15,18 10,15 5,18 6,12 2,8 7.5,7"/></svg></span>
+      <div>
+        <h4 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text-primary);">Browse 15,566 icons</h4>
+        <p style="font-size:var(--text-sm);color:var(--color-text-tertiary);margin-top:4px;">Stroke 3,494 · Solid 5,658 · Duotone 3,207 · Duocolor 3,207. 20-column lazy-load gallery.</p>
+      </div>
+    </div>
+  </a>
+</section>
+
+<section style="margin-top:64px;">
+  <div class="uui-card" style="padding:32px;">
+    <h2 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text-primary);">Acquisition method &amp; license</h2>
+    <p style="font-size:var(--text-sm);color:var(--color-text-tertiary);margin-top:4px;">See <code>LICENSE_NOTE.md</code> for per-asset provenance.</p>
+    <table class="uui-table" style="margin-top:16px;">
+      <thead>
+        <tr><th>Method</th><th>What it covers</th><th>License basis</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="cell-primary">Cloned (MIT)</td><td>294 React components under <code>raw/untitled-ui-react/</code>, full tokens &amp; styles</td><td>MIT (Copyright 2025 Untitled UI). Unrestricted internal + commercial.</td></tr>
+        <tr><td class="cell-primary">Scraped</td><td>Marketing/Pro reference pages as raw HTML at <code>raw/scraped/</code></td><td>Private research, UK fair dealing for non-commercial study.</td></tr>
+        <tr><td class="cell-primary">Recreated</td><td>14 component HTML demos + 8 template HTML shells in this folder</td><td>Independent expression using the MIT design tokens (colors/type/spacing are themselves MIT per styles/theme.css).</td></tr>
+        <tr><td class="cell-primary">Tokens port</td><td><code>design.css</code> + <code>tokens.json</code> derived from the MIT theme.css</td><td>MIT (same copyright).</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer style="margin-top:64px;padding-top:32px;border-top:1px solid var(--color-border-secondary);text-align:center;font-size:var(--text-sm);color:var(--color-text-quaternary);">
+  Untitled UI Pro — extracted for Clawmachine project. Internal reference only.
+</footer>
+
+</main>
+</body>
+</html>

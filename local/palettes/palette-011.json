@@ -1,0 +1,15 @@
+{
+  "id": "palette-011",
+  "name": "chromatic-bunker",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#1a2a18",
+    "surface": "#2d3d28",
+    "card": "#3d4d38",
+    "accent": "#00ff00",
+    "secondary": "#ff0000",
+    "text": "#e8e8e8",
+    "muted": "#787870"
+  },
+  "weight": 0
+}

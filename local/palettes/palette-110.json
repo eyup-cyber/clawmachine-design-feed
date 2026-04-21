@@ -1,0 +1,15 @@
+{
+  "id": "palette-110",
+  "name": "lava-red-alert",
+  "source": "ultra-expansion-cycle2-electric-industrial",
+  "colors": {
+    "bg": "#D50000",
+    "surface": "#EB2929",
+    "card": "#E01414",
+    "accent": "#00FFCC",
+    "secondary": "#FFEA00",
+    "text": "#FFFFFF",
+    "muted": "#409985"
+  },
+  "weight": 10
+}

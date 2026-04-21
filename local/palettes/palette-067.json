@@ -1,0 +1,15 @@
+{
+  "id": "palette-067",
+  "name": "neon-samurai",
+  "source": "media.io-cyberpunk-complementary",
+  "colors": {
+    "bg": "#0A0A0F",
+    "surface": "#2B2D42",
+    "card": "#353754",
+    "accent": "#FF0054",
+    "secondary": "#00BBF9",
+    "text": "#E8E8F0",
+    "muted": "#F4F4F8"
+  },
+  "weight": 10
+}

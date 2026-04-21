@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vercel — Deployment Dashboard (recreation)</title>
+<style>
+/* Tokens from vercel.com/_next/static/immutable/chunks/*.css + vercel.com/geist/colors */
+:root {
+  --bg-1: #FAFAFA;
+  --bg-2: #FFFFFF;
+  --fg: #000000;
+  --fg-muted: #666666;
+  --fg-subtle: #999999;
+  --border: #EAEAEA;
+  --border-strong: #888888;
+  --accent-blue: #0072F5;
+  --success: #0070F3;
+  --success-green: #17C964;
+  --error: #F31260;
+  --warn: #F5A524;
+  --radius: 6px;
+  --radius-pill: 100px;
+  --font-sans: 'Geist', Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, 'Roboto Mono', Menlo, monospace;
+  --duration: 0.15s;
+  --ease: cubic-bezier(0.46, 0.27, 0.16, 1.02);
+  --shadow-sm: 0 0 0 1px var(--border), 0px 4px 8px rgba(0,0,0,0.04);
+  --shadow-md: 0 0 0 1px var(--border), 0 8px 30px rgba(0,0,0,0.08);
+  --shadow-hover: 0 0 0 1px var(--fg), 0 8px 30px rgba(0,0,0,0.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-1: #000000; --bg-2: #0A0A0A;
+    --fg: #FFFFFF; --fg-muted: #888888; --fg-subtle: #666666;
+    --border: #333333; --border-strong: #555555;
+  }
+}
+@font-face { font-family: 'Geist'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/media/caa3a2e1cccd8315.p.400zotvijr2rn.woff2') format('woff2'); }
+@font-face { font-family: 'Geist Mono'; font-style: normal; font-weight: 100 900; font-display: block; src: url('https://vercel.com/vc-ap-vercel-marketing/_next/static/immutable/media/797e433ab948586e.p.3f30ggp2vw8zj.woff2') format('woff2'); }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg-1); color: var(--fg); font-family: var(--font-sans); font-size: 14px; line-height: 1.5; }
+code, pre { font-family: var(--font-mono); }
+
+.navbar { background: var(--bg-2); border-bottom: 1px solid var(--border); height: 64px; display: flex; align-items: center; padding: 0 24px; gap: 16px; }
+.logo { width: 24px; height: 24px; }
+.logo svg { display: block; }
+.crumb { display: flex; align-items: center; gap: 8px; font-weight: 500; font-size: 14px; }
+.crumb-slash { color: var(--fg-subtle); }
+.nav-right { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+.nav-link { color: var(--fg-muted); font-size: 14px; text-decoration: none; }
+.nav-link:hover { color: var(--fg); }
+.avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg,#F31260,#0072F5); }
+
+.tabs { background: var(--bg-2); border-bottom: 1px solid var(--border); padding: 0 24px; display: flex; gap: 24px; }
+.tab { padding: 16px 0; font-size: 14px; color: var(--fg-muted); cursor: pointer; border-bottom: 2px solid transparent; font-weight: 400; }
+.tab.active { color: var(--fg); border-bottom-color: var(--fg); font-weight: 500; }
+
+.container { max-width: 1280px; margin: 0 auto; padding: 32px 24px; }
+h1 { font-family: var(--font-sans); font-size: 32px; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 4px; }
+.sub { color: var(--fg-muted); font-size: 14px; margin-bottom: 32px; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+.stat-card { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+.stat-label { font-size: 13px; color: var(--fg-muted); margin-bottom: 8px; font-weight: 500; }
+.stat-value { font-size: 28px; font-weight: 600; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.stat-delta { font-size: 12px; color: var(--success-green); margin-left: 8px; font-weight: 500; }
+.stat-delta.neg { color: var(--error); }
+
+.section { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 16px; overflow: hidden; }
+.section-h { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+.section-h h2 { font-size: 16px; font-weight: 600; }
+.btn { display: inline-flex; align-items: center; gap: 6px; height: 32px; padding: 0 12px; border-radius: var(--radius); font-size: 14px; font-weight: 500; cursor: pointer; border: 1px solid var(--border); background: var(--bg-2); color: var(--fg); transition: box-shadow var(--duration) var(--ease); }
+.btn:hover { box-shadow: var(--shadow-hover); }
+.btn.primary { background: var(--fg); color: var(--bg-2); border-color: var(--fg); }
+
+.deploy-row { display: grid; grid-template-columns: 20px 1fr 120px 140px 110px 24px; gap: 16px; padding: 16px 20px; align-items: center; border-bottom: 1px solid var(--border); font-size: 14px; }
+.deploy-row:last-child { border-bottom: none; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; }
+.status-dot.ready { background: var(--success-green); }
+.status-dot.building { background: var(--warn); animation: pulse 1.4s infinite; }
+.status-dot.error { background: var(--error); }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+.deploy-meta { display: flex; flex-direction: column; gap: 2px; }
+.deploy-title { font-weight: 500; color: var(--fg); }
+.deploy-sub { font-size: 12px; color: var(--fg-muted); font-family: var(--font-mono); }
+.env-pill { display: inline-flex; align-items: center; justify-content: center; height: 22px; padding: 0 8px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 500; border: 1px solid var(--border); color: var(--fg-muted); }
+.env-pill.prod { background: color-mix(in srgb, var(--success-green) 8%, transparent); border-color: color-mix(in srgb, var(--success-green) 30%, var(--border)); color: var(--success-green); }
+.commit-hash { font-family: var(--font-mono); font-size: 12px; color: var(--fg-muted); }
+.deploy-time { font-size: 12px; color: var(--fg-muted); text-align: right; }
+
+.logs { background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; font-family: var(--font-mono); font-size: 12px; line-height: 1.6; overflow-x: auto; }
+.log-row { display: grid; grid-template-columns: 110px 60px 1fr; gap: 12px; padding: 1px 0; }
+.log-time { color: var(--fg-subtle); }
+.log-tag { color: var(--accent-blue); font-weight: 500; }
+.log-tag.warn { color: var(--warn); }
+.log-tag.err { color: var(--error); }
+.log-tag.ok { color: var(--success-green); }
+.log-body { white-space: pre; color: var(--fg-muted); }
+.log-row:hover .log-body { color: var(--fg); }
+
+.grid-foot { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-top: 16px; }
+.chart { height: 160px; background: var(--bg-2); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; position: relative; overflow: hidden; }
+.chart h3 { font-size: 13px; color: var(--fg-muted); font-weight: 500; margin-bottom: 8px; }
+.chart-value { font-size: 24px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.bars { display: flex; align-items: flex-end; gap: 2px; height: 64px; margin-top: 12px; }
+.bar { flex: 1; background: var(--fg); opacity: 0.4; border-radius: 1px; }
+.bar:hover { opacity: 1; }
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo"><svg width="24" height="24" viewBox="0 0 16 16"><path fill="currentColor" d="M8 1l8 14H0L8 1z"/></svg></div>
+  <div class="crumb">clawmachine <span class="crumb-slash">/</span> clawmachine-app</div>
+  <div class="nav-right">
+    <a class="nav-link">Deployments</a>
+    <a class="nav-link">Analytics</a>
+    <a class="nav-link">Logs</a>
+    <a class="nav-link">Settings</a>
+    <div class="avatar"></div>
+  </div>
+</nav>
+
+<div class="tabs">
+  <div class="tab">Overview</div>
+  <div class="tab active">Deployments</div>
+  <div class="tab">Analytics</div>
+  <div class="tab">Speed Insights</div>
+  <div class="tab">Logs</div>
+  <div class="tab">Storage</div>
+  <div class="tab">Settings</div>
+</div>
+
+<div class="container">
+  <h1>clawmachine-app</h1>
+  <p class="sub">Production · main · Last deployed 2 min ago</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">Requests (24h)</div>
+      <div class="stat-value">47,281 <span class="stat-delta">+12%</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">p95 Response</div>
+      <div class="stat-value">142ms <span class="stat-delta">-8%</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Edge Errors</div>
+      <div class="stat-value">3 <span class="stat-delta neg">+2</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Bandwidth</div>
+      <div class="stat-value">18.4 GB</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-h">
+      <h2>Deployments</h2>
+      <button class="btn primary">+ Deploy</button>
+    </div>
+
+    <div class="deploy-row">
+      <span class="status-dot ready"></span>
+      <div class="deploy-meta">
+        <span class="deploy-title">Fix: agent retry backoff with Decodo session rotation</span>
+        <span class="deploy-sub">main · 4a71c8f · Regan</span>
+      </div>
+      <span class="env-pill prod">Production</span>
+      <span class="commit-hash">4a71c8f</span>
+      <span class="deploy-time">2 min ago</span>
+      <span>⋯</span>
+    </div>
+    <div class="deploy-row">
+      <span class="status-dot building"></span>
+      <div class="deploy-meta">
+        <span class="deploy-title">Feat: heretic abliteration pass on Jackrong v2</span>
+        <span class="deploy-sub">heretic-v2 · e8fb234 · Regan</span>
+      </div>
+      <span class="env-pill">Preview</span>
+      <span class="commit-hash">e8fb234</span>
+      <span class="deploy-time">Building…</span>
+      <span>⋯</span>
+    </div>
+    <div class="deploy-row">
+      <span class="status-dot ready"></span>
+      <div class="deploy-meta">
+        <span class="deploy-title">Refactor: scout-bridge RPC shape for post-Sep cookie flow</span>
+        <span class="deploy-sub">scout-bridge · c3e88a2 · Regan</span>
+      </div>
+      <span class="env-pill">Preview</span>
+      <span class="commit-hash">c3e88a2</span>
+      <span class="deploy-time">34 min ago</span>
+      <span>⋯</span>
+    </div>
+    <div class="deploy-row">
+      <span class="status-dot error"></span>
+      <div class="deploy-meta">
+        <span class="deploy-title">Chore: strip Clawmachine_capital generated residue</span>
+        <span class="deploy-sub">cleanup · a90f1d8 · Regan</span>
+      </div>
+      <span class="env-pill">Preview</span>
+      <span class="commit-hash">a90f1d8</span>
+      <span class="deploy-time">1 hr ago</span>
+      <span>⋯</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-h"><h2>Build Logs <span style="color:var(--fg-muted);font-weight:400;font-size:13px;">· heretic-v2 · e8fb234</span></h2></div>
+    <div class="logs">
+      <div class="log-row"><span class="log-time">14:32:01.112</span><span class="log-tag">INFO</span><span class="log-body">Running `npm install`...</span></div>
+      <div class="log-row"><span class="log-time">14:32:04.908</span><span class="log-tag ok">OK</span><span class="log-body">Dependencies installed (347 packages)</span></div>
+      <div class="log-row"><span class="log-time">14:32:05.220</span><span class="log-tag">INFO</span><span class="log-body">Running `npm run build`...</span></div>
+      <div class="log-row"><span class="log-time">14:32:11.477</span><span class="log-tag">INFO</span><span class="log-body">▲ Next.js 15.0.3</span></div>
+      <div class="log-row"><span class="log-time">14:32:14.029</span><span class="log-tag ok">OK</span><span class="log-body">Creating an optimized production build...</span></div>
+      <div class="log-row"><span class="log-time">14:32:22.001</span><span class="log-tag ok">OK</span><span class="log-body">Compiled successfully</span></div>
+      <div class="log-row"><span class="log-time">14:32:22.118</span><span class="log-tag">INFO</span><span class="log-body">Route (app)                                Size    First Load JS</span></div>
+      <div class="log-row"><span class="log-time">14:32:22.119</span><span class="log-tag">INFO</span><span class="log-body">┌ ○ /                                      5.2 kB           108 kB</span></div>
+      <div class="log-row"><span class="log-time">14:32:22.120</span><span class="log-tag">INFO</span><span class="log-body">├ ○ /scout                                 3.1 kB           106 kB</span></div>
+      <div class="log-row"><span class="log-time">14:32:22.121</span><span class="log-tag">INFO</span><span class="log-body">└ ○ /evaluator                             7.4 kB           110 kB</span></div>
+      <div class="log-row"><span class="log-time">14:32:23.408</span><span class="log-tag warn">WARN</span><span class="log-body">Large bundle detected: /evaluator (110 kB)</span></div>
+      <div class="log-row"><span class="log-time">14:32:24.502</span><span class="log-tag">INFO</span><span class="log-body">Uploading build outputs to Vercel...</span></div>
+    </div>
+  </div>
+
+  <div class="grid-foot">
+    <div class="chart">
+      <h3>Requests per hour</h3>
+      <div class="chart-value">47,281</div>
+      <div class="bars">
+        <div class="bar" style="height:12%"></div>
+        <div class="bar" style="height:18%"></div>
+        <div class="bar" style="height:14%"></div>
+        <div class="bar" style="height:22%"></div>
+        <div class="bar" style="height:34%"></div>
+        <div class="bar" style="height:28%"></div>
+        <div class="bar" style="height:41%"></div>
+        <div class="bar" style="height:52%"></div>
+        <div class="bar" style="height:48%"></div>
+        <div class="bar" style="height:61%"></div>
+        <div class="bar" style="height:72%"></div>
+        <div class="bar" style="height:68%"></div>
+        <div class="bar" style="height:88%"></div>
+        <div class="bar" style="height:92%"></div>
+        <div class="bar" style="height:77%"></div>
+        <div class="bar" style="height:81%"></div>
+        <div class="bar" style="height:65%"></div>
+        <div class="bar" style="height:71%"></div>
+        <div class="bar" style="height:58%"></div>
+        <div class="bar" style="height:44%"></div>
+        <div class="bar" style="height:38%"></div>
+        <div class="bar" style="height:32%"></div>
+        <div class="bar" style="height:24%"></div>
+        <div class="bar" style="height:19%"></div>
+      </div>
+    </div>
+    <div class="chart">
+      <h3>Status</h3>
+      <div class="chart-value">99.97%</div>
+      <div style="display:flex;flex-direction:column;gap:4px;margin-top:12px;font-size:12px;color:var(--fg-muted);">
+        <div>✓ API · Operational</div>
+        <div>✓ Edge · Operational</div>
+        <div>✓ Functions · Operational</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

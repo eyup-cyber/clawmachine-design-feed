@@ -1,0 +1,15 @@
+{
+  "id": "palette-069",
+  "name": "rusted-neon",
+  "source": "media.io-cyberpunk-split-comp",
+  "colors": {
+    "bg": "#0F0E0E",
+    "surface": "#4A4E69",
+    "card": "#4A4E69",
+    "accent": "#FF4D00",
+    "secondary": "#FF9E00",
+    "text": "#4A4E69",
+    "muted": "#00E0FF"
+  },
+  "weight": 0
+}

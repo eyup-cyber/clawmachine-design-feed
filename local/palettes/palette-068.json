@@ -1,0 +1,15 @@
+{
+  "id": "palette-068",
+  "name": "laser-lime-grid",
+  "source": "media.io-cyberpunk-analogous",
+  "colors": {
+    "bg": "#0A0C10",
+    "surface": "#1B1F2E",
+    "card": "#252A3C",
+    "accent": "#D6FF00",
+    "secondary": "#4DFF4D",
+    "text": "#E0E8F0",
+    "muted": "#00BBF9"
+  },
+  "weight": 10
+}

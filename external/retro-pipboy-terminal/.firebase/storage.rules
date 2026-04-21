@@ -1,0 +1,31 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Helpers
+    function isOwner(uid) {
+      return request.auth != null && request.auth.uid == uid;
+    }
+    
+    // Only enforce contentType/size on create/update; request.resource is null on delete.
+    function createOrUpdateIsValid() {
+      return request.resource == null || (
+        request.resource.contentType.matches('image/.*') &&
+        request.resource.size < 2 * 1024 * 1024 // 2 MB
+      );
+    }
+
+    // Publicly readable profile images
+    match /users/{uid}/images/{allPaths=**} {
+      allow read: if true; // public avatars
+      allow write: if isOwner(uid) && createOrUpdateIsValid();
+    }
+
+    // Forum post image uploads: forum/uploads/<uid>/<fileName>
+    match /forum/uploads/{uid}/{allPaths=**} {
+      allow read: if true; // images are embedded in public posts
+      allow write: if isOwner(uid) && createOrUpdateIsValid();
+    }
+  }
+}

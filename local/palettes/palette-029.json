@@ -1,0 +1,15 @@
+{
+  "id": "palette-029",
+  "name": "toxic-lime",
+  "source": "chromatic-research-colorhex",
+  "colors": {
+    "bg": "#0a0a0f",
+    "surface": "#141419",
+    "card": "#1e1e28",
+    "accent": "#E2FF68",
+    "secondary": "#D9FF36",
+    "text": "#F5FFCD",
+    "muted": "#d9ff32"
+  },
+  "weight": 0
+}

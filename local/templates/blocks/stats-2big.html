@@ -1,0 +1,128 @@
+<div class="block-stats-2big">
+<style>
+.block-stats-2big .hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sl-content-gap);
+}
+.block-stats-2big .hero-card {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  padding: var(--sl-space-lg);
+  box-shadow: var(--sl-shadow-raised);
+  position: relative;
+  overflow: hidden;
+}
+.block-stats-2big .hero-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--sl-accent) 4%, transparent));
+  pointer-events: none;
+}
+.block-stats-2big .hero-label {
+  font-family: var(--sl-font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  
+  color: var(--sl-muted);
+  margin-bottom: var(--sl-space-sm);
+}
+.block-stats-2big .hero-value {
+  font-family: var(--sl-font-display);
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--sl-text);
+  line-height: 1;
+}
+.block-stats-2big .hero-trend {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+  margin-top: var(--sl-space-md);
+}
+.block-stats-2big .hero-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--sl-border-radius);
+  font-size: 14px;
+  font-weight: 700;
+}
+.block-stats-2big .hero-arrow.up {
+  background: color-mix(in srgb, var(--sl-accent) 15%, transparent);
+  color: var(--sl-accent);
+}
+.block-stats-2big .hero-arrow.down {
+  background: color-mix(in srgb, var(--sl-secondary) 15%, transparent);
+  color: var(--sl-secondary);
+}
+.block-stats-2big .hero-trend-text {
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+  color: var(--sl-muted);
+}
+.block-stats-2big .hero-spark {
+  height: 32px;
+  margin-top: var(--sl-space-md);
+  background: var(--sl-surface);
+  border-radius: var(--sl-border-radius);
+  overflow: hidden;
+  position: relative;
+}
+.block-stats-2big .hero-spark-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, color-mix(in srgb, var(--sl-accent) 30%, transparent), transparent);
+}
+.block-stats-2big .hero-spark-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--sl-accent);
+  opacity: 0.6;
+}
+@media (max-width: 600px) {
+  .block-stats-2big .hero-stats { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="hero-stats">
+  <div class="hero-card">
+    <div class="hero-label">TOTAL REVENUE</div>
+    <div class="hero-value">$184,320</div>
+    <div class="hero-trend">
+      <span class="hero-arrow up">^</span>
+      <span class="hero-trend-text">+8.7% vs previous period</span>
+    </div>
+    <div class="hero-spark">
+      <div class="hero-spark-fill" style="height:65%"></div>
+      <div class="hero-spark-line" style="top:35%"></div>
+    </div>
+  </div>
+
+  <div class="hero-card">
+    <div class="hero-label">ACTIVE FLEET</div>
+    <div class="hero-value">2,847</div>
+    <div class="hero-trend">
+      <span class="hero-arrow up">^</span>
+      <span class="hero-trend-text">+142 machines this quarter</span>
+    </div>
+    <div class="hero-spark">
+      <div class="hero-spark-fill" style="height:82%"></div>
+      <div class="hero-spark-line" style="top:18%"></div>
+    </div>
+  </div>
+</div>
+</div>

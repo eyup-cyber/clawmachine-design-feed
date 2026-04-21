@@ -1,0 +1,15 @@
+{
+  "id": "palette-095",
+  "name": "cyber-gothic",
+  "source": "ultra-expansion-cycle2-neobrutalism",
+  "colors": {
+    "bg": "#17010B",
+    "surface": "#2E0418",
+    "card": "#240211",
+    "accent": "#FF0055",
+    "secondary": "#BDFF00",
+    "text": "#FFE6EE",
+    "muted": "#A64062"
+  },
+  "weight": 10
+}

@@ -1,0 +1,85 @@
+@use '../../styles/breakpoints' as bps;
+@use '../../styles/colors' as col;
+@use '../../styles/fluid-font' as ff;
+@use '../../styles/variables' as var;
+
+footer {
+  align-items: center;
+  background-color: col.$black;
+  border-top: 1px solid col.$pip-green-darkest;
+  box-sizing: border-box;
+  color: col.$pip-green;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1rem 1rem 1rem;
+  position: relative;
+  width: 100%;
+
+  pip-theme-selector {
+    border-top: 1px dashed col.$pip-green-darkest;
+    margin: 0 0 1rem 0;
+    padding-top: 0.5rem;
+  }
+
+  .disclaimer {
+    font-size: var.$font-xs;
+    max-width: var.$section-max-width;
+    text-align: center;
+  }
+
+  .logo-container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: var.$page-max-width;
+    padding: 0 1.5rem;
+
+    // 360px and below
+    @include bps.media('max', 'xs') {
+      padding: 0;
+    }
+
+    .branding {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+
+      @include bps.media('max', 'xs') {
+        flex-direction: column;
+      }
+
+      img.logo {
+        height: 40px;
+        margin-right: 1rem;
+
+        @include bps.media('max', 'sm') {
+          margin-right: 0.5rem;
+        }
+      }
+
+      .site-title {
+        color: col.$pip-green;
+        font-family: var.$secondary-font-family;
+        font-size: var.$font-xl;
+        letter-spacing: 1px;
+
+        @include ff.fluid-font(var.$font-lg, var.$font-xxl);
+
+        @include bps.media('max', 'xs') {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  .version {
+    color: col.$pip-green;
+    font-family: var.$secondary-font-family;
+    font-size: 1rem;
+    opacity: 0.7;
+    margin-bottom: 2rem;
+  }
+}

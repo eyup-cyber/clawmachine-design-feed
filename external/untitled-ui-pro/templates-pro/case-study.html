@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>Case study — Untitled UI Pro</title>
+<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="stylesheet" href="../design.css">
+</head>
+<body>
+
+<!-- hero -->
+<section class="uui-container" style="padding:64px 32px 32px;">
+  <a href="#" class="uui-row gap-2 items-center" style="font-size:var(--text-sm);color:var(--color-text-secondary);text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg> Back to stories</a>
+  <div class="uui-row gap-3 items-center" style="margin-top:40px;">
+    <span class="uui-badge uui-badge--modern">Enterprise</span>
+    <span class="uui-badge uui-badge--brand">Finance</span>
+  </div>
+  <h1 class="t-display-xl" style="font-weight:600;color:var(--color-text-primary);margin-top:20px;max-width:900px;">How Parabola consolidated five design tools and cut handoff time by 74%</h1>
+  <p style="font-size:var(--text-xl);line-height:var(--text-xl-lh);color:var(--color-text-tertiary);margin-top:16px;max-width:720px;">Mira Hakimi's team replaced a tangle of Figma, Storybook, Zeplin, Chromatic, and a hand-written design-ops wiki with a single workspace — then onboarded 140 new engineers in six months.</p>
+</section>
+
+<!-- hero image -->
+<section class="uui-container" style="padding:32px;">
+  <div style="aspect-ratio:16/9;border-radius:var(--radius-2xl);background:linear-gradient(135deg,var(--color-brand-400),var(--color-brand-800));"></div>
+</section>
+
+<!-- stats strip -->
+<section class="uui-container" style="padding:32px;">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;padding:48px;background:var(--color-bg-secondary);border-radius:var(--radius-2xl);">
+    <div><p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">TOOLS CONSOLIDATED</p><p class="t-display-lg" style="font-weight:600;color:var(--color-text-primary);margin-top:8px;">5 → 1</p></div>
+    <div><p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">HANDOFF TIME</p><p class="t-display-lg" style="font-weight:600;color:var(--color-text-primary);margin-top:8px;">-74%</p></div>
+    <div><p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">NEW HIRES ONBOARDED</p><p class="t-display-lg" style="font-weight:600;color:var(--color-text-primary);margin-top:8px;">140</p></div>
+    <div><p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-brand-primary);">NPS AT 6 MONTHS</p><p class="t-display-lg" style="font-weight:600;color:var(--color-text-primary);margin-top:8px;">+62</p></div>
+  </div>
+</section>
+
+<!-- long-scroll body -->
+<section class="uui-container" style="padding:64px 32px;display:grid;grid-template-columns:240px 1fr 220px;gap:48px;">
+  <aside style="position:sticky;top:24px;align-self:start;font-size:var(--text-sm);">
+    <p style="font-weight:600;color:var(--color-text-quaternary);margin-bottom:16px;">On this page</p>
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;">
+      <li><a href="#context" style="color:var(--color-text-brand-primary);text-decoration:none;font-weight:500;">The situation</a></li>
+      <li><a href="#problem" style="color:var(--color-text-secondary);text-decoration:none;">Where it went wrong</a></li>
+      <li><a href="#approach" style="color:var(--color-text-secondary);text-decoration:none;">The rollout</a></li>
+      <li><a href="#outcome" style="color:var(--color-text-secondary);text-decoration:none;">Results</a></li>
+      <li><a href="#quote" style="color:var(--color-text-secondary);text-decoration:none;">In their words</a></li>
+    </ul>
+  </aside>
+
+  <article style="font-size:var(--text-lg);line-height:1.75;color:var(--color-text-secondary);">
+    <h2 id="context" style="font-size:var(--text-display-sm);font-weight:600;color:var(--color-text-primary);margin:0 0 16px;">The situation</h2>
+    <p>Parabola had scaled from 60 to 340 engineers in two years. The design team was still three people, but they now owned 11 surface-level products and a shared internal tools library. The cost wasn't in the design itself — it was in the handoff. Every release shipped with a flurry of last-minute "wait, should this be the secondary colour?" pull-request comments.</p>
+    <p>Mira's team audited their weekly time and found that 38% of every designer's hours was being spent answering colour and spacing questions that a good tokens file would have solved.</p>
+
+    <h2 id="problem" style="font-size:var(--text-display-sm);font-weight:600;color:var(--color-text-primary);margin:48px 0 16px;">Where it went wrong</h2>
+    <p>The team had accumulated five tools in three years: Figma for source-of-truth designs, Zeplin for handoff, Storybook for component demos, Chromatic for visual regressions, and a Notion page titled <em>"design-ops but for real this time"</em>.</p>
+    <p>Each tool held one-third of the picture. The Notion page was 200 scrolls long. Nobody read past the table of contents.</p>
+    <blockquote style="border-left:3px solid var(--color-border-brand);padding:16px 24px;margin:32px 0;background:var(--color-bg-secondary);border-radius:0 var(--radius-lg) var(--radius-lg) 0;"><p style="font-size:var(--text-xl);font-weight:500;color:var(--color-text-primary);margin:0;">"I was being paid to translate hex codes. That's not what I signed up for."</p><p style="font-size:var(--text-sm);color:var(--color-text-tertiary);margin:12px 0 0;">— Jordan, staff designer at Parabola</p></blockquote>
+
+    <h2 id="approach" style="font-size:var(--text-display-sm);font-weight:600;color:var(--color-text-primary);margin:48px 0 16px;">The rollout</h2>
+    <p>The team picked one product surface — the settings dashboard — and rebuilt it inside Untitled UI Pro over two weeks. They migrated only tokens in that first pass, not components. The goal was to prove that the token layer alone would cut handoff noise.</p>
+    <p>Once settings shipped clean, the next four surfaces each took less time: 9 days, 6 days, 4 days, 3 days. The curve bent because every surface after the first reused the now-stable token namespace.</p>
+
+    <h2 id="outcome" style="font-size:var(--text-display-sm);font-weight:600;color:var(--color-text-primary);margin:48px 0 16px;">Results</h2>
+    <p>Six months in, Parabola had migrated all 11 surfaces. The design team's weekly "hex code translation" tickets dropped from 46 to 3. Engineers started filing their own token proposals, and the design team accepted 31 out of 42.</p>
+    <p>They killed the five-tool stack, kept Figma as the source of truth for static designs, and kept Untitled UI Pro as the living design system. Everything else went away.</p>
+
+    <h2 id="quote" style="font-size:var(--text-display-sm);font-weight:600;color:var(--color-text-primary);margin:48px 0 16px;">In their words</h2>
+    <blockquote style="margin:0;padding:48px;background:var(--color-bg-brand-section);color:#fff;border-radius:var(--radius-2xl);">
+      <p style="font-size:var(--text-xl);font-weight:500;margin:0;line-height:1.55;">"The best decision we made wasn't switching tools — it was giving ourselves permission to delete four of them. Untitled UI didn't win by doing everything. It won by doing the middle layer so well that the rest of the stack collapsed."</p>
+      <div class="uui-row gap-3 items-center" style="margin-top:32px;">
+        <span class="uui-avatar uui-avatar--lg" style="background:rgba(255,255,255,0.2);color:#fff;">MH</span>
+        <div><div style="font-weight:600;">Mira Hakimi</div><div style="opacity:0.75;font-size:var(--text-sm);">Head of Design, Parabola</div></div>
+      </div>
+    </blockquote>
+  </article>
+
+  <aside style="position:sticky;top:24px;align-self:start;">
+    <div style="padding:24px;border-radius:var(--radius-xl);background:var(--color-bg-secondary);">
+      <p style="font-size:var(--text-sm);font-weight:600;color:var(--color-text-quaternary);margin-bottom:16px;">ABOUT PARABOLA</p>
+      <dl style="display:flex;flex-direction:column;gap:12px;margin:0;font-size:var(--text-sm);">
+        <div><dt style="color:var(--color-text-tertiary);">Industry</dt><dd style="margin:4px 0 0;color:var(--color-text-primary);font-weight:500;">Finance / SaaS</dd></div>
+        <div><dt style="color:var(--color-text-tertiary);">Team size</dt><dd style="margin:4px 0 0;color:var(--color-text-primary);font-weight:500;">340 engineers, 3 designers</dd></div>
+        <div><dt style="color:var(--color-text-tertiary);">Headquarters</dt><dd style="margin:4px 0 0;color:var(--color-text-primary);font-weight:500;">Austin, TX</dd></div>
+        <div><dt style="color:var(--color-text-tertiary);">Plan</dt><dd style="margin:4px 0 0;color:var(--color-text-primary);font-weight:500;">Enterprise</dd></div>
+      </dl>
+      <a href="#" class="uui-btn uui-btn--primary uui-btn--md" style="width:100%;margin-top:24px;">Talk to sales</a>
+    </div>
+  </aside>
+</section>
+
+</body>
+</html>

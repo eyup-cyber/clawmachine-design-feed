@@ -1,0 +1,15 @@
+{
+  "id": "palette-045",
+  "name": "king-tomo",
+  "source": "inspiration-image",
+  "colors": {
+    "bg": "#0a0a0a",
+    "surface": "#1a1a1a",
+    "card": "#2a2a2a",
+    "accent": "#ff6b00",
+    "secondary": "#e8e8e8",
+    "text": "#f0f0f0",
+    "muted": "#6b6b6b"
+  },
+  "weight": 0
+}

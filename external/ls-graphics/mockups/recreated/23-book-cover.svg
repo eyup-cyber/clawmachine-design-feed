@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="400">
+  <rect width="400" height="560" fill="#D4D0C6"/>
+  <rect x="60" y="60" width="280" height="440" fill="#0A0A0A"/>
+  <rect x="70" y="70" width="260" height="420" fill="#E65126"/>
+  <text x="200" y="250" font-family="system-ui" font-size="28" font-weight="700" fill="#F5F2EC" text-anchor="middle">COVER</text>
+</svg>

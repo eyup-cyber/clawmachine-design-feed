@@ -1,0 +1,72 @@
+/* Decorative Layer: Wireframe Tech
+ * Thin outlines, dashed borders, monospace-adjacent feel, technical drawing aesthetic.
+ * Uses --sl-accent for outlines, --sl-muted for secondary lines.
+ */
+
+.deco-wireframe-tech .card,
+.deco-wireframe-tech [data-card] {
+  border: 1px dashed color-mix(in srgb, var(--sl-accent) 50%, transparent);
+  border-radius: 0;
+  position: relative;
+}
+
+.deco-wireframe-tech .card::before,
+.deco-wireframe-tech [data-card]::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  right: 3px;
+  bottom: 3px;
+  border: 1px dotted
+    color-mix(in srgb, var(--sl-muted, var(--sl-accent)) 25%, transparent);
+  pointer-events: none;
+}
+
+.deco-wireframe-tech button,
+.deco-wireframe-tech [data-btn] {
+  border: 1px solid var(--sl-accent);
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85em;
+  position: relative;
+}
+
+.deco-wireframe-tech button::after,
+.deco-wireframe-tech [data-btn]::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  right: -3px;
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid var(--sl-accent);
+  border-bottom: 1px solid var(--sl-accent);
+  pointer-events: none;
+}
+
+.deco-wireframe-tech input,
+.deco-wireframe-tech select,
+.deco-wireframe-tech textarea {
+  border: 1px dashed color-mix(in srgb, var(--sl-accent) 40%, transparent);
+  border-radius: 0;
+}
+
+.deco-wireframe-tech h1,
+.deco-wireframe-tech h2,
+.deco-wireframe-tech h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  border-bottom: 1px dashed
+    color-mix(in srgb, var(--sl-accent) 30%, transparent);
+  padding-bottom: 0.3em;
+}
+
+.deco-wireframe-tech hr,
+.deco-wireframe-tech [data-divider] {
+  border: none;
+  border-top: 1px dashed color-mix(in srgb, var(--sl-accent) 40%, transparent);
+  height: 0;
+}

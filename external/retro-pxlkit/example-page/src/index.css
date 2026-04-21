@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import "@pxlkit/ui-kit/styles.css";
+@source "../node_modules/@pxlkit/ui-kit";
+
+@layer base {
+  body {
+    background-color: var(--color-retro-bg);
+    color: var(--color-retro-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: 
+      linear-gradient(rgba(29, 29, 32, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(29, 29, 32, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+

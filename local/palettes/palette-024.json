@@ -1,0 +1,15 @@
+{
+  "id": "palette-024",
+  "name": "candy-neon",
+  "source": "chromatic-research-colorhex",
+  "colors": {
+    "bg": "#37013A",
+    "surface": "#410b44",
+    "card": "#4b154e",
+    "accent": "#FF3B94",
+    "secondary": "#AF3DFF",
+    "text": "#55FFE1",
+    "muted": "#69336c"
+  },
+  "weight": 10
+}

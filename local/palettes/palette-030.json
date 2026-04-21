@@ -1,0 +1,15 @@
+{
+  "id": "palette-030",
+  "name": "hey-mr-dj",
+  "source": "chromatic-research-paperheart",
+  "colors": {
+    "bg": "#0A0324",
+    "surface": "#140d2e",
+    "card": "#1e1738",
+    "accent": "#B915CC",
+    "secondary": "#210456",
+    "text": "#8DE41C",
+    "muted": "#3c3556"
+  },
+  "weight": 0
+}

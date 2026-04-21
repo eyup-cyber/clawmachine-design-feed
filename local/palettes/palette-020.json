@@ -1,0 +1,15 @@
+{
+  "id": "palette-020",
+  "name": "candy-machine-dark",
+  "source": "clawmachine-alterations",
+  "colors": {
+    "bg": "#0a0808",
+    "surface": "#1a1410",
+    "card": "#2a1e18",
+    "accent": "#ff0066",
+    "secondary": "#0066ff",
+    "text": "#ffee66",
+    "muted": "#7a7a5a"
+  },
+  "weight": 0
+}

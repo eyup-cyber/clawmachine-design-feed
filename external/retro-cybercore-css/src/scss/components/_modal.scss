@@ -1,0 +1,303 @@
+// ============================================================
+// Modal Component
+// Dialog overlay with backdrop blur and entrance animation
+// ============================================================
+
+@layer components {
+  // Modal backdrop
+  .cyber-modal {
+    --modal-accent: var(--cyber-cyan-500);
+
+    position: fixed;
+    z-index: var(--z-modal, 9000);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-md);
+    background: color-mix(in srgb, var(--cyber-void-500) 80%, transparent);
+    opacity: 0%;
+    visibility: hidden;
+    transition:
+      opacity var(--transition-base),
+      visibility var(--transition-base);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    inset: 0;
+
+    // Open state
+    &--open {
+      opacity: 100%;
+      visibility: visible;
+
+      .cyber-modal__dialog {
+        opacity: 100%;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    // Dialog box
+    &__dialog {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 500px;
+      max-height: calc(100vh - var(--space-xl));
+      border: var(--border-thin) solid var(--color-border-default);
+      background: var(--color-bg-secondary);
+      box-shadow:
+        0 25px 50px -12px color-mix(in srgb, var(--cyber-void-900) 80%, transparent),
+        0 0 20px color-mix(in srgb, var(--modal-accent) 30%, transparent),
+        0 0 40px color-mix(in srgb, var(--modal-accent) 15%, transparent);
+      opacity: 0%;
+      transform: translateY(-20px) scale(0.95);
+      transition:
+        opacity var(--transition-base) var(--ease-out-expo),
+        transform var(--transition-base) var(--ease-out-expo);
+      clip-path: polygon(
+        0 0,
+        calc(100% - 20px) 0,
+        100% 20px,
+        100% 100%,
+        20px 100%,
+        0 calc(100% - 20px)
+      );
+
+      // Corner bracket decorations (matching cards)
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 30px;
+        height: 30px;
+        border: 2px solid var(--modal-accent);
+        pointer-events: none;
+      }
+
+      &::before {
+        top: -1px;
+        left: -1px;
+        border-right: none;
+        border-bottom: none;
+      }
+
+      &::after {
+        right: -1px;
+        bottom: -1px;
+        border-top: none;
+        border-left: none;
+      }
+    }
+
+    // Modal header
+    &__header {
+      display: flex;
+      gap: var(--space-sm);
+      align-items: center;
+      padding: var(--space-md);
+      border-bottom: var(--border-thin) solid var(--color-border-default);
+    }
+
+    &__title {
+      flex: 1;
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--modal-accent);
+      text-shadow: 0 0 10px color-mix(in srgb, var(--modal-accent) 60%, transparent);
+    }
+
+    // Close button
+    &__close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      padding: 0;
+      border: var(--border-thin) solid var(--color-border-default);
+      color: var(--color-text-secondary);
+      background: transparent;
+      transition:
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        background var(--transition-fast);
+      cursor: pointer;
+
+      &:hover {
+        border-color: var(--cyber-magenta-500);
+        color: var(--cyber-magenta-500);
+        background: color-mix(in srgb, var(--cyber-magenta-500) 10%, transparent);
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--cyber-cyan-500);
+        outline-offset: 2px;
+      }
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    // Modal body
+    &__body {
+      flex: 1;
+      padding: var(--space-md);
+      overflow-y: auto;
+      line-height: var(--leading-relaxed);
+      color: var(--color-text-secondary);
+    }
+
+    // Modal footer
+    &__footer {
+      display: flex;
+      gap: var(--space-sm);
+      align-items: center;
+      justify-content: flex-end;
+      padding: var(--space-md);
+      border-top: var(--border-thin) solid var(--color-border-default);
+    }
+
+    // --------------------------------------------------------
+    // Size Variants
+    // --------------------------------------------------------
+
+    &--sm .cyber-modal__dialog {
+      max-width: 360px;
+    }
+
+    &--lg .cyber-modal__dialog {
+      max-width: 720px;
+    }
+
+    &--xl .cyber-modal__dialog {
+      max-width: 960px;
+    }
+
+    &--fullscreen .cyber-modal__dialog {
+      width: calc(100% - var(--space-lg));
+      max-width: none;
+      height: calc(100% - var(--space-lg));
+      max-height: none;
+    }
+
+    // --------------------------------------------------------
+    // Color Variants
+    // --------------------------------------------------------
+
+    &--magenta {
+      --modal-accent: var(--cyber-magenta-500);
+    }
+
+    &--yellow {
+      --modal-accent: var(--cyber-yellow-500);
+    }
+
+    &--green {
+      --modal-accent: var(--cyber-green-500);
+    }
+
+    // --------------------------------------------------------
+    // Animation Variants
+    // --------------------------------------------------------
+
+    &--slide-up .cyber-modal__dialog {
+      transform: translateY(40px) scale(1);
+    }
+
+    &--slide-up.cyber-modal--open .cyber-modal__dialog {
+      transform: translateY(0) scale(1);
+    }
+
+    &--zoom .cyber-modal__dialog {
+      transform: scale(0.8);
+    }
+
+    &--zoom.cyber-modal--open .cyber-modal__dialog {
+      transform: scale(1);
+    }
+  }
+
+  // Confirm modal specific styling
+  .cyber-modal-confirm {
+    text-align: center;
+
+    .cyber-modal__body {
+      padding: var(--space-lg) var(--space-md);
+    }
+
+    &__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
+      height: 4rem;
+      margin: 0 auto var(--space-md);
+      border: var(--border-medium) solid var(--cyber-cyan-500);
+      color: var(--cyber-cyan-500);
+      background: color-mix(in srgb, var(--cyber-cyan-500) 15%, transparent);
+      box-shadow: 0 0 15px color-mix(in srgb, var(--cyber-cyan-500) 40%, transparent);
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      &--warning {
+        border-color: var(--cyber-yellow-500);
+        color: var(--cyber-yellow-500);
+        background: color-mix(in srgb, var(--cyber-yellow-500) 15%, transparent);
+        box-shadow: 0 0 15px color-mix(in srgb, var(--cyber-yellow-500) 40%, transparent);
+      }
+
+      &--error {
+        border-color: var(--cyber-magenta-500);
+        color: var(--cyber-magenta-500);
+        background: color-mix(in srgb, var(--cyber-magenta-500) 15%, transparent);
+        box-shadow: 0 0 15px color-mix(in srgb, var(--cyber-magenta-500) 40%, transparent);
+      }
+
+      &--success {
+        border-color: var(--cyber-green-500);
+        color: var(--cyber-green-500);
+        background: color-mix(in srgb, var(--cyber-green-500) 15%, transparent);
+        box-shadow: 0 0 15px color-mix(in srgb, var(--cyber-green-500) 40%, transparent);
+      }
+    }
+
+    &__title {
+      margin: 0 0 var(--space-xs);
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-text-primary);
+    }
+
+    &__message {
+      margin: 0;
+      color: var(--color-text-secondary);
+    }
+  }
+
+  // --------------------------------------------------------
+  // Reduced motion support
+  // --------------------------------------------------------
+
+  @media (prefers-reduced-motion: reduce) {
+    .cyber-modal {
+      transition: none;
+
+      &__dialog {
+        transition: none;
+      }
+    }
+  }
+}

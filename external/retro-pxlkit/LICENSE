@@ -1,0 +1,26 @@
+Pxlkit Licensing Overview
+=========================
+
+Pxlkit uses a split licensing model so that software code, icon/art assets, and trademarks are governed separately.
+
+1. Code license — see `LICENSE-CODE`
+   Applies to the source code for `@pxlkit/core`, `@pxlkit/ui-kit`, `@pxlkit/voxel`, the Next.js app source, repo scripts, and documentation text unless a file is clearly identified as an asset or third-party material.
+
+2. Asset license — see `LICENSE-ASSETS`
+   Applies to the icon-pack packages (`@pxlkit/gamification`, `@pxlkit/feedback`, `@pxlkit/social`, `@pxlkit/weather`, `@pxlkit/ui`, `@pxlkit/effects`, `@pxlkit/parallax`), exported icon data, artwork, illustrations, screenshots, marketing images, and other visual assets unless another notice says otherwise.
+
+3. Commercial terms — see `COMMERCIAL_TERMS`
+   Paid plans remove the attribution requirement for assets licensed under `LICENSE-ASSETS`. They do not change the MIT license for code packages.
+
+4. Trademark policy — see `TRADEMARK_POLICY`
+   The Pxlkit name, logo, and brand presentation are not licensed by the code or asset licenses.
+
+5. Third-party notices — see `THIRD_PARTY_NOTICES`
+   Third-party software, SDKs, fonts, and assets remain subject to their own licenses.
+
+6. Contributor terms — see `CONTRIBUTOR_LICENSE.md`
+   Contributions are accepted under terms that keep code MIT-compatible while allowing asset contributions to remain usable under the repository's asset and commercial model.
+
+If there is any conflict between these documents, the more specific document for the relevant file or asset controls.
+
+Licensing questions: info@pxlkit.xyz

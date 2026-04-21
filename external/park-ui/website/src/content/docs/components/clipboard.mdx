@@ -1,0 +1,61 @@
+---
+title: Clipboard
+description: A component for copying text content to the system clipboard.
+metaDescription: Clipboard component for React and Solid.js enabling one-click text copying to system clipboard. Enhance user experience with seamless copy functionality.
+category: data-display
+links:
+  recipe: https://github.com/chakra-ui/park-ui/blob/main/packages/preset/src/recipes/clipboard.ts
+  ark: https://ark-ui.com/docs/components/clipboard
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { Clipboard } from '@/components/ui'
+```
+
+```tsx
+<Clipboard.Root>
+  <Clipboard.Trigger>
+    <Clipboard.CopyText />
+    <Clipboard.Indicator />
+  </Clipboard.Trigger>
+  <Clipboard.Input />
+</Clipboard.Root>
+```
+
+## Examples
+
+### Button
+
+Use the `Clipboard.Trigger` component to create a copy button.
+
+<ComponentExample name="button" />
+
+### Input
+
+Use the `Clipboard.Input` component to create a copy input.
+
+<ComponentExample name="input" />
+
+### Timeout
+
+Use the `timeout` prop to set the duration of the copied state.
+
+<ComponentExample name="timeout" /> 
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Indicator
+
+<PropsTable part="Indicator" />

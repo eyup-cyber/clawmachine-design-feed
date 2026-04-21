@@ -1,0 +1,15 @@
+{
+  "id": "palette-055",
+  "name": "colormind-surge",
+  "source": "colormind-api",
+  "colors": {
+    "bg": "#2f131b",
+    "surface": "#391d25",
+    "card": "#43272f",
+    "accent": "#db5519",
+    "secondary": "#8e7a77",
+    "text": "#f1eff1",
+    "muted": "#cb9664"
+  },
+  "weight": 0
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 540" width="900">
+  <rect width="900" height="540" fill="#E8E4DC"/>
+  <rect x="60" y="110" width="780" height="440" rx="8" fill="#1A1A1A" opacity="0.2"/>
+  <rect x="50" y="100" width="780" height="440" rx="8" fill="#F5F2EC"/>
+  <text x="440" y="330" font-family="system-ui" font-size="18" fill="#888" text-anchor="middle">Business card 85×55mm</text>
+</svg>

@@ -1,0 +1,152 @@
+<div class="block-chart-donut">
+<style>
+.block-chart-donut .donut-panel {
+  background: var(--sl-card);
+  border: 1px solid var(--sl-border-color);
+  border-radius: var(--sl-border-radius);
+  box-shadow: var(--sl-shadow-raised);
+  overflow: hidden;
+}
+.block-chart-donut .donut-hdr {
+  padding: var(--sl-space-md);
+  border-bottom: 1px solid var(--sl-border-color);
+  font-family: var(--sl-font-display);
+  font-size: 14px;
+  font-weight: 600;
+  
+  letter-spacing: 0.04em;
+}
+.block-chart-donut .donut-body {
+  padding: var(--sl-space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-xl);
+}
+.block-chart-donut .donut-wrap {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  position: relative;
+}
+.block-chart-donut .donut-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+.block-chart-donut .donut-track {
+  fill: none;
+  stroke: var(--sl-surface);
+  stroke-width: 14;
+}
+.block-chart-donut .donut-seg {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: butt;
+  stroke-dasharray: 339.3;
+  transition: opacity 0.2s;
+}
+.block-chart-donut .donut-seg:hover { opacity: 0.8; }
+.block-chart-donut .donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.block-chart-donut .donut-total {
+  font-family: var(--sl-font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--sl-text);
+  line-height: 1;
+}
+.block-chart-donut .donut-total-label {
+  font-family: var(--sl-font-mono);
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  
+  color: var(--sl-muted);
+  margin-top: 2px;
+}
+.block-chart-donut .donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sl-space-sm);
+  flex: 1;
+}
+.block-chart-donut .legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sl-space-sm);
+}
+.block-chart-donut .legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.block-chart-donut .legend-text {
+  font-family: var(--sl-font-body);
+  font-size: 12px;
+  color: var(--sl-text);
+  text-transform: lowercase;
+  flex: 1;
+}
+.block-chart-donut .legend-val {
+  font-family: var(--sl-font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sl-text);
+}
+@media (max-width: 500px) {
+  .block-chart-donut .donut-body { flex-direction: column; }
+}
+</style>
+
+<div class="donut-panel">
+  <div class="donut-hdr">REVENUE BREAKDOWN</div>
+  <div class="donut-body">
+    <div class="donut-wrap">
+      <svg class="donut-svg" viewBox="0 0 120 120">
+        <circle class="donut-track" cx="60" cy="60" r="54"/>
+        <!-- segment 1: 38% = offset 0, dash = 128.9 -->
+        <circle class="donut-seg" cx="60" cy="60" r="54" stroke="var(--sl-accent)" style="stroke-dasharray:128.9 210.4; stroke-dashoffset:0"/>
+        <!-- segment 2: 27% = dash = 91.6 -->
+        <circle class="donut-seg" cx="60" cy="60" r="54" stroke="var(--sl-secondary)" style="stroke-dasharray:91.6 247.7; stroke-dashoffset:-128.9"/>
+        <!-- segment 3: 22% = dash = 74.6 -->
+        <circle class="donut-seg" cx="60" cy="60" r="54" stroke="var(--sl-muted)" style="stroke-dasharray:74.6 264.7; stroke-dashoffset:-220.5"/>
+        <!-- segment 4: 13% = dash = 44.1 -->
+        <circle class="donut-seg" cx="60" cy="60" r="54" stroke="color-mix(in srgb, var(--sl-accent) 40%, var(--sl-muted))" style="stroke-dasharray:44.1 295.2; stroke-dashoffset:-295.1"/>
+      </svg>
+      <div class="donut-center">
+        <span class="donut-total">$184K</span>
+        <span class="donut-total-label">TOTAL</span>
+      </div>
+    </div>
+
+    <div class="donut-legend">
+      <div class="legend-item">
+        <span class="legend-dot" style="background:var(--sl-accent)"></span>
+        <span class="legend-text">arcade machines</span>
+        <span class="legend-val">38%</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background:var(--sl-secondary)"></span>
+        <span class="legend-text">prize inventory</span>
+        <span class="legend-val">27%</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background:var(--sl-muted)"></span>
+        <span class="legend-text">maintenance</span>
+        <span class="legend-val">22%</span>
+      </div>
+      <div class="legend-item">
+        <span class="legend-dot" style="background:color-mix(in srgb, var(--sl-accent) 40%, var(--sl-muted))"></span>
+        <span class="legend-text">logistics</span>
+        <span class="legend-val">13%</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,73 @@
+#original figure > div,
+#smart_kerning figure > div {
+    display: flex;
+}
+
+#original p,
+#smart_kerning p {
+    font-size: 24rem;
+    line-height: 1;
+    position: relative;
+    border-right: 0.0625rem solid var(--text);
+    border-left: 0.0625rem solid var(--text);
+    margin-left: -0.0625rem;
+}
+
+#original p::after,
+#smart_kerning p::after {
+    font-size: 0.75rem;
+    text-align: center;
+    display: block;
+    width: 100%;
+}
+
+#original p:nth-child(1)::after,
+#smart_kerning p:nth-child(1)::after {
+    content: "Wide letter";
+}
+
+#original p:nth-child(2)::after {
+    content: "Smart kerning OFF";
+}
+
+#smart_kerning p:nth-child(2)::after {
+    content: "Smart kerning ON";
+}
+
+#original p:nth-child(3)::after,
+#smart_kerning p:nth-child(3)::after {
+    content: "Narrow letter";
+}
+
+#smart_kerning p:nth-child(2) {
+    transform: translateX(calc(24rem / 1000 * 44));
+    border-right: 0.0625rem solid transparent;
+    border-left: 0.0625rem solid transparent;
+}
+
+#intelligent_container figure > div:focus p {
+    border-right: 0.0625rem solid var(--bg);
+    border-left: 0.0625rem solid var(--bg);
+}
+
+#intelligent_container figure > div:focus p:nth-child(2) {
+    border-right: 0.0625rem solid transparent;
+    border-left: 0.0625rem solid transparent;
+}
+
+#before p,
+#after p {
+    font-size: 8rem;
+    line-height: 1;
+    max-width: none;
+    white-space: nowrap;
+}
+
+#before p {
+    font-feature-settings: "ss05" 0;
+    font-variant-ligatures: none;
+}
+
+#after p {
+    font-feature-settings: "ss05" 1;
+}

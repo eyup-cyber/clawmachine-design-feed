@@ -1,0 +1,91 @@
+---
+title: Radio Group
+description: A form input component for selecting one option from a set of choices.
+metaDescription: Radio Group component for React and Solid.js for single selection from multiple options. Build accessible forms with keyboard navigation and custom styling.
+category: forms
+links:
+  recipe: https://github.com/chakra-ui/park-ui/blob/main/packages/preset/src/recipes/radio-group.ts
+  ark: https://ark-ui.com/docs/components/radio-group
+---
+
+<ComponentExample name="basic" />
+
+## Installation
+
+<InstallationGuide />
+
+## Usage
+
+```tsx
+import { RadioGroup } from '@/components/ui'
+```
+
+```tsx
+<RadioGroup.Root>
+  <RadioGroup.Item>
+    <RadioGroup.ItemHiddenInput />
+    <RadioGroup.ItemControl />
+    <RadioGroup.ItemText />
+  </RadioGroup.Item>
+</RadioGroup.Root>
+```
+
+:::info
+
+If you prefer a closed component composition, check out the [snippet below](#closed-component).
+
+:::
+
+## Examples
+
+### Controlled
+
+Pass the `value` and `onValueChange` props to the `RadioGroup.Root` component to
+control the selected radio button.
+
+<ComponentExample name="controlled" />
+
+### Colors
+
+Pass the `colorPalette` prop to the `RadioGroup.Root` component to change the
+color scheme of the component.
+
+<ComponentExample name="colors" />
+
+### Sizes
+
+Pass the `size` prop to the `RadioGroup.Root` component to change the size of
+the radio component.
+
+<ComponentExample name="sizes" />
+
+### Disabled
+
+Pass the `disabled` prop to the `RadioGroup.Item` component to make the radio
+disabled.
+
+<ComponentExample name="disabled" />
+
+### Closed Component
+
+Here's how to setup the Radio for a closed component composition.
+
+<ComponentExample name="closed" codeOnly />
+
+Here's how to use it:
+
+```tsx
+<RadioGroup>
+  <Radio />
+</RadioGroup>
+```
+
+## Props
+
+### Root
+
+<PropsTable part="Root" />
+
+### Item
+
+<PropsTable part="Item" />

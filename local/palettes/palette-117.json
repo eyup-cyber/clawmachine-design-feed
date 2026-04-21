@@ -1,0 +1,15 @@
+{
+  "id": "palette-117",
+  "name": "radium-green",
+  "source": "ultra-expansion-cycle2-terminal-green",
+  "colors": {
+    "bg": "#00E676",
+    "surface": "#33ED91",
+    "card": "#1AE983",
+    "accent": "#D50000",
+    "secondary": "#2962FF",
+    "text": "#001A0D",
+    "muted": "#994040"
+  },
+  "weight": 10
+}
