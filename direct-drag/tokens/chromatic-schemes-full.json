@@ -1,0 +1,6636 @@
+[
+  {
+    "id": "solar-flare",
+    "number": "01",
+    "name": "SOLAR FLARE",
+    "type": "dark",
+    "desc": "Warm retrofuturist control room. Amber instrumentation on obsidian surfaces. The feeling of piloting something expensive through the dark.",
+    "tags": [
+      "retrofuturist",
+      "warm-dark",
+      "instrument-panel"
+    ],
+    "neutrals": {
+      "void": "#0B0A08",
+      "deep": "#141210",
+      "s1": "#1C1A16",
+      "s2": "#252219",
+      "s3": "#302C22",
+      "b1": "#3E3828",
+      "b2": "#5A5038",
+      "b3": "#7A6E52",
+      "t1": "#F0E8D8",
+      "t2": "#A89878",
+      "t3": "#6E6248"
+    },
+    "brand": {
+      "primary": "#FF9B17",
+      "secondary": "#17D4A8"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF6B2C",
+        "bg": "#1A1510",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFB917",
+        "bg": "#1A1814",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#17D4A8",
+        "bg": "#101A18",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF4D6A",
+        "bg": "#1A1014",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#4DB8FF",
+        "bg": "#10141A",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFD23D",
+        "bg": "#1A1910",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#8B8B6E",
+        "bg": "#161614",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF9B17",
+        "text": "#0B0A08",
+        "border": "#FF9B17"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#17D4A8",
+        "border": "#17D4A840"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#A89878",
+        "border": "#3E3828"
+      },
+      "input": {
+        "bg": "#141210",
+        "text": "#F0E8D8",
+        "border": "#3E3828",
+        "focus": "#FF9B17"
+      },
+      "toggle": {
+        "off": "#1C1A16",
+        "on": "#FF9B1740",
+        "knob": "#FF9B17",
+        "offKnob": "#5A5038"
+      },
+      "badgePositive": {
+        "bg": "#17D4A820",
+        "text": "#17D4A8"
+      },
+      "badgeWarning": {
+        "bg": "#FF9B1720",
+        "text": "#FF9B17"
+      },
+      "badgeDanger": {
+        "bg": "#FF4D6A20",
+        "text": "#FF4D6A"
+      }
+    }
+  },
+  {
+    "id": "deep-current",
+    "number": "02",
+    "name": "DEEP CURRENT",
+    "type": "dark",
+    "desc": "Abyssal oceanic with bioluminescent punctuation. Submarine instrument deck. Data surfaces that glow like deep-sea organisms.",
+    "tags": [
+      "oceanic",
+      "bioluminescent",
+      "cold-precision"
+    ],
+    "neutrals": {
+      "void": "#060B10",
+      "deep": "#0C1218",
+      "s1": "#121B24",
+      "s2": "#18242F",
+      "s3": "#1E2D3A",
+      "b1": "#283A4A",
+      "b2": "#3A5468",
+      "b3": "#4E7088",
+      "t1": "#D8EAF5",
+      "t2": "#7AA0BA",
+      "t3": "#4A6E88"
+    },
+    "brand": {
+      "primary": "#00E5A0",
+      "secondary": "#FF5C8A"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#00E5A0",
+        "bg": "#0A1518",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFB830",
+        "bg": "#12180E",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00B4FF",
+        "bg": "#0A1220",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF5C8A",
+        "bg": "#150A12",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#8B6BFF",
+        "bg": "#0E0A18",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#00E5D4",
+        "bg": "#0A1618",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#5A7A90",
+        "bg": "#0C1218",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#00E5A0",
+        "text": "#060B10",
+        "border": "#00E5A0"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF5C8A",
+        "border": "#FF5C8A40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#7AA0BA",
+        "border": "#283A4A"
+      },
+      "input": {
+        "bg": "#0C1218",
+        "text": "#D8EAF5",
+        "border": "#283A4A",
+        "focus": "#00E5A0"
+      },
+      "toggle": {
+        "off": "#121B24",
+        "on": "#00E5A030",
+        "knob": "#00E5A0",
+        "offKnob": "#3A5468"
+      },
+      "badgePositive": {
+        "bg": "#00E5A020",
+        "text": "#00E5A0"
+      },
+      "badgeWarning": {
+        "bg": "#FFB83020",
+        "text": "#FFB830"
+      },
+      "badgeDanger": {
+        "bg": "#FF5C8A20",
+        "text": "#FF5C8A"
+      }
+    }
+  },
+  {
+    "id": "phosphor-burn",
+    "number": "03",
+    "name": "PHOSPHOR BURN",
+    "type": "dark",
+    "desc": "CRT monitor afterglow. Green phosphor on warm black. The nostalgic hum of cathode-ray tubes running hot in a dark room.",
+    "tags": [
+      "crt-retro",
+      "green-phosphor",
+      "terminal-warm"
+    ],
+    "neutrals": {
+      "void": "#0A0C08",
+      "deep": "#12140E",
+      "s1": "#1A1C14",
+      "s2": "#22241A",
+      "s3": "#2C2E22",
+      "b1": "#3A3C2E",
+      "b2": "#54564A",
+      "b3": "#6E7062",
+      "t1": "#E2E8D4",
+      "t2": "#98A07A",
+      "t3": "#626A4E"
+    },
+    "brand": {
+      "primary": "#39FF14",
+      "secondary": "#FF1744"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#39FF14",
+        "bg": "#101208",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD600",
+        "bg": "#14140A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00E5FF",
+        "bg": "#0A1214",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF1744",
+        "bg": "#140A0C",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#B388FF",
+        "bg": "#100A14",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#76FF03",
+        "bg": "#101408",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#6E7062",
+        "bg": "#12140E",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#39FF14",
+        "text": "#0A0C08",
+        "border": "#39FF14"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF1744",
+        "border": "#FF174440"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#98A07A",
+        "border": "#3A3C2E"
+      },
+      "input": {
+        "bg": "#12140E",
+        "text": "#E2E8D4",
+        "border": "#3A3C2E",
+        "focus": "#39FF14"
+      },
+      "toggle": {
+        "off": "#1A1C14",
+        "on": "#39FF1430",
+        "knob": "#39FF14",
+        "offKnob": "#54564A"
+      },
+      "badgePositive": {
+        "bg": "#39FF1420",
+        "text": "#39FF14"
+      },
+      "badgeWarning": {
+        "bg": "#FFD60020",
+        "text": "#FFD600"
+      },
+      "badgeDanger": {
+        "bg": "#FF174420",
+        "text": "#FF1744"
+      }
+    }
+  },
+  {
+    "id": "terracotta-grid",
+    "number": "04",
+    "name": "TERRACOTTA GRID",
+    "type": "light",
+    "desc": "Sun-baked clay meets digital precision. Warm paper backgrounds with burnt earth accents. Mediterranean workshop with Japanese spatial discipline.",
+    "tags": [
+      "warm-light",
+      "earth-tones",
+      "editorial"
+    ],
+    "neutrals": {
+      "void": "#F5EDE2",
+      "deep": "#EBE0D2",
+      "s1": "#DFD2C0",
+      "s2": "#D0C0AA",
+      "s3": "#C0AE96",
+      "b1": "#A8946E",
+      "b2": "#8A7856",
+      "b3": "#6E5E42",
+      "t1": "#1A1510",
+      "t2": "#4E4230",
+      "t3": "#8A7856"
+    },
+    "brand": {
+      "primary": "#D94F30",
+      "secondary": "#1A7A6E"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#D94F30",
+        "bg": "#F5EDE2",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#E8922E",
+        "bg": "#F5F0E2",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#1A7A6E",
+        "bg": "#EDF5F2",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#9B3AA0",
+        "bg": "#F5EDF5",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#2B6EB5",
+        "bg": "#EDF0F5",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#D4A028",
+        "bg": "#F5F2E2",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#8A7856",
+        "bg": "#F0EBE2",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#D94F30",
+        "text": "#F5EDE2",
+        "border": "#D94F30"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#1A7A6E",
+        "border": "#1A7A6E40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#6E5E42",
+        "border": "#C0AE96"
+      },
+      "input": {
+        "bg": "#F5EDE2",
+        "text": "#1A1510",
+        "border": "#C0AE96",
+        "focus": "#D94F30"
+      },
+      "toggle": {
+        "off": "#DFD2C0",
+        "on": "#D94F3030",
+        "knob": "#D94F30",
+        "offKnob": "#A8946E"
+      },
+      "badgePositive": {
+        "bg": "#1A7A6E18",
+        "text": "#1A7A6E"
+      },
+      "badgeWarning": {
+        "bg": "#E8922E18",
+        "text": "#E8922E"
+      },
+      "badgeDanger": {
+        "bg": "#D94F3018",
+        "text": "#D94F30"
+      }
+    }
+  },
+  {
+    "id": "signal-noir",
+    "number": "05",
+    "name": "SIGNAL NOIR",
+    "type": "dark",
+    "desc": "Pure high-contrast editorial. Near-black and near-white with a single violent accent. The feeling of flipping through a Monocle issue in a blackout.",
+    "tags": [
+      "high-contrast",
+      "editorial",
+      "monochrome-plus-one"
+    ],
+    "neutrals": {
+      "void": "#08080A",
+      "deep": "#0E0E12",
+      "s1": "#16161C",
+      "s2": "#1E1E26",
+      "s3": "#28283A",
+      "b1": "#38384E",
+      "b2": "#505068",
+      "b3": "#6A6A84",
+      "t1": "#F2F2F8",
+      "t2": "#9898B0",
+      "t3": "#5A5A74"
+    },
+    "brand": {
+      "primary": "#FF2D55",
+      "secondary": "#00D4AA"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF2D55",
+        "bg": "#0C0C10",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFAA00",
+        "bg": "#0E0E0C",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00D4AA",
+        "bg": "#0C100E",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#D946EF",
+        "bg": "#100C12",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#3B82F6",
+        "bg": "#0C0C14",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF8C42",
+        "bg": "#100E0C",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#64648A",
+        "bg": "#0E0E12",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF2D55",
+        "text": "#FFFFFF",
+        "border": "#FF2D55"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#00D4AA",
+        "border": "#00D4AA40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9898B0",
+        "border": "#38384E"
+      },
+      "input": {
+        "bg": "#0E0E12",
+        "text": "#F2F2F8",
+        "border": "#38384E",
+        "focus": "#FF2D55"
+      },
+      "toggle": {
+        "off": "#16161C",
+        "on": "#FF2D5530",
+        "knob": "#FF2D55",
+        "offKnob": "#505068"
+      },
+      "badgePositive": {
+        "bg": "#00D4AA20",
+        "text": "#00D4AA"
+      },
+      "badgeWarning": {
+        "bg": "#FFAA0020",
+        "text": "#FFAA00"
+      },
+      "badgeDanger": {
+        "bg": "#FF2D5520",
+        "text": "#FF2D55"
+      }
+    }
+  },
+  {
+    "id": "kanji-electric",
+    "number": "06",
+    "name": "KANJI ELECTRIC",
+    "type": "dark",
+    "desc": "Tokyo signage at 2AM. Saturated neon on blue-black. Dense, alive, slightly overwhelming, completely magnetic. Every surface hums.",
+    "tags": [
+      "japanese-neon",
+      "blue-black",
+      "maximum-saturation"
+    ],
+    "neutrals": {
+      "void": "#06081A",
+      "deep": "#0A0E28",
+      "s1": "#101438",
+      "s2": "#161A48",
+      "s3": "#1C2058",
+      "b1": "#282E6A",
+      "b2": "#3A4288",
+      "b3": "#5058A0",
+      "t1": "#E8EAFF",
+      "t2": "#8A90CC",
+      "t3": "#5058A0"
+    },
+    "brand": {
+      "primary": "#FF3366",
+      "secondary": "#33FF99"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF3366",
+        "bg": "#0A0A20",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFCC00",
+        "bg": "#0E0E1A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#33CCFF",
+        "bg": "#080E28",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF6633",
+        "bg": "#120A1A",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#33FF99",
+        "bg": "#081A14",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF99CC",
+        "bg": "#120A18",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#6668AA",
+        "bg": "#0A0E28",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF3366",
+        "text": "#FFFFFF",
+        "border": "#FF3366"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#33FF99",
+        "border": "#33FF9940"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#8A90CC",
+        "border": "#282E6A"
+      },
+      "input": {
+        "bg": "#0A0E28",
+        "text": "#E8EAFF",
+        "border": "#282E6A",
+        "focus": "#FF3366"
+      },
+      "toggle": {
+        "off": "#101438",
+        "on": "#FF336630",
+        "knob": "#FF3366",
+        "offKnob": "#3A4288"
+      },
+      "badgePositive": {
+        "bg": "#33FF9920",
+        "text": "#33FF99"
+      },
+      "badgeWarning": {
+        "bg": "#FFCC0020",
+        "text": "#FFCC00"
+      },
+      "badgeDanger": {
+        "bg": "#FF336620",
+        "text": "#FF3366"
+      }
+    }
+  },
+  {
+    "id": "concrete-bloom",
+    "number": "07",
+    "name": "CONCRETE BLOOM",
+    "type": "light",
+    "desc": "Brutalist concrete surfaces with wildflower colour eruptions. Cold grey architecture invaded by impossible pigments. Beauty forcing its way through structure.",
+    "tags": [
+      "brutalist-light",
+      "grey-plus-vivid",
+      "architectural"
+    ],
+    "neutrals": {
+      "void": "#F0F0EC",
+      "deep": "#E4E4DE",
+      "s1": "#D6D6CE",
+      "s2": "#C4C4BA",
+      "s3": "#B0B0A4",
+      "b1": "#949488",
+      "b2": "#787870",
+      "b3": "#5C5C56",
+      "t1": "#141412",
+      "t2": "#3C3C38",
+      "t3": "#787870"
+    },
+    "brand": {
+      "primary": "#E81850",
+      "secondary": "#00AA72"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#E81850",
+        "bg": "#F0F0EC",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#F5A623",
+        "bg": "#F2F0EA",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00AA72",
+        "bg": "#ECF2F0",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#8B2FC6",
+        "bg": "#F0ECF2",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#2B7AE8",
+        "bg": "#ECF0F4",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#E8A817",
+        "bg": "#F2F0EA",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#787870",
+        "bg": "#ECECEA",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#E81850",
+        "text": "#FFFFFF",
+        "border": "#E81850"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#00AA72",
+        "border": "#00AA7240"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#5C5C56",
+        "border": "#B0B0A4"
+      },
+      "input": {
+        "bg": "#F0F0EC",
+        "text": "#141412",
+        "border": "#B0B0A4",
+        "focus": "#E81850"
+      },
+      "toggle": {
+        "off": "#D6D6CE",
+        "on": "#E8185030",
+        "knob": "#E81850",
+        "offKnob": "#949488"
+      },
+      "badgePositive": {
+        "bg": "#00AA7218",
+        "text": "#00AA72"
+      },
+      "badgeWarning": {
+        "bg": "#F5A62318",
+        "text": "#F5A623"
+      },
+      "badgeDanger": {
+        "bg": "#E8185018",
+        "text": "#E81850"
+      }
+    }
+  },
+  {
+    "id": "velvet-terminal",
+    "number": "08",
+    "name": "VELVET TERMINAL",
+    "type": "dark",
+    "desc": "Deep aubergine-black with rose gold and electric violet. A luxury instrument wrapped in dark fabric. Soft where it should be, sharp where it counts.",
+    "tags": [
+      "aubergine",
+      "rose-gold",
+      "luxury-dark"
+    ],
+    "neutrals": {
+      "void": "#0C0810",
+      "deep": "#140E18",
+      "s1": "#1C1622",
+      "s2": "#241E2C",
+      "s3": "#2E2838",
+      "b1": "#3E3648",
+      "b2": "#564E64",
+      "b3": "#706882",
+      "t1": "#F0E8F4",
+      "t2": "#A898B4",
+      "t3": "#6E6482"
+    },
+    "brand": {
+      "primary": "#E8608A",
+      "secondary": "#60E8C0"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#E8608A",
+        "bg": "#12081A",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#D4AA4E",
+        "bg": "#181410",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#60E8C0",
+        "bg": "#081816",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#A855F7",
+        "bg": "#140A20",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#5BAAFF",
+        "bg": "#0A1220",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFB86E",
+        "bg": "#181408",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#706882",
+        "bg": "#140E18",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#E8608A",
+        "text": "#0C0810",
+        "border": "#E8608A"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#60E8C0",
+        "border": "#60E8C040"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#A898B4",
+        "border": "#3E3648"
+      },
+      "input": {
+        "bg": "#140E18",
+        "text": "#F0E8F4",
+        "border": "#3E3648",
+        "focus": "#E8608A"
+      },
+      "toggle": {
+        "off": "#1C1622",
+        "on": "#E8608A30",
+        "knob": "#E8608A",
+        "offKnob": "#564E64"
+      },
+      "badgePositive": {
+        "bg": "#60E8C020",
+        "text": "#60E8C0"
+      },
+      "badgeWarning": {
+        "bg": "#D4AA4E20",
+        "text": "#D4AA4E"
+      },
+      "badgeDanger": {
+        "bg": "#E8608A20",
+        "text": "#E8608A"
+      }
+    }
+  },
+  {
+    "id": "tekki-shock",
+    "number": "09",
+    "name": "TEKKI SHOCK",
+    "type": "split",
+    "desc": "Retrofuturist maximum. Indigo-black base with screaming chartreuse and hot pink. Grid lines visible. The future as imagined by 1984.",
+    "tags": [
+      "retrofuturist",
+      "chartreuse",
+      "maximum-energy"
+    ],
+    "neutrals": {
+      "void": "#0A0A2E",
+      "deep": "#10104A",
+      "s1": "#16165A",
+      "s2": "#1C1C6A",
+      "s3": "#24247A",
+      "b1": "#32328A",
+      "b2": "#4848A0",
+      "b3": "#6060B0",
+      "t1": "#E8FFE8",
+      "t2": "#90DD90",
+      "t3": "#5AA05A"
+    },
+    "brand": {
+      "primary": "#BFFF00",
+      "secondary": "#FF0066"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF0066",
+        "bg": "#0E0E38",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#BFFF00",
+        "bg": "#0E1A0E",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00DDFF",
+        "bg": "#0A0E3A",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF6600",
+        "bg": "#1A0E0A",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00FF88",
+        "bg": "#0A1A14",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFDD00",
+        "bg": "#1A1A0A",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#6060B0",
+        "bg": "#10104A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#BFFF00",
+        "text": "#0A0A2E",
+        "border": "#BFFF00"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF0066",
+        "border": "#FF006640"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#90DD90",
+        "border": "#32328A"
+      },
+      "input": {
+        "bg": "#10104A",
+        "text": "#E8FFE8",
+        "border": "#32328A",
+        "focus": "#BFFF00"
+      },
+      "toggle": {
+        "off": "#16165A",
+        "on": "#BFFF0030",
+        "knob": "#BFFF00",
+        "offKnob": "#4848A0"
+      },
+      "badgePositive": {
+        "bg": "#BFFF0020",
+        "text": "#BFFF00"
+      },
+      "badgeWarning": {
+        "bg": "#FFDD0020",
+        "text": "#FFDD00"
+      },
+      "badgeDanger": {
+        "bg": "#FF006620",
+        "text": "#FF0066"
+      }
+    }
+  },
+  {
+    "id": "burnt-circuit",
+    "number": "10",
+    "name": "BURNT CIRCUIT",
+    "type": "dark",
+    "desc": "Scorched copper on carbon. The smell of hot solder. Warm metallics against smoky charcoal. Industrial, physical, honest.",
+    "tags": [
+      "industrial",
+      "copper-metallic",
+      "carbon-base"
+    ],
+    "neutrals": {
+      "void": "#0C0B0A",
+      "deep": "#151311",
+      "s1": "#1E1B18",
+      "s2": "#28241F",
+      "s3": "#342E28",
+      "b1": "#443C34",
+      "b2": "#60544A",
+      "b3": "#7C6E62",
+      "t1": "#F0E6DA",
+      "t2": "#AA9680",
+      "t3": "#6E5E50"
+    },
+    "brand": {
+      "primary": "#E87430",
+      "secondary": "#30C8B0"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#E87430",
+        "bg": "#141008",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#D4A830",
+        "bg": "#161410",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#30C8B0",
+        "bg": "#0C1614",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#E84060",
+        "bg": "#160A0C",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#4098D8",
+        "bg": "#0C1218",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFBA44",
+        "bg": "#18140A",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#7C6E62",
+        "bg": "#151311",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#E87430",
+        "text": "#0C0B0A",
+        "border": "#E87430"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#30C8B0",
+        "border": "#30C8B040"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#AA9680",
+        "border": "#443C34"
+      },
+      "input": {
+        "bg": "#151311",
+        "text": "#F0E6DA",
+        "border": "#443C34",
+        "focus": "#E87430"
+      },
+      "toggle": {
+        "off": "#1E1B18",
+        "on": "#E8743030",
+        "knob": "#E87430",
+        "offKnob": "#60544A"
+      },
+      "badgePositive": {
+        "bg": "#30C8B020",
+        "text": "#30C8B0"
+      },
+      "badgeWarning": {
+        "bg": "#D4A83020",
+        "text": "#D4A830"
+      },
+      "badgeDanger": {
+        "bg": "#E8406020",
+        "text": "#E84060"
+      }
+    }
+  },
+  {
+    "id": "arctic-pulse",
+    "number": "11",
+    "name": "ARCTIC PULSE",
+    "type": "split",
+    "desc": "Ice-blue surfaces with hot coral punctuation. Nordic winter meets emergency signage. Clean, cold, precise, then suddenly: heat.",
+    "tags": [
+      "ice-blue",
+      "coral-accent",
+      "nordic-precision"
+    ],
+    "neutrals": {
+      "void": "#F4F8FA",
+      "deep": "#E8EEF2",
+      "s1": "#D8E2E8",
+      "s2": "#C4D0D8",
+      "s3": "#AAB8C4",
+      "b1": "#8898A8",
+      "b2": "#687888",
+      "b3": "#4A5A68",
+      "t1": "#0A1420",
+      "t2": "#2A3A48",
+      "t3": "#687888"
+    },
+    "brand": {
+      "primary": "#FF4057",
+      "secondary": "#0A8AFF"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF4057",
+        "bg": "#F4F4FA",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FF8A30",
+        "bg": "#FAF6F4",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#0A8AFF",
+        "bg": "#F2F4FA",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#A040E8",
+        "bg": "#F6F2FA",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00B88A",
+        "bg": "#F2FAF6",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF6B4A",
+        "bg": "#FAF4F2",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#687888",
+        "bg": "#F0F2F4",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF4057",
+        "text": "#FFFFFF",
+        "border": "#FF4057"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#0A8AFF",
+        "border": "#0A8AFF40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#4A5A68",
+        "border": "#AAB8C4"
+      },
+      "input": {
+        "bg": "#F4F8FA",
+        "text": "#0A1420",
+        "border": "#AAB8C4",
+        "focus": "#FF4057"
+      },
+      "toggle": {
+        "off": "#D8E2E8",
+        "on": "#FF405730",
+        "knob": "#FF4057",
+        "offKnob": "#8898A8"
+      },
+      "badgePositive": {
+        "bg": "#00B88A18",
+        "text": "#00B88A"
+      },
+      "badgeWarning": {
+        "bg": "#FF8A3018",
+        "text": "#FF8A30"
+      },
+      "badgeDanger": {
+        "bg": "#FF405718",
+        "text": "#FF4057"
+      }
+    }
+  },
+  {
+    "id": "chromatic-forge",
+    "number": "12",
+    "name": "CHROMATIC FORGE",
+    "type": "dark",
+    "desc": "The definitive Clawmachine system. Near-black with warm-grey undertone. Red-orange primary, teal secondary. Every page owns its colour without breaking the family.",
+    "tags": [
+      "definitive",
+      "red-orange",
+      "teal-complement"
+    ],
+    "neutrals": {
+      "void": "#0C0C0E",
+      "deep": "#131316",
+      "s1": "#1A1A1F",
+      "s2": "#222228",
+      "s3": "#2C2C34",
+      "b1": "#3A3A44",
+      "b2": "#52525E",
+      "b3": "#6A6A78",
+      "t1": "#EDEDF2",
+      "t2": "#9898A8",
+      "t3": "#5E5E6E"
+    },
+    "brand": {
+      "primary": "#FF5530",
+      "secondary": "#20CCAA"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF5530",
+        "bg": "#100C0C",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFAA22",
+        "bg": "#100E0A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#20CCAA",
+        "bg": "#0A1210",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#CC44FF",
+        "bg": "#120A14",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#4488FF",
+        "bg": "#0A0E16",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF8844",
+        "bg": "#12100A",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#6A6A78",
+        "bg": "#131316",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF5530",
+        "text": "#FFFFFF",
+        "border": "#FF5530"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#20CCAA",
+        "border": "#20CCAA40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9898A8",
+        "border": "#3A3A44"
+      },
+      "input": {
+        "bg": "#131316",
+        "text": "#EDEDF2",
+        "border": "#3A3A44",
+        "focus": "#FF5530"
+      },
+      "toggle": {
+        "off": "#1A1A1F",
+        "on": "#FF553030",
+        "knob": "#FF5530",
+        "offKnob": "#52525E"
+      },
+      "badgePositive": {
+        "bg": "#20CCAA20",
+        "text": "#20CCAA"
+      },
+      "badgeWarning": {
+        "bg": "#FFAA2220",
+        "text": "#FFAA22"
+      },
+      "badgeDanger": {
+        "bg": "#FF553020",
+        "text": "#FF5530"
+      }
+    }
+  },
+  {
+    "id": "neon-genesis",
+    "number": "13",
+    "name": "NEON GENESIS",
+    "type": "dark",
+    "desc": "Pure neon primaries on void black. Every colour at maximum saturation. Arcade cabinet energy.",
+    "tags": [
+      "neon",
+      "maximum-sat",
+      "arcade"
+    ],
+    "neutrals": {
+      "void": "#050505",
+      "deep": "#0C0C0C",
+      "s1": "#141414",
+      "s2": "#1C1C1C",
+      "s3": "#242424",
+      "b1": "#333333",
+      "b2": "#4A4A4A",
+      "b3": "#666666",
+      "t1": "#FAFAFA",
+      "t2": "#999999",
+      "t3": "#555555"
+    },
+    "brand": {
+      "primary": "#FE0000",
+      "secondary": "#0BFF01"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FE0000",
+        "bg": "#0A0505",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FDFE02",
+        "bg": "#0A0A05",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#011EFE",
+        "bg": "#05050A",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FE00F6",
+        "bg": "#0A050A",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#0BFF01",
+        "bg": "#050A05",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FDFE02",
+        "bg": "#0A0A05",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#666666",
+        "bg": "#0C0C0C",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FE0000",
+        "text": "#FFFFFF",
+        "border": "#FE0000"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#0BFF01",
+        "border": "#0BFF0140"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#999999",
+        "border": "#333333"
+      },
+      "input": {
+        "bg": "#0C0C0C",
+        "text": "#FAFAFA",
+        "border": "#333333",
+        "focus": "#FE0000"
+      },
+      "toggle": {
+        "off": "#141414",
+        "on": "#FE000030",
+        "knob": "#FE0000",
+        "offKnob": "#4A4A4A"
+      },
+      "badgePositive": {
+        "bg": "#0BFF0120",
+        "text": "#0BFF01"
+      },
+      "badgeWarning": {
+        "bg": "#FE000020",
+        "text": "#FE0000"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "ultraviolet-haze",
+    "number": "14",
+    "name": "ULTRAVIOLET HAZE",
+    "type": "dark",
+    "desc": "Deep purple void with UV-reactive accents. The feeling of a blacklight room in a science lab.",
+    "tags": [
+      "ultraviolet",
+      "purple-base",
+      "blacklight"
+    ],
+    "neutrals": {
+      "void": "#0A0520",
+      "deep": "#120A30",
+      "s1": "#1A1040",
+      "s2": "#221650",
+      "s3": "#2C1E60",
+      "b1": "#3A2A70",
+      "b2": "#504488",
+      "b3": "#685CA0",
+      "t1": "#E6E1FC",
+      "t2": "#9691AC",
+      "t3": "#5A5570"
+    },
+    "brand": {
+      "primary": "#AB20FD",
+      "secondary": "#3BFD23"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#AB20FD",
+        "bg": "#100828",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#F5CA22",
+        "bg": "#14100A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#3BFD23",
+        "bg": "#081408",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF3662",
+        "bg": "#140810",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#3553FD",
+        "bg": "#080A20",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#F32097",
+        "bg": "#140818",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#504488",
+        "bg": "#120A30",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#AB20FD",
+        "text": "#FFFFFF",
+        "border": "#AB20FD"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#3BFD23",
+        "border": "#3BFD2340"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9691AC",
+        "border": "#3A2A70"
+      },
+      "input": {
+        "bg": "#120A30",
+        "text": "#E6E1FC",
+        "border": "#3A2A70",
+        "focus": "#AB20FD"
+      },
+      "toggle": {
+        "off": "#1A1040",
+        "on": "#AB20FD30",
+        "knob": "#AB20FD",
+        "offKnob": "#504488"
+      },
+      "badgePositive": {
+        "bg": "#3BFD2320",
+        "text": "#3BFD23"
+      },
+      "badgeWarning": {
+        "bg": "#AB20FD20",
+        "text": "#AB20FD"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "electric-bubblegum",
+    "number": "15",
+    "name": "ELECTRIC BUBBLEGUM",
+    "type": "dark",
+    "desc": "Hot pink primary with cyan complement on ink-black. Pop art meets control panel. Unapologetically loud.",
+    "tags": [
+      "hot-pink",
+      "cyan",
+      "pop-art"
+    ],
+    "neutrals": {
+      "void": "#08080E",
+      "deep": "#10101A",
+      "s1": "#181824",
+      "s2": "#20202E",
+      "s3": "#282838",
+      "b1": "#383848",
+      "b2": "#505064",
+      "b3": "#686880",
+      "t1": "#E4E4EA",
+      "t2": "#94949A",
+      "t3": "#58585E"
+    },
+    "brand": {
+      "primary": "#FF00B4",
+      "secondary": "#00FFBC"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF00B4",
+        "bg": "#0E0812",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD600",
+        "bg": "#0E0E08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00FFBC",
+        "bg": "#080E0E",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#C493FF",
+        "bg": "#0E0814",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#8EA5FF",
+        "bg": "#080A14",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF6B4A",
+        "bg": "#0E0808",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#505064",
+        "bg": "#10101A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF00B4",
+        "text": "#FFFFFF",
+        "border": "#FF00B4"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#00FFBC",
+        "border": "#00FFBC40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#94949A",
+        "border": "#383848"
+      },
+      "input": {
+        "bg": "#10101A",
+        "text": "#E4E4EA",
+        "border": "#383848",
+        "focus": "#FF00B4"
+      },
+      "toggle": {
+        "off": "#181824",
+        "on": "#FF00B430",
+        "knob": "#FF00B4",
+        "offKnob": "#505064"
+      },
+      "badgePositive": {
+        "bg": "#00FFBC20",
+        "text": "#00FFBC"
+      },
+      "badgeWarning": {
+        "bg": "#FF00B420",
+        "text": "#FF00B4"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "toxic-lime",
+    "number": "16",
+    "name": "TOXIC LIME",
+    "type": "dark",
+    "desc": "Radioactive chartreuse on obsidian. Hazmat chic. Warning labels as design language.",
+    "tags": [
+      "chartreuse",
+      "hazmat",
+      "radioactive"
+    ],
+    "neutrals": {
+      "void": "#060808",
+      "deep": "#0C0E0C",
+      "s1": "#141614",
+      "s2": "#1C1E1C",
+      "s3": "#242824",
+      "b1": "#343834",
+      "b2": "#4C524C",
+      "b3": "#646C64",
+      "t1": "#E2E4E4",
+      "t2": "#929494",
+      "t3": "#565858"
+    },
+    "brand": {
+      "primary": "#CFFF04",
+      "secondary": "#FF0066"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#CFFF04",
+        "bg": "#0A0C08",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFB830",
+        "bg": "#0C0C08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#04FFC8",
+        "bg": "#080E0C",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF0066",
+        "bg": "#0E0808",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#4DEEEA",
+        "bg": "#080E0E",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#E2FF68",
+        "bg": "#0C0E08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#4C524C",
+        "bg": "#0C0E0C",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#CFFF04",
+        "text": "#0A0A0A",
+        "border": "#CFFF04"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF0066",
+        "border": "#FF006640"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#929494",
+        "border": "#343834"
+      },
+      "input": {
+        "bg": "#0C0E0C",
+        "text": "#E2E4E4",
+        "border": "#343834",
+        "focus": "#CFFF04"
+      },
+      "toggle": {
+        "off": "#141614",
+        "on": "#CFFF0430",
+        "knob": "#CFFF04",
+        "offKnob": "#4C524C"
+      },
+      "badgePositive": {
+        "bg": "#FF006620",
+        "text": "#FF0066"
+      },
+      "badgeWarning": {
+        "bg": "#CFFF0420",
+        "text": "#CFFF04"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "sunset-boulevard",
+    "number": "17",
+    "name": "SUNSET BOULEVARD",
+    "type": "dark",
+    "desc": "Warm gradient spectrum from coral through amber to gold. Hollywood golden hour captured in UI.",
+    "tags": [
+      "warm-gradient",
+      "coral-gold",
+      "cinematic"
+    ],
+    "neutrals": {
+      "void": "#0C0808",
+      "deep": "#141010",
+      "s1": "#1C1614",
+      "s2": "#241E1A",
+      "s3": "#2E2622",
+      "b1": "#3E342C",
+      "b2": "#584C40",
+      "b3": "#746456",
+      "t1": "#E8E4E4",
+      "t2": "#989494",
+      "t3": "#5C5858"
+    },
+    "brand": {
+      "primary": "#FF6F00",
+      "secondary": "#00B0FF"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF3D00",
+        "bg": "#120A08",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FF6F00",
+        "bg": "#120E08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00B0FF",
+        "bg": "#080E14",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF1744",
+        "bg": "#120808",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00E676",
+        "bg": "#081208",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFD600",
+        "bg": "#121208",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#584C40",
+        "bg": "#141010",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF6F00",
+        "text": "#0A0A0A",
+        "border": "#FF6F00"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#00B0FF",
+        "border": "#00B0FF40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#989494",
+        "border": "#3E342C"
+      },
+      "input": {
+        "bg": "#141010",
+        "text": "#E8E4E4",
+        "border": "#3E342C",
+        "focus": "#FF6F00"
+      },
+      "toggle": {
+        "off": "#1C1614",
+        "on": "#FF6F0030",
+        "knob": "#FF6F00",
+        "offKnob": "#584C40"
+      },
+      "badgePositive": {
+        "bg": "#00B0FF20",
+        "text": "#00B0FF"
+      },
+      "badgeWarning": {
+        "bg": "#FF6F0020",
+        "text": "#FF6F00"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "plasma-field",
+    "number": "18",
+    "name": "PLASMA FIELD",
+    "type": "dark",
+    "desc": "Electric magenta and cyan plasma on deep indigo. Particle accelerator aesthetic. Science fiction made real.",
+    "tags": [
+      "plasma",
+      "magenta-cyan",
+      "particle"
+    ],
+    "neutrals": {
+      "void": "#08061A",
+      "deep": "#0E0A28",
+      "s1": "#141038",
+      "s2": "#1A1648",
+      "s3": "#201C58",
+      "b1": "#2E286A",
+      "b2": "#443E88",
+      "b3": "#5C56A0",
+      "t1": "#E4E2F6",
+      "t2": "#9492A6",
+      "t3": "#58566A"
+    },
+    "brand": {
+      "primary": "#F731EA",
+      "secondary": "#26F1E8"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#F731EA",
+        "bg": "#0E0820",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#F4F322",
+        "bg": "#0E0E08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#26F1E8",
+        "bg": "#080E14",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#871BF7",
+        "bg": "#0A0820",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00FF88",
+        "bg": "#080E0A",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#F5CA22",
+        "bg": "#0E0C08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#443E88",
+        "bg": "#0E0A28",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#F731EA",
+        "text": "#0A0A0A",
+        "border": "#F731EA"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#26F1E8",
+        "border": "#26F1E840"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9492A6",
+        "border": "#2E286A"
+      },
+      "input": {
+        "bg": "#0E0A28",
+        "text": "#E4E2F6",
+        "border": "#2E286A",
+        "focus": "#F731EA"
+      },
+      "toggle": {
+        "off": "#141038",
+        "on": "#F731EA30",
+        "knob": "#F731EA",
+        "offKnob": "#443E88"
+      },
+      "badgePositive": {
+        "bg": "#26F1E820",
+        "text": "#26F1E8"
+      },
+      "badgeWarning": {
+        "bg": "#F731EA20",
+        "text": "#F731EA"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "viva-vegas",
+    "number": "19",
+    "name": "VIVA VEGAS",
+    "type": "dark",
+    "desc": "Casino signage on midnight blue. Gold, red, and cyan competing for attention. Excess as identity.",
+    "tags": [
+      "casino",
+      "midnight-blue",
+      "excess"
+    ],
+    "neutrals": {
+      "void": "#0A0C1E",
+      "deep": "#121639",
+      "s1": "#1A1E44",
+      "s2": "#222650",
+      "s3": "#2A2E5C",
+      "b1": "#383C6A",
+      "b2": "#4E5488",
+      "b3": "#666CA0",
+      "t1": "#E6E8FA",
+      "t2": "#9698AA",
+      "t3": "#5A5C6E"
+    },
+    "brand": {
+      "primary": "#D01935",
+      "secondary": "#85D7E5"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#D01935",
+        "bg": "#100A20",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FEA70A",
+        "bg": "#141008",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#85D7E5",
+        "bg": "#0A1218",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#DF4C21",
+        "bg": "#120A08",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#4DEEEA",
+        "bg": "#0A1218",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FEA70A",
+        "bg": "#141008",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#4E5488",
+        "bg": "#121639",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#D01935",
+        "text": "#FFFFFF",
+        "border": "#D01935"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#85D7E5",
+        "border": "#85D7E540"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9698AA",
+        "border": "#383C6A"
+      },
+      "input": {
+        "bg": "#121639",
+        "text": "#E6E8FA",
+        "border": "#383C6A",
+        "focus": "#D01935"
+      },
+      "toggle": {
+        "off": "#1A1E44",
+        "on": "#D0193530",
+        "knob": "#D01935",
+        "offKnob": "#4E5488"
+      },
+      "badgePositive": {
+        "bg": "#85D7E520",
+        "text": "#85D7E5"
+      },
+      "badgeWarning": {
+        "bg": "#D0193520",
+        "text": "#D01935"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "roller-disco",
+    "number": "20",
+    "name": "ROLLER DISCO",
+    "type": "dark",
+    "desc": "70s roller rink neon on dark teal. Purple, gold, and lavender. Retro party gone digital.",
+    "tags": [
+      "retro-70s",
+      "roller-rink",
+      "teal-base"
+    ],
+    "neutrals": {
+      "void": "#081A1C",
+      "deep": "#0C2428",
+      "s1": "#103034",
+      "s2": "#143C40",
+      "s3": "#1A484C",
+      "b1": "#285A5E",
+      "b2": "#3E7478",
+      "b3": "#568E92",
+      "t1": "#E4F6F8",
+      "t2": "#94A6A8",
+      "t3": "#586A6C"
+    },
+    "brand": {
+      "primary": "#FFD101",
+      "secondary": "#C690CC"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FFD101",
+        "bg": "#0A1E20",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#540270",
+        "bg": "#0E0A18",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#147772",
+        "bg": "#081C1C",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#C690CC",
+        "bg": "#100A14",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#85D7E5",
+        "bg": "#081418",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFD101",
+        "bg": "#0C1E08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#3E7478",
+        "bg": "#0C2428",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FFD101",
+        "text": "#0A0A0A",
+        "border": "#FFD101"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#C690CC",
+        "border": "#C690CC40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#94A6A8",
+        "border": "#285A5E"
+      },
+      "input": {
+        "bg": "#0C2428",
+        "text": "#E4F6F8",
+        "border": "#285A5E",
+        "focus": "#FFD101"
+      },
+      "toggle": {
+        "off": "#103034",
+        "on": "#FFD10130",
+        "knob": "#FFD101",
+        "offKnob": "#3E7478"
+      },
+      "badgePositive": {
+        "bg": "#C690CC20",
+        "text": "#C690CC"
+      },
+      "badgeWarning": {
+        "bg": "#FFD10120",
+        "text": "#FFD101"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "hong-kong-neon",
+    "number": "21",
+    "name": "HONG KONG NEON",
+    "type": "dark",
+    "desc": "Dense Asian city night. Crimson, coral, lime, and cyan layered on dark burgundy. Every sign competing.",
+    "tags": [
+      "hong-kong",
+      "dense-neon",
+      "burgundy-base"
+    ],
+    "neutrals": {
+      "void": "#14080C",
+      "deep": "#1E0E14",
+      "s1": "#28141C",
+      "s2": "#321A24",
+      "s3": "#3E222E",
+      "b1": "#502E3C",
+      "b2": "#6A4454",
+      "b3": "#845A6C",
+      "t1": "#F0E4E8",
+      "t2": "#A09498",
+      "t3": "#64585C"
+    },
+    "brand": {
+      "primary": "#B8113C",
+      "secondary": "#7FE9F6"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#B8113C",
+        "bg": "#180A10",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#B2CA2E",
+        "bg": "#141408",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#7FE9F6",
+        "bg": "#081218",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#F75E59",
+        "bg": "#180A0A",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#B2CA2E",
+        "bg": "#101408",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#F75E59",
+        "bg": "#180A0A",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#6A4454",
+        "bg": "#1E0E14",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#B8113C",
+        "text": "#FFFFFF",
+        "border": "#B8113C"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#7FE9F6",
+        "border": "#7FE9F640"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#A09498",
+        "border": "#502E3C"
+      },
+      "input": {
+        "bg": "#1E0E14",
+        "text": "#F0E4E8",
+        "border": "#502E3C",
+        "focus": "#B8113C"
+      },
+      "toggle": {
+        "off": "#28141C",
+        "on": "#B8113C30",
+        "knob": "#B8113C",
+        "offKnob": "#6A4454"
+      },
+      "badgePositive": {
+        "bg": "#7FE9F620",
+        "text": "#7FE9F6"
+      },
+      "badgeWarning": {
+        "bg": "#B8113C20",
+        "text": "#B8113C"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "station-platform",
+    "number": "22",
+    "name": "STATION PLATFORM",
+    "type": "dark",
+    "desc": "Train station neon against steel blue. Hot pink glow reflecting off wet platforms. Atmospheric density.",
+    "tags": [
+      "transit",
+      "hot-pink",
+      "steel-blue"
+    ],
+    "neutrals": {
+      "void": "#0A1018",
+      "deep": "#0E1620",
+      "s1": "#141E2A",
+      "s2": "#1A2634",
+      "s3": "#222E3E",
+      "b1": "#303C4C",
+      "b2": "#485464",
+      "b3": "#606E7E",
+      "t1": "#E6ECF4",
+      "t2": "#969CA4",
+      "t3": "#5A6068"
+    },
+    "brand": {
+      "primary": "#FA1593",
+      "secondary": "#95DEFF"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FA1593",
+        "bg": "#0E0A18",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD600",
+        "bg": "#14140A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#95DEFF",
+        "bg": "#0A1220",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#750037",
+        "bg": "#100818",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00E5A0",
+        "bg": "#081410",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FA1593",
+        "bg": "#0E0A18",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#485464",
+        "bg": "#0E1620",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FA1593",
+        "text": "#FFFFFF",
+        "border": "#FA1593"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#95DEFF",
+        "border": "#95DEFF40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#969CA4",
+        "border": "#303C4C"
+      },
+      "input": {
+        "bg": "#0E1620",
+        "text": "#E6ECF4",
+        "border": "#303C4C",
+        "focus": "#FA1593"
+      },
+      "toggle": {
+        "off": "#141E2A",
+        "on": "#FA159330",
+        "knob": "#FA1593",
+        "offKnob": "#485464"
+      },
+      "badgePositive": {
+        "bg": "#95DEFF20",
+        "text": "#95DEFF"
+      },
+      "badgeWarning": {
+        "bg": "#FA159320",
+        "text": "#FA1593"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "hey-mr-dj",
+    "number": "23",
+    "name": "HEY MR DJ",
+    "type": "dark",
+    "desc": "Nightclub blacklight UV. Deep space purple, electric magenta, acid green. Bass-heavy visual rhythm.",
+    "tags": [
+      "nightclub",
+      "uv-purple",
+      "acid-green"
+    ],
+    "neutrals": {
+      "void": "#0A0324",
+      "deep": "#100630",
+      "s1": "#180A3C",
+      "s2": "#200E48",
+      "s3": "#281254",
+      "b1": "#341A64",
+      "b2": "#482E7C",
+      "b3": "#5C4494",
+      "t1": "#E6DFFF",
+      "t2": "#968FB0",
+      "t3": "#5A5374"
+    },
+    "brand": {
+      "primary": "#B915CC",
+      "secondary": "#8DE41C"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#B915CC",
+        "bg": "#0E0428",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#F6287D",
+        "bg": "#140828",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#8DE41C",
+        "bg": "#0A1408",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#F6287D",
+        "bg": "#140828",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#4DEEEA",
+        "bg": "#081218",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#8DE41C",
+        "bg": "#081408",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#482E7C",
+        "bg": "#100630",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#B915CC",
+        "text": "#FFFFFF",
+        "border": "#B915CC"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#8DE41C",
+        "border": "#8DE41C40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#968FB0",
+        "border": "#341A64"
+      },
+      "input": {
+        "bg": "#100630",
+        "text": "#E6DFFF",
+        "border": "#341A64",
+        "focus": "#B915CC"
+      },
+      "toggle": {
+        "off": "#180A3C",
+        "on": "#B915CC30",
+        "knob": "#B915CC",
+        "offKnob": "#482E7C"
+      },
+      "badgePositive": {
+        "bg": "#8DE41C20",
+        "text": "#8DE41C"
+      },
+      "badgeWarning": {
+        "bg": "#B915CC20",
+        "text": "#B915CC"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "festival-chaos",
+    "number": "24",
+    "name": "FESTIVAL CHAOS",
+    "type": "dark",
+    "desc": "Music festival poster at full volume. Electric purple, blazing yellow, hot pink. Ordered chaos.",
+    "tags": [
+      "festival",
+      "electric-purple",
+      "blazing"
+    ],
+    "neutrals": {
+      "void": "#08060C",
+      "deep": "#100C18",
+      "s1": "#181424",
+      "s2": "#201C30",
+      "s3": "#28243C",
+      "b1": "#38304C",
+      "b2": "#504868",
+      "b3": "#686080",
+      "t1": "#E4E2E8",
+      "t2": "#949298",
+      "t3": "#58565C"
+    },
+    "brand": {
+      "primary": "#7C00FE",
+      "secondary": "#F9E400"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#F5004F",
+        "bg": "#100808",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#F9E400",
+        "bg": "#121208",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00E5FF",
+        "bg": "#081214",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#7C00FE",
+        "bg": "#0A0620",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#FFAF00",
+        "bg": "#120E08",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#F9E400",
+        "bg": "#121208",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#504868",
+        "bg": "#100C18",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#7C00FE",
+        "text": "#FFFFFF",
+        "border": "#7C00FE"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#F9E400",
+        "border": "#F9E40040"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#949298",
+        "border": "#38304C"
+      },
+      "input": {
+        "bg": "#100C18",
+        "text": "#E4E2E8",
+        "border": "#38304C",
+        "focus": "#7C00FE"
+      },
+      "toggle": {
+        "off": "#181424",
+        "on": "#7C00FE30",
+        "knob": "#7C00FE",
+        "offKnob": "#504868"
+      },
+      "badgePositive": {
+        "bg": "#F9E40020",
+        "text": "#F9E400"
+      },
+      "badgeWarning": {
+        "bg": "#7C00FE20",
+        "text": "#7C00FE"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "midnight-dream",
+    "number": "25",
+    "name": "MIDNIGHT DREAM",
+    "type": "dark",
+    "desc": "Rich midnight indigo with neon aqua and soft lavender. Sleek, elevated, futuristic calm.",
+    "tags": [
+      "midnight",
+      "aqua-accent",
+      "dreamlike"
+    ],
+    "neutrals": {
+      "void": "#0C0A20",
+      "deep": "#141238",
+      "s1": "#1C1A48",
+      "s2": "#242258",
+      "s3": "#2C2A68",
+      "b1": "#3A3878",
+      "b2": "#524E90",
+      "b3": "#6A66A8",
+      "t1": "#E8E6FC",
+      "t2": "#9896AC",
+      "t3": "#5C5A70"
+    },
+    "brand": {
+      "primary": "#15F5BA",
+      "secondary": "#836FFF"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#15F5BA",
+        "bg": "#0A1218",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD23D",
+        "bg": "#12100A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#836FFF",
+        "bg": "#0E0A20",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF5C8A",
+        "bg": "#140A10",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#15F5BA",
+        "bg": "#0A1218",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#F0F3FF",
+        "bg": "#0C0C18",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#524E90",
+        "bg": "#141238",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#15F5BA",
+        "text": "#0A0A0A",
+        "border": "#15F5BA"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#836FFF",
+        "border": "#836FFF40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9896AC",
+        "border": "#3A3878"
+      },
+      "input": {
+        "bg": "#141238",
+        "text": "#E8E6FC",
+        "border": "#3A3878",
+        "focus": "#15F5BA"
+      },
+      "toggle": {
+        "off": "#1C1A48",
+        "on": "#15F5BA30",
+        "knob": "#15F5BA",
+        "offKnob": "#524E90"
+      },
+      "badgePositive": {
+        "bg": "#836FFF20",
+        "text": "#836FFF"
+      },
+      "badgeWarning": {
+        "bg": "#15F5BA20",
+        "text": "#15F5BA"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "neon-citrus",
+    "number": "26",
+    "name": "NEON CITRUS",
+    "type": "dark",
+    "desc": "Electrified tropical. Neon green through electric yellow. Zesty, alive, almost too bright.",
+    "tags": [
+      "citrus",
+      "tropical",
+      "neon-green"
+    ],
+    "neutrals": {
+      "void": "#060A06",
+      "deep": "#0C120C",
+      "s1": "#141A14",
+      "s2": "#1C221C",
+      "s3": "#242C24",
+      "b1": "#343C34",
+      "b2": "#4C564C",
+      "b3": "#647064",
+      "t1": "#E2E6E2",
+      "t2": "#929692",
+      "t3": "#565A56"
+    },
+    "brand": {
+      "primary": "#00FF9C",
+      "secondary": "#FF1744"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#00FF9C",
+        "bg": "#080E08",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFE700",
+        "bg": "#0E0E06",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#B6FFA1",
+        "bg": "#0A120A",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF1744",
+        "bg": "#120808",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#FEFFA7",
+        "bg": "#0E0E08",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#00FF9C",
+        "bg": "#080E08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#4C564C",
+        "bg": "#0C120C",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#00FF9C",
+        "text": "#0A0A0A",
+        "border": "#00FF9C"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF1744",
+        "border": "#FF174440"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#929692",
+        "border": "#343C34"
+      },
+      "input": {
+        "bg": "#0C120C",
+        "text": "#E2E6E2",
+        "border": "#343C34",
+        "focus": "#00FF9C"
+      },
+      "toggle": {
+        "off": "#141A14",
+        "on": "#00FF9C30",
+        "knob": "#00FF9C",
+        "offKnob": "#4C564C"
+      },
+      "badgePositive": {
+        "bg": "#FF174420",
+        "text": "#FF1744"
+      },
+      "badgeWarning": {
+        "bg": "#00FF9C20",
+        "text": "#00FF9C"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "electric-dreams",
+    "number": "27",
+    "name": "ELECTRIC DREAMS",
+    "type": "dark",
+    "desc": "Piktochart Electric Dreams made real. Red-orange through sky blue. Energetic futurism.",
+    "tags": [
+      "electric",
+      "red-orange",
+      "sky-blue"
+    ],
+    "neutrals": {
+      "void": "#08080C",
+      "deep": "#10101A",
+      "s1": "#181822",
+      "s2": "#20202C",
+      "s3": "#282836",
+      "b1": "#383844",
+      "b2": "#50505E",
+      "b3": "#6A6A78",
+      "t1": "#E4E4E8",
+      "t2": "#949498",
+      "t3": "#58585C"
+    },
+    "brand": {
+      "primary": "#FF3D00",
+      "secondary": "#00B0FF"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF3D00",
+        "bg": "#100808",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD600",
+        "bg": "#10100A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00B0FF",
+        "bg": "#081014",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF6F00",
+        "bg": "#100C08",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00E676",
+        "bg": "#081008",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFD600",
+        "bg": "#10100A",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#50505E",
+        "bg": "#10101A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF3D00",
+        "text": "#FFFFFF",
+        "border": "#FF3D00"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#00B0FF",
+        "border": "#00B0FF40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#949498",
+        "border": "#383844"
+      },
+      "input": {
+        "bg": "#10101A",
+        "text": "#E4E4E8",
+        "border": "#383844",
+        "focus": "#FF3D00"
+      },
+      "toggle": {
+        "off": "#181822",
+        "on": "#FF3D0030",
+        "knob": "#FF3D00",
+        "offKnob": "#50505E"
+      },
+      "badgePositive": {
+        "bg": "#00B0FF20",
+        "text": "#00B0FF"
+      },
+      "badgeWarning": {
+        "bg": "#FF3D0020",
+        "text": "#FF3D00"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "neon-jungle",
+    "number": "28",
+    "name": "NEON JUNGLE",
+    "type": "dark",
+    "desc": "Bioluminescent rainforest. Deep forest black with screaming green and violet flowers.",
+    "tags": [
+      "jungle",
+      "bioluminescent",
+      "forest-black"
+    ],
+    "neutrals": {
+      "void": "#060C08",
+      "deep": "#0A140C",
+      "s1": "#101C14",
+      "s2": "#14241A",
+      "s3": "#1A2E22",
+      "b1": "#263C2C",
+      "b2": "#3A5444",
+      "b3": "#4E6C5C",
+      "t1": "#E2E8E4",
+      "t2": "#929894",
+      "t3": "#565C58"
+    },
+    "brand": {
+      "primary": "#76FF03",
+      "secondary": "#D500F9"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#76FF03",
+        "bg": "#081008",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD600",
+        "bg": "#10100A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00B0FF",
+        "bg": "#081014",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#D500F9",
+        "bg": "#0E0814",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#1B5E20",
+        "bg": "#081008",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#76FF03",
+        "bg": "#081008",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#3A5444",
+        "bg": "#0A140C",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#76FF03",
+        "text": "#0A0A0A",
+        "border": "#76FF03"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#D500F9",
+        "border": "#D500F940"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#929894",
+        "border": "#263C2C"
+      },
+      "input": {
+        "bg": "#0A140C",
+        "text": "#E2E8E4",
+        "border": "#263C2C",
+        "focus": "#76FF03"
+      },
+      "toggle": {
+        "off": "#101C14",
+        "on": "#76FF0330",
+        "knob": "#76FF03",
+        "offKnob": "#3A5444"
+      },
+      "badgePositive": {
+        "bg": "#D500F920",
+        "text": "#D500F9"
+      },
+      "badgeWarning": {
+        "bg": "#76FF0320",
+        "text": "#76FF03"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "retro-future-warm",
+    "number": "29",
+    "name": "RETRO FUTURE",
+    "type": "light",
+    "desc": "Warm cream paper with bold orange and chocolate. Retro-future as imagined by a 1970s architect.",
+    "tags": [
+      "retro",
+      "warm-cream",
+      "70s-architect"
+    ],
+    "neutrals": {
+      "void": "#F6F1E9",
+      "deep": "#EBE4D8",
+      "s1": "#DED5C6",
+      "s2": "#CFC4B2",
+      "s3": "#BEB29E",
+      "b1": "#A8986A",
+      "b2": "#8A7E5A",
+      "b3": "#6E6448",
+      "t1": "#141412",
+      "t2": "#4A4A44",
+      "t3": "#7A7A72"
+    },
+    "brand": {
+      "primary": "#FF8400",
+      "secondary": "#4F200D"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF8400",
+        "bg": "#F6F1E9",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD93D",
+        "bg": "#F6F4E4",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#4F200D",
+        "bg": "#F2EDE6",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#E04040",
+        "bg": "#F6EEE9",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#2E8B57",
+        "bg": "#ECF2EC",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF8400",
+        "bg": "#F6F1E9",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#8A7E5A",
+        "bg": "#EBE4D8",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF8400",
+        "text": "#0A0A0A",
+        "border": "#FF8400"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#4F200D",
+        "border": "#4F200D40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#4A4A44",
+        "border": "#A8986A"
+      },
+      "input": {
+        "bg": "#EBE4D8",
+        "text": "#141412",
+        "border": "#A8986A",
+        "focus": "#FF8400"
+      },
+      "toggle": {
+        "off": "#DED5C6",
+        "on": "#FF840030",
+        "knob": "#FF8400",
+        "offKnob": "#8A7E5A"
+      },
+      "badgePositive": {
+        "bg": "#4F200D20",
+        "text": "#4F200D"
+      },
+      "badgeWarning": {
+        "bg": "#FF840020",
+        "text": "#FF8400"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "cosmic-violet",
+    "number": "30",
+    "name": "COSMIC VIOLET",
+    "type": "dark",
+    "desc": "Deep space purple with dreamy neon violet and soft yellow glow. Ethereal and surreal.",
+    "tags": [
+      "cosmic",
+      "deep-violet",
+      "ethereal"
+    ],
+    "neutrals": {
+      "void": "#0C0818",
+      "deep": "#140E28",
+      "s1": "#1C1438",
+      "s2": "#241A48",
+      "s3": "#2C2058",
+      "b1": "#3C2E6A",
+      "b2": "#544688",
+      "b3": "#6C5EA0",
+      "t1": "#E8E4F4",
+      "t2": "#9894A4",
+      "t3": "#5C5868"
+    },
+    "brand": {
+      "primary": "#8B5DFF",
+      "secondary": "#FFF7D1"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#8B5DFF",
+        "bg": "#100A20",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFF7D1",
+        "bg": "#141208",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#6A42C2",
+        "bg": "#0E0A20",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF5C8A",
+        "bg": "#140A10",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#563A9C",
+        "bg": "#0C0818",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFF7D1",
+        "bg": "#141208",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#544688",
+        "bg": "#140E28",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#8B5DFF",
+        "text": "#FFFFFF",
+        "border": "#8B5DFF"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FFF7D1",
+        "border": "#FFF7D140"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9894A4",
+        "border": "#3C2E6A"
+      },
+      "input": {
+        "bg": "#140E28",
+        "text": "#E8E4F4",
+        "border": "#3C2E6A",
+        "focus": "#8B5DFF"
+      },
+      "toggle": {
+        "off": "#1C1438",
+        "on": "#8B5DFF30",
+        "knob": "#8B5DFF",
+        "offKnob": "#544688"
+      },
+      "badgePositive": {
+        "bg": "#FFF7D120",
+        "text": "#FFF7D1"
+      },
+      "badgeWarning": {
+        "bg": "#8B5DFF20",
+        "text": "#8B5DFF"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "candy-neon",
+    "number": "31",
+    "name": "CANDY NEON",
+    "type": "dark",
+    "desc": "Sugar-coated neon. Hot magenta, lime, electric yellow, cyan. Toybox meets control panel.",
+    "tags": [
+      "candy",
+      "magenta-lime",
+      "toybox"
+    ],
+    "neutrals": {
+      "void": "#08080C",
+      "deep": "#101014",
+      "s1": "#181820",
+      "s2": "#20202C",
+      "s3": "#282838",
+      "b1": "#383848",
+      "b2": "#505064",
+      "b3": "#686880",
+      "t1": "#E4E4E8",
+      "t2": "#949498",
+      "t3": "#58585C"
+    },
+    "brand": {
+      "primary": "#AF3DFF",
+      "secondary": "#A6FD29"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF3B94",
+        "bg": "#0E0810",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#A6FD29",
+        "bg": "#0A1008",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#55FFE1",
+        "bg": "#081210",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#AF3DFF",
+        "bg": "#0A0818",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#55FFE1",
+        "bg": "#081210",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#A6FD29",
+        "bg": "#0A1008",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#505064",
+        "bg": "#101014",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#AF3DFF",
+        "text": "#FFFFFF",
+        "border": "#AF3DFF"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#A6FD29",
+        "border": "#A6FD2940"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#949498",
+        "border": "#383848"
+      },
+      "input": {
+        "bg": "#101014",
+        "text": "#E4E4E8",
+        "border": "#383848",
+        "focus": "#AF3DFF"
+      },
+      "toggle": {
+        "off": "#181820",
+        "on": "#AF3DFF30",
+        "knob": "#AF3DFF",
+        "offKnob": "#505064"
+      },
+      "badgePositive": {
+        "bg": "#A6FD2920",
+        "text": "#A6FD29"
+      },
+      "badgeWarning": {
+        "bg": "#AF3DFF20",
+        "text": "#AF3DFF"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "warm-terminal",
+    "number": "32",
+    "name": "WARM TERMINAL",
+    "type": "dark",
+    "desc": "Amber-on-dark terminal with modern proportions. The golden age of computing, reimagined.",
+    "tags": [
+      "amber-terminal",
+      "golden-computing",
+      "warm-mono"
+    ],
+    "neutrals": {
+      "void": "#0A0806",
+      "deep": "#14100A",
+      "s1": "#1E1810",
+      "s2": "#282018",
+      "s3": "#342A20",
+      "b1": "#44382C",
+      "b2": "#5E5040",
+      "b3": "#786858",
+      "t1": "#E6E4E2",
+      "t2": "#969492",
+      "t3": "#5A5856"
+    },
+    "brand": {
+      "primary": "#FFAA00",
+      "secondary": "#00AAFF"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FFAA00",
+        "bg": "#100C06",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FF6600",
+        "bg": "#100A06",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00AAFF",
+        "bg": "#060A14",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF0066",
+        "bg": "#100608",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#AAFF00",
+        "bg": "#0A1006",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFAA00",
+        "bg": "#100C06",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#5E5040",
+        "bg": "#14100A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FFAA00",
+        "text": "#0A0A0A",
+        "border": "#FFAA00"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#00AAFF",
+        "border": "#00AAFF40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#969492",
+        "border": "#44382C"
+      },
+      "input": {
+        "bg": "#14100A",
+        "text": "#E6E4E2",
+        "border": "#44382C",
+        "focus": "#FFAA00"
+      },
+      "toggle": {
+        "off": "#1E1810",
+        "on": "#FFAA0030",
+        "knob": "#FFAA00",
+        "offKnob": "#5E5040"
+      },
+      "badgePositive": {
+        "bg": "#00AAFF20",
+        "text": "#00AAFF"
+      },
+      "badgeWarning": {
+        "bg": "#FFAA0020",
+        "text": "#FFAA00"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "sakura-circuit",
+    "number": "33",
+    "name": "SAKURA CIRCUIT",
+    "type": "dark",
+    "desc": "Cherry blossom pink on midnight. Delicate and powerful simultaneously. Japanese electronics poetry.",
+    "tags": [
+      "sakura",
+      "midnight",
+      "japanese-electronics"
+    ],
+    "neutrals": {
+      "void": "#0A0810",
+      "deep": "#120E1A",
+      "s1": "#1A1424",
+      "s2": "#221A2E",
+      "s3": "#2C2238",
+      "b1": "#3C3048",
+      "b2": "#544864",
+      "b3": "#6C607C",
+      "t1": "#E6E4EC",
+      "t2": "#96949C",
+      "t3": "#5A5860"
+    },
+    "brand": {
+      "primary": "#FF6B9D",
+      "secondary": "#4ECDC4"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF6B9D",
+        "bg": "#100A14",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD93D",
+        "bg": "#121008",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#4ECDC4",
+        "bg": "#081210",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#C44DFF",
+        "bg": "#100A1C",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#4ECDC4",
+        "bg": "#081210",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF6B9D",
+        "bg": "#100A14",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#544864",
+        "bg": "#120E1A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF6B9D",
+        "text": "#0A0A0A",
+        "border": "#FF6B9D"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#4ECDC4",
+        "border": "#4ECDC440"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#96949C",
+        "border": "#3C3048"
+      },
+      "input": {
+        "bg": "#120E1A",
+        "text": "#E6E4EC",
+        "border": "#3C3048",
+        "focus": "#FF6B9D"
+      },
+      "toggle": {
+        "off": "#1A1424",
+        "on": "#FF6B9D30",
+        "knob": "#FF6B9D",
+        "offKnob": "#544864"
+      },
+      "badgePositive": {
+        "bg": "#4ECDC420",
+        "text": "#4ECDC4"
+      },
+      "badgeWarning": {
+        "bg": "#FF6B9D20",
+        "text": "#FF6B9D"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "hazard-stripe",
+    "number": "34",
+    "name": "HAZARD STRIPE",
+    "type": "dark",
+    "desc": "Industrial warning system. Yellow-black hazard markings as design language. Serious machinery.",
+    "tags": [
+      "industrial",
+      "hazard-yellow",
+      "machinery"
+    ],
+    "neutrals": {
+      "void": "#0A0A08",
+      "deep": "#121210",
+      "s1": "#1A1A16",
+      "s2": "#22221E",
+      "s3": "#2C2C26",
+      "b1": "#3C3C34",
+      "b2": "#56564C",
+      "b3": "#706E64",
+      "t1": "#E6E6E4",
+      "t2": "#969694",
+      "t3": "#5A5A58"
+    },
+    "brand": {
+      "primary": "#FFD600",
+      "secondary": "#FF1744"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FFD600",
+        "bg": "#0E0E08",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FF9100",
+        "bg": "#0E0C08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00E5FF",
+        "bg": "#080E10",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF1744",
+        "bg": "#0E0808",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#76FF03",
+        "bg": "#081008",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFD600",
+        "bg": "#0E0E08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#56564C",
+        "bg": "#121210",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FFD600",
+        "text": "#0A0A0A",
+        "border": "#FFD600"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF1744",
+        "border": "#FF174440"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#969694",
+        "border": "#3C3C34"
+      },
+      "input": {
+        "bg": "#121210",
+        "text": "#E6E6E4",
+        "border": "#3C3C34",
+        "focus": "#FFD600"
+      },
+      "toggle": {
+        "off": "#1A1A16",
+        "on": "#FFD60030",
+        "knob": "#FFD600",
+        "offKnob": "#56564C"
+      },
+      "badgePositive": {
+        "bg": "#FF174420",
+        "text": "#FF1744"
+      },
+      "badgeWarning": {
+        "bg": "#FFD60020",
+        "text": "#FFD600"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "cobalt-rush",
+    "number": "35",
+    "name": "COBALT RUSH",
+    "type": "dark",
+    "desc": "Deep cobalt blue base with electric coral and gold. Premium instrument energy.",
+    "tags": [
+      "cobalt",
+      "coral-accent",
+      "premium"
+    ],
+    "neutrals": {
+      "void": "#060A1C",
+      "deep": "#0A1028",
+      "s1": "#101838",
+      "s2": "#162048",
+      "s3": "#1C2858",
+      "b1": "#28346A",
+      "b2": "#3E4E88",
+      "b3": "#5668A0",
+      "t1": "#E2E6F8",
+      "t2": "#9296A8",
+      "t3": "#565A6C"
+    },
+    "brand": {
+      "primary": "#FF6B6B",
+      "secondary": "#FFD93D"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF6B6B",
+        "bg": "#0A0A20",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD93D",
+        "bg": "#10100A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#4ECDC4",
+        "bg": "#081210",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#C44DFF",
+        "bg": "#100A1C",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#4ECDC4",
+        "bg": "#081210",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFD93D",
+        "bg": "#10100A",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#3E4E88",
+        "bg": "#0A1028",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF6B6B",
+        "text": "#0A0A0A",
+        "border": "#FF6B6B"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FFD93D",
+        "border": "#FFD93D40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9296A8",
+        "border": "#28346A"
+      },
+      "input": {
+        "bg": "#0A1028",
+        "text": "#E2E6F8",
+        "border": "#28346A",
+        "focus": "#FF6B6B"
+      },
+      "toggle": {
+        "off": "#101838",
+        "on": "#FF6B6B30",
+        "knob": "#FF6B6B",
+        "offKnob": "#3E4E88"
+      },
+      "badgePositive": {
+        "bg": "#FFD93D20",
+        "text": "#FFD93D"
+      },
+      "badgeWarning": {
+        "bg": "#FF6B6B20",
+        "text": "#FF6B6B"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "firecracker",
+    "number": "36",
+    "name": "FIRECRACKER",
+    "type": "dark",
+    "desc": "Explosive red-orange on charcoal. Chinese New Year energy. Celebration encoded in color.",
+    "tags": [
+      "explosive",
+      "red-orange",
+      "celebration"
+    ],
+    "neutrals": {
+      "void": "#0C0808",
+      "deep": "#141010",
+      "s1": "#1C1616",
+      "s2": "#241E1C",
+      "s3": "#2E2624",
+      "b1": "#3E3430",
+      "b2": "#584C46",
+      "b3": "#72645C",
+      "t1": "#E8E4E4",
+      "t2": "#989494",
+      "t3": "#5C5858"
+    },
+    "brand": {
+      "primary": "#FF2D2D",
+      "secondary": "#FFD700"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF2D2D",
+        "bg": "#120808",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD700",
+        "bg": "#121008",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00CED1",
+        "bg": "#081212",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF6347",
+        "bg": "#120808",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#32CD32",
+        "bg": "#081208",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFD700",
+        "bg": "#121008",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#584C46",
+        "bg": "#141010",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF2D2D",
+        "text": "#FFFFFF",
+        "border": "#FF2D2D"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FFD700",
+        "border": "#FFD70040"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#989494",
+        "border": "#3E3430"
+      },
+      "input": {
+        "bg": "#141010",
+        "text": "#E8E4E4",
+        "border": "#3E3430",
+        "focus": "#FF2D2D"
+      },
+      "toggle": {
+        "off": "#1C1616",
+        "on": "#FF2D2D30",
+        "knob": "#FF2D2D",
+        "offKnob": "#584C46"
+      },
+      "badgePositive": {
+        "bg": "#FFD70020",
+        "text": "#FFD700"
+      },
+      "badgeWarning": {
+        "bg": "#FF2D2D20",
+        "text": "#FF2D2D"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "synth-wave",
+    "number": "37",
+    "name": "SYNTH WAVE",
+    "type": "dark",
+    "desc": "80s synthesizer aesthetic. Purple-blue base, hot pink horizon line, cyan grid. Outrun soundtrack visualized.",
+    "tags": [
+      "synthwave",
+      "outrun",
+      "80s-purple"
+    ],
+    "neutrals": {
+      "void": "#0A0618",
+      "deep": "#120C28",
+      "s1": "#1A1238",
+      "s2": "#221848",
+      "s3": "#2A1E58",
+      "b1": "#382C6A",
+      "b2": "#504488",
+      "b3": "#685CA0",
+      "t1": "#E6E2F4",
+      "t2": "#9692A4",
+      "t3": "#5A5668"
+    },
+    "brand": {
+      "primary": "#FF2975",
+      "secondary": "#00F0FF"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF2975",
+        "bg": "#0E0820",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD600",
+        "bg": "#12100A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00F0FF",
+        "bg": "#081218",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF6B2C",
+        "bg": "#120A08",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00FF88",
+        "bg": "#081008",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFD600",
+        "bg": "#12100A",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#504488",
+        "bg": "#120C28",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF2975",
+        "text": "#FFFFFF",
+        "border": "#FF2975"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#00F0FF",
+        "border": "#00F0FF40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9692A4",
+        "border": "#382C6A"
+      },
+      "input": {
+        "bg": "#120C28",
+        "text": "#E6E2F4",
+        "border": "#382C6A",
+        "focus": "#FF2975"
+      },
+      "toggle": {
+        "off": "#1A1238",
+        "on": "#FF297530",
+        "knob": "#FF2975",
+        "offKnob": "#504488"
+      },
+      "badgePositive": {
+        "bg": "#00F0FF20",
+        "text": "#00F0FF"
+      },
+      "badgeWarning": {
+        "bg": "#FF297520",
+        "text": "#FF2975"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "alpine-glow",
+    "number": "38",
+    "name": "ALPINE GLOW",
+    "type": "light",
+    "desc": "Mountain snow meets sunset alpenglow. Clean white surfaces with warm pink-orange horizon accents.",
+    "tags": [
+      "alpine",
+      "snow-white",
+      "sunset-accent"
+    ],
+    "neutrals": {
+      "void": "#F8F6F4",
+      "deep": "#EEEAE6",
+      "s1": "#E2DCD6",
+      "s2": "#D4CCC4",
+      "s3": "#C2B8AE",
+      "b1": "#A89E94",
+      "b2": "#8A8078",
+      "b3": "#6E645C",
+      "t1": "#141412",
+      "t2": "#4A4A44",
+      "t3": "#7A7A72"
+    },
+    "brand": {
+      "primary": "#FF6B4A",
+      "secondary": "#2B7AE8"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF6B4A",
+        "bg": "#F8F4F2",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFB830",
+        "bg": "#F8F6F0",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#2B7AE8",
+        "bg": "#F2F4F8",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#A040E8",
+        "bg": "#F6F2F8",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00B88A",
+        "bg": "#F0F6F4",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF6B4A",
+        "bg": "#F8F4F2",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#8A8078",
+        "bg": "#EEEAE6",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF6B4A",
+        "text": "#0A0A0A",
+        "border": "#FF6B4A"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#2B7AE8",
+        "border": "#2B7AE840"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#4A4A44",
+        "border": "#A89E94"
+      },
+      "input": {
+        "bg": "#EEEAE6",
+        "text": "#141412",
+        "border": "#A89E94",
+        "focus": "#FF6B4A"
+      },
+      "toggle": {
+        "off": "#E2DCD6",
+        "on": "#FF6B4A30",
+        "knob": "#FF6B4A",
+        "offKnob": "#8A8078"
+      },
+      "badgePositive": {
+        "bg": "#2B7AE820",
+        "text": "#2B7AE8"
+      },
+      "badgeWarning": {
+        "bg": "#FF6B4A20",
+        "text": "#FF6B4A"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "deep-ocean",
+    "number": "39",
+    "name": "DEEP OCEAN",
+    "type": "dark",
+    "desc": "Mariana Trench darkness with bioluminescent organisms. Near-black blue with ethereal glow.",
+    "tags": [
+      "abyss",
+      "bioluminescent",
+      "deep-blue"
+    ],
+    "neutrals": {
+      "void": "#040810",
+      "deep": "#080E1A",
+      "s1": "#0E1624",
+      "s2": "#141E30",
+      "s3": "#1A263C",
+      "b1": "#24344C",
+      "b2": "#384E68",
+      "b3": "#4C6882",
+      "t1": "#E0E4EC",
+      "t2": "#90949C",
+      "t3": "#545860"
+    },
+    "brand": {
+      "primary": "#00FFD4",
+      "secondary": "#FF4488"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#00FFD4",
+        "bg": "#060E18",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFB830",
+        "bg": "#10100A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#4488FF",
+        "bg": "#080E20",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF4488",
+        "bg": "#100814",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00FFD4",
+        "bg": "#060E18",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#00E5A0",
+        "bg": "#061210",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#384E68",
+        "bg": "#080E1A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#00FFD4",
+        "text": "#0A0A0A",
+        "border": "#00FFD4"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF4488",
+        "border": "#FF448840"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#90949C",
+        "border": "#24344C"
+      },
+      "input": {
+        "bg": "#080E1A",
+        "text": "#E0E4EC",
+        "border": "#24344C",
+        "focus": "#00FFD4"
+      },
+      "toggle": {
+        "off": "#0E1624",
+        "on": "#00FFD430",
+        "knob": "#00FFD4",
+        "offKnob": "#384E68"
+      },
+      "badgePositive": {
+        "bg": "#FF448820",
+        "text": "#FF4488"
+      },
+      "badgeWarning": {
+        "bg": "#00FFD420",
+        "text": "#00FFD4"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "desert-storm",
+    "number": "40",
+    "name": "DESERT STORM",
+    "type": "light",
+    "desc": "Sand and dust with electric oasis blue. Mojave meets mission control. Hot, dry, precise.",
+    "tags": [
+      "desert",
+      "sand-base",
+      "oasis-blue"
+    ],
+    "neutrals": {
+      "void": "#F2E8D8",
+      "deep": "#E8DCCA",
+      "s1": "#DCCEBC",
+      "s2": "#CEC0AC",
+      "s3": "#BEB09A",
+      "b1": "#A6967E",
+      "b2": "#8A7C64",
+      "b3": "#6E624C",
+      "t1": "#141412",
+      "t2": "#4A4A44",
+      "t3": "#7A7A72"
+    },
+    "brand": {
+      "primary": "#E85D30",
+      "secondary": "#1A8AAA"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#E85D30",
+        "bg": "#F2E8D8",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#D4A028",
+        "bg": "#F2EADC",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#1A8AAA",
+        "bg": "#E8EEF2",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#AA3060",
+        "bg": "#F2E8EC",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#2E8B57",
+        "bg": "#E8F2EC",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#E85D30",
+        "bg": "#F2E8D8",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#8A7C64",
+        "bg": "#E8DCCA",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#E85D30",
+        "text": "#0A0A0A",
+        "border": "#E85D30"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#1A8AAA",
+        "border": "#1A8AAA40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#4A4A44",
+        "border": "#A6967E"
+      },
+      "input": {
+        "bg": "#E8DCCA",
+        "text": "#141412",
+        "border": "#A6967E",
+        "focus": "#E85D30"
+      },
+      "toggle": {
+        "off": "#DCCEBC",
+        "on": "#E85D3030",
+        "knob": "#E85D30",
+        "offKnob": "#8A7C64"
+      },
+      "badgePositive": {
+        "bg": "#1A8AAA20",
+        "text": "#1A8AAA"
+      },
+      "badgeWarning": {
+        "bg": "#E85D3020",
+        "text": "#E85D30"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "volt-yellow",
+    "number": "41",
+    "name": "VOLT YELLOW",
+    "type": "dark",
+    "desc": "Pure electric yellow on near-black. High-voltage warning. Every surface charged.",
+    "tags": [
+      "electric-yellow",
+      "high-voltage",
+      "charged"
+    ],
+    "neutrals": {
+      "void": "#0A0A06",
+      "deep": "#121208",
+      "s1": "#1A1A0E",
+      "s2": "#222214",
+      "s3": "#2C2C1C",
+      "b1": "#3C3C28",
+      "b2": "#56563C",
+      "b3": "#707052",
+      "t1": "#E6E6E2",
+      "t2": "#969692",
+      "t3": "#5A5A56"
+    },
+    "brand": {
+      "primary": "#FFE700",
+      "secondary": "#001EFF"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FFE700",
+        "bg": "#0E0E08",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FF9100",
+        "bg": "#0E0C08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#001EFF",
+        "bg": "#06061A",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#F000FF",
+        "bg": "#0E061A",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#74EE15",
+        "bg": "#081008",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFE700",
+        "bg": "#0E0E08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#56563C",
+        "bg": "#121208",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FFE700",
+        "text": "#0A0A0A",
+        "border": "#FFE700"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#001EFF",
+        "border": "#001EFF40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#969692",
+        "border": "#3C3C28"
+      },
+      "input": {
+        "bg": "#121208",
+        "text": "#E6E6E2",
+        "border": "#3C3C28",
+        "focus": "#FFE700"
+      },
+      "toggle": {
+        "off": "#1A1A0E",
+        "on": "#FFE70030",
+        "knob": "#FFE700",
+        "offKnob": "#56563C"
+      },
+      "badgePositive": {
+        "bg": "#001EFF20",
+        "text": "#001EFF"
+      },
+      "badgeWarning": {
+        "bg": "#FFE70020",
+        "text": "#FFE700"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "magenta-matrix",
+    "number": "42",
+    "name": "MAGENTA MATRIX",
+    "type": "dark",
+    "desc": "Deep magenta-black with fuchsia data streams. The Matrix if it were pink instead of green.",
+    "tags": [
+      "magenta-matrix",
+      "fuchsia",
+      "data-streams"
+    ],
+    "neutrals": {
+      "void": "#0E060C",
+      "deep": "#180A14",
+      "s1": "#22101E",
+      "s2": "#2C1628",
+      "s3": "#361C32",
+      "b1": "#46283E",
+      "b2": "#603E58",
+      "b3": "#7A5672",
+      "t1": "#EAE2E8",
+      "t2": "#9A9298",
+      "t3": "#5E565C"
+    },
+    "brand": {
+      "primary": "#F000FF",
+      "secondary": "#4DEEEA"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#F000FF",
+        "bg": "#120810",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFE700",
+        "bg": "#141208",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#4DEEEA",
+        "bg": "#081214",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF3B94",
+        "bg": "#140810",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#74EE15",
+        "bg": "#081208",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#F000FF",
+        "bg": "#120810",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#603E58",
+        "bg": "#180A14",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#F000FF",
+        "text": "#FFFFFF",
+        "border": "#F000FF"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#4DEEEA",
+        "border": "#4DEEEA40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9A9298",
+        "border": "#46283E"
+      },
+      "input": {
+        "bg": "#180A14",
+        "text": "#EAE2E8",
+        "border": "#46283E",
+        "focus": "#F000FF"
+      },
+      "toggle": {
+        "off": "#22101E",
+        "on": "#F000FF30",
+        "knob": "#F000FF",
+        "offKnob": "#603E58"
+      },
+      "badgePositive": {
+        "bg": "#4DEEEA20",
+        "text": "#4DEEEA"
+      },
+      "badgeWarning": {
+        "bg": "#F000FF20",
+        "text": "#F000FF"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "neon-paradise",
+    "number": "43",
+    "name": "NEON PARADISE",
+    "type": "dark",
+    "desc": "Red spectrum paradise. Multiple reds from crimson to magenta, layered on black coral.",
+    "tags": [
+      "red-spectrum",
+      "paradise",
+      "coral-black"
+    ],
+    "neutrals": {
+      "void": "#0C0606",
+      "deep": "#140A0A",
+      "s1": "#1E1010",
+      "s2": "#281616",
+      "s3": "#321C1C",
+      "b1": "#442828",
+      "b2": "#5E3C3C",
+      "b3": "#785252",
+      "t1": "#E8E2E2",
+      "t2": "#989292",
+      "t3": "#5C5656"
+    },
+    "brand": {
+      "primary": "#FF4081",
+      "secondary": "#00E5A0"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF4081",
+        "bg": "#100808",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FF5252",
+        "bg": "#100808",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00E5A0",
+        "bg": "#081008",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#D5006D",
+        "bg": "#10080C",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00B0FF",
+        "bg": "#080C14",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF1744",
+        "bg": "#100808",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#5E3C3C",
+        "bg": "#140A0A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF4081",
+        "text": "#0A0A0A",
+        "border": "#FF4081"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#00E5A0",
+        "border": "#00E5A040"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#989292",
+        "border": "#442828"
+      },
+      "input": {
+        "bg": "#140A0A",
+        "text": "#E8E2E2",
+        "border": "#442828",
+        "focus": "#FF4081"
+      },
+      "toggle": {
+        "off": "#1E1010",
+        "on": "#FF408130",
+        "knob": "#FF4081",
+        "offKnob": "#5E3C3C"
+      },
+      "badgePositive": {
+        "bg": "#00E5A020",
+        "text": "#00E5A0"
+      },
+      "badgeWarning": {
+        "bg": "#FF408120",
+        "text": "#FF4081"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "spectrum-shift",
+    "number": "44",
+    "name": "SPECTRUM SHIFT",
+    "type": "dark",
+    "desc": "Full chromatic wheel mapped to page identities. Rainbow discipline. Every page its own wavelength.",
+    "tags": [
+      "rainbow",
+      "chromatic-wheel",
+      "wavelength"
+    ],
+    "neutrals": {
+      "void": "#08080A",
+      "deep": "#101014",
+      "s1": "#18181E",
+      "s2": "#202028",
+      "s3": "#282832",
+      "b1": "#383842",
+      "b2": "#50505C",
+      "b3": "#686876",
+      "t1": "#E4E4E6",
+      "t2": "#949496",
+      "t3": "#58585A"
+    },
+    "brand": {
+      "primary": "#00AAFF",
+      "secondary": "#FF00AA"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF00AA",
+        "bg": "#0E080C",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFAA00",
+        "bg": "#0E0C08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00AAFF",
+        "bg": "#080C14",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#AA00FF",
+        "bg": "#0A0814",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#AAFF00",
+        "bg": "#0A0E08",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#00FFAA",
+        "bg": "#080E0C",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#50505C",
+        "bg": "#101014",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#00AAFF",
+        "text": "#0A0A0A",
+        "border": "#00AAFF"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF00AA",
+        "border": "#FF00AA40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#949496",
+        "border": "#383842"
+      },
+      "input": {
+        "bg": "#101014",
+        "text": "#E4E4E6",
+        "border": "#383842",
+        "focus": "#00AAFF"
+      },
+      "toggle": {
+        "off": "#18181E",
+        "on": "#00AAFF30",
+        "knob": "#00AAFF",
+        "offKnob": "#50505C"
+      },
+      "badgePositive": {
+        "bg": "#FF00AA20",
+        "text": "#FF00AA"
+      },
+      "badgeWarning": {
+        "bg": "#00AAFF20",
+        "text": "#00AAFF"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "faeb-gold",
+    "number": "45",
+    "name": "FAEB GOLD",
+    "type": "dark",
+    "desc": "Deep aubergine-purple with gold leaf and magenta neon. Royal night market.",
+    "tags": [
+      "gold-leaf",
+      "aubergine",
+      "royal-night"
+    ],
+    "neutrals": {
+      "void": "#0C0614",
+      "deep": "#141020",
+      "s1": "#1C162C",
+      "s2": "#241C38",
+      "s3": "#2E2444",
+      "b1": "#3E3258",
+      "b2": "#564A74",
+      "b3": "#6E628C",
+      "t1": "#E8E2F0",
+      "t2": "#9892A0",
+      "t3": "#5C5664"
+    },
+    "brand": {
+      "primary": "#FAEB2C",
+      "secondary": "#F52789"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FAEB2C",
+        "bg": "#100C08",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#F52789",
+        "bg": "#120818",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#1685F8",
+        "bg": "#080C20",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#E900FF",
+        "bg": "#0E0620",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00FF88",
+        "bg": "#081208",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FAEB2C",
+        "bg": "#100C08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#564A74",
+        "bg": "#141020",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FAEB2C",
+        "text": "#0A0A0A",
+        "border": "#FAEB2C"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#F52789",
+        "border": "#F5278940"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9892A0",
+        "border": "#3E3258"
+      },
+      "input": {
+        "bg": "#141020",
+        "text": "#E8E2F0",
+        "border": "#3E3258",
+        "focus": "#FAEB2C"
+      },
+      "toggle": {
+        "off": "#1C162C",
+        "on": "#FAEB2C30",
+        "knob": "#FAEB2C",
+        "offKnob": "#564A74"
+      },
+      "badgePositive": {
+        "bg": "#F5278920",
+        "text": "#F52789"
+      },
+      "badgeWarning": {
+        "bg": "#FAEB2C20",
+        "text": "#FAEB2C"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "coral-reef",
+    "number": "46",
+    "name": "CORAL REEF",
+    "type": "dark",
+    "desc": "Warm ocean depths. Coral orange, seafoam, deep navy. Underwater instrument panel.",
+    "tags": [
+      "ocean",
+      "coral",
+      "navy-depths"
+    ],
+    "neutrals": {
+      "void": "#060A14",
+      "deep": "#0A1020",
+      "s1": "#10182C",
+      "s2": "#162038",
+      "s3": "#1C2844",
+      "b1": "#283858",
+      "b2": "#3E5074",
+      "b3": "#56688C",
+      "t1": "#E2E6F0",
+      "t2": "#9296A0",
+      "t3": "#565A64"
+    },
+    "brand": {
+      "primary": "#FF7F50",
+      "secondary": "#20B2AA"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF7F50",
+        "bg": "#0A0E18",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD700",
+        "bg": "#10100A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#20B2AA",
+        "bg": "#081214",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF69B4",
+        "bg": "#100A14",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00CED1",
+        "bg": "#081418",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF7F50",
+        "bg": "#0A0E18",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#3E5074",
+        "bg": "#0A1020",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF7F50",
+        "text": "#0A0A0A",
+        "border": "#FF7F50"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#20B2AA",
+        "border": "#20B2AA40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9296A0",
+        "border": "#283858"
+      },
+      "input": {
+        "bg": "#0A1020",
+        "text": "#E2E6F0",
+        "border": "#283858",
+        "focus": "#FF7F50"
+      },
+      "toggle": {
+        "off": "#10182C",
+        "on": "#FF7F5030",
+        "knob": "#FF7F50",
+        "offKnob": "#3E5074"
+      },
+      "badgePositive": {
+        "bg": "#20B2AA20",
+        "text": "#20B2AA"
+      },
+      "badgeWarning": {
+        "bg": "#FF7F5020",
+        "text": "#FF7F50"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "supernova",
+    "number": "47",
+    "name": "SUPERNOVA",
+    "type": "dark",
+    "desc": "Stellar explosion. White-hot center radiating through yellow, orange, red to deep space black.",
+    "tags": [
+      "stellar",
+      "explosion",
+      "radiant-heat"
+    ],
+    "neutrals": {
+      "void": "#080608",
+      "deep": "#100C10",
+      "s1": "#181218",
+      "s2": "#201820",
+      "s3": "#2A202A",
+      "b1": "#3A2E3A",
+      "b2": "#544654",
+      "b3": "#6E5E6E",
+      "t1": "#E4E2E4",
+      "t2": "#949294",
+      "t3": "#585658"
+    },
+    "brand": {
+      "primary": "#FFFFFF",
+      "secondary": "#FF4500"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF4500",
+        "bg": "#0E0808",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD700",
+        "bg": "#100E08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00CED1",
+        "bg": "#081214",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF1493",
+        "bg": "#100814",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00FF7F",
+        "bg": "#081008",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFFF00",
+        "bg": "#10100A",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#544654",
+        "bg": "#100C10",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FFFFFF",
+        "text": "#0A0A0A",
+        "border": "#FFFFFF"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF4500",
+        "border": "#FF450040"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#949294",
+        "border": "#3A2E3A"
+      },
+      "input": {
+        "bg": "#100C10",
+        "text": "#E4E2E4",
+        "border": "#3A2E3A",
+        "focus": "#FFFFFF"
+      },
+      "toggle": {
+        "off": "#181218",
+        "on": "#FFFFFF30",
+        "knob": "#FFFFFF",
+        "offKnob": "#544654"
+      },
+      "badgePositive": {
+        "bg": "#FF450020",
+        "text": "#FF4500"
+      },
+      "badgeWarning": {
+        "bg": "#FFFFFF20",
+        "text": "#FFFFFF"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "gothic-bloom",
+    "number": "48",
+    "name": "GOTHIC BLOOM",
+    "type": "dark",
+    "desc": "Victorian dark botanical. Near-black green with poisonous flower accents. Dark garden intelligence.",
+    "tags": [
+      "gothic",
+      "botanical",
+      "poisonous-garden"
+    ],
+    "neutrals": {
+      "void": "#060A08",
+      "deep": "#0A120C",
+      "s1": "#101A14",
+      "s2": "#14221A",
+      "s3": "#1A2C22",
+      "b1": "#263C2E",
+      "b2": "#385444",
+      "b3": "#4C6C5A",
+      "t1": "#E2E6E4",
+      "t2": "#929694",
+      "t3": "#565A58"
+    },
+    "brand": {
+      "primary": "#E040A0",
+      "secondary": "#40E0A0"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#E040A0",
+        "bg": "#0A0A10",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#D4AA28",
+        "bg": "#121008",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#40E0A0",
+        "bg": "#081210",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#8040E0",
+        "bg": "#0A0818",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#40E0A0",
+        "bg": "#081210",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#E0A040",
+        "bg": "#120E08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#385444",
+        "bg": "#0A120C",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#E040A0",
+        "text": "#FFFFFF",
+        "border": "#E040A0"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#40E0A0",
+        "border": "#40E0A040"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#929694",
+        "border": "#263C2E"
+      },
+      "input": {
+        "bg": "#0A120C",
+        "text": "#E2E6E4",
+        "border": "#263C2E",
+        "focus": "#E040A0"
+      },
+      "toggle": {
+        "off": "#101A14",
+        "on": "#E040A030",
+        "knob": "#E040A0",
+        "offKnob": "#385444"
+      },
+      "badgePositive": {
+        "bg": "#40E0A020",
+        "text": "#40E0A0"
+      },
+      "badgeWarning": {
+        "bg": "#E040A020",
+        "text": "#E040A0"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "street-machine",
+    "number": "49",
+    "name": "STREET MACHINE",
+    "type": "dark",
+    "desc": "Modified car culture. Matte black with electric underglow. Tuner instrument cluster.",
+    "tags": [
+      "car-culture",
+      "underglow",
+      "tuner"
+    ],
+    "neutrals": {
+      "void": "#080808",
+      "deep": "#101010",
+      "s1": "#181818",
+      "s2": "#202020",
+      "s3": "#282828",
+      "b1": "#383838",
+      "b2": "#505050",
+      "b3": "#686868",
+      "t1": "#E4E4E4",
+      "t2": "#949494",
+      "t3": "#585858"
+    },
+    "brand": {
+      "primary": "#00CCFF",
+      "secondary": "#FF3300"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF3300",
+        "bg": "#0C0808",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFCC00",
+        "bg": "#0C0C08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00CCFF",
+        "bg": "#080C10",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#CC00FF",
+        "bg": "#0C0810",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00FF66",
+        "bg": "#081008",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFCC00",
+        "bg": "#0C0C08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#505050",
+        "bg": "#101010",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#00CCFF",
+        "text": "#0A0A0A",
+        "border": "#00CCFF"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF3300",
+        "border": "#FF330040"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#949494",
+        "border": "#383838"
+      },
+      "input": {
+        "bg": "#101010",
+        "text": "#E4E4E4",
+        "border": "#383838",
+        "focus": "#00CCFF"
+      },
+      "toggle": {
+        "off": "#181818",
+        "on": "#00CCFF30",
+        "knob": "#00CCFF",
+        "offKnob": "#505050"
+      },
+      "badgePositive": {
+        "bg": "#FF330020",
+        "text": "#FF3300"
+      },
+      "badgeWarning": {
+        "bg": "#00CCFF20",
+        "text": "#00CCFF"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "blood-moon",
+    "number": "50",
+    "name": "BLOOD MOON",
+    "type": "dark",
+    "desc": "Lunar eclipse. Deep crimson-black with pale moonlight and blood-red phenomena.",
+    "tags": [
+      "lunar",
+      "crimson-black",
+      "eclipse"
+    ],
+    "neutrals": {
+      "void": "#0C0606",
+      "deep": "#140A0A",
+      "s1": "#1E1010",
+      "s2": "#281616",
+      "s3": "#321C1C",
+      "b1": "#442828",
+      "b2": "#5E3C3C",
+      "b3": "#785252",
+      "t1": "#E8E2E2",
+      "t2": "#989292",
+      "t3": "#5C5656"
+    },
+    "brand": {
+      "primary": "#CC0000",
+      "secondary": "#E8E0D8"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#CC0000",
+        "bg": "#100808",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#D4A828",
+        "bg": "#121008",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#6088B0",
+        "bg": "#0A0E14",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#8030A0",
+        "bg": "#0E0814",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#40A080",
+        "bg": "#081210",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#E84040",
+        "bg": "#120808",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#5E3C3C",
+        "bg": "#140A0A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#CC0000",
+        "text": "#FFFFFF",
+        "border": "#CC0000"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#E8E0D8",
+        "border": "#E8E0D840"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#989292",
+        "border": "#442828"
+      },
+      "input": {
+        "bg": "#140A0A",
+        "text": "#E8E2E2",
+        "border": "#442828",
+        "focus": "#CC0000"
+      },
+      "toggle": {
+        "off": "#1E1010",
+        "on": "#CC000030",
+        "knob": "#CC0000",
+        "offKnob": "#5E3C3C"
+      },
+      "badgePositive": {
+        "bg": "#E8E0D820",
+        "text": "#E8E0D8"
+      },
+      "badgeWarning": {
+        "bg": "#CC000020",
+        "text": "#CC0000"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "aurora-borealis",
+    "number": "51",
+    "name": "AURORA BOREALIS",
+    "type": "dark",
+    "desc": "Northern lights on arctic black. Shifting greens, violets, and cyan. Atmospheric magic.",
+    "tags": [
+      "aurora",
+      "arctic",
+      "atmospheric"
+    ],
+    "neutrals": {
+      "void": "#040810",
+      "deep": "#080E18",
+      "s1": "#0E1622",
+      "s2": "#141E2C",
+      "s3": "#1A2636",
+      "b1": "#24344A",
+      "b2": "#384E66",
+      "b3": "#4C6880",
+      "t1": "#E0E4EC",
+      "t2": "#90949C",
+      "t3": "#545860"
+    },
+    "brand": {
+      "primary": "#00FF88",
+      "secondary": "#8844FF"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#00FF88",
+        "bg": "#060E10",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD600",
+        "bg": "#10100A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00CCFF",
+        "bg": "#061018",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#8844FF",
+        "bg": "#0A0818",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00FF88",
+        "bg": "#060E10",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#44FFCC",
+        "bg": "#061210",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#384E66",
+        "bg": "#080E18",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#00FF88",
+        "text": "#0A0A0A",
+        "border": "#00FF88"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#8844FF",
+        "border": "#8844FF40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#90949C",
+        "border": "#24344A"
+      },
+      "input": {
+        "bg": "#080E18",
+        "text": "#E0E4EC",
+        "border": "#24344A",
+        "focus": "#00FF88"
+      },
+      "toggle": {
+        "off": "#0E1622",
+        "on": "#00FF8830",
+        "knob": "#00FF88",
+        "offKnob": "#384E66"
+      },
+      "badgePositive": {
+        "bg": "#8844FF20",
+        "text": "#8844FF"
+      },
+      "badgeWarning": {
+        "bg": "#00FF8820",
+        "text": "#00FF88"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "rust-oxide",
+    "number": "52",
+    "name": "RUST OXIDE",
+    "type": "dark",
+    "desc": "Oxidized iron aesthetics. Deep brown-black with rust orange and verdigris green. Post-industrial beauty.",
+    "tags": [
+      "rust",
+      "oxide",
+      "post-industrial"
+    ],
+    "neutrals": {
+      "void": "#0A0806",
+      "deep": "#14100A",
+      "s1": "#1E1810",
+      "s2": "#282016",
+      "s3": "#34281E",
+      "b1": "#44382A",
+      "b2": "#5E5040",
+      "b3": "#786858",
+      "t1": "#E6E4E2",
+      "t2": "#969492",
+      "t3": "#5A5856"
+    },
+    "brand": {
+      "primary": "#CC5500",
+      "secondary": "#44AA88"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#CC5500",
+        "bg": "#100C06",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#D4A028",
+        "bg": "#120E08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#44AA88",
+        "bg": "#081210",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#AA3344",
+        "bg": "#100808",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#44AA88",
+        "bg": "#081210",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#E88830",
+        "bg": "#120E08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#5E5040",
+        "bg": "#14100A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#CC5500",
+        "text": "#FFFFFF",
+        "border": "#CC5500"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#44AA88",
+        "border": "#44AA8840"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#969492",
+        "border": "#44382A"
+      },
+      "input": {
+        "bg": "#14100A",
+        "text": "#E6E4E2",
+        "border": "#44382A",
+        "focus": "#CC5500"
+      },
+      "toggle": {
+        "off": "#1E1810",
+        "on": "#CC550030",
+        "knob": "#CC5500",
+        "offKnob": "#5E5040"
+      },
+      "badgePositive": {
+        "bg": "#44AA8820",
+        "text": "#44AA88"
+      },
+      "badgeWarning": {
+        "bg": "#CC550020",
+        "text": "#CC5500"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "neon-mint",
+    "number": "53",
+    "name": "NEON MINT",
+    "type": "dark",
+    "desc": "Fresh mint neon on charcoal. Cool, clean, slightly clinical. Operating theatre meets arcade.",
+    "tags": [
+      "mint",
+      "clinical",
+      "fresh"
+    ],
+    "neutrals": {
+      "void": "#080C0A",
+      "deep": "#0E1410",
+      "s1": "#141C18",
+      "s2": "#1A2420",
+      "s3": "#222E28",
+      "b1": "#303E36",
+      "b2": "#48584E",
+      "b3": "#607268",
+      "t1": "#E4E8E6",
+      "t2": "#949896",
+      "t3": "#585C5A"
+    },
+    "brand": {
+      "primary": "#00FFB4",
+      "secondary": "#FF4477"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#00FFB4",
+        "bg": "#081008",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD23D",
+        "bg": "#10100A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#4488FF",
+        "bg": "#080C18",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF4477",
+        "bg": "#100810",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00FFB4",
+        "bg": "#081008",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#88FF44",
+        "bg": "#081008",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#48584E",
+        "bg": "#0E1410",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#00FFB4",
+        "text": "#0A0A0A",
+        "border": "#00FFB4"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF4477",
+        "border": "#FF447740"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#949896",
+        "border": "#303E36"
+      },
+      "input": {
+        "bg": "#0E1410",
+        "text": "#E4E8E6",
+        "border": "#303E36",
+        "focus": "#00FFB4"
+      },
+      "toggle": {
+        "off": "#141C18",
+        "on": "#00FFB430",
+        "knob": "#00FFB4",
+        "offKnob": "#48584E"
+      },
+      "badgePositive": {
+        "bg": "#FF447720",
+        "text": "#FF4477"
+      },
+      "badgeWarning": {
+        "bg": "#00FFB420",
+        "text": "#00FFB4"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "crimson-engine",
+    "number": "54",
+    "name": "CRIMSON ENGINE",
+    "type": "dark",
+    "desc": "Deep crimson-black machine room. The heartbeat of heavy industry. Red-hot iron.",
+    "tags": [
+      "crimson",
+      "engine",
+      "heavy-industry"
+    ],
+    "neutrals": {
+      "void": "#0C0606",
+      "deep": "#140A0A",
+      "s1": "#1E1010",
+      "s2": "#281616",
+      "s3": "#321C1C",
+      "b1": "#442828",
+      "b2": "#5E3C3C",
+      "b3": "#785252",
+      "t1": "#E8E2E2",
+      "t2": "#989292",
+      "t3": "#5C5656"
+    },
+    "brand": {
+      "primary": "#FF1A45",
+      "secondary": "#078498"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF1A45",
+        "bg": "#100808",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFFED7",
+        "bg": "#12120C",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#078498",
+        "bg": "#081210",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF1A45",
+        "bg": "#100808",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#078498",
+        "bg": "#081210",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF6B4A",
+        "bg": "#100A08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#5E3C3C",
+        "bg": "#140A0A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF1A45",
+        "text": "#FFFFFF",
+        "border": "#FF1A45"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#078498",
+        "border": "#07849840"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#989292",
+        "border": "#442828"
+      },
+      "input": {
+        "bg": "#140A0A",
+        "text": "#E8E2E2",
+        "border": "#442828",
+        "focus": "#FF1A45"
+      },
+      "toggle": {
+        "off": "#1E1010",
+        "on": "#FF1A4530",
+        "knob": "#FF1A45",
+        "offKnob": "#5E3C3C"
+      },
+      "badgePositive": {
+        "bg": "#07849820",
+        "text": "#078498"
+      },
+      "badgeWarning": {
+        "bg": "#FF1A4520",
+        "text": "#FF1A45"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "vapor-trail",
+    "number": "55",
+    "name": "VAPOR TRAIL",
+    "type": "dark",
+    "desc": "Vaporwave distilled. Pastel neon on dark purple. Nostalgic digital fever dream.",
+    "tags": [
+      "vaporwave",
+      "pastel-neon",
+      "digital-dream"
+    ],
+    "neutrals": {
+      "void": "#0C0818",
+      "deep": "#140E24",
+      "s1": "#1C1430",
+      "s2": "#241A3C",
+      "s3": "#2C2048",
+      "b1": "#3C2E5C",
+      "b2": "#544678",
+      "b3": "#6C5E90",
+      "t1": "#E8E4F4",
+      "t2": "#9894A4",
+      "t3": "#5C5868"
+    },
+    "brand": {
+      "primary": "#FF71CE",
+      "secondary": "#01CDFE"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF71CE",
+        "bg": "#100A1A",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFFB96",
+        "bg": "#121208",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#01CDFE",
+        "bg": "#081018",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#B967FF",
+        "bg": "#0E081C",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#05FFA1",
+        "bg": "#081208",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF71CE",
+        "bg": "#100A1A",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#544678",
+        "bg": "#140E24",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF71CE",
+        "text": "#0A0A0A",
+        "border": "#FF71CE"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#01CDFE",
+        "border": "#01CDFE40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#9894A4",
+        "border": "#3C2E5C"
+      },
+      "input": {
+        "bg": "#140E24",
+        "text": "#E8E4F4",
+        "border": "#3C2E5C",
+        "focus": "#FF71CE"
+      },
+      "toggle": {
+        "off": "#1C1430",
+        "on": "#FF71CE30",
+        "knob": "#FF71CE",
+        "offKnob": "#544678"
+      },
+      "badgePositive": {
+        "bg": "#01CDFE20",
+        "text": "#01CDFE"
+      },
+      "badgeWarning": {
+        "bg": "#FF71CE20",
+        "text": "#FF71CE"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "infrared",
+    "number": "56",
+    "name": "INFRARED",
+    "type": "dark",
+    "desc": "Thermal imaging aesthetic. Deep black with heat-map reds, oranges, and yellows. See the invisible.",
+    "tags": [
+      "thermal",
+      "infrared",
+      "heat-map"
+    ],
+    "neutrals": {
+      "void": "#060406",
+      "deep": "#0E0A0C",
+      "s1": "#181014",
+      "s2": "#22161C",
+      "s3": "#2C1C24",
+      "b1": "#3E2A32",
+      "b2": "#58404A",
+      "b3": "#725862",
+      "t1": "#E2E0E2",
+      "t2": "#929092",
+      "t3": "#565456"
+    },
+    "brand": {
+      "primary": "#FF3300",
+      "secondary": "#FFFF00"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF3300",
+        "bg": "#0E0808",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FF8800",
+        "bg": "#0E0A08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#FFFF00",
+        "bg": "#0E0E08",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF0066",
+        "bg": "#0E0808",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00CCAA",
+        "bg": "#081210",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF6600",
+        "bg": "#0E0A08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#58404A",
+        "bg": "#0E0A0C",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF3300",
+        "text": "#FFFFFF",
+        "border": "#FF3300"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FFFF00",
+        "border": "#FFFF0040"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#929092",
+        "border": "#3E2A32"
+      },
+      "input": {
+        "bg": "#0E0A0C",
+        "text": "#E2E0E2",
+        "border": "#3E2A32",
+        "focus": "#FF3300"
+      },
+      "toggle": {
+        "off": "#181014",
+        "on": "#FF330030",
+        "knob": "#FF3300",
+        "offKnob": "#58404A"
+      },
+      "badgePositive": {
+        "bg": "#FFFF0020",
+        "text": "#FFFF00"
+      },
+      "badgeWarning": {
+        "bg": "#FF330020",
+        "text": "#FF3300"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "jade-emperor",
+    "number": "57",
+    "name": "JADE EMPEROR",
+    "type": "dark",
+    "desc": "Imperial jade green on lacquer black. Gold accents. Chinese imperial aesthetic digitized.",
+    "tags": [
+      "imperial",
+      "jade",
+      "lacquer-black"
+    ],
+    "neutrals": {
+      "void": "#060A08",
+      "deep": "#0A1210",
+      "s1": "#101A16",
+      "s2": "#14221C",
+      "s3": "#1A2C24",
+      "b1": "#263C30",
+      "b2": "#3A5646",
+      "b3": "#4E705C",
+      "t1": "#E2E6E4",
+      "t2": "#929694",
+      "t3": "#565A58"
+    },
+    "brand": {
+      "primary": "#00CC77",
+      "secondary": "#FFD700"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#00CC77",
+        "bg": "#081008",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD700",
+        "bg": "#121008",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00AACC",
+        "bg": "#081418",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#CC3366",
+        "bg": "#100810",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00CC77",
+        "bg": "#081008",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFD700",
+        "bg": "#121008",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#3A5646",
+        "bg": "#0A1210",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#00CC77",
+        "text": "#0A0A0A",
+        "border": "#00CC77"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FFD700",
+        "border": "#FFD70040"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#929694",
+        "border": "#263C30"
+      },
+      "input": {
+        "bg": "#0A1210",
+        "text": "#E2E6E4",
+        "border": "#263C30",
+        "focus": "#00CC77"
+      },
+      "toggle": {
+        "off": "#101A16",
+        "on": "#00CC7730",
+        "knob": "#00CC77",
+        "offKnob": "#3A5646"
+      },
+      "badgePositive": {
+        "bg": "#FFD70020",
+        "text": "#FFD700"
+      },
+      "badgeWarning": {
+        "bg": "#00CC7720",
+        "text": "#00CC77"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "neon-orchid",
+    "number": "58",
+    "name": "NEON ORCHID",
+    "type": "dark",
+    "desc": "Exotic orchid purple with electric pink and deep forest. Tropical nightclub in a control room.",
+    "tags": [
+      "orchid",
+      "tropical-night",
+      "exotic"
+    ],
+    "neutrals": {
+      "void": "#0A0610",
+      "deep": "#12101C",
+      "s1": "#1A1628",
+      "s2": "#221C34",
+      "s3": "#2C2440",
+      "b1": "#3C3254",
+      "b2": "#544A70",
+      "b3": "#6C6288",
+      "t1": "#E6E2EC",
+      "t2": "#96929C",
+      "t3": "#5A5660"
+    },
+    "brand": {
+      "primary": "#DA70D6",
+      "secondary": "#00E5A0"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#DA70D6",
+        "bg": "#0E0A18",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD23D",
+        "bg": "#121008",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00E5A0",
+        "bg": "#081210",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF3399",
+        "bg": "#120810",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00CCFF",
+        "bg": "#081218",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#DA70D6",
+        "bg": "#0E0A18",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#544A70",
+        "bg": "#12101C",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#DA70D6",
+        "text": "#0A0A0A",
+        "border": "#DA70D6"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#00E5A0",
+        "border": "#00E5A040"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#96929C",
+        "border": "#3C3254"
+      },
+      "input": {
+        "bg": "#12101C",
+        "text": "#E6E2EC",
+        "border": "#3C3254",
+        "focus": "#DA70D6"
+      },
+      "toggle": {
+        "off": "#1A1628",
+        "on": "#DA70D630",
+        "knob": "#DA70D6",
+        "offKnob": "#544A70"
+      },
+      "badgePositive": {
+        "bg": "#00E5A020",
+        "text": "#00E5A0"
+      },
+      "badgeWarning": {
+        "bg": "#DA70D620",
+        "text": "#DA70D6"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "carbon-fiber",
+    "number": "59",
+    "name": "CARBON FIBER",
+    "type": "dark",
+    "desc": "Woven carbon texture on pure matte black. Single accent colour pops like a supercar detail.",
+    "tags": [
+      "carbon",
+      "matte-black",
+      "supercar"
+    ],
+    "neutrals": {
+      "void": "#080808",
+      "deep": "#0E0E0E",
+      "s1": "#161616",
+      "s2": "#1E1E1E",
+      "s3": "#262626",
+      "b1": "#343434",
+      "b2": "#4C4C4C",
+      "b3": "#646464",
+      "t1": "#E4E4E4",
+      "t2": "#949494",
+      "t3": "#585858"
+    },
+    "brand": {
+      "primary": "#FF2200",
+      "secondary": "#00CCAA"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF2200",
+        "bg": "#0C0808",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFAA00",
+        "bg": "#0C0C08",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00CCAA",
+        "bg": "#080C0C",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#AA00FF",
+        "bg": "#0C080E",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00CCAA",
+        "bg": "#080C0C",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FFAA00",
+        "bg": "#0C0C08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#4C4C4C",
+        "bg": "#0E0E0E",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF2200",
+        "text": "#FFFFFF",
+        "border": "#FF2200"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#00CCAA",
+        "border": "#00CCAA40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#949494",
+        "border": "#343434"
+      },
+      "input": {
+        "bg": "#0E0E0E",
+        "text": "#E4E4E4",
+        "border": "#343434",
+        "focus": "#FF2200"
+      },
+      "toggle": {
+        "off": "#161616",
+        "on": "#FF220030",
+        "knob": "#FF2200",
+        "offKnob": "#4C4C4C"
+      },
+      "badgePositive": {
+        "bg": "#00CCAA20",
+        "text": "#00CCAA"
+      },
+      "badgeWarning": {
+        "bg": "#FF220020",
+        "text": "#FF2200"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "pacific-sunset",
+    "number": "60",
+    "name": "PACIFIC SUNSET",
+    "type": "light",
+    "desc": "Warm Pacific coast sunset. Peach, coral, turquoise, and sand. Coastal instrument panel.",
+    "tags": [
+      "pacific",
+      "peach-coral",
+      "coastal"
+    ],
+    "neutrals": {
+      "void": "#F8F2EA",
+      "deep": "#EEE6DA",
+      "s1": "#E2D8CA",
+      "s2": "#D4C8B8",
+      "s3": "#C4B6A4",
+      "b1": "#AA9E88",
+      "b2": "#8E826E",
+      "b3": "#726856",
+      "t1": "#141412",
+      "t2": "#4A4A44",
+      "t3": "#7A7A72"
+    },
+    "brand": {
+      "primary": "#FF6B6B",
+      "secondary": "#20B2AA"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF6B6B",
+        "bg": "#F8F0EA",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFB830",
+        "bg": "#F8F4E8",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#20B2AA",
+        "bg": "#E8F2F2",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#9B59B6",
+        "bg": "#F2EAF4",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#20B2AA",
+        "bg": "#E8F2F2",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF6B6B",
+        "bg": "#F8F0EA",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#8E826E",
+        "bg": "#EEE6DA",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF6B6B",
+        "text": "#0A0A0A",
+        "border": "#FF6B6B"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#20B2AA",
+        "border": "#20B2AA40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#4A4A44",
+        "border": "#AA9E88"
+      },
+      "input": {
+        "bg": "#EEE6DA",
+        "text": "#141412",
+        "border": "#AA9E88",
+        "focus": "#FF6B6B"
+      },
+      "toggle": {
+        "off": "#E2D8CA",
+        "on": "#FF6B6B30",
+        "knob": "#FF6B6B",
+        "offKnob": "#8E826E"
+      },
+      "badgePositive": {
+        "bg": "#20B2AA20",
+        "text": "#20B2AA"
+      },
+      "badgeWarning": {
+        "bg": "#FF6B6B20",
+        "text": "#FF6B6B"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "phosphor-amber",
+    "number": "61",
+    "name": "PHOSPHOR AMBER",
+    "type": "dark",
+    "desc": "Amber phosphor CRT display. Orange monochrome terminal. Warm glow of old banking systems.",
+    "tags": [
+      "amber-crt",
+      "banking-terminal",
+      "warm-mono"
+    ],
+    "neutrals": {
+      "void": "#0A0804",
+      "deep": "#14100A",
+      "s1": "#1E1810",
+      "s2": "#282016",
+      "s3": "#34281E",
+      "b1": "#44382A",
+      "b2": "#5E5040",
+      "b3": "#786858",
+      "t1": "#E6E4E0",
+      "t2": "#969490",
+      "t3": "#5A5854"
+    },
+    "brand": {
+      "primary": "#FF8C00",
+      "secondary": "#00CED1"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#FF8C00",
+        "bg": "#100C06",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD700",
+        "bg": "#12100A",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00CED1",
+        "bg": "#081210",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF4444",
+        "bg": "#100808",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00CED1",
+        "bg": "#081210",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF8C00",
+        "bg": "#100C06",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#5E5040",
+        "bg": "#14100A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#FF8C00",
+        "text": "#0A0A0A",
+        "border": "#FF8C00"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#00CED1",
+        "border": "#00CED140"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#969490",
+        "border": "#44382A"
+      },
+      "input": {
+        "bg": "#14100A",
+        "text": "#E6E4E0",
+        "border": "#44382A",
+        "focus": "#FF8C00"
+      },
+      "toggle": {
+        "off": "#1E1810",
+        "on": "#FF8C0030",
+        "knob": "#FF8C00",
+        "offKnob": "#5E5040"
+      },
+      "badgePositive": {
+        "bg": "#00CED120",
+        "text": "#00CED1"
+      },
+      "badgeWarning": {
+        "bg": "#FF8C0020",
+        "text": "#FF8C00"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  },
+  {
+    "id": "electric-violet",
+    "number": "62",
+    "name": "ELECTRIC VIOLET",
+    "type": "dark",
+    "desc": "Pure violet electricity on neutral dark. The colour of static discharge. Dangerous beauty.",
+    "tags": [
+      "violet",
+      "static",
+      "dangerous"
+    ],
+    "neutrals": {
+      "void": "#080610",
+      "deep": "#100C1A",
+      "s1": "#181224",
+      "s2": "#201830",
+      "s3": "#281E3C",
+      "b1": "#382C50",
+      "b2": "#50446C",
+      "b3": "#685C84",
+      "t1": "#E4E2EC",
+      "t2": "#94929C",
+      "t3": "#585660"
+    },
+    "brand": {
+      "primary": "#7D12FF",
+      "secondary": "#FF6B2C"
+    },
+    "pages": {
+      "dashboard": {
+        "accent": "#7D12FF",
+        "bg": "#0C0818",
+        "label": "DASH"
+      },
+      "inventory": {
+        "accent": "#FFD23D",
+        "bg": "#121008",
+        "label": "INV"
+      },
+      "analytics": {
+        "accent": "#00E5FF",
+        "bg": "#081218",
+        "label": "ANA"
+      },
+      "brain": {
+        "accent": "#FF3366",
+        "bg": "#120810",
+        "label": "BRAIN"
+      },
+      "mesh": {
+        "accent": "#00FF88",
+        "bg": "#081008",
+        "label": "MESH"
+      },
+      "onboarding": {
+        "accent": "#FF6B2C",
+        "bg": "#120A08",
+        "label": "ONB"
+      },
+      "settings": {
+        "accent": "#50446C",
+        "bg": "#100C1A",
+        "label": "SET"
+      }
+    },
+    "components": {
+      "btnPrimary": {
+        "bg": "#7D12FF",
+        "text": "#FFFFFF",
+        "border": "#7D12FF"
+      },
+      "btnSecondary": {
+        "bg": "transparent",
+        "text": "#FF6B2C",
+        "border": "#FF6B2C40"
+      },
+      "btnGhost": {
+        "bg": "transparent",
+        "text": "#94929C",
+        "border": "#382C50"
+      },
+      "input": {
+        "bg": "#100C1A",
+        "text": "#E4E2EC",
+        "border": "#382C50",
+        "focus": "#7D12FF"
+      },
+      "toggle": {
+        "off": "#181224",
+        "on": "#7D12FF30",
+        "knob": "#7D12FF",
+        "offKnob": "#50446C"
+      },
+      "badgePositive": {
+        "bg": "#FF6B2C20",
+        "text": "#FF6B2C"
+      },
+      "badgeWarning": {
+        "bg": "#7D12FF20",
+        "text": "#7D12FF"
+      },
+      "badgeDanger": {
+        "bg": "#FF444420",
+        "text": "#FF4444"
+      }
+    }
+  }
+]
