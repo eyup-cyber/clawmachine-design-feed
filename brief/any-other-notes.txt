@@ -1,3 +1,12 @@
+SEMANTIC MAP (vocabulary surfaces as UI labels — must land with meaning)
+- BRAIN → the inference+evaluator service on the Mac Studio. Runs the local LLM (vllm-mlx, Qwen/Gemma family) + the deal-scoring code. This is who the operator chats with on the Brain page; this is the first role card on the Mesh page.
+- SCOUT → the Raspberry Pi scraper process. Continuously polls UK marketplaces through Decodo UK-ISP proxies. Emits raw listings into the evaluator.
+- APP → the macOS SwiftUI app on the operator's MacBook. This is where the design lives. Third role card on the Mesh page.
+- AGENTCONSOLE → first-class nav page showing the tool registry the brain can call (scout.query, comp.sold_median, vllm.infer, decodo.rotate, buy.queue, inventory.update, ifixit.estimate, brain.reflect) + a live call-trace viewer. Not a chat overlay.
+- MESH → the network-topology page rendering the three-node system (brain / scout / app) with log stream + latency sparkline.
+- OPERATOR → the human (not a user, not an "end user"). Labels in the Brain transcript say "operator" — not "op", not "user", not "you".
+- OpenClaw → the agentic runtime framework wiring the three nodes + tool calls + chat + outbound messaging channels (BlueBubbles/iMessage to the operator's own chatGuid only). Background context; not rendered as a UI chrome word.
+
 SUPERSEDE, DON'T MIMIC
 This is an internal tool for one UK fix-and-flip reseller. Nine prior iterations failed — greybox shells, gamification drift, scaffolding-ate-the-product, directive-text bleeding into the UI. The attached HTMLs are the closest the operator has reached; they are the FLOOR. Push past them. Use the palettes, style systems, tokens and assets as constraints and raw material — don't recreate the HTMLs verbatim. Bold aesthetic commitment wins. Start conservative, escalate fast, give 3–5 variants per page; most audacious gets picked.
 

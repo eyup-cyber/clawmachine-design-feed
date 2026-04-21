@@ -9,7 +9,9 @@
 FIELD 1 · "Company name and blurb (or name of design system)"
 ═══════════════════════════════════════════════════════════════════════
 
-clawmachine — a dark, dense, data-first macOS SwiftUI desktop app for UK second-hand tech-electronics arbitrage. One solo operator, no team, ten-hour days at one trading terminal. A scout scrapes eBay / CeX / Gumtree / Facebook Marketplace / Shpock / Preloved / Wholesale Clearance / musicMagpie / BS Exchange. A brain scores each candidate against a multi-source floor-price aggregate and the eBay sold-comps median. The operator buys, fixes, resells on eBay.
+clawmachine — a dense, data-first macOS SwiftUI desktop app for UK second-hand tech-electronics arbitrage. One solo operator, no team, ten-hour days at one trading terminal. The app runs on the operator's MacBook and talks over Tailscale to two headless nodes: a Raspberry Pi (the SCOUT — continuously scrapes eBay / CeX / Gumtree / Facebook Marketplace / Shpock / Preloved / Wholesale Clearance / musicMagpie / BS Exchange behind Decodo UK proxies) and a Mac Studio (the BRAIN — runs the local LLM and the deal-evaluator that scores each candidate against a multi-source floor-price aggregate and the eBay sold-comps median). The APP is the operator's cockpit: approve / skip deals, track inventory, watch ROI, configure channels, chat with the brain. The operator buys, fixes, resells on eBay.
+
+Runtime is OpenClaw (agentic framework wiring brain ↔ scout ↔ app + tool registry + chat loop + BlueBubbles outbound). Claude Design does not need to generate runtime code; the vocabulary (brain / scout / app / agentconsole / mesh) shows up as VISIBLE UI LABELS and must land with meaning in the design.
 
 The attached feed is the FLOOR, not the ceiling. 62 operator-authored palettes, 20 style systems, 49 finished-page renders, OFL fonts, historical-UI reference pool, Swift tokens. Nine prior clawmachine iterations failed in the ways the Do-Not list catalogues — treat the feed as constraint + closest-attempt, not as the target. Elevate it.
 
@@ -65,6 +67,15 @@ All three are OFL-licensed. LICENSE.txt ships in each folder.
 ═══════════════════════════════════════════════════════════════════════
 FIELD 6 · "Any other notes?"
 ═══════════════════════════════════════════════════════════════════════
+
+SEMANTIC MAP (vocabulary surfaces as UI labels — must land with meaning)
+- BRAIN → the inference+evaluator service on the Mac Studio. Runs the local LLM (vllm-mlx, Qwen/Gemma family) + the deal-scoring code. This is who the operator chats with on the Brain page; this is the first role card on the Mesh page.
+- SCOUT → the Raspberry Pi scraper process. Continuously polls UK marketplaces through Decodo UK-ISP proxies. Emits raw listings into the evaluator.
+- APP → the macOS SwiftUI app on the operator's MacBook. This is where the design lives. Third role card on the Mesh page.
+- AGENTCONSOLE → first-class nav page showing the tool registry the brain can call (scout.query, comp.sold_median, vllm.infer, decodo.rotate, buy.queue, inventory.update, ifixit.estimate, brain.reflect) + a live call-trace viewer. Not a chat overlay.
+- MESH → the network-topology page rendering the three-node system (brain / scout / app) with log stream + latency sparkline.
+- OPERATOR → the human (not a user, not an "end user"). Labels in the Brain transcript say "operator" — not "op", not "user", not "you".
+- OpenClaw → the agentic runtime framework wiring the three nodes + tool calls + chat + outbound messaging channels (BlueBubbles/iMessage to the operator's own chatGuid only). Background context; not rendered as a UI chrome word.
 
 SUPERSEDE, DON'T MIMIC
 This is an internal tool for one UK fix-and-flip reseller. Nine prior iterations failed — greybox shells, gamification drift, scaffolding-ate-the-product, directive-text bleeding into the UI. The attached HTMLs are the closest the operator has reached; they are the FLOOR. Push past them. Use the palettes, style systems, tokens and assets as constraints and raw material — don't recreate the HTMLs verbatim. Bold aesthetic commitment wins. Start conservative, escalate fast, give 3–5 variants per page; most audacious gets picked.
