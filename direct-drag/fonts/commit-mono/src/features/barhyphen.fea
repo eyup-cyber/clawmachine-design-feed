@@ -1,0 +1,22 @@
+feature c005 {
+    # Coding Ligature 001—999
+    # Bar hyphen, bar equal, bar underscore substitution
+
+    # classes
+    @b_hyphen = [hyphen hyphen.arrow];
+    @b_equal = [equal equal.arrow];
+
+    # feature 
+    sub @b_hyphen bar' @b_hyphen by bar.hy_start_hy_end;
+    sub @b_hyphen bar' by bar.hy_start;
+    sub bar' @b_hyphen by bar.hy_end;
+
+    sub @b_equal bar' @b_equal by bar.eq_start_eq_end;
+    sub @b_equal bar' by bar.eq_start;
+    sub bar' @b_equal by bar.eq_end;
+
+    sub underscore bar' underscore by bar.un_start_un_end;
+    sub underscore bar' by bar.un_start;
+    sub bar' underscore by bar.un_end;
+
+} c005;

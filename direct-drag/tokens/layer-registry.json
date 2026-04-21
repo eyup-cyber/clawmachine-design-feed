@@ -1,0 +1,124 @@
+{
+  "layers": [
+    {
+      "id": "layout",
+      "name": "layout template",
+      "variants": [
+        "bento-grid",
+        "command-center",
+        "data-table-heavy",
+        "card-magazine",
+        "kanban-flow",
+        "hero-dashboard",
+        "stacked-editorial",
+        "current-v1",
+        "brutalist-stack",
+        "terminal-hud",
+        "split-monitor",
+        "timeline-feed"
+      ],
+      "active": [
+        "command-center",
+        "terminal-hud",
+        "timeline-feed",
+        "brutalist-stack",
+        "hero-dashboard",
+        "stacked-editorial"
+      ],
+      "source": "templates/layouts/"
+    },
+    {
+      "id": "fonts",
+      "name": "font pair",
+      "variants": 411,
+      "active": 18,
+      "pending": 1902,
+      "source": "fonts-manifest.json"
+    },
+    {
+      "id": "palette",
+      "name": "colour palette",
+      "variants": 81,
+      "active": 42,
+      "source": "palettes/"
+    },
+    {
+      "id": "icons",
+      "name": "icon set",
+      "variants": [
+        "tabler",
+        "tabler-filled",
+        "lucide",
+        "heroicons",
+        "heroicons-solid",
+        "feather",
+        "phosphor-fill",
+        "phosphor-duotone",
+        "iconoir",
+        "iconoir-solid",
+        "figma-cyberpunk",
+        "figma-scifi",
+        "figma-retro"
+      ],
+      "registered": 13,
+      "onDisk": 27,
+      "source": "assets/icons/"
+    },
+    {
+      "id": "navigation",
+      "name": "navigation pattern",
+      "variants": ["sidebar", "topbar", "radial", "bottomtab", "hamburger"],
+      "active": ["topbar", "radial", "bottomtab", "hamburger"]
+    },
+    {
+      "id": "texture",
+      "name": "texture/effect",
+      "variants": [
+        "grain-noise",
+        "crt-scanlines",
+        "halftone-dots",
+        "grid-wireframe",
+        "clean",
+        "static-noise",
+        "glitch-shift",
+        "chromatic-pulse",
+        "pixel-rain",
+        "scan-sweep",
+        "flicker",
+        "neon-breathe"
+      ]
+    },
+    {
+      "id": "surface",
+      "name": "surface style",
+      "variants": [
+        "neumorphic",
+        "flat-neon",
+        "beveled-retro",
+        "brutalist",
+        "glassmorphic-dark"
+      ],
+      "active": ["flat-neon", "brutalist", "glassmorphic-dark"]
+    },
+    {
+      "id": "spacing",
+      "name": "spacing density",
+      "variants": ["compact", "comfortable", "spacious"]
+    },
+    {
+      "id": "decorative",
+      "name": "decorative style",
+      "variants": [
+        "cyberpunk-hud",
+        "neumorphic-soft",
+        "brutalist-raw",
+        "vaporwave-glow",
+        "wireframe-tech",
+        "glassmorphic-frost",
+        "clean-none"
+      ],
+      "source": "assets/decorative/"
+    }
+  ],
+  "totalCombinations": "12 * 2313 * 81 * 27 * 5 * 12 * 5 * 3 * 7 = ~350B+ (after expansion)"
+}

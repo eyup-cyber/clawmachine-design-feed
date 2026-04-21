@@ -1,0 +1,182 @@
+#section_7 #alternates_container fieldset,
+#section_7 #features_container fieldset {
+    display: grid;
+    grid-template-columns: 28ch 3ch 3ch;
+    gap: 2ch;
+}
+
+#section_7 #examplesettings_form fieldset p {
+    white-space: pre;
+    font-variant-ligatures: none;
+}
+
+fieldset.alternates > div {
+    width: 4ch;
+}
+
+#section_7 form > div {
+    position: relative;
+}
+
+#examples_container {
+    width: fit-content;
+    max-height: 20.6rem;
+    margin-bottom: 0.4rem;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+}
+#examples_container::-webkit-scrollbar {
+    display: none;
+}
+
+p#code_example {
+    white-space: pre;
+    max-width: none;
+    min-width: 102ch;
+    padding-left: 5ch;
+    position: relative;
+    line-height: 1;
+}
+p#code_example::before {
+    content: attr(data-before);
+    position: absolute;
+    white-space: pre;
+    left: 0;
+    top: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+button:focus a {
+    color: var(--bg);
+    text-decoration: none;
+}
+
+.button_link {
+    width: max-content;
+    position: relative;
+}
+.button_link:hover {
+    background: var(--bg75);
+    color: var(--bg);
+    text-decoration: none;
+}
+.button_link:focus:active,
+.button_link:active {
+    background: var(--bg50);
+    color: var(--bg);
+    text-decoration: none;
+}
+.button_link:focus {
+    background-color: var(--text);
+    color: var(--bg);
+    text-decoration: none;
+}
+.button_link::after {
+    position: absolute;
+    color: var(--text);
+    right: -2ch;
+    top: 0;
+}
+.button_link.loading::after {
+    content: ".";
+    animation: 800ms 0ms steps(4, jump-none) infinite loading;
+}
+.button_link.loaded::after {
+    content: "✓";
+    animation: none;
+}
+.button_link.error::after {
+    content: "✕";
+    animation: none;
+}
+.button_link.safari::after {
+    content: "Safari download not working. Try Chrome or Firefox.";
+    font-variation-settings: "ital" 1;
+    right: auto;
+    left: calc(100% + 1ch);
+    animation: none;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(2ch);
+    }
+}
+
+input.loading_font + label {
+    animation: flicker 200ms infinite;
+}
+
+input[type="text"] {
+    width: 10ch;
+    height: 1rem;
+    border: 1px solid var(--text);
+    background-color: var(--bg);
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    display: inline-block;
+}
+
+input[type="text"][contenteditable="true"] {
+    animation: none;
+}
+
+input[type="text"]:focus {
+    color: var(--text);
+}
+
+input[type="text"]:-webkit-autofill,
+input[type="text"]:-webkit-autofill:hover,
+input[type="text"]:-webkit-autofill:focus,
+input[type="text"]:auto-fill,
+input[type="text"]:auto-fill:hover,
+input[type="text"]:auto-fill:focus {
+    -webkit-text-fill-color: var(--text);
+    -webkit-box-shadow: 0 0 0px 40rem var(--bg) inset;
+}
+
+input[type="text"] + p {
+    display: inline-block;
+    margin-left: 0ch;
+}
+
+.file_label {
+    height: 1rem;
+    border: 1px solid var(--text);
+    background-color: var(--bg);
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    display: inline-block;
+    padding: 0 0.5ch;
+}
+
+input[type="file"]:focus + label {
+    background-color: var(--text);
+    color: var(--bg);
+    text-decoration: none;
+}
+
+#custom-settings-input {
+    border: none;
+    width: 17ch;
+    font-variation-settings: inherit;
+    opacity: 0.75;
+}
+
+/* #custom-settings-input, */
+#custom-settings-input::placeholder {
+    opacity: 0.5;
+    color: var(--text);
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+}
+#custom-settings-input:focus::placeholder {
+    opacity: 0.75;
+}

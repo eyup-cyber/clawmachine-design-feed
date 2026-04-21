@@ -1,0 +1,27 @@
+#code_form fieldset {
+    font-size: 1.5rem;
+    line-height: 1.65rem;
+    gap: 1ch;
+}
+
+form fieldset {
+    border: none;
+    display: flex;
+    gap: 4ch;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    background-color: var(--bg);
+    width: max-content;
+}
+
+form > div {
+    position: relative;
+}
+
+#canvas {
+    transform-origin: top left;
+}
+
+#code_description {
+    height: 4rem;
+}

@@ -1,0 +1,85 @@
+ol {
+    font-size: 0.75rem;
+    margin-left: 0;
+    max-width: max-content;
+    counter-reset: install;
+    list-style: none;
+}
+
+ol > li {
+    margin-left: 3ch;
+    max-width: calc(var(--max-width) - 3ch);
+    counter-increment: install;
+    position: relative;
+}
+
+ol > li > *:first-child:before {
+    content: "#" counter(install) " ";
+    position: absolute;
+    left: -3ch;
+}
+
+ol li p {
+    max-width: calc(var(--max-width) - 6ch);
+}
+
+ol:focus li p {
+    color: var(--bg);
+}
+
+ol li ul li p {
+    position: relative;
+}
+
+ol li ul li p::before {
+    content: "•";
+    position: absolute;
+    left: -2ch;
+}
+
+details > summary {
+    cursor: pointer;
+    list-style: none;
+    width: fit-content;
+    max-width: calc(var(--max-width) - 4ch);
+    position: relative;
+    margin: 1rem 0 0 4ch;
+}
+details[open] > summary {
+    background: var(--bg25);
+    color: var(--text);
+}
+details > summary:focus {
+    background: var(--text);
+    color: var(--bg);
+}
+details > p {
+    max-width: calc(var(--max-width) - 4ch);
+    margin: 0 0 1rem 4ch;
+}
+details > ol {
+    max-width: calc(var(--max-width) - 4ch);
+    margin: 0 0 1rem 4ch;
+    counter-reset: reinstall;
+}
+details > ol li::before {
+    display: block;
+    counter-increment: reinstall;
+    content: "#" counter(reinstall) " ";
+    position: absolute;
+    left: -3ch;
+}
+details > ol li {
+    position: relative;
+}
+details > summary::before {
+    content: "[+]";
+    position: absolute;
+    left: -4ch;
+}
+details[open] > summary::before {
+    content: "[-]";
+}
+details > summary:focus::before {
+    color: var(--text);
+}

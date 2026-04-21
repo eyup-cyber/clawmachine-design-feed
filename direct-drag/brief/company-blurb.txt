@@ -1,0 +1,5 @@
+clawmachine — a macOS SwiftUI desktop app for second-hand tech-electronics arbitrage in the UK.
+
+The user is a solo operator running a fix-and-flip tech business: buys under-priced consumer electronics from UK marketplaces (phones, laptops, console hardware, accessories), refurbishes them, and resells on eBay. Ten-hour days at a dense trading terminal.
+
+The app does three things: a scout scrapes UK marketplaces for candidate listings; a brain evaluates each candidate against a live floor-price aggregate plus eBay sold comps; the operator buys, fixes, and sells. Desktop-only, UK-only, single-user. Dark, dense, data-first. Retro Mac OS 9 plus cyberpunk plus brutalist composite. Not a consumer app. Not a team tool.

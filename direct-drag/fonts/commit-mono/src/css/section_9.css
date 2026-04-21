@@ -1,0 +1,80 @@
+.docs_example {
+    width: max-content;
+    font-variant-ligatures: none;
+    white-space: pre;
+    font-feature-settings: normal;
+}
+
+.span_off,
+.span_on {
+    cursor: pointer;
+}
+
+.active_feature {
+    cursor: pointer;
+    background: var(--bg25);
+    height: 100%;
+    display: inline-block;
+}
+
+h2:focus .active_feature {
+    background: var(--bg25-i);
+}
+
+#section_9 h2 {
+    max-width: var(--max-width);
+}
+
+.docs_alternate {
+    margin-right: 2rem;
+    display: inline-block;
+    vertical-align: baseline;
+}
+
+#features_docu > div {
+    width: max-content;
+}
+
+#charset {
+    width: var(--max-width);
+    width: 32ch;
+    font-variant-ligatures: none;
+    white-space: pre-wrap;
+    font-size: 5rem;
+    line-height: 5rem;
+    display: grid;
+    grid-template-columns: repeat(10, 1ch);
+    gap: 1ch;
+}
+
+#charset .charset_letter {
+    /* background-color: blue; */
+    font-size: inherit;
+    width: fit-content;
+    line-height: inherit;
+}
+
+.new_label {
+    position: relative;
+}
+
+.new_label::before {
+    content: "NEW";
+    font-size: 0.66rem;
+    background: var(--text);
+    color: var(--bg);
+    position: relative;
+    padding: 0 0.5ch;
+}
+
+#language_support {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(12, 1fr);
+    width: max-content;
+    gap: 0 4ch;
+}
+
+#language_support > p {
+    /* width: 22ch; */
+}

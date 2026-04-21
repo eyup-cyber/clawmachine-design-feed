@@ -1,0 +1,10 @@
+# Bulk agent-reference material — not for Claude Design upload
+external/
+local/palettes/
+local/templates/
+local/figma-extracted/
+local/decorative/
+local/chromatic/clawmachine-chromatic-lab.html
+local/chromatic/clawmachine-style-lab.html
+
+# Keep: authored artefacts + curated direct-drag/ + brief + triage JSONs + swift-reference

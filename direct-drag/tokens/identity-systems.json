@@ -1,0 +1,207 @@
+[
+  {
+    "n": 1,
+    "id": "identity-v2-root",
+    "name": "CLAWMACHINE IDENTITY V2 — ROOT",
+    "source_file": "/Users/regancooney/Projects/clawmachine-codex/clawmachine-identity-v2.html",
+    "source_line_start": 11,
+    "source_line_end": 85,
+    "scope": "top-level :root, shared across all cycles",
+    "variables": {
+      "void": "#08080C",
+      "deep": "#101014",
+      "s1": "#18181F",
+      "s2": "#202028",
+      "s3": "#2A2A34",
+      "b1": "#32323F",
+      "b2": "#48485A",
+      "b3": "#5E5E72",
+      "t1": "#EDEDF0",
+      "t2": "#9898AD",
+      "t3": "#5E5E72",
+      "tg": "#38384A",
+      "dash-1": "#FF3838",
+      "dash-2": "#FF7A3D",
+      "dash-3": "#FFD23D",
+      "inv-1": "#FFAA2E",
+      "inv-2": "#FF6B2E",
+      "inv-3": "#6EE76E",
+      "ana-1": "#2ED8FF",
+      "ana-2": "#2EA0FF",
+      "ana-3": "#2EFF9A",
+      "brain-1": "#FF4D8A",
+      "brain-2": "#FF8C4D",
+      "brain-3": "#4DFFE0",
+      "mesh-1": "#4DB8FF",
+      "mesh-2": "#4DFFC8",
+      "mesh-3": "#FFA64D",
+      "set-1": "#9898B0",
+      "set-2": "#6868A0",
+      "set-3": "#B8FF4D",
+      "onb-1": "#FFB84D",
+      "onb-2": "#FF6B6B",
+      "onb-3": "#4DE8C8",
+      "fd": "'Syne', system-ui, sans-serif",
+      "fb": "'Manrope', system-ui, sans-serif",
+      "fm": "'JetBrains Mono', 'SF Mono', monospace",
+      "r": "3px",
+      "ease": "cubic-bezier(0.22, 0.61, 0.36, 1)"
+    },
+    "variable_count": 38,
+    "notes": "Single :root block defines all tokens for all cycles. Sub-systems below are comment-scoped subsets, not separately scoped CSS rules."
+  },
+  {
+    "n": 2,
+    "id": "neutral-world",
+    "name": "NEUTRAL WORLD — deep ink",
+    "source_file": "/Users/regancooney/Projects/clawmachine-codex/clawmachine-identity-v2.html",
+    "source_line_start": 12,
+    "source_line_end": 26,
+    "scope": "comment-scoped block inside :root",
+    "variables": {
+      "void": "#08080C",
+      "deep": "#101014",
+      "s1": "#18181F",
+      "s2": "#202028",
+      "s3": "#2A2A34",
+      "b1": "#32323F",
+      "b2": "#48485A",
+      "b3": "#5E5E72",
+      "t1": "#EDEDF0",
+      "t2": "#9898AD",
+      "t3": "#5E5E72",
+      "tg": "#38384A"
+    },
+    "variable_count": 12
+  },
+  {
+    "n": 3,
+    "id": "dashboard",
+    "name": "DASHBOARD — fire spectrum",
+    "source_file": "/Users/regancooney/Projects/clawmachine-codex/clawmachine-identity-v2.html",
+    "source_line_start": 28,
+    "source_line_end": 33,
+    "scope": "comment-scoped block inside :root",
+    "variables": {
+      "dash-1": "#FF3838",
+      "dash-2": "#FF7A3D",
+      "dash-3": "#FFD23D"
+    },
+    "variable_count": 3,
+    "role_label": "the command centre"
+  },
+  {
+    "n": 4,
+    "id": "inventory",
+    "name": "INVENTORY — harvest warmth",
+    "source_file": "/Users/regancooney/Projects/clawmachine-codex/clawmachine-identity-v2.html",
+    "source_line_start": 35,
+    "source_line_end": 40,
+    "scope": "comment-scoped block inside :root",
+    "variables": {
+      "inv-1": "#FFAA2E",
+      "inv-2": "#FF6B2E",
+      "inv-3": "#6EE76E"
+    },
+    "variable_count": 3,
+    "role_label": "the warehouse"
+  },
+  {
+    "n": 5,
+    "id": "analytics",
+    "name": "ANALYTICS — cool precision",
+    "source_file": "/Users/regancooney/Projects/clawmachine-codex/clawmachine-identity-v2.html",
+    "source_line_start": 42,
+    "source_line_end": 47,
+    "scope": "comment-scoped block inside :root",
+    "variables": {
+      "ana-1": "#2ED8FF",
+      "ana-2": "#2EA0FF",
+      "ana-3": "#2EFF9A"
+    },
+    "variable_count": 3,
+    "role_label": "cold clarity"
+  },
+  {
+    "n": 6,
+    "id": "brain",
+    "name": "BRAIN — hot intelligence",
+    "source_file": "/Users/regancooney/Projects/clawmachine-codex/clawmachine-identity-v2.html",
+    "source_line_start": 49,
+    "source_line_end": 54,
+    "scope": "comment-scoped block inside :root",
+    "variables": {
+      "brain-1": "#FF4D8A",
+      "brain-2": "#FF8C4D",
+      "brain-3": "#4DFFE0"
+    },
+    "variable_count": 3,
+    "role_label": "hot intelligence"
+  },
+  {
+    "n": 7,
+    "id": "mesh",
+    "name": "MESH — network cool",
+    "source_file": "/Users/regancooney/Projects/clawmachine-codex/clawmachine-identity-v2.html",
+    "source_line_start": 56,
+    "source_line_end": 61,
+    "scope": "comment-scoped block inside :root",
+    "variables": {
+      "mesh-1": "#4DB8FF",
+      "mesh-2": "#4DFFC8",
+      "mesh-3": "#FFA64D"
+    },
+    "variable_count": 3,
+    "role_label": "the network"
+  },
+  {
+    "n": 8,
+    "id": "settings",
+    "name": "SETTINGS — refined + pop",
+    "source_file": "/Users/regancooney/Projects/clawmachine-codex/clawmachine-identity-v2.html",
+    "source_line_start": 63,
+    "source_line_end": 68,
+    "scope": "comment-scoped block inside :root",
+    "variables": {
+      "set-1": "#9898B0",
+      "set-2": "#6868A0",
+      "set-3": "#B8FF4D"
+    },
+    "variable_count": 3,
+    "role_label": "refined utility"
+  },
+  {
+    "n": 9,
+    "id": "onboarding",
+    "name": "ONBOARDING — warm welcome",
+    "source_file": "/Users/regancooney/Projects/clawmachine-codex/clawmachine-identity-v2.html",
+    "source_line_start": 70,
+    "source_line_end": 75,
+    "scope": "comment-scoped block inside :root",
+    "variables": {
+      "onb-1": "#FFB84D",
+      "onb-2": "#FF6B6B",
+      "onb-3": "#4DE8C8"
+    },
+    "variable_count": 3,
+    "role_label": "the welcome"
+  },
+  {
+    "n": 10,
+    "id": "type-and-space",
+    "name": "TYPE + SPACE (uncommented groups)",
+    "source_file": "/Users/regancooney/Projects/clawmachine-codex/clawmachine-identity-v2.html",
+    "source_line_start": 77,
+    "source_line_end": 84,
+    "scope": "trailing uncommented groups inside :root",
+    "variables": {
+      "fd": "'Syne', system-ui, sans-serif",
+      "fb": "'Manrope', system-ui, sans-serif",
+      "fm": "'JetBrains Mono', 'SF Mono', monospace",
+      "r": "3px",
+      "ease": "cubic-bezier(0.22, 0.61, 0.36, 1)"
+    },
+    "variable_count": 5,
+    "notes": "Grouped under /* TYPE */ and /* SPACE */ inline comments, not section headers."
+  }
+]

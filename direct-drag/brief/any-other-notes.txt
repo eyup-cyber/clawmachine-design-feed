@@ -1,0 +1,45 @@
+GOAL
+- every deal row clicks through to the original listing
+- show floor-aggregate confidence next to each price
+- every control works or is removed; no placeholders
+
+AUDIENCE
+- solo operator, desktop-only, UK fix-and-flip reseller, ten-hour days at a dense terminal
+
+LAYOUT
+- seven-page sidebar: dashboard, inventory, analytics, brain, mesh, agentconsole, settings
+- density-first; no hero empty states, no narration panels
+- render finished screens, not a style guide
+
+DO NOT
+- no translucency, blur, backdrop-filter, or opacity-based fills
+- no gradients beyond a beveled edge (highlight top-left, shadow bottom-right)
+- no SF Symbols; use 16px bitmap icons or hand-authored SVG
+- caps or lowercase only; never capitalised-word headings
+- no gamification vocabulary (no win-rate card, no XP, no level-ups, no badges)
+- no developer-voice UI copy; address the user
+- no AI-image filler boxes; no generative-image residue
+- no target-platform column on deal rows; resale default is eBay
+- no default-visible dismissed or negative-profit rows
+- no Matter font; no fonts from the style-lab folder
+
+DO
+- dark dense foundation; per-scheme accent ramps per page
+- retro Mac OS 9 + cyberpunk + brutalist: hand-drawn bevels, thick borders, tabular numerics
+- Satoshi for display, JetBrains Mono for data, IBM Plex Sans for body
+- corner radius 4px max; spacing from {4, 8, 12, 16, 24, 32}
+- curve-and-bounce motion (easeOutBack); transitions under 300ms; ambient loops under 2s
+
+CONTENT
+- real data shapes: deals, inventory, floor and target prices, source badges
+- six UK vendor badges: ebay, cex, gumtree, facebook, shpock, preloved, wholesale-clearance
+- CeX buys only (never sell target); eBay is source, sold-comps, and sell venue
+- console hardware in; console games out
+
+DELIVERABLES
+- two or three variations per page
+- prefer Claude-Code handoff bundles
+- no narrating-state copy
+
+VOICE
+- direct labels; plain English; no preambles

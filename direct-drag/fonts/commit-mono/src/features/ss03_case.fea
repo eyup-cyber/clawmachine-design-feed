@@ -1,0 +1,58 @@
+feature ss03 {
+    # Coding Feature 00-99
+    # Case sensitive punctuation
+    
+    # feature
+    lookup CloseUp_1 {
+        ignore sub @case_default' @lowercase_actor;
+        ignore sub @case_default' @case_default @lowercase_actor;
+        ignore sub @case_default @case_default' @lowercase_actor;
+        ignore sub @case_default' @case_default @case_default @lowercase_actor;
+        ignore sub @case_default @case_default' @case_default @lowercase_actor;
+        ignore sub @case_default @case_default @case_default' @lowercase_actor;
+        ignore sub @case_default' @case_default @case_default @case_default @lowercase_actor;
+        ignore sub @case_default @case_default' @case_default @case_default @lowercase_actor;
+        ignore sub @case_default @case_default @case_default' @case_default @lowercase_actor;
+        ignore sub @case_default @case_default @case_default @case_default' @lowercase_actor;
+        ignore sub @case_default' @case_default @case_default @case_default @case_default @lowercase_actor;
+        ignore sub @case_default @case_default' @case_default @case_default @case_default @lowercase_actor;
+        ignore sub @case_default @case_default @case_default' @case_default @case_default @lowercase_actor;
+        ignore sub @case_default @case_default @case_default @case_default' @case_default @lowercase_actor;
+        ignore sub @case_default @case_default @case_default @case_default @case_default' @lowercase_actor;
+        ignore sub @case_default @uppercase_actor @case_default';
+        ignore sub @case_default @case_default @uppercase_actor @case_default';
+        sub @uppercase_actor @case_default' by @case_top;
+    } CloseUp_1;
+
+    lookup CloseUp_2 {
+        ignore sub @lowercase_actor @case_default';
+        ignore sub @lowercase_actor @case_default @case_default';
+        ignore sub @lowercase_actor @case_default @case_default @case_default';
+        ignore sub @lowercase_actor @case_default @case_default @case_default @case_default';
+        ignore sub @lowercase_actor @case_default @case_default @case_default @case_default @case_default';
+        ignore sub @case_default' @uppercase_actor @case_default;
+        ignore sub @case_default' @uppercase_actor @case_default @case_default;
+        sub @case_default' @uppercase_actor by @case_top;
+        sub @case_default' @case_default @uppercase_actor by @case_top;
+        sub @case_default' @case_default @case_default @uppercase_actor by @case_top;
+        sub @case_default' @case_default @case_default @case_default @uppercase_actor by @case_top;
+        sub @case_default' @case_default @case_default @case_default @case_default @uppercase_actor by @case_top;
+    } CloseUp_2;
+    
+    lookup StartEndSpace {
+        sub @uppercase_actor @space_actor @case_default' @space_actor @uppercase_actor by @case_top;
+        sub @uppercase_actor @space_actor @case_default' @case_default @space_actor @uppercase_actor by @case_top;
+        sub @uppercase_actor @space_actor @case_default' @case_default @case_default @space_actor @uppercase_actor by @case_top;
+        sub @uppercase_actor @space_actor @case_default' @case_default @case_default @case_default @space_actor @uppercase_actor by @case_top;
+        sub @uppercase_actor @space_actor @case_default' @case_default @case_default @case_default @case_default @space_actor @uppercase_actor by @case_top;
+    } StartEndSpace;
+    
+    lookup InBetween {
+        sub @case_top @case_default' by @case_top;
+    } InBetween;
+    
+    lookup Fix {
+        sub @case_default @case_top' by @case_default;
+    } Fix;
+    
+} ss03;

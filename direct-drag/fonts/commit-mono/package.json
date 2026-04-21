@@ -1,0 +1,21 @@
+{
+    "dependencies": {
+        "vite": "^7.1.7"
+    },
+    "license": "MIT",
+    "name": "commit-mono",
+    "packageManager": "bun@1.2.22",
+    "prettier": {
+        "printWidth": 120,
+        "semi": false,
+        "tabWidth": 4
+    },
+    "private": true,
+    "scripts": {
+        "build": "vite build",
+        "dev": "vite",
+        "preview": "vite preview"
+    },
+    "type": "commonjs",
+    "version": "1.0.0"
+}

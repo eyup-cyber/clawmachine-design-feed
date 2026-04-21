@@ -1,0 +1,1056 @@
+[
+ {
+  "n": 1,
+  "name": "SOLAR FLARE",
+  "type": "dark",
+  "void": "#0B0A08",
+  "p": "#FF9B17",
+  "s": "#17D4A8",
+  "pg": {
+   "dashboard": "#FF6B2C",
+   "inventory": "#FFB917",
+   "analytics": "#17D4A8",
+   "brain": "#FF4D6A",
+   "mesh": "#4DB8FF",
+   "onboarding": "#FFD23D",
+   "settings": "#8B8B6E"
+  }
+ },
+ {
+  "n": 2,
+  "name": "DEEP CURRENT",
+  "type": "dark",
+  "void": "#060B10",
+  "p": "#00E5A0",
+  "s": "#FF5C8A",
+  "pg": {
+   "dashboard": "#00E5A0",
+   "inventory": "#FFB830",
+   "analytics": "#00B4FF",
+   "brain": "#FF5C8A",
+   "mesh": "#8B6BFF",
+   "onboarding": "#00E5D4",
+   "settings": "#5A7A90"
+  }
+ },
+ {
+  "n": 3,
+  "name": "PHOSPHOR BURN",
+  "type": "dark",
+  "void": "#0A0C08",
+  "p": "#39FF14",
+  "s": "#FF1744",
+  "pg": {
+   "dashboard": "#39FF14",
+   "inventory": "#FFD600",
+   "analytics": "#00E5FF",
+   "brain": "#FF1744",
+   "mesh": "#B388FF",
+   "onboarding": "#76FF03",
+   "settings": "#6E7062"
+  }
+ },
+ {
+  "n": 4,
+  "name": "TERRACOTTA GRID",
+  "type": "light",
+  "void": "#F5EDE2",
+  "p": "#D94F30",
+  "s": "#1A7A6E",
+  "pg": {
+   "dashboard": "#D94F30",
+   "inventory": "#E8922E",
+   "analytics": "#1A7A6E",
+   "brain": "#9B3AA0",
+   "mesh": "#2B6EB5",
+   "onboarding": "#D4A028",
+   "settings": "#8A7856"
+  }
+ },
+ {
+  "n": 5,
+  "name": "SIGNAL NOIR",
+  "type": "dark",
+  "void": "#08080A",
+  "p": "#FF2D55",
+  "s": "#00D4AA",
+  "pg": {
+   "dashboard": "#FF2D55",
+   "inventory": "#FFAA00",
+   "analytics": "#00D4AA",
+   "brain": "#D946EF",
+   "mesh": "#3B82F6",
+   "onboarding": "#FF8C42",
+   "settings": "#64648A"
+  }
+ },
+ {
+  "n": 6,
+  "name": "KANJI ELECTRIC",
+  "type": "dark",
+  "void": "#06081A",
+  "p": "#FF3366",
+  "s": "#33FF99",
+  "pg": {
+   "dashboard": "#FF3366",
+   "inventory": "#FFCC00",
+   "analytics": "#33CCFF",
+   "brain": "#FF6633",
+   "mesh": "#33FF99",
+   "onboarding": "#FF99CC",
+   "settings": "#6668AA"
+  }
+ },
+ {
+  "n": 7,
+  "name": "CONCRETE BLOOM",
+  "type": "light",
+  "void": "#F0F0EC",
+  "p": "#E81850",
+  "s": "#00AA72",
+  "pg": {
+   "dashboard": "#E81850",
+   "inventory": "#F5A623",
+   "analytics": "#00AA72",
+   "brain": "#8B2FC6",
+   "mesh": "#2B7AE8",
+   "onboarding": "#E8A817",
+   "settings": "#787870"
+  }
+ },
+ {
+  "n": 8,
+  "name": "VELVET TERMINAL",
+  "type": "dark",
+  "void": "#0C0810",
+  "p": "#E8608A",
+  "s": "#60E8C0",
+  "pg": {
+   "dashboard": "#E8608A",
+   "inventory": "#D4AA4E",
+   "analytics": "#60E8C0",
+   "brain": "#A855F7",
+   "mesh": "#5BAAFF",
+   "onboarding": "#FFB86E",
+   "settings": "#706882"
+  }
+ },
+ {
+  "n": 9,
+  "name": "TEKKI SHOCK",
+  "type": "split",
+  "void": "#0A0A2E",
+  "p": "#BFFF00",
+  "s": "#FF0066",
+  "pg": {
+   "dashboard": "#FF0066",
+   "inventory": "#BFFF00",
+   "analytics": "#00DDFF",
+   "brain": "#FF6600",
+   "mesh": "#00FF88",
+   "onboarding": "#FFDD00",
+   "settings": "#6060B0"
+  }
+ },
+ {
+  "n": 10,
+  "name": "BURNT CIRCUIT",
+  "type": "dark",
+  "void": "#0C0B0A",
+  "p": "#E87430",
+  "s": "#30C8B0",
+  "pg": {
+   "dashboard": "#E87430",
+   "inventory": "#D4A830",
+   "analytics": "#30C8B0",
+   "brain": "#E84060",
+   "mesh": "#4098D8",
+   "onboarding": "#FFBA44",
+   "settings": "#7C6E62"
+  }
+ },
+ {
+  "n": 11,
+  "name": "ARCTIC PULSE",
+  "type": "split",
+  "void": "#F4F8FA",
+  "p": "#FF4057",
+  "s": "#0A8AFF",
+  "pg": {
+   "dashboard": "#FF4057",
+   "inventory": "#FF8A30",
+   "analytics": "#0A8AFF",
+   "brain": "#A040E8",
+   "mesh": "#00B88A",
+   "onboarding": "#FF6B4A",
+   "settings": "#687888"
+  }
+ },
+ {
+  "n": 12,
+  "name": "CHROMATIC FORGE",
+  "type": "dark",
+  "void": "#0C0C0E",
+  "p": "#FF5530",
+  "s": "#20CCAA",
+  "pg": {
+   "dashboard": "#FF5530",
+   "inventory": "#FFAA22",
+   "analytics": "#20CCAA",
+   "brain": "#CC44FF",
+   "mesh": "#4488FF",
+   "onboarding": "#FF8844",
+   "settings": "#6A6A78"
+  }
+ },
+ {
+  "n": 13,
+  "name": "NEON GENESIS",
+  "type": "dark",
+  "void": "#050505",
+  "p": "#FE0000",
+  "s": "#0BFF01",
+  "pg": {
+   "dashboard": "#FE0000",
+   "inventory": "#FDFE02",
+   "analytics": "#011EFE",
+   "brain": "#FE00F6",
+   "mesh": "#0BFF01",
+   "onboarding": "#FDFE02",
+   "settings": "#666666"
+  }
+ },
+ {
+  "n": 14,
+  "name": "ULTRAVIOLET HAZE",
+  "type": "dark",
+  "void": "#0A0520",
+  "p": "#AB20FD",
+  "s": "#3BFD23",
+  "pg": {
+   "dashboard": "#AB20FD",
+   "inventory": "#F5CA22",
+   "analytics": "#3BFD23",
+   "brain": "#FF3662",
+   "mesh": "#3553FD",
+   "onboarding": "#F32097",
+   "settings": "#504488"
+  }
+ },
+ {
+  "n": 15,
+  "name": "ELECTRIC BUBBLEGUM",
+  "type": "dark",
+  "void": "#08080E",
+  "p": "#FF00B4",
+  "s": "#00FFBC",
+  "pg": {
+   "dashboard": "#FF00B4",
+   "inventory": "#FFD600",
+   "analytics": "#00FFBC",
+   "brain": "#C493FF",
+   "mesh": "#8EA5FF",
+   "onboarding": "#FF6B4A",
+   "settings": "#505064"
+  }
+ },
+ {
+  "n": 16,
+  "name": "TOXIC LIME",
+  "type": "dark",
+  "void": "#060808",
+  "p": "#CFFF04",
+  "s": "#FF0066",
+  "pg": {
+   "dashboard": "#CFFF04",
+   "inventory": "#FFB830",
+   "analytics": "#04FFC8",
+   "brain": "#FF0066",
+   "mesh": "#4DEEEA",
+   "onboarding": "#E2FF68",
+   "settings": "#4C524C"
+  }
+ },
+ {
+  "n": 17,
+  "name": "SUNSET BOULEVARD",
+  "type": "dark",
+  "void": "#0C0808",
+  "p": "#FF6F00",
+  "s": "#00B0FF",
+  "pg": {
+   "dashboard": "#FF3D00",
+   "inventory": "#FF6F00",
+   "analytics": "#00B0FF",
+   "brain": "#FF1744",
+   "mesh": "#00E676",
+   "onboarding": "#FFD600",
+   "settings": "#584C40"
+  }
+ },
+ {
+  "n": 18,
+  "name": "PLASMA FIELD",
+  "type": "dark",
+  "void": "#08061A",
+  "p": "#F731EA",
+  "s": "#26F1E8",
+  "pg": {
+   "dashboard": "#F731EA",
+   "inventory": "#F4F322",
+   "analytics": "#26F1E8",
+   "brain": "#871BF7",
+   "mesh": "#00FF88",
+   "onboarding": "#F5CA22",
+   "settings": "#443E88"
+  }
+ },
+ {
+  "n": 19,
+  "name": "VIVA VEGAS",
+  "type": "dark",
+  "void": "#0A0C1E",
+  "p": "#D01935",
+  "s": "#85D7E5",
+  "pg": {
+   "dashboard": "#D01935",
+   "inventory": "#FEA70A",
+   "analytics": "#85D7E5",
+   "brain": "#DF4C21",
+   "mesh": "#4DEEEA",
+   "onboarding": "#FEA70A",
+   "settings": "#4E5488"
+  }
+ },
+ {
+  "n": 20,
+  "name": "ROLLER DISCO",
+  "type": "dark",
+  "void": "#081A1C",
+  "p": "#FFD101",
+  "s": "#C690CC",
+  "pg": {
+   "dashboard": "#FFD101",
+   "inventory": "#540270",
+   "analytics": "#147772",
+   "brain": "#C690CC",
+   "mesh": "#85D7E5",
+   "onboarding": "#FFD101",
+   "settings": "#3E7478"
+  }
+ },
+ {
+  "n": 21,
+  "name": "HONG KONG NEON",
+  "type": "dark",
+  "void": "#14080C",
+  "p": "#B8113C",
+  "s": "#7FE9F6",
+  "pg": {
+   "dashboard": "#B8113C",
+   "inventory": "#B2CA2E",
+   "analytics": "#7FE9F6",
+   "brain": "#F75E59",
+   "mesh": "#B2CA2E",
+   "onboarding": "#F75E59",
+   "settings": "#6A4454"
+  }
+ },
+ {
+  "n": 22,
+  "name": "STATION PLATFORM",
+  "type": "dark",
+  "void": "#0A1018",
+  "p": "#FA1593",
+  "s": "#95DEFF",
+  "pg": {
+   "dashboard": "#FA1593",
+   "inventory": "#FFD600",
+   "analytics": "#95DEFF",
+   "brain": "#750037",
+   "mesh": "#00E5A0",
+   "onboarding": "#FA1593",
+   "settings": "#485464"
+  }
+ },
+ {
+  "n": 23,
+  "name": "HEY MR DJ",
+  "type": "dark",
+  "void": "#0A0324",
+  "p": "#B915CC",
+  "s": "#8DE41C",
+  "pg": {
+   "dashboard": "#B915CC",
+   "inventory": "#F6287D",
+   "analytics": "#8DE41C",
+   "brain": "#F6287D",
+   "mesh": "#4DEEEA",
+   "onboarding": "#8DE41C",
+   "settings": "#482E7C"
+  }
+ },
+ {
+  "n": 24,
+  "name": "FESTIVAL CHAOS",
+  "type": "dark",
+  "void": "#08060C",
+  "p": "#7C00FE",
+  "s": "#F9E400",
+  "pg": {
+   "dashboard": "#F5004F",
+   "inventory": "#F9E400",
+   "analytics": "#00E5FF",
+   "brain": "#7C00FE",
+   "mesh": "#FFAF00",
+   "onboarding": "#F9E400",
+   "settings": "#504868"
+  }
+ },
+ {
+  "n": 25,
+  "name": "MIDNIGHT DREAM",
+  "type": "dark",
+  "void": "#0C0A20",
+  "p": "#15F5BA",
+  "s": "#836FFF",
+  "pg": {
+   "dashboard": "#15F5BA",
+   "inventory": "#FFD23D",
+   "analytics": "#836FFF",
+   "brain": "#FF5C8A",
+   "mesh": "#15F5BA",
+   "onboarding": "#F0F3FF",
+   "settings": "#524E90"
+  }
+ },
+ {
+  "n": 26,
+  "name": "NEON CITRUS",
+  "type": "dark",
+  "void": "#060A06",
+  "p": "#00FF9C",
+  "s": "#FF1744",
+  "pg": {
+   "dashboard": "#00FF9C",
+   "inventory": "#FFE700",
+   "analytics": "#B6FFA1",
+   "brain": "#FF1744",
+   "mesh": "#FEFFA7",
+   "onboarding": "#00FF9C",
+   "settings": "#4C564C"
+  }
+ },
+ {
+  "n": 27,
+  "name": "ELECTRIC DREAMS",
+  "type": "dark",
+  "void": "#08080C",
+  "p": "#FF3D00",
+  "s": "#00B0FF",
+  "pg": {
+   "dashboard": "#FF3D00",
+   "inventory": "#FFD600",
+   "analytics": "#00B0FF",
+   "brain": "#FF6F00",
+   "mesh": "#00E676",
+   "onboarding": "#FFD600",
+   "settings": "#50505E"
+  }
+ },
+ {
+  "n": 28,
+  "name": "NEON JUNGLE",
+  "type": "dark",
+  "void": "#060C08",
+  "p": "#76FF03",
+  "s": "#D500F9",
+  "pg": {
+   "dashboard": "#76FF03",
+   "inventory": "#FFD600",
+   "analytics": "#00B0FF",
+   "brain": "#D500F9",
+   "mesh": "#1B5E20",
+   "onboarding": "#76FF03",
+   "settings": "#3A5444"
+  }
+ },
+ {
+  "n": 29,
+  "name": "RETRO FUTURE",
+  "type": "light",
+  "void": "#F6F1E9",
+  "p": "#FF8400",
+  "s": "#4F200D",
+  "pg": {
+   "dashboard": "#FF8400",
+   "inventory": "#FFD93D",
+   "analytics": "#4F200D",
+   "brain": "#E04040",
+   "mesh": "#2E8B57",
+   "onboarding": "#FF8400",
+   "settings": "#8A7E5A"
+  }
+ },
+ {
+  "n": 30,
+  "name": "COSMIC VIOLET",
+  "type": "dark",
+  "void": "#0C0818",
+  "p": "#8B5DFF",
+  "s": "#FFF7D1",
+  "pg": {
+   "dashboard": "#8B5DFF",
+   "inventory": "#FFF7D1",
+   "analytics": "#6A42C2",
+   "brain": "#FF5C8A",
+   "mesh": "#563A9C",
+   "onboarding": "#FFF7D1",
+   "settings": "#544688"
+  }
+ },
+ {
+  "n": 31,
+  "name": "CANDY NEON",
+  "type": "dark",
+  "void": "#08080C",
+  "p": "#AF3DFF",
+  "s": "#A6FD29",
+  "pg": {
+   "dashboard": "#FF3B94",
+   "inventory": "#A6FD29",
+   "analytics": "#55FFE1",
+   "brain": "#AF3DFF",
+   "mesh": "#55FFE1",
+   "onboarding": "#A6FD29",
+   "settings": "#505064"
+  }
+ },
+ {
+  "n": 32,
+  "name": "WARM TERMINAL",
+  "type": "dark",
+  "void": "#0A0806",
+  "p": "#FFAA00",
+  "s": "#00AAFF",
+  "pg": {
+   "dashboard": "#FFAA00",
+   "inventory": "#FF6600",
+   "analytics": "#00AAFF",
+   "brain": "#FF0066",
+   "mesh": "#AAFF00",
+   "onboarding": "#FFAA00",
+   "settings": "#5E5040"
+  }
+ },
+ {
+  "n": 33,
+  "name": "SAKURA CIRCUIT",
+  "type": "dark",
+  "void": "#0A0810",
+  "p": "#FF6B9D",
+  "s": "#4ECDC4",
+  "pg": {
+   "dashboard": "#FF6B9D",
+   "inventory": "#FFD93D",
+   "analytics": "#4ECDC4",
+   "brain": "#C44DFF",
+   "mesh": "#4ECDC4",
+   "onboarding": "#FF6B9D",
+   "settings": "#544864"
+  }
+ },
+ {
+  "n": 34,
+  "name": "HAZARD STRIPE",
+  "type": "dark",
+  "void": "#0A0A08",
+  "p": "#FFD600",
+  "s": "#FF1744",
+  "pg": {
+   "dashboard": "#FFD600",
+   "inventory": "#FF9100",
+   "analytics": "#00E5FF",
+   "brain": "#FF1744",
+   "mesh": "#76FF03",
+   "onboarding": "#FFD600",
+   "settings": "#56564C"
+  }
+ },
+ {
+  "n": 35,
+  "name": "COBALT RUSH",
+  "type": "dark",
+  "void": "#060A1C",
+  "p": "#FF6B6B",
+  "s": "#FFD93D",
+  "pg": {
+   "dashboard": "#FF6B6B",
+   "inventory": "#FFD93D",
+   "analytics": "#4ECDC4",
+   "brain": "#C44DFF",
+   "mesh": "#4ECDC4",
+   "onboarding": "#FFD93D",
+   "settings": "#3E4E88"
+  }
+ },
+ {
+  "n": 36,
+  "name": "FIRECRACKER",
+  "type": "dark",
+  "void": "#0C0808",
+  "p": "#FF2D2D",
+  "s": "#FFD700",
+  "pg": {
+   "dashboard": "#FF2D2D",
+   "inventory": "#FFD700",
+   "analytics": "#00CED1",
+   "brain": "#FF6347",
+   "mesh": "#32CD32",
+   "onboarding": "#FFD700",
+   "settings": "#584C46"
+  }
+ },
+ {
+  "n": 37,
+  "name": "SYNTH WAVE",
+  "type": "dark",
+  "void": "#0A0618",
+  "p": "#FF2975",
+  "s": "#00F0FF",
+  "pg": {
+   "dashboard": "#FF2975",
+   "inventory": "#FFD600",
+   "analytics": "#00F0FF",
+   "brain": "#FF6B2C",
+   "mesh": "#00FF88",
+   "onboarding": "#FFD600",
+   "settings": "#504488"
+  }
+ },
+ {
+  "n": 38,
+  "name": "ALPINE GLOW",
+  "type": "light",
+  "void": "#F8F6F4",
+  "p": "#FF6B4A",
+  "s": "#2B7AE8",
+  "pg": {
+   "dashboard": "#FF6B4A",
+   "inventory": "#FFB830",
+   "analytics": "#2B7AE8",
+   "brain": "#A040E8",
+   "mesh": "#00B88A",
+   "onboarding": "#FF6B4A",
+   "settings": "#8A8078"
+  }
+ },
+ {
+  "n": 39,
+  "name": "DEEP OCEAN",
+  "type": "dark",
+  "void": "#040810",
+  "p": "#00FFD4",
+  "s": "#FF4488",
+  "pg": {
+   "dashboard": "#00FFD4",
+   "inventory": "#FFB830",
+   "analytics": "#4488FF",
+   "brain": "#FF4488",
+   "mesh": "#00FFD4",
+   "onboarding": "#00E5A0",
+   "settings": "#384E68"
+  }
+ },
+ {
+  "n": 40,
+  "name": "DESERT STORM",
+  "type": "light",
+  "void": "#F2E8D8",
+  "p": "#E85D30",
+  "s": "#1A8AAA",
+  "pg": {
+   "dashboard": "#E85D30",
+   "inventory": "#D4A028",
+   "analytics": "#1A8AAA",
+   "brain": "#AA3060",
+   "mesh": "#2E8B57",
+   "onboarding": "#E85D30",
+   "settings": "#8A7C64"
+  }
+ },
+ {
+  "n": 41,
+  "name": "VOLT YELLOW",
+  "type": "dark",
+  "void": "#0A0A06",
+  "p": "#FFE700",
+  "s": "#001EFF",
+  "pg": {
+   "dashboard": "#FFE700",
+   "inventory": "#FF9100",
+   "analytics": "#001EFF",
+   "brain": "#F000FF",
+   "mesh": "#74EE15",
+   "onboarding": "#FFE700",
+   "settings": "#56563C"
+  }
+ },
+ {
+  "n": 42,
+  "name": "MAGENTA MATRIX",
+  "type": "dark",
+  "void": "#0E060C",
+  "p": "#F000FF",
+  "s": "#4DEEEA",
+  "pg": {
+   "dashboard": "#F000FF",
+   "inventory": "#FFE700",
+   "analytics": "#4DEEEA",
+   "brain": "#FF3B94",
+   "mesh": "#74EE15",
+   "onboarding": "#F000FF",
+   "settings": "#603E58"
+  }
+ },
+ {
+  "n": 43,
+  "name": "NEON PARADISE",
+  "type": "dark",
+  "void": "#0C0606",
+  "p": "#FF4081",
+  "s": "#00E5A0",
+  "pg": {
+   "dashboard": "#FF4081",
+   "inventory": "#FF5252",
+   "analytics": "#00E5A0",
+   "brain": "#D5006D",
+   "mesh": "#00B0FF",
+   "onboarding": "#FF1744",
+   "settings": "#5E3C3C"
+  }
+ },
+ {
+  "n": 44,
+  "name": "SPECTRUM SHIFT",
+  "type": "dark",
+  "void": "#08080A",
+  "p": "#00AAFF",
+  "s": "#FF00AA",
+  "pg": {
+   "dashboard": "#FF00AA",
+   "inventory": "#FFAA00",
+   "analytics": "#00AAFF",
+   "brain": "#AA00FF",
+   "mesh": "#AAFF00",
+   "onboarding": "#00FFAA",
+   "settings": "#50505C"
+  }
+ },
+ {
+  "n": 45,
+  "name": "FAEB GOLD",
+  "type": "dark",
+  "void": "#0C0614",
+  "p": "#FAEB2C",
+  "s": "#F52789",
+  "pg": {
+   "dashboard": "#FAEB2C",
+   "inventory": "#F52789",
+   "analytics": "#1685F8",
+   "brain": "#E900FF",
+   "mesh": "#00FF88",
+   "onboarding": "#FAEB2C",
+   "settings": "#564A74"
+  }
+ },
+ {
+  "n": 46,
+  "name": "CORAL REEF",
+  "type": "dark",
+  "void": "#060A14",
+  "p": "#FF7F50",
+  "s": "#20B2AA",
+  "pg": {
+   "dashboard": "#FF7F50",
+   "inventory": "#FFD700",
+   "analytics": "#20B2AA",
+   "brain": "#FF69B4",
+   "mesh": "#00CED1",
+   "onboarding": "#FF7F50",
+   "settings": "#3E5074"
+  }
+ },
+ {
+  "n": 47,
+  "name": "SUPERNOVA",
+  "type": "dark",
+  "void": "#080608",
+  "p": "#FFFFFF",
+  "s": "#FF4500",
+  "pg": {
+   "dashboard": "#FF4500",
+   "inventory": "#FFD700",
+   "analytics": "#00CED1",
+   "brain": "#FF1493",
+   "mesh": "#00FF7F",
+   "onboarding": "#FFFF00",
+   "settings": "#544654"
+  }
+ },
+ {
+  "n": 48,
+  "name": "GOTHIC BLOOM",
+  "type": "dark",
+  "void": "#060A08",
+  "p": "#E040A0",
+  "s": "#40E0A0",
+  "pg": {
+   "dashboard": "#E040A0",
+   "inventory": "#D4AA28",
+   "analytics": "#40E0A0",
+   "brain": "#8040E0",
+   "mesh": "#40E0A0",
+   "onboarding": "#E0A040",
+   "settings": "#385444"
+  }
+ },
+ {
+  "n": 49,
+  "name": "STREET MACHINE",
+  "type": "dark",
+  "void": "#080808",
+  "p": "#00CCFF",
+  "s": "#FF3300",
+  "pg": {
+   "dashboard": "#FF3300",
+   "inventory": "#FFCC00",
+   "analytics": "#00CCFF",
+   "brain": "#CC00FF",
+   "mesh": "#00FF66",
+   "onboarding": "#FFCC00",
+   "settings": "#505050"
+  }
+ },
+ {
+  "n": 50,
+  "name": "BLOOD MOON",
+  "type": "dark",
+  "void": "#0C0606",
+  "p": "#CC0000",
+  "s": "#E8E0D8",
+  "pg": {
+   "dashboard": "#CC0000",
+   "inventory": "#D4A828",
+   "analytics": "#6088B0",
+   "brain": "#8030A0",
+   "mesh": "#40A080",
+   "onboarding": "#E84040",
+   "settings": "#5E3C3C"
+  }
+ },
+ {
+  "n": 51,
+  "name": "AURORA BOREALIS",
+  "type": "dark",
+  "void": "#040810",
+  "p": "#00FF88",
+  "s": "#8844FF",
+  "pg": {
+   "dashboard": "#00FF88",
+   "inventory": "#FFD600",
+   "analytics": "#00CCFF",
+   "brain": "#8844FF",
+   "mesh": "#00FF88",
+   "onboarding": "#44FFCC",
+   "settings": "#384E66"
+  }
+ },
+ {
+  "n": 52,
+  "name": "RUST OXIDE",
+  "type": "dark",
+  "void": "#0A0806",
+  "p": "#CC5500",
+  "s": "#44AA88",
+  "pg": {
+   "dashboard": "#CC5500",
+   "inventory": "#D4A028",
+   "analytics": "#44AA88",
+   "brain": "#AA3344",
+   "mesh": "#44AA88",
+   "onboarding": "#E88830",
+   "settings": "#5E5040"
+  }
+ },
+ {
+  "n": 53,
+  "name": "NEON MINT",
+  "type": "dark",
+  "void": "#080C0A",
+  "p": "#00FFB4",
+  "s": "#FF4477",
+  "pg": {
+   "dashboard": "#00FFB4",
+   "inventory": "#FFD23D",
+   "analytics": "#4488FF",
+   "brain": "#FF4477",
+   "mesh": "#00FFB4",
+   "onboarding": "#88FF44",
+   "settings": "#48584E"
+  }
+ },
+ {
+  "n": 54,
+  "name": "CRIMSON ENGINE",
+  "type": "dark",
+  "void": "#0C0606",
+  "p": "#FF1A45",
+  "s": "#078498",
+  "pg": {
+   "dashboard": "#FF1A45",
+   "inventory": "#FFFED7",
+   "analytics": "#078498",
+   "brain": "#FF1A45",
+   "mesh": "#078498",
+   "onboarding": "#FF6B4A",
+   "settings": "#5E3C3C"
+  }
+ },
+ {
+  "n": 55,
+  "name": "VAPOR TRAIL",
+  "type": "dark",
+  "void": "#0C0818",
+  "p": "#FF71CE",
+  "s": "#01CDFE",
+  "pg": {
+   "dashboard": "#FF71CE",
+   "inventory": "#FFFB96",
+   "analytics": "#01CDFE",
+   "brain": "#B967FF",
+   "mesh": "#05FFA1",
+   "onboarding": "#FF71CE",
+   "settings": "#544678"
+  }
+ },
+ {
+  "n": 56,
+  "name": "INFRARED",
+  "type": "dark",
+  "void": "#060406",
+  "p": "#FF3300",
+  "s": "#FFFF00",
+  "pg": {
+   "dashboard": "#FF3300",
+   "inventory": "#FF8800",
+   "analytics": "#FFFF00",
+   "brain": "#FF0066",
+   "mesh": "#00CCAA",
+   "onboarding": "#FF6600",
+   "settings": "#58404A"
+  }
+ },
+ {
+  "n": 57,
+  "name": "JADE EMPEROR",
+  "type": "dark",
+  "void": "#060A08",
+  "p": "#00CC77",
+  "s": "#FFD700",
+  "pg": {
+   "dashboard": "#00CC77",
+   "inventory": "#FFD700",
+   "analytics": "#00AACC",
+   "brain": "#CC3366",
+   "mesh": "#00CC77",
+   "onboarding": "#FFD700",
+   "settings": "#3A5646"
+  }
+ },
+ {
+  "n": 58,
+  "name": "NEON ORCHID",
+  "type": "dark",
+  "void": "#0A0610",
+  "p": "#DA70D6",
+  "s": "#00E5A0",
+  "pg": {
+   "dashboard": "#DA70D6",
+   "inventory": "#FFD23D",
+   "analytics": "#00E5A0",
+   "brain": "#FF3399",
+   "mesh": "#00CCFF",
+   "onboarding": "#DA70D6",
+   "settings": "#544A70"
+  }
+ },
+ {
+  "n": 59,
+  "name": "CARBON FIBER",
+  "type": "dark",
+  "void": "#080808",
+  "p": "#FF2200",
+  "s": "#00CCAA",
+  "pg": {
+   "dashboard": "#FF2200",
+   "inventory": "#FFAA00",
+   "analytics": "#00CCAA",
+   "brain": "#AA00FF",
+   "mesh": "#00CCAA",
+   "onboarding": "#FFAA00",
+   "settings": "#4C4C4C"
+  }
+ },
+ {
+  "n": 60,
+  "name": "PACIFIC SUNSET",
+  "type": "light",
+  "void": "#F8F2EA",
+  "p": "#FF6B6B",
+  "s": "#20B2AA",
+  "pg": {
+   "dashboard": "#FF6B6B",
+   "inventory": "#FFB830",
+   "analytics": "#20B2AA",
+   "brain": "#9B59B6",
+   "mesh": "#20B2AA",
+   "onboarding": "#FF6B6B",
+   "settings": "#8E826E"
+  }
+ },
+ {
+  "n": 61,
+  "name": "PHOSPHOR AMBER",
+  "type": "dark",
+  "void": "#0A0804",
+  "p": "#FF8C00",
+  "s": "#00CED1",
+  "pg": {
+   "dashboard": "#FF8C00",
+   "inventory": "#FFD700",
+   "analytics": "#00CED1",
+   "brain": "#FF4444",
+   "mesh": "#00CED1",
+   "onboarding": "#FF8C00",
+   "settings": "#5E5040"
+  }
+ },
+ {
+  "n": 62,
+  "name": "ELECTRIC VIOLET",
+  "type": "dark",
+  "void": "#080610",
+  "p": "#7D12FF",
+  "s": "#FF6B2C",
+  "pg": {
+   "dashboard": "#7D12FF",
+   "inventory": "#FFD23D",
+   "analytics": "#00E5FF",
+   "brain": "#FF3366",
+   "mesh": "#00FF88",
+   "onboarding": "#FF6B2C",
+   "settings": "#50446C"
+  }
+ }
+]
