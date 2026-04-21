@@ -4,21 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CLAWMACHINE — INGEST MAP · CLAUDE DESIGN</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    CLAWMACHINE — INGEST MAP
    The 1-pager Claude Design reads first.
    Vocabulary derived from clawmachine-chromatic-lab.html.
    Default scheme: #02 DEEP CURRENT (dark oceanic).
+   Icon grammar: Lucide Regular in-UI; pixelarticons = reference-pool only.
+   OFL font stack (Satoshi + IBM Plex Sans + JetBrains Mono), self-hosted.
    ============================================================ */
+@font-face { font-family: 'Satoshi'; font-weight: 400; src: url('direct-drag/fonts/satoshi/Satoshi-Regular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'Satoshi'; font-weight: 500; src: url('direct-drag/fonts/satoshi/Satoshi-Medium.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'Satoshi'; font-weight: 700; src: url('direct-drag/fonts/satoshi/Satoshi-Bold.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 400; src: url('direct-drag/fonts/ibm-plex-sans/IBMPlexSans-Regular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'IBM Plex Sans'; font-weight: 700; src: url('direct-drag/fonts/ibm-plex-sans/IBMPlexSans-Bold.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 400; src: url('direct-drag/fonts/jetbrains-mono/JetBrainsMono-Regular.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'JetBrains Mono'; font-weight: 700; src: url('direct-drag/fonts/jetbrains-mono/JetBrainsMono-Bold.woff2') format('woff2'); font-display: swap; }
+
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 :root {
-  --t-display: 'Space Grotesk', 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --t-display: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
   --t-body: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
-  --t-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --t-mono: 'JetBrains Mono', ui-monospace, monospace;
 
   --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
   --dur-quick: 140ms;
@@ -350,9 +359,9 @@ body::before {
 }
 .sample-deal-head {
   display: grid;
-  grid-template-columns: 32px 2fr 92px 80px 90px 80px;
+  grid-template-columns: 44px minmax(160px, 1fr) 120px 80px 80px 72px;
   gap: 12px;
-  padding: 8px 12px;
+  padding: 10px 12px;
   background: var(--sc-s2);
   font-family: var(--t-mono);
   font-size: 9px;
@@ -360,24 +369,34 @@ body::before {
   text-transform: uppercase;
   color: var(--sc-t3);
   font-weight: 700;
+  align-items: center;
+}
+.sample-deal-head > div {
+  overflow: hidden; white-space: nowrap; text-overflow: ellipsis;
+  box-sizing: border-box;
 }
 .sample-deal-row {
   display: grid;
-  grid-template-columns: 32px 2fr 92px 80px 90px 80px;
+  grid-template-columns: 44px minmax(160px, 1fr) 120px 80px 80px 72px;
   gap: 12px;
   align-items: center;
-  padding: 8px 12px;
+  padding: 10px 12px;
+  min-height: 48px;
   border-top: 1px solid var(--sc-b1);
   font-family: var(--t-mono);
   font-size: 12px;
+  box-sizing: border-box;
 }
-.sample-deal-row .thumb { width: 28px; height: 28px; background: var(--sc-s3); border: 1px solid var(--sc-b1); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--sc-t3); }
-.sample-deal-row .thumb svg { width: 14px; height: 14px; fill: currentColor; }
-.sample-deal-row .title { color: var(--sc-t1); font-family: var(--t-body); font-size: 13px; }
-.sample-deal-row .vendor { padding: 1px 6px; font-size: 9px; border: 1px solid var(--sc-pg-dash); color: var(--sc-pg-dash); letter-spacing: 0.1em; border-radius: 2px; text-transform: uppercase; }
+.sample-deal-row > * {
+  overflow: hidden; white-space: nowrap; box-sizing: border-box;
+}
+.sample-deal-row .thumb { width: 36px; height: 36px; background: var(--sc-s3); border: 1px solid var(--sc-b1); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--sc-p); flex-shrink: 0; }
+.sample-deal-row .thumb svg { width: 22px; height: 22px; stroke: currentColor; }
+.sample-deal-row .title { color: var(--sc-t1); font-family: var(--t-body); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.sample-deal-row .vendor { padding: 2px 8px; font-size: 9px; border: 1px solid var(--sc-pg-dash); color: var(--sc-pg-dash); letter-spacing: 0.1em; border-radius: 2px; text-transform: uppercase; max-width: 110px; overflow: hidden; text-overflow: ellipsis; display: inline-block; }
 .sample-deal-row .num { color: var(--sc-t1); text-align: right; font-variant-numeric: tabular-nums; }
 .sample-deal-row .num .c { color: var(--sc-t3); }
-.sample-deal-row .pill { display: inline-flex; padding: 2px 8px; font-size: 10px; background: color-mix(in srgb, var(--ink-gain) 18%, transparent); color: var(--ink-gain); border-radius: 999px; }
+.sample-deal-row .pill { display: inline-flex; padding: 2px 8px; font-size: 10px; background: color-mix(in srgb, var(--ink-gain) 18%, transparent); color: var(--ink-gain); border-radius: 999px; max-width: 72px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; box-sizing: border-box; }
 
 /* CTA BUTTONS */
 .cta-row {
@@ -393,6 +412,9 @@ body::before {
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding: 12px 20px;
+  min-width: 72px;
+  min-height: 40px;
+  line-height: 1.2;
   background: transparent;
   border: 1px solid var(--sc-b1);
   color: var(--sc-t2);
@@ -400,7 +422,11 @@ body::before {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
+  box-sizing: border-box;
+  margin: 4px;
+  white-space: nowrap;
   transition: border-color var(--dur-quick) var(--ease-std), color var(--dur-quick) var(--ease-std), background var(--dur-quick) var(--ease-std);
 }
 .cta:hover { border-color: var(--sc-p); color: var(--sc-t1); background: var(--sc-s1); }
@@ -427,7 +453,7 @@ body::before {
 @media (max-width: 680px) {
   .ing-row { grid-template-columns: 1fr; }
   .ing-row > div { border-right: none; border-bottom: 1px solid var(--sc-b1); }
-  .sample-deal-head, .sample-deal-row { grid-template-columns: 32px 2fr 80px 70px; }
+  .sample-deal-head, .sample-deal-row { grid-template-columns: 44px minmax(140px,1fr) 80px 72px; }
   .sample-deal-head div:nth-child(4), .sample-deal-head div:nth-child(6),
   .sample-deal-row > :nth-child(4), .sample-deal-row > :nth-child(6) { display: none; }
 }
@@ -438,13 +464,22 @@ svg[aria-hidden] { position: absolute; width: 0; height: 0; }
 </head>
 <body>
 
-<!-- inline SVG symbols (verbatim from external/icons-pixelarticons) -->
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
-  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v2h-6zm4 2h2v6h-2zm-2 2h2v2h-2zm-2 2h2v2h-2zm-2 2h2v2h-2zM4 6h8v2H6v12h12v-6h2v8H4z" fill="currentColor"/></symbol>
-  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M4 4h6v2H4zm0 14h16v2H4zM20 8h2v10h-2zM2 6h2v12H2zm8 0h10v2H10z" fill="currentColor"/></symbol>
-  <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 4H4v16h2zm10-2H6v2h10zm4 4h-2v14h2zm-2 14H6v2h12zM16 4h2v2h-2zm-4 0h2v6h-2z" fill="currentColor"/><path d="M12 8h6v2h-6z" fill="currentColor"/></symbol>
-  <symbol id="i-cpu" viewBox="0 0 24 24"><path d="M5 3h14v2H5zm0 16h14v2H5zM3 5h2v14H3zm16 0h2v14h-2zM9 7h6v2H9zm0 8h6v2H9zM7 9h2v6H7zm8 0h2v6h-2zm-4-8h2v2h-2zm0 20h2v2h-2zM1 11h2v2H1zm20 0h2v2h-2zm0-4h2v2h-2zm0 8h2v2h-2zM1 15h2v2H1zm0-8h2v2H1zm6-6h2v2H7zm8 0h2v2h-2zm0 20h2v2h-2zm-8 0h2v2H7z" fill="currentColor"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 11h16v2H4zm12 4h2v2h-2zm0-8h2v2h-2zm2 6h2v2h-2zm0-4h2v2h-2zm2 2h2v2h-2z" fill="currentColor"/></symbol>
+<!--
+  icon grammar (ingest map): in-ui icons = lucide regular (clean outlined, 2px stroke).
+  device thumbnails = hand-authored clean outlined svg at 24x24, 2px stroke.
+  pixelarticons = reference-pool only, never in ui surfaces.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true" data-icon-set-primary="lucide-regular">
+  <!-- Lucide Regular — clean outlined 2px stroke. In-UI primary set. -->
+  <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <!-- Hand-authored clean outlined device silhouettes — 2px stroke. Used in sample deal rows. -->
+  <symbol id="dev-iphone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 4h4"/><path d="M10 20h4"/></symbol>
+  <symbol id="dev-macbook" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="1"/><path d="M2 19h20"/><path d="M10 17h4"/></symbol>
+  <symbol id="dev-ps5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="10" rx="1"/><path d="M7 10h3"/><path d="M7 13h3"/><circle cx="16" cy="12" r="1"/></symbol>
+  <symbol id="dev-gpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="8" width="20" height="9"/><circle cx="7" cy="12.5" r="2.5"/><circle cx="15" cy="12.5" r="2.5"/><path d="M19 10h2"/><path d="M19 12h2"/></symbol>
 </svg>
 
 <div class="app-header">
@@ -465,7 +500,7 @@ svg[aria-hidden] { position: absolute; width: 0; height: 0; }
     This 1-pager points you at the aesthetic ground-truth and the 7-page example. The operator's <strong style="color:var(--sc-t1)">codex labs</strong> (chromatic-lab: 62 complete colour systems; style-lab: 20 UI style systems) are the canonical reference for density, type ramp, and card grammar. Derive from them — do not compete. The authored <strong style="color:var(--sc-t1)">pages file</strong> renders all seven app pages in that vocabulary for direct side-by-side comparison. Together they form the whole brief.
   </p>
   <p class="sub">
-    Stack: macOS SwiftUI · Swift 6.3 · Foundation + SwiftUI only (no AppKit, no SF Symbols). Dark-dense default but the palette engine drives 62 schemes; per-page accents; 16x16 pixel icon grammar; beveled chrome; tabular numerics. Composite idiom: <em style="color:var(--sc-p);font-style:normal">Mac OS 9 + Bloomberg Terminal + Fallout Pip-Boy</em> rendered in operator-authored palettes. Apple liquid-glass is explicitly the antithesis.
+    Stack: macOS SwiftUI · Swift 6.3 · Foundation + SwiftUI only (no AppKit, no SF Symbols). Dark-dense default but the palette engine drives 62 schemes; per-page accents; clean outlined 2px-stroke icon grammar (Lucide Regular in-UI, hand-authored device silhouettes); beveled chrome; tabular numerics. Composite idiom: <em style="color:var(--sc-p);font-style:normal">Mac OS 9 + Bloomberg Terminal + Fallout Pip-Boy</em> rendered in operator-authored palettes. Apple liquid-glass is explicitly the antithesis.
   </p>
 
   <div class="meta-row">
@@ -553,11 +588,11 @@ svg[aria-hidden] { position: absolute; width: 0; height: 0; }
         <div class="desc">Canonical Swift token files the app compiles against. Colors · Typography · Spacing · Bevel · SidebarIcons · PageTheme. Higher signal than JSON because it is what runs.</div>
         <div class="path"><svg><use href="#i-folder"/></svg>local/swift-reference/</div>
       </a>
-      <a class="asset" href="external/icons-pixelarticons/svg/" style="--accent: var(--sc-pg-inv)">
+      <a class="asset" href="external/lucide/icons/" style="--accent: var(--sc-pg-inv)">
         <div class="num">ICONS</div>
-        <div class="name">Pixelarticons · 800</div>
-        <div class="desc">The operator's preferred icon grammar. 16x16 retro pixel icons — authored as real vector paths, not bitmap grids. Home, Package, Chart, CPU, Git-Branch, Database, Search, Bell, Eye, Moon, Plus, Zap, Check, Folder, User, File, Play, Power, WiFi, Lock — all embedded inline in CLAWMACHINE-PAGES.html.</div>
-        <div class="path"><svg><use href="#i-folder"/></svg>external/icons-pixelarticons/svg/</div>
+        <div class="name">Lucide Regular · 1,300+</div>
+        <div class="desc">In-UI primary iconography. Clean outlined, 1.5&ndash;2px stroke, 24&times;24 viewBox rendered at 16&times;16 in sidebar / page-head / chrome. Canonical mappings embedded inline in CLAWMACHINE-PAGES.html: layout-dashboard / package / chart-bar / brain / network / terminal / settings-2. Pixelarticons (800 retro pixel icons) retained as reference-pool only, alongside phosphor / feather / material &mdash; never in production UI surfaces.</div>
+        <div class="path"><svg><use href="#i-folder"/></svg>external/lucide/icons/</div>
       </a>
       <a class="asset" href="direct-drag/fonts/" style="--accent: var(--sc-pg-onb)">
         <div class="num">FONTS</div>
@@ -606,7 +641,7 @@ svg[aria-hidden] { position: absolute; width: 0; height: 0; }
       </div>
       <div class="ing-row">
         <div class="field">Fonts · logos · assets</div>
-        <div class="action">Drag the contents of <code>direct-drag/</code>. Curated 100 MB bundle. Fonts, the codex lab HTMLs, tokens, pixelarticons, historical-ui reference.</div>
+        <div class="action">Drag the contents of <code>direct-drag/</code>. Curated 100 MB bundle. Fonts, the codex lab HTMLs, tokens, lucide-regular icon set (in-UI primary), pixelarticons (reference-pool), historical-ui reference.</div>
         <div class="source">direct-drag/</div>
       </div>
     </div>
@@ -622,33 +657,33 @@ svg[aria-hidden] { position: absolute; width: 0; height: 0; }
         <div></div>
         <div>ITEM</div>
         <div>SOURCE</div>
-        <div style="text-align:right">FLOOR</div>
-        <div style="text-align:right">SOLD MED.</div>
+        <div style="text-align:right">BUY</div>
+        <div style="text-align:right">SELL</div>
         <div style="text-align:right">ROI</div>
       </div>
       <div class="sample-deal-row">
-        <div class="thumb"><svg><use href="#i-cpu"/></svg></div>
+        <div class="thumb"><svg><use href="#dev-gpu"/></svg></div>
         <div class="title">rtx 4070 — boxed · good condition</div>
         <div><span class="vendor">ebay</span></div>
-        <div class="num"><span class="c">£</span>412</div>
-        <div class="num"><span class="c">£</span>498</div>
-        <div class="num"><span class="pill">+£86</span></div>
+        <div class="num"><span class="c">&pound;</span>412</div>
+        <div class="num"><span class="c">&pound;</span>498</div>
+        <div class="num"><span class="pill">+&pound;86</span></div>
       </div>
       <div class="sample-deal-row">
-        <div class="thumb"><svg><use href="#i-cpu"/></svg></div>
+        <div class="thumb"><svg><use href="#dev-iphone"/></svg></div>
         <div class="title">iphone 13 pro 256gb — grade b</div>
         <div><span class="vendor">gumtree</span></div>
-        <div class="num"><span class="c">£</span>340</div>
-        <div class="num"><span class="c">£</span>418</div>
-        <div class="num"><span class="pill">+£78</span></div>
+        <div class="num"><span class="c">&pound;</span>340</div>
+        <div class="num"><span class="c">&pound;</span>418</div>
+        <div class="num"><span class="pill">+&pound;78</span></div>
       </div>
       <div class="sample-deal-row">
-        <div class="thumb"><svg><use href="#i-folder"/></svg></div>
+        <div class="thumb"><svg><use href="#dev-macbook"/></svg></div>
         <div class="title">macbook air m2 2022 · 8gb · silver</div>
         <div><span class="vendor">facebook</span></div>
-        <div class="num"><span class="c">£</span>620</div>
-        <div class="num"><span class="c">£</span>712</div>
-        <div class="num"><span class="pill">+£92</span></div>
+        <div class="num"><span class="c">&pound;</span>620</div>
+        <div class="num"><span class="c">&pound;</span>712</div>
+        <div class="num"><span class="pill">+&pound;92</span></div>
       </div>
     </div>
   </div>
