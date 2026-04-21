@@ -263,26 +263,84 @@
 <section style="background: var(--color-bg-secondary); padding: 96px 32px; border-top: 1px solid var(--color-border-secondary);">
   <div class="uui-container" style="padding: 0;">
     <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
-      <h2 class="t-display-sm" style="font-weight: 600; color: var(--color-text-primary);">inline variants</h2>
-      <p style="color: var(--color-text-tertiary); margin-top: 12px;">for use inside tables, lists, and panels where a full card is too heavy.</p>
+      <h2 class="t-display-sm" style="font-weight: 600; color: var(--color-text-primary);">
+        inline variants
+      </h2>
+      <p style="color: var(--color-text-tertiary); margin-top: 12px;">
+        for use inside tables, lists, and panels where a full card is too heavy.
+      </p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;">
       <div style="padding: 24px; border-radius: var(--radius-xl); background: var(--color-bg-primary); box-shadow: inset 0 0 0 1px var(--color-border-secondary); display: flex; gap: 16px; align-items: center;">
-        <span class="uui-ficon uui-ficon--lg uui-ficon--gray-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></span>
+        <span class="uui-ficon uui-ficon--lg uui-ficon--gray-light">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+        </span>
         <div style="flex: 1;">
-          <h4 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary);">no results in this view</h4>
-          <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 4px;">try removing a filter or expanding the date range.</p>
+          <h4 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary);">
+            no results in this view
+          </h4>
+          <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 4px;">
+            try removing a filter or expanding the date range.
+          </p>
         </div>
         <a class="uui-btn uui-btn--secondary uui-btn--sm">reset</a>
       </div>
       <div style="padding: 24px; border-radius: var(--radius-xl); background: var(--color-bg-primary); box-shadow: inset 0 0 0 1px var(--color-border-secondary); display: flex; gap: 16px; align-items: center;">
-        <span class="uui-ficon uui-ficon--lg uui-ficon--brand-light"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg></span>
+        <span class="uui-ficon uui-ficon--lg uui-ficon--brand-light">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.67">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <line x1="9" y1="9" x2="15" y2="15"/>
+            <line x1="15" y1="9" x2="9" y2="15"/>
+          </svg>
+        </span>
         <div style="flex: 1;">
-          <h4 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary);">no integrations connected</h4>
-          <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 4px;">connect figma, slack, or github to see data here.</p>
+          <h4 style="font-size: var(--text-md); font-weight: 600; color: var(--color-text-primary);">
+            no integrations connected
+          </h4>
+          <p style="font-size: var(--text-sm); color: var(--color-text-tertiary); margin-top: 4px;">
+            connect figma, slack, or github to see data here.
+          </p>
         </div>
         <a class="uui-btn uui-btn--primary uui-btn--sm">connect</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- usage notes -->
+<section class="uui-container" style="padding: 96px 32px;">
+  <div style="text-align: center; max-width: 640px; margin: 0 auto 48px;">
+    <h2 class="t-display-sm" style="font-weight: 600; color: var(--color-text-primary);">
+      writing copy that earns its keep
+    </h2>
+    <p style="color: var(--color-text-tertiary); margin-top: 12px;">
+      the three rules we use internally for every empty-state headline and description.
+    </p>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+    <div class="es-card" style="padding: 32px; align-items: flex-start; text-align: left;">
+      <span class="es-pattern-label">rule 1</span>
+      <h3>name the absence</h3>
+      <p style="text-align: left;">
+        "no projects yet" not "welcome!". the user needs to know what's missing before they can decide what to do.
+      </p>
+    </div>
+    <div class="es-card" style="padding: 32px; align-items: flex-start; text-align: left;">
+      <span class="es-pattern-label">rule 2</span>
+      <h3>suggest one next step</h3>
+      <p style="text-align: left;">
+        one primary action. a secondary if there's a good default. never three.
+      </p>
+    </div>
+    <div class="es-card" style="padding: 32px; align-items: flex-start; text-align: left;">
+      <span class="es-pattern-label">rule 3</span>
+      <h3>no encouragement language</h3>
+      <p style="text-align: left;">
+        no "let's get started!", no "you got this!". plain voice, short sentences, zero exclamation marks.
+      </p>
     </div>
   </div>
 </section>

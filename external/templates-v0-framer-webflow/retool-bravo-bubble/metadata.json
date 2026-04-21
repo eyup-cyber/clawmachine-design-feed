@@ -1,0 +1,117 @@
+{
+  "source_platforms": ["retool.com/templates", "bubble.io/templates", "bravostudio.app"],
+  "scrape_date": "2026-04-21",
+  "license": "fair-use research reference",
+  "redistribution": "prohibited",
+  "captures": {
+    "retool": [
+      {
+        "slug": "analytics-dashboard",
+        "title": "Analytics Dashboard",
+        "source_url": "https://retool.com/templates/analytics-dashboard",
+        "description_excerpt": "Dataset-backed analytics dashboard; each row an object; drag-drop component editing.",
+        "visual_tags": ["dashboard", "data-analytics", "dark", "component-grid", "retool-standard"],
+        "preview_file": "previews/retool-analytics-dashboard.png",
+        "clawmachine_fit": "MEDIUM — pattern is reusable; Retool framework not adopted"
+      },
+      {
+        "slug": "custom-crm",
+        "title": "Custom CRM",
+        "source_url": "https://retool.com/templates/custom-crm",
+        "description_excerpt": "Customer records + interaction log + deal pipeline. Drag-drop admin panel.",
+        "visual_tags": ["crm", "admin-panel", "sales", "master-detail", "dark"],
+        "preview_file": "previews/retool-custom-crm.png",
+        "clawmachine_fit": "MEDIUM"
+      },
+      {
+        "slug": "hr-analytics-dashboard",
+        "title": "HR Analytics Dashboard",
+        "source_url": "https://retool.com/templates/hr-analytics-dashboard",
+        "description_excerpt": "Employee data, performance metrics, engagement analytics.",
+        "visual_tags": ["hr", "analytics", "dark"],
+        "preview_file": "previews/retool-hr-analytics.png",
+        "clawmachine_fit": "LOW — solo operator"
+      },
+      {
+        "slug": "security-dashboard",
+        "title": "Security Dashboard",
+        "source_url": "https://retool.com/templates/security-dashboard",
+        "description_excerpt": "Real-time threat monitoring, incident timeline, compliance matrix.",
+        "visual_tags": ["security", "soc", "threats", "dark"],
+        "preview_file": "previews/retool-security-dashboard.png",
+        "clawmachine_fit": "MEDIUM — SOC vocabulary fits scout-bridge alerts"
+      },
+      {
+        "slug": "kpi-dashboard",
+        "title": "KPI Dashboard",
+        "source_url": "https://retool.com/templates/kpi-dashboard",
+        "description_excerpt": "Marketing campaign metrics. Total Sales 35,031, Clicks 5,211, Impressions 85,234. Pie chart of campaign revenue. Data table with sortable columns.",
+        "visual_tags": ["kpi", "marketing", "campaigns", "pie-chart", "data-table", "dark"],
+        "preview_file": "previews/retool-kpi-dashboard.png",
+        "clawmachine_fit": "MEDIUM — KPI pattern directly reusable"
+      },
+      {
+        "slug": "rest-api-admin-panel",
+        "title": "REST API Admin Panel",
+        "source_url": "https://retool.com/templates/rest-api-admin-panel",
+        "description_excerpt": "Customer CRUD backed by REST API. Read/write admin surface.",
+        "visual_tags": ["admin-panel", "rest-api", "crud", "dark"],
+        "preview_file": "previews/retool-rest-api-admin.png",
+        "clawmachine_fit": "LOW — framework-locked"
+      },
+      {
+        "slug": "employee-directory",
+        "title": "Employee Directory",
+        "source_url": "https://retool.com/templates/employee-directory",
+        "description_excerpt": "Search/edit/manage employee records.",
+        "visual_tags": ["directory", "hr", "search", "dark"],
+        "preview_file": "previews/retool-employee-directory.png",
+        "clawmachine_fit": "LOW — solo operator"
+      }
+    ],
+    "bubble": [
+      {
+        "category": "dashboard",
+        "title": "Bubble Dashboard gallery",
+        "source_url": "https://bubble.io/templates/dashboard",
+        "description_excerpt": "Community-contributed no-code dashboard templates. Free and paid. Notable: Ez Dashboard + OpenAI (58.5K installs), Responsive Webapp Template (11.9K), Analytics Dashboard (8.6K), AI SAAS Starter Kit (7.9K), Base Dashboard (4.2K), Charts/Analytics (2.9K), Soft UI Dashboard (2.7K), CodeFree Dashboard (2.0K), Vision Dashboard (1.9K), Purity UI Dashboard (1.3K), Material UI Dashboard (1.1K), Simple User Management (784).",
+        "visual_tags": ["no-code", "dashboard-gallery", "bubble-community", "free-and-paid"],
+        "preview_file": "previews/bubble-dashboard-gallery.png",
+        "clawmachine_fit": "LOW — no-code platform not adopted; reference for pattern library only"
+      },
+      {
+        "category": "saas",
+        "title": "Bubble SaaS gallery",
+        "source_url": "https://bubble.io/templates/saas",
+        "visual_tags": ["no-code", "saas", "marketing"],
+        "preview_file": "previews/bubble-saas-gallery.png",
+        "clawmachine_fit": "LOW"
+      },
+      {
+        "category": "crm",
+        "title": "Bubble CRM gallery",
+        "source_url": "https://bubble.io/templates/crm",
+        "visual_tags": ["no-code", "crm"],
+        "preview_file": "previews/bubble-crm-gallery.png",
+        "clawmachine_fit": "LOW"
+      }
+    ],
+    "bravo": [
+      {
+        "slug": "home",
+        "title": "Bravo Studio — Home / Templates",
+        "source_url": "https://www.bravostudio.app",
+        "description_excerpt": "Figma-to-native iOS/Android conversion platform. Two modes: visual Bravo Studio (Figma in, native out) or Bravo-To-Go (React Native codebase in 1-2 days, then AI-coded by the operator). Template gallery: Mindfulness, Fitness, CRM, Restaurant, Event, Personal Trainer, Recipe, School apps.",
+        "visual_tags": ["figma-to-native", "react-native", "mobile-only", "design-first", "warm-palette"],
+        "preview_file": "previews/bravostudio-home.png",
+        "clawmachine_fit": "LOW — Clawmachine is macOS desktop-only, not mobile; tool category noted for completeness"
+      }
+    ]
+  },
+  "summary": {
+    "total_scraped_detail_captures": 11,
+    "total_recreated_html": 10,
+    "size_previews_mb": 1.8,
+    "size_recreated_kb": 80
+  }
+}

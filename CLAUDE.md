@@ -12,13 +12,14 @@ Regan — solo UK reseller, ten-hour days at a single dense terminal. Fix-and-fl
 
 ## Read these first, in this order
 
-1. `CHEAT-SHEET.md` — the distilled directive. If you read only one file, read this.
-2. `brief/any-other-notes.txt` — operator directive as structured bullets (GOAL / AUDIENCE / LAYOUT / DO NOT / DO / CONTENT / DELIVERABLES / VOICE).
-3. `brief/company-blurb.txt` — one-paragraph what-is-clawmachine (the company-blurb field paste).
-4. `CLAWMACHINE-DESIGN-SYSTEM.html` — 3 finished pages rendered against the design tokens, plus the full 62-palette deck and 20-style catalogue.
-5. `CLAWMACHINE-DASHBOARD-38-VARIANTS.html` — Dashboard rendered against each of the 38 operator-shortlisted palettes.
-6. `CLAWMACHINE-PAGES-BRAIN-MESH-AGENT-SETTINGS.html` — the remaining four pages as finished screens.
-7. `direct-drag/tokens/chromatic-schemes.json` — 62 operator-authored palettes, source of truth. Each entry carries `void`, `p`, `s`, and `pg.{dashboard,inventory,analytics,brain,mesh,onboarding,settings}`.
+1. `CLAWMACHINE-INGEST-MAP.html` — **the 1-pager cover page**. Read this first. Points you at the codex labs as aesthetic ground-truth and at the finished 7-page example. All navigation elsewhere starts here.
+2. `local/chromatic/clawmachine-chromatic-lab.html` — **canonical aesthetic reference**. 62 complete colour systems the operator authored. Density, card grammar, type ramp, motion — this is the vocabulary to derive from, not compete with.
+3. `local/chromatic/clawmachine-style-lab.html` — **canonical aesthetic reference**. 20 radically different UI style systems rendered as real components. Reference for component grammar.
+4. `CLAWMACHINE-PAGES.html` — the 7 app pages (Dashboard / Inventory / Analytics / Brain / Mesh / AgentConsole / Settings) rendered in the codex-lab vocabulary, scheme switcher across 7 palettes (02/07/18/25/38/46/52), pixelarticons inline, trading-terminal Analytics chart.
+5. `CHEAT-SHEET.md` — the distilled directive. Compact operator doctrine.
+6. `brief/any-other-notes.txt` — operator directive as structured bullets (GOAL / AUDIENCE / LAYOUT / DO NOT / DO / CONTENT / DELIVERABLES / VOICE).
+7. `brief/company-blurb.txt` — one-paragraph what-is-clawmachine (the company-blurb field paste).
+8. `.triage/chromatic-schemes.json` — 62 operator-authored palettes, source of truth. Each entry carries `void`, `p`, `s`, and `pg.{dashboard,inventory,analytics,brain,mesh,onboarding,settings}`.
 
 Everything else in the repo is reference, token confirmation, or asset pool. These seven are the canon.
 
@@ -94,7 +95,7 @@ Reference anchors: Bloomberg Terminal, Pro Tools, Fallout Pip-Boy, Susan Kare Ch
 6. **AgentConsole** — tool list, call-trace viewer. First-class nav page, not a chat overlay.
 7. **Settings** — appearance (62-palette selector with hover-preview), channels config (BlueBubbles / Studio / Pi), brain model config.
 
-Finished-page examples for all seven are in the three HTML files at the feed root.
+Finished-page examples for all seven are in `CLAWMACHINE-PAGES.html` at the feed root. The 1-pager ingest cover is `CLAWMACHINE-INGEST-MAP.html`.
 
 ## Data shapes
 
@@ -128,7 +129,7 @@ Console hardware in; console games out.
 
 ## Repository layout
 
-- **Feed root** — the three finished HTMLs, `CHEAT-SHEET.md`, this file, `README.md`. The ingest canon.
+- **Feed root** — `CLAWMACHINE-INGEST-MAP.html` (the 1-pager cover), `CLAWMACHINE-PAGES.html` (the 7-page finished example), `CHEAT-SHEET.md`, this file, `README.md`. The ingest canon.
 - **`brief/`** — `company-blurb.txt` (Claude Design "Company name and blurb" paste), `any-other-notes.txt` (Claude Design "Any other notes" paste). Short, operator-voice, authoritative.
 - **`direct-drag/`** — the curated asset subset for the Claude Design "Fonts, logos and assets" drag field. Contains `html/` (the three finished HTMLs), `brief/`, `codex/` (chromatic-lab + style-lab HTML reference), `tokens/` (JSON + Swift), `fonts/` (OFL families), `icons/` (pixelarticons + Kare classic Mac), `historical-ui/` (Mac OS 9, Bloomberg Terminal, Pip-Boy, Susan Kare, CLI tools, Dead Space HUD reference).
 - **`local/`** — working material. `swift-reference/` carries the canonical Swift token files. `chromatic/` carries the codex HTML labs. `figma-extracted/`, `palettes/`, `decorative/`, `templates/` are extraction workspaces; `current-app-screenshots/` shows the grey-box before-state (do not match).

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAWMACHINE — INGEST MAP · CLAUDE DESIGN</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CLAWMACHINE — INGEST MAP
+   The 1-pager Claude Design reads first.
+   Vocabulary derived from clawmachine-chromatic-lab.html.
+   Default scheme: #02 DEEP CURRENT (dark oceanic).
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --t-display: 'Space Grotesk', 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --t-body: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --t-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-quick: 140ms;
+
+  /* scheme #02 DEEP CURRENT — neutrals + pages */
+  --sc-void: #060B10;
+  --sc-deep: #0C1218;
+  --sc-s1: #121B24;
+  --sc-s2: #18242F;
+  --sc-s3: #1E2D3A;
+  --sc-b1: #283A4A;
+  --sc-b2: #3A5468;
+  --sc-b3: #4E7088;
+  --sc-t1: #D8EAF5;
+  --sc-t2: #7AA0BA;
+  --sc-t3: #4A6E88;
+  --sc-p:  #00E5A0;
+  --sc-s:  #FF5C8A;
+
+  --sc-pg-dash: #00E5A0;
+  --sc-pg-inv:  #FFB830;
+  --sc-pg-ana:  #00B4FF;
+  --sc-pg-brain:#FF5C8A;
+  --sc-pg-mesh: #8B6BFF;
+  --sc-pg-onb:  #00E5D4;
+  --sc-pg-set:  #5A7A90;
+
+  --ink-gain: #00E5A0;
+  --ink-loss: #FF4057;
+}
+
+body {
+  background: var(--sc-void);
+  color: var(--sc-t1);
+  font-family: var(--t-body);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* grain — codex-lab direct */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+
+/* HEADER */
+.app-header {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--sc-void) 94%, transparent);
+  border-bottom: 1px solid var(--sc-b1);
+  padding: 0 32px;
+  height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.logo {
+  font-family: var(--t-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sc-t1);
+}
+.logo span { opacity: 0.4; }
+.header-meta {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+}
+.header-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sc-p); display: inline-block; margin-right: 6px;
+  animation: pulse 2s var(--ease-std) infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.45} }
+
+/* HERO */
+.hero {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 72px 32px 48px;
+  border-bottom: 1px solid var(--sc-b1);
+}
+.hero h1 {
+  font-family: var(--t-display);
+  font-size: clamp(56px, 9vw, 108px);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: var(--sc-t1);
+}
+.hero h1 em {
+  font-style: normal;
+  color: var(--sc-p);
+}
+.hero .tag {
+  font-family: var(--t-mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  margin-bottom: 16px;
+}
+.hero .lead {
+  font-size: 18px;
+  color: var(--sc-t1);
+  max-width: 720px;
+  line-height: 1.65;
+  font-weight: 400;
+}
+.hero .lead strong { color: var(--sc-p); font-weight: 600; }
+.hero .sub {
+  font-size: 15px;
+  color: var(--sc-t2);
+  max-width: 720px;
+  line-height: 1.75;
+  margin-top: 20px;
+}
+
+.hero .meta-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 24px 40px;
+  margin-top: 36px;
+  padding: 20px 0;
+  border-top: 1px solid var(--sc-b1);
+  border-bottom: 1px solid var(--sc-b1);
+}
+.meta-stat {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  color: var(--sc-t3);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.meta-stat strong {
+  color: var(--sc-t1);
+  font-size: 28px;
+  display: block;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+  font-family: var(--t-display);
+  font-weight: 700;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1040px; margin: 0 auto;
+  padding: 48px 32px 80px;
+}
+
+/* SECTION */
+.section {
+  margin-bottom: 48px;
+}
+.section-label {
+  font-family: var(--t-mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--sc-b1);
+  margin-bottom: 16px;
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 16px;
+}
+.section-label .right { color: var(--sc-t2); letter-spacing: 0.1em; }
+
+/* SUMMARY PARAGRAPHS */
+.summary p {
+  font-size: 15.5px;
+  color: var(--sc-t2);
+  line-height: 1.75;
+  margin-bottom: 16px;
+  max-width: 840px;
+}
+.summary p strong { color: var(--sc-t1); font-weight: 500; }
+.summary p em { font-style: normal; color: var(--sc-p); }
+
+/* ASSET CARDS — codex-lab card vocabulary */
+.asset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 12px;
+}
+.asset {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: 3px;
+  padding: 20px 22px;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: 10px;
+  transition: border-color var(--dur-quick) var(--ease-std), transform var(--dur-quick) var(--ease-std);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+}
+.asset::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent, var(--sc-p));
+}
+.asset:hover { border-color: var(--accent, var(--sc-p)); transform: translateY(-1px); }
+.asset .num {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--sc-t3);
+  text-transform: uppercase;
+}
+.asset .name {
+  font-family: var(--t-display);
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: var(--sc-t1);
+  line-height: 1.15;
+}
+.asset .desc {
+  font-size: 13px;
+  color: var(--sc-t2);
+  line-height: 1.55;
+}
+.asset .path {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--accent, var(--sc-p));
+  padding-top: 8px;
+  border-top: 1px solid var(--sc-b1);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  display: flex; align-items: center; gap: 6px;
+}
+.asset .path svg { width: 11px; height: 11px; fill: currentColor; flex-shrink: 0; }
+
+/* 4-FIELD INGEST TABLE */
+.ingest-table {
+  border: 1px solid var(--sc-b1);
+  border-radius: 3px;
+  overflow: hidden;
+  background: var(--sc-s1);
+}
+.ing-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  border-bottom: 1px solid var(--sc-b1);
+  align-items: stretch;
+}
+.ing-row:last-child { border-bottom: none; }
+.ing-row.head {
+  background: var(--sc-s2);
+  font-family: var(--t-mono);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  font-weight: 700;
+}
+.ing-row.head > div { padding: 10px 16px; }
+.ing-row > div {
+  padding: 14px 16px;
+  border-right: 1px solid var(--sc-b1);
+  display: flex; flex-direction: column; justify-content: center; gap: 4px;
+}
+.ing-row > div:last-child { border-right: none; }
+.ing-row .field {
+  font-family: var(--t-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--sc-p);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.ing-row .action {
+  font-family: var(--t-body);
+  font-size: 13px;
+  color: var(--sc-t1);
+  line-height: 1.5;
+}
+.ing-row .action code { font-family: var(--t-mono); font-size: 11px; background: var(--sc-s2); padding: 1px 6px; border-radius: 2px; color: var(--sc-p); }
+.ing-row .source {
+  font-family: var(--t-mono);
+  font-size: 11px;
+  color: var(--sc-t2);
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+/* PALETTE STRIP — tiny preview of scheme #02 pg.* accents */
+.palette-preview {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 42px;
+  border: 1px solid var(--sc-b1);
+  border-radius: 3px;
+  overflow: hidden;
+  margin-top: 14px;
+}
+.palette-preview > div {
+  display: flex; align-items: flex-end;
+  padding: 4px 6px;
+  font-family: var(--t-mono);
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(6,11,16,0.8);
+  transition: flex var(--dur-quick) var(--ease-std);
+}
+.palette-preview > div:hover { flex: 1.4; }
+
+/* SAMPLE DASHBOARD GLYPH — the operator's own deal row as a visual pitch */
+.sample-deal {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: 3px;
+  margin-top: 16px;
+  overflow: hidden;
+}
+.sample-deal-head {
+  display: grid;
+  grid-template-columns: 32px 2fr 92px 80px 90px 80px;
+  gap: 12px;
+  padding: 8px 12px;
+  background: var(--sc-s2);
+  font-family: var(--t-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  font-weight: 700;
+}
+.sample-deal-row {
+  display: grid;
+  grid-template-columns: 32px 2fr 92px 80px 90px 80px;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 12px;
+  border-top: 1px solid var(--sc-b1);
+  font-family: var(--t-mono);
+  font-size: 12px;
+}
+.sample-deal-row .thumb { width: 28px; height: 28px; background: var(--sc-s3); border: 1px solid var(--sc-b1); border-radius: 2px; display: flex; align-items: center; justify-content: center; color: var(--sc-t3); }
+.sample-deal-row .thumb svg { width: 14px; height: 14px; fill: currentColor; }
+.sample-deal-row .title { color: var(--sc-t1); font-family: var(--t-body); font-size: 13px; }
+.sample-deal-row .vendor { padding: 1px 6px; font-size: 9px; border: 1px solid var(--sc-pg-dash); color: var(--sc-pg-dash); letter-spacing: 0.1em; border-radius: 2px; text-transform: uppercase; }
+.sample-deal-row .num { color: var(--sc-t1); text-align: right; font-variant-numeric: tabular-nums; }
+.sample-deal-row .num .c { color: var(--sc-t3); }
+.sample-deal-row .pill { display: inline-flex; padding: 2px 8px; font-size: 10px; background: color-mix(in srgb, var(--ink-gain) 18%, transparent); color: var(--ink-gain); border-radius: 999px; }
+
+/* CTA BUTTONS */
+.cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.cta {
+  font-family: var(--t-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  background: transparent;
+  border: 1px solid var(--sc-b1);
+  color: var(--sc-t2);
+  border-radius: 3px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: border-color var(--dur-quick) var(--ease-std), color var(--dur-quick) var(--ease-std), background var(--dur-quick) var(--ease-std);
+}
+.cta:hover { border-color: var(--sc-p); color: var(--sc-t1); background: var(--sc-s1); }
+.cta.primary { background: var(--sc-p); border-color: var(--sc-p); color: var(--sc-void); }
+.cta.primary:hover { background: color-mix(in srgb, var(--sc-p) 88%, white); }
+.cta svg { width: 12px; height: 12px; fill: currentColor; }
+
+/* FOOTER */
+.foot {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 32px 32px 48px;
+  border-top: 1px solid var(--sc-b1);
+  font-family: var(--t-mono);
+  font-size: 10px;
+  color: var(--sc-t3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+}
+.foot a { color: var(--sc-t2); text-decoration: none; }
+.foot a:hover { color: var(--sc-p); }
+
+@media (max-width: 680px) {
+  .ing-row { grid-template-columns: 1fr; }
+  .ing-row > div { border-right: none; border-bottom: 1px solid var(--sc-b1); }
+  .sample-deal-head, .sample-deal-row { grid-template-columns: 32px 2fr 80px 70px; }
+  .sample-deal-head div:nth-child(4), .sample-deal-head div:nth-child(6),
+  .sample-deal-row > :nth-child(4), .sample-deal-row > :nth-child(6) { display: none; }
+}
+
+/* inline svg symbol defaults */
+svg[aria-hidden] { position: absolute; width: 0; height: 0; }
+</style>
+</head>
+<body>
+
+<!-- inline SVG symbols (verbatim from external/icons-pixelarticons) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v2h-6zm4 2h2v6h-2zm-2 2h2v2h-2zm-2 2h2v2h-2zm-2 2h2v2h-2zM4 6h8v2H6v12h12v-6h2v8H4z" fill="currentColor"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M4 4h6v2H4zm0 14h16v2H4zM20 8h2v10h-2zM2 6h2v12H2zm8 0h10v2H10z" fill="currentColor"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 4H4v16h2zm10-2H6v2h10zm4 4h-2v14h2zm-2 14H6v2h12zM16 4h2v2h-2zm-4 0h2v6h-2z" fill="currentColor"/><path d="M12 8h6v2h-6z" fill="currentColor"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><path d="M5 3h14v2H5zm0 16h14v2H5zM3 5h2v14H3zm16 0h2v14h-2zM9 7h6v2H9zm0 8h6v2H9zM7 9h2v6H7zm8 0h2v6h-2zm-4-8h2v2h-2zm0 20h2v2h-2zM1 11h2v2H1zm20 0h2v2h-2zm0-4h2v2h-2zm0 8h2v2h-2zM1 15h2v2H1zm0-8h2v2H1zm6-6h2v2H7zm8 0h2v2h-2zm0 20h2v2h-2zm-8 0h2v2H7z" fill="currentColor"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 11h16v2H4zm12 4h2v2h-2zm0-8h2v2h-2zm2 6h2v2h-2zm0-4h2v2h-2zm2 2h2v2h-2z" fill="currentColor"/></symbol>
+</svg>
+
+<div class="app-header">
+  <div class="logo">clawmachine <span>// ingest map · claude design</span></div>
+  <div class="header-meta"><span class="dot"></span>scheme 02 / DEEP CURRENT · dark oceanic · 7 pages · 62 palettes</div>
+</div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<div class="hero">
+  <div class="tag">INGEST 1-PAGER / 2026-04-21</div>
+  <h1>clawmachine<br><em>→ claude design</em></h1>
+  <p class="lead">
+    A macOS SwiftUI app for second-hand tech-electronics arbitrage. Not a SaaS. Not a team tool. Not consumer. <strong>One UK operator, ten-hour days at a single dense terminal.</strong> Every pixel earns its keep — no placeholders, no narration, no gamification.
+  </p>
+  <p class="sub">
+    This 1-pager points you at the aesthetic ground-truth and the 7-page example. The operator's <strong style="color:var(--sc-t1)">codex labs</strong> (chromatic-lab: 62 complete colour systems; style-lab: 20 UI style systems) are the canonical reference for density, type ramp, and card grammar. Derive from them — do not compete. The authored <strong style="color:var(--sc-t1)">pages file</strong> renders all seven app pages in that vocabulary for direct side-by-side comparison. Together they form the whole brief.
+  </p>
+  <p class="sub">
+    Stack: macOS SwiftUI · Swift 6.3 · Foundation + SwiftUI only (no AppKit, no SF Symbols). Dark-dense default but the palette engine drives 62 schemes; per-page accents; 16x16 pixel icon grammar; beveled chrome; tabular numerics. Composite idiom: <em style="color:var(--sc-p);font-style:normal">Mac OS 9 + Bloomberg Terminal + Fallout Pip-Boy</em> rendered in operator-authored palettes. Apple liquid-glass is explicitly the antithesis.
+  </p>
+
+  <div class="meta-row">
+    <div class="meta-stat"><strong>7</strong>APP PAGES</div>
+    <div class="meta-stat"><strong>62</strong>PALETTES</div>
+    <div class="meta-stat"><strong>20</strong>STYLE SYSTEMS</div>
+    <div class="meta-stat"><strong>800</strong>PIXELARTICONS</div>
+    <div class="meta-stat"><strong>3</strong>FONT FAMILIES</div>
+    <div class="meta-stat"><strong>1</strong>OPERATOR</div>
+  </div>
+
+  <div class="palette-preview" title="scheme 02 / DEEP CURRENT · pg.* accents">
+    <div style="background: var(--sc-void); color: var(--sc-t2);">VOID</div>
+    <div style="background: var(--sc-pg-dash)">DASH</div>
+    <div style="background: var(--sc-pg-inv)">INV</div>
+    <div style="background: var(--sc-pg-ana); color: white">ANA</div>
+    <div style="background: var(--sc-pg-brain)">BRAIN</div>
+    <div style="background: var(--sc-pg-mesh); color: white">MESH</div>
+    <div style="background: var(--sc-pg-set); color: white">SET</div>
+  </div>
+
+  <div class="cta-row">
+    <a class="cta primary" href="CLAWMACHINE-PAGES.html">OPEN 7-PAGE EXAMPLE <svg><use href="#i-arrow"/></svg></a>
+    <a class="cta" href="local/chromatic/clawmachine-chromatic-lab.html">CHROMATIC LAB · 62 SCHEMES <svg><use href="#i-external"/></svg></a>
+    <a class="cta" href="local/chromatic/clawmachine-style-lab.html">STYLE LAB · 20 SYSTEMS <svg><use href="#i-external"/></svg></a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ============================================================
+       AESTHETIC GROUND-TRUTH (codex labs) + finished pages
+       ============================================================ -->
+  <div class="section">
+    <div class="section-label">Aesthetic ground-truth · read these first <span class="right">3 files</span></div>
+    <div class="asset-grid">
+      <a class="asset" href="local/chromatic/clawmachine-chromatic-lab.html" style="--accent: var(--sc-pg-dash)">
+        <div class="num">01 · CANONICAL</div>
+        <div class="name">Chromatic Lab</div>
+        <div class="desc">62 complete colour systems authored by the operator. Each scheme carries void / primary / secondary / per-page accents / neutrals / components. The density, card grammar, type ramp, and motion in this file are the aesthetic ground-truth.</div>
+        <div class="path"><svg><use href="#i-folder"/></svg>local/chromatic/clawmachine-chromatic-lab.html</div>
+      </a>
+      <a class="asset" href="local/chromatic/clawmachine-style-lab.html" style="--accent: var(--sc-pg-brain)">
+        <div class="num">02 · CANONICAL</div>
+        <div class="name">Style Lab</div>
+        <div class="desc">20 radically different UI style systems rendered as real components. Cathode Worship, Solar Forge, Tokyo Drift, Orbital Deck, Acid Press, Velvet Engine, Concrete Garden, Rust Protocol, Neon Monastery - and 11 more. Reference for component grammar, not palette.</div>
+        <div class="path"><svg><use href="#i-folder"/></svg>local/chromatic/clawmachine-style-lab.html</div>
+      </a>
+      <a class="asset" href="CLAWMACHINE-PAGES.html" style="--accent: var(--sc-pg-mesh)">
+        <div class="num">03 · FINISHED EXAMPLE</div>
+        <div class="name">Pages · 7 App Views</div>
+        <div class="desc">Dashboard · Inventory · Analytics · Brain · Mesh · Agent Console · Settings. Rendered in the chromatic-lab vocabulary. Scheme switcher at top-right; switch between 02 DEEP CURRENT / 07 CONCRETE BLOOM / 18 PLASMA FIELD / 25 MIDNIGHT DREAM / 38 ALPINE GLOW / 46 CORAL REEF / 52 RUST OXIDE to see per-page accents rescope live.</div>
+        <div class="path"><svg><use href="#i-folder"/></svg>CLAWMACHINE-PAGES.html</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TOKENS + SUPPORTING MATERIAL
+       ============================================================ -->
+  <div class="section">
+    <div class="section-label">Tokens + supporting material <span class="right">6 artefacts</span></div>
+    <div class="asset-grid">
+      <a class="asset" href=".triage/chromatic-schemes.json" style="--accent: var(--sc-pg-dash)">
+        <div class="num">JSON</div>
+        <div class="name">chromatic-schemes.json</div>
+        <div class="desc">62 operator-authored palettes. Every scheme carries void, p (primary), s (secondary), and pg.{dashboard,inventory,analytics,brain,mesh,onboarding,settings}. Source of truth for the palette engine.</div>
+        <div class="path"><svg><use href="#i-file"/></svg>.triage/chromatic-schemes.json · 19KB</div>
+      </a>
+      <a class="asset" href=".triage/style-systems.json" style="--accent: var(--sc-pg-brain)">
+        <div class="num">JSON</div>
+        <div class="name">style-systems.json</div>
+        <div class="desc">20 style systems with per-style bg / surface / text / primary / secondary / component strings. Pair with chromatic-schemes.json to synthesise the final 62 x 20 matrix if desired.</div>
+        <div class="path"><svg><use href="#i-file"/></svg>.triage/style-systems.json</div>
+      </a>
+      <a class="asset" href=".triage/identity-systems.json" style="--accent: var(--sc-pg-ana)">
+        <div class="num">JSON</div>
+        <div class="name">identity-systems.json</div>
+        <div class="desc">Identity-v2 foundation neutrals that sit underneath the 62 schemes. Near-black ramp, near-white text, motion curves, spacing scale, radii.</div>
+        <div class="path"><svg><use href="#i-file"/></svg>.triage/identity-systems.json</div>
+      </a>
+      <a class="asset" href="local/swift-reference/" style="--accent: var(--sc-pg-mesh)">
+        <div class="num">SWIFT</div>
+        <div class="name">swift-reference/</div>
+        <div class="desc">Canonical Swift token files the app compiles against. Colors · Typography · Spacing · Bevel · SidebarIcons · PageTheme. Higher signal than JSON because it is what runs.</div>
+        <div class="path"><svg><use href="#i-folder"/></svg>local/swift-reference/</div>
+      </a>
+      <a class="asset" href="external/icons-pixelarticons/svg/" style="--accent: var(--sc-pg-inv)">
+        <div class="num">ICONS</div>
+        <div class="name">Pixelarticons · 800</div>
+        <div class="desc">The operator's preferred icon grammar. 16x16 retro pixel icons — authored as real vector paths, not bitmap grids. Home, Package, Chart, CPU, Git-Branch, Database, Search, Bell, Eye, Moon, Plus, Zap, Check, Folder, User, File, Play, Power, WiFi, Lock — all embedded inline in CLAWMACHINE-PAGES.html.</div>
+        <div class="path"><svg><use href="#i-folder"/></svg>external/icons-pixelarticons/svg/</div>
+      </a>
+      <a class="asset" href="direct-drag/fonts/" style="--accent: var(--sc-pg-onb)">
+        <div class="num">FONTS</div>
+        <div class="name">OFL font stack</div>
+        <div class="desc">Satoshi → display / wordmark. JetBrains Mono → every numeric and data readout. IBM Plex Sans → body prose. OFL-only. No Matter. No style-lab scrape fonts.</div>
+        <div class="path"><svg><use href="#i-folder"/></svg>direct-drag/fonts/</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CLAUDE DESIGN 4-FIELD INGEST MAP
+       ============================================================ -->
+  <div class="section">
+    <div class="section-label">Claude Design · 4-field ingest map <span class="right">what goes where</span></div>
+    <div class="ingest-table">
+      <div class="ing-row head">
+        <div>CLAUDE DESIGN FIELD</div>
+        <div>WHAT TO PUT IN IT</div>
+        <div>SOURCE PATH</div>
+      </div>
+      <div class="ing-row">
+        <div class="field">Company name + blurb</div>
+        <div class="action">Paste the operator's 106-word description of Clawmachine verbatim (what it is, who it is for, desktop-only macOS context).</div>
+        <div class="source">brief/company-blurb.txt</div>
+      </div>
+      <div class="ing-row">
+        <div class="field">Any other notes</div>
+        <div class="action">Paste the structured-bullet directive. GOAL / AUDIENCE / LAYOUT / DO / DO NOT / CONTENT / DELIVERABLES / VOICE. This is the strongest single text signal.</div>
+        <div class="source">brief/any-other-notes.txt</div>
+      </div>
+      <div class="ing-row">
+        <div class="field">GitHub link</div>
+        <div class="action">Link to the private repo that holds the codex labs + this ingest map + CLAWMACHINE-PAGES.html + .triage/*.json + swift-reference/. Repo is small (~10 MB), Claude reads selectively.</div>
+        <div class="source">github/&lt;private&gt; — see README.md</div>
+      </div>
+      <div class="ing-row">
+        <div class="field">Local code folder</div>
+        <div class="action">Drag <code>external/untitled-ui-pro/raw/untitled-ui-react/</code>. 297 MIT tsx files, full token system, 36 demo stories. Closest production-grade reference for component sensibility — NOT palette.</div>
+        <div class="source">external/untitled-ui-pro/raw/</div>
+      </div>
+      <div class="ing-row">
+        <div class="field">Upload a .fig file</div>
+        <div class="action">Blocked until a Figma community duplicate URL or generated .fig lands. Skip for first ingest — the codex labs + PAGES.html carry the visual language without it.</div>
+        <div class="source">&lt;pending&gt;</div>
+      </div>
+      <div class="ing-row">
+        <div class="field">Fonts · logos · assets</div>
+        <div class="action">Drag the contents of <code>direct-drag/</code>. Curated 100 MB bundle. Fonts, the codex lab HTMLs, tokens, pixelarticons, historical-ui reference.</div>
+        <div class="source">direct-drag/</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SAMPLE: what a finished surface reads as
+       ============================================================ -->
+  <div class="section">
+    <div class="section-label">Sample surface · deal row <span class="right">what density + tabular numerics look like</span></div>
+    <div class="sample-deal">
+      <div class="sample-deal-head">
+        <div></div>
+        <div>ITEM</div>
+        <div>SOURCE</div>
+        <div style="text-align:right">FLOOR</div>
+        <div style="text-align:right">SOLD MED.</div>
+        <div style="text-align:right">ROI</div>
+      </div>
+      <div class="sample-deal-row">
+        <div class="thumb"><svg><use href="#i-cpu"/></svg></div>
+        <div class="title">rtx 4070 — boxed · good condition</div>
+        <div><span class="vendor">ebay</span></div>
+        <div class="num"><span class="c">£</span>412</div>
+        <div class="num"><span class="c">£</span>498</div>
+        <div class="num"><span class="pill">+£86</span></div>
+      </div>
+      <div class="sample-deal-row">
+        <div class="thumb"><svg><use href="#i-cpu"/></svg></div>
+        <div class="title">iphone 13 pro 256gb — grade b</div>
+        <div><span class="vendor">gumtree</span></div>
+        <div class="num"><span class="c">£</span>340</div>
+        <div class="num"><span class="c">£</span>418</div>
+        <div class="num"><span class="pill">+£78</span></div>
+      </div>
+      <div class="sample-deal-row">
+        <div class="thumb"><svg><use href="#i-folder"/></svg></div>
+        <div class="title">macbook air m2 2022 · 8gb · silver</div>
+        <div><span class="vendor">facebook</span></div>
+        <div class="num"><span class="c">£</span>620</div>
+        <div class="num"><span class="c">£</span>712</div>
+        <div class="num"><span class="pill">+£92</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HARD RULES (do / do-not)
+       ============================================================ -->
+  <div class="section">
+    <div class="section-label">Hard rules · non-negotiable <span class="right">from operator doctrine</span></div>
+    <div class="asset-grid">
+      <div class="asset" style="--accent: var(--sc-pg-dash); cursor: default">
+        <div class="num">DO</div>
+        <div class="name">the frame</div>
+        <div class="desc">
+          Dark, dense, data-first foundation. Beveled borders (highlight TL + shadow BR, solid colours). Tabular numerics everywhere a number appears. Per-page accents from active scheme's pg.* object. Spacing from {4, 8, 12, 16, 24, 32} only. Radius &le; 4px. Grain overlay at 1.5%. Motion: standard ease-out for constrained, easeOutBack only on open surfaces.
+        </div>
+      </div>
+      <div class="asset" style="--accent: var(--ink-loss); cursor: default">
+        <div class="num">DO NOT</div>
+        <div class="name">the antithesis</div>
+        <div class="desc">
+          No liquid-glass / translucency / blur / backdrop-filter. No gradients beyond a bevel. No SF Symbols. No Title Case. No gamification (win rate, streaks, XP, leaderboards). No developer-voice UI copy. No AI-generated illustration filler. No default-visible dismissed rows. No Matter font. No sell-to-CeX or sell-to-BS-Exchange. No dead UK vendors (Decluttr, Mazuma).
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<div class="foot">
+  <div>clawmachine · consolidate workspace · 2026-04-21 · scheme 02 DEEP CURRENT</div>
+  <div>
+    <a href="CLAWMACHINE-PAGES.html">PAGES</a> ·
+    <a href="local/chromatic/clawmachine-chromatic-lab.html">CHROMATIC</a> ·
+    <a href="local/chromatic/clawmachine-style-lab.html">STYLES</a> ·
+    <a href="CHEAT-SHEET.md">DIRECTIVE</a>
+  </div>
+</div>
+
+</body>
+</html>

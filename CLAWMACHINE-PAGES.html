@@ -1,0 +1,2223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLAWMACHINE — PAGES</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   CLAWMACHINE — PAGES
+   Derived from clawmachine-chromatic-lab.html vocabulary:
+     - same type ramp (Space Grotesk display / IBM Plex Mono meta / IBM Plex Sans body)
+     - same card grammar (border 1px, radius 3px, 28px/32px padding)
+     - same 14px base, 1.5 line-height, -webkit-font-smoothing antialiased
+     - same grain overlay at 1.5% opacity
+     - same ALL CAPS labels at 9-10px w/ 0.1-0.2em tracking
+   7 APP PAGES rendered in scheme #02 DEEP CURRENT by default.
+   Scheme switcher rescopes --sc-* CSS custom properties against the
+   embedded chromatic-schemes.json (7 schemes embedded as CSS ramps).
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+:root {
+  /* typography stack — derived from codex labs */
+  --t-display: 'Space Grotesk', 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --t-body: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  --t-mono: 'JetBrains Mono', 'IBM Plex Mono', ui-monospace, monospace;
+
+  /* motion — two tracks: standard ease-out for constrained, easeOutBack for OPEN */
+  --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-open: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-quick: 140ms;
+  --dur-trans: 240ms;
+
+  /* spacing scale */
+  --sp-4: 4px;
+  --sp-8: 8px;
+  --sp-12: 12px;
+  --sp-16: 16px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+
+  /* radii */
+  --r-2: 2px;
+  --r-3: 3px;
+  --r-4: 4px;
+
+  /* page identity neutrals overlay — from identity-v2 */
+  --ink-loss: #FF4057;
+  --ink-gain: #00E5A0;
+}
+
+/* ============================================================
+   SCHEME SCOPES — 7 embedded schemes from chromatic-schemes.json
+   Each maps void/deep/s1-3/b1-3/t1-3 plus pages and brand colours.
+   Default on <body> is sc-02 DEEP CURRENT.
+   ============================================================ */
+
+body.sc-02 {
+  --sc-name: "DEEP CURRENT";
+  --sc-void: #060B10; --sc-deep: #0C1218; --sc-s1: #121B24; --sc-s2: #18242F; --sc-s3: #1E2D3A;
+  --sc-b1: #283A4A; --sc-b2: #3A5468; --sc-b3: #4E7088;
+  --sc-t1: #D8EAF5; --sc-t2: #7AA0BA; --sc-t3: #4A6E88;
+  --sc-p: #00E5A0; --sc-s: #FF5C8A;
+  --sc-pg-dash: #00E5A0; --sc-pg-inv: #FFB830; --sc-pg-ana: #00B4FF;
+  --sc-pg-brain: #FF5C8A; --sc-pg-mesh: #8B6BFF; --sc-pg-onb: #00E5D4; --sc-pg-set: #5A7A90;
+  --sc-btn-text: #060B10; --sc-scheme-tone: dark;
+}
+body.sc-07 {
+  --sc-name: "CONCRETE BLOOM";
+  --sc-void: #F0F0EC; --sc-deep: #E4E4DE; --sc-s1: #D6D6CE; --sc-s2: #C4C4BA; --sc-s3: #B0B0A4;
+  --sc-b1: #949488; --sc-b2: #787870; --sc-b3: #5C5C56;
+  --sc-t1: #141412; --sc-t2: #3C3C38; --sc-t3: #787870;
+  --sc-p: #E81850; --sc-s: #00AA72;
+  --sc-pg-dash: #E81850; --sc-pg-inv: #F5A623; --sc-pg-ana: #00AA72;
+  --sc-pg-brain: #8B2FC6; --sc-pg-mesh: #2B7AE8; --sc-pg-onb: #E8A817; --sc-pg-set: #787870;
+  --sc-btn-text: #FFFFFF; --sc-scheme-tone: light;
+}
+body.sc-18 {
+  --sc-name: "PLASMA FIELD";
+  --sc-void: #08061A; --sc-deep: #0E0A28; --sc-s1: #141038; --sc-s2: #1A1648; --sc-s3: #201C58;
+  --sc-b1: #2E286A; --sc-b2: #443E88; --sc-b3: #5C56A0;
+  --sc-t1: #E4E2F6; --sc-t2: #9492A6; --sc-t3: #58566A;
+  --sc-p: #F731EA; --sc-s: #26F1E8;
+  --sc-pg-dash: #F731EA; --sc-pg-inv: #F4F322; --sc-pg-ana: #26F1E8;
+  --sc-pg-brain: #871BF7; --sc-pg-mesh: #00FF88; --sc-pg-onb: #F5CA22; --sc-pg-set: #443E88;
+  --sc-btn-text: #0A0A0A; --sc-scheme-tone: dark;
+}
+body.sc-25 {
+  --sc-name: "MIDNIGHT DREAM";
+  --sc-void: #0C0A20; --sc-deep: #141238; --sc-s1: #1C1A48; --sc-s2: #242258; --sc-s3: #2C2A68;
+  --sc-b1: #3A3878; --sc-b2: #524E90; --sc-b3: #6A66A8;
+  --sc-t1: #E8E6FC; --sc-t2: #9896AC; --sc-t3: #5C5A70;
+  --sc-p: #15F5BA; --sc-s: #836FFF;
+  --sc-pg-dash: #15F5BA; --sc-pg-inv: #FFD23D; --sc-pg-ana: #836FFF;
+  --sc-pg-brain: #FF5C8A; --sc-pg-mesh: #15F5BA; --sc-pg-onb: #F0F3FF; --sc-pg-set: #524E90;
+  --sc-btn-text: #0A0A0A; --sc-scheme-tone: dark;
+}
+body.sc-38 {
+  --sc-name: "ALPINE GLOW";
+  --sc-void: #F8F6F4; --sc-deep: #EEEAE6; --sc-s1: #E2DCD6; --sc-s2: #D4CCC4; --sc-s3: #C2B8AE;
+  --sc-b1: #A89E94; --sc-b2: #8A8078; --sc-b3: #6E645C;
+  --sc-t1: #141412; --sc-t2: #4A4A44; --sc-t3: #7A7A72;
+  --sc-p: #FF6B4A; --sc-s: #2B7AE8;
+  --sc-pg-dash: #FF6B4A; --sc-pg-inv: #FFB830; --sc-pg-ana: #2B7AE8;
+  --sc-pg-brain: #A040E8; --sc-pg-mesh: #00B88A; --sc-pg-onb: #FF6B4A; --sc-pg-set: #8A8078;
+  --sc-btn-text: #0A0A0A; --sc-scheme-tone: light;
+}
+body.sc-46 {
+  --sc-name: "CORAL REEF";
+  --sc-void: #060A14; --sc-deep: #0A1020; --sc-s1: #10182C; --sc-s2: #162038; --sc-s3: #1C2844;
+  --sc-b1: #283858; --sc-b2: #3E5074; --sc-b3: #56688C;
+  --sc-t1: #E2E6F0; --sc-t2: #9296A0; --sc-t3: #565A64;
+  --sc-p: #FF7F50; --sc-s: #20B2AA;
+  --sc-pg-dash: #FF7F50; --sc-pg-inv: #FFD700; --sc-pg-ana: #20B2AA;
+  --sc-pg-brain: #FF69B4; --sc-pg-mesh: #00CED1; --sc-pg-onb: #FF7F50; --sc-pg-set: #3E5074;
+  --sc-btn-text: #0A0A0A; --sc-scheme-tone: dark;
+}
+body.sc-52 {
+  --sc-name: "RUST OXIDE";
+  --sc-void: #0A0806; --sc-deep: #14100A; --sc-s1: #1E1810; --sc-s2: #282016; --sc-s3: #34281E;
+  --sc-b1: #44382A; --sc-b2: #5E5040; --sc-b3: #786858;
+  --sc-t1: #E6E4E2; --sc-t2: #969492; --sc-t3: #5A5856;
+  --sc-p: #CC5500; --sc-s: #44AA88;
+  --sc-pg-dash: #CC5500; --sc-pg-inv: #D4A028; --sc-pg-ana: #44AA88;
+  --sc-pg-brain: #AA3344; --sc-pg-mesh: #44AA88; --sc-pg-onb: #E88830; --sc-pg-set: #5E5040;
+  --sc-btn-text: #FFFFFF; --sc-scheme-tone: dark;
+}
+
+/* ============================================================
+   BASE — from codex lab
+   ============================================================ */
+body {
+  background: var(--sc-void);
+  color: var(--sc-t1);
+  font-family: var(--t-body);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--dur-trans) var(--ease-std), color var(--dur-trans) var(--ease-std);
+}
+
+/* grain overlay — direct from codex lab */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 9999;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+
+/* ============================================================
+   HEADER — sticky, 52px, monospace label — codex-lab style
+   ============================================================ */
+.app-header {
+  position: sticky; top: 0; z-index: 100;
+  background: color-mix(in srgb, var(--sc-void) 94%, transparent);
+  border-bottom: 1px solid var(--sc-b1);
+  padding: 0 32px;
+  height: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 24px;
+}
+.app-logo {
+  font-family: var(--t-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sc-t1);
+}
+.app-logo span { opacity: 0.4; }
+
+.header-meta {
+  display: flex; align-items: center; gap: 16px;
+  font-family: var(--t-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+}
+.header-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sc-p); display: inline-block; margin-right: 6px;
+  animation: pulse 2s var(--ease-std) infinite; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.45} }
+
+.scheme-switcher {
+  display: flex; align-items: center; gap: 10px;
+}
+.scheme-switcher label {
+  font-family: var(--t-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+}
+.scheme-switcher select {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 28px 6px 10px;
+  background: var(--sc-s1);
+  color: var(--sc-t1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%236B7A88' d='M0 0h10L5 6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: border-color var(--dur-quick) var(--ease-std);
+}
+.scheme-switcher select:hover { border-color: var(--sc-p); }
+
+/* ============================================================
+   HERO — match codex-lab hero grammar
+   ============================================================ */
+.app-hero {
+  padding: 60px 32px 40px;
+  max-width: 1560px; margin: 0 auto;
+  border-bottom: 1px solid var(--sc-b1);
+}
+.app-hero h1 {
+  font-family: var(--t-display);
+  font-size: clamp(48px, 7vw, 88px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--sc-t1);
+}
+.app-hero h1 em {
+  font-style: normal;
+  color: var(--sc-p);
+}
+.app-hero .sub {
+  font-size: 15px;
+  color: var(--sc-t2);
+  max-width: 760px;
+  line-height: 1.7;
+  font-family: var(--t-body);
+}
+.app-hero .meta-row {
+  display: flex; flex-wrap: wrap; gap: 32px;
+  margin-top: 28px;
+}
+.hero-stat {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  color: var(--sc-t3);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.hero-stat strong {
+  color: var(--sc-t1);
+  font-size: 28px;
+  display: block;
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+  font-family: var(--t-display);
+  font-weight: 700;
+}
+
+/* ============================================================
+   PAGE CARD — replicates codex-lab scheme-card density
+   ============================================================ */
+.pages-container {
+  max-width: 1560px; margin: 0 auto;
+  padding: 40px 32px 80px;
+}
+
+.page-card {
+  margin-bottom: 48px;
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  overflow: hidden;
+  background: var(--sc-deep);
+  animation: fadeIn 0.5s var(--ease-std) both;
+  transition: border-color var(--dur-trans) var(--ease-std);
+}
+.page-card:hover { border-color: var(--sc-b2); }
+
+.page-card-hdr {
+  padding: 24px 28px;
+  display: flex; align-items: flex-start; justify-content: space-between;
+  gap: 32px;
+  border-bottom: 1px solid var(--sc-b1);
+  background: var(--sc-void);
+}
+.pc-meta { flex: 1; }
+.pc-num {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  color: var(--sc-t3);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  display: flex; align-items: center; gap: 8px;
+}
+.pc-num .accent-swatch {
+  width: 10px; height: 10px; display: inline-block;
+  border-radius: var(--r-2);
+}
+.pc-name {
+  font-family: var(--t-display);
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: var(--sc-t1);
+}
+.pc-desc {
+  font-size: 13px;
+  color: var(--sc-t2);
+  max-width: 540px;
+  line-height: 1.55;
+}
+.pc-tags {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin-top: 12px;
+}
+.pc-tag {
+  font-family: var(--t-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  color: var(--sc-t3);
+}
+.pc-tag.accent {
+  border-color: var(--pg, var(--sc-p));
+  color: var(--pg, var(--sc-p));
+}
+
+.page-body {
+  padding: 0;
+}
+
+/* ============================================================
+   RENDERED APP FRAME — replaces codex-lab's mini-mockup but full-size
+   titlebar, sidebar, content pane — real components
+   ============================================================ */
+.app-frame {
+  background: var(--bg, var(--sc-void));
+  min-height: 560px;
+  display: grid;
+  grid-template-rows: 28px 1fr;
+  overflow: hidden;
+}
+
+.app-titlebar {
+  display: flex; align-items: center; gap: 8px;
+  padding: 0 12px;
+  background: var(--sc-void);
+  border-bottom: 1px solid var(--sc-b1);
+  font-family: var(--t-mono);
+  font-size: 10px;
+  color: var(--sc-t3);
+  letter-spacing: 0.12em;
+}
+.app-titlebar .tb-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+}
+.app-titlebar .tb-path {
+  margin-left: 8px; text-transform: uppercase;
+}
+.app-titlebar .tb-path strong { color: var(--sc-t1); font-weight: 600; margin-left: 6px; }
+
+.app-body {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+}
+.app-sidebar {
+  background: var(--sc-s1);
+  border-right: 1px solid var(--sc-b1);
+  padding: 16px 8px;
+  display: flex; flex-direction: column;
+  gap: 2px;
+}
+.sb-group-label {
+  font-family: var(--t-mono);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  padding: 12px 10px 6px;
+}
+.sb-item {
+  display: flex; align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  font-family: var(--t-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sc-t2);
+  border-radius: var(--r-2);
+  border-left: 2px solid transparent;
+  cursor: default;
+  transition: background var(--dur-quick) var(--ease-std), color var(--dur-quick) var(--ease-std);
+}
+.sb-item .ico {
+  width: 14px; height: 14px; color: currentColor; flex-shrink: 0;
+}
+.sb-item:hover { background: color-mix(in srgb, var(--sc-s2) 70%, transparent); color: var(--sc-t1); }
+.sb-item.active {
+  color: var(--pg, var(--sc-p));
+  background: color-mix(in srgb, var(--pg, var(--sc-p)) 10%, transparent);
+  border-left-color: var(--pg, var(--sc-p));
+}
+.sb-item .shortcut {
+  margin-left: auto;
+  font-size: 9px;
+  color: var(--sc-t3);
+  letter-spacing: 0.1em;
+}
+
+/* content pane */
+.pane {
+  padding: 20px 24px 28px;
+  display: flex; flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+}
+.pane-title-row {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--sc-b1);
+}
+.pane-title {
+  font-family: var(--t-display);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  color: var(--pg, var(--sc-p));
+}
+.pane-title small {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--sc-t3);
+  font-weight: 400;
+  margin-left: 12px;
+}
+.pane-actions {
+  display: flex; gap: 8px;
+}
+
+/* ============================================================
+   COMPONENT PRIMITIVES — derived from codex-lab grammar
+   ============================================================ */
+.btn {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: var(--r-2);
+  border: 1px solid var(--sc-b1);
+  background: transparent;
+  color: var(--sc-t2);
+  cursor: default;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background var(--dur-quick) var(--ease-std), border-color var(--dur-quick) var(--ease-std), color var(--dur-quick) var(--ease-std);
+}
+.btn:hover { border-color: var(--sc-t2); color: var(--sc-t1); }
+.btn .ico { width: 12px; height: 12px; }
+.btn.primary { background: var(--sc-p); border-color: var(--sc-p); color: var(--sc-btn-text); }
+.btn.primary:hover { background: color-mix(in srgb, var(--sc-p) 88%, white); }
+.btn.accent { background: var(--pg, var(--sc-p)); border-color: var(--pg, var(--sc-p)); color: var(--sc-btn-text); }
+.btn.ghost { border: 1px solid transparent; color: var(--sc-t3); }
+.btn.ghost:hover { color: var(--sc-t1); background: var(--sc-s1); }
+
+.badge {
+  font-family: var(--t-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: var(--r-2);
+  display: inline-flex; align-items: center; gap: 4px;
+}
+.badge.live { background: color-mix(in srgb, var(--sc-p) 18%, transparent); color: var(--sc-p); border: 1px solid color-mix(in srgb, var(--sc-p) 28%, transparent); }
+.badge.warn { background: color-mix(in srgb, var(--sc-pg-inv) 18%, transparent); color: var(--sc-pg-inv); border: 1px solid color-mix(in srgb, var(--sc-pg-inv) 28%, transparent); }
+.badge.err  { background: color-mix(in srgb, var(--sc-s) 18%, transparent); color: var(--sc-s); border: 1px solid color-mix(in srgb, var(--sc-s) 28%, transparent); }
+.badge.mute { background: color-mix(in srgb, var(--sc-b2) 30%, transparent); color: var(--sc-t2); }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--t-mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+.pill.gain { background: color-mix(in srgb, var(--ink-gain) 18%, transparent); color: var(--ink-gain); }
+.pill.loss { background: color-mix(in srgb, var(--ink-loss) 18%, transparent); color: var(--ink-loss); }
+
+.input {
+  font-family: var(--t-mono);
+  font-size: 11px;
+  padding: 7px 10px;
+  background: var(--sc-deep);
+  color: var(--sc-t1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  min-width: 220px;
+}
+.input::placeholder { color: var(--sc-t3); }
+.input:focus { outline: none; border-color: var(--sc-p); box-shadow: 0 0 0 1px color-mix(in srgb, var(--sc-p) 30%, transparent); }
+
+/* ============================================================
+   KPI STRIP — dashboard / analytics / settings
+   ============================================================ */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+.kpi {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  padding: 12px 14px;
+  position: relative;
+  overflow: hidden;
+}
+.kpi::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--pg, var(--sc-p));
+}
+.kpi .label {
+  font-family: var(--t-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  display: flex; align-items: center; gap: 6px;
+  margin-bottom: 8px;
+}
+.kpi .label .ico { width: 11px; height: 11px; }
+.kpi .value {
+  font-family: var(--t-mono);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--sc-t1);
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+.kpi .value .unit { font-size: 13px; color: var(--sc-t3); margin-right: 2px; }
+.kpi .delta {
+  margin-top: 6px;
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--t-mono);
+  font-size: 10px;
+  color: var(--sc-t3);
+}
+.kpi .sparkline { flex: 1; height: 16px; }
+
+/* ============================================================
+   DEAL TABLE — dashboard
+   ============================================================ */
+.deal-table {
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  overflow: hidden;
+  background: var(--sc-s1);
+}
+.dt-row {
+  display: grid;
+  grid-template-columns: 32px 2fr 92px 80px 90px 80px 30px;
+  gap: 12px;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--sc-b1);
+  transition: background var(--dur-quick) var(--ease-std);
+}
+.dt-row:last-child { border-bottom: none; }
+.dt-row:hover { background: var(--sc-s2); }
+.dt-row.head {
+  background: var(--sc-s2);
+  font-family: var(--t-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  font-weight: 700;
+}
+.dt-thumb {
+  width: 28px; height: 28px;
+  background: var(--sc-s3);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--sc-t3);
+}
+.dt-thumb .ico { width: 14px; height: 14px; }
+.dt-title {
+  font-family: var(--t-body);
+  font-size: 12px;
+  color: var(--sc-t1);
+  display: flex; align-items: center; gap: 8px;
+  min-width: 0;
+}
+.dt-title .name { font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.dt-vendor {
+  font-family: var(--t-mono);
+  font-size: 9px;
+  padding: 1px 6px;
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pg, var(--sc-p));
+  flex-shrink: 0;
+}
+.dt-num {
+  font-family: var(--t-mono);
+  font-size: 12px;
+  color: var(--sc-t1);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.dt-num .currency { color: var(--sc-t3); margin-right: 2px; }
+.dt-arrow { color: var(--sc-t3); }
+.dt-arrow .ico { width: 12px; height: 12px; }
+.dt-arrow:hover { color: var(--pg, var(--sc-p)); }
+
+/* ============================================================
+   INVENTORY GRID
+   ============================================================ */
+.inv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.inv-card {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 96px auto;
+}
+.inv-card .thumb {
+  background: var(--sc-s3);
+  border-bottom: 1px solid var(--sc-b1);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--sc-t3);
+  position: relative;
+}
+.inv-card .thumb .ico { width: 40px; height: 40px; opacity: 0.5; }
+.inv-card .thumb .grade {
+  position: absolute; top: 6px; left: 6px;
+  font-family: var(--t-mono);
+  font-size: 9px;
+  padding: 1px 6px;
+  background: var(--sc-void);
+  border: 1px solid var(--pg, var(--sc-p));
+  color: var(--pg, var(--sc-p));
+  letter-spacing: 0.15em;
+  border-radius: var(--r-2);
+}
+.inv-card .body { padding: 10px 12px; display: grid; gap: 6px; }
+.inv-card .name { font-size: 12px; color: var(--sc-t1); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.inv-card .row { display: flex; align-items: baseline; justify-content: space-between; font-family: var(--t-mono); font-size: 10px; color: var(--sc-t3); letter-spacing: 0.1em; text-transform: uppercase; }
+.inv-card .row strong { color: var(--sc-t1); font-variant-numeric: tabular-nums; }
+
+/* ============================================================
+   ANALYTICS CHART — proper trading-terminal readout
+   Derived from codex-lab chart vocabulary: polylines, dashed compares,
+   grid at 10% steps, numeric ticks, crosshair-ready container.
+   ============================================================ */
+.chart-wrap {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  padding: 16px 20px 12px;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 12px;
+}
+.chart-hdr {
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--sc-b1);
+  padding-bottom: 10px;
+}
+.chart-titlegrp {
+  display: flex; align-items: baseline; gap: 12px;
+}
+.chart-title {
+  font-family: var(--t-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sc-t2);
+  font-weight: 700;
+}
+.chart-readout {
+  font-family: var(--t-mono);
+  font-size: 18px;
+  color: var(--pg, var(--sc-p));
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+.chart-readout .delta {
+  font-size: 11px;
+  color: var(--ink-gain);
+  margin-left: 8px;
+}
+.chart-legend { display: flex; gap: 16px; }
+.chart-legend .lg {
+  display: flex; align-items: center; gap: 6px;
+  font-family: var(--t-mono);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+}
+.chart-legend .lg .sw { width: 16px; height: 2px; }
+.chart-svg { width: 100%; display: block; height: 220px; }
+.chart-svg text { font-family: var(--t-mono); font-size: 9px; fill: var(--sc-t3); letter-spacing: 0.06em; }
+.chart-svg .grid { stroke: var(--sc-b1); stroke-width: 1; opacity: 0.55; }
+.chart-svg .axis { stroke: var(--sc-b2); stroke-width: 1; }
+.chart-svg .tick { stroke: var(--sc-b1); stroke-width: 1; }
+.chart-svg .band { fill: var(--sc-p); opacity: 0.10; }
+.chart-svg .candle-wick { stroke: var(--sc-b3); stroke-width: 1; }
+.chart-svg .candle-up { fill: var(--ink-gain); stroke: var(--ink-gain); }
+.chart-svg .candle-down { fill: var(--ink-loss); stroke: var(--ink-loss); }
+.chart-svg .series-main { fill: none; stroke: var(--pg, var(--sc-p)); stroke-width: 1.6; }
+.chart-svg .series-secondary { fill: none; stroke: var(--sc-s); stroke-width: 1; stroke-dasharray: 3,3; opacity: 0.7; }
+.chart-svg .series-median { fill: none; stroke: var(--sc-t3); stroke-width: 1; stroke-dasharray: 2,4; }
+.chart-svg .crosshair { stroke: var(--sc-p); stroke-width: 1; stroke-dasharray: 2,2; opacity: 0.55; }
+
+.chart-footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  overflow: hidden;
+}
+.chart-footer .cell {
+  padding: 8px 12px;
+  background: var(--sc-s2);
+  border-right: 1px solid var(--sc-b1);
+}
+.chart-footer .cell:last-child { border-right: none; }
+.chart-footer .cell .k { font-family: var(--t-mono); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--sc-t3); margin-bottom: 4px; }
+.chart-footer .cell .v { font-family: var(--t-mono); font-size: 14px; color: var(--sc-t1); font-variant-numeric: tabular-nums; }
+.chart-footer .cell .v.gain { color: var(--ink-gain); }
+.chart-footer .cell .v.loss { color: var(--ink-loss); }
+
+/* worst-performers table */
+.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--t-mono);
+  font-size: 11px;
+}
+.tbl th {
+  text-align: left;
+  padding: 8px 10px;
+  background: var(--sc-s2);
+  border-bottom: 1px solid var(--sc-b1);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--sc-t3);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.tbl td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--sc-b1);
+  color: var(--sc-t1);
+  font-variant-numeric: tabular-nums;
+}
+.tbl tr:last-child td { border-bottom: none; }
+
+/* ============================================================
+   BRAIN — chat transcript + recommendations
+   ============================================================ */
+.brain-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 12px;
+  min-height: 480px;
+}
+.chat {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  padding: 16px 18px;
+  display: flex; flex-direction: column;
+  gap: 14px;
+}
+.msg {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 10px;
+}
+.msg .av {
+  width: 28px; height: 28px;
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--sc-s2);
+  color: var(--sc-t2);
+}
+.msg .av .ico { width: 14px; height: 14px; }
+.msg .role {
+  font-family: var(--t-mono);
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  margin-bottom: 4px;
+}
+.msg.you .role { color: var(--pg, var(--sc-p)); }
+.msg .bubble {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--sc-t1);
+}
+.msg.you .bubble { color: var(--sc-t1); }
+.msg.bot .bubble code { font-family: var(--t-mono); font-size: 12px; background: var(--sc-s2); padding: 1px 4px; border-radius: 2px; color: var(--sc-p); }
+
+.chat-compose {
+  margin-top: auto;
+  border-top: 1px solid var(--sc-b1);
+  padding-top: 12px;
+  display: flex; gap: 8px;
+}
+.chat-compose input { flex: 1; }
+
+.recs {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  padding: 16px 18px;
+  display: flex; flex-direction: column;
+  gap: 10px;
+}
+.recs h4 {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  border-bottom: 1px solid var(--sc-b1);
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+}
+.rec-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  background: var(--sc-s2);
+  align-items: center;
+}
+.rec-item .ticker { font-family: var(--t-mono); font-size: 11px; color: var(--pg, var(--sc-p)); font-weight: 700; letter-spacing: 0.08em; }
+.rec-item .why { font-size: 11px; color: var(--sc-t2); line-height: 1.35; }
+.rec-item .mg { font-family: var(--t-mono); font-size: 11px; color: var(--ink-gain); font-variant-numeric: tabular-nums; }
+
+/* ============================================================
+   MESH — machine cards + log stream + sparkline
+   ============================================================ */
+.mesh-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.node-card {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  padding: 14px 16px;
+  display: grid; gap: 10px;
+}
+.node-card .role-name {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px;
+}
+.node-card .role {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--pg, var(--sc-p));
+}
+.node-card .host {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  color: var(--sc-t3);
+  letter-spacing: 0.1em;
+}
+.node-card .ip {
+  font-family: var(--t-mono);
+  font-size: 11px;
+  color: var(--sc-t1);
+  font-variant-numeric: tabular-nums;
+}
+.node-card .metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--sc-b1);
+}
+.node-card .m {
+  display: flex; align-items: baseline; justify-content: space-between;
+  font-family: var(--t-mono);
+  font-size: 10px;
+}
+.node-card .m span:first-child { color: var(--sc-t3); letter-spacing: 0.1em; text-transform: uppercase; }
+.node-card .m span:last-child { color: var(--sc-t1); font-variant-numeric: tabular-nums; }
+.node-card .latency-spark { height: 32px; border-top: 1px solid var(--sc-b1); padding-top: 6px; }
+
+.log-stream {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  max-height: 280px;
+  overflow: hidden;
+  padding: 10px 14px;
+  font-family: var(--t-mono);
+  font-size: 11px;
+  line-height: 1.6;
+  display: flex; flex-direction: column;
+}
+.log-line { display: grid; grid-template-columns: 86px 56px 1fr 60px; gap: 12px; color: var(--sc-t2); }
+.log-line .ts { color: var(--sc-t3); }
+.log-line .node { color: var(--pg, var(--sc-p)); letter-spacing: 0.08em; text-transform: uppercase; }
+.log-line.error .node { color: var(--sc-s); }
+.log-line .lat { color: var(--sc-t3); text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ============================================================
+   AGENT CONSOLE
+   ============================================================ */
+.console-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 12px;
+  min-height: 440px;
+}
+.tool-list {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  overflow: hidden;
+}
+.tool-list h4 {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--sc-b1);
+  background: var(--sc-s2);
+}
+.tool-item {
+  padding: 8px 14px;
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  gap: 8px;
+  align-items: center;
+  font-family: var(--t-mono);
+  font-size: 11px;
+  color: var(--sc-t2);
+  border-bottom: 1px solid var(--sc-b1);
+}
+.tool-item:last-child { border-bottom: none; }
+.tool-item .ico { width: 12px; height: 12px; color: var(--pg, var(--sc-p)); }
+.tool-item .count { color: var(--sc-t3); font-size: 9px; letter-spacing: 0.12em; }
+.tool-item.active { background: color-mix(in srgb, var(--pg, var(--sc-p)) 10%, transparent); color: var(--sc-t1); }
+
+.call-trace {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  padding: 14px 16px;
+  font-family: var(--t-mono);
+  font-size: 11px;
+  display: flex; flex-direction: column;
+  gap: 8px;
+}
+.call-trace h4 {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  border-bottom: 1px solid var(--sc-b1);
+  padding-bottom: 8px;
+  margin-bottom: 4px;
+}
+.trace-row {
+  display: grid;
+  grid-template-columns: 20px 1fr auto auto;
+  gap: 10px;
+  padding: 6px 10px;
+  background: var(--sc-s2);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  align-items: center;
+}
+.trace-row .num { color: var(--sc-t3); font-variant-numeric: tabular-nums; }
+.trace-row .fn  { color: var(--sc-t1); }
+.trace-row .fn .arg { color: var(--pg, var(--sc-p)); }
+.trace-row .dur { color: var(--sc-t3); font-variant-numeric: tabular-nums; }
+.trace-row .st  { font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 1px 6px; border-radius: var(--r-2); }
+.trace-row .st.ok { background: color-mix(in srgb, var(--ink-gain) 20%, transparent); color: var(--ink-gain); }
+.trace-row .st.pending { background: color-mix(in srgb, var(--sc-pg-inv) 20%, transparent); color: var(--sc-pg-inv); }
+
+/* ============================================================
+   SETTINGS
+   ============================================================ */
+.settings-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 12px;
+  min-height: 440px;
+}
+.set-nav {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  overflow: hidden;
+}
+.set-nav .set-item {
+  padding: 10px 14px;
+  font-family: var(--t-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sc-t2);
+  border-bottom: 1px solid var(--sc-b1);
+  display: flex; align-items: center; gap: 10px;
+  border-left: 2px solid transparent;
+}
+.set-nav .set-item:last-child { border-bottom: none; }
+.set-nav .set-item.active { color: var(--pg, var(--sc-p)); background: color-mix(in srgb, var(--pg, var(--sc-p)) 10%, transparent); border-left-color: var(--pg, var(--sc-p)); }
+.set-nav .set-item .ico { width: 12px; height: 12px; }
+
+.set-pane {
+  background: var(--sc-s1);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-3);
+  padding: 16px 20px;
+  display: flex; flex-direction: column;
+  gap: 18px;
+}
+.set-section h4 {
+  font-family: var(--t-mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sc-t3);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--sc-b1);
+  margin-bottom: 10px;
+}
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 8px;
+}
+.palette-swatch {
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 48px auto;
+  cursor: default;
+  transition: border-color var(--dur-quick) var(--ease-std);
+}
+.palette-swatch:hover { border-color: var(--sc-p); }
+.palette-swatch.active { border-color: var(--sc-p); box-shadow: 0 0 0 1px var(--sc-p); }
+.palette-swatch .strip {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 100%;
+}
+.palette-swatch .label {
+  padding: 6px 8px;
+  background: var(--sc-s2);
+  font-family: var(--t-mono);
+  font-size: 9px;
+  color: var(--sc-t2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--sc-b1);
+}
+.palette-swatch .label span { color: var(--sc-t3); }
+
+.setting-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--sc-b1);
+  gap: 16px;
+}
+.setting-row:last-child { border-bottom: none; }
+.setting-row .k {
+  font-family: var(--t-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sc-t2);
+}
+.setting-row .k small { display: block; font-size: 10px; color: var(--sc-t3); letter-spacing: 0; text-transform: none; margin-top: 2px; font-family: var(--t-body); }
+.setting-row .v { font-family: var(--t-mono); font-size: 11px; color: var(--sc-t1); }
+
+.toggle {
+  width: 36px; height: 18px;
+  background: var(--sc-s2);
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  position: relative;
+  cursor: default;
+}
+.toggle .knob {
+  width: 14px; height: 14px;
+  background: var(--sc-b2);
+  border: 1px solid var(--sc-b2);
+  border-radius: var(--r-2);
+  position: absolute;
+  top: 1px; left: 1px;
+  transition: left var(--dur-trans) var(--ease-std), background var(--dur-trans) var(--ease-std);
+}
+.toggle.on { background: color-mix(in srgb, var(--sc-p) 25%, transparent); border-color: var(--sc-p); }
+.toggle.on .knob { left: 19px; background: var(--sc-p); border-color: var(--sc-p); }
+
+/* ============================================================
+   SCHEME SAMPLER STRIP — shown at top of hero
+   ============================================================ */
+.sampler {
+  max-width: 1560px; margin: 28px auto 0;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+.sampler .sw-card {
+  border: 1px solid var(--sc-b1);
+  border-radius: var(--r-2);
+  overflow: hidden;
+  cursor: pointer;
+  display: grid;
+  grid-template-rows: 28px auto;
+  transition: transform var(--dur-quick) var(--ease-std), border-color var(--dur-quick) var(--ease-std);
+}
+.sampler .sw-card:hover { border-color: var(--sc-p); transform: translateY(-1px); }
+.sampler .sw-card .strip {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.sampler .sw-card .meta {
+  padding: 5px 8px;
+  background: var(--sc-s1);
+  font-family: var(--t-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sc-t2);
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--sc-b1);
+}
+.sampler .sw-card .meta span { color: var(--sc-t3); }
+
+/* ============================================================
+   ANIMATIONS — constrained-only; no overshoot easeOutBack
+   ============================================================ */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.page-card:nth-child(2) { animation-delay: 0.05s; }
+.page-card:nth-child(3) { animation-delay: 0.1s; }
+.page-card:nth-child(4) { animation-delay: 0.15s; }
+.page-card:nth-child(5) { animation-delay: 0.2s; }
+.page-card:nth-child(6) { animation-delay: 0.25s; }
+.page-card:nth-child(7) { animation-delay: 0.3s; }
+
+@media (max-width: 900px) {
+  .app-body { grid-template-columns: 56px 1fr; }
+  .sb-item { justify-content: center; padding: 6px 4px; }
+  .sb-item .label-text, .sb-item .shortcut, .sb-group-label { display: none; }
+  .brain-grid, .console-grid, .settings-grid { grid-template-columns: 1fr; }
+  .mesh-grid { grid-template-columns: 1fr; }
+}
+
+/* icon inline defaults */
+.ico svg, svg.ico { width: 100%; height: 100%; display: block; fill: currentColor; }
+</style>
+</head>
+<body class="sc-02">
+
+<!-- ============================================================
+     INLINE ICON SYMBOL LIBRARY — 16 pixelarticons
+     All SVGs extracted verbatim from external/icons-pixelarticons/svg/
+     currentColor inheritance — one copy referenced 60+ times by <use>
+     ============================================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 20h16v2H4zm16-10h2v10h-2zM2 10h2v10H2zm2-2h2v2H4zm2-2h2v2H6zm2-2h2v2H8zm2-2h4v2h-4zm4 2h2v2h-2zm2 2h2v2h-2zm2 2h2v2h-2zM8 14h2v6H8zm2-2h4v2h-4zm4 2h2v6h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-package" viewBox="0 0 24 24"><path d="M10 20h4v2h-4zm0-16h4V2h-4zm0 6h4v2h-4zm4 8h4v2h-4zm0-12h4V4h-4zm0 2h4v2h-4zm4 8h4v2h-4zm0-8h4V6h-4zM6 18h4v2H6zM6 6h4V4H6zm0 2h4v2H6zm-4 8h4v2H2zm0-8h4V6H2z" fill="currentColor"/><path d="M2 6h2v12H2zm18 0h2v12h-2zm-8 6h2v8h-2zm-2-6h4v2h-4z" fill="currentColor"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 2h16v2H4zm0 18h16v2H4zM2 4h2v16H2zm18 0h2v16h-2zM7 11h2v6H7zm4-4h2v10h-2zm4 6h2v4h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><path d="M5 3h14v2H5zm0 16h14v2H5zM3 5h2v14H3zm16 0h2v14h-2zM9 7h6v2H9zm0 8h6v2H9zM7 9h2v6H7zm8 0h2v6h-2zm-4-8h2v2h-2zm0 20h2v2h-2zM1 11h2v2H1zm20 0h2v2h-2zm0-4h2v2h-2zm0 8h2v2h-2zM1 15h2v2H1zm0-8h2v2H1zm6-6h2v2H7zm8 0h2v2h-2zm0 20h2v2h-2zm-8 0h2v2H7z" fill="currentColor"/></symbol>
+  <symbol id="i-git-branch" viewBox="0 0 24 24"><path d="M4 14h4v2H4zm0 6h4v2H4zm-2-4h2v4H2zm6 0h2v4H8zm8-14h4v2h-4zm0 6h4v2h-4zm-2-4h2v4h-2zm6 0h2v4h-2zm-8 13h5v2h-5zm5-5h2v5h-2zM5 2h2v10H5z" fill="currentColor"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><path d="M22 22h-2v-2h2v2Zm-2-2h-2v-2h2v2Zm-6-2H6v-2h8v2Zm4 0h-2v-2h2v2ZM6 16H4v-2h2v2Zm10 0h-2v-2h2v2ZM4 14H2V6h2v8Zm14 0h-2V6h2v8ZM6 6H4V4h2v2Zm10 0h-2V4h2v2Zm-2-2H6V2h8v2Z" fill="currentColor"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><path d="M2 6h2v4H2zm0 4h2v4H2zm0 4h2v4H2zm18-8h2v4h-2zm0 4h2v4h-2zm0 4h2v4h-2zM4 4h4v2H4zm0 8h4v-2H4zm0 4h4v-2H4zm0 4h4v-2H4zM16 4h4v2h-4zm0 8h4v-2h-4zm0 4h4v-2h-4zm0 4h4v-2h-4zM8 2h8v2H8zm0 12h8v-2H8zm0 4h8v-2H8zm0 4h8v-2H8z" fill="currentColor"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M9 2h6v2H9zm0 8h6v2H9zm6-6h2v6h-2zM7 4h2v6H7zM4 18h2v4H4zm14 0h2v4h-2zM8 14h8v2H8zm-2 2h2v2H6zm10 0h2v2h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-bell" viewBox="0 0 24 24"><path d="M9 2h6v2H9zM7 4h2v2H7zm8 0h2v2h-2zM5 6h2v7H5zm12 0h2v7h-2zM3 13h2v4H3zm16 0h2v4h-2z" fill="currentColor"/><path d="M3 15h18v2H3zm5 3h2v2H8zm6 0h2v2h-2zm-4 2h4v2h-4z" fill="currentColor"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M16 20H8v-2h8v2Zm-8-2H4v-2h4v2Zm12 0h-4v-2h4v2ZM4 16H2v-2h2v2Zm10-6h-2v2h2v-2h2v4h-2v2h-4v-2H8v-4h2V8h4v2Zm8 6h-2v-2h2v2ZM2 14H0v-4h2v4Zm22 0h-2v-4h2v4ZM4 10H2V8h2v2Zm18 0h-2V8h2v2ZM8 8H4V6h4v2Zm12 0h-4V6h4v2Zm-4-2H8V4h8v2Z" fill="currentColor"/></symbol>
+  <symbol id="i-power" viewBox="0 0 24 24"><path d="M6 20h12v2H6zM18 6h2v2h-2zM4 6h2v2H4zm2-2h2v2H6zm10 0h2v2h-2zM4 18h2v2H4zm14 0h2v2h-2zM2 8h2v10H2zm18 0h2v10h-2zm-9-6h2v9h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M11 19h2v2h-2zm-4-3h2v2H7zm8 0h2v2h-2zm-6-2h6v2H9zm-5-1h2v2H4zm2-2h2v2H6zm2-2h8v2H8zm-7 1h2v2H1zm20 0h2v2h-2zM3 8h2v2H3zm2-2h2v2H5zm2-2h10v2H7zm12 4h2v2h-2zm-2-2h2v2h-2zm1 7h2v2h-2zm-2-2h2v2h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><path d="M5 8h14v2H5zm0 12h14v2H5zM3 10h2v10H3zm16 0h2v10h-2zM7 4h2v4H7zm2-2h6v2H9zm6 2h2v4h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M13 11h7v2h-7v7h-2v-7H4v-2h7V4h2v7Z" fill="currentColor"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M4 13h8v6h2v2h-2v2h-2v-8H2v-4h2v2Zm12 6h-2v-2h2v2Zm2-2h-2v-2h2v2Zm2-2h-2v-2h2v2Zm-6-6h8v4h-2v-2h-8V5h-2V3h2V1h2v8Zm-8 2H4V9h2v2Zm2-2H6V7h2v2Zm2-2H8V5h2v2Z" fill="currentColor"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M10 18H8v-2h2v2Zm-2-2H6v-2h2v2Zm4-2v2h-2v-2h2Zm-6 0H4v-2h2v2Zm8 0h-2v-2h2v2Zm2-2h-2v-2h2v2Zm2-2h-2V8h2v2Zm2-2h-2V6h2v2Z" fill="currentColor"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M4 4h6v2H4zm0 14h16v2H4zM20 8h2v10h-2zM2 6h2v12H2zm8 0h10v2H10z" fill="currentColor"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M18 22H8v-2h10v2ZM8 20H6v-2h2v2Zm12 0h-2v-2h2v2ZM6 18H4v-2h2v2Zm16 0h-2v-4h-2v-2h2v-2h2v8ZM4 16H2V6h2v10Zm14 0h-6v-2h6v2Zm-6-2h-2v-2h2v2Zm-2-2H8V6h2v6ZM6 6H4V4h2v2Zm8-2h-2v2h-2V4H6V2h8v2Z" fill="currentColor"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M6 4H4v16h2zm10-2H6v2h10zm4 4h-2v14h2zm-2 14H6v2h12zM16 4h2v2h-2zm-4 0h2v6h-2z" fill="currentColor"/><path d="M12 8h6v2h-6z" fill="currentColor"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M15 11h-2V9h2zm0 4h-2v-2h2zm-2 2h-2v-2h2zm0-8h-2V7h2zm-2-2H9V5h2zM9 21H7V3h2zm6-8h2v-2h-2zm-6 4h2v2H9z" fill="currentColor"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M20 18H4v-2h16v2Zm0-5H4v-2h16v2Zm0-5H4V6h16v2Z" fill="currentColor"/></symbol>
+  <symbol id="i-minus" viewBox="0 0 24 24"><path d="M4 11h16v2H4z" fill="currentColor"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M11 4h2v16h-2zm-4 4h2v2H7zm8 0h2v2h-2zm-6-2h2v2H9zm4 0h2v2h-2zM5 10h2v2H5zm12 0h2v2h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4 11h16v2H4zm12 4h2v2h-2zm0-8h2v2h-2zm2 6h2v2h-2zm0-4h2v2h-2zm2 2h2v2h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M8 4h2v2H8zm2 2h2v2h-2zm2 2h2v2h-2zm2 2h2v4h-2zm-2 4h2v2h-2zm-2 2h2v2h-2zM8 18h2v2H8z" fill="currentColor"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 4h4v2H4zm12 0h4v2h-4zm0 9h4v2h-4zM4 13h4v2H4zM10 3h2v16h-2zm8 0h2v16h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-dollar" viewBox="0 0 24 24"><path d="M11 2h2v20h-2zM9 4h8v2H9zM7 6h2v4H7zm0 8h2v4H7zm8 0h2v4h-2zM9 10h10v2H9zm0 8h8v2H9z" fill="currentColor"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M14 4h6v2h-6zm4 2h2v6h-2zm-2 2h2v2h-2zm-2 2h2v2h-2zm-2 2h2v2h-2zM4 6h8v2H6v12h12v-6h2v8H4z" fill="currentColor"/></symbol>
+</svg>
+
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<div class="app-header">
+  <div class="app-logo">clawmachine <span>// pages v1 · 2026-04-21</span></div>
+  <div class="header-meta">
+    <span><span class="dot"></span>scheme <strong id="hdr-scheme-num">02</strong> / <span id="hdr-scheme-name">DEEP CURRENT</span></span>
+    <span>7 pages · 62 palettes · operator-authored</span>
+  </div>
+  <div class="scheme-switcher">
+    <label for="schemeSelect">Scheme</label>
+    <select id="schemeSelect" onchange="applyScheme(this.value)">
+      <option value="02">02 — DEEP CURRENT · dark oceanic</option>
+      <option value="07">07 — CONCRETE BLOOM · light brutalist</option>
+      <option value="18">18 — PLASMA FIELD · dark magenta/cyan</option>
+      <option value="25">25 — MIDNIGHT DREAM · dark aqua/lavender</option>
+      <option value="38">38 — ALPINE GLOW · light coral/blue</option>
+      <option value="46">46 — CORAL REEF · dark coral/teal</option>
+      <option value="52">52 — RUST OXIDE · dark copper/verdigris</option>
+    </select>
+  </div>
+</div>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<div class="app-hero">
+  <h1>clawmachine<br><em>pages</em></h1>
+  <p class="sub">
+    Seven app pages rendered in the chromatic-lab's own vocabulary. Same type ramp, same card grammar, same density. Dashboard / Inventory / Analytics / Brain / Mesh / Agent Console / Settings, each driven by its own per-page accent from the active scheme. Switch scheme at top right. This file is the thin finished-page reference — the codex labs at <code>local/chromatic/clawmachine-chromatic-lab.html</code> and <code>local/chromatic/clawmachine-style-lab.html</code> are the aesthetic ground-truth.
+  </p>
+  <div class="meta-row">
+    <div class="hero-stat"><strong>7</strong>APP PAGES</div>
+    <div class="hero-stat"><strong>62</strong>PALETTES (7 LIVE)</div>
+    <div class="hero-stat"><strong>20</strong>STYLE SYSTEMS</div>
+    <div class="hero-stat"><strong>800</strong>PIXELARTICONS</div>
+  </div>
+</div>
+
+<!-- scheme sampler strip -->
+<div class="sampler" id="sampler"></div>
+
+<!-- ============================================================
+     PAGES CONTAINER
+     ============================================================ -->
+<div class="pages-container">
+
+  <!-- ======================================================
+       PAGE 1 — DASHBOARD
+       ====================================================== -->
+  <div class="page-card" id="page-dashboard" style="--pg: var(--sc-pg-dash); --bg: var(--sc-void);">
+    <div class="page-card-hdr">
+      <div class="pc-meta">
+        <div class="pc-num"><span class="accent-swatch" style="background: var(--sc-pg-dash)"></span>PAGE 01 / DASHBOARD</div>
+        <div class="pc-name">Live deal feed</div>
+        <div class="pc-desc">Source listings streaming in from the scout. KPI strip across the top. Status strip pinned. No gamification, no win-rate. Per-page accent drives the KPI top-strip, active nav item, and vendor badge.</div>
+        <div class="pc-tags">
+          <span class="pc-tag accent">pg.dashboard</span>
+          <span class="pc-tag">data-first</span>
+          <span class="pc-tag">streaming</span>
+        </div>
+      </div>
+      <div class="pane-actions">
+        <button class="btn ghost"><svg class="ico"><use href="#i-eye"/></svg>SHOW</button>
+        <button class="btn accent"><svg class="ico"><use href="#i-plus"/></svg>ADD SOURCE</button>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="app-frame">
+        <div class="app-titlebar">
+          <span class="tb-dot" style="background: var(--sc-pg-dash)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-path">clawmachine / dashboard</span>
+        </div>
+        <div class="app-body">
+          <nav class="app-sidebar">
+            <div class="sb-group-label">nav</div>
+            <div class="sb-item active" style="--pg: var(--sc-pg-dash)"><svg class="ico"><use href="#i-home"/></svg><span class="label-text">Dashboard</span><span class="shortcut">1</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-package"/></svg><span class="label-text">Inventory</span><span class="shortcut">2</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-chart"/></svg><span class="label-text">Analytics</span><span class="shortcut">3</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-cpu"/></svg><span class="label-text">Brain</span><span class="shortcut">4</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-git-branch"/></svg><span class="label-text">Mesh</span><span class="shortcut">5</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-zap"/></svg><span class="label-text">Agent</span><span class="shortcut">6</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-sliders"/></svg><span class="label-text">Settings</span><span class="shortcut">7</span></div>
+          </nav>
+          <div class="pane">
+            <div class="pane-title-row">
+              <div class="pane-title">live feed <small>streaming · 237 today</small></div>
+              <div class="pane-actions">
+                <span class="badge live"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:currentColor"></span>LIVE</span>
+                <span class="badge mute">AUTO-REFRESH 2S</span>
+              </div>
+            </div>
+
+            <div class="kpi-strip">
+              <div class="kpi">
+                <div class="label"><svg class="ico"><use href="#i-zap"/></svg>scout throughput</div>
+                <div class="value">127<span class="unit">/hr</span></div>
+                <div class="delta"><span class="pill gain">+18%</span><svg class="sparkline" viewBox="0 0 100 16" preserveAspectRatio="none"><polyline fill="none" stroke="var(--sc-pg-dash)" stroke-width="1.5" points="0,12 10,10 20,11 30,9 40,10 50,7 60,8 70,5 80,7 90,4 100,3"/></svg></div>
+              </div>
+              <div class="kpi">
+                <div class="label"><svg class="ico"><use href="#i-dollar"/></svg>today ROI</div>
+                <div class="value"><span class="unit">£</span>482</div>
+                <div class="delta"><span class="pill gain">+24%</span><svg class="sparkline" viewBox="0 0 100 16" preserveAspectRatio="none"><polyline fill="none" stroke="var(--sc-pg-dash)" stroke-width="1.5" points="0,14 10,13 20,11 30,12 40,10 50,8 60,9 70,6 80,4 90,5 100,2"/></svg></div>
+              </div>
+              <div class="kpi">
+                <div class="label"><svg class="ico"><use href="#i-package"/></svg>open deals</div>
+                <div class="value">43</div>
+                <div class="delta"><span class="pill gain">+7</span><svg class="sparkline" viewBox="0 0 100 16" preserveAspectRatio="none"><polyline fill="none" stroke="var(--sc-pg-dash)" stroke-width="1.5" points="0,10 20,9 40,11 60,7 80,6 100,4"/></svg></div>
+              </div>
+              <div class="kpi">
+                <div class="label"><svg class="ico"><use href="#i-check"/></svg>evaluator floor</div>
+                <div class="value"><span class="unit">£</span>68</div>
+                <div class="delta"><span class="pill loss">-3</span><svg class="sparkline" viewBox="0 0 100 16" preserveAspectRatio="none"><polyline fill="none" stroke="var(--sc-pg-dash)" stroke-width="1.5" points="0,6 20,7 40,5 60,9 80,8 100,11"/></svg></div>
+              </div>
+            </div>
+
+            <div class="deal-table">
+              <div class="dt-row head">
+                <div></div>
+                <div>ITEM</div>
+                <div>SOURCE</div>
+                <div style="text-align:right">FLOOR</div>
+                <div style="text-align:right">SOLD MED.</div>
+                <div style="text-align:right">ROI</div>
+                <div></div>
+              </div>
+              <div class="dt-row">
+                <div class="dt-thumb"><svg class="ico"><use href="#i-cpu"/></svg></div>
+                <div class="dt-title"><span class="name">rtx 4070 — boxed · good condition</span></div>
+                <div><span class="dt-vendor">ebay</span></div>
+                <div class="dt-num"><span class="currency">£</span>412</div>
+                <div class="dt-num"><span class="currency">£</span>498</div>
+                <div class="dt-num"><span class="pill gain">+£86</span></div>
+                <div class="dt-arrow"><svg class="ico"><use href="#i-external"/></svg></div>
+              </div>
+              <div class="dt-row">
+                <div class="dt-thumb"><svg class="ico"><use href="#i-package"/></svg></div>
+                <div class="dt-title"><span class="name">iphone 13 pro 256gb — grade b</span></div>
+                <div><span class="dt-vendor">gumtree</span></div>
+                <div class="dt-num"><span class="currency">£</span>340</div>
+                <div class="dt-num"><span class="currency">£</span>418</div>
+                <div class="dt-num"><span class="pill gain">+£78</span></div>
+                <div class="dt-arrow"><svg class="ico"><use href="#i-external"/></svg></div>
+              </div>
+              <div class="dt-row">
+                <div class="dt-thumb"><svg class="ico"><use href="#i-folder"/></svg></div>
+                <div class="dt-title"><span class="name">macbook air m2 2022 · 8gb · silver</span></div>
+                <div><span class="dt-vendor">facebook</span></div>
+                <div class="dt-num"><span class="currency">£</span>620</div>
+                <div class="dt-num"><span class="currency">£</span>712</div>
+                <div class="dt-num"><span class="pill gain">+£92</span></div>
+                <div class="dt-arrow"><svg class="ico"><use href="#i-external"/></svg></div>
+              </div>
+              <div class="dt-row">
+                <div class="dt-thumb"><svg class="ico"><use href="#i-package"/></svg></div>
+                <div class="dt-title"><span class="name">airpods pro 2 — sealed</span></div>
+                <div><span class="dt-vendor">shpock</span></div>
+                <div class="dt-num"><span class="currency">£</span>148</div>
+                <div class="dt-num"><span class="currency">£</span>179</div>
+                <div class="dt-num"><span class="pill gain">+£31</span></div>
+                <div class="dt-arrow"><svg class="ico"><use href="#i-external"/></svg></div>
+              </div>
+              <div class="dt-row">
+                <div class="dt-thumb"><svg class="ico"><use href="#i-cpu"/></svg></div>
+                <div class="dt-title"><span class="name">ps5 disc — original owner · boxed</span></div>
+                <div><span class="dt-vendor">preloved</span></div>
+                <div class="dt-num"><span class="currency">£</span>358</div>
+                <div class="dt-num"><span class="currency">£</span>410</div>
+                <div class="dt-num"><span class="pill gain">+£52</span></div>
+                <div class="dt-arrow"><svg class="ico"><use href="#i-external"/></svg></div>
+              </div>
+              <div class="dt-row">
+                <div class="dt-thumb"><svg class="ico"><use href="#i-package"/></svg></div>
+                <div class="dt-title"><span class="name">nintendo switch oled · pallet x6</span></div>
+                <div><span class="dt-vendor">wholesale</span></div>
+                <div class="dt-num"><span class="currency">£</span>1,240</div>
+                <div class="dt-num"><span class="currency">£</span>1,434</div>
+                <div class="dt-num"><span class="pill gain">+£194</span></div>
+                <div class="dt-arrow"><svg class="ico"><use href="#i-external"/></svg></div>
+              </div>
+              <div class="dt-row">
+                <div class="dt-thumb"><svg class="ico"><use href="#i-package"/></svg></div>
+                <div class="dt-title"><span class="name">samsung galaxy s23 ultra 512gb</span></div>
+                <div><span class="dt-vendor">cex</span></div>
+                <div class="dt-num"><span class="currency">£</span>480</div>
+                <div class="dt-num"><span class="currency">£</span>498</div>
+                <div class="dt-num"><span class="pill gain">+£18</span></div>
+                <div class="dt-arrow"><svg class="ico"><use href="#i-external"/></svg></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       PAGE 2 — INVENTORY
+       ====================================================== -->
+  <div class="page-card" id="page-inventory" style="--pg: var(--sc-pg-inv); --bg: var(--sc-void);">
+    <div class="page-card-hdr">
+      <div class="pc-meta">
+        <div class="pc-num"><span class="accent-swatch" style="background: var(--sc-pg-inv)"></span>PAGE 02 / INVENTORY</div>
+        <div class="pc-name">Acquired-item grid</div>
+        <div class="pc-desc">Acquired stock. Each card carries image, condition grade (MINT / EXCELLENT / GOOD / FAIR), acquired price, live comp, and delta pill. Grid is the native data shape — not a nav widget.</div>
+        <div class="pc-tags">
+          <span class="pc-tag accent">pg.inventory</span>
+          <span class="pc-tag">condition-grades</span>
+          <span class="pc-tag">live-comp</span>
+        </div>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="app-frame">
+        <div class="app-titlebar">
+          <span class="tb-dot" style="background: var(--sc-pg-inv)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-path">clawmachine / inventory</span>
+        </div>
+        <div class="app-body">
+          <nav class="app-sidebar">
+            <div class="sb-group-label">nav</div>
+            <div class="sb-item"><svg class="ico"><use href="#i-home"/></svg><span class="label-text">Dashboard</span><span class="shortcut">1</span></div>
+            <div class="sb-item active" style="--pg: var(--sc-pg-inv)"><svg class="ico"><use href="#i-package"/></svg><span class="label-text">Inventory</span><span class="shortcut">2</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-chart"/></svg><span class="label-text">Analytics</span><span class="shortcut">3</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-cpu"/></svg><span class="label-text">Brain</span><span class="shortcut">4</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-git-branch"/></svg><span class="label-text">Mesh</span><span class="shortcut">5</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-zap"/></svg><span class="label-text">Agent</span><span class="shortcut">6</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-sliders"/></svg><span class="label-text">Settings</span><span class="shortcut">7</span></div>
+          </nav>
+          <div class="pane">
+            <div class="pane-title-row">
+              <div class="pane-title">inventory <small>28 items · £6,240 at floor</small></div>
+              <div class="pane-actions">
+                <input class="input" placeholder="search sku · name · grade" />
+                <button class="btn"><svg class="ico"><use href="#i-search"/></svg>FILTER</button>
+              </div>
+            </div>
+
+            <div class="kpi-strip">
+              <div class="kpi">
+                <div class="label"><svg class="ico"><use href="#i-package"/></svg>total items</div>
+                <div class="value">28</div>
+                <div class="delta"><span class="pill gain">+4 this week</span></div>
+              </div>
+              <div class="kpi">
+                <div class="label"><svg class="ico"><use href="#i-dollar"/></svg>at floor (gbp)</div>
+                <div class="value"><span class="unit">£</span>6,240</div>
+              </div>
+              <div class="kpi">
+                <div class="label"><svg class="ico"><use href="#i-check"/></svg>MINT / EX</div>
+                <div class="value">18</div>
+              </div>
+              <div class="kpi">
+                <div class="label"><svg class="ico"><use href="#i-minus"/></svg>FAIR / BELOW</div>
+                <div class="value">3</div>
+              </div>
+            </div>
+
+            <div class="inv-grid">
+              <div class="inv-card">
+                <div class="thumb"><span class="grade">MINT</span><svg class="ico"><use href="#i-cpu"/></svg></div>
+                <div class="body">
+                  <div class="name">rtx 3080 ti — founders</div>
+                  <div class="row"><span>acq</span><strong>£412</strong></div>
+                  <div class="row"><span>comp</span><strong style="color: var(--ink-gain)">£548</strong></div>
+                </div>
+              </div>
+              <div class="inv-card">
+                <div class="thumb"><span class="grade">EX</span><svg class="ico"><use href="#i-package"/></svg></div>
+                <div class="body">
+                  <div class="name">iphone 13 pro 256gb</div>
+                  <div class="row"><span>acq</span><strong>£340</strong></div>
+                  <div class="row"><span>comp</span><strong style="color: var(--ink-gain)">£418</strong></div>
+                </div>
+              </div>
+              <div class="inv-card">
+                <div class="thumb"><span class="grade">MINT</span><svg class="ico"><use href="#i-folder"/></svg></div>
+                <div class="body">
+                  <div class="name">macbook air m2 8gb</div>
+                  <div class="row"><span>acq</span><strong>£620</strong></div>
+                  <div class="row"><span>comp</span><strong style="color: var(--ink-gain)">£712</strong></div>
+                </div>
+              </div>
+              <div class="inv-card">
+                <div class="thumb"><span class="grade">GOOD</span><svg class="ico"><use href="#i-package"/></svg></div>
+                <div class="body">
+                  <div class="name">airpods pro 2 · 2023</div>
+                  <div class="row"><span>acq</span><strong>£148</strong></div>
+                  <div class="row"><span>comp</span><strong style="color: var(--ink-gain)">£179</strong></div>
+                </div>
+              </div>
+              <div class="inv-card">
+                <div class="thumb"><span class="grade">MINT</span><svg class="ico"><use href="#i-cpu"/></svg></div>
+                <div class="body">
+                  <div class="name">ps5 disc — boxed</div>
+                  <div class="row"><span>acq</span><strong>£358</strong></div>
+                  <div class="row"><span>comp</span><strong style="color: var(--ink-gain)">£410</strong></div>
+                </div>
+              </div>
+              <div class="inv-card">
+                <div class="thumb"><span class="grade">EX</span><svg class="ico"><use href="#i-package"/></svg></div>
+                <div class="body">
+                  <div class="name">switch oled · red/blue</div>
+                  <div class="row"><span>acq</span><strong>£207</strong></div>
+                  <div class="row"><span>comp</span><strong style="color: var(--ink-gain)">£239</strong></div>
+                </div>
+              </div>
+              <div class="inv-card">
+                <div class="thumb"><span class="grade">FAIR</span><svg class="ico"><use href="#i-package"/></svg></div>
+                <div class="body">
+                  <div class="name">galaxy s22 128gb</div>
+                  <div class="row"><span>acq</span><strong>£195</strong></div>
+                  <div class="row"><span>comp</span><strong style="color: var(--ink-loss)">£188</strong></div>
+                </div>
+              </div>
+              <div class="inv-card">
+                <div class="thumb"><span class="grade">GOOD</span><svg class="ico"><use href="#i-cpu"/></svg></div>
+                <div class="body">
+                  <div class="name">ipad pro 11" · 2021 · 128</div>
+                  <div class="row"><span>acq</span><strong>£320</strong></div>
+                  <div class="row"><span>comp</span><strong style="color: var(--ink-gain)">£368</strong></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       PAGE 3 — ANALYTICS (proper trading-terminal chart)
+       ====================================================== -->
+  <div class="page-card" id="page-analytics" style="--pg: var(--sc-pg-ana); --bg: var(--sc-void);">
+    <div class="page-card-hdr">
+      <div class="pc-meta">
+        <div class="pc-num"><span class="accent-swatch" style="background: var(--sc-pg-ana)"></span>PAGE 03 / ANALYTICS</div>
+        <div class="pc-name">Counts · profit · ROI trend</div>
+        <div class="pc-desc">Trading-terminal chart: 30-day ROI candles with grid lines, tick marks, numeric labels, median band overlay, and a dashed secondary series for last-period compare. Worst-performers table underneath with dismissed rows hidden by default.</div>
+        <div class="pc-tags">
+          <span class="pc-tag accent">pg.analytics</span>
+          <span class="pc-tag">candles</span>
+          <span class="pc-tag">terminal-density</span>
+        </div>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="app-frame">
+        <div class="app-titlebar">
+          <span class="tb-dot" style="background: var(--sc-pg-ana)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-path">clawmachine / analytics</span>
+        </div>
+        <div class="app-body">
+          <nav class="app-sidebar">
+            <div class="sb-group-label">nav</div>
+            <div class="sb-item"><svg class="ico"><use href="#i-home"/></svg><span class="label-text">Dashboard</span><span class="shortcut">1</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-package"/></svg><span class="label-text">Inventory</span><span class="shortcut">2</span></div>
+            <div class="sb-item active" style="--pg: var(--sc-pg-ana)"><svg class="ico"><use href="#i-chart"/></svg><span class="label-text">Analytics</span><span class="shortcut">3</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-cpu"/></svg><span class="label-text">Brain</span><span class="shortcut">4</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-git-branch"/></svg><span class="label-text">Mesh</span><span class="shortcut">5</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-zap"/></svg><span class="label-text">Agent</span><span class="shortcut">6</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-sliders"/></svg><span class="label-text">Settings</span><span class="shortcut">7</span></div>
+          </nav>
+          <div class="pane">
+            <div class="pane-title-row">
+              <div class="pane-title">analytics <small>30d · roi · per-deal</small></div>
+              <div class="pane-actions">
+                <button class="btn">7D</button>
+                <button class="btn accent">30D</button>
+                <button class="btn">90D</button>
+                <button class="btn">YTD</button>
+              </div>
+            </div>
+
+            <div class="chart-wrap">
+              <div class="chart-hdr">
+                <div class="chart-titlegrp">
+                  <div class="chart-title">ROI / DAY · GBP</div>
+                  <div class="chart-readout">£9,240 <span class="delta">+£1,480 (19.1%) vs prev 30d</span></div>
+                </div>
+                <div class="chart-legend">
+                  <div class="lg"><div class="sw" style="background: var(--sc-pg-ana)"></div>current</div>
+                  <div class="lg"><div class="sw" style="background: var(--sc-s); opacity:0.7"></div>prev period</div>
+                  <div class="lg"><div class="sw" style="background: var(--sc-t3)"></div>median</div>
+                  <div class="lg"><div class="sw" style="background: var(--ink-gain)"></div>up day</div>
+                  <div class="lg"><div class="sw" style="background: var(--ink-loss)"></div>down day</div>
+                </div>
+              </div>
+
+              <!-- Trading-terminal chart: grid, ticks, candles, series, band, crosshair -->
+              <svg class="chart-svg" viewBox="0 0 960 220" preserveAspectRatio="none">
+                <!-- Y-AXIS GRID (5 lines) + LABELS -->
+                <g class="grid">
+                  <line x1="56" y1="20" x2="920" y2="20"/>
+                  <line x1="56" y1="60" x2="920" y2="60"/>
+                  <line x1="56" y1="100" x2="920" y2="100"/>
+                  <line x1="56" y1="140" x2="920" y2="140"/>
+                  <line x1="56" y1="180" x2="920" y2="180"/>
+                </g>
+                <g>
+                  <text x="50" y="24" text-anchor="end">£600</text>
+                  <text x="50" y="64" text-anchor="end">£450</text>
+                  <text x="50" y="104" text-anchor="end">£300</text>
+                  <text x="50" y="144" text-anchor="end">£150</text>
+                  <text x="50" y="184" text-anchor="end">£0</text>
+                </g>
+
+                <!-- median band -->
+                <rect class="band" x="56" y="88" width="864" height="36"/>
+                <text x="914" y="95" text-anchor="end" fill="var(--sc-t3)">median band</text>
+
+                <!-- previous-period dashed compare series -->
+                <polyline class="series-secondary"
+                  points="56,145 85,135 114,142 144,128 173,132 202,120 232,125 261,117 290,120 319,110 349,115 378,105 407,108 437,98 466,102 495,90 524,95 554,86 583,92 612,78 641,82 671,72 700,76 729,68 758,72 788,62 817,66 846,58 876,62 920,55"/>
+
+                <!-- X-AXIS TICKS -->
+                <g class="tick">
+                  <line x1="56" y1="180" x2="56" y2="186"/>
+                  <line x1="200" y1="180" x2="200" y2="186"/>
+                  <line x1="344" y1="180" x2="344" y2="186"/>
+                  <line x1="488" y1="180" x2="488" y2="186"/>
+                  <line x1="632" y1="180" x2="632" y2="186"/>
+                  <line x1="776" y1="180" x2="776" y2="186"/>
+                  <line x1="920" y1="180" x2="920" y2="186"/>
+                </g>
+                <g>
+                  <text x="56" y="200" text-anchor="middle">MAR 22</text>
+                  <text x="200" y="200" text-anchor="middle">MAR 27</text>
+                  <text x="344" y="200" text-anchor="middle">APR 01</text>
+                  <text x="488" y="200" text-anchor="middle">APR 06</text>
+                  <text x="632" y="200" text-anchor="middle">APR 11</text>
+                  <text x="776" y="200" text-anchor="middle">APR 16</text>
+                  <text x="920" y="200" text-anchor="middle">APR 21</text>
+                </g>
+
+                <!-- CANDLES — 30 bars across 56→920 (29.8px spacing, 14px wide) -->
+                <!-- Each candle: wick (line) + body (rect). Up = green, Down = red. -->
+                <g>
+                  <!-- day 1 -->   <line class="candle-wick" x1="63" y1="155" x2="63" y2="135"/><rect class="candle-up" x="57" y="140" width="12" height="12"/>
+                  <!-- day 2 -->   <line class="candle-wick" x1="93" y1="148" x2="93" y2="122"/><rect class="candle-up" x="87" y="128" width="12" height="14"/>
+                  <!-- day 3 -->   <line class="candle-wick" x1="123" y1="158" x2="123" y2="128"/><rect class="candle-down" x="117" y="132" width="12" height="18"/>
+                  <!-- day 4 -->   <line class="candle-wick" x1="153" y1="140" x2="153" y2="108"/><rect class="candle-up" x="147" y="115" width="12" height="18"/>
+                  <!-- day 5 -->   <line class="candle-wick" x1="183" y1="148" x2="183" y2="118"/><rect class="candle-down" x="177" y="122" width="12" height="20"/>
+                  <!-- day 6 -->   <line class="candle-wick" x1="213" y1="135" x2="213" y2="100"/><rect class="candle-up" x="207" y="108" width="12" height="20"/>
+                  <!-- day 7 -->   <line class="candle-wick" x1="243" y1="140" x2="243" y2="110"/><rect class="candle-down" x="237" y="115" width="12" height="18"/>
+                  <!-- day 8 -->   <line class="candle-wick" x1="273" y1="125" x2="273" y2="92"/><rect class="candle-up" x="267" y="98" width="12" height="20"/>
+                  <!-- day 9 -->   <line class="candle-wick" x1="303" y1="128" x2="303" y2="98"/><rect class="candle-down" x="297" y="102" width="12" height="20"/>
+                  <!-- day 10 -->  <line class="candle-wick" x1="333" y1="115" x2="333" y2="80"/><rect class="candle-up" x="327" y="88" width="12" height="20"/>
+                  <!-- day 11 -->  <line class="candle-wick" x1="363" y1="120" x2="363" y2="90"/><rect class="candle-down" x="357" y="94" width="12" height="20"/>
+                  <!-- day 12 -->  <line class="candle-wick" x1="393" y1="105" x2="393" y2="72"/><rect class="candle-up" x="387" y="78" width="12" height="20"/>
+                  <!-- day 13 -->  <line class="candle-wick" x1="423" y1="110" x2="423" y2="80"/><rect class="candle-down" x="417" y="84" width="12" height="20"/>
+                  <!-- day 14 -->  <line class="candle-wick" x1="453" y1="98" x2="453" y2="62"/><rect class="candle-up" x="447" y="70" width="12" height="22"/>
+                  <!-- day 15 -->  <line class="candle-wick" x1="483" y1="102" x2="483" y2="70"/><rect class="candle-down" x="477" y="74" width="12" height="22"/>
+                  <!-- day 16 -->  <line class="candle-wick" x1="513" y1="88" x2="513" y2="56"/><rect class="candle-up" x="507" y="62" width="12" height="20"/>
+                  <!-- day 17 -->  <line class="candle-wick" x1="543" y1="92" x2="543" y2="64"/><rect class="candle-down" x="537" y="68" width="12" height="20"/>
+                  <!-- day 18 -->  <line class="candle-wick" x1="573" y1="82" x2="573" y2="50"/><rect class="candle-up" x="567" y="55" width="12" height="22"/>
+                  <!-- day 19 -->  <line class="candle-wick" x1="603" y1="88" x2="603" y2="58"/><rect class="candle-down" x="597" y="62" width="12" height="22"/>
+                  <!-- day 20 -->  <line class="candle-wick" x1="633" y1="72" x2="633" y2="42"/><rect class="candle-up" x="627" y="48" width="12" height="20"/>
+                  <!-- day 21 -->  <line class="candle-wick" x1="663" y1="78" x2="663" y2="48"/><rect class="candle-down" x="657" y="52" width="12" height="22"/>
+                  <!-- day 22 -->  <line class="candle-wick" x1="693" y1="65" x2="693" y2="35"/><rect class="candle-up" x="687" y="42" width="12" height="20"/>
+                  <!-- day 23 -->  <line class="candle-wick" x1="723" y1="72" x2="723" y2="42"/><rect class="candle-down" x="717" y="46" width="12" height="22"/>
+                  <!-- day 24 -->  <line class="candle-wick" x1="753" y1="58" x2="753" y2="28"/><rect class="candle-up" x="747" y="34" width="12" height="22"/>
+                  <!-- day 25 -->  <line class="candle-wick" x1="783" y1="65" x2="783" y2="35"/><rect class="candle-down" x="777" y="40" width="12" height="22"/>
+                  <!-- day 26 -->  <line class="candle-wick" x1="813" y1="52" x2="813" y2="22"/><rect class="candle-up" x="807" y="28" width="12" height="22"/>
+                  <!-- day 27 -->  <line class="candle-wick" x1="843" y1="58" x2="843" y2="30"/><rect class="candle-down" x="837" y="34" width="12" height="22"/>
+                  <!-- day 28 -->  <line class="candle-wick" x1="873" y1="45" x2="873" y2="15"/><rect class="candle-up" x="867" y="22" width="12" height="22"/>
+                  <!-- day 29 -->  <line class="candle-wick" x1="903" y1="50" x2="903" y2="22"/><rect class="candle-down" x="897" y="26" width="12" height="22"/>
+                  <!-- day 30 -->  <line class="candle-wick" x1="917" y1="40" x2="917" y2="12"/><rect class="candle-up" x="911" y="18" width="12" height="22"/>
+                </g>
+
+                <!-- median dashed line (rolling 7d) -->
+                <polyline class="series-median"
+                  points="56,130 115,125 175,118 234,112 293,108 352,100 412,95 471,88 530,82 590,75 649,68 708,62 768,55 827,48 886,42 920,38"/>
+
+                <!-- crosshair (static demo at day ~22) -->
+                <g class="crosshair">
+                  <line x1="693" y1="20" x2="693" y2="180"/>
+                  <line x1="56" y1="50" x2="920" y2="50"/>
+                </g>
+                <g>
+                  <rect x="695" y="34" width="96" height="28" fill="var(--sc-deep)" stroke="var(--sc-pg-ana)" stroke-width="1"/>
+                  <text x="703" y="46" fill="var(--sc-t1)" font-size="9">APR 13 · £482</text>
+                  <text x="703" y="58" fill="var(--sc-t3)" font-size="8">7d MED: £408</text>
+                </g>
+
+                <!-- AXES -->
+                <line class="axis" x1="56" y1="20" x2="56" y2="180"/>
+                <line class="axis" x1="56" y1="180" x2="920" y2="180"/>
+              </svg>
+
+              <div class="chart-footer">
+                <div class="cell"><div class="k">30D SUM</div><div class="v gain">+£9,240</div></div>
+                <div class="cell"><div class="k">MED / DAY</div><div class="v">£308</div></div>
+                <div class="cell"><div class="k">UP DAYS</div><div class="v gain">17 / 30</div></div>
+                <div class="cell"><div class="k">MAX DRAWDOWN</div><div class="v loss">-£84</div></div>
+              </div>
+            </div>
+
+            <!-- worst-performers -->
+            <table class="tbl">
+              <thead>
+                <tr><th>SKU</th><th>ITEM</th><th>ACQ</th><th>LAST COMP</th><th>DELTA</th><th>DAYS HELD</th><th>STATUS</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>C-0408</td><td>galaxy s22 128gb</td><td>£195</td><td>£188</td><td style="color:var(--ink-loss)">-£7</td><td>42</td><td><span class="badge err">STALE</span></td></tr>
+                <tr><td>C-0411</td><td>pixel 7 128gb · good</td><td>£230</td><td>£242</td><td style="color:var(--ink-gain)">+£12</td><td>38</td><td><span class="badge warn">SLOW</span></td></tr>
+                <tr><td>C-0396</td><td>xbox series s · bundle</td><td>£182</td><td>£194</td><td style="color:var(--ink-gain)">+£12</td><td>35</td><td><span class="badge warn">SLOW</span></td></tr>
+                <tr><td>C-0382</td><td>fitbit versa 4</td><td>£84</td><td>£76</td><td style="color:var(--ink-loss)">-£8</td><td>52</td><td><span class="badge err">STALE</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       PAGE 4 — BRAIN
+       ====================================================== -->
+  <div class="page-card" id="page-brain" style="--pg: var(--sc-pg-brain); --bg: var(--sc-void);">
+    <div class="page-card-hdr">
+      <div class="pc-meta">
+        <div class="pc-num"><span class="accent-swatch" style="background: var(--sc-pg-brain)"></span>PAGE 04 / BRAIN</div>
+        <div class="pc-name">Chat transcript + live recommendations</div>
+        <div class="pc-desc">Chat on the left, recommendations column on the right. Operator messages in scheme accent. Internal reasoning tokens never render. Recommendations are live — updated from the scout+evaluator pipeline as they arrive.</div>
+        <div class="pc-tags">
+          <span class="pc-tag accent">pg.brain</span>
+          <span class="pc-tag">no-think-tokens</span>
+          <span class="pc-tag">live-recs</span>
+        </div>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="app-frame">
+        <div class="app-titlebar">
+          <span class="tb-dot" style="background: var(--sc-pg-brain)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-path">clawmachine / brain</span>
+        </div>
+        <div class="app-body">
+          <nav class="app-sidebar">
+            <div class="sb-group-label">nav</div>
+            <div class="sb-item"><svg class="ico"><use href="#i-home"/></svg><span class="label-text">Dashboard</span><span class="shortcut">1</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-package"/></svg><span class="label-text">Inventory</span><span class="shortcut">2</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-chart"/></svg><span class="label-text">Analytics</span><span class="shortcut">3</span></div>
+            <div class="sb-item active" style="--pg: var(--sc-pg-brain)"><svg class="ico"><use href="#i-cpu"/></svg><span class="label-text">Brain</span><span class="shortcut">4</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-git-branch"/></svg><span class="label-text">Mesh</span><span class="shortcut">5</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-zap"/></svg><span class="label-text">Agent</span><span class="shortcut">6</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-sliders"/></svg><span class="label-text">Settings</span><span class="shortcut">7</span></div>
+          </nav>
+          <div class="pane">
+            <div class="pane-title-row">
+              <div class="pane-title">brain <small>gemma4-heretical-26b · local · studio</small></div>
+              <div class="pane-actions">
+                <span class="badge live"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:currentColor"></span>LIVE</span>
+                <button class="btn ghost"><svg class="ico"><use href="#i-sliders"/></svg>MODEL</button>
+              </div>
+            </div>
+            <div class="brain-grid">
+              <div class="chat">
+                <div class="msg you">
+                  <div class="av" style="background: color-mix(in srgb, var(--sc-pg-brain) 15%, transparent); color: var(--sc-pg-brain)"><svg class="ico"><use href="#i-user"/></svg></div>
+                  <div>
+                    <div class="role">regan · 14:08</div>
+                    <div class="bubble">what's the floor for a rtx 3080 ti boxed good condition if i can get one tomorrow from someone near leeds?</div>
+                  </div>
+                </div>
+                <div class="msg bot">
+                  <div class="av"><svg class="ico"><use href="#i-cpu"/></svg></div>
+                  <div>
+                    <div class="role">brain · 14:08</div>
+                    <div class="bubble">CeX in: £412. BS Exchange in: £428. 90d eBay sold median: £548 (n=126). Margin after fees £88-£104 assuming dispatch within 72h. Score <code>OPEN</code>. Floor hold: <code>£412</code>. Counter at <code>£395</code> if seller asks above £450. Grade-risk note: confirm <code>no hairline on backplate</code> before pickup.</div>
+                  </div>
+                </div>
+                <div class="msg you">
+                  <div class="av" style="background: color-mix(in srgb, var(--sc-pg-brain) 15%, transparent); color: var(--sc-pg-brain)"><svg class="ico"><use href="#i-user"/></svg></div>
+                  <div>
+                    <div class="role">regan · 14:09</div>
+                    <div class="bubble">how many open deals does the scout have that beat £60 margin right now</div>
+                  </div>
+                </div>
+                <div class="msg bot">
+                  <div class="av"><svg class="ico"><use href="#i-cpu"/></svg></div>
+                  <div>
+                    <div class="role">brain · 14:09</div>
+                    <div class="bubble">7 open over £60 margin. Best 3: <code>rtx 4070 / +£86</code>, <code>macbook air m2 / +£92</code>, <code>switch oled pallet x6 / +£194</code>. Full list in Dashboard. Shall I pin the top 3 to Recommendations?</div>
+                  </div>
+                </div>
+                <div class="chat-compose">
+                  <input class="input" style="width:auto;flex:1" placeholder="ask brain · ⌘↩ to send"/>
+                  <button class="btn primary"><svg class="ico"><use href="#i-arrow-right"/></svg>SEND</button>
+                </div>
+              </div>
+              <div class="recs">
+                <h4>live recommendations · top 5</h4>
+                <div class="rec-item"><span class="ticker">RTX 4070</span><span class="why">ebay · 18% under median · mint · boxed</span><span class="mg">+£86</span></div>
+                <div class="rec-item"><span class="ticker">MACBOOK M2</span><span class="why">facebook · cl · pickup leeds · ex condition</span><span class="mg">+£92</span></div>
+                <div class="rec-item"><span class="ticker">PALLET SWITCH x6</span><span class="why">wholesale · sealed · 6-unit parcel</span><span class="mg">+£194</span></div>
+                <div class="rec-item"><span class="ticker">IPHONE 13P</span><span class="why">gumtree · grade b · 256gb · within 1h</span><span class="mg">+£78</span></div>
+                <div class="rec-item"><span class="ticker">AIRPODS PRO 2</span><span class="why">shpock · sealed · 3-day listing</span><span class="mg">+£31</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       PAGE 5 — MESH
+       ====================================================== -->
+  <div class="page-card" id="page-mesh" style="--pg: var(--sc-pg-mesh); --bg: var(--sc-void);">
+    <div class="page-card-hdr">
+      <div class="pc-meta">
+        <div class="pc-num"><span class="accent-swatch" style="background: var(--sc-pg-mesh)"></span>PAGE 05 / MESH</div>
+        <div class="pc-name">Three-node mesh · brain · scout · app</div>
+        <div class="pc-desc">Three machine cards (MacBook / Mac Studio / Pi) each with role, host, IP, live metrics, and a latency sparkline. Interleaved log stream across all three nodes underneath.</div>
+        <div class="pc-tags">
+          <span class="pc-tag accent">pg.mesh</span>
+          <span class="pc-tag">role-first</span>
+          <span class="pc-tag">log-stream</span>
+        </div>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="app-frame">
+        <div class="app-titlebar">
+          <span class="tb-dot" style="background: var(--sc-pg-mesh)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-path">clawmachine / mesh</span>
+        </div>
+        <div class="app-body">
+          <nav class="app-sidebar">
+            <div class="sb-group-label">nav</div>
+            <div class="sb-item"><svg class="ico"><use href="#i-home"/></svg><span class="label-text">Dashboard</span><span class="shortcut">1</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-package"/></svg><span class="label-text">Inventory</span><span class="shortcut">2</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-chart"/></svg><span class="label-text">Analytics</span><span class="shortcut">3</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-cpu"/></svg><span class="label-text">Brain</span><span class="shortcut">4</span></div>
+            <div class="sb-item active" style="--pg: var(--sc-pg-mesh)"><svg class="ico"><use href="#i-git-branch"/></svg><span class="label-text">Mesh</span><span class="shortcut">5</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-zap"/></svg><span class="label-text">Agent</span><span class="shortcut">6</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-sliders"/></svg><span class="label-text">Settings</span><span class="shortcut">7</span></div>
+          </nav>
+          <div class="pane">
+            <div class="pane-title-row">
+              <div class="pane-title">mesh <small>3 nodes · all up · 2m 14s sync</small></div>
+              <div class="pane-actions">
+                <span class="badge live"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:currentColor"></span>QUORUM</span>
+                <button class="btn ghost"><svg class="ico"><use href="#i-power"/></svg>REBOOT</button>
+              </div>
+            </div>
+
+            <div class="mesh-grid">
+              <div class="node-card">
+                <div class="role-name">
+                  <div class="role">app</div>
+                  <span class="badge live"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:currentColor"></span>UP</span>
+                </div>
+                <div class="host">host · macbook-pro-14 · tailscale</div>
+                <div class="ip">100.100.12.45</div>
+                <div class="metrics">
+                  <div class="m"><span>cpu</span><span>12%</span></div>
+                  <div class="m"><span>mem</span><span>8.4 / 32G</span></div>
+                  <div class="m"><span>disk</span><span>142G</span></div>
+                  <div class="m"><span>uptime</span><span>6d 04h</span></div>
+                </div>
+                <svg class="latency-spark" viewBox="0 0 200 28" preserveAspectRatio="none">
+                  <polyline fill="none" stroke="var(--sc-pg-mesh)" stroke-width="1.5" points="0,20 20,18 40,22 60,16 80,14 100,12 120,14 140,10 160,12 180,8 200,9"/>
+                  <line x1="0" y1="24" x2="200" y2="24" stroke="var(--sc-b1)" stroke-width="1" opacity="0.4"/>
+                </svg>
+              </div>
+              <div class="node-card">
+                <div class="role-name">
+                  <div class="role">brain</div>
+                  <span class="badge live"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:currentColor"></span>UP</span>
+                </div>
+                <div class="host">host · mac-studio-m2u · tailscale</div>
+                <div class="ip">100.103.16.45</div>
+                <div class="metrics">
+                  <div class="m"><span>cpu</span><span>48%</span></div>
+                  <div class="m"><span>mem</span><span>42 / 64G</span></div>
+                  <div class="m"><span>tokens/s</span><span>86</span></div>
+                  <div class="m"><span>model</span><span>gemma4-26b</span></div>
+                </div>
+                <svg class="latency-spark" viewBox="0 0 200 28" preserveAspectRatio="none">
+                  <polyline fill="none" stroke="var(--sc-pg-mesh)" stroke-width="1.5" points="0,22 20,18 40,20 60,14 80,16 100,10 120,12 140,8 160,10 180,6 200,8"/>
+                  <line x1="0" y1="24" x2="200" y2="24" stroke="var(--sc-b1)" stroke-width="1" opacity="0.4"/>
+                </svg>
+              </div>
+              <div class="node-card">
+                <div class="role-name">
+                  <div class="role">scout</div>
+                  <span class="badge live"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:currentColor"></span>UP</span>
+                </div>
+                <div class="host">host · pi5-8g · tailscale</div>
+                <div class="ip">100.108.234.18</div>
+                <div class="metrics">
+                  <div class="m"><span>cpu</span><span>22%</span></div>
+                  <div class="m"><span>mem</span><span>3.2 / 8G</span></div>
+                  <div class="m"><span>scans/min</span><span>14</span></div>
+                  <div class="m"><span>decodo</span><span>UK·ISP</span></div>
+                </div>
+                <svg class="latency-spark" viewBox="0 0 200 28" preserveAspectRatio="none">
+                  <polyline fill="none" stroke="var(--sc-pg-mesh)" stroke-width="1.5" points="0,14 20,18 40,12 60,20 80,14 100,22 120,16 140,24 160,18 180,16 200,12"/>
+                  <line x1="0" y1="24" x2="200" y2="24" stroke="var(--sc-b1)" stroke-width="1" opacity="0.4"/>
+                </svg>
+              </div>
+            </div>
+
+            <div class="log-stream">
+              <div class="log-line"><span class="ts">14:08:42.318</span><span class="node">scout</span><span>ebay.listing.new · pid 4f2a · rtx 4070 boxed</span><span class="lat">· 142ms</span></div>
+              <div class="log-line"><span class="ts">14:08:42.482</span><span class="node">brain</span><span>evaluator.score · pid 4f2a · floor £412 · margin +£86</span><span class="lat">· 28ms</span></div>
+              <div class="log-line"><span class="ts">14:08:42.510</span><span class="node">app</span><span>ui.feed.push · pid 4f2a · inserted row</span><span class="lat">· 4ms</span></div>
+              <div class="log-line"><span class="ts">14:08:48.902</span><span class="node">scout</span><span>gumtree.listing.new · pid 4f2b · iphone 13p 256</span><span class="lat">· 188ms</span></div>
+              <div class="log-line"><span class="ts">14:08:49.104</span><span class="node">brain</span><span>evaluator.score · pid 4f2b · floor £340 · margin +£78</span><span class="lat">· 32ms</span></div>
+              <div class="log-line"><span class="ts">14:08:52.220</span><span class="node">scout</span><span>facebook.listing.new · pid 4f2c · macbook air m2</span><span class="lat">· 226ms</span></div>
+              <div class="log-line error"><span class="ts">14:08:55.078</span><span class="node">scout</span><span>shpock.captcha · retry via decodo rotate · ok</span><span class="lat">· 1.4s</span></div>
+              <div class="log-line"><span class="ts">14:09:01.420</span><span class="node">brain</span><span>recs.rank · top-5 pushed to ui/brain</span><span class="lat">· 18ms</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       PAGE 6 — AGENT CONSOLE
+       ====================================================== -->
+  <div class="page-card" id="page-agent" style="--pg: var(--sc-p); --bg: var(--sc-void);">
+    <div class="page-card-hdr">
+      <div class="pc-meta">
+        <div class="pc-num"><span class="accent-swatch" style="background: var(--sc-p)"></span>PAGE 06 / AGENT CONSOLE</div>
+        <div class="pc-name">Tool list · call-trace viewer</div>
+        <div class="pc-desc">Tools registered with the brain on the left. Call-trace for the active session on the right — numbered, named, per-step duration, status pill. First-class nav page, not a chat overlay.</div>
+        <div class="pc-tags">
+          <span class="pc-tag accent">pg.agent</span>
+          <span class="pc-tag">call-trace</span>
+          <span class="pc-tag">first-class</span>
+        </div>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="app-frame">
+        <div class="app-titlebar">
+          <span class="tb-dot" style="background: var(--sc-p)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-path">clawmachine / agent</span>
+        </div>
+        <div class="app-body">
+          <nav class="app-sidebar">
+            <div class="sb-group-label">nav</div>
+            <div class="sb-item"><svg class="ico"><use href="#i-home"/></svg><span class="label-text">Dashboard</span><span class="shortcut">1</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-package"/></svg><span class="label-text">Inventory</span><span class="shortcut">2</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-chart"/></svg><span class="label-text">Analytics</span><span class="shortcut">3</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-cpu"/></svg><span class="label-text">Brain</span><span class="shortcut">4</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-git-branch"/></svg><span class="label-text">Mesh</span><span class="shortcut">5</span></div>
+            <div class="sb-item active"><svg class="ico"><use href="#i-zap"/></svg><span class="label-text">Agent</span><span class="shortcut">6</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-sliders"/></svg><span class="label-text">Settings</span><span class="shortcut">7</span></div>
+          </nav>
+          <div class="pane">
+            <div class="pane-title-row">
+              <div class="pane-title">agent · call-trace <small>session 0xc2 · 14:08 · +3.8s</small></div>
+              <div class="pane-actions">
+                <button class="btn ghost">PREV</button>
+                <button class="btn ghost">NEXT</button>
+              </div>
+            </div>
+
+            <div class="console-grid">
+              <div class="tool-list">
+                <h4>tools · 12</h4>
+                <div class="tool-item active"><svg class="ico"><use href="#i-search"/></svg>scout.listings<span class="count">·4</span></div>
+                <div class="tool-item"><svg class="ico"><use href="#i-dollar"/></svg>evaluator.floor<span class="count">·3</span></div>
+                <div class="tool-item"><svg class="ico"><use href="#i-chart"/></svg>ebay.sold_comps<span class="count">·2</span></div>
+                <div class="tool-item"><svg class="ico"><use href="#i-database"/></svg>inventory.read<span class="count">·1</span></div>
+                <div class="tool-item"><svg class="ico"><use href="#i-database"/></svg>inventory.write<span class="count">·0</span></div>
+                <div class="tool-item"><svg class="ico"><use href="#i-package"/></svg>pallet.split<span class="count">·0</span></div>
+                <div class="tool-item"><svg class="ico"><use href="#i-wifi"/></svg>decodo.rotate<span class="count">·1</span></div>
+                <div class="tool-item"><svg class="ico"><use href="#i-user"/></svg>bluebubbles.push<span class="count">·0</span></div>
+                <div class="tool-item"><svg class="ico"><use href="#i-eye"/></svg>screenshot.capture<span class="count">·2</span></div>
+              </div>
+              <div class="call-trace">
+                <h4>call-trace · session 0xc2</h4>
+                <div class="trace-row"><span class="num">01</span><span class="fn">scout.listings(<span class="arg">"rtx 4070"</span>, <span class="arg">"ebay"</span>, <span class="arg">{radius:50}</span>)</span><span class="dur">142ms</span><span class="st ok">OK</span></div>
+                <div class="trace-row"><span class="num">02</span><span class="fn">evaluator.floor(<span class="arg">sku="rtx-4070"</span>)</span><span class="dur">28ms</span><span class="st ok">OK</span></div>
+                <div class="trace-row"><span class="num">03</span><span class="fn">ebay.sold_comps(<span class="arg">sku="rtx-4070"</span>, <span class="arg">n=90</span>)</span><span class="dur">216ms</span><span class="st ok">OK</span></div>
+                <div class="trace-row"><span class="num">04</span><span class="fn">scout.listings(<span class="arg">"iphone 13p 256"</span>, <span class="arg">"gumtree"</span>)</span><span class="dur">188ms</span><span class="st ok">OK</span></div>
+                <div class="trace-row"><span class="num">05</span><span class="fn">evaluator.floor(<span class="arg">sku="iphone-13p-256"</span>)</span><span class="dur">32ms</span><span class="st ok">OK</span></div>
+                <div class="trace-row"><span class="num">06</span><span class="fn">ebay.sold_comps(<span class="arg">sku="iphone-13p-256"</span>)</span><span class="dur">172ms</span><span class="st ok">OK</span></div>
+                <div class="trace-row"><span class="num">07</span><span class="fn">scout.listings(<span class="arg">"macbook air m2"</span>, <span class="arg">"facebook"</span>)</span><span class="dur">226ms</span><span class="st ok">OK</span></div>
+                <div class="trace-row"><span class="num">08</span><span class="fn">decodo.rotate(<span class="arg">reason="shpock.captcha"</span>)</span><span class="dur">1.4s</span><span class="st pending">RETRY</span></div>
+                <div class="trace-row"><span class="num">09</span><span class="fn">scout.listings(<span class="arg">"airpods pro 2"</span>, <span class="arg">"shpock"</span>)</span><span class="dur">344ms</span><span class="st ok">OK</span></div>
+                <div class="trace-row"><span class="num">10</span><span class="fn">evaluator.floor(<span class="arg">sku="airpods-pro-2"</span>)</span><span class="dur">24ms</span><span class="st ok">OK</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================
+       PAGE 7 — SETTINGS
+       ====================================================== -->
+  <div class="page-card" id="page-settings" style="--pg: var(--sc-pg-set); --bg: var(--sc-void);">
+    <div class="page-card-hdr">
+      <div class="pc-meta">
+        <div class="pc-num"><span class="accent-swatch" style="background: var(--sc-pg-set)"></span>PAGE 07 / SETTINGS</div>
+        <div class="pc-name">Appearance · channels · brain</div>
+        <div class="pc-desc">Three-pane settings layout. Appearance shows the 62-palette selector as live swatches; channels configures BlueBubbles/Studio/Pi; brain swaps active local model. No login/password UI — this is internal tooling.</div>
+        <div class="pc-tags">
+          <span class="pc-tag accent">pg.settings</span>
+          <span class="pc-tag">62-palette</span>
+          <span class="pc-tag">local-only</span>
+        </div>
+      </div>
+    </div>
+    <div class="page-body">
+      <div class="app-frame">
+        <div class="app-titlebar">
+          <span class="tb-dot" style="background: var(--sc-pg-set)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-dot" style="background: var(--sc-b2)"></span>
+          <span class="tb-path">clawmachine / settings / appearance</span>
+        </div>
+        <div class="app-body">
+          <nav class="app-sidebar">
+            <div class="sb-group-label">nav</div>
+            <div class="sb-item"><svg class="ico"><use href="#i-home"/></svg><span class="label-text">Dashboard</span><span class="shortcut">1</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-package"/></svg><span class="label-text">Inventory</span><span class="shortcut">2</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-chart"/></svg><span class="label-text">Analytics</span><span class="shortcut">3</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-cpu"/></svg><span class="label-text">Brain</span><span class="shortcut">4</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-git-branch"/></svg><span class="label-text">Mesh</span><span class="shortcut">5</span></div>
+            <div class="sb-item"><svg class="ico"><use href="#i-zap"/></svg><span class="label-text">Agent</span><span class="shortcut">6</span></div>
+            <div class="sb-item active" style="--pg: var(--sc-pg-set)"><svg class="ico"><use href="#i-sliders"/></svg><span class="label-text">Settings</span><span class="shortcut">7</span></div>
+          </nav>
+          <div class="pane">
+            <div class="pane-title-row">
+              <div class="pane-title">settings <small>local · no cloud sync</small></div>
+              <div class="pane-actions">
+                <button class="btn ghost"><svg class="ico"><use href="#i-file"/></svg>EXPORT</button>
+                <button class="btn accent"><svg class="ico"><use href="#i-check"/></svg>SAVE</button>
+              </div>
+            </div>
+            <div class="settings-grid">
+              <nav class="set-nav">
+                <div class="set-item active"><svg class="ico"><use href="#i-moon"/></svg>APPEARANCE</div>
+                <div class="set-item"><svg class="ico"><use href="#i-wifi"/></svg>CHANNELS</div>
+                <div class="set-item"><svg class="ico"><use href="#i-cpu"/></svg>BRAIN / MODEL</div>
+                <div class="set-item"><svg class="ico"><use href="#i-package"/></svg>VENDORS</div>
+                <div class="set-item"><svg class="ico"><use href="#i-database"/></svg>DATA / BACKUP</div>
+                <div class="set-item"><svg class="ico"><use href="#i-lock"/></svg>KEYCHAIN</div>
+                <div class="set-item"><svg class="ico"><use href="#i-eye"/></svg>TELEMETRY</div>
+              </nav>
+              <div class="set-pane">
+                <div class="set-section">
+                  <h4>palette · 7 of 62 shown (shortlist)</h4>
+                  <div class="palette-grid" id="paletteGrid"></div>
+                </div>
+                <div class="set-section">
+                  <h4>density · type · motion</h4>
+                  <div class="setting-row">
+                    <div class="k">grain overlay<small>SVG fractal noise at 1.5% opacity across the full viewport</small></div>
+                    <div class="v"><div class="toggle on"><div class="knob"></div></div></div>
+                  </div>
+                  <div class="setting-row">
+                    <div class="k">tabular numerics<small>JetBrains Mono for every numeric cell, sparkline label, and ROI pill</small></div>
+                    <div class="v"><div class="toggle on"><div class="knob"></div></div></div>
+                  </div>
+                  <div class="setting-row">
+                    <div class="k">motion<small>standard ease-out for constrained motion, easeOutBack reserved for open surfaces</small></div>
+                    <div class="v">STANDARD</div>
+                  </div>
+                  <div class="setting-row">
+                    <div class="k">default scheme<small>applied on first run and to all new views</small></div>
+                    <div class="v">02 DEEP CURRENT</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     EMBEDDED CHROMATIC SCHEMES JSON (62 schemes, source of truth)
+     ============================================================ -->
+<script type="application/json" id="chromatic-schemes">
+[{"n":1,"name":"SOLAR FLARE","type":"dark","void":"#0B0A08","p":"#FF9B17","s":"#17D4A8","pg":{"dashboard":"#FF6B2C","inventory":"#FFB917","analytics":"#17D4A8","brain":"#FF4D6A","mesh":"#4DB8FF","onboarding":"#FFD23D","settings":"#8B8B6E"}},{"n":2,"name":"DEEP CURRENT","type":"dark","void":"#060B10","p":"#00E5A0","s":"#FF5C8A","pg":{"dashboard":"#00E5A0","inventory":"#FFB830","analytics":"#00B4FF","brain":"#FF5C8A","mesh":"#8B6BFF","onboarding":"#00E5D4","settings":"#5A7A90"}},{"n":3,"name":"PHOSPHOR BURN","type":"dark","void":"#0A0C08","p":"#39FF14","s":"#FF1744","pg":{"dashboard":"#39FF14","inventory":"#FFD600","analytics":"#00E5FF","brain":"#FF1744","mesh":"#B388FF","onboarding":"#76FF03","settings":"#6E7062"}},{"n":4,"name":"TERRACOTTA GRID","type":"light","void":"#F5EDE2","p":"#D94F30","s":"#1A7A6E","pg":{"dashboard":"#D94F30","inventory":"#E8922E","analytics":"#1A7A6E","brain":"#9B3AA0","mesh":"#2B6EB5","onboarding":"#D4A028","settings":"#8A7856"}},{"n":5,"name":"SIGNAL NOIR","type":"dark","void":"#08080A","p":"#FF2D55","s":"#00D4AA","pg":{"dashboard":"#FF2D55","inventory":"#FFAA00","analytics":"#00D4AA","brain":"#D946EF","mesh":"#3B82F6","onboarding":"#FF8C42","settings":"#64648A"}},{"n":6,"name":"KANJI ELECTRIC","type":"dark","void":"#06081A","p":"#FF3366","s":"#33FF99","pg":{"dashboard":"#FF3366","inventory":"#FFCC00","analytics":"#33CCFF","brain":"#FF6633","mesh":"#33FF99","onboarding":"#FF99CC","settings":"#6668AA"}},{"n":7,"name":"CONCRETE BLOOM","type":"light","void":"#F0F0EC","p":"#E81850","s":"#00AA72","pg":{"dashboard":"#E81850","inventory":"#F5A623","analytics":"#00AA72","brain":"#8B2FC6","mesh":"#2B7AE8","onboarding":"#E8A817","settings":"#787870"}},{"n":8,"name":"VELVET TERMINAL","type":"dark","void":"#0C0810","p":"#E8608A","s":"#60E8C0","pg":{"dashboard":"#E8608A","inventory":"#D4AA4E","analytics":"#60E8C0","brain":"#A855F7","mesh":"#5BAAFF","onboarding":"#FFB86E","settings":"#706882"}},{"n":9,"name":"TEKKI SHOCK","type":"split","void":"#0A0A2E","p":"#BFFF00","s":"#FF0066","pg":{"dashboard":"#FF0066","inventory":"#BFFF00","analytics":"#00DDFF","brain":"#FF6600","mesh":"#00FF88","onboarding":"#FFDD00","settings":"#6060B0"}},{"n":10,"name":"BURNT CIRCUIT","type":"dark","void":"#0C0B0A","p":"#E87430","s":"#30C8B0","pg":{"dashboard":"#E87430","inventory":"#D4A830","analytics":"#30C8B0","brain":"#E84060","mesh":"#4098D8","onboarding":"#FFBA44","settings":"#7C6E62"}},{"n":11,"name":"ARCTIC PULSE","type":"split","void":"#F4F8FA","p":"#FF4057","s":"#0A8AFF","pg":{"dashboard":"#FF4057","inventory":"#FF8A30","analytics":"#0A8AFF","brain":"#A040E8","mesh":"#00B88A","onboarding":"#FF6B4A","settings":"#687888"}},{"n":12,"name":"CHROMATIC FORGE","type":"dark","void":"#0C0C0E","p":"#FF5530","s":"#20CCAA","pg":{"dashboard":"#FF5530","inventory":"#FFAA22","analytics":"#20CCAA","brain":"#CC44FF","mesh":"#4488FF","onboarding":"#FF8844","settings":"#6A6A78"}},{"n":13,"name":"NEON GENESIS","type":"dark","void":"#050505","p":"#FE0000","s":"#0BFF01","pg":{"dashboard":"#FE0000","inventory":"#FDFE02","analytics":"#011EFE","brain":"#FE00F6","mesh":"#0BFF01","onboarding":"#FDFE02","settings":"#666666"}},{"n":14,"name":"ULTRAVIOLET HAZE","type":"dark","void":"#0A0520","p":"#AB20FD","s":"#3BFD23","pg":{"dashboard":"#AB20FD","inventory":"#F5CA22","analytics":"#3BFD23","brain":"#FF3662","mesh":"#3553FD","onboarding":"#F32097","settings":"#504488"}},{"n":15,"name":"ELECTRIC BUBBLEGUM","type":"dark","void":"#08080E","p":"#FF00B4","s":"#00FFBC","pg":{"dashboard":"#FF00B4","inventory":"#FFD600","analytics":"#00FFBC","brain":"#C493FF","mesh":"#8EA5FF","onboarding":"#FF6B4A","settings":"#505064"}},{"n":16,"name":"TOXIC LIME","type":"dark","void":"#060808","p":"#CFFF04","s":"#FF0066","pg":{"dashboard":"#CFFF04","inventory":"#FFB830","analytics":"#04FFC8","brain":"#FF0066","mesh":"#4DEEEA","onboarding":"#E2FF68","settings":"#4C524C"}},{"n":17,"name":"SUNSET BOULEVARD","type":"dark","void":"#0C0808","p":"#FF6F00","s":"#00B0FF","pg":{"dashboard":"#FF3D00","inventory":"#FF6F00","analytics":"#00B0FF","brain":"#FF1744","mesh":"#00E676","onboarding":"#FFD600","settings":"#584C40"}},{"n":18,"name":"PLASMA FIELD","type":"dark","void":"#08061A","p":"#F731EA","s":"#26F1E8","pg":{"dashboard":"#F731EA","inventory":"#F4F322","analytics":"#26F1E8","brain":"#871BF7","mesh":"#00FF88","onboarding":"#F5CA22","settings":"#443E88"}},{"n":19,"name":"VIVA VEGAS","type":"dark","void":"#0A0C1E","p":"#D01935","s":"#85D7E5","pg":{"dashboard":"#D01935","inventory":"#FEA70A","analytics":"#85D7E5","brain":"#DF4C21","mesh":"#4DEEEA","onboarding":"#FEA70A","settings":"#4E5488"}},{"n":20,"name":"ROLLER DISCO","type":"dark","void":"#081A1C","p":"#FFD101","s":"#C690CC","pg":{"dashboard":"#FFD101","inventory":"#540270","analytics":"#147772","brain":"#C690CC","mesh":"#85D7E5","onboarding":"#FFD101","settings":"#3E7478"}},{"n":21,"name":"HONG KONG NEON","type":"dark","void":"#14080C","p":"#B8113C","s":"#7FE9F6","pg":{"dashboard":"#B8113C","inventory":"#B2CA2E","analytics":"#7FE9F6","brain":"#F75E59","mesh":"#B2CA2E","onboarding":"#F75E59","settings":"#6A4454"}},{"n":22,"name":"STATION PLATFORM","type":"dark","void":"#0A1018","p":"#FA1593","s":"#95DEFF","pg":{"dashboard":"#FA1593","inventory":"#FFD600","analytics":"#95DEFF","brain":"#750037","mesh":"#00E5A0","onboarding":"#FA1593","settings":"#485464"}},{"n":23,"name":"HEY MR DJ","type":"dark","void":"#0A0324","p":"#B915CC","s":"#8DE41C","pg":{"dashboard":"#B915CC","inventory":"#F6287D","analytics":"#8DE41C","brain":"#F6287D","mesh":"#4DEEEA","onboarding":"#8DE41C","settings":"#482E7C"}},{"n":24,"name":"FESTIVAL CHAOS","type":"dark","void":"#08060C","p":"#7C00FE","s":"#F9E400","pg":{"dashboard":"#F5004F","inventory":"#F9E400","analytics":"#00E5FF","brain":"#7C00FE","mesh":"#FFAF00","onboarding":"#F9E400","settings":"#504868"}},{"n":25,"name":"MIDNIGHT DREAM","type":"dark","void":"#0C0A20","p":"#15F5BA","s":"#836FFF","pg":{"dashboard":"#15F5BA","inventory":"#FFD23D","analytics":"#836FFF","brain":"#FF5C8A","mesh":"#15F5BA","onboarding":"#F0F3FF","settings":"#524E90"}},{"n":26,"name":"NEON CITRUS","type":"dark","void":"#060A06","p":"#00FF9C","s":"#FF1744","pg":{"dashboard":"#00FF9C","inventory":"#FFE700","analytics":"#B6FFA1","brain":"#FF1744","mesh":"#FEFFA7","onboarding":"#00FF9C","settings":"#4C564C"}},{"n":27,"name":"ELECTRIC DREAMS","type":"dark","void":"#08080C","p":"#FF3D00","s":"#00B0FF","pg":{"dashboard":"#FF3D00","inventory":"#FFD600","analytics":"#00B0FF","brain":"#FF6F00","mesh":"#00E676","onboarding":"#FFD600","settings":"#50505E"}},{"n":28,"name":"NEON JUNGLE","type":"dark","void":"#060C08","p":"#76FF03","s":"#D500F9","pg":{"dashboard":"#76FF03","inventory":"#FFD600","analytics":"#00B0FF","brain":"#D500F9","mesh":"#1B5E20","onboarding":"#76FF03","settings":"#3A5444"}},{"n":29,"name":"RETRO FUTURE","type":"light","void":"#F6F1E9","p":"#FF8400","s":"#4F200D","pg":{"dashboard":"#FF8400","inventory":"#FFD93D","analytics":"#4F200D","brain":"#E04040","mesh":"#2E8B57","onboarding":"#FF8400","settings":"#8A7E5A"}},{"n":30,"name":"COSMIC VIOLET","type":"dark","void":"#0C0818","p":"#8B5DFF","s":"#FFF7D1","pg":{"dashboard":"#8B5DFF","inventory":"#FFF7D1","analytics":"#6A42C2","brain":"#FF5C8A","mesh":"#563A9C","onboarding":"#FFF7D1","settings":"#544688"}},{"n":31,"name":"CANDY NEON","type":"dark","void":"#08080C","p":"#AF3DFF","s":"#A6FD29","pg":{"dashboard":"#FF3B94","inventory":"#A6FD29","analytics":"#55FFE1","brain":"#AF3DFF","mesh":"#55FFE1","onboarding":"#A6FD29","settings":"#505064"}},{"n":32,"name":"WARM TERMINAL","type":"dark","void":"#0A0806","p":"#FFAA00","s":"#00AAFF","pg":{"dashboard":"#FFAA00","inventory":"#FF6600","analytics":"#00AAFF","brain":"#FF0066","mesh":"#AAFF00","onboarding":"#FFAA00","settings":"#5E5040"}},{"n":33,"name":"SAKURA CIRCUIT","type":"dark","void":"#0A0810","p":"#FF6B9D","s":"#4ECDC4","pg":{"dashboard":"#FF6B9D","inventory":"#FFD93D","analytics":"#4ECDC4","brain":"#C44DFF","mesh":"#4ECDC4","onboarding":"#FF6B9D","settings":"#544864"}},{"n":34,"name":"HAZARD STRIPE","type":"dark","void":"#0A0A08","p":"#FFD600","s":"#FF1744","pg":{"dashboard":"#FFD600","inventory":"#FF9100","analytics":"#00E5FF","brain":"#FF1744","mesh":"#76FF03","onboarding":"#FFD600","settings":"#56564C"}},{"n":35,"name":"COBALT RUSH","type":"dark","void":"#060A1C","p":"#FF6B6B","s":"#FFD93D","pg":{"dashboard":"#FF6B6B","inventory":"#FFD93D","analytics":"#4ECDC4","brain":"#C44DFF","mesh":"#4ECDC4","onboarding":"#FFD93D","settings":"#3E4E88"}},{"n":36,"name":"FIRECRACKER","type":"dark","void":"#0C0808","p":"#FF2D2D","s":"#FFD700","pg":{"dashboard":"#FF2D2D","inventory":"#FFD700","analytics":"#00CED1","brain":"#FF6347","mesh":"#32CD32","onboarding":"#FFD700","settings":"#584C46"}},{"n":37,"name":"SYNTH WAVE","type":"dark","void":"#0A0618","p":"#FF2975","s":"#00F0FF","pg":{"dashboard":"#FF2975","inventory":"#FFD600","analytics":"#00F0FF","brain":"#FF6B2C","mesh":"#00FF88","onboarding":"#FFD600","settings":"#504488"}},{"n":38,"name":"ALPINE GLOW","type":"light","void":"#F8F6F4","p":"#FF6B4A","s":"#2B7AE8","pg":{"dashboard":"#FF6B4A","inventory":"#FFB830","analytics":"#2B7AE8","brain":"#A040E8","mesh":"#00B88A","onboarding":"#FF6B4A","settings":"#8A8078"}},{"n":39,"name":"DEEP OCEAN","type":"dark","void":"#040810","p":"#00FFD4","s":"#FF4488","pg":{"dashboard":"#00FFD4","inventory":"#FFB830","analytics":"#4488FF","brain":"#FF4488","mesh":"#00FFD4","onboarding":"#00E5A0","settings":"#384E68"}},{"n":40,"name":"DESERT STORM","type":"light","void":"#F2E8D8","p":"#E85D30","s":"#1A8AAA","pg":{"dashboard":"#E85D30","inventory":"#D4A028","analytics":"#1A8AAA","brain":"#AA3060","mesh":"#2E8B57","onboarding":"#E85D30","settings":"#8A7C64"}},{"n":41,"name":"VOLT YELLOW","type":"dark","void":"#0A0A06","p":"#FFE700","s":"#001EFF","pg":{"dashboard":"#FFE700","inventory":"#FF9100","analytics":"#001EFF","brain":"#F000FF","mesh":"#74EE15","onboarding":"#FFE700","settings":"#56563C"}},{"n":42,"name":"MAGENTA MATRIX","type":"dark","void":"#0E060C","p":"#F000FF","s":"#4DEEEA","pg":{"dashboard":"#F000FF","inventory":"#FFE700","analytics":"#4DEEEA","brain":"#FF3B94","mesh":"#74EE15","onboarding":"#F000FF","settings":"#603E58"}},{"n":43,"name":"NEON PARADISE","type":"dark","void":"#0C0606","p":"#FF4081","s":"#00E5A0","pg":{"dashboard":"#FF4081","inventory":"#FF5252","analytics":"#00E5A0","brain":"#D5006D","mesh":"#00B0FF","onboarding":"#FF1744","settings":"#5E3C3C"}},{"n":44,"name":"SPECTRUM SHIFT","type":"dark","void":"#08080A","p":"#00AAFF","s":"#FF00AA","pg":{"dashboard":"#FF00AA","inventory":"#FFAA00","analytics":"#00AAFF","brain":"#AA00FF","mesh":"#AAFF00","onboarding":"#00FFAA","settings":"#50505C"}},{"n":45,"name":"FAEB GOLD","type":"dark","void":"#0C0614","p":"#FAEB2C","s":"#F52789","pg":{"dashboard":"#FAEB2C","inventory":"#F52789","analytics":"#1685F8","brain":"#E900FF","mesh":"#00FF88","onboarding":"#FAEB2C","settings":"#564A74"}},{"n":46,"name":"CORAL REEF","type":"dark","void":"#060A14","p":"#FF7F50","s":"#20B2AA","pg":{"dashboard":"#FF7F50","inventory":"#FFD700","analytics":"#20B2AA","brain":"#FF69B4","mesh":"#00CED1","onboarding":"#FF7F50","settings":"#3E5074"}},{"n":47,"name":"SUPERNOVA","type":"dark","void":"#080608","p":"#FFFFFF","s":"#FF4500","pg":{"dashboard":"#FF4500","inventory":"#FFD700","analytics":"#00CED1","brain":"#FF1493","mesh":"#00FF7F","onboarding":"#FFFF00","settings":"#544654"}},{"n":48,"name":"GOTHIC BLOOM","type":"dark","void":"#060A08","p":"#E040A0","s":"#40E0A0","pg":{"dashboard":"#E040A0","inventory":"#D4AA28","analytics":"#40E0A0","brain":"#8040E0","mesh":"#40E0A0","onboarding":"#E0A040","settings":"#385444"}},{"n":49,"name":"STREET MACHINE","type":"dark","void":"#080808","p":"#00CCFF","s":"#FF3300","pg":{"dashboard":"#FF3300","inventory":"#FFCC00","analytics":"#00CCFF","brain":"#CC00FF","mesh":"#00FF66","onboarding":"#FFCC00","settings":"#505050"}},{"n":50,"name":"BLOOD MOON","type":"dark","void":"#0C0606","p":"#CC0000","s":"#E8E0D8","pg":{"dashboard":"#CC0000","inventory":"#D4A828","analytics":"#6088B0","brain":"#8030A0","mesh":"#40A080","onboarding":"#E84040","settings":"#5E3C3C"}},{"n":51,"name":"AURORA BOREALIS","type":"dark","void":"#040810","p":"#00FF88","s":"#8844FF","pg":{"dashboard":"#00FF88","inventory":"#FFD600","analytics":"#00CCFF","brain":"#8844FF","mesh":"#00FF88","onboarding":"#44FFCC","settings":"#384E66"}},{"n":52,"name":"RUST OXIDE","type":"dark","void":"#0A0806","p":"#CC5500","s":"#44AA88","pg":{"dashboard":"#CC5500","inventory":"#D4A028","analytics":"#44AA88","brain":"#AA3344","mesh":"#44AA88","onboarding":"#E88830","settings":"#5E5040"}},{"n":53,"name":"NEON MINT","type":"dark","void":"#080C0A","p":"#00FFB4","s":"#FF4477","pg":{"dashboard":"#00FFB4","inventory":"#FFD23D","analytics":"#4488FF","brain":"#FF4477","mesh":"#00FFB4","onboarding":"#88FF44","settings":"#48584E"}},{"n":54,"name":"CRIMSON ENGINE","type":"dark","void":"#0C0606","p":"#FF1A45","s":"#078498","pg":{"dashboard":"#FF1A45","inventory":"#FFFED7","analytics":"#078498","brain":"#FF1A45","mesh":"#078498","onboarding":"#FF6B4A","settings":"#5E3C3C"}},{"n":55,"name":"VAPOR TRAIL","type":"dark","void":"#0C0818","p":"#FF71CE","s":"#01CDFE","pg":{"dashboard":"#FF71CE","inventory":"#FFFB96","analytics":"#01CDFE","brain":"#B967FF","mesh":"#05FFA1","onboarding":"#FF71CE","settings":"#544678"}},{"n":56,"name":"INFRARED","type":"dark","void":"#060406","p":"#FF3300","s":"#FFFF00","pg":{"dashboard":"#FF3300","inventory":"#FF8800","analytics":"#FFFF00","brain":"#FF0066","mesh":"#00CCAA","onboarding":"#FF6600","settings":"#58404A"}},{"n":57,"name":"JADE EMPEROR","type":"dark","void":"#060A08","p":"#00CC77","s":"#FFD700","pg":{"dashboard":"#00CC77","inventory":"#FFD700","analytics":"#00AACC","brain":"#CC3366","mesh":"#00CC77","onboarding":"#FFD700","settings":"#3A5646"}},{"n":58,"name":"NEON ORCHID","type":"dark","void":"#0A0610","p":"#DA70D6","s":"#00E5A0","pg":{"dashboard":"#DA70D6","inventory":"#FFD23D","analytics":"#00E5A0","brain":"#FF3399","mesh":"#00CCFF","onboarding":"#DA70D6","settings":"#544A70"}},{"n":59,"name":"CARBON FIBER","type":"dark","void":"#080808","p":"#FF2200","s":"#00CCAA","pg":{"dashboard":"#FF2200","inventory":"#FFAA00","analytics":"#00CCAA","brain":"#AA00FF","mesh":"#00CCAA","onboarding":"#FFAA00","settings":"#4C4C4C"}},{"n":60,"name":"PACIFIC SUNSET","type":"light","void":"#F8F2EA","p":"#FF6B6B","s":"#20B2AA","pg":{"dashboard":"#FF6B6B","inventory":"#FFB830","analytics":"#20B2AA","brain":"#9B59B6","mesh":"#20B2AA","onboarding":"#FF6B6B","settings":"#8E826E"}},{"n":61,"name":"PHOSPHOR AMBER","type":"dark","void":"#0A0804","p":"#FF8C00","s":"#00CED1","pg":{"dashboard":"#FF8C00","inventory":"#FFD700","analytics":"#00CED1","brain":"#FF4444","mesh":"#00CED1","onboarding":"#FF8C00","settings":"#5E5040"}},{"n":62,"name":"ELECTRIC VIOLET","type":"dark","void":"#080610","p":"#7D12FF","s":"#FF6B2C","pg":{"dashboard":"#7D12FF","inventory":"#FFD23D","analytics":"#00E5FF","brain":"#FF3366","mesh":"#00FF88","onboarding":"#FF6B2C","settings":"#50446C"}}]
+</script>
+
+<script>
+// ============================================================
+// SCHEME APPLY — swaps body class sc-XX so all CSS custom-properties
+// rescope. No JS style mutation — CSS variables do the work.
+// ============================================================
+const AVAILABLE = ['02','07','18','25','38','46','52'];
+const SCHEME_NAMES = {
+  '02': 'DEEP CURRENT', '07': 'CONCRETE BLOOM', '18': 'PLASMA FIELD',
+  '25': 'MIDNIGHT DREAM', '38': 'ALPINE GLOW', '46': 'CORAL REEF', '52': 'RUST OXIDE'
+};
+
+function applyScheme(num) {
+  const body = document.body;
+  AVAILABLE.forEach(n => body.classList.remove('sc-' + n));
+  body.classList.add('sc-' + num);
+  document.getElementById('hdr-scheme-num').textContent = num;
+  document.getElementById('hdr-scheme-name').textContent = SCHEME_NAMES[num] || num;
+  document.getElementById('schemeSelect').value = num;
+  // update active palette swatch
+  document.querySelectorAll('#paletteGrid .palette-swatch').forEach(el => {
+    el.classList.toggle('active', el.dataset.num === num);
+  });
+}
+
+// ============================================================
+// Build scheme sampler strip from the embedded JSON
+// ============================================================
+function buildSampler() {
+  const schemes = JSON.parse(document.getElementById('chromatic-schemes').textContent);
+  const host = document.getElementById('sampler');
+  const grid = document.getElementById('paletteGrid');
+  AVAILABLE.forEach(num => {
+    const n = parseInt(num, 10);
+    const s = schemes.find(x => x.n === n);
+    if (!s) return;
+    const pages = s.pg;
+    const stripHtml = `
+      <div class="strip">
+        <div style="background:${s.void}"></div>
+        <div style="background:${pages.dashboard}"></div>
+        <div style="background:${pages.inventory}"></div>
+        <div style="background:${pages.analytics}"></div>
+        <div style="background:${pages.brain}"></div>
+        <div style="background:${pages.mesh}"></div>
+        <div style="background:${pages.settings}"></div>
+      </div>`;
+    // sampler strip card
+    const card = document.createElement('div');
+    card.className = 'sw-card';
+    card.onclick = () => applyScheme(num);
+    card.innerHTML = stripHtml + `<div class="meta"><span>${num}</span>${s.name}</div>`;
+    host.appendChild(card);
+
+    // palette grid swatches in Settings
+    const sw = document.createElement('div');
+    sw.className = 'palette-swatch' + (num === '02' ? ' active' : '');
+    sw.dataset.num = num;
+    sw.onclick = () => applyScheme(num);
+    sw.innerHTML = stripHtml + `<div class="label">${s.name}<span>${num}</span></div>`;
+    grid.appendChild(sw);
+  });
+}
+
+// run on load
+document.addEventListener('DOMContentLoaded', buildSampler);
+if (document.readyState === 'interactive' || document.readyState === 'complete') buildSampler();
+</script>
+</body>
+</html>

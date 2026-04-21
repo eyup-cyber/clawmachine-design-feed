@@ -30,9 +30,8 @@ No documented hard cap. Pro / Max / Team / Enterprise plans include Claude Desig
 | `direct-drag/` | 106 MB | 11 subfolders | curated Claude Design upload set (see below) |
 | `authored/` | 1.2 MB | 4 subfolders | subagent-authored session outputs (figma schema, icons synth, patterns, tailwind recreations) |
 | `brief/` | 8 KB | 2 files | text-field pastes: `company-blurb.txt`, `any-other-notes.txt` |
-| `CLAWMACHINE-DESIGN-SYSTEM.html` | 120 KB | 1 | primary signal — 3 finished pages + 62-deck + 20-style reference |
-| `CLAWMACHINE-DASHBOARD-38-VARIANTS.html` | 289 KB | 1 | Dashboard rendered across 38 shortlisted palettes |
-| `CLAWMACHINE-PAGES-BRAIN-MESH-AGENT-SETTINGS.html` | 79 KB | 1 | remaining 4 pages (Brain / Mesh / AgentConsole / Settings) |
+| `CLAWMACHINE-INGEST-MAP.html` | 29 KB | 1 | 1-pager cover page Claude Design sees first — points at codex labs as aesthetic ground-truth |
+| `CLAWMACHINE-PAGES.html` | 126 KB | 1 | 7 app pages (Dashboard / Inventory / Analytics / Brain / Mesh / AgentConsole / Settings) in the codex-lab vocabulary, scheme switcher across 7 schemes, pixelarticons inline, trading-terminal chart |
 | `CHEAT-SHEET.md` | 5 KB | 1 | distilled visual directive |
 | `CLAUDE.md` | 9 KB | 1 | primary context anchor for Claude Design |
 | `README.md` | this | 1 | ingest plan (this file) |
@@ -41,21 +40,21 @@ No documented hard cap. Pro / Max / Team / Enterprise plans include Claude Desig
 
 ## Visual-verification status (2026-04-21)
 
-All three authored HTMLs rendered headlessly via Chrome at 1440px width and inspected section-by-section.
+Both authored HTMLs rendered headlessly via Chrome at 1440px and 1680px width, full-page, inspected section-by-section.
 
 | File | Status | Screenshots |
 |---|:---:|---|
-| `CLAWMACHINE-DESIGN-SYSTEM.html` | VERIFIED CLEAN | `/tmp/ds-full-tall.png` + 12 slices |
-| `CLAWMACHINE-DASHBOARD-38-VARIANTS.html` | VERIFIED CLEAN | `/tmp/dash-38.png` + 11 slices |
-| `CLAWMACHINE-PAGES-BRAIN-MESH-AGENT-SETTINGS.html` | VERIFIED CLEAN | `/tmp/pages-bms.png` + 8 slices |
+| `CLAWMACHINE-INGEST-MAP.html` | VERIFIED CLEAN | `/tmp/cm-ingest-*.png` (overview + 3 sections) |
+| `CLAWMACHINE-PAGES.html` | VERIFIED CLEAN | `/tmp/cm-pages-v2.png` + per-page slices `/tmp/cm-slice-*.png` |
 
 Findings:
-- **No column-wrap bugs.** The earlier TARGET / PRICE wrap reported in commit `94ebf3b89` is fixed and did not reappear.
-- **No overlapping text.** DO NOT panel's 16 items wrap across two columns cleanly.
-- **No missing thumbnails.** Thumbnails are intentional text-placeholder boxes (IPH / MAC / PS5 / NSW / WH / CAM / WAT / DY / IPD / IPH / TAB / SPK / DRN) that respect the brief (no AI-slop filler imagery).
-- **No invented hex values.** `0x1A0008` / `0x2A0014` live only in `local/palettes/palette-{072,075,078}.json` (working palette files); they never reach the three authored HTMLs. No literal "brown", "wine", or "charcoal" identity-colour invocations in the authored HTMLs (one palette descriptor text uses "soil brown" as a poetic description of a green-on-brown scheme — not an identity hex).
-- All 38 dashboard variants render the identical layout against their scheme palette, with per-vendor badges (EBAY / CEX / GUMTREE / SHPOCK) taking their scheme's accent colour.
-- Settings page fidelity: STUDIO GATEWAY `http://100.103.16.45:18789`, PI SCOUT `http://100.108.234.18:3847`, BRAIN MODEL `qwen35-27b-heretic-studio` + fallback chain `gemma4-27b-heretic → cs2764-qwen3-27b → none` — matches operator reality.
+- **Vocabulary is derived, not invented.** Type ramp, card grammar, density, grain overlay, and motion pulled verbatim from `local/chromatic/clawmachine-chromatic-lab.html` (Space Grotesk display / IBM Plex Sans body / JetBrains Mono numerics).
+- **Real pixelarticons inline.** 23 SVG symbols extracted verbatim from `external/icons-pixelarticons/svg/` embedded as a `<symbol>` library, referenced via `<use href>` across nav, KPI labels, deal rows, settings.
+- **Scheme switcher rescopes live.** Header `<select>` rotates body class `sc-02` through `sc-52`; all 7 CSS-custom-property scopes resolve without JS style mutation.
+- **Analytics chart is trading-terminal.** Candle OHLC visual (30 bars — green up / red down wicks and bodies), Y-axis grid at 5 stops with £ labels, X-axis with 7 date ticks, median band overlay, dashed secondary series (prev period), dashed 7d median line, crosshair with numeric readout tooltip, 4-cell footer (30D SUM / MED / UP DAYS / MAX DRAWDOWN).
+- **No forbidden hexes.** `grep -c "0x1A0008\|0x2A0014" = 0` in both files. Every hex in `CLAWMACHINE-PAGES.html` traces to one of the 7 scheme scopes or to identity-v2 neutrals via `var(--ink-gain)` / `var(--ink-loss)`.
+- **No external URL refs.** Self-contained — the embedded `chromatic-schemes.json` (62 entries, minified) powers the sampler strip and palette selector.
+- **Motion is safe.** `cubic-bezier(0.4, 0, 0.2, 1)` standard ease-out used for constrained transitions (scheme swap, hover, pulse). EaseOutBack reserved for open surfaces only; no overshoot clipping reported.
 
 ---
 
@@ -85,7 +84,7 @@ Drag the contents of `direct-drag/` (106 MB, curated):
 
 ```
 direct-drag/
-├── html/                   (500K) — 3 finished-page HTMLs + CHEAT-SHEET
+├── html/                   (160K) — INGEST-MAP + PAGES + CHEAT-SHEET (replace legacy 3-file set when re-bundling)
 ├── brief/                  (8K)   — text-field pastes
 ├── codex/                  (172K) — chromatic-lab.html + style-lab.html (aesthetic reference)
 ├── tokens/                 (100K) — chromatic/style/identity JSON + swift-reference/
@@ -118,7 +117,7 @@ direct-drag/
 | Gap | Status |
 |---|---|
 | GitHub private repo | **DONE** — pushed to `github.com/eyup-cyber/clawmachine-design-feed` |
-| 3 authored HTMLs visual verification | **DONE** — all three rendered headlessly and inspected section-by-section 2026-04-21 |
+| 2 authored HTMLs visual verification | **DONE** — INGEST-MAP + PAGES rendered headlessly at 1440/1680px, inspected section-by-section 2026-04-21 |
 | Figma schema JSONs for drag | **DONE** — 4 schemas in `direct-drag/figma-schemas/` |
 | Tailwind UI recreation | **DONE** — `authored/tailwind-catalyst/application-ui.html` (operator-authored, brought forward to `direct-drag/pro-components/`) |
 | Untitled UI Pro templates | **DONE** — 12 operator-authored Pro templates in `direct-drag/pro-components/` |
@@ -146,7 +145,7 @@ direct-drag/
 ```bash
 cd /Users/regancooney/Projects/consolidate/claude-design-feed
 # 1. visual-verify HTMLs
-for h in CLAWMACHINE-DESIGN-SYSTEM.html CLAWMACHINE-DASHBOARD-38-VARIANTS.html CLAWMACHINE-PAGES-BRAIN-MESH-AGENT-SETTINGS.html; do
+for h in CLAWMACHINE-INGEST-MAP.html CLAWMACHINE-PAGES.html; do
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --hide-scrollbars --virtual-time-budget=5000 --window-size=1440,8000 --screenshot=/tmp/verify-$(basename $h .html).png "file://$PWD/$h"
 done
 

@@ -43,13 +43,13 @@ Think Bloomberg Terminal + Pro Tools + Fallout Pip-Boy + Susan Kare Chicago + Ne
 
 1. **Dashboard** — live deal feed + KPI stat cards + status strip.
 2. **Inventory** — acquired-item grid with image, condition grade (MINT/EXCELLENT/GOOD/FAIR), target sell price, live comp.
-3. **Analytics** — counts, profit, ROI trend, worst-performers (hidden dismissed section).
+3. **Analytics** — counts, profit, ROI trend, worst-performers (hidden dismissed section). Chart is trading-terminal density — candles, grid, ticks, numeric labels, crosshair.
 4. **Brain** — chat transcript with operator + live recommendations column. No `<think>` tags ever visible.
 5. **Mesh** — 3 machine cards (MacBook / Studio / Pi) + interleaved log stream + latency sparkline.
 6. **AgentConsole** — tool list + call-trace viewer.
 7. **Settings** — appearance (62-palette selector), channels (BlueBubbles/Studio/Pi config), brain model config.
 
-Full finished-page examples for all 7 are in the HTML files at the feed root.
+All 7 pages are rendered in `CLAWMACHINE-PAGES.html` — same vocabulary as the codex labs at `local/chromatic/clawmachine-chromatic-lab.html` and `local/chromatic/clawmachine-style-lab.html`. Scheme switcher in the header rescopes across 7 schemes (02/07/18/25/38/46/52). The 1-pager cover for Claude Design ingest is `CLAWMACHINE-INGEST-MAP.html`.
 
 ## The palette catalogue
 

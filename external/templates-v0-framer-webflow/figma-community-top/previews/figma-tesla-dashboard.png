@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?><Error><Code>SignatureDoesNotMatch</Code><Message>Access denied.</Message><Details>The request signature we calculated does not match the signature you provided. Check your Google secret key and signing method.</Details><StringToSign>GET
+
+
+1777350273
+/firecrawl-scrape-media/screenshot-8c6555aa-dcaf-46ca-807c-6571286fc811.png</StringToSign></Error>
