@@ -1,53 +1,63 @@
-STATUS OF THIS BRIEF
-- the HTMLs, palettes, tokens in this feed are the closest approximation we have reached; they are a starting point, not dogma
-- the DO NOT list below is dogma — those are documented recurrence failures across nine-plus prior iterations, hard constraints
-- everything under DO, CONTENT, LAYOUT, DELIVERABLES is a floor — out-execute it, don't mimic it
-- the oceanic resource pool (62 palettes, 20 style systems, 1,400+ SVG icons, 157 historical UI refs, illustrations, patterns, component primitives) exists for breadth; pick what serves the vision, reject what doesn't
-- when in doubt, go further than the finished HTMLs; the finished HTMLs show what has been possible, not what is best
+YOUR CREATIVE REMIT
+Operator hands you an oceanic pool: 62 hand-authored palettes, 20 style systems, 1,400+ inline SVG icons, 157 historical-UI references, hand-authored dither and texture patterns, 3 Figma schema JSONs, OFL fonts, Swift reference files. Use it. Go wide. Show range. The reference HTMLs are a FLOOR, not a ceiling — out-execute them, don't mimic them. Multiple variations per page; operator wants directions, not one locked answer.
 
-GOAL
-- every deal row clicks through to the original listing
-- show floor-aggregate confidence next to each price
-- every control works or is removed; no placeholders
-- render the operator's vision more faithfully than anything in the reference HTMLs has achieved
+READ IN THIS ORDER
+1. CLAWMACHINE-INGEST-MAP.html — 1-pager cover, start here
+2. CLAWMACHINE-DESIGN-MASTER.html — single-file reference: 62-palette deck, 20 style systems, 49 page renders, fonts + JSONs embedded
+3. codex/clawmachine-chromatic-lab.html + codex/clawmachine-style-lab.html — operator-authored aesthetic ground-truth
+4. CLAWMACHINE-PAGES.html — finished 7-page example across 7 palettes
+5. tokens/*.json + tokens/swift-reference/*.swift — token source + target-language grammar
 
-AUDIENCE
-- solo operator, desktop-only, UK fix-and-flip reseller, ten-hour days at a dense terminal
+WHAT TO BUILD (7 pages, 2–3 variations each)
+— dashboard: live deal feed + KPI stat cards + status strip
+— inventory: acquired-item grid with silhouette, condition grade, target sell, live comp
+— analytics: counts / profit / ROI — trading-terminal chart density (OHLC candles, Y-axis gridlines, X-axis date ticks, dashed crosshair + tooltip readout, 7-day median overlay, 4-cell OPEN/HIGH/LOW/CLOSE footer). No flat coloured bars.
+— brain: chat transcript + live recommendations column (never render model <think> content)
+— mesh: 3 role cards (brain / scout / app) + interleaved log stream + latency sparkline
+— agentconsole: tool list + call-trace viewer (first-class page, not an overlay)
+— settings: palette + style picker with hover-preview, channels config, brain model config
 
-LAYOUT
-- seven-page sidebar: dashboard, inventory, analytics, brain, mesh, agentconsole, settings
-- density-first; no hero empty states, no narration panels
-- render finished screens, not a style guide
+AESTHETIC — THREE IDIOMS TOGETHER
+Retro Mac OS 9 / System 7 platinum chrome + cyberpunk HUD saturation + brutalist web honesty. Anchors: Bloomberg Terminal, Pro Tools, Fallout Pip-Boy, Susan Kare Chicago, Neobrutalism.dev.
 
-DO NOT
-- no translucency, blur, backdrop-filter, or opacity-based fills
-- no gradients beyond a beveled edge (highlight top-left, shadow bottom-right)
-- no SF Symbols; use 16px bitmap icons or hand-authored SVG
-- caps or lowercase only; never capitalised-word headings
-- no gamification vocabulary (no win-rate card, no XP, no level-ups, no badges)
-- no developer-voice UI copy; address the user
-- no AI-image filler boxes; no generative-image residue
-- no target-platform column on deal rows; resale default is eBay
-- no default-visible dismissed or negative-profit rows
-- no Matter font; no fonts from the style-lab folder
+PALETTE USE — CRITICAL
+Each scheme carries `void` (page background), `p` (primary accent), `s` (secondary accent), and 7 per-page accents `pg.{dashboard,inventory,analytics,brain,mesh,onboarding,settings}`. Use them as FOREGROUNDS, SURFACES, and BORDERS — not as thin accent stripes on grey. Every neutral traces to the active scheme's void (HSL-shifted lighter or darker), never hardcoded #0E0E0E / #1A1A1A / #666. Two schemes with different voids = different neutrals.
 
-DO
-- dark dense foundation; per-scheme accent ramps per page
-- retro Mac OS 9 + cyberpunk + brutalist: hand-drawn bevels, thick borders, tabular numerics
-- Satoshi for display, JetBrains Mono for data, IBM Plex Sans for body
-- corner radius 4px max; spacing from {4, 8, 12, 16, 24, 32}
-- curve-and-bounce motion (easeOutBack); transitions under 300ms; ambient loops under 2s
+Default starting scheme if you want a lean: #02 DEEP CURRENT — void #060B10, p #00E5A0, s #0078FF. Feel free to diverge per page.
 
-CONTENT
-- real data shapes: deals, inventory, floor and target prices, source badges
-- six UK vendor badges: ebay, cex, gumtree, facebook, shpock, preloved, wholesale-clearance
-- CeX buys only (never sell target); eBay is source, sold-comps, and sell venue
-- console hardware in; console games out
+WORDMARK
+"clawmachine" always lowercase, Satoshi Bold, single unified baseline, identical kerning, uniform weight. Render as two halves: "claw" in the active scheme's `p`, "machine" in the active scheme's `s`. Palette values only. Never black-on-white or white-on-black.
 
-DELIVERABLES
-- two or three variations per page
-- prefer Claude-Code handoff bundles
-- no narrating-state copy
+TYPOGRAPHY
+Satoshi (display + UI body) · JetBrains Mono (data, numerics, table cells, labels) · IBM Plex Sans (body prose). All three embedded in the feed at fonts/. Do not substitute DM Sans, Commit Mono, Geist, or any other face for the rendered UI.
+
+DATA SHAPES
+— deal row: device silhouette (hand-authored inline SVG — iPhone / Android / MacBook / PS5 / Switch / Headphones / AirPods / Keyboard / Smartwatch) + vendor badge + listing title + floor-aggregate price with source count (`£380 · 5 src`) + eBay sold-median + ONE ROI pill (colour-coded from palette) + clickthrough arrow ↗
+— inventory row: silhouette + condition pill (MINT / EXCELLENT / GOOD / FAIR) + acquired price + live-comp price + delta pill + action (✓ sold / ↻ relist / ✗ write off)
+— KPI card: ALL-CAPS label + big JetBrains Mono number + sparkline or delta
+— UK vendors (9): ebay, cex, gumtree, facebook, shpock, preloved, wholesale-clearance, musicmagpie, bs-exchange. Each a palette-coloured chip with lowercase vendor token.
+
+MOTION
+cubic-bezier(0.34, 1.56, 0.64, 1) easeOutBack for open-surface transitions. cubic-bezier(0.4, 0, 0.2, 1) for constrained motion. All transitions ≤300ms. Ambient loops ≤2s. Motion carries signal (scan pulse, live counter, log tick) — decoration without signal is out.
+
+ABSOLUTE NO-GOS (hard; everything else is flexible)
+1. No translucency, blur, backdrop-filter, opacity <0.9. Apple liquid-glass is the antithesis.
+2. No SF Symbols. Pixelarticons inline SVG at 16×16, 1–2px stroke, consistently.
+3. No Title Case labels. ALL CAPS tokens or lowercase only.
+4. No gamification: no WIN RATE card, XP, streaks, badges, level-ups, leaderboards.
+5. No developer-voice UI copy ("In this view we...", "AI-powered", "sophisticated"). Plain labels.
+6. No default-visible negative-ROI or dismissed rows. Top positive ROI first; worst-performers as an explicit opt-in section if shown.
+7. No Matter, no DM Sans, no style-lab fonts. Satoshi + JetBrains Mono + IBM Plex Sans only.
+8. No stock photos, no Unsplash avatars, no Tailwind CDN people, no clipped ovals. Hand-authored device silhouettes only.
+9. No CeX or BS Exchange as sell-targets — both are buy-source / floor-aggregate inputs only. Never surface a sell-to-CeX path.
+10. No gradients beyond a beveled edge (highlight top-left + shadow bottom-right, solid colours).
+11. Radius ≤4px everywhere, spacing from {4, 8, 12, 16, 24, 32} exclusively.
+
+QUALITY BAR
+Every pixel earns its keep. Display, don't state. Empty card = show the next live process tick (next scan in X, waiting signal), never the word "Empty" or "Coming soon". Deal row without thumbnail / vendor / price / ROI / clickthrough = failure. Analytics with flat coloured bars = failure. Dead buttons = failure. Placeholder strings = failure. If a label exists, the data behind it populates.
+
+CLAUDE-CODE HANDOFF
+Target: Swift 6.3, Foundation + SwiftUI only. No AppKit, no UIKit bridges, no SF Symbols. Tokens emit as Swift source matching the grammar in tokens/swift-reference/ (Colors.swift, Typography.swift, Spacing.swift, Bevel.swift, PageAccent / PageTheme per-page).
 
 VOICE
-- direct labels; plain English; no preambles
+Direct. No preambles. No narration panels. No onboarding essays. No "why this exists" blocks. Show, don't narrate.

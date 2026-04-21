@@ -1,5 +1,5 @@
-clawmachine — a macOS SwiftUI desktop app for second-hand tech-electronics arbitrage in the UK.
+clawmachine design system — the visual language for a macOS SwiftUI desktop app that hunts mispriced second-hand tech electronics on UK marketplaces for a solo fix-and-flip reseller.
 
-The user is a solo operator running a fix-and-flip tech business: buys under-priced consumer electronics from UK marketplaces (phones, laptops, console hardware, accessories), refurbishes them, and resells on eBay. Ten-hour days at a dense trading terminal.
+One human operator, no team, ten-hour days at one dense trading terminal. A scout scrapes listings off eBay, CeX, Gumtree, Facebook Marketplace, Shpock, Preloved, Wholesale Clearance, musicMagpie, and BS Exchange. A brain scores each candidate against a multi-source floor-price aggregate and eBay sold-comps median. The operator buys, fixes, resells on eBay.
 
-The app does three things: a scout scrapes UK marketplaces for candidate listings; a brain evaluates each candidate against a live floor-price aggregate plus eBay sold comps; the operator buys, fixes, and sells. Desktop-only, UK-only, single-user. Dark, dense, data-first. Retro Mac OS 9 plus cyberpunk plus brutalist composite. Not a consumer app. Not a team tool.
+Dark, dense, data-first. A composite of three idioms rendered together — retro Mac OS 9 / System 7 platinum chrome, cyberpunk HUD saturation, brutalist web honesty. Sixty-two operator-authored palettes and twenty distinct style systems ship with the feed; the Claude Code handoff targets Swift 6.3 + Foundation + SwiftUI only. Every pixel load-bearing. Not consumer-facing. Not collaborative. Internal tooling for one.
