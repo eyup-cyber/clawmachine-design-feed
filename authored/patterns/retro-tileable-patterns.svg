@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Authored tileable SVG patterns — Clawmachine retro Mac OS 9 + cyberpunk + brutalist composite.
+  All patterns are single-colour (currentColor) so they accept any scheme accent at use-time.
+  Each <pattern> is 16x16 or 32x32, drop-in via <rect fill="url(#pattern-id)"/>.
+  2026-04-21 — self-authored, no external dependency.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute;">
+<defs>
+
+<!-- 1. Dither 50% — classic Mac checkerboard -->
+<pattern id="dither-50" width="2" height="2" patternUnits="userSpaceOnUse">
+  <rect width="1" height="1" x="0" y="0" fill="currentColor"/>
+  <rect width="1" height="1" x="1" y="1" fill="currentColor"/>
+</pattern>
+
+<!-- 2. Dither 25% -->
+<pattern id="dither-25" width="4" height="4" patternUnits="userSpaceOnUse">
+  <rect width="1" height="1" x="0" y="0" fill="currentColor"/>
+  <rect width="1" height="1" x="2" y="2" fill="currentColor"/>
+</pattern>
+
+<!-- 3. Dither 75% -->
+<pattern id="dither-75" width="4" height="4" patternUnits="userSpaceOnUse">
+  <rect width="4" height="4" fill="currentColor"/>
+  <rect width="1" height="1" x="1" y="1" fill="transparent"/>
+  <rect width="1" height="1" x="3" y="3" fill="transparent"/>
+</pattern>
+
+<!-- 4. Horizontal 1px scanlines (CRT) -->
+<pattern id="scanline-h" width="1" height="2" patternUnits="userSpaceOnUse">
+  <rect width="1" height="1" fill="currentColor"/>
+</pattern>
+
+<!-- 5. Vertical 1px scanlines -->
+<pattern id="scanline-v" width="2" height="1" patternUnits="userSpaceOnUse">
+  <rect width="1" height="1" fill="currentColor"/>
+</pattern>
+
+<!-- 6. 4px grid -->
+<pattern id="grid-4" width="4" height="4" patternUnits="userSpaceOnUse">
+  <path d="M4 0H0V4" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.5"/>
+</pattern>
+
+<!-- 7. 8px grid -->
+<pattern id="grid-8" width="8" height="8" patternUnits="userSpaceOnUse">
+  <path d="M8 0H0V8" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.4"/>
+</pattern>
+
+<!-- 8. 16px grid major / 4px minor -->
+<pattern id="grid-major" width="16" height="16" patternUnits="userSpaceOnUse">
+  <path d="M16 0H0V16" stroke="currentColor" stroke-width="0.5" opacity="0.2" fill="none"/>
+  <path d="M4 0v16M8 0v16M12 0v16M0 4h16M0 8h16M0 12h16" stroke="currentColor" stroke-width="0.3" opacity="0.1" fill="none"/>
+</pattern>
+
+<!-- 9. Dots-2px on 8px grid -->
+<pattern id="dots-8" width="8" height="8" patternUnits="userSpaceOnUse">
+  <circle cx="4" cy="4" r="1" fill="currentColor"/>
+</pattern>
+
+<!-- 10. Dots-1px on 4px grid (micro) -->
+<pattern id="dots-4" width="4" height="4" patternUnits="userSpaceOnUse">
+  <circle cx="2" cy="2" r="0.5" fill="currentColor"/>
+</pattern>
+
+<!-- 11. Dots-3px on 16px grid (large) -->
+<pattern id="dots-16" width="16" height="16" patternUnits="userSpaceOnUse">
+  <circle cx="8" cy="8" r="1.5" fill="currentColor"/>
+</pattern>
+
+<!-- 12. Diagonal stripes 45° 2px -->
+<pattern id="stripe-45-2" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <rect width="2" height="8" fill="currentColor"/>
+</pattern>
+
+<!-- 13. Diagonal stripes 45° 4px -->
+<pattern id="stripe-45-4" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <rect width="4" height="16" fill="currentColor"/>
+</pattern>
+
+<!-- 14. Diagonal stripes -45° -->
+<pattern id="stripe-m45-2" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+  <rect width="2" height="8" fill="currentColor"/>
+</pattern>
+
+<!-- 15. Crosshatch 45° -->
+<pattern id="crosshatch" width="8" height="8" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+  <rect width="1" height="8" fill="currentColor"/>
+  <rect width="8" height="1" fill="currentColor"/>
+</pattern>
+
+<!-- 16. Chevron -->
+<pattern id="chevron" width="16" height="8" patternUnits="userSpaceOnUse">
+  <path d="M0 8L8 0L16 8" stroke="currentColor" stroke-width="1" fill="none"/>
+</pattern>
+
+<!-- 17. Zigzag -->
+<pattern id="zigzag" width="16" height="8" patternUnits="userSpaceOnUse">
+  <path d="M0 4L4 0L8 4L12 0L16 4" stroke="currentColor" stroke-width="1" fill="none"/>
+</pattern>
+
+<!-- 18. Herringbone -->
+<pattern id="herringbone" width="16" height="16" patternUnits="userSpaceOnUse">
+  <path d="M0 0L8 8M8 0L16 8M0 8L8 16M8 8L16 16" stroke="currentColor" stroke-width="1" fill="none"/>
+</pattern>
+
+<!-- 19. Circuit — horizontal traces + vias -->
+<pattern id="circuit-h" width="32" height="16" patternUnits="userSpaceOnUse">
+  <path d="M0 4h12M20 4h12M0 12h24" stroke="currentColor" stroke-width="0.5" fill="none"/>
+  <circle cx="12" cy="4" r="1.5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+  <circle cx="20" cy="4" r="1.5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+  <circle cx="24" cy="12" r="1.5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+  <path d="M12 4v8M20 4v-4" stroke="currentColor" stroke-width="0.5"/>
+</pattern>
+
+<!-- 20. Circuit — grid vias -->
+<pattern id="circuit-grid" width="16" height="16" patternUnits="userSpaceOnUse">
+  <circle cx="4" cy="4" r="1" fill="none" stroke="currentColor" stroke-width="0.5"/>
+  <circle cx="12" cy="12" r="1" fill="none" stroke="currentColor" stroke-width="0.5"/>
+  <path d="M4 4h8M4 12h8M4 4v8M12 4v8" stroke="currentColor" stroke-width="0.3" opacity="0.6"/>
+</pattern>
+
+<!-- 21. Isometric grid -->
+<pattern id="iso-grid" width="16" height="28" patternUnits="userSpaceOnUse">
+  <path d="M0 0L16 0L24 14L16 28L0 28L-8 14Z" stroke="currentColor" stroke-width="0.5" fill="none"/>
+</pattern>
+
+<!-- 22. Hexagons -->
+<pattern id="hex" width="24" height="14" patternUnits="userSpaceOnUse">
+  <polygon points="6,0 18,0 24,7 18,14 6,14 0,7" fill="none" stroke="currentColor" stroke-width="0.5"/>
+</pattern>
+
+<!-- 23. Triangles up -->
+<pattern id="tri-up" width="12" height="10" patternUnits="userSpaceOnUse">
+  <polygon points="6,1 11,9 1,9" fill="none" stroke="currentColor" stroke-width="0.5"/>
+</pattern>
+
+<!-- 24. Diamond small -->
+<pattern id="diamond-s" width="8" height="8" patternUnits="userSpaceOnUse">
+  <polygon points="4,1 7,4 4,7 1,4" fill="none" stroke="currentColor" stroke-width="0.5"/>
+</pattern>
+
+<!-- 25. Plus signs -->
+<pattern id="plus" width="12" height="12" patternUnits="userSpaceOnUse">
+  <path d="M6 2v8M2 6h8" stroke="currentColor" stroke-width="1" fill="none"/>
+</pattern>
+
+<!-- 26. Cross + dot -->
+<pattern id="cross-dot" width="16" height="16" patternUnits="userSpaceOnUse">
+  <path d="M8 5v6M5 8h6" stroke="currentColor" stroke-width="0.5"/>
+  <circle cx="8" cy="8" r="0.5" fill="currentColor"/>
+</pattern>
+
+<!-- 27. Noise (pseudo — dense speckle) -->
+<pattern id="noise" width="32" height="32" patternUnits="userSpaceOnUse">
+  <rect x="3" y="2" width="1" height="1" fill="currentColor"/><rect x="11" y="5" width="1" height="1" fill="currentColor"/><rect x="20" y="4" width="1" height="1" fill="currentColor"/><rect x="28" y="9" width="1" height="1" fill="currentColor"/><rect x="6" y="10" width="1" height="1" fill="currentColor"/><rect x="15" y="12" width="1" height="1" fill="currentColor"/><rect x="24" y="14" width="1" height="1" fill="currentColor"/><rect x="2" y="17" width="1" height="1" fill="currentColor"/><rect x="9" y="19" width="1" height="1" fill="currentColor"/><rect x="18" y="21" width="1" height="1" fill="currentColor"/><rect x="27" y="23" width="1" height="1" fill="currentColor"/><rect x="5" y="26" width="1" height="1" fill="currentColor"/><rect x="13" y="28" width="1" height="1" fill="currentColor"/><rect x="22" y="30" width="1" height="1" fill="currentColor"/><rect x="30" y="1" width="1" height="1" fill="currentColor"/>
+</pattern>
+
+<!-- 28. Paper grain (micro noise) -->
+<pattern id="paper-grain" width="40" height="40" patternUnits="userSpaceOnUse">
+  <rect x="2" y="3" width="1" height="1" fill="currentColor" opacity="0.3"/><rect x="7" y="8" width="1" height="1" fill="currentColor" opacity="0.4"/><rect x="13" y="5" width="1" height="1" fill="currentColor" opacity="0.2"/><rect x="19" y="11" width="1" height="1" fill="currentColor" opacity="0.3"/><rect x="25" y="7" width="1" height="1" fill="currentColor" opacity="0.4"/><rect x="31" y="13" width="1" height="1" fill="currentColor" opacity="0.2"/><rect x="37" y="9" width="1" height="1" fill="currentColor" opacity="0.3"/><rect x="4" y="17" width="1" height="1" fill="currentColor" opacity="0.4"/><rect x="10" y="23" width="1" height="1" fill="currentColor" opacity="0.3"/><rect x="16" y="19" width="1" height="1" fill="currentColor" opacity="0.2"/><rect x="22" y="25" width="1" height="1" fill="currentColor" opacity="0.4"/><rect x="28" y="21" width="1" height="1" fill="currentColor" opacity="0.3"/><rect x="34" y="27" width="1" height="1" fill="currentColor" opacity="0.2"/><rect x="3" y="31" width="1" height="1" fill="currentColor" opacity="0.4"/><rect x="11" y="35" width="1" height="1" fill="currentColor" opacity="0.3"/><rect x="20" y="33" width="1" height="1" fill="currentColor" opacity="0.4"/><rect x="29" y="37" width="1" height="1" fill="currentColor" opacity="0.3"/>
+</pattern>
+
+<!-- 29. Pixel — dense retro mosaic (deliberate small-tile mac) -->
+<pattern id="pixel-mosaic" width="6" height="6" patternUnits="userSpaceOnUse">
+  <rect width="6" height="6" fill="none"/>
+  <rect x="0" y="0" width="1" height="1" fill="currentColor"/>
+  <rect x="2" y="0" width="1" height="1" fill="currentColor"/>
+  <rect x="4" y="0" width="1" height="1" fill="currentColor"/>
+  <rect x="1" y="1" width="1" height="1" fill="currentColor"/>
+  <rect x="3" y="1" width="1" height="1" fill="currentColor"/>
+  <rect x="5" y="1" width="1" height="1" fill="currentColor"/>
+  <rect x="0" y="2" width="1" height="1" fill="currentColor"/>
+  <rect x="2" y="2" width="1" height="1" fill="currentColor"/>
+  <rect x="4" y="2" width="1" height="1" fill="currentColor"/>
+</pattern>
+
+<!-- 30. Pip-Boy fade — horizontal phosphor band -->
+<pattern id="phosphor-band" width="1" height="4" patternUnits="userSpaceOnUse">
+  <rect width="1" height="1" fill="currentColor" opacity="0.8"/>
+  <rect width="1" height="1" y="1" fill="currentColor" opacity="0.4"/>
+  <rect width="1" height="1" y="2" fill="currentColor" opacity="0.2"/>
+  <rect width="1" height="1" y="3" fill="currentColor" opacity="0.1"/>
+</pattern>
+
+<!-- 31. Waves -->
+<pattern id="waves" width="24" height="8" patternUnits="userSpaceOnUse">
+  <path d="M0 4Q6 0 12 4T24 4" stroke="currentColor" stroke-width="1" fill="none"/>
+</pattern>
+
+<!-- 32. Brutalist heavy stripes (16px thick) -->
+<pattern id="stripes-thick" width="32" height="32" patternUnits="userSpaceOnUse">
+  <rect width="16" height="32" fill="currentColor"/>
+</pattern>
+
+<!-- 33. Asterisk field -->
+<pattern id="asterisk" width="20" height="20" patternUnits="userSpaceOnUse">
+  <path d="M10 4v12M4 10h12M5.5 5.5l9 9M14.5 5.5l-9 9" stroke="currentColor" stroke-width="0.8" fill="none"/>
+</pattern>
+
+<!-- 34. Bracket corners -->
+<pattern id="brackets" width="32" height="32" patternUnits="userSpaceOnUse">
+  <path d="M2 2h6M2 2v6M30 2h-6M30 2v6M2 30h6M2 30v-6M30 30h-6M30 30v-6" stroke="currentColor" stroke-width="1" fill="none"/>
+</pattern>
+
+<!-- 35. HUD reticle -->
+<pattern id="reticle" width="40" height="40" patternUnits="userSpaceOnUse">
+  <circle cx="20" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="0.5"/>
+  <path d="M20 8v4M20 28v4M8 20h4M28 20h4" stroke="currentColor" stroke-width="0.5"/>
+</pattern>
+
+<!-- 36. Bitmap noise "dither threshold" mix -->
+<pattern id="dither-threshold" width="4" height="4" patternUnits="userSpaceOnUse">
+  <rect x="0" y="0" width="1" height="1" fill="currentColor"/>
+  <rect x="2" y="0" width="1" height="1" fill="currentColor"/>
+  <rect x="1" y="1" width="1" height="1" fill="currentColor"/>
+  <rect x="3" y="1" width="1" height="1" fill="currentColor"/>
+  <rect x="0" y="2" width="1" height="1" fill="currentColor"/>
+  <rect x="2" y="2" width="1" height="1" fill="currentColor"/>
+  <rect x="1" y="3" width="1" height="1" fill="currentColor"/>
+  <rect x="3" y="3" width="1" height="1" fill="currentColor"/>
+</pattern>
+
+<!-- 37. Tick marks (like a ruler) -->
+<pattern id="ruler" width="8" height="16" patternUnits="userSpaceOnUse">
+  <path d="M4 0v4M0 8h8M4 12v4" stroke="currentColor" stroke-width="0.5" fill="none"/>
+</pattern>
+
+<!-- 38. Staircase steps -->
+<pattern id="steps" width="8" height="8" patternUnits="userSpaceOnUse">
+  <path d="M0 8h2v-2h2v-2h2v-2h2" stroke="currentColor" stroke-width="0.5" fill="none"/>
+</pattern>
+
+<!-- 39. Ascii hash -->
+<pattern id="hash-ascii" width="12" height="12" patternUnits="userSpaceOnUse">
+  <text x="6" y="9" font-family="monospace" font-size="10" text-anchor="middle" fill="currentColor">#</text>
+</pattern>
+
+<!-- 40. Cyberpunk angled data rails -->
+<pattern id="data-rails" width="32" height="8" patternUnits="userSpaceOnUse">
+  <path d="M0 0h14l2 8h-14zM18 0h14l-2 8h-14z" fill="currentColor" opacity="0.6"/>
+</pattern>
+
+</defs>
+
+<!-- Preview rendered at-scale — open this file in a browser to inspect -->
+<svg width="100%" viewBox="0 0 1200 1600" style="background:#0a0a14; color:#00E5A0; font-family:sans-serif;">
+  <g font-size="10" fill="#888">
+    <text x="20" y="20">Clawmachine tileable patterns — authored 2026-04-21 — currentColor-driven, scheme-independent</text>
+  </g>
+  <g fill="currentColor">
+    <rect x="20"  y="40"  width="260" height="80" fill="url(#dither-50)"/>         <text x="20"  y="130" font-size="10" fill="#888">1. dither-50</text>
+    <rect x="300" y="40"  width="260" height="80" fill="url(#dither-25)"/>         <text x="300" y="130" font-size="10" fill="#888">2. dither-25</text>
+    <rect x="580" y="40"  width="260" height="80" fill="url(#dither-75)"/>         <text x="580" y="130" font-size="10" fill="#888">3. dither-75</text>
+    <rect x="860" y="40"  width="260" height="80" fill="url(#scanline-h)"/>        <text x="860" y="130" font-size="10" fill="#888">4. scanline-h</text>
+
+    <rect x="20"  y="150" width="260" height="80" fill="url(#scanline-v)"/>        <text x="20"  y="240" font-size="10" fill="#888">5. scanline-v</text>
+    <rect x="300" y="150" width="260" height="80" fill="url(#grid-4)"/>            <text x="300" y="240" font-size="10" fill="#888">6. grid-4</text>
+    <rect x="580" y="150" width="260" height="80" fill="url(#grid-8)"/>            <text x="580" y="240" font-size="10" fill="#888">7. grid-8</text>
+    <rect x="860" y="150" width="260" height="80" fill="url(#grid-major)"/>        <text x="860" y="240" font-size="10" fill="#888">8. grid-major</text>
+
+    <rect x="20"  y="260" width="260" height="80" fill="url(#dots-8)"/>            <text x="20"  y="350" font-size="10" fill="#888">9. dots-8</text>
+    <rect x="300" y="260" width="260" height="80" fill="url(#dots-4)"/>            <text x="300" y="350" font-size="10" fill="#888">10. dots-4</text>
+    <rect x="580" y="260" width="260" height="80" fill="url(#dots-16)"/>           <text x="580" y="350" font-size="10" fill="#888">11. dots-16</text>
+    <rect x="860" y="260" width="260" height="80" fill="url(#stripe-45-2)"/>       <text x="860" y="350" font-size="10" fill="#888">12. stripe-45-2</text>
+
+    <rect x="20"  y="370" width="260" height="80" fill="url(#stripe-45-4)"/>       <text x="20"  y="460" font-size="10" fill="#888">13. stripe-45-4</text>
+    <rect x="300" y="370" width="260" height="80" fill="url(#stripe-m45-2)"/>      <text x="300" y="460" font-size="10" fill="#888">14. stripe-m45-2</text>
+    <rect x="580" y="370" width="260" height="80" fill="url(#crosshatch)"/>        <text x="580" y="460" font-size="10" fill="#888">15. crosshatch</text>
+    <rect x="860" y="370" width="260" height="80" fill="url(#chevron)"/>           <text x="860" y="460" font-size="10" fill="#888">16. chevron</text>
+
+    <rect x="20"  y="480" width="260" height="80" fill="url(#zigzag)"/>            <text x="20"  y="570" font-size="10" fill="#888">17. zigzag</text>
+    <rect x="300" y="480" width="260" height="80" fill="url(#herringbone)"/>       <text x="300" y="570" font-size="10" fill="#888">18. herringbone</text>
+    <rect x="580" y="480" width="260" height="80" fill="url(#circuit-h)"/>         <text x="580" y="570" font-size="10" fill="#888">19. circuit-h</text>
+    <rect x="860" y="480" width="260" height="80" fill="url(#circuit-grid)"/>     <text x="860" y="570" font-size="10" fill="#888">20. circuit-grid</text>
+
+    <rect x="20"  y="590" width="260" height="80" fill="url(#iso-grid)"/>          <text x="20"  y="680" font-size="10" fill="#888">21. iso-grid</text>
+    <rect x="300" y="590" width="260" height="80" fill="url(#hex)"/>               <text x="300" y="680" font-size="10" fill="#888">22. hex</text>
+    <rect x="580" y="590" width="260" height="80" fill="url(#tri-up)"/>            <text x="580" y="680" font-size="10" fill="#888">23. tri-up</text>
+    <rect x="860" y="590" width="260" height="80" fill="url(#diamond-s)"/>         <text x="860" y="680" font-size="10" fill="#888">24. diamond-s</text>
+
+    <rect x="20"  y="700" width="260" height="80" fill="url(#plus)"/>              <text x="20"  y="790" font-size="10" fill="#888">25. plus</text>
+    <rect x="300" y="700" width="260" height="80" fill="url(#cross-dot)"/>         <text x="300" y="790" font-size="10" fill="#888">26. cross-dot</text>
+    <rect x="580" y="700" width="260" height="80" fill="url(#noise)"/>             <text x="580" y="790" font-size="10" fill="#888">27. noise</text>
+    <rect x="860" y="700" width="260" height="80" fill="url(#paper-grain)"/>       <text x="860" y="790" font-size="10" fill="#888">28. paper-grain</text>
+
+    <rect x="20"  y="810" width="260" height="80" fill="url(#pixel-mosaic)"/>      <text x="20"  y="900" font-size="10" fill="#888">29. pixel-mosaic</text>
+    <rect x="300" y="810" width="260" height="80" fill="url(#phosphor-band)"/>     <text x="300" y="900" font-size="10" fill="#888">30. phosphor-band</text>
+    <rect x="580" y="810" width="260" height="80" fill="url(#waves)"/>             <text x="580" y="900" font-size="10" fill="#888">31. waves</text>
+    <rect x="860" y="810" width="260" height="80" fill="url(#stripes-thick)"/>     <text x="860" y="900" font-size="10" fill="#888">32. stripes-thick</text>
+
+    <rect x="20"  y="920" width="260" height="80" fill="url(#asterisk)"/>          <text x="20"  y="1010" font-size="10" fill="#888">33. asterisk</text>
+    <rect x="300" y="920" width="260" height="80" fill="url(#brackets)"/>          <text x="300" y="1010" font-size="10" fill="#888">34. brackets</text>
+    <rect x="580" y="920" width="260" height="80" fill="url(#reticle)"/>           <text x="580" y="1010" font-size="10" fill="#888">35. reticle</text>
+    <rect x="860" y="920" width="260" height="80" fill="url(#dither-threshold)"/>  <text x="860" y="1010" font-size="10" fill="#888">36. dither-threshold</text>
+
+    <rect x="20"  y="1030" width="260" height="80" fill="url(#ruler)"/>            <text x="20"  y="1120" font-size="10" fill="#888">37. ruler</text>
+    <rect x="300" y="1030" width="260" height="80" fill="url(#steps)"/>            <text x="300" y="1120" font-size="10" fill="#888">38. steps</text>
+    <rect x="580" y="1030" width="260" height="80" fill="url(#hash-ascii)"/>       <text x="580" y="1120" font-size="10" fill="#888">39. hash-ascii</text>
+    <rect x="860" y="1030" width="260" height="80" fill="url(#data-rails)"/>       <text x="860" y="1120" font-size="10" fill="#888">40. data-rails</text>
+  </g>
+</svg>
+</svg>
