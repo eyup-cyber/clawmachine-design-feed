@@ -1,76 +1,87 @@
-YOUR CREATIVE REMIT
-Operator hands you an oceanic pool: 62 hand-authored palettes, 20 style systems, 1,400+ inline SVG icons, 157 historical-UI references, hand-authored dither and texture patterns, 3 Figma schema JSONs, OFL fonts, Swift reference files. Use it. Go wide. Show range. The reference HTMLs are a FLOOR, not a ceiling — out-execute them, don't mimic them. Multiple variations per page; operator wants directions, not one locked answer.
+SUPERSEDE, DON'T MIMIC
+This is an internal tool for one UK fix-and-flip reseller. Nine prior iterations failed — greybox shells, gamification drift, scaffolding-ate-the-product, directive-text bleeding into the UI. The attached HTMLs are the closest the operator has reached; they are the FLOOR. Push past them. Use the palettes, style systems, tokens and assets as constraints and raw material — don't recreate the HTMLs verbatim. Bold aesthetic commitment wins. Start conservative, escalate fast, give 3–5 variants per page; most audacious gets picked.
+
+YOUR OWN BAN-LIST ALREADY MATCHES OURS — LEAN INTO IT
+Your banned tropes (Inter / Roboto / Arial / Fraunces / system fonts; aggressive gradients; emoji; left-border-accent cards; drawing complex SVG; frosted-glass / backdrop-filter / translucency) are a superset of ours. No need to soften. Use the authorised fonts below and nothing else. No Apple liquid-glass; no macOS-system-style borrowing.
+
+AUTHORISED FONTS (from direct-drag/fonts/, OFL)
+Satoshi — display + wordmark + UI body.
+JetBrains Mono — data, numerics, table cells, labels.
+IBM Plex Sans — body prose.
+No DM Sans, no Geist, no Matter, no Commit Mono.
 
 READ IN THIS ORDER
-1. CLAWMACHINE-INGEST-MAP.html — 1-pager cover, start here
-2. CLAWMACHINE-DESIGN-MASTER.html — single-file reference: 62-palette deck, 20 style systems, 49 page renders, fonts + JSONs embedded
+1. CLAWMACHINE-INGEST-MAP.html — 1-pager cover
+2. CLAWMACHINE-DESIGN-MASTER.html — 62-palette deck + 20 style systems + 49 page renders, fonts + JSON inline
 3. codex/clawmachine-chromatic-lab.html + codex/clawmachine-style-lab.html — operator-authored aesthetic ground-truth
-4. CLAWMACHINE-PAGES.html — finished 7-page example across 7 palettes
+4. CLAWMACHINE-PAGES.html — finished 7-page example across 7 pinned palettes (sc-02/07/18/25/38/46/52)
 5. tokens/*.json + tokens/swift-reference/*.swift — token source + target-language grammar
 
-WHAT TO BUILD (7 pages, 2–3 variations each)
-— dashboard: live deal feed + KPI stat cards + status strip
-— inventory: acquired-item grid with silhouette, condition grade, target sell, live comp
-— analytics: counts / profit / ROI — trading-terminal chart density (OHLC candles, Y-axis gridlines, X-axis date ticks, dashed crosshair + tooltip readout, 7-day median overlay, 4-cell OPEN/HIGH/LOW/CLOSE footer). No flat coloured bars.
-— brain: chat transcript + live recommendations column (never render model <think> content)
-— mesh: 3 role cards (brain / scout / app) + interleaved log stream + latency sparkline
-— agentconsole: tool list + call-trace viewer (first-class page, not an overlay)
-— settings: palette + style picker with hover-preview, channels config, brain model config
+WHAT TO BUILD (7 PAGES, 2–3 VARIATIONS EACH)
+- dashboard: live deal feed + KPI stat cards + status strip
+- inventory: acquired-item grid with silhouette, condition grade, target sell, live comp
+- analytics: counts / profit / ROI — trading-terminal chart density (OHLC candles, Y-axis gridlines, X-axis date ticks, dashed crosshair + tooltip readout, 7-day median overlay, 4-cell OPEN/HIGH/LOW/CLOSE footer). No flat coloured bars.
+- brain: chat transcript + live recommendations column (never render model <think> content)
+- mesh: 3 role cards (brain / scout / app) + interleaved log stream + latency sparkline
+- agentconsole: tool list + call-trace viewer (first-class page, not an overlay)
+- settings: palette + style picker with hover-preview, channels config, brain model config. Fonts are FIXED — do not expose font pickers.
 
 AESTHETIC — THREE IDIOMS TOGETHER
 Retro Mac OS 9 / System 7 platinum chrome + cyberpunk HUD saturation + brutalist web honesty. Anchors: Bloomberg Terminal, Pro Tools, Fallout Pip-Boy, Susan Kare Chicago, Neobrutalism.dev.
 
 PALETTE USE — CRITICAL
-Each scheme carries `void` (page background), `p` (primary accent), `s` (secondary accent), and 7 per-page accents `pg.{dashboard,inventory,analytics,brain,mesh,onboarding,settings}`. Use them as FOREGROUNDS, SURFACES, and BORDERS — not as thin accent stripes on grey. Every neutral traces to the active scheme's void (HSL-shifted lighter or darker), never hardcoded #0E0E0E / #1A1A1A / #666. Two schemes with different voids = different neutrals.
+Each scheme carries `void` (page background), `p` (primary accent), `s` (secondary accent), and 7 per-page accents `pg.{dashboard,inventory,analytics,brain,mesh,onboarding,settings}`. Use them as FOREGROUNDS, SURFACES and BORDERS — not as thin accent stripes on grey. Every neutral traces to the active scheme's void (HSL-shifted lighter or darker), never hardcoded #0E0E0E / #1A1A1A / #666. Two schemes with different voids = different neutrals.
 
-Default starting scheme if you want a lean: #02 DEEP CURRENT — void #060B10, p #00E5A0, s #0078FF. Feel free to diverge per page.
+Default starting scheme: #02 DEEP CURRENT — void #060B10, p #00E5A0, s #0078FF. Diverge per page freely.
 
 WORDMARK
-"clawmachine" always lowercase, Satoshi Bold, single unified baseline, identical kerning, uniform weight. Render as two halves: "claw" in the active scheme's `p`, "machine" in the active scheme's `s`. Palette values only. Never black-on-white or white-on-black.
-
-TYPOGRAPHY
-Satoshi (display + UI body) · JetBrains Mono (data, numerics, table cells, labels) · IBM Plex Sans (body prose). All three embedded in the feed at fonts/. Do not substitute DM Sans, Commit Mono, Geist, or any other face for the rendered UI.
+"clawmachine" always lowercase, Satoshi Bold, single unified baseline, identical kerning, uniform weight. Two halves: "claw" in active scheme's `p`, "machine" in active scheme's `s`. Palette values only. Never black-on-white or white-on-black.
 
 DATA SHAPES
-— deal row is a CSS-grid row with fixed columns: device thumbnail (44px) · vendor chip (120px) · listing title (1fr) · BUY £ (96px) · SELL £ (96px) · ROI pill (72px) · clickthrough ↗ (32px). 12px gap, 48px min row height, baseline-aligned. No column labelled "DEV". Column headers: blank / VENDOR / TITLE / BUY / SELL / ROI / — .
-— BUY £ column shows the floor-aggregate price with a small "· N SRC" sub-label (source count). This is what the operator pays. NOT "FLOOR" as a header — "BUY" reads plain English.
-— SELL £ column shows the eBay sold-comps median. This is what the operator expects to get when reselling on eBay. NOT "EBAY MED" as a header — "SELL" reads plain English.
-— inventory row: device thumbnail + condition pill (MINT / EXCELLENT / GOOD / FAIR) + acquired price + live-comp price + delta pill + action (✓ sold / ↻ relist / ✗ write off)
-— KPI card: ALL-CAPS label + big JetBrains Mono number + sparkline or delta
-— UK vendors (9): ebay, cex, gumtree, facebook, shpock, preloved, wholesale-clearance, musicmagpie, bs-exchange. Each a palette-coloured chip with lowercase vendor token.
+- deal row CSS-grid columns: device silhouette (44px) · vendor chip (120px) · listing title (1fr) · BUY £ (120px with "· N SRC" sub-label) · SELL £ (120px) · ROI pill (78px) · clickthrough ↗ (32px). 12px gap, 48px min row height, baseline-aligned. Column headers: blank / VENDOR / TITLE / BUY / SELL / ROI / blank. No "DEV" or "SRC" column label; no "FLOOR" / "EBAY MED" — plain English only.
+- BUY column = floor-aggregate across live vendors. Not sell-price-at-CeX. Not "floor-is-CeX".
+- SELL column = eBay sold-comps median. Default sell venue is eBay; do not surface a per-row target-platform picker.
+- inventory row: device silhouette + condition pill (MINT / EXCELLENT / GOOD / FAIR) + acquired price + live-comp price + delta pill + action (sold / relist / write-off).
+- KPI card: ALL-CAPS label + big JetBrains Mono number + sparkline or delta. No WIN RATE. No streaks.
+- UK vendors (9): ebay, cex, gumtree, facebook, shpock, preloved, wholesale-clearance, musicmagpie, bs-exchange. Each is a palette-coloured chip with a lowercase vendor token. CeX and BS Exchange are BUY-SOURCE / FLOOR-AGGREGATE INPUT ONLY — never surface a sell-to path for either.
 
 ICONOGRAPHY
-— Sidebar nav + all UI iconography: **Lucide Regular** (clean outlined, 1.5–2px stroke) at 16×16 rendered. Stroke colour = active scheme `p`. Source: the bundled `icons/` folder or `external/lucide/`.
-— Device thumbnails (deal-row + inventory-row): hand-authored outlined silhouettes at ~24–44px, 2px stroke, palette `p`. Each device-type gets a specific silhouette — iPhone with notch + speaker, MacBook wedge with screen split, AirPods with stems, Switch Lite with joysticks, PS5 with fan vent, Sony headphones over-ear band, keyboard grid, smartwatch with crown, iPad with home indicator, RTX with fan, Android phone with camera bump. Clean line art, not jagged pixel grid.
-— Pixelarticons are **reference only** — they live in a clearly labelled "retro pixel icon pool" alongside Phosphor / Feather / Material. They do NOT appear in active UI. Never use pixelarticons for sidebar nav or deal-row thumbnails.
+- Sidebar nav + all UI iconography: Lucide Regular (clean outlined, 1.5–2px stroke) at 16x16. Stroke colour = active scheme `p`.
+- Device thumbnails (deal-row + inventory-row): hand-authored outlined silhouettes at ~24–44px, 2px stroke, palette `p`. Each device type gets a specific silhouette (iPhone, Android, MacBook wedge, AirPods stems, Switch landscape with joycons, PS5 fan vent, Sony over-ear headphones, keyboard grid, smartwatch with crown, iPad).
+- Pixelarticons are REFERENCE-POOL ONLY. Never in active UI.
+- No SF Symbols.
 
-THUMBNAIL GRAMMAR (for when real listing photos are available in production)
-Thumbnail container 64×64, palette-surface (scheme-derived).
-- When photo exists: photo fills container `object-fit: cover`. Top-left corner = condition grade pill. Top-right corner = device-type chip (20×20 palette `p` fill, 2px outer stroke scheme `s`, 1px inner highlight scheme-lighter, 12×12 icon inside in scheme-contrast colour). Bottom-left = vendor chip. Bottom-right = price overlay. Four corners, four fixed slots, no collision.
-- When photo absent (FB / Gumtree often ship without): device icon centres at 32×32 inside the container, palette `p` stroke, scheme-shifted void background. Same card structure; only the thumbnail treatment swaps.
-Two-colour logic lives on the CHIP (palette `p` fill vs scheme `s` stroke), not on the icon SVG — keeps the icon readable at any size.
+THUMBNAIL GRAMMAR (production — when real listing photos are available)
+Container 64x64, palette-surface (scheme-derived).
+- Photo present: photo fills container `object-fit: cover`. Top-left = condition-grade pill. Top-right = device-type chip (20x20 palette `p` fill, 2px outer stroke in scheme `s`, 1px inner highlight, 12x12 icon in scheme-contrast). Bottom-left = vendor chip. Bottom-right = price overlay. Four corners, four fixed slots, no collision.
+- Photo absent (FB / Gumtree often ship without): device silhouette centres at 32x32 inside the container, palette `p` stroke, scheme-shifted void background. Same card structure; only the thumbnail treatment swaps.
+Two-colour logic lives on the CHIP (palette `p` fill vs scheme `s` stroke), not on the icon SVG.
 
 MOTION
 cubic-bezier(0.34, 1.56, 0.64, 1) easeOutBack for open-surface transitions. cubic-bezier(0.4, 0, 0.2, 1) for constrained motion. All transitions ≤300ms. Ambient loops ≤2s. Motion carries signal (scan pulse, live counter, log tick) — decoration without signal is out.
 
-ABSOLUTE NO-GOS (hard; everything else is flexible)
+ABSOLUTE NO-GOs (HARD — EVERYTHING ELSE IS FLEXIBLE)
 1. No translucency, blur, backdrop-filter, opacity <0.9. Apple liquid-glass is the antithesis.
-2. No SF Symbols. Lucide Regular outlined SVG (1.5–2px stroke) at 16×16 for nav + UI; hand-authored outlined device silhouettes for thumbnails. Pixelarticons are reference-pool only, never in active UI.
+2. No SF Symbols. Lucide Regular for nav/UI; hand-authored silhouettes for thumbnails.
 3. No Title Case labels. ALL CAPS tokens or lowercase only.
-4. No gamification: no WIN RATE card, XP, streaks, badges, level-ups, leaderboards.
-5. No developer-voice UI copy ("In this view we...", "AI-powered", "sophisticated"). Plain labels.
-6. No default-visible negative-ROI or dismissed rows. Top positive ROI first; worst-performers as an explicit opt-in section if shown.
-7. No Matter, no DM Sans, no style-lab fonts. Satoshi + JetBrains Mono + IBM Plex Sans only.
-8. No stock photos, no Unsplash avatars, no Tailwind CDN people, no clipped ovals. Hand-authored device silhouettes only.
-9. No CeX or BS Exchange as sell-targets — both are buy-source / floor-aggregate inputs only. Never surface a sell-to-CeX path.
+4. No gamification: no WIN RATE card, XP, streaks, badges, level-ups, leaderboards, achievements.
+5. No developer-voice UI copy ("In this view we…", "AI-powered", "sophisticated", "don't move on if…"). Plain labels. No directive text bleeding into the rendered UI.
+6. No default-visible negative-ROI or dismissed rows. Positive ROI first; worst-performers as opt-in section.
+7. No Matter, DM Sans, Geist, Commit Mono. Satoshi + JetBrains Mono + IBM Plex Sans only.
+8. No stock photos, Unsplash avatars, Tailwind CDN people. Hand-authored device silhouettes only.
+9. No CeX or BS Exchange as sell-targets — both are buy-source / floor-aggregate inputs only.
 10. No gradients beyond a beveled edge (highlight top-left + shadow bottom-right, solid colours).
-11. Radius ≤4px everywhere, spacing from {4, 8, 12, 16, 24, 32} exclusively.
+11. Radius ≤4px everywhere. Spacing from {4, 8, 12, 16, 24, 32} exclusively.
+12. No font pickers in Settings. The type system is locked to Satoshi / JetBrains Mono / IBM Plex Sans.
 
 QUALITY BAR
-Every pixel earns its keep. Display, don't state. Empty card = show the next live process tick (next scan in X, waiting signal), never the word "Empty" or "Coming soon". Deal row without thumbnail / vendor / price / ROI / clickthrough = failure. Analytics with flat coloured bars = failure. Dead buttons = failure. Placeholder strings = failure. If a label exists, the data behind it populates.
+Every pixel earns its keep. Display, don't state. Empty card shows the next live process tick (next scan in X, waiting signal), never "Empty" or "Coming soon". Deal row without silhouette / vendor / price / ROI / clickthrough = failure. Analytics with flat coloured bars = failure. Dead buttons = failure. Placeholder strings = failure.
 
-CLAUDE-CODE HANDOFF
-Target: Swift 6.3, Foundation + SwiftUI only. No AppKit, no UIKit bridges, no SF Symbols. Tokens emit as Swift source matching the grammar in tokens/swift-reference/ (Colors.swift, Typography.swift, Spacing.swift, Bevel.swift, PageAccent / PageTheme per-page).
+VARIANT STRATEGY (HOW TO USE THIS BRIEF)
+For each of the 7 pages, produce 3–5 variants escalating conservative → audacious. Audacity is measured against this brief — no ban-list violations, but unexpected typographic rhythm, unexpected density moves, unexpected use of the 62-palette / 20-style-system cross-product all count. Do not re-roll the whole draft; the first prompt is load-bearing and the operator is iterating downstream.
+
+CLAUDE-CODE HANDOFF — STACK-AGNOSTIC TOKENS + SPEC ONLY
+Target is Swift 6.3 + Foundation + SwiftUI. NOT React. NOT HTML. The HTML canvas output is acceptable as VISUAL reference only; Claude Code will translate to SwiftUI, and the tokens + spacing scale + type ramp + layout intent are what carry forward. Do not invest in HTML/React component structure; it will be discarded. Tokens emit as Swift source matching tokens/swift-reference/ grammar (Colors.swift, Typography.swift, Spacing.swift, Bevel.swift; PageAccent / PageTheme per-page enum).
 
 VOICE
 Direct. No preambles. No narration panels. No onboarding essays. No "why this exists" blocks. Show, don't narrate.
