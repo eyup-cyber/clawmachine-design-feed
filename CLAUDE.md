@@ -86,8 +86,8 @@ Reference anchors: Bloomberg Terminal, Pro Tools, Fallout Pip-Boy, Susan Kare Ch
 - Dark, dense, data-first foundation. Per-scheme accent ramps per page — the active scheme's `pg.dashboard`, `pg.inventory`, `pg.analytics`, `pg.brain`, `pg.mesh`, `pg.onboarding`, `pg.settings` each drive one page.
 - Beveled borders, thick honest corners, tabular numerics.
 - Satoshi + JetBrains Mono + IBM Plex Sans. Nothing else.
-- 16x16 pixel bitmap icons for the sidebar nav (see `SidebarIcons.swift`). Hand-authored SVG elsewhere.
-- Deal rows with image, vendor badge, floor price, eBay-sold-median, ROI pill, clickthrough arrow to source listing.
+- Sidebar nav uses Lucide Regular (clean outlined, 1.5–2px stroke) at 16×16. Device thumbnails use hand-authored outlined silhouettes at 24–44px, 2px stroke, palette `p`. Pixelarticons are reference-pool only, never in active UI.
+- Deal rows are a CSS-grid: device thumbnail (44px) · vendor chip (120px) · title (1fr) · BUY £ (96px, floor-aggregate with "· N SRC" sub-label) · SELL £ (96px, eBay sold-median) · ROI pill (72px) · clickthrough ↗ (32px). Column headers are "BUY" / "SELL" in plain English — never "FLOOR" / "EBAY MED". No "DEV" text label above the thumbnail column.
 - Inventory rows with image, condition grade, acquired price, live comp price.
 - Six UK vendor badges — each with a distinct accent from the active scheme: `ebay`, `cex`, `gumtree`, `facebook`, `shpock`, `preloved`, `wholesale-clearance`.
 - Splash / loading treatment as the one sanctioned moment of activity visualisation (operator-endorsed).

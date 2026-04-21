@@ -32,17 +32,30 @@ TYPOGRAPHY
 Satoshi (display + UI body) · JetBrains Mono (data, numerics, table cells, labels) · IBM Plex Sans (body prose). All three embedded in the feed at fonts/. Do not substitute DM Sans, Commit Mono, Geist, or any other face for the rendered UI.
 
 DATA SHAPES
-— deal row: device silhouette (hand-authored inline SVG — iPhone / Android / MacBook / PS5 / Switch / Headphones / AirPods / Keyboard / Smartwatch) + vendor badge + listing title + floor-aggregate price with source count (`£380 · 5 src`) + eBay sold-median + ONE ROI pill (colour-coded from palette) + clickthrough arrow ↗
-— inventory row: silhouette + condition pill (MINT / EXCELLENT / GOOD / FAIR) + acquired price + live-comp price + delta pill + action (✓ sold / ↻ relist / ✗ write off)
+— deal row is a CSS-grid row with fixed columns: device thumbnail (44px) · vendor chip (120px) · listing title (1fr) · BUY £ (96px) · SELL £ (96px) · ROI pill (72px) · clickthrough ↗ (32px). 12px gap, 48px min row height, baseline-aligned. No column labelled "DEV". Column headers: blank / VENDOR / TITLE / BUY / SELL / ROI / — .
+— BUY £ column shows the floor-aggregate price with a small "· N SRC" sub-label (source count). This is what the operator pays. NOT "FLOOR" as a header — "BUY" reads plain English.
+— SELL £ column shows the eBay sold-comps median. This is what the operator expects to get when reselling on eBay. NOT "EBAY MED" as a header — "SELL" reads plain English.
+— inventory row: device thumbnail + condition pill (MINT / EXCELLENT / GOOD / FAIR) + acquired price + live-comp price + delta pill + action (✓ sold / ↻ relist / ✗ write off)
 — KPI card: ALL-CAPS label + big JetBrains Mono number + sparkline or delta
 — UK vendors (9): ebay, cex, gumtree, facebook, shpock, preloved, wholesale-clearance, musicmagpie, bs-exchange. Each a palette-coloured chip with lowercase vendor token.
+
+ICONOGRAPHY
+— Sidebar nav + all UI iconography: **Lucide Regular** (clean outlined, 1.5–2px stroke) at 16×16 rendered. Stroke colour = active scheme `p`. Source: the bundled `icons/` folder or `external/lucide/`.
+— Device thumbnails (deal-row + inventory-row): hand-authored outlined silhouettes at ~24–44px, 2px stroke, palette `p`. Each device-type gets a specific silhouette — iPhone with notch + speaker, MacBook wedge with screen split, AirPods with stems, Switch Lite with joysticks, PS5 with fan vent, Sony headphones over-ear band, keyboard grid, smartwatch with crown, iPad with home indicator, RTX with fan, Android phone with camera bump. Clean line art, not jagged pixel grid.
+— Pixelarticons are **reference only** — they live in a clearly labelled "retro pixel icon pool" alongside Phosphor / Feather / Material. They do NOT appear in active UI. Never use pixelarticons for sidebar nav or deal-row thumbnails.
+
+THUMBNAIL GRAMMAR (for when real listing photos are available in production)
+Thumbnail container 64×64, palette-surface (scheme-derived).
+- When photo exists: photo fills container `object-fit: cover`. Top-left corner = condition grade pill. Top-right corner = device-type chip (20×20 palette `p` fill, 2px outer stroke scheme `s`, 1px inner highlight scheme-lighter, 12×12 icon inside in scheme-contrast colour). Bottom-left = vendor chip. Bottom-right = price overlay. Four corners, four fixed slots, no collision.
+- When photo absent (FB / Gumtree often ship without): device icon centres at 32×32 inside the container, palette `p` stroke, scheme-shifted void background. Same card structure; only the thumbnail treatment swaps.
+Two-colour logic lives on the CHIP (palette `p` fill vs scheme `s` stroke), not on the icon SVG — keeps the icon readable at any size.
 
 MOTION
 cubic-bezier(0.34, 1.56, 0.64, 1) easeOutBack for open-surface transitions. cubic-bezier(0.4, 0, 0.2, 1) for constrained motion. All transitions ≤300ms. Ambient loops ≤2s. Motion carries signal (scan pulse, live counter, log tick) — decoration without signal is out.
 
 ABSOLUTE NO-GOS (hard; everything else is flexible)
 1. No translucency, blur, backdrop-filter, opacity <0.9. Apple liquid-glass is the antithesis.
-2. No SF Symbols. Pixelarticons inline SVG at 16×16, 1–2px stroke, consistently.
+2. No SF Symbols. Lucide Regular outlined SVG (1.5–2px stroke) at 16×16 for nav + UI; hand-authored outlined device silhouettes for thumbnails. Pixelarticons are reference-pool only, never in active UI.
 3. No Title Case labels. ALL CAPS tokens or lowercase only.
 4. No gamification: no WIN RATE card, XP, streaks, badges, level-ups, leaderboards.
 5. No developer-voice UI copy ("In this view we...", "AI-powered", "sophisticated"). Plain labels.
